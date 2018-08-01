@@ -23,4 +23,8 @@ public class FooController {
 	public String user() {
 	return "user";
 	}
+	@RequestMapping("/calendar")
+	public String calendar() {
+		return "calendar";
+	}
 }
