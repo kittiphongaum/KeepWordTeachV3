@@ -701,7 +701,7 @@ function Calendar(element, options, eventSources) {
 			.bind('dragstart', function(ev, ui) {
 				var _e = ev.target;
 				var e = $(_e);
-				if (!e.parents('.fc').length) { // not already inside a calendar
+				if (!e.parents('.fc').length) { // not already inside a 
 					var accept = options.dropAccept;
 					if ($.isFunction(accept) ? accept.call(_e, e) : e.is(accept)) {
 						_dragElement = _e;

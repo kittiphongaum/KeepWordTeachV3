@@ -133,7 +133,7 @@ html .fc,
 	/* background: #fcf8e3; */
 }
 
-.fc-state-highlight > div > div.fc-day-number{
+.fc-state-highlight > div > div.{
     background-color: #ff3b30;
     color: #FFFFFF;
     border-radius: 50%;
@@ -435,12 +435,12 @@ table.fc-border-separate {
 	padding: 0 2px;
 	}
 	
-.fc-grid .fc-day-number {
+.fc-grid . {
 	float: right;
 	padding: 0 2px;
 	}
 	
-.fc-grid .fc-other-month .fc-day-number {
+.fc-grid .fc-other-month . {
 	opacity: 0.3;
 	filter: alpha(opacity=30); /* for IE */
 	/* opacity with small font can sometimes look too faded
@@ -629,7 +629,7 @@ table.fc-header{
     border-radius: 6px 6px 0 0;
 }
 
-.fc-week .fc-day > div .fc-day-number{
+.fc-week .fc-day > div .{
     font-size: 15px;
     margin: 2px;
     min-width: 19px;
@@ -640,13 +640,13 @@ table.fc-header{
     color: #b8b8b8;
 }
 
-.fc-week .fc-day:hover .fc-day-number{
+.fc-week .fc-day:hover .{
     background-color: #B8B8B8;
     border-radius: 50%;
     color: #FFFFFF;
     transition: background-color 0.2s;
 }
-.fc-week .fc-day.fc-state-highlight:hover .fc-day-number{
+.fc-week .fc-day.fc-state-highlight:hover .{
     background-color:  #ff3b30;
 }
 .fc-button-today{
