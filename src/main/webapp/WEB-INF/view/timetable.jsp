@@ -9,7 +9,7 @@
  <!--  <link rel="icon" type="image/png" href="../assets/img/favicon.png"> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+   jook
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -43,27 +43,27 @@
             </a>
           </li>
           
-          
           <li class="nav-item ">
-            <a class="nav-link" href="./historyteach">
-              <i class="material-icons">library_books</i>
-              <p>ประวัติการสอน</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./timetable">
+            <a class="nav-link" href="./tables">
               <i class="material-icons">content_paste</i>
               <p>ตารางสอน</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./typography.html">
+              <i class="material-icons">library_books</i>
+              <p>ประวัติการสอน</p>
+            </a>
+          </li>
+          
         <!--   <li class="nav-item ">
             <a class="nav-link" href="./notifications.html">
               <i class="material-icons">notifications</i>
               <p></p>
             </a>
           </li> -->
-          <li class="nav-item active">
-            <a class="nav-link " href="./user">
+          <li class="nav-item ">
+            <a class="nav-link active" href="./user">
               <i class="material-icons">person</i>
               <p>ข้อมูลผู้ใช้</p>
             </a>

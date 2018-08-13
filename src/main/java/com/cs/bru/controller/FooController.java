@@ -27,4 +27,17 @@ public class FooController {
 	public String calendar() {
 		return "calendar";
 	}
+	@RequestMapping("/home")
+	public String home() {
+		return "home";
+	}
+	@RequestMapping("/historyteach")
+	public String historyteach() {
+		return "historyteach";
+	}
+	@RequestMapping("/timetable")
+	public String timetable() {
+		return "timetable";
+	}
+	
 }

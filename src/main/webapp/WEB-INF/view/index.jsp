@@ -5,8 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/assets/css/login.css"  >
 </head>
 <body>
-<h1>welcome</h1>
+<div class="login">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Log in</h2>
+
+  <form class="login-container">
+    <p><input type="text" placeholder="Username"></p>
+    <p><input type="password" placeholder="Password"></p>
+    <p><input type="submit" value="Log in"></p>
+  </form>
+</div>
 </body>
 </html>
