@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+	
 	<div class="content">
 				<div class="container-fluid">
 					<div class="row">
@@ -65,16 +66,21 @@
 										</div>
 										
 										<div class="row">
-											<div class="col-md-6">
+											<div class="col-md-4">
 												<div class="form-group">
 													<label class="bmd-label-floating">ระหัสวิชา</label> <input
-														type="text" class="form-control">
+														type="text" class="form-control"id="subjectID">
 												</div>
 											</div>
+											<button type="button" class="btn btn-white btn-round btn-just-icon" onclick="subject()">
+												<i class="material-icons">search</i>
+												<div class="ripple-container"></div>
+											  </button>
+											
 											<div class="col-md-6">
 												<div class="form-group">
 													<label class="bmd-label-floating">ชื่อวิชา</label> <input
-														type="text" class="form-control" > <!-- disabled -->
+														type="text" class="form-control"  id="subjectName"> 
 												</div>
 											</div>
 
@@ -90,25 +96,25 @@
 											<div class="col-md-2">
 												<div class="form-group">
 													<label class="bmd-label-floating">นก.</label> <input
-														type="text" class="form-control">
+														type="text" class="form-control" id="credit">
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="form-group">
 													<label class="bmd-label-floating">ชม.</label> <input
-														type="text" class="form-control">
+														type="text" class="form-control" id="creditHour">
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="form-group">
 													<label class="bmd-label-floating">ภาคทฤษฎี</label> <input
-														type="text" class="form-control">
+														type="text" class="form-control" id="tudsadee">
 												</div>
 											</div>
 											<div class="col-md-2">
 												<div class="form-group">
 													<label class="bmd-label-floating">ภาคปัฏิบัติ</label> <input
-														type="text" class="form-control">
+														type="text" class="form-control" id="prtibad">
 												</div>
 											</div>
 										</div>
@@ -133,7 +139,7 @@
 						</div>
 
 						<div class="card-body table-responsive">
-							<table class="table table-hover">
+							<table id="subTable" class="table table-hover" >
 								<thead class="text-warning">
 									<tr>
 										<th rowspan="2">#</th>
@@ -171,3 +177,73 @@
 					</div>
 				</div>
 			</div>
+			
+	<script type="text/javascript">
+	$(document).ready( function () {
+		buttons: [
+	        {
+	            extend: 'collection',
+	            text: 'Export',
+	            buttons: [ 'csv-flash', 'xls-flash', 'pdf-flash' ]
+	        }
+	    ]
+	    var table = $('#subTable').DataTable({
+	    	
+	           "sAjaxSource": "/sub",
+	           "sAjaxDataProp": "",
+	           "searching":false,
+	           /* "ordering":false, */
+	           "info":false,
+	           "paging": false,
+	           
+	           "iengthChange":false,
+	           "order": [[ 1, "asc" ]], 
+	           "aoColumns": [
+	               { "mData": "id"},
+	             { "mData": "name" },
+	                 { "mData": "subjectId" },
+	                 { "mData": "subjectName" },
+	                 { "mData": "credit" },
+	                 { "mData": "creditHour" },
+	                 { "mData": "tudsadee" },
+	                 { "mData": "prtibad" }
+	                
+	                 
+	           ]
+	          
+	    
+	    })
+	});
+	</script>
+	<script>
+	//insert
+	function insertSubjectfrom() {
+		//	console.log(warranty)
+
+		var insertSubject = {
+			subjectID: $('#subjectID').val(), //id,
+			// subjectName: $('#subjectName').val(), //id
+			section: $('#section').val(),
+			credit: $('#credit').val(),
+			creditHour: $('#creditHour').val(),
+			student: $('#student').val()
+		}
+
+		$.ajax({
+			type: "POST",
+			url: "/insertSubject",
+			contentType: "application/json; charset=utf-8",
+			data: JSON.stringify(insertSubject),
+			dataType: "json",
+			success: function (msg) {
+				console.log(msg)
+				window.location.href = msg.page;
+			},
+			error: function () {			
+				window.location.reload();
+			}
+		});
+	}
+	</script>
+			
+	

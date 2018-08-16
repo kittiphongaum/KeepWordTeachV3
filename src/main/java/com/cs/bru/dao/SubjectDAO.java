@@ -51,8 +51,8 @@ public class SubjectDAO {
 
 			while (rs.next()) {
 				Subject bean = new Subject();
-				bean.setSubjectId(rs.getString("subjectID"));
-				bean.setSubjectName(rs.getString("subjectName"));
+				bean.setSubjectId(rs.getString("subjactid"));
+				bean.setSubjectName(rs.getString("subjactName"));
 				bean.setCredit(rs.getInt("credit"));
 				bean.setCreditHour(rs.getString("creditHour"));
 				bean.setTudsadee(rs.getInt("tudsadee"));
@@ -81,13 +81,13 @@ public class SubjectDAO {
 			prepared.setString(1, id);
 			ResultSet rs = prepared.executeQuery();
 			while (rs.next()) {
-				Subject.setSubjectId(rs.getString("subjactid"));
+				Subject.setSubjectId(rs.getString("subjectID"));
 				Subject.setSubjectName(rs.getString("subjactName"));
 				Subject.setCredit(rs.getInt("credit"));
 				Subject.setCreditHour(rs.getString("creditHour"));
 				Subject.setTudsadee(rs.getInt("tudsadee"));
 				Subject.setPrtibad(rs.getInt("prtibad"));
-				// System.out.println(Subject);
+				/*System.out.println(Subject);*/
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

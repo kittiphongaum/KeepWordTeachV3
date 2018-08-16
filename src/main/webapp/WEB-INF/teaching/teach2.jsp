@@ -75,42 +75,5 @@
 
 		</div>
 	</div>
-	<div class="col-lg-12 col-md-12">
-		<div class="card">
-			<div class="card-header card-header-warning">
-				<h4 class="card-title">ตารางบันทึกระยะเวลาที่สอนแต่ล่ะวิชา</h4>
-				<p class="card-category">แสดงข้อมูลวิชาที่สอน</p>
-			</div>
-
-			<div class="card-body table-responsive">
-				<table class="table table-hover">
-					<thead class="text-warning">
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">สัปดาห์</th>
-							<th scope="col">รายวิชา</th>
-							<th scope="col">วัน/เดือน/ปี</th>
-							<th scope="col">ภาคทฤษฎี</th>
-							<th scope="col">ภาคปฏิบัติ</th>
-							<th scope="col">รวม</th>
-
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-					<thead>
-						<tr>
-							<th colspan="6" class="text-center">รวม</th>
-							<th rowspan="row"></th>
-							<th rowspan="row"></th>
-							<th rowspan="row"></th>
-
-
-
-						</tr>
-					</thead>
-				</table>
-			</div>
-		</div>
-	</div>
+	
 </div>

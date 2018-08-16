@@ -8,7 +8,7 @@ function subject() {
     $('#prtibad').empty();
     $('#subjectID').ready(function () {
         var subjectsach = {
-            "subjectsach": $('#subjactid').val()
+            "subjectsach": $('#subjectID').val()
         };
         $.ajax({
             type: "POST",

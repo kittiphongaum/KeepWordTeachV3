@@ -1,17 +1,25 @@
 package com.cs.bru.controller;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.arjuna.ats.internal.jdbc.drivers.modifiers.list;
 import com.cs.bru.dao.SubjectDAO;
 import com.cs.bru.model.Subject;
 import com.cs.bru.model.SubjectBean;
 
 @RestController
 public class SubjectController {
+	
+	
 	@Autowired
 	SubjectDAO  subjectDAO;
 	
@@ -22,5 +30,11 @@ public class SubjectController {
 //		System.out.println(Subject);
 //		System.out.println(subjectsach.getSubjectsach());
 		return Subject;
+	}
+	@RequestMapping("/sub")
+	public List<Subject> subJect(){
+		List<Subject>list = new ArrayList<>();
+		list=subjectDAO.findAll();
+		return list;
 	}
 }
