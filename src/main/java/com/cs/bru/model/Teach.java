@@ -6,6 +6,8 @@ public class Teach {
 	private String startMonth;
 	private String stopMonth;
 	private String buddhist;
+	private DateTime dateTime;
+	private Subject subject;
 	public int getId() {
 		return id;
 	}
@@ -36,4 +38,18 @@ public class Teach {
 	public void setBuddhist(String buddhist) {
 		this.buddhist = buddhist;
 	}
+	
+	public DateTime getDateTime() {
+		return dateTime;
+	}
+	public void setDateTime(DateTime dateTime) {
+		this.dateTime = dateTime;
+	}
+	public Subject getSubject() {
+		return subject;
+	}
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
+	
 }

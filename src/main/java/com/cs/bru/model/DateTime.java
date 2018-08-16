@@ -1,12 +1,12 @@
 package com.cs.bru.model;
 
-import com.mysql.fabric.xmlrpc.base.Data;
+
 
 public class DateTime {
 		private int dtimeId;
 		private int datetTmeId;
 		private String weekTeach;
-		private Data dateTeach;
+		private String dateTeach;
 		public int getDtimeId() {
 			return dtimeId;
 		}
@@ -25,10 +25,11 @@ public class DateTime {
 		public void setWeekTeach(String weekTeach) {
 			this.weekTeach = weekTeach;
 		}
-		public Data getDateTeach() {
+		public String getDateTeach() {
 			return dateTeach;
 		}
-		public void setDateTeach(Data dateTeach) {
+		public void setDateTeach(String dateTeach) {
 			this.dateTeach = dateTeach;
 		}
+		
 }
