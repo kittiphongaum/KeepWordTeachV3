@@ -44,7 +44,7 @@ public class TeachDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT tb_teaching.teachID,tb_teaching.startMonth,tb_teaching.stopMonth,tb_teaching.buddhist,tb_datetime.datetime_id,tb_datetime.weekteach,tb_datetime.dateteach,tb_subject.subjactid,tb_subject.subjactName,tb_subject.credit,tb_subject.creditHour,tb_subject.Tudsadee,tb_subject.Prtibad FROM tb_teaching INNER JOIN tb_datetime on tb_teaching.teachID = tb_datetime.datetime_idINNER JOIN tb_subject on tb_teaching.teachID = tb_datetime.datetime_id");
+			sql.append("SELECT teachID,startMonth,stopMonth,buddhist,teachRowDat,datetime_id,weekteach,dateteach,teachRowSub,subjactid,subjactName,credit,creditHour,Tudsadee,Prtibad FROM tb_teaching RIGHT JOIN tb_datetime on tb_teaching.teachRowDat = tb_datetime.datetime_id INNER JOIN tb_subject on tb_teaching.teachRowSub = tb_subject.subjactid");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			ResultSet rs = prepared.executeQuery();
 
@@ -53,21 +53,24 @@ public class TeachDAO {
 				DateTime dateTime = new DateTime();
 				Subject subject = new Subject();
 				 
-				teach.setTeachID(rs.getString("tb_teaching.teachID"));
-				teach.setStartMonth(rs.getString("tb_teaching.startMonth"));
-				teach.setStopMonth(rs.getString("tb_teaching.stopMonth"));
-				teach.setBuddhist(rs.getString("tb_teaching.buddhist"));
+				teach.setTeachID(rs.getString("teachID"));
+				teach.setStartMonth(rs.getString("startMonth"));
+				teach.setStopMonth(rs.getString("stopMonth"));
+				teach.setBuddhist(rs.getString("buddhist"));
+				teach.setTeachRowDat(rs.getString("teachRowDat"));
 				
-				dateTime.setDatetTmeId(rs.getInt("tb_datetime.datetime_id"));
-				dateTime.setWeekTeach(rs.getString("tb_datetime.weekteach"));
-				dateTime.setDateTeach(rs.getString("tb_datetime.dateteach"));
+				dateTime.setDatetTmeId(rs.getInt("datetime_id"));
+				dateTime.setWeekTeach(rs.getString("weekteach"));
+				dateTime.setDateTeach(rs.getString("dateteach"));
 				
-				subject.setSubjectId(rs.getString("tb_subject.subjactid"));
-				subject.setSubjectName(rs.getString("tb_subject.subjactName"));
-				subject.setCredit(rs.getInt("tb_subject.credit"));
-				subject.setCreditHour(rs.getString("tb_subject.creditHour"));
-				subject.setTudsadee(rs.getInt("tb_subject.Tudsadee"));
-				subject.setPrtibad(rs.getInt("tb_subject.Prtibad"));
+				teach.setTeachRowSub(rs.getString("teachRowSub"));
+				
+				subject.setSubjectId(rs.getString("subjactid"));
+				subject.setSubjectName(rs.getString("subjactName"));
+				subject.setCredit(rs.getInt("credit"));
+				subject.setCreditHour(rs.getString("creditHour"));
+				subject.setTudsadee(rs.getInt("Tudsadee"));
+				subject.setPrtibad(rs.getInt("Prtibad"));
 
 				teach.setDateTime(dateTime);
 				teach.setSubject(subject);
@@ -90,17 +93,16 @@ public class TeachDAO {
 		Subject Subject = new Subject();
 
 		try {
-			sql.append(" SELECT * FROM tb_subject WHERE subjactid = ?");
+			sql.append(" SELECT * FROM tb_teaching WHERE teachID = 1");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, id);
 			ResultSet rs = prepared.executeQuery();
 			while (rs.next()) {
-				Subject.setSubjectId(rs.getString("subjectID"));
-				Subject.setSubjectName(rs.getString("subjactName"));
-				Subject.setCredit(rs.getInt("credit"));
-				Subject.setCreditHour(rs.getString("creditHour"));
-				Subject.setTudsadee(rs.getInt("tudsadee"));
-				Subject.setPrtibad(rs.getInt("prtibad"));
+				Subject.setSubjectId(rs.getString("teachID"));
+				Subject.setSubjectName(rs.getString("startMonth"));
+				Subject.setCredit(rs.getInt("stopMonth"));
+				Subject.setCreditHour(rs.getString("buddhist"));
+			
 				/*System.out.println(Subject);*/
 			}
 		} catch (Exception e) {
