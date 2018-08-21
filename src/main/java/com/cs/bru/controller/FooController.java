@@ -16,7 +16,7 @@ public class FooController {
 	public String tables() {
 		return"tables";
 	}
-	@RequestMapping(path="/", method=RequestMethod.GET)
+	@RequestMapping("/")
 	public String welcome() {
 		return"index";
 	}
@@ -39,6 +39,10 @@ public class FooController {
 	@RequestMapping("/timetable")
 	public String timetable() {
 		return "timetable";
+	}
+	@RequestMapping("/test")
+	public String test() {
+		return "test";
 	}
 	
 }

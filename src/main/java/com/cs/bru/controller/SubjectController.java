@@ -35,6 +35,18 @@ public class SubjectController {
 //		System.out.println(subjectsach.getSubjectsach());
 		return Subject;
 	}
+	
+	@RequestMapping("/insertSubject")
+	   public String insertTeach(@RequestBody Subject insertSubjech) {
+		   try {
+			subjectDAO.insertSubject(insertSubjech);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		   return "insertSubject";
+	   }
+	   
 	@RequestMapping("/sub")
 	public List<Subject> subJect(){
 		List<Subject>list = new ArrayList<>();

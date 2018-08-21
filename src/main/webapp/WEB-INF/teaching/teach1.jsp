@@ -118,7 +118,15 @@
 												</div>
 											</div>
 										</div>
-										
+										<div class="row">
+										<div class="col-md-3">
+												<div class="form-group">
+													<label class="bmd-label-floating">เลือกสถานะวิชา</label>
+													
+
+												</div>
+											</div>
+										</div>
 
 
 										<button type="submit" class="btn btn-primary pull-right"><h4>เพิ่มวิชาสอน</h4></button>
@@ -139,7 +147,7 @@
 						</div>
 
 						<div class="card-body table-responsive">
-							<table id="subTable" class="table table-hover" >
+							<table id="customerTable" class="table table-hover" >
 								<thead class="text-warning">
 									<tr>
 										<th rowspan="2">#</th>
@@ -187,7 +195,7 @@
 	            buttons: [ 'csv-flash', 'xls-flash', 'pdf-flash' ]
 	        }
 	    ]
-	    var table = $('#subTable').DataTable({
+	    var table = $('#subTable1').DataTable({
 	    	
 	           "sAjaxSource": "/sub",
 	           "sAjaxDataProp": "",
@@ -217,23 +225,24 @@
 	</script>
 	<script>
 	//insert
-	function insertSubjectfrom() {
+	function insertTeachfrom() {
 		//	console.log(warranty)
 
-		var insertSubject = {
-			subjectID: $('#subjectID').val(), //id,
+		var insertTeachSub = {
+				teachID: $("1").val(), //id,
 			// subjectName: $('#subjectName').val(), //id
-			section: $('#section').val(),
-			credit: $('#credit').val(),
-			creditHour: $('#creditHour').val(),
-			student: $('#student').val()
+			startMonth: $('#startMonth').val(),
+			stopMonth: $('#stopMonth').val(),
+			buddhist: $('#buddhist').val(),
+			teachRowSub: $('#teachRowSub').val(),
+			teachRowDat:$('#teachRowDat').val()
 		}
 
 		$.ajax({
 			type: "POST",
-			url: "/insertSubject",
+			url: "/insertTeach",
 			contentType: "application/json; charset=utf-8",
-			data: JSON.stringify(insertSubject),
+			data: JSON.stringify(insertTeachSub),
 			dataType: "json",
 			success: function (msg) {
 				console.log(msg)
@@ -244,6 +253,38 @@
 			}
 		});
 	}
+	</script>
+	
+	<script>
+	
+
+		// Do DELETE a Customer via JQUERY AJAX
+		$(document).on("click", "a", function () {
+
+			var customerId = $(this).parent().find('input').val();
+			var workingObject = $(this);
+
+			$.ajax({
+				type: "DELETE",
+				url: window.location + "" + customerId,
+				success: function (resultMsg) {
+					$("#resultMsgDiv").html("<p style='background-color:#67597E; color:white; padding:20px 20px 20px 20px'>" +
+						"Customer with Id=" + customerId + " is deleted successfully!" +
+						"</p>");
+
+					workingObject.closest("tr").remove();
+
+					// re-css for table
+					$("#customerTable tbody tr:odd").addClass("info");
+					$("#customerTable tbody tr:even").addClass("success");
+				},
+				error: function (e) {
+					alert("ERROR: ", e);
+					console.log("ERROR: ", e);
+				}
+			});
+		});
+
 	</script>
 			
 	

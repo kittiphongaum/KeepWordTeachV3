@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.cs.bru.bean.TeachInsertBean;
 import com.cs.bru.model.DateTime;
 import com.cs.bru.model.Subject;
 import com.cs.bru.model.Teach;
