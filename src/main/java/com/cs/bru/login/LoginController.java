@@ -44,7 +44,7 @@ public class LoginController {
 					authen="dashboard";
 				} else {
 					
-					authen="admin";
+					authen="adminWelcom";
 				}
 				
 				
