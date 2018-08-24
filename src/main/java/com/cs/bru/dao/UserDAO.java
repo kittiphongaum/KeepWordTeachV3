@@ -7,11 +7,48 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.cs.bru.login.Login;
 import com.cs.bru.model.User;
 import com.cs.bru.util.ConnectDB;
 
 @Repository
 public class UserDAO {
+	public User login (String userID ,String userPass) {
+		User bean = new User();
+		ConnectDB con = new ConnectDB();
+		PreparedStatement prepared = null;
+		StringBuilder sql = new StringBuilder();
+
+		try {
+			sql.append("SELECT * FROM tb_user WHERE userID = ? AND userPass = ? ");
+			
+			prepared = con.openConnect().prepareStatement(sql.toString());
+			prepared.setString(1,userID);
+			prepared.setString(2,userPass);
+			/*prepared.setString(3, roleId);*/
+//set
+//get = รับ
+			ResultSet rs = prepared.executeQuery();
+
+			while (rs.next()) {
+			
+				bean.setUserId(rs.getString("userId"));
+				bean.setUserFname(rs.getString("userFname"));
+				bean.setUserLname(rs.getString("userLname"));
+				bean.setPositionTeach(rs.getString("positionTeach"));
+				bean.setFaculty(rs.getString("faculty"));
+				bean.setMojor(rs.getString("mojor"));
+				bean.setBaseHour(rs.getInt("baseHour"));
+				bean.setBaseKrm(rs.getInt("baseKrm"));
+		
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return bean;
+	}
 	public void insertUser(User bean) throws Exception {
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;

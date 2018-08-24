@@ -11,7 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.cs.bru.dao.SubjectDAO;
 import com.cs.bru.dao.UserDAO;
+import com.cs.bru.model.Subject;
+import com.cs.bru.model.User;
 
 
 @Controller
@@ -20,19 +23,30 @@ public class LoginController {
 	UserDAO userDAO;
 	@Autowired
 	LoginDAO loginDAO;
+	@Autowired
+	SubjectDAO subjectDAO;
 	
 	
 	@RequestMapping(value ="/index",method = RequestMethod.POST)
-		public String authenLogin(String username, String password, String roleId,Model model) {
+		public String authenLogin(String username, String password,Model model) {
 			String authen ="";
-			Login bean = new Login();
-			List<Login> findAll = new ArrayList<>();
+			User bean = new User();
+			List<User> findAll = new ArrayList<>();
 			try {
-			bean = loginDAO.login(username, password);
-			findAll = loginDAO.findAll();
-			if(bean.getLogUsername() != null) {
+			bean = userDAO.login(username, password);
+			findAll = userDAO.findAll();
+			if(bean.getUserId() != null && bean.getUserPass() != null ) {
 				
-				authen="dashboard";
+				
+				if (bean.getPositionTeach().equals("U")) { 
+					
+						
+					authen="dashboard";
+				} else {
+					
+					authen="admin";
+				}
+				
 				
 			}else {
 				
@@ -40,7 +54,7 @@ public class LoginController {
 			}
 			
 			} catch (Exception e) {
-				// TODO: handle exception
+			 e.printStackTrace();
 			}
 		return authen;
 		}

@@ -8,6 +8,18 @@ public class TeachInsertBean {
 	private Teach teachBean;
 	private Subject subjectBean;
 	private DateTime dateTimebean;
+	
+	public TeachInsertBean() {}
+	
+	
+	public TeachInsertBean(Teach teachBean, Subject subjectBean, DateTime dateTimebean) {
+		super();
+		this.teachBean = teachBean;
+		this.subjectBean = subjectBean;
+		this.dateTimebean = dateTimebean;
+	}
+
+
 	public Teach getTeachBean() {
 		return teachBean;
 	}

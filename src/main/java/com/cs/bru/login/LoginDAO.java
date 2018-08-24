@@ -13,14 +13,14 @@ import com.cs.bru.util.ConnectDB;
 @Repository
 public class LoginDAO {
 	 
-	public Login login(String LogUsername, String LogPassword/*, String roleId*/) {
+	public Login login1(String LogUsername, String LogPassword/*, String roleId*/) {
 		Login bean = new Login();
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT * FROM tb_login WHERE LogUsername = ? AND LogPassword = ? AND LogRole = '2' AND LogStatus = 'U' ");
+			sql.append("SELECT * FROM tb_login WHERE LogUsername = ? AND LogPassword = ? ");
 			
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, LogUsername);

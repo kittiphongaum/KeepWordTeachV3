@@ -44,5 +44,9 @@ public class FooController {
 	public String test() {
 		return "test";
 	}
+	@RequestMapping("/admin")
+	public String adminwelcome() {
+		return "admin";
+	}
 	
 }

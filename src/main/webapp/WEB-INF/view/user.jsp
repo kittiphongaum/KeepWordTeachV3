@@ -135,7 +135,7 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-10">
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Edit Profile</h4>
@@ -146,19 +146,19 @@
                     <div class="row">
                       <div class="col-md-5">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Company (disabled)</label>
-                          <input type="text" class="form-control" disabled>
+                          <label class="bmd-label-floating">รหัสผู้สอน</label>
+                          <input type="text" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Username</label>
+                          <label class="bmd-label-floating">ชื่อ</label>
                           <input type="text" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Email address</label>
+                          <label class="bmd-label-floating">นามสกุล</label>
                           <input type="email" class="form-control">
                         </div>
                       </div>
@@ -166,56 +166,39 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Fist Name</label>
+                          <label class="bmd-label-floating">สาขาวิชา</label>
                           <input type="text" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Last Name</label>
+                          <label class="bmd-label-floating">คณะ</label>
                           <input type="text" class="form-control">
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Adress</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
+                    
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">City</label>
+                          <label class="bmd-label-floating">ตำแหน่ง</label>
                           <input type="text" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Country</label>
+                          <label class="bmd-label-floating">มีฐานชั่วโมง/คาบ</label>
                           <input type="text" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
+                          <label class="bmd-label-floating">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
                           <input type="text" class="form-control">
                         </div>
                       </div>
                     </div>
-                    <!-- <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label>About Me</label>
-                          <div class="form-group">
-                            <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                            <textarea class="form-control" rows="5"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
+                    
                     <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
                     <div class="clearfix"></div>
                   </form>

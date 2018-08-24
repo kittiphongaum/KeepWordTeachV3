@@ -129,7 +129,7 @@
 										</div>
 
 
-										<button type="submit" class="btn btn-primary pull-right"><h4>เพิ่มวิชาสอน</h4></button>
+										<button type="submit" class="btn btn-primary pull-right" onclick="insertTeachfrom()"><h4>เพิ่มวิชาสอน</h4></button>
 										<div class="clearfix"></div>
 									</form>
 								</div>
@@ -237,12 +237,21 @@
 			teachRowSub: $('#teachRowSub').val(),
 			teachRowDat:$('#teachRowDat').val()
 		}
+		var insertSub = {
+			 subjectId :$('#subjectId').val(),
+			subjectName:$('#subjectName').val(),
+			 credit:$('#credit').val(),
+			 creditHour:$('#creditHour').val(),
+			tudsadee:$('#tudsadee').val(),
+			 prtibad:$('#prtibad').val()
+
+		}
 
 		$.ajax({
 			type: "POST",
 			url: "/insertTeach",
 			contentType: "application/json; charset=utf-8",
-			data: JSON.stringify(insertTeachSub),
+			data: JSON.stringify(insertTeachSub,insertSub),
 			dataType: "json",
 			success: function (msg) {
 				console.log(msg)
