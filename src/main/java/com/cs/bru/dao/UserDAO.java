@@ -2,14 +2,17 @@ package com.cs.bru.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.cs.bru.login.Login;
+
 import com.cs.bru.model.User;
 import com.cs.bru.util.ConnectDB;
+
+
 
 @Repository
 public class UserDAO {
@@ -33,13 +36,11 @@ public class UserDAO {
 			while (rs.next()) {
 			
 				bean.setUserId(rs.getString("userId"));
+				bean.setUserPass(rs.getString("userPass"));
 				bean.setUserFname(rs.getString("userFname"));
 				bean.setUserLname(rs.getString("userLname"));
 				bean.setPositionTeach(rs.getString("positionTeach"));
 				bean.setFaculty(rs.getString("faculty"));
-				bean.setMojor(rs.getString("mojor"));
-				bean.setBaseHour(rs.getInt("baseHour"));
-				bean.setBaseKrm(rs.getInt("baseKrm"));
 		
 			}
 
@@ -141,4 +142,61 @@ public class UserDAO {
 
 		return user;
 	}
+	
+	public User findById(String id)  {
+		User bean = new User();
+		ConnectDB con = new ConnectDB();
+		PreparedStatement preperd = null;
+		StringBuilder sql = new StringBuilder();
+
+		try {
+			sql.append(" SELECT * FROM tb_user WHERE userID = ? ");
+			preperd = con.openConnect().prepareStatement(sql.toString());
+			preperd.setString(1, id);
+			ResultSet rs = preperd.executeQuery();
+
+			while (rs.next()) {
+				bean.setUserId(rs.getString("userId"));
+				bean.setUserFname(rs.getString("userFname"));
+				bean.setUserLname(rs.getString("userLname"));
+				bean.setPositionTeach(rs.getString("positionTeach"));
+				bean.setFaculty(rs.getString("faculty"));
+				bean.setMojor(rs.getString("mojor"));
+				bean.setBaseHour(rs.getInt("baseHour"));
+				bean.setBaseKrm(rs.getInt("baseKrm"));
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			if (con != null) {
+			
+			}
+		}
+
+		return bean;
+	}
+	// update
+		public void update(User bean) {
+			ConnectDB con = new ConnectDB();
+			PreparedStatement prepared = null;
+			StringBuilder sql = new StringBuilder();
+			try {
+				sql.append(" UPDATE tb_user SET  userFname = ? , userLname = ?,faculty = ?, mojor=? WHERE userID = ? ");
+				prepared = con.openConnect().prepareStatement(sql.toString());
+				prepared.setString(1, bean.getUserFname());
+				prepared.setString(2, bean.getUserLname());
+				prepared.setString(3, bean.getFaculty());
+				prepared.setString(4, bean.getMojor());
+				
+				
+
+				prepared.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+		}// end method update
+		
 }

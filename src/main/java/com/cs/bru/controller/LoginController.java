@@ -1,9 +1,7 @@
-package com.cs.bru.login;
+package com.cs.bru.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,10 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cs.bru.dao.SubjectDAO;
 import com.cs.bru.dao.UserDAO;
-import com.cs.bru.model.Subject;
+import com.cs.bru.login.LoginDAO;
 import com.cs.bru.model.User;
-
-
 @Controller
 public class LoginController {
 	@Autowired

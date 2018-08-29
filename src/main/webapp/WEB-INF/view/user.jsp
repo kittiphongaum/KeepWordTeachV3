@@ -141,25 +141,25 @@
                   <h4 class="card-title">Edit Profile</h4>
                   <p class="card-category">Complete your profile</p>
                 </div>
-                <div class="card-body">
-                  <form>
+                <div class="card-body" id="updateUserID" >
+                  <form id ="updateUserForm">
                     <div class="row">
                       <div class="col-md-5">
                         <div class="form-group">
                           <label class="bmd-label-floating">รหัสผู้สอน</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" id="updateUserID">
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">ชื่อ</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" id="updateUserFname">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">นามสกุล</label>
-                          <input type="email" class="form-control">
+                          <input type="text" class="form-control" id="updateUserLname">
                         </div>
                       </div>
                     </div>
@@ -167,13 +167,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">สาขาวิชา</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" id="updateFaculty">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">คณะ</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" id="updateMojor">
                         </div>
                       </div>
                     </div>
@@ -216,4 +216,87 @@
 
 </body>
 
+<script>
+$(document).ready(function() {
+	
+	$(document).on('submit', 'form', function (e) {
+		event.preventDefault();
+		
+	})
+	
+	$("#updateUserForm").submit(function(){
+		event.preventDefault();
+		ajaxPut();
+	});
+	
+	function fillDetailsToUpdateForm(object){
+		var userID = $(object).find("input[name='userID']").val();
+		var userFname = $(object).find("input[name='userFname']").val();
+		var userLname = $(object).find("input[name='userLname']").val();
+		var faculty = $(object).find("input[name='faculty']").val();
+		var mojor = $(object).find("input[name='mojor']").val();
+		
+		$("#updateUserID").val(userID);
+		$("#updateUserFname").val(userFname);
+		$("#updateUserLname").val(userLname);
+		$("#updateFaculty").val(faculty);
+		$("#updateMojor").val(mojor);
+	}
+	
+	/*
+	 * AJAX PUT updated-form
+	 */
+    function ajaxPut(){
+    	// PREPARE FORM DATA
+    		var userUpdate = {
+        id: $("#updateUserID").val(),
+        userFname : $("#updateUserFname").val(),
+        userLname : $("#updateUserLname").val(),
+        faculty : $("#updateFaculty").val(),
+        mojor : $("#updateMojor").val()
+        	// address : {
+    		  //   	street : $("#updateFormStreet").val(),
+    		  //   	postcode : $("#updateFormPostcode").val()
+    		  //   }
+    	}
+    	
+    	var id = $("#updateUserID").val();
+    	
+    	console.log("formData before PUT: " + userUpdate);
+    	
+    	// DO PUT
+    	$.ajax({
+			type : "PUT",
+			contentType : "application/json",
+			url : window.location + "update/" + id,
+			data : JSON.stringify(userUpdate),
+			dataType : 'json',
+			
+			// SUCCESS response
+			success : function(userUpdate) {
+				// Create successful message
+				
+				
+				// Again fill data to Update-Form
+				$("#updateFormCustId").val(userUpdate.id);
+				$("#updateFormName").val(userUpdate.userFname);
+				$("#updateFormAge").val(userUpdate.userLname);
+				$("#updateFormStreet").val(userUpdate.faculty);
+				$("#updateFormPostcode").val(userUpdate.mojor);
+				
+				// Update name of the updated customer on Customer List
+				$('#custform_' + customer.id).find("input[name='userFname']").val(userUpdate.userFname);
+				$('#custform_' + customer.id).find("input[name='userLname']").val(userUpdate.userLname);
+				$('#custform_' + customer.id).find("input[name='faculty']").val(userUpdate.faculty);
+				$('#custform_' + customer.id).find("input[name='mojor']").val(userUpdate.mojor);
+			},
+			
+			// ERROR response 
+			error : function(e) {
+				alert("Error!")
+				console.log("ERROR: ", e);
+			}
+		});
+    }
+})</script>
 </html>

@@ -26,7 +26,6 @@ public class TeachController {
    public String insertTeach(@RequestBody Teach insertTeachSub  ) {
 	   try {
 		teachDAO.insertTeach(insertTeachSub);
-		
 	} catch (Exception e) {
 		// TODO: handle exception
 		e.printStackTrace();

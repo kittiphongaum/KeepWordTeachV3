@@ -9297,7 +9297,7 @@ fieldset[disabled] .form-group .form-control {
   .navbar.navbar-absolute {
     position: absolute;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 5%;
     z-index: 1029; }
   .navbar .navbar-wrapper {
     display: inline-flex;
