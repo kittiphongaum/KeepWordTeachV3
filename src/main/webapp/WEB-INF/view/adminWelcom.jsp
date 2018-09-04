@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@include file="./continue.jsp" %>
+<%@page import="com.cs.bru.model.User"%>
+<%@ page import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -17,6 +18,17 @@
 <!-- <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --> -->
+
+<%
+   User  bean = null;
+	List<User > list = null;
+%>
+
+<%
+	bean = (User ) request.getSession().getAttribute("loing");
+	list = (List<User >) request.getSession().getAttribute("listUser");
+%>
+
 </head>
 <style>
 * {
@@ -97,6 +109,37 @@ button:hover {
 	<div class="wrapper ">
 		<div class="sidebar" data-color="green" data-background-color="black"
 			data-image="../assets/img/sidebar-2.jpg">
+		<div class="alert alert-success" align="right">
+				<strong>Welcome </strong>
+				<a href="javascript: document.logoutForm.submit()"
+					class="btn btn-danger">Logout</a>
+			</div>
+			\	<table class="table table-bordered">
+				<tr>
+					<th class="text-center">ลำดับ</th>
+					<th class="text-center">username</th>
+					<th class="text-center">password</th>
+					<th class="text-center">สถานะ</th>
+					<th class="text-center">รายละเอียด</th>
+				</tr>
+				<%
+					for (int i = 0; i < list.size(); i++) {
+				%>
+				<tr class="text-center">
+					<td><%=i + 1%></td>
+					<td><%=list.get(i).getUserFname()%></td>
+					<td><a href="javascript: document.insertForm.submit()"><span
+							class="glyphicon glyphicon-plus"> </span></a> <a
+						onclick="gotoUpdate('<%=list.get(i).getUserFname()%>')"><span
+							class="glyphicon glyphicon-search"> </span></a> <a
+						onclick="gotoDetele('<%=list.get(i).getUserFname()%>')"><span
+							class="glyphicon glyphicon-trash"> </span></a></td>
+
+				</tr>
+				<%
+					}
+				%>
+			</table>
 			<!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -333,5 +376,8 @@ button:hover {
 		}
 	</script>
 	
+	<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 </html>

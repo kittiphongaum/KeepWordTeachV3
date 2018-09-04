@@ -23,10 +23,10 @@
 
 	<div id="updateCustomerId" class="row col-md-6" style="">
 	<h3>Here to Edit Info of Customer: </h3>
-	<form id="UserUpdateForm1" style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>
+	<form  style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px'>
 	  <div class="form-group">
 	    <label for="updateFormCustId">updateUserID</label>
-	    <input type="text" class="form-control" id="updateUserID" ></input>
+	    <input type="text" class="form-control" id="userFname" ></input>
 	  </div>
 	  <div class="form-group">
 	    <label for="updateFormName">updateUserFname:</label>
@@ -124,4 +124,5 @@ $(document).ready(function() {
 })
 
 </script>
+  <script type="text/javascript" src="/assets/js/ajaxUser.js"></script> 
 </html>

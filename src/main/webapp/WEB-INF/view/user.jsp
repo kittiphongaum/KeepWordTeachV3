@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@include file="./continue.jsp" %>
+<%@page import="com.cs.bru.model.User"%>
+<%@ page import="java.util.List"%>
 <html lang="en">
 
 <head>
@@ -13,6 +15,19 @@
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   
+  
+  
+<%
+   User  bean = null;
+   User  bean1 = null;
+	List<User > list = null;
+%>
+
+<%
+	bean = (User) request.getSession().getAttribute("loing");
+    list = (List<User>) request.getSession().getAttribute("listUser");
+
+%>
 </head>
 
 <body class="">
@@ -135,31 +150,48 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-10">
+          <div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-avatar">
+                  <a >
+                    <img class="img" src="" />
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-category text-gray"></h6>
+                  <h4 class="card-title">Alec Thompson</h4>
+                  <p class="card-description">
+                    
+                  </p>
+                  <a  class="btn btn-primary btn-round">Edit</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Edit Profile</h4>
                   <p class="card-category">Complete your profile</p>
                 </div>
-                <div class="card-body" id="updateUserID" >
-                  <form id ="updateUserForm">
+                <div class="card-body" >
+                  <form>
                     <div class="row">
                       <div class="col-md-5">
                         <div class="form-group">
                           <label class="bmd-label-floating">รหัสผู้สอน</label>
-                          <input type="text" class="form-control" id="updateUserID">
+                          <input type="text" class="form-control" id="userId" <%--  value="<%=bean.getUserId()%>" --%>>
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">ชื่อ</label>
-                          <input type="text" class="form-control" id="updateUserFname">
+                          <input type="text" class="form-control" id="userFname"  <%-- value="<%=bean.getUserFname()%>"  --%> >
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">นามสกุล</label>
-                          <input type="text" class="form-control" id="updateUserLname">
+                          <input type="text" class="form-control" id="userLname"  <%-- value="<%=bean.getUserLname()%>" --%>  >
                         </div>
                       </div>
                     </div>
@@ -167,13 +199,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">สาขาวิชา</label>
-                          <input type="text" class="form-control" id="updateFaculty">
+                          <input type="text" class="form-control" id="faculty"   <%-- value="<%=bean.getFaculty()%>"  --%> >
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">คณะ</label>
-                          <input type="text" class="form-control" id="updateMojor">
+                          <input type="text" class="form-control" id="mojor" <%-- value="<%=bean.getMojor()%>" --%>  >
                         </div>
                       </div>
                     </div>
@@ -182,19 +214,19 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">ตำแหน่ง</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" id="positionTeach" <%-- value="<%=bean.getPositionTeach()%>" --%>  >
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">มีฐานชั่วโมง/คาบ</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" <%-- value="<%=bean.getBaseHour()%>" --%>>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" <%-- value="<%=bean.getBaseKrm()%>" --%> >
                         </div>
                       </div>
                     </div>
@@ -205,6 +237,7 @@
                 </div>
               </div>
             </div>
+            
             
           </div>
           
@@ -217,86 +250,198 @@
 </body>
 
 <script>
+// $(document).ready(function() {
+	
+// 	$(document).on('submit', 'form', function (e) {
+// 		event.preventDefault();
+// 		fillDetailsToUpdateForm($(this));
+// 	})
+	
+// 	$("#updateUserForm").submit(function(){
+// 		event.preventDefault();
+// 		ajaxPut();
+// 	});
+	
+// 	function fillDetailsToUpdateForm(object){
+// 		var custId = $(object).find("input[name='updateUserID']").val();
+// 		var name = $(object).find("input[name='updateUserID']").val();
+// 		var age = $(object).find("input[name='updateUserLname']").val();
+// 		var street = $(object).find("input[name='updateFaculty']").val();
+// 		var postcode = $(object).find("input[name='updateMojor']").val();
+		
+// 		$("#updateUserID").val(custId);
+// 		$("#updateUserFname").val(name);
+// 		$("#updateUserLname").val(age);
+// 		$("#updateFaculty").val(street);
+// 		$("#updateMojor").val(postcode);
+// 	}
+	
+// 	/*
+// 	 * AJAX PUT updated-form
+// 	 */
+//     function ajaxPut(){
+//     	// PREPARE FORM DATA
+//     	var formData = {
+//     			id: $("#updateUserID").val(),
+//     			name : $("#updateUserFname").val(),
+//     			age : $("#updateUserLname").val(),
+//     			address : {
+//     		    	street : $("#updateFaculty").val(),
+//     		    	postcode : $("#updateMojor").val()
+//     		    }
+//     	}
+    	
+//     	var id = $("#updateUserID").val();
+    	
+//     	console.log("formData before PUT: " + formData);
+    	
+//     	// DO PUT
+//     	$.ajax({
+// 			type : "PUT",
+// 			contentType : "application/json",
+// 			url : window.location + "api/customer/update/" + id,
+// 			data : JSON.stringify(formData),
+// 			dataType : 'json',
+			
+// 			// SUCCESS response
+// 			success : function(customer) {
+// 				// Create successful message
+			
+// 				// Again fill data to Update-Form
+				
+// 				$("#updateUserFname").val(customer.name);
+// 				$("#updateUserLname").val(customer.age);
+// 				$("#updateFaculty").val(customer.address.street);
+// 				$("#updateMojor").val(customer.address.postcode);
+				
+// 				// Update name of the updated customer on Customer List
+// 				$('#updateUserForm' + customer.id).find("input[name='updateUserFname']").val(customer.name);
+// 				$('#updateUserForm' + customer.id).find("input[name='updateUserLname']").val(customer.age);
+// 				$('#updateUserForm' + customer.id).find("input[name='updateFaculty']").val(customer.address.street);
+// 				$('#updateUserForm' + customer.id).find("input[name='updateMojor']").val(customer.address.postcode);
+// 			},
+			
+// 			// ERROR response 
+// 			error : function(e) {
+// 				alert("Error!")
+// 				console.log("ERROR: ", e);
+// 			}
+// 		});
+//     }
+// })
+
+</script>
+<script>
 $(document).ready(function() {
 	
-	$(document).on('submit', 'form', function (e) {
-		event.preventDefault();
-		
-	})
 	
-	$("#updateUserForm").submit(function(){
-		event.preventDefault();
-		ajaxPut();
+	//UserShowID
+	$.ajax({
+		type : "GET",
+		url : "/UserById",
+		contentType : "application/json",
+		dataType : "json",
+		success : function(msg) {
+			console.log('Success')
+			/* for(var i=0; i<msg.length; i++) {
+				$('#personnelId').append('<option value="' + msg[i].personnelId+ '">' + msg[i].facultyName + ' / ' + msg[i].departmentName + ' / ' + msg[i].positionName + ' / ' + msg[i].subPositionName +'</option>'); */
+	
+
+                   
+        			$('#userId').val(msg.userId);
+        			$('#userFname').val(msg.userFname);
+                     $('#userLname').val(msg.userLname);
+                    $('#positionTeach').val(msg.positionTeach);
+                    $('#faculty').val(msg.faculty);
+                    $('#mojor').val(msg.mojor);
+                    $('#baseHour').val(msg.baseHour);
+                    $('#baseKrm').val(msg.baseKrm); 
+                   
+               
+		}
 	});
 	
-	function fillDetailsToUpdateForm(object){
-		var userID = $(object).find("input[name='userID']").val();
-		var userFname = $(object).find("input[name='userFname']").val();
-		var userLname = $(object).find("input[name='userLname']").val();
-		var faculty = $(object).find("input[name='faculty']").val();
-		var mojor = $(object).find("input[name='mojor']").val();
-		
-		$("#updateUserID").val(userID);
-		$("#updateUserFname").val(userFname);
-		$("#updateUserLname").val(userLname);
-		$("#updateFaculty").val(faculty);
-		$("#updateMojor").val(mojor);
-	}
 	
-	/*
-	 * AJAX PUT updated-form
-	 */
-    function ajaxPut(){
-    	// PREPARE FORM DATA
-    		var userUpdate = {
-        id: $("#updateUserID").val(),
-        userFname : $("#updateUserFname").val(),
-        userLname : $("#updateUserLname").val(),
-        faculty : $("#updateFaculty").val(),
-        mojor : $("#updateMojor").val()
-        	// address : {
-    		  //   	street : $("#updateFormStreet").val(),
-    		  //   	postcode : $("#updateFormPostcode").val()
-    		  //   }
-    	}
-    	
-    	var id = $("#updateUserID").val();
-    	
-    	console.log("formData before PUT: " + userUpdate);
-    	
-    	// DO PUT
-    	$.ajax({
-			type : "PUT",
-			contentType : "application/json",
-			url : window.location + "update/" + id,
-			data : JSON.stringify(userUpdate),
-			dataType : 'json',
-			
-			// SUCCESS response
-			success : function(userUpdate) {
-				// Create successful message
-				
-				
-				// Again fill data to Update-Form
-				$("#updateFormCustId").val(userUpdate.id);
-				$("#updateFormName").val(userUpdate.userFname);
-				$("#updateFormAge").val(userUpdate.userLname);
-				$("#updateFormStreet").val(userUpdate.faculty);
-				$("#updateFormPostcode").val(userUpdate.mojor);
-				
-				// Update name of the updated customer on Customer List
-				$('#custform_' + customer.id).find("input[name='userFname']").val(userUpdate.userFname);
-				$('#custform_' + customer.id).find("input[name='userLname']").val(userUpdate.userLname);
-				$('#custform_' + customer.id).find("input[name='faculty']").val(userUpdate.faculty);
-				$('#custform_' + customer.id).find("input[name='mojor']").val(userUpdate.mojor);
-			},
-			
-			// ERROR response 
-			error : function(e) {
-				alert("Error!")
-				console.log("ERROR: ", e);
-			}
-		});
-    }
-})</script>
+	
+	
+	// ajaxGet();
+	
+	// // DO GET
+	// function ajaxGet(){
+	// 	$.ajax({
+	// 		type : "GET",
+	// 		url : window.location + "api/customer/all",
+	// 		success: function(result){
+	// 			$.each(result, function(i, customer){
+					
+	// 				var updateUrl=window.location + "api/customer/update/" + customer.id;
+					
+	// 				// render a customer data form
+					
+	// 				$('#customerlist .list-group').append(customerInfo)
+					
+	// 				// default fill data of the first customer to update-form
+	// 				if(i==0){
+	// 					$("#updateUserID").val(customer.id);
+	// 					$("#updateUserFname").val(customer.name);
+	// 					$("#updateUserLname").val(customer.age);
+	// 					$("#updateFormStreet").val(customer.address.street);
+	// 					$("#updateMojor").val(customer.address.postcode);
+	// 				}
+					
+	// 	        });
+	// 			console.log("Success: ", result);
+	// 		},
+	// 		error : function(e) {
+	// 			$("#customerlist").html("<strong>Error</strong>");
+	// 			console.log("ERROR: ", e);
+	// 		}
+	// 	});	
+	// }
+})
+</script>
+<script>
+//AddSubject
+ function subject() {
+
+    $('#userFname').empty();
+    $('#userLname').empty();
+    $('#positionTeach').empty();
+    $('#faculty').empty();
+    $('#mojor').empty();
+    $('#baseHour').empty();
+    $('#baseKrm').empty();
+    $('#userId').ready(function () {
+        var subjectsach = {
+            "usersach": $('#userId').val()
+        };
+        $.ajax({
+            type: "POST",
+            url: "/subject",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(subjectsach),
+            dataType: "json",
+            success: function (msg) {
+                if (msg.userId != null) {
+                    $('#userFname').val(msg.userFname);
+                    $('#userLname').val(msg.userLname);
+                    $('#positionTeach').val(msg.positionTeach);
+                    $('#faculty').val(msg.faculty);
+                    $('#mojor').val(msg.mojor);
+                    $('#baseHour').val(msg.baseHour);
+                    $('#baseKrm').val(msg.baseKrm);
+                   
+                    
+                } else if (msg.userId == null) {
+                    $('#alert').append('<center>ไม่มีข้อมูล</center>');
+                }
+            }
+        });
+    });
+} 
+  
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--  <script type="text/javascript" src="/assets/js/ajaxUser.js"></script> -->
+
 </html>

@@ -8,20 +8,34 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-
+import com.cs.bru.bean.UserBean;
 import com.cs.bru.model.User;
 import com.cs.bru.util.ConnectDB;
 
 
 
 @Repository
-public class UserDAO {
-	public User login (String userID ,String userPass) {
+public class UserDAO  {
+	
+	String a;
+	public UserBean userBean() {
+		// เก็บ ID USER และแปลงเพื่อใช้งาน เป็น String
+		
+			UserBean bean = new UserBean();
+			bean.setUserbean(a);
+			return bean;
+		}
+	
+	
+	public User login(String userID ,String userPass) {
+		ArrayList<User> u = new ArrayList<>();
 		User bean = new User();
+		UserBean b =new UserBean();
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
 
+		
 		try {
 			sql.append("SELECT * FROM tb_user WHERE userID = ? AND userPass = ? ");
 			
@@ -32,8 +46,7 @@ public class UserDAO {
 //set
 //get = รับ
 			ResultSet rs = prepared.executeQuery();
-
-			while (rs.next()) {
+	while (rs.next()) {
 			
 				bean.setUserId(rs.getString("userId"));
 				bean.setUserPass(rs.getString("userPass"));
@@ -41,7 +54,13 @@ public class UserDAO {
 				bean.setUserLname(rs.getString("userLname"));
 				bean.setPositionTeach(rs.getString("positionTeach"));
 				bean.setFaculty(rs.getString("faculty"));
-		
+				
+				a = bean.getUserId();
+			
+				System.out.println(a);
+				
+				
+				
 			}
 
 		} catch (Exception e) {
@@ -50,6 +69,7 @@ public class UserDAO {
 
 		return bean;
 	}
+	
 	public void insertUser(User bean) throws Exception {
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
@@ -76,6 +96,7 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
+	
 	public List<User> findAll() {
 		List<User> list = new ArrayList<>();
 		ConnectDB con = new ConnectDB();
@@ -90,7 +111,6 @@ public class UserDAO {
 			while (rs.next()) {
 				User user = new User();
 				
-				 
 				user.setUserId(rs.getString("userId"));
 				user.setUserFname(rs.getString("userFname"));
 				user.setUserLname(rs.getString("userLname"));
@@ -111,18 +131,22 @@ public class UserDAO {
 		return list;
 	}
 
-	public User findOne(String userId) {
+	public List<User> findOne(String userId) {
 
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
 		User user = new User();
+		List<User> list = new ArrayList<User>();
 
 		try {
 			sql.append(" SELECT * FROM tb_user WHERE userID = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
-			prepared.setString(2,userId);
+	
+			prepared.setString(1,userId);
+	
 			ResultSet rs = prepared.executeQuery();
+		
 			while (rs.next()) {
 				user.setUserId(rs.getString("userId"));
 				user.setUserFname(rs.getString("userFname"));
@@ -132,15 +156,17 @@ public class UserDAO {
 				user.setMojor(rs.getString("mojor"));
 				user.setBaseHour(rs.getInt("baseHour"));
 				user.setBaseKrm(rs.getInt("baseKrm"));
-			
+				list.add(user);
 				/*System.out.println(Subject);*/
 			}
+			System.out.println(list);
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 
-		return user;
+		return list;
 	}
 	
 	public User findById(String id)  {
@@ -154,7 +180,6 @@ public class UserDAO {
 			preperd = con.openConnect().prepareStatement(sql.toString());
 			preperd.setString(1, id);
 			ResultSet rs = preperd.executeQuery();
-
 			while (rs.next()) {
 				bean.setUserId(rs.getString("userId"));
 				bean.setUserFname(rs.getString("userFname"));
@@ -164,6 +189,7 @@ public class UserDAO {
 				bean.setMojor(rs.getString("mojor"));
 				bean.setBaseHour(rs.getInt("baseHour"));
 				bean.setBaseKrm(rs.getInt("baseKrm"));
+				
 			}
 
 		} catch (Exception e) {
@@ -189,9 +215,6 @@ public class UserDAO {
 				prepared.setString(2, bean.getUserLname());
 				prepared.setString(3, bean.getFaculty());
 				prepared.setString(4, bean.getMojor());
-				
-				
-
 				prepared.executeUpdate();
 			} catch (Exception e) {
 				// TODO: handle exception

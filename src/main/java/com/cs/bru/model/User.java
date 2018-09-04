@@ -1,6 +1,8 @@
 package com.cs.bru.model;
 
 public class User {
+	
+	
 		private int Id;
 		private String userId;
 		private String userPass;
@@ -11,8 +13,19 @@ public class User {
 		private String mojor;
 		private int baseHour;
 		private int baseKrm;
+		
+		
+		
+		
+		
 		public int getId() {
 			return Id;
+		}
+		@Override
+		public String toString() {
+			return "User [Id=" + Id + ", userId=" + userId + ", userPass=" + userPass + ", userFname=" + userFname
+					+ ", userLname=" + userLname + ", positionTeach=" + positionTeach + ", faculty=" + faculty
+					+ ", mojor=" + mojor + ", baseHour=" + baseHour + ", baseKrm=" + baseKrm + "]";
 		}
 		public void setId(int id) {
 			Id = id;
@@ -71,6 +84,25 @@ public class User {
 		public void setBaseKrm(int baseKrm) {
 			this.baseKrm = baseKrm;
 		}
+		public User(int id, String userId, String userPass, String userFname, String userLname, String positionTeach,
+				String faculty, String mojor, int baseHour, int baseKrm) {
+			super();
+			Id = id;
+			this.userId = userId;
+			this.userPass = userPass;
+			this.userFname = userFname;
+			this.userLname = userLname;
+			this.positionTeach = positionTeach;
+			this.faculty = faculty;
+			this.mojor = mojor;
+			this.baseHour = baseHour;
+			this.baseKrm = baseKrm;
+		}
+		public User() {
+			super();
+		}
+		
+		
 		
 		
 }

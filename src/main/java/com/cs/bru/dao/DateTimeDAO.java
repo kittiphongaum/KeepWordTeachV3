@@ -21,8 +21,6 @@ public class DateTimeDAO {
 			prepared.setInt(1, bean.getDatetTmeId());
 			prepared.setString(2, bean.getWeekTeach());
 			prepared.setString(3, bean.getDateTeach());
-			
-
 			prepared.executeUpdate();
 			/* System.out.println("sssssssss"); */
 		} catch (Exception e) {
