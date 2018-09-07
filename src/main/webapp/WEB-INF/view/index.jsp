@@ -41,7 +41,7 @@
 
       <p for="exampleInputEmail1"><input type="text" placeholder="Username" name="username"></p>
       <p for="exampleInputPassword1"><input type="password" placeholder="Password" name="password"></p>
-      <p><input type="submit" value="Log in"></p>
+      <p><input type="submit" value="Login"></p>
 
     </form>
 

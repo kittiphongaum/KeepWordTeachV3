@@ -15,6 +15,7 @@ public class ServiceUser {
 	
 	
 	public User get(String id) {
+		
 		return userDAO.findById(id);		
 	}
 	

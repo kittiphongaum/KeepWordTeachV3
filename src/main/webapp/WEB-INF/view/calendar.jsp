@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 	 <%@include file="continue.jsp" %>
+	 <%@page import="com.cs.bru.model.User"%>
+<%@ page import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +11,18 @@
 <link href="/assets/calendar/fullcalendar.css" rel='stylesheet' />
 <script src="/assets/calendar/jquery/jquery-1.10.2.js"></script>
 <script src="/assets/calendar/fullcalendar.js"></script>
+  <%
+   User  bean = null;
+   User  bean1 = null;
+	List<User > list = null;
+%>
+
+  <%
+	bean = (User) request.getSession().getAttribute("loginUser");
+   /*  list = (List<User>) request.getSession().getAttribute("listUser"); */
+    bean1 = (User) request.getSession().getAttribute("listUser");
+
+%>
 <script>
 
 	$(document).ready(function() {
@@ -306,37 +320,25 @@ body {
               </div>
             </form> -->
             
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
+           <ul class="navbar-nav">
+              <%=bean1.getUserId() %>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">2</span>
+                <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">person</i>
+                 
                   <p class="d-lg-none d-md-block">
                     Some Actions
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">แบบฟอมผ่านการอนุมัติ</a>
-                  <a class="dropdown-item" href="#">แบบฟอมไม่ผ่านการอนุมัติ</a>
-                
+                   <a class="dropdown-item" href="./user">userprofile</a>
+                  <a class="dropdown-item" href="javascript: document.logoutForm.submit()">LOGOUT</a>
                 </div>
+             
+                <form name="logoutForm" action="logout" method="post" th:hidden="true"></form>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
-                </a>
-              </li>
+              
             </ul>
           </div>
         </div>

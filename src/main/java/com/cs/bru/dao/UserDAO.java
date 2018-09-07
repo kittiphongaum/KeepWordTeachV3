@@ -28,7 +28,7 @@ public class UserDAO  {
 	
 	
 	public User login(String userID ,String userPass) {
-		ArrayList<User> u = new ArrayList<>();
+	
 		User bean = new User();
 		UserBean b =new UserBean();
 		ConnectDB con = new ConnectDB();
@@ -46,7 +46,7 @@ public class UserDAO  {
 //set
 //get = รับ
 			ResultSet rs = prepared.executeQuery();
-	while (rs.next()) {
+	           while (rs.next()) {
 			
 				bean.setUserId(rs.getString("userId"));
 				bean.setUserPass(rs.getString("userPass"));
@@ -57,7 +57,7 @@ public class UserDAO  {
 				
 				a = bean.getUserId();
 			
-				System.out.println(a);
+				/*System.out.println(a);*/
 				
 				
 				
@@ -159,7 +159,7 @@ public class UserDAO  {
 				list.add(user);
 				/*System.out.println(Subject);*/
 			}
-			System.out.println(list);
+			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -181,6 +181,7 @@ public class UserDAO  {
 			preperd.setString(1, id);
 			ResultSet rs = preperd.executeQuery();
 			while (rs.next()) {
+				bean.setId(rs.getInt("id"));
 				bean.setUserId(rs.getString("userId"));
 				bean.setUserFname(rs.getString("userFname"));
 				bean.setUserLname(rs.getString("userLname"));
@@ -190,6 +191,7 @@ public class UserDAO  {
 				bean.setBaseHour(rs.getInt("baseHour"));
 				bean.setBaseKrm(rs.getInt("baseKrm"));
 				
+				/*System.out.println(bean);*/
 			}
 
 		} catch (Exception e) {
@@ -209,17 +211,22 @@ public class UserDAO  {
 			PreparedStatement prepared = null;
 			StringBuilder sql = new StringBuilder();
 			try {
-				sql.append(" UPDATE tb_user SET  userFname = ? , userLname = ?,faculty = ?, mojor=? WHERE userID = ? ");
+				sql.append("UPDATE tb_user SET  userFname = ? , userLname = ?,faculty =?,mojor=? WHERE userID = ? ");
 				prepared = con.openConnect().prepareStatement(sql.toString());
 				prepared.setString(1, bean.getUserFname());
 				prepared.setString(2, bean.getUserLname());
 				prepared.setString(3, bean.getFaculty());
 				prepared.setString(4, bean.getMojor());
+				
 				prepared.executeUpdate();
+				
+		
+			
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
 
 		}// end method update
+		// update
 		
 }

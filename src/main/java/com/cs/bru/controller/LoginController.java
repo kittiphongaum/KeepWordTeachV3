@@ -29,22 +29,26 @@ public class LoginController {
    	    @RequestMapping(value ="/index",method = RequestMethod.POST)
 		public String authenLogin(String username, String password,Model model,HttpServletRequest request) {
 			String authen ="";
-			User bean = new User();
-			User bean1 = new User();
+			User userLog = new User();
+			User userlist = new User();
+			
 			List<User> UseridAll = new ArrayList<>();
+			
 			try {
 			
-			bean = userDAO.login(username, password);
-			UseridAll = userDAO.findOne(bean.getUserId());
+				userLog = userDAO.login(username, password);
+				userlist = userDAO.findById(userLog.getUserId());
 			
-			if(bean.getUserId() != null && bean.getUserPass() != null ) {
-				if (bean.getPositionTeach().equals("U")) { 
-					request.getSession().setAttribute("loing",bean);
-					request.getSession().setAttribute("listUser", UseridAll);
+			if(userLog.getUserId() != null && userLog.getUserPass() != null ) {
+				if (userLog.getPositionTeach().equals("U")) { 
 					
-					authen="user";
+					request.getSession().setAttribute("loginUser",userLog);
+					request.getSession().setAttribute("listUser", userlist);
+					
+					authen="dashboard";
 				} else {
-					request.getSession().setAttribute("LoginUser", bean);
+					request.getSession().setAttribute("LoginUser", userLog);
+					request.getSession().setAttribute("listUser", userlist);
 					authen="adminWelcom";
 				}
 				

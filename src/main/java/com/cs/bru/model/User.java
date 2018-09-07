@@ -13,6 +13,7 @@ public class User {
 		private String mojor;
 		private int baseHour;
 		private int baseKrm;
+		private Teach Teach;
 		
 		
 		

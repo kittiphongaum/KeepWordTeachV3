@@ -255,10 +255,11 @@
 			dataType: "json",
 			success: function (msg) {
 				console.log(msg)
-				window.location.href = msg.page;
+				
+				window.location.reload();
 			},
 			error: function () {			
-				window.location.reload();
+				window.location.href = msg.page;
 			}
 		});
 	}

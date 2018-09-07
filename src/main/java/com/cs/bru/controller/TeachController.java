@@ -9,8 +9,10 @@ import com.cs.bru.bean.TeachInsertBean;
 import com.cs.bru.dao.DateTimeDAO;
 import com.cs.bru.dao.SubjectDAO;
 import com.cs.bru.dao.TeachDAO;
+import com.cs.bru.model.DateTime;
 import com.cs.bru.model.Subject;
 import com.cs.bru.model.Teach;
+import com.cs.bru.model.User;
 
 @RestController
 public class TeachController {
@@ -22,10 +24,13 @@ public class TeachController {
    DateTimeDAO dateTimeDAO;
    
    
+   
    @RequestMapping("/insertTeach")
-   public String insertTeach(@RequestBody Teach insertTeachSub  ) {
+   public String insertTeach(@RequestBody Teach insertTeachSub,DateTime dateTimeDAO1,Subject subject ) {
 	   try {
 		teachDAO.insertTeach(insertTeachSub);
+		dateTimeDAO.insertDateTime(dateTimeDAO1);
+		subjectDAO.insertSubject(subject);
 	} catch (Exception e) {
 		// TODO: handle exception
 		e.printStackTrace();
