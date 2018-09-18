@@ -14,9 +14,9 @@
     Material Dashboard by Creative Tim
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
 
 
 
@@ -157,7 +157,7 @@
                      
                       
                     
-                  <a class="btn btn-primary btn-round" onclick="gotoUpdate('<%=userLog.getUserId()%>')">Edit</a>
+                  <a class="btn btn-primary btn-round" onclick="gotoUpdate ('<%=userLog.getUserId()%>')">Edit</a>
            <%-- <input value="<%=userLog.getId()%>"> --%> 
             
                 </div>
@@ -387,6 +387,7 @@ function insertUserfrom() {
 		});
   }
   </script>
+  
 
 
 

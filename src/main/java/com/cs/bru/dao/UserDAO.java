@@ -37,7 +37,7 @@ public class UserDAO  {
 
 		
 		try {
-			sql.append("SELECT * FROM tb_user WHERE userID = ? AND userPass = ? ");
+			sql.append("SELECT * FROM tb_user WHERE user_id= ? AND user_pass = ? ");
 			
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1,userID);
@@ -48,11 +48,11 @@ public class UserDAO  {
 			ResultSet rs = prepared.executeQuery();
 	           while (rs.next()) {
 			
-				bean.setUserId(rs.getString("userId"));
-				bean.setUserPass(rs.getString("userPass"));
-				bean.setUserFname(rs.getString("userFname"));
-				bean.setUserLname(rs.getString("userLname"));
-				bean.setPositionTeach(rs.getString("positionTeach"));
+				bean.setUserId(rs.getString("user_id"));
+				bean.setUserPass(rs.getString("user_pass"));
+				bean.setUserFname(rs.getString("user_name"));
+				bean.setUserLname(rs.getString("user_lastname"));
+				bean.setPositionTeach(rs.getString("position_teach"));
 				bean.setFaculty(rs.getString("faculty"));
 				
 				a = bean.getUserId();
@@ -76,7 +76,7 @@ public class UserDAO  {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_user (userID,userPass,userFname,userLname,positionTeach,faculty,mojor,baseHour,baseKrm) VALUES(?,?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_user (user_id,user_pass,user_name,user_lastname,position_teach,faculty,mojor,baseHour,baseKrm) VALUES(?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getUserId());
 			prepared.setString(2, bean.getUserPass());
@@ -111,10 +111,10 @@ public class UserDAO  {
 			while (rs.next()) {
 				User user = new User();
 				
-				user.setUserId(rs.getString("userId"));
-				user.setUserFname(rs.getString("userFname"));
-				user.setUserLname(rs.getString("userLname"));
-				user.setPositionTeach(rs.getString("positionTeach"));
+				user.setUserId(rs.getString("user_id"));
+				user.setUserFname(rs.getString("user_name"));
+				user.setUserLname(rs.getString("user_lastname"));
+				user.setPositionTeach(rs.getString("position_teach"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
 				user.setBaseHour(rs.getInt("baseHour"));
@@ -140,7 +140,7 @@ public class UserDAO  {
 		List<User> list = new ArrayList<User>();
 
 		try {
-			sql.append(" SELECT * FROM tb_user WHERE userID = ?");
+			sql.append(" SELECT * FROM tb_user WHERE user_id = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 	
 			prepared.setString(1,userId);
@@ -148,10 +148,10 @@ public class UserDAO  {
 			ResultSet rs = prepared.executeQuery();
 		
 			while (rs.next()) {
-				user.setUserId(rs.getString("userId"));
-				user.setUserFname(rs.getString("userFname"));
-				user.setUserLname(rs.getString("userLname"));
-				user.setPositionTeach(rs.getString("positionTeach"));
+				user.setUserId(rs.getString("user_id"));
+				user.setUserFname(rs.getString("user_name"));
+				user.setUserLname(rs.getString("user_lastname"));
+				user.setPositionTeach(rs.getString("position_teach"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
 				user.setBaseHour(rs.getInt("baseHour"));
@@ -176,16 +176,16 @@ public class UserDAO  {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append(" SELECT * FROM tb_user WHERE userID = ? ");
+			sql.append(" SELECT * FROM tb_user WHERE user_id = ? ");
 			preperd = con.openConnect().prepareStatement(sql.toString());
 			preperd.setString(1, id);
 			ResultSet rs = preperd.executeQuery();
 			while (rs.next()) {
 				bean.setId(rs.getInt("id"));
-				bean.setUserId(rs.getString("userId"));
-				bean.setUserFname(rs.getString("userFname"));
-				bean.setUserLname(rs.getString("userLname"));
-				bean.setPositionTeach(rs.getString("positionTeach"));
+				bean.setUserId(rs.getString("user_id"));
+				bean.setUserFname(rs.getString("user_name"));
+				bean.setUserLname(rs.getString("user_lastname"));
+				bean.setPositionTeach(rs.getString("position_teach"));
 				bean.setFaculty(rs.getString("faculty"));
 				bean.setMojor(rs.getString("mojor"));
 				bean.setBaseHour(rs.getInt("baseHour"));
@@ -211,7 +211,7 @@ public class UserDAO  {
 			PreparedStatement prepared = null;
 			StringBuilder sql = new StringBuilder();
 			try {
-				sql.append("UPDATE tb_user SET  userFname = ? , userLname = ?,faculty =?,mojor=? WHERE userID = ? ");
+				sql.append("UPDATE tb_user SET  user_name = ? , user_lastname = ?,faculty =?,mojor=? WHERE user_id = ? ");
 				prepared = con.openConnect().prepareStatement(sql.toString());
 				prepared.setString(1, bean.getUserFname());
 				prepared.setString(2, bean.getUserLname());

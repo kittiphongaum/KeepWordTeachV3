@@ -54,17 +54,22 @@ public class TeachDAO {
 				DateTime dateTime = new DateTime();
 				Subject subject = new Subject();
 				 
-				teach.setTeachID(rs.getString("teachID"));
-				teach.setStartMonth(rs.getString("startMonth"));
-				teach.setStopMonth(rs.getString("stopMonth"));
-				teach.setBuddhist(rs.getString("buddhist"));
-				teach.setTeachRowDat(rs.getString("teachRowDat"));
+				teach.setTeachID(rs.getString("teach_id"));
+				teach.setStartMonth(rs.getString("start_month"));
+				teach.setStopMonth(rs.getString("stop_month"));
+				teach.setDegreeSt(rs.getString("degree_st"));
+				teach.setStudentNumber(rs.getInt("student_number"));
+				teach.setSection(rs.getString("section"));
 				
-				dateTime.setDatetTmeId(rs.getInt("datetime_id"));
+				teach.setBuddhist(rs.getString("buddhist"));
+				
+				teach.setDattimeFk(rs.getString("dattime_fk"));
+				
+				dateTime.setDatetTmeId(rs.getInt("subjact_fk"));
 				dateTime.setWeekTeach(rs.getString("weekteach"));
 				dateTime.setDateTeach(rs.getString("dateteach"));
 				
-				teach.setTeachRowSub(rs.getString("teachRowSub"));
+				teach.setSubjactFk(rs.getString("teachRowDat"));
 				
 				subject.setSubjectId(rs.getString("subjactid"));
 				subject.setSubjectName(rs.getString("subjactName"));

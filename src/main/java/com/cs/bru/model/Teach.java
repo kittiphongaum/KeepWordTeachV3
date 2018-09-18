@@ -5,12 +5,18 @@ public class Teach {
 	private String teachID;
 	private String startMonth;
 	private String stopMonth;
+	private String degreeSt;
+	private int  studentNumber;
+	private String section;
 	private String buddhist;
-	private String teachRowSub;
-	private String teachRowDat;
+	private String subjactFk;
+	private String dattimeFk;
 	private DateTime dateTime;
 	private Subject subject;
-
+	public Teach() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public int getId() {
 		return id;
 	}
@@ -35,13 +41,42 @@ public class Teach {
 	public void setStopMonth(String stopMonth) {
 		this.stopMonth = stopMonth;
 	}
+	public String getDegreeSt() {
+		return degreeSt;
+	}
+	public void setDegreeSt(String degreeSt) {
+		this.degreeSt = degreeSt;
+	}
+	public int getStudentNumber() {
+		return studentNumber;
+	}
+	public void setStudentNumber(int studentNumber) {
+		this.studentNumber = studentNumber;
+	}
+	public String getSection() {
+		return section;
+	}
+	public void setSection(String section) {
+		this.section = section;
+	}
 	public String getBuddhist() {
 		return buddhist;
 	}
 	public void setBuddhist(String buddhist) {
 		this.buddhist = buddhist;
 	}
-	
+	public String getSubjactFk() {
+		return subjactFk;
+	}
+	public void setSubjactFk(String subjactFk) {
+		this.subjactFk = subjactFk;
+	}
+	public String getDattimeFk() {
+		return dattimeFk;
+	}
+	public void setDattimeFk(String dattimeFk) {
+		this.dattimeFk = dattimeFk;
+	}
 	public DateTime getDateTime() {
 		return dateTime;
 	}
@@ -54,17 +89,9 @@ public class Teach {
 	public void setSubject(Subject subject) {
 		this.subject = subject;
 	}
-	public String getTeachRowSub() {
-		return teachRowSub;
-	}
-	public void setTeachRowSub(String teachRowSub) {
-		this.teachRowSub = teachRowSub;
-	}
-	public String getTeachRowDat() {
-		return teachRowDat;
-	}
-	public void setTeachRowDat(String teachRowDat) {
-		this.teachRowDat = teachRowDat;
-	}
+	
+	
+
+	
 	
 }

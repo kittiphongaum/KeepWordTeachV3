@@ -29,7 +29,7 @@
 	bean = (User) request.getSession().getAttribute("loginUser");
    /*  list = (List<User>) request.getSession().getAttribute("listUser"); */
     bean1 = (User) request.getSession().getAttribute("listUser");
-
+  
 %>
 </head>
 <style>
@@ -193,6 +193,7 @@ button:hover {
 
 					<ul class="navbar-nav">
               <%=bean1.getUserId() %>
+              <%=bean1.getUserFname() %>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
@@ -203,7 +204,7 @@ button:hover {
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                   <a class="dropdown-item" href="./user">userprofile</a>
+                   <a class="dropdown-item" href="./user">PROFILE</a>
                   <a class="dropdown-item" href="javascript: document.logoutForm.submit()">LOGOUT</a>
                 </div>
              
@@ -215,7 +216,7 @@ button:hover {
 			</div>
 			</nav>
 			<!-- End Navbar -->
-			<div id="regForm">
+			<%-- <div id="regForm">
 				<div style="text-align: center; margin-top: 40px;">
 					<span class="step"></span> <span class="step"></span> <span
 						class="step"></span> 
@@ -236,8 +237,8 @@ button:hover {
 				<%@include file="../teaching/teachreport.jsp"%>
 				</div>
 				
-				</div>
-
+				</div> --%>
+			<%@include file="../tableteaching/addsubject.jsp"%>
 			
 		</div>
 		
@@ -256,38 +257,7 @@ button:hover {
 	</script>
 	<script type="text/javascript" >
 	//AddSubject
-	function subject() {
-
-	    $('#subjectName').empty();
-	    $('#credit').empty();
-	    $('#creditHour').empty();
-	    $('#tudsadee').empty();
-	    $('#prtibad').empty();
-	    $('#subjectID').ready(function () {
-	        var subjectsach = {
-	            "subjectsach": $('#subjectID').val()
-	        };
-	        $.ajax({
-	            type: "POST",
-	            url: "/subject",
-	            contentType: "application/json; charset=utf-8",
-	            data: JSON.stringify(subjectsach),
-	            dataType: "json",
-	            success: function (msg) {
-	                if (msg.subjectID != null) {
-	                    $('#subjactName').val(msg.subjactName);
-	                    $('#credit').val(msg.credit);
-	                    $('#creditHour').val(msg.creditHour);
-	                    $('#tudsadee').val(msg.tudsadee);
-	                    $('#prtibad').val(msg.prtibad);
-	                    
-	                } else if (msg.subjectID == null) {
-	                    $('#alert').append('<center>ไม่มีข้อมูล</center>');
-	                }
-	            }
-	        });
-	    });
-	}
+	
 	</script>
 	<script>
 		var currentTab = 0; // แท็บปัจจุบันถูกตั้งค่าให้เป็นแท็บแรก 0

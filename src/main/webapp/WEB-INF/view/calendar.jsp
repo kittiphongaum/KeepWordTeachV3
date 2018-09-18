@@ -151,7 +151,7 @@
 				},
 				{
 					title: 'Meeting',
-					start: new Date(y, m, d, 10, 30),
+					start: new Date(y, m, d, 10, 00),
 					allDay: false,
 					className: 'important'
 				},
@@ -346,9 +346,11 @@ body {
     
 	<div id='wrap'>
 
-		<div id='calendar'></div>
+		<div id='calendar'>
+			
+		</div>
 
-		<div style='clear: both'></div>
+		<!-- <div style='clear: both'></div> -->
 		
 	</div>
 	<%@include file="footer.jsp" %>

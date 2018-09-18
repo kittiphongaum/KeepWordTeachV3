@@ -20,7 +20,7 @@ public class SubjectDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_subject (subjactid,subjactName,credit,creditHour,Tudsadee,Prtibad) VALUES(?,?,?,?,?,?) ");
+					"INSERT INTO tb_subject (subject_id,subject2_name,credit,credit_hour,tudsadee,prtibad) VALUES(?,?,?,?,?,?) ");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getSubjectId());
 			prepared.setString(2, bean.getSubjectName());
@@ -45,16 +45,16 @@ public class SubjectDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT subjactid,subjactName,credit,creditHour,Tudsadee,Prtibad FROM tb_subject");
+			sql.append("SELECT subjact_id,subject2_name,credit,credit_hour,tudsadee,prtibad FROM tb_subject");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
 				Subject bean = new Subject();
-				bean.setSubjectId(rs.getString("subjactid"));
-				bean.setSubjectName(rs.getString("subjactName"));
+				bean.setSubjectId(rs.getString("subjact_id"));
+				bean.setSubjectName(rs.getString("subject2_name"));
 				bean.setCredit(rs.getInt("credit"));
-				bean.setCreditHour(rs.getString("creditHour"));
+				bean.setCreditHour(rs.getString("credit_hour"));
 				bean.setTudsadee(rs.getInt("tudsadee"));
 				bean.setPrtibad(rs.getInt("prtibad"));
 
@@ -69,31 +69,32 @@ public class SubjectDAO {
 	}
 
 	public Subject findOne(String id) {
-
+       System.out.println("22222");
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
-		Subject Subject = new Subject();
+		Subject subject = new Subject();
 
 		try {
-			sql.append(" SELECT * FROM tb_subject WHERE subjactid = ?");
+			sql.append("SELECT * FROM tb_subject WHERE subject_id = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, id);
 			ResultSet rs = prepared.executeQuery();
+			System.out.println("666");
 			while (rs.next()) {
-				Subject.setSubjectId(rs.getString("subjectID"));
-				Subject.setSubjectName(rs.getString("subjactName"));
-				Subject.setCredit(rs.getInt("credit"));
-				Subject.setCreditHour(rs.getString("creditHour"));
-				Subject.setTudsadee(rs.getInt("tudsadee"));
-				Subject.setPrtibad(rs.getInt("prtibad"));
-				/*System.out.println(Subject);*/
+				subject.setSubjectId(rs.getString("subject_id"));
+				subject.setSubjectName(rs.getString("subject2_name"));
+				subject.setCredit(rs.getInt("credit"));
+				subject.setCreditHour(rs.getString("credit_hour"));
+				subject.setTudsadee(rs.getInt("tudsadee"));
+				subject.setPrtibad(rs.getInt("prtibad"));
+				System.out.println("5555");
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 
-		return Subject;
+		return subject;
 	}
 }

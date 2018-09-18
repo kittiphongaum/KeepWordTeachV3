@@ -49,4 +49,9 @@ public class FooController {
 		return "adminWelcom";
 	}
 	
+	@RequestMapping("/test2")
+	public String test2() {
+		return "test2";
+	}
+	
 }
