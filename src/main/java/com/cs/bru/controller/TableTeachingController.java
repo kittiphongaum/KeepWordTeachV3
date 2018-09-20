@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cs.bru.bean.TableTeachingBean;
 import com.cs.bru.dao.TableTeachingDAO;
-import com.cs.bru.model.Subject;
 import com.cs.bru.model.TableTeaching;
-import com.cs.bru.model.User;
 import com.cs.bru.service.ServiceTableTeaching;
 
 @RestController
