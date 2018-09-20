@@ -1,5 +1,7 @@
 package com.cs.bru.service;
 
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +15,7 @@ public class ServiceSubject {
 	private SubjectDAO subjectDAO;
 	
 	
-	public Subject get(String id) {
+	public Subject get(String id) throws SQLException {
 		
 		return subjectDAO.findOne(id);		
 	}

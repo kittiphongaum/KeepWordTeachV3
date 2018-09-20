@@ -1,12 +1,12 @@
 package com.cs.bru.controller;
 
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,16 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.arjuna.ats.internal.jdbc.drivers.modifiers.list;
-import com.cs.bru.bean.SeachSubJactBean;
+
 import com.cs.bru.dao.SubjectDAO;
 import com.cs.bru.dao.TeachDAO;
 import com.cs.bru.model.Subject;
 import com.cs.bru.model.SubjectBean;
 import com.cs.bru.model.Teach;
-import com.cs.bru.model.User;
+
 import com.cs.bru.service.ServiceSubject;
-import com.cs.bru.service.ServiceUser;
+
 
 @RestController
 public class SubjectController {
@@ -37,12 +36,12 @@ public class SubjectController {
 	private ServiceSubject subjectService;
 	
 	@RequestMapping(value = "/subjectSeach", method = RequestMethod.POST)
-	public Subject SubjectAdd(@RequestBody SubjectBean  subjectsach ) {
+	public Subject SubjectAdd(@RequestBody SubjectBean  subjectsach ) throws SQLException {
 		Subject subject = new Subject();
 		String a ="57001";
 		subject = subjectDAO.findOne(subjectsach.getSubjectBean());
 		
-		System.out.println(subjectsach.getSubjectBean());
+//		System.out.println(subjectsach.getSubjectBean());
 		return subject;
 	}
 		
@@ -84,7 +83,7 @@ public class SubjectController {
 //		return seachsubject;
 //	}
 	@GetMapping("/subject1/{id}")
-	public  Subject getUser(@PathVariable String id){	
+	public  Subject getUser(@PathVariable String id) throws SQLException{	
 		return subjectService.get(id);
 	}
 }

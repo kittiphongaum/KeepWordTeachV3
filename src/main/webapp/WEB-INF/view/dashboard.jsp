@@ -192,7 +192,8 @@ button:hover {
             </form> -->
 
 					<ul class="navbar-nav">
-              <%=bean1.getUserId() %>
+						<input type="hidden" id="userRoleid" value ="<%=bean1.getUserId() %>">
+						 <%=bean1.getUserId() %>
               <%=bean1.getUserFname() %>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown"

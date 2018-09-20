@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-	<!-- <script
+<!-- <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <div class="content">
 	<div class="container-fluid">
@@ -43,7 +43,7 @@
 									<i class="material-icons">search</i>
 									<div class="ripple-container"></div>
 								</button>
-								
+
 								<div class="col-md-6">
 									<div class="form-group">
 										<label class="bmd-label-floating">ชื่อวิชา</label> <input type="text" class="form-control" id="subjectName"
@@ -166,7 +166,7 @@
 					</thead>
 					<tbody>
 					</tbody>
-					
+
 				</table>
 			</div>
 		</div>
@@ -176,135 +176,136 @@
 			<div class="card-header card-header-danger">
 				<h4 class="card-title">ตารางวิชาที่สอน</h4>
 				<p class="card-category">แสดงข้อมูลวิชาที่สอน</p>
-				
+
 			</div>
 			<hr>
 			<table id="customerTable" class="table table-bordered">
-					<thead class="table-secondary">
-						<tr>
-							<th >Day/time</th>
-							<td>8.00-9.00</td>
-							<td>9.00-10.00</td>
-							<td>10.00-11.00</td>
-							<td>11.00-12.00</td>
-					
-							<td>12.00-13.00</td>
-							<td>13.00-14.00</td>
-							<td>14.00-15.00</td>
-							<td>15.00-16.00</td>
-							<td>16.00-17.00</td>
-							<td>17.00-18.00</td>.
-							<td>18.00-19.00</td>
-						</tr>
-					</thead>
-					<thead class="text-warning">
-						<tr>
-							<th>จันทร์</th>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-								<th>อังคาร</th>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							</tr>
-							<tr>
-									<th>พุธ</th>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-								</tr>
-								<tr>
-										<th>พฤหัสบดี</th>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-									</tr>
-									<tr>
-											<th>ศุกร์</th>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td><td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr>
-												<th>เสาร์</th>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-											</tr>
-											<tr>
-													<th>อาทิศ</th>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-												</tr>
-						</thead>
+				<thead class="table-secondary">
+					<tr>
+						<th>Day/time</th>
+						<td>8.00-9.00</td>
+						<td>9.00-10.00</td>
+						<td>10.00-11.00</td>
+						<td>11.00-12.00</td>
 
-						</table>
+						<td>12.00-13.00</td>
+						<td>13.00-14.00</td>
+						<td>14.00-15.00</td>
+						<td>15.00-16.00</td>
+						<td>16.00-17.00</td>
+						<td>17.00-18.00</td>.
+						<td>18.00-19.00</td>
+					</tr>
+				</thead>
+				<thead class="text-warning">
+					<tr>
+						<th>จันทร์</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>อังคาร</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>พุธ</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>พฤหัสบดี</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>ศุกร์</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>เสาร์</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>อาทิศ</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</thead>
+
+			</table>
 		</div>
 	</div>
 </div>
@@ -366,7 +367,7 @@
 	function insertTeachingfrom() {
 		//	console.log(warranty)
 
-	
+
 		var insertTableTeaching = {
 			tebleTeachId: $('#room').val(),
 			studenNumber: $('#studenNumber').val(),
@@ -374,13 +375,13 @@
 			startTime: $('#startTime').val(),
 			stopTime: $('#stopTime').val(),
 			room: $('#room').val(),
-			userRoleid: $('#subjectId').val(),
-			subjectRoleid: $('#subjectRoleid').val()
+			userRoleid: $('#userRoleid').val(),
+			subjectRoleid: $('#subjectId').val()
 		}
 
 		$.ajax({
 			type: "POST",
-			url: "/insertTeach",
+			url: "/insertTableTeaching",
 			contentType: "application/json; charset=utf-8",
 			data: JSON.stringify(insertTableTeaching),
 			dataType: "json",
@@ -390,7 +391,7 @@
 				window.location.reload();
 			},
 			error: function () {
-				
+
 			}
 		});
 	}
@@ -399,77 +400,81 @@
 <script>
 	$(document).ready(function () {
 
-// Do GET all Customers from Back-End with JQUERY AJAX
-$(function () {
-	$.ajax({
-		type: "GET",
-		url:"/TableTeachingAll",
-		success: function (result) {
-			$.each(result, function (index,msg) {
+	
 
-				var SubjectRow = '<tr>' +
-					
-					'<td>' + msg.subject.subjectId+ '</td>' +
-					'<td>' + msg.subject.subjectName+ '</td>' +
-					'<td>' + msg.section + '</td>' +
-					'<td>' + msg.subject.credit+"("+msg.subject.creditHour+ ")" + '</td>' +
-					'<td>' + msg.studenNumber + '</td>' +
-					'<td>' + msg.user.userFname + '</td>' +
-					'<td>' + msg.startTime+'-'+msg.stopTime + '</td>' +
-					'<td>' + msg.room + '</td>' +
-					'<td class="text-center">' +
-					'<input type="hidden" value=' + msg.user.userId + '>' +
-					'<a>' +
-					'<span class="glyphicon glyphicon-remove"></span>' +
-					'</a>' +
-					'</td>' +
-					'</tr>';
+		$(function () {
+			var userid= $("#userRoleid").val();
 
-				$('#customerTable tbody').append(SubjectRow);
+			$.ajax({
+				type: "GET",
+				contentType : "application/json",
+				url: "/TableTeachingOne1/"+userid,
+				dataType : 'json',
+				success: function (result) {
+					$.each(result, function (index, msg) {
 
+						var SubjectRow = '<tr>' +
+
+							'<td>' + msg.subject.subjectId + '</td>' +
+							'<td>' + msg.subject.subjectName + '</td>' +
+							'<td>' + msg.section + '</td>' +
+							'<td>' + msg.subject.credit + "(" + msg.subject.creditHour + ")" + '</td>' +
+							'<td>' + msg.studenNumber + '</td>' +
+							'<td>' + msg.user.userFname + '</td>' +
+							'<td>' + msg.startTime + '-' + msg.stopTime + '</td>' +
+							'<td>' + msg.room + '</td>' +
+							'<td class="text-center">' +
+							'<input type="hidden" value=' + msg.user.userId + '>' +
+							'<a>' +
+							'<span class="glyphicon glyphicon-remove"></span>' +
+							'</a>' +
+							'</td>' +
+							'</tr>';
+
+						$('#customerTable tbody').append(SubjectRow);
+
+					});
+
+					$("#customerTable tbody tr:odd").addClass("info");
+					$("#customerTable tbody tr:even").addClass("success");
+				},
+				error: function (e) {
+					// alert("ERROR: 22", e);
+					// console.log("ERROR: 22", e);
+				}
 			});
+		});
 
-			$("#customerTable tbody tr:odd").addClass("info");
-			$("#customerTable tbody tr:even").addClass("success");
-		},
-		error: function (e) {
-			// alert("ERROR: 22", e);
-			// console.log("ERROR: 22", e);
-		}
-	});
-});
+		// Do DELETE a Customer via JQUERY AJAX
+		$(document).on("click", "a", function () {
 
-// Do DELETE a Customer via JQUERY AJAX
-$(document).on("click", "a", function () {
+			var customerId = $(this).parent().find('input').val();
+			var workingObject = $(this);
 
-	var customerId = $(this).parent().find('input').val();
-	var workingObject = $(this);
+			$.ajax({
+				type: "DELETE",
+				url: "" + customerId,
+				success: function (resultMsg) {
+					$("#resultMsgDiv").html("<p style='background-color:#67597E; color:white; padding:20px 20px 20px 20px'>" +
+						"Customer with Id=" + customerId + " is deleted successfully!" +
+						"</p>");
 
-	$.ajax({
-		type: "DELETE",
-		url: "" + customerId,
-		success: function (resultMsg) {
-			$("#resultMsgDiv").html("<p style='background-color:#67597E; color:white; padding:20px 20px 20px 20px'>" +
-				"Customer with Id=" + customerId + " is deleted successfully!" +
-				"</p>");
+					workingObject.closest("tr").remove();
 
-			workingObject.closest("tr").remove();
-
-			// re-css for table
-			$("#customerTable tbody tr:odd").addClass("info");
-			$("#customerTable tbody tr:even").addClass("success");
-		},
-		error: function (e) {
-			// alert("ERROR: 11", e,);
-			// console.log("ERROR: 11", e,);
-		}
-	});
-});
-})
+					// re-css for table
+					$("#customerTable tbody tr:odd").addClass("info");
+					$("#customerTable tbody tr:even").addClass("success");
+				},
+				error: function (e) {
+					// alert("ERROR: 11", e,);
+					// console.log("ERROR: 11", e,);
+				}
+			});
+		});
+	})
 </script>
 <script>
 	//seachSubject
-	
 	function subjectSec() {
 
 		$('#subjectName').empty();
@@ -478,30 +483,75 @@ $(document).on("click", "a", function () {
 		$('#tudsadee').empty();
 		$('#prtibad').empty();
 		$('#subjectId').empty();
-			var subjectsach = {
-				subjectBean: $('#subjectId').val()
-			};
-			$.ajax({
-				type: "POST",
-				url: "/subjectSeach",
-				contentType: "application/json; charset=utf-8",
-				data: JSON.stringify(subjectsach),
-				dataType: "json",
-				success: function (msg) {
-					if (msg.subjectId != null) {
-						$('#subjectName').val(msg.subjectName);
-						$('#credit').val(msg.credit);
-						$('#creditHour').val(msg.creditHour);
-						$('#tudsadee').val(msg.tudsadee);
-						$('#prtibad').val(msg.prtibad);
+		var subjectsach = {
+			subjectBean: $('#subjectId').val()
+		};
+		$.ajax({
+			type: "POST",
+			url: "/subjectSeach",
+			contentType: "application/json; charset=utf-8",
+			data: JSON.stringify(subjectsach),
+			dataType: "json",
+			success: function (msg) {
+				if (msg.subjectId != null) {
+					$('#subjectName').val(msg.subjectName);
+					$('#credit').val(msg.credit);
+					$('#creditHour').val(msg.creditHour);
+					$('#tudsadee').val(msg.tudsadee);
+					$('#prtibad').val(msg.prtibad);
 
-					} else if (msg.subjectId == null) {
-						$('#alert').append('<center>ไม่มีข้อมูล</center>');
-					}
+				} else if (msg.subjectId == null) {
+					$('#alert').append('<center>ไม่มีข้อมูล</center>');
 				}
-			});
-		
+			}
+
+		});
+
 	}
+	//..
+	// $(document).ready(function () {
+	// 	var tableTeachingById = {
+	// 		teaching: $('#userRoleid').val()
+	// 	};
+	// 	$.ajax({
+	// 		type: "GET",
+	// 		url: "/TableTeachingOne",
+	// 		contentType: "application/json; charset=utf-8",
+	// 		data: JSON.stringify(tableTeachingById),
+	// 		dataType: "json",
+	// 		success: function (result) {
+	// 			if (result.userRoleid != null) {
+	// 				$.each(result, function (index, msg) {
+
+	// 					var SubjectRow = '<tr>' +
+
+	// 						'<td>' + msg.subject.subjectId + '</td>' +
+	// 						'<td>' + msg.subject.subjectName + '</td>' +
+	// 						'<td>' + msg.section + '</td>' +
+	// 						'<td>' + msg.subject.credit + "(" + msg.subject.creditHour + ")" + '</td>' +
+	// 						'<td>' + msg.studenNumber + '</td>' +
+	// 						'<td>' + msg.user.userFname + '</td>' +
+	// 						'<td>' + msg.startTime + '-' + msg.stopTime + '</td>' +
+	// 						'<td>' + msg.room + '</td>' +
+	// 						'<td class="text-center">' +
+	// 						'<input type="hidden" value=' + msg.user.userId + '>' +
+	// 						'<a>' +
+	// 						'<span class="glyphicon glyphicon-remove"></span>' +
+	// 						'</a>' +
+	// 						'</td>' +
+	// 						'</tr>';
+
+	// 					$('#customerTable tbody').append(SubjectRow);
+
+	// 				});
+
+	// 			} else if (msg.userRoleid == null) {
+	// 				$('#alert').append('<center>ไม่มีข้อมูล</center>');
+	// 			}
+	// 		}
+	// 	});
+
+	//  });
 </script>
 <script>
 

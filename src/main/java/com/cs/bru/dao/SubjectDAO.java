@@ -1,7 +1,9 @@
 package com.cs.bru.dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class SubjectDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_subject (subject_id,subject2_name,credit,credit_hour,tudsadee,prtibad) VALUES(?,?,?,?,?,?) ");
+					"INSERT INTO tb_subject (subject_id,subject_name,credit,credit_hour,tudsadee,prtibad) VALUES(?,?,?,?,?,?) ");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getSubjectId());
 			prepared.setString(2, bean.getSubjectName());
@@ -45,14 +47,14 @@ public class SubjectDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT subjact_id,subject2_name,credit,credit_hour,tudsadee,prtibad FROM tb_subject");
+			sql.append("SELECT subjact_id,subject_name,credit,credit_hour,tudsadee,prtibad FROM tb_subject");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
 				Subject bean = new Subject();
 				bean.setSubjectId(rs.getString("subjact_id"));
-				bean.setSubjectName(rs.getString("subject2_name"));
+				bean.setSubjectName(rs.getString("subject_name"));
 				bean.setCredit(rs.getInt("credit"));
 				bean.setCreditHour(rs.getString("credit_hour"));
 				bean.setTudsadee(rs.getInt("tudsadee"));
@@ -68,31 +70,36 @@ public class SubjectDAO {
 		return list;
 	}
 
-	public Subject findOne(String id) {
-       System.out.println("22222");
+	public Subject findOne(String id) throws SQLException{
+//       System.out.println("22222");
 		ConnectDB con = new ConnectDB();
+		Connection conn = con.openConnect();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
 		Subject subject = new Subject();
 
 		try {
 			sql.append("SELECT * FROM tb_subject WHERE subject_id = ?");
-			prepared = con.openConnect().prepareStatement(sql.toString());
+			prepared = conn.prepareStatement(sql.toString());
 			prepared.setString(1, id);
 			ResultSet rs = prepared.executeQuery();
-			System.out.println("666");
+//			System.out.println("666");
 			while (rs.next()) {
 				subject.setSubjectId(rs.getString("subject_id"));
-				subject.setSubjectName(rs.getString("subject2_name"));
+				subject.setSubjectName(rs.getString("subject_name"));
 				subject.setCredit(rs.getInt("credit"));
 				subject.setCreditHour(rs.getString("credit_hour"));
 				subject.setTudsadee(rs.getInt("tudsadee"));
 				subject.setPrtibad(rs.getInt("prtibad"));
-				System.out.println("5555");
+//				System.out.println("5555");
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
+		e.printStackTrace();
+			
+		}
+		finally {
+			conn.close();
 		}
 
 		return subject;
