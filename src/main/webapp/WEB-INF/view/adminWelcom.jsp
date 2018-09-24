@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%-- <%@include file="continue.jsp" %> --%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@include file="./continue.jsp" %>
 <%@page import="com.cs.bru.model.User"%>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,16 +19,19 @@
 <!-- <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --> -->
-<%-- 
-<%
+
+ <%
    User  bean = null;
+   User  bean1 = null;
 	List<User > list = null;
 %>
 
-<%
-	bean = (User ) request.getSession().getAttribute("loing");
-	list = (List<User >) request.getSession().getAttribute("listUser");
-%> --%>
+  <%
+	bean = (User) request.getSession().getAttribute("loginUser");
+   /*  list = (List<User>) request.getSession().getAttribute("listUser"); */
+    bean1 = (User) request.getSession().getAttribute("listUser");
+  
+%>
 
 </head>
 <style>
@@ -248,7 +252,239 @@ button:hover {
 			</nav>
 			<!-- End Navbar -->
 		
-
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+			
+							<div class="card">
+								<div class="card-header card-header-primary">
+									<h3 class="card-title">ลงทะเบียนสอน</h3>
+									<!--      <p class="card-category">Complete your profile</p> -->
+								</div>
+			
+								<div class="card-body">
+									<form>
+										 <div class="row">
+											<div class="col-md-3">
+												<div class="form-group">
+													<label class="bmd-label-floating">แบบเบิกค่าสอบประจำเดือน</label>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+														
+													<!-- <label class="bmd-label-floating">เดือน</label> 
+													<input type="text" class="form-control" > -->
+													<select class="form-control bmd-label-floating">
+															<option  value="" disabled selected>เดือน</option>
+															<option  value="">มกราคม</option>
+															<option value="">กุมภาพันธ์</option>
+															<option value="">มีนาคม</option>
+															<option value="">เมษายน</option>
+															<option value="">พฤษภาคม</option>
+															<option value="">มิถุนายน</option>
+															<option value="">กรกฎาคม</option>
+															<option value="">สิงหาคม</option>
+															<option value="">กันยายน</option>
+															<option value="">ตุลาคม</option>
+															<option value="">พฤศจิกายน</option>
+															<option value="">ธันวาคม</option>
+															
+														</select>
+													
+												</div>
+											</div>
+											<div class="col-md-1">
+												<div class="form-group">
+													<label class="bmd-label-floating">ถึง</label>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													 <!-- <label class="bmd-label-floating">เดือน</label>
+													<input type="text" class="form-control">  -->
+													<select class="form-control bmd-label-floating dropdown-danger">
+															<option  value="" disabled selected>เดือน</option>
+															<option  value=""> มกราคม</option>
+															<option value=""> กุมภาพันธ์</option>
+															<option value=""> มีนาคม</option>
+															<option value=""> เมษายน</option>
+															<option value=""> พฤษภาคม</option>
+															<option value=""> มิถุนายน</option>
+															<option value=""> กรกฎาคม</option>
+															<option value=""> สิงหาคม</option>
+															<option value=""> กันยายน</option>
+															<option value=""> ตุลาคม</option>
+															<option value=""> พฤศจิกายน</option>
+															<option value=""> ธันวาคม</option>
+															
+														</select>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">พ.ศ.</label>
+													<input type="text" class="form-control">
+												</div>
+											</div>
+			
+										</div>
+										<div class="row">
+											<div class="col-md-3">
+												<div class="form-group">
+													<label class="bmd-label-floating">section</label>
+													<input type="text" class="form-control" id="section">
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label class="bmd-label-floating">จำนวนนักศึกษา</label> <input type="number" class="form-control" id="studenNumber">
+												</div>
+											</div>
+			
+										</div>
+			
+										<div class="row">
+											<div class="col-md-4">
+												<div class="form-group">
+													<label class="bmd-label-floating">ระหัสวิชา</label> <input type="text" class="form-control" id="subjectId"
+														name="subjectId">
+												</div>
+											</div>
+			
+											<button type="button" class="btn btn-white btn-round btn-just-icon" onclick="subjectSec()">
+												<i class="material-icons">search</i>
+												<div class="ripple-container"></div>
+											</button>
+			
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="bmd-label-floating">ชื่อวิชา</label> <input type="text" class="form-control" id="subjectName"
+														disabled>
+												</div>
+											</div>
+			
+										</div>
+			
+										<div class="row">
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">จำนวนหน่วยกิจ</label>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">นก.
+													</label> <input type="text" class="form-control" id="credit" disabled>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">ชม.</label> <input type="text" class="form-control" id="creditHour"
+														disabled>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">ภาคทฤษฎี</label> <input type="text" class="form-control" id="tudsadee"
+														disabled>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">ภาคปัฏิบัติ</label> <input type="text" class="form-control" id="prtibad"
+														disabled>
+												</div>
+											</div>
+										</div>
+			
+										<div class="row">
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">วันเวลาสอน</label>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">เริ่มการสอน</label>
+												</div>
+											</div>
+											<div class="col-md-1">
+												<div class="form-group">
+													<input type="time" class="form-control" id="startTime">
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<label class="bmd-label-floating">สิ้นสุดการสอน</label>
+												</div>
+											</div>
+											<div class="col-md-1">
+												<div class="form-group">
+													<input type="time" class="form-control" id="stopTime">
+												</div>
+											</div>
+											<div class="col-md-1">
+												<div class="form-group">
+													<label class="bmd-label-floating">ห้อง</label>
+												</div>
+											</div>
+											<div class="col-md-2">
+												<div class="form-group">
+													<input type="text" class="form-control" id="room">
+												</div>
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary pull-right" onclick="insertTeachingfrom()">
+											<h4>เพิ่มวิชาสอน</h4>
+										</button>
+										<div class="clearfix"></div>
+									</form>
+								</div>
+			
+							</div>
+						</div>
+			
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12">
+					<div class="card">
+						<div class="card-header card-header-warning">
+							<h4 class="card-title">ตารางวิชาที่สอน</h4>
+							<p class="card-category">แสดงข้อมูลวิชาที่สอน</p>
+						</div>
+			
+						<div class="card-body table-responsive">
+							<table id="customerTable" class="table table-bordered table-hover">
+								<thead class="text-warning">
+									<tr>
+			
+										<th rowspan="2">รหัสวิชา</th>
+										<th rowspan="3">ชื่อวิชา</th>
+										<th rowspan="2">section</th>
+										<th rowspan="2">หน่วยกิต</th>
+										<!-- <th colspan="2">หน่วยกิต</th> -->
+										<th rowspan="2">จำนวนนักศึกษา</th>
+										<th rowspan="2">ผู้สอน</th>
+										<th rowspan="2">วันเวลาสอน</th>
+										<th rowspan="2">ห้อง</th>
+										<th rowspan="2">หมายเหตู</th>
+			
+									</tr>
+									<!-- <tr>
+										<th scope="col">นก.</th>
+										<th scope="col">ชก.</th>
+			
+									</tr> -->
+								</thead>
+								<tbody>
+								</tbody>
+			
+							</table>
+						</div>
+					</div>
+				</div>
 			
 		</div>
 		

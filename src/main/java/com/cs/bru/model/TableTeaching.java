@@ -5,8 +5,10 @@ public class TableTeaching {
 	private String tebleTeachId;
 	private int studenNumber;
 	private int section;
+	private int standardTeach;
 	private String startTime;
 	private String stopTime;
+
 	private String room;
 	private String userRoleid;
 	private String subjectRoleid;
@@ -48,6 +50,14 @@ public class TableTeaching {
 
 	public void setSection(int section) {
 		this.section = section;
+	}
+
+	public int getStandardTeach() {
+		return standardTeach;
+	}
+
+	public void setStandardTeach(int standardTeach) {
+		this.standardTeach = standardTeach;
 	}
 
 	public String getStartTime() {

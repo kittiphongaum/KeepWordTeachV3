@@ -15,7 +15,71 @@
 
 					<div class="card-body">
 						<form>
+							 <div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label class="bmd-label-floating">แบบเบิกค่าสอบประจำเดือน</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+											
+										<!-- <label class="bmd-label-floating">เดือน</label> 
+										<input type="text" class="form-control" > -->
+										<select class="form-control bmd-label-floating">
+												<option  value="" disabled selected>เดือน</option>
+												<option  value="">มกราคม</option>
+												<option value="">กุมภาพันธ์</option>
+												<option value="">มีนาคม</option>
+												<option value="">เมษายน</option>
+												<option value="">พฤษภาคม</option>
+												<option value="">มิถุนายน</option>
+												<option value="">กรกฎาคม</option>
+												<option value="">สิงหาคม</option>
+												<option value="">กันยายน</option>
+												<option value="">ตุลาคม</option>
+												<option value="">พฤศจิกายน</option>
+												<option value="">ธันวาคม</option>
+												
+											</select>
+										
+									</div>
+								</div>
+								<div class="col-md-1">
+									<div class="form-group">
+										<label class="bmd-label-floating">ถึง</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										 <!-- <label class="bmd-label-floating">เดือน</label>
+										<input type="text" class="form-control">  -->
+										<select class="form-control bmd-label-floating dropdown-danger">
+												<option  value="" disabled selected>เดือน</option>
+												<option  value=""> มกราคม</option>
+												<option value=""> กุมภาพันธ์</option>
+												<option value=""> มีนาคม</option>
+												<option value=""> เมษายน</option>
+												<option value=""> พฤษภาคม</option>
+												<option value=""> มิถุนายน</option>
+												<option value=""> กรกฎาคม</option>
+												<option value=""> สิงหาคม</option>
+												<option value=""> กันยายน</option>
+												<option value=""> ตุลาคม</option>
+												<option value=""> พฤศจิกายน</option>
+												<option value=""> ธันวาคม</option>
+												
+											</select>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<label class="bmd-label-floating">พ.ศ.</label>
+										<input type="text" class="form-control">
+									</div>
+								</div>
 
+							</div>
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group">
@@ -152,7 +216,7 @@
 							<th rowspan="2">หน่วยกิต</th>
 							<!-- <th colspan="2">หน่วยกิต</th> -->
 							<th rowspan="2">จำนวนนักศึกษา</th>
-							<th rowspan="2">ผู้สอน</th>
+							<th rowspan="2">อัตราการเบิกสอนพิเศษ/ชั่วโมง</th>
 							<th rowspan="2">วันเวลาสอน</th>
 							<th rowspan="2">ห้อง</th>
 							<th rowspan="2">หมายเหตู</th>
@@ -420,7 +484,7 @@
 							'<td>' + msg.section + '</td>' +
 							'<td>' + msg.subject.credit + "(" + msg.subject.creditHour + ")" + '</td>' +
 							'<td>' + msg.studenNumber + '</td>' +
-							'<td>' + msg.user.userFname + '</td>' +
+							'<td>' + msg.standardTeach +'</td>' +
 							'<td>' + msg.startTime + '-' + msg.stopTime + '</td>' +
 							'<td>' + msg.room + '</td>' +
 							'<td class="text-center">' +

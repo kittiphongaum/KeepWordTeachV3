@@ -35,7 +35,25 @@ public class TableTeachingController {
 	@RequestMapping(value="/insertTableTeaching")
 	   public String insertTableTeaching(@RequestBody TableTeaching insertTableTeaching ) {
 		   try {
-			tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+			   if (insertTableTeaching.getStudenNumber()<=35 ) {
+				   insertTableTeaching.setStandardTeach(120);
+				   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+			} else if (insertTableTeaching.getStudenNumber()<=69) {
+				insertTableTeaching.setStandardTeach(180);
+				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+			}else if (insertTableTeaching.getStudenNumber()<=89) {
+				insertTableTeaching.setStandardTeach(240);
+				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+			}else if (insertTableTeaching.getStudenNumber()>=90) {
+				insertTableTeaching.setStandardTeach(300);
+				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+			}
+			else {
+				
+			}
+
+			
+			
 			
 		} catch (Exception e) {
 			// TODO: handle exception

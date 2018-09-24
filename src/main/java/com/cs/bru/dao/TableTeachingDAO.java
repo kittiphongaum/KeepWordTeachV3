@@ -22,7 +22,7 @@ public class TableTeachingDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_table_teaching (teble_teach_id,studen_number,section,start_time,stop_time,room,user_roleid,subject_roleid) VALUES(?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_table_teaching (teble_teach_id,studen_number,section,start_time,stop_time,room,user_roleid,subject_roleid,standard_teach) VALUES(?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getTebleTeachId());
 			prepared.setInt(2, bean.getStudenNumber());
@@ -32,7 +32,7 @@ public class TableTeachingDAO {
 			prepared.setString(6, bean.getRoom());
 			prepared.setString(7, bean.getUserRoleid());
 			prepared.setString(8, bean.getSubjectRoleid());
-			
+			prepared.setInt(9, bean.getStandardTeach());
 			
 
 			prepared.executeUpdate();
@@ -127,7 +127,7 @@ public class TableTeachingDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT teble_teach_id,studen_number,section,start_time,stop_time,room,subject_roleid,subject_id,subject_name,credit,credit_hour,user_roleid,user_id,user_name FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_id = ?");
+			sql.append("SELECT teble_teach_id,studen_number,section,start_time,stop_time,standard_teach,room,subject_roleid,subject_id,subject_name,credit,credit_hour,user_roleid,user_id,user_name,user_lastname FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_id = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, id);
 			ResultSet rs = prepared.executeQuery();
@@ -143,6 +143,7 @@ public class TableTeachingDAO {
 				teach.setStartTime(rs.getString("start_time"));
 				teach.setStopTime(rs.getString("stop_time"));
 				teach.setRoom(rs.getString("room"));
+				teach.setStandardTeach(rs.getInt("standard_teach"));
 				
 			
 				teach.setSubjectRoleid(rs.getString("subject_roleid"));
@@ -155,6 +156,7 @@ public class TableTeachingDAO {
 				teach.setUserRoleid(rs.getString("user_roleid"));
 				user.setUserId(rs.getString("user_id"));
 				user.setUserFname(rs.getString("user_name"));
+				user.setUserLname(rs.getString("user_lastname"));
 				
 				teach.setSubject(subject);
 				teach.setUser(user);
