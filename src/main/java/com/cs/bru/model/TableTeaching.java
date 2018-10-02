@@ -3,9 +3,18 @@ package com.cs.bru.model;
 public class TableTeaching {
 	private int id;
 	private String tebleTeachId;
+	private String degreeStuden;
+	private String teachTerm;
+	private String termYear;
+	private String teachWeek;
 	private int studenNumber;
 	private int section;
 	private int standardTeach;
+	
+	private String startMonth;
+	private String stopMonth;
+	private String teachYear;
+	
 	private String startTime;
 	private String stopTime;
 
@@ -14,7 +23,7 @@ public class TableTeaching {
 	private String subjectRoleid;
 	private Subject subject;
 	private User user;
-	
+	private Teach teach;
 	public TableTeaching() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -22,6 +31,24 @@ public class TableTeaching {
 
 	public int getId() {
 		return id;
+	}
+
+	
+
+	public Teach getTeach() {
+		return teach;
+	}
+
+	public void setTeach(Teach teach) {
+		this.teach = teach;
+	}
+
+	public String getTeachWeek() {
+		return teachWeek;
+	}
+
+	public void setTeachWeek(String teachWeek) {
+		this.teachWeek = teachWeek;
 	}
 
 	public void setId(int id) {
@@ -34,6 +61,22 @@ public class TableTeaching {
 
 	public void setTebleTeachId(String tebleTeachId) {
 		this.tebleTeachId = tebleTeachId;
+	}
+
+	public String getTeachTerm() {
+		return teachTerm;
+	}
+
+	public void setTeachTerm(String teachTerm) {
+		this.teachTerm = teachTerm;
+	}
+
+	public String getTermYear() {
+		return termYear;
+	}
+
+	public void setTermYear(String termYear) {
+		this.termYear = termYear;
 	}
 
 	public int getStudenNumber() {
@@ -58,6 +101,30 @@ public class TableTeaching {
 
 	public void setStandardTeach(int standardTeach) {
 		this.standardTeach = standardTeach;
+	}
+
+	public String getStartMonth() {
+		return startMonth;
+	}
+
+	public void setStartMonth(String startMonth) {
+		this.startMonth = startMonth;
+	}
+
+	public String getStopMonth() {
+		return stopMonth;
+	}
+
+	public void setStopMonth(String stopMonth) {
+		this.stopMonth = stopMonth;
+	}
+
+	public String getTeachYear() {
+		return teachYear;
+	}
+
+	public void setTeachYear(String teachYear) {
+		this.teachYear = teachYear;
 	}
 
 	public String getStartTime() {
@@ -115,6 +182,17 @@ public class TableTeaching {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public String getDegreeStuden() {
+		return degreeStuden;
+	}
+
+	public void setDegreeStuden(String degreeStuden) {
+		this.degreeStuden = degreeStuden;
+	}
+
+	
+	
 
 	
 

@@ -22,21 +22,32 @@ public class TableTeachingDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_table_teaching (teble_teach_id,studen_number,section,start_time,stop_time,room,user_roleid,subject_roleid,standard_teach) VALUES(?,?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_table_teaching(teble_teach_id,teach_term,term_year,teach_week,section,studen_number,start_month,stop_month,teach_year,start_time,stop_time,standard_teach,room,user_roleid,subject_roleid,degree_studen)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getTebleTeachId());
-			prepared.setInt(2, bean.getStudenNumber());
-			prepared.setInt(3, bean.getSection());
-			prepared.setString(4, bean.getStartTime());
-			prepared.setString(5, bean.getStopTime());
-			prepared.setString(6, bean.getRoom());
-			prepared.setString(7, bean.getUserRoleid());
-			prepared.setString(8, bean.getSubjectRoleid());
-			prepared.setInt(9, bean.getStandardTeach());
+			prepared.setString(2, bean.getTeachTerm());
+			prepared.setString(3, bean.getTermYear());
+			prepared.setString(4, bean.getTeachWeek());
+			prepared.setInt(5, bean.getSection());
+			prepared.setInt(6, bean.getStudenNumber());
+			
+			prepared.setString(7, bean.getStartMonth());
+			
+			prepared.setString(8, bean.getStopMonth());
+			prepared.setString(9, bean.getTeachYear());
+			
+			prepared.setString(10, bean.getStartTime());
+			prepared.setString(11, bean.getStopTime());
+			prepared.setInt(12, bean.getStandardTeach());
+			
+			prepared.setString(13, bean.getRoom());
+			prepared.setString(14, bean.getUserRoleid());
+			prepared.setString(15, bean.getSubjectRoleid());
+			prepared.setString(16, bean.getDegreeStuden());
 			
 
 			prepared.executeUpdate();
-			/* System.out.println("sssssssss"); */
+			 /*System.out.println(bean);*/ 
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -170,6 +181,58 @@ public class TableTeachingDAO {
 		}
 		return list;
 	}
+	public List<TableTeaching> findByIdSeachTeach(String id1,String id2,String id3) {
+		List<TableTeaching> list = new ArrayList<TableTeaching>();
+		ConnectDB con = new ConnectDB();
+		PreparedStatement prepared = null;
+		StringBuilder sql = new StringBuilder();
+
+		try {
+			sql.append("SELECT teble_teach_id,studen_number,section,start_time,stop_time,standard_teach,room,subject_roleid,subject_id,subject_name,credit,credit_hour,user_roleid,user_id,user_name,user_lastname FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_id = ?and teach_term=?and term_year=?");
+			prepared = con.openConnect().prepareStatement(sql.toString());
+			prepared.setString(1, id1);
+			prepared.setString(2, id2);
+			prepared.setString(3, id3);
+			ResultSet rs = prepared.executeQuery();
+
+			while (rs.next()) {
+				TableTeaching teach = new TableTeaching();
+				Subject subject = new Subject();
+				User user =new User();
+				
+				teach.setTebleTeachId(rs.getString("teble_teach_id"));
+				teach.setStudenNumber(rs.getInt("studen_number"));
+				teach.setSection(rs.getInt("section"));
+				teach.setStartTime(rs.getString("start_time"));
+				teach.setStopTime(rs.getString("stop_time"));
+				teach.setRoom(rs.getString("room"));
+				teach.setStandardTeach(rs.getInt("standard_teach"));
+				
+			
+				teach.setSubjectRoleid(rs.getString("subject_roleid"));
+				
+				subject.setSubjectId(rs.getString("subject_id"));
+				subject.setSubjectName(rs.getString("subject_name"));
+				subject.setCredit(rs.getInt("credit"));
+				subject.setCreditHour(rs.getString("credit_hour"));
+				
+				teach.setUserRoleid(rs.getString("user_roleid"));
+				user.setUserId(rs.getString("user_id"));
+				user.setUserFname(rs.getString("user_name"));
+				user.setUserLname(rs.getString("user_lastname"));
+				
+				teach.setSubject(subject);
+				teach.setUser(user);
+				list.add(teach);
+				
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
 
 	// update
 	public void update(TableTeaching bean) {
@@ -197,7 +260,7 @@ public class TableTeachingDAO {
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
 		try {
-			sql.append(" DELETE FROM tbl_student WHERE st_idcard = ? ");
+			sql.append("DELETE FROM tb_table_teaching WHERE teble_teach_id = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, id);
 			prepared.executeUpdate();

@@ -208,78 +208,111 @@ button:hover {
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="card">
-                                <div class="card-header card-header-warning">
-                                    <h4 class="card-title">ตารางวิชาที่สอน</h4>
-                                    <p class="card-category">แสดงข้อมูลวิชาที่สอน</p>
-                                </div>
+                                    <div class="row">
+                                <form>
+                                        <div class="card-body">
+                                    <div class="row">
+                                            <div class="col-md-3">
+                                                    <div class="form-group">
+                                                            <label class="bmd-label-floating">ภาคเรียนที่</label>
+                                                            <input type="text" class="form-control" id="teachTerm">
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                    <div class="form-group">
+                                                            <label class="bmd-label-floating">ปี่การศึกษา</label>
+                                                            <input type="text" class="form-control" id="termYear">
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                            <button type="button" class="btn btn-white btn-round btn-just-icon" onclick="seachteachtorm()">
+                                                    <i class="material-icons">search</i>
+                                                    <div class="ripple-container"></div>
+                                                </button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                    <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="card">
+                                        <div class="card-header card-header-warning">
+                                            <h4 class="card-title">ตารางวิชาที่สอน</h4>
+                                            <p class="card-category">แสดงข้อมูลวิชาที่สอน</p>
+                                        </div>
 
-                                <div class="card-body table-responsive">
-                                    <table id="customerTable" class="table table-bordered table-hover">
-                                        <thead class="text-warning">
-                                            <tr>
+                                        <div class="card-body table-responsive">
+                                            <table id="customerTable2" class="table table-bordered table-hover">
+                                                <thead class="text-warning">
+                                                    <tr>
 
-                                                <th rowspan="2">รหัสวิชา</th>
-                                                <th rowspan="3">ชื่อวิชา</th>
-                                                <th rowspan="2">จำนวนชั่วโมง</th>
-                                                <th rowspan="2">จำนวนเงิน</th>
-                                             
-                                                <th rowspan="2">รวมเงิน</th>
-                                               
-                                                <th rowspan="2">หมายเหตู</th>
+                                                        <th rowspan="2">รหัสวิชา</th>
+                                                        <th rowspan="3">ชื่อวิชา</th>
+                                                        <th rowspan="2">จำนวนชั่วโมง</th>
+                                                        <th rowspan="2">จำนวนเงิน</th>
 
-                                            </tr>
-                                            <!-- <tr>
+                                                        <th rowspan="2">รวมเงิน</th>
+
+                                                        <th rowspan="2">หมายเหตู</th>
+
+                                                    </tr>
+                                                    <!-- <tr>
                                     <th scope="col">นก.</th>
                                     <th scope="col">ชก.</th>
         
                                 </tr> -->
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
 
-                                    </table>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="card">
+                                        <div class="card-header card-header-warning">
+                                            <h4 class="card-title">ระยะเวลาที่สอน</h4>
+                                            <p class="card-category">แสดงข้อมูลวิชาที่สอน</p>
+                                        </div>
+
+                                        <div class="card-body table-responsive">
+                                            <table id="customerTable" class="table table-bordered table-hover">
+                                                <thead class="text-warning">
+                                                    <tr>
+
+                                                        <th rowspan="2">สัปดาห์ที่สอน</th>
+                                                        <th rowspan="3">วัน/เดือน/ปี</th>
+                                                        <th rowspan="2">รายวิชา</th>
+                                                        <th rowspan="2">ภาคทฤษฏี</th>
+                                                        <!-- <th colspan="2">หน่วยกิต</th> -->
+                                                        <th rowspan="2">ภาคปฏิบัติ</th>
+                                                        <th rowspan="2">รวม</th>
+                                                        <th rowspan="2">หมายเหตู</th>
+
+                                                    </tr>
+                                                    <!-- <tr>
+                                    <th scope="col">นก.</th>
+                                    <th scope="col">ชก.</th>
+        
+                                </tr> -->
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
-                
-            <div class="col-lg-12 col-md-12">
-                <div class="card">
-                    <div class="card-header card-header-warning">
-                        <h4 class="card-title">ระยะเวลาที่สอน</h4>
-                        <p class="card-category">แสดงข้อมูลวิชาที่สอน</p>
-                    </div>
-
-                    <div class="card-body table-responsive">
-                        <table id="customerTable" class="table table-bordered table-hover">
-                            <thead class="text-warning">
-                                <tr>
-
-                                    <th rowspan="2">สัปดาห์ที่สอน</th>
-                                    <th rowspan="3">วัน/เดือน/ปี</th>
-                                    <th rowspan="2">รายวิชา</th>
-                                    <th rowspan="2">ภาคทฤษฏี</th>
-                                    <!-- <th colspan="2">หน่วยกิต</th> -->
-                                    <th rowspan="2">ภาคปฏิบัติ</th>
-                                    <th rowspan="2">รวม</th>
-                                    <th rowspan="2">หมายเหตู</th>
-
-                                </tr>
-                                <!-- <tr>
-                                    <th scope="col">นก.</th>
-                                    <th scope="col">ชก.</th>
-        
-                                </tr> -->
-                            </thead>
-                            <tbody>
-                            </tbody>
-
-                        </table>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
 
         </div>
 
@@ -297,7 +330,55 @@ button:hover {
     });
 </script>
 <script type="text/javascript">
-    //AddSubject
+function seachteachtorm() {
+    var id1={
+        teachIdS1: $("#userRoleid").val(),
+        teachIdS2:$("#teachTerm").val(),
+         teachIdS3:$("#termYear").val()
+    };
+    $.ajax({
+        type: "POST",
+        contentType : "application/json",
+        url: "/TableTeachingOneSeachByid",
+        data: JSON.stringify(id1),
+        dataType : 'json',
+        success: function (result) {
+            $.each(result, function (index, msg) {
+
+                var SubjectRow = '<tr>' +
+
+                    '<td>' + msg.subject.subjectId + '</td>' +
+                    '<td>' + msg.subject.subjectName + '</td>' +
+                    '<td>' + msg.section + '</td>' +
+                    '<td>' + msg.subject.credit + "(" + msg.subject.creditHour + ")" + '</td>' +
+                    '<td>' + msg.studenNumber + '</td>' +
+                    '<td>' + msg.standardTeach +'</td>' +
+                    '<td>' + msg.startTime + '-' + msg.stopTime + '</td>' +
+                    '<td>' + msg.room + '</td>' +
+                    '<td class="td-actions text-right">' +
+                    '<input type="hidden" value=' + msg.tebleTeachId + '>' +
+                    '<a  rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">' +
+                    '<i class="material-icons">close</i>' +
+                    '</a>' +
+                    '</td>' +
+                    '</tr>';
+
+                $('#customerTable2 tbody').append(SubjectRow);
+
+            });
+
+            $("#customerTable2 tbody tr:odd").addClass("info");
+            $("#customerTable2 tbody tr:even").addClass("success");
+        },
+        error: function (e) {
+            // alert("ERROR: 22", e);
+            // console.log("ERROR: 22", e);
+        }
+    });
+}
+
+// Do DELETE a Customer via JQUERY AJAX
+
 </script>
 
 

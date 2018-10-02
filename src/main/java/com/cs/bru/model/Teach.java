@@ -2,17 +2,20 @@ package com.cs.bru.model;
 
 public class Teach {
 	private int id;
-	private String teachID;
-	private String startMonth;
-	private String stopMonth;
-	private String degreeSt;
-	private int  studentNumber;
-	private String section;
-	private String buddhist;
+	private String teachId;
+	private int  sumHourweek;
+	private int  sumHourterm;
+	private int  salaryTudsadee;
+	private int  salaryPrtibad;
+	private int  salarySum;
 	private String subjactFk;
-	private String dattimeFk;
-	private DateTime dateTime;
+	private String tableteachFk;
+	private String userFk;
 	private Subject subject;
+	private TableTeaching tableTeaching;
+	private User users;
+	
+	
 	public Teach() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -23,47 +26,41 @@ public class Teach {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getTeachID() {
-		return teachID;
+	public String getTeachId() {
+		return teachId;
 	}
-	public void setTeachID(String teachID) {
-		this.teachID = teachID;
+	public void setTeachId(String teachId) {
+		this.teachId = teachId;
 	}
-	public String getStartMonth() {
-		return startMonth;
+	public int getSumHourweek() {
+		return sumHourweek;
 	}
-	public void setStartMonth(String startMonth) {
-		this.startMonth = startMonth;
+	public void setSumHourweek(int sumHourweek) {
+		this.sumHourweek = sumHourweek;
 	}
-	public String getStopMonth() {
-		return stopMonth;
+	public int getSumHourterm() {
+		return sumHourterm;
 	}
-	public void setStopMonth(String stopMonth) {
-		this.stopMonth = stopMonth;
+	public void setSumHourterm(int sumHourterm) {
+		this.sumHourterm = sumHourterm;
 	}
-	public String getDegreeSt() {
-		return degreeSt;
+	public int getSalaryTudsadee() {
+		return salaryTudsadee;
 	}
-	public void setDegreeSt(String degreeSt) {
-		this.degreeSt = degreeSt;
+	public void setSalaryTudsadee(int salaryTudsadee) {
+		this.salaryTudsadee = salaryTudsadee;
 	}
-	public int getStudentNumber() {
-		return studentNumber;
+	public int getSalaryPrtibad() {
+		return salaryPrtibad;
 	}
-	public void setStudentNumber(int studentNumber) {
-		this.studentNumber = studentNumber;
+	public void setSalaryPrtibad(int salaryPrtibad) {
+		this.salaryPrtibad = salaryPrtibad;
 	}
-	public String getSection() {
-		return section;
+	public int getSalarySum() {
+		return salarySum;
 	}
-	public void setSection(String section) {
-		this.section = section;
-	}
-	public String getBuddhist() {
-		return buddhist;
-	}
-	public void setBuddhist(String buddhist) {
-		this.buddhist = buddhist;
+	public void setSalarySum(int salarySum) {
+		this.salarySum = salarySum;
 	}
 	public String getSubjactFk() {
 		return subjactFk;
@@ -71,17 +68,17 @@ public class Teach {
 	public void setSubjactFk(String subjactFk) {
 		this.subjactFk = subjactFk;
 	}
-	public String getDattimeFk() {
-		return dattimeFk;
+	public String getTableteachFk() {
+		return tableteachFk;
 	}
-	public void setDattimeFk(String dattimeFk) {
-		this.dattimeFk = dattimeFk;
+	public void setTableteachFk(String tableteachFk) {
+		this.tableteachFk = tableteachFk;
 	}
-	public DateTime getDateTime() {
-		return dateTime;
+	public String getUserFk() {
+		return userFk;
 	}
-	public void setDateTime(DateTime dateTime) {
-		this.dateTime = dateTime;
+	public void setUserFk(String userFk) {
+		this.userFk = userFk;
 	}
 	public Subject getSubject() {
 		return subject;
@@ -89,9 +86,18 @@ public class Teach {
 	public void setSubject(Subject subject) {
 		this.subject = subject;
 	}
-	
-	
+	public TableTeaching getTableTeaching() {
+		return tableTeaching;
+	}
+	public void setTableTeaching(TableTeaching tableTeaching) {
+		this.tableTeaching = tableTeaching;
+	}
+	public User getUsers() {
+		return users;
+	}
+	public void setUsers(User users) {
+		this.users = users;
+	}
 
-	
 	
 }

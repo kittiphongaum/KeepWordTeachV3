@@ -53,5 +53,9 @@ public class FooController {
 	public String test2() {
 		return "test2";
 	}
+	@RequestMapping("/appcalendar")
+	public String appcalendar() {
+		return "appcalendar";
+	}
 	
 }

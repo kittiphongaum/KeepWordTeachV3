@@ -15,7 +15,11 @@ public class ServiceTableTeaching {
 	TableTeachingDAO tableTeachingDAO;
 
 		public List<TableTeaching> getById(String id) {
-		
 		return tableTeachingDAO.findById(id);		
 	}
+		public String putId(String id) {
+			tableTeachingDAO.delete(id);
+			return "dashboard";
+			
+		}
 }

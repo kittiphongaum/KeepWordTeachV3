@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@include file="./continue.jsp" %>
+	 <%@include file="./continue.jsp" %> 
 <%@page import="com.cs.bru.model.User"%>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -155,17 +155,11 @@ button:hover {
             </a>
           </li>
            <li class="nav-item  ">
-            <a class="nav-link" href="./calendar">
+            <a class="nav-link" href="./appcalendar">
               <i class="material-icons">today</i>
               <p>Calendar</p>
             </a>
-					</li>
-					<li class="nav-item  ">
-							<a class="nav-link" href="./appcalendar">
-								<i class="material-icons">today</i>
-								<p>Calendar</p>
-							</a>
-						</li>
+          </li>
         </ul>
       </div>
 		</div>
@@ -223,124 +217,46 @@ button:hover {
 			</div>
 			</nav>
 			<!-- End Navbar -->
-			<%-- <div id="regForm">
-				<div style="text-align: center; margin-top: 40px;">
-					<span class="step"></span> <span class="step"></span> <span
-						class="step"></span> 
-				</div>
-				 <div style="overflow: auto;">
-					<div style="float: right;">
-						<button type="button" id="prevBtn" onclick="nextPrev(-1)">ย้อนกลับ</button>
-						<button type="button" id="nextBtn" onclick="nextPrev(1)">ถัดไป</button>
-					</div>
-				</div> 
-				<div class="tab">
-				<%@include file="../teaching/teach1.jsp"%>
-				</div>
-				<div class="tab">
-					<%@include file="../teaching/teach2.jsp"%>
-				</div>
-				<div class="tab">
-				<%@include file="../teaching/teachreport.jsp"%>
-				</div>
-				
-				</div> --%>
-			<%@include file="../tableteaching/addsubject.jsp"%>
+			<%@include file="../calendarApp/pageCalendar.jsp"%>
 			
 		</div>
 		
 	</div>
-	<%-- <%@include file="footer.jsp"%> --%>
+
 	
 	</body>
 	
 	
-	<script>
-		$(document).ready(function() {
-			// Javascript method's body can be found in assets/js/demos.js
-			md.initDashboardPageCharts();
+    <script src ="../assets/calendar/libs/jquery.min.js"> </script>
+     <script src ="../assets/calendar/libs/jquery-ui.min.js"> </script>
+      <script src ="../assets/calendar/libs/popper.min.js"> </script>
+       <script src ="../assets/calendar/libs/bootstrap.min.js"> </script>
+        <script src ="../assets/calendar/libs/perfect-scrollbar.jquery.min.js"> </script>
+         <script src ="../assets/calendar/libs/custom.min.js"> </script>
+          <script src ="../assets/calendar/libs/moment.min.js"> </script>
+           <script src ="../assets/calendar/libs/dist/fullcalendar.min.js"> </script>
+            <script src ="../assets/calendar/libs/cal-init.js"> </script>
+              <link href="../assets/calendar/libs/style.min.css" rel="stylesheet">
+               <link href="../assets/calendar/libs/dist/fullcalendar.min.css" rel="stylesheet">
+                <link href="../assets/calendar/libs/calendar.css"rel="stylesheet">
 
-		});
-	</script>
-	<script type="text/javascript" >
-	//AddSubject
-	
-	</script>
-	<!-- <script>
-		var currentTab = 0; // แท็บปัจจุบันถูกตั้งค่าให้เป็นแท็บแรก 0
-		showTab(currentTab); // แสดงแท็บปัจจุบัน
 
-		function showTab(n) {
-			// ฟังก์ชันนี้จะแสดงแท็บที่กำหนดไว้ในแบบฟอร์ม ...
-			var x = document.getElementsByClassName("tab");
-			x[n].style.display = "block";
-			//... and fix the Previous/Next buttons:
-			if (n == 0) {
-				document.getElementById("prevBtn").style.display = "none";
-			} else {
-				document.getElementById("prevBtn").style.display = "inline";
-			}
-			if (n == (x.length - 1)) {
-				document.getElementById("nextBtn").innerHTML = "บันทึกและพิมพ์";
-			} else {
-				document.getElementById("nextBtn").innerHTML = "ถัดไป";
-			}
-			//... and run a function that will display the correct step indicator:
-			fixStepIndicator(n)
-		}
-
-		function nextPrev(n) {
-			// ฟังก์ชั่นนี้จะหาแท็บที่จะแสดง
-			var x = document.getElementsByClassName("tab");
-			// Exit the function if any field in the current tab is invalid:
-			if (n == 1 && !validateForm())
-				return false;
-			// Hide the current tab:
-			x[currentTab].style.display = "none";
-			// Increase or decrease the current tab by 1:
-			currentTab = currentTab + n;
-			// if you have reached the end of the form...
-			if (currentTab >= x.length) {
-				// ... the form gets submitted:
-				document.getElementById("regForm").submit();
-				return false;
-			}
-			// Otherwise, display the correct tab:
-			showTab(currentTab);
-		}
-
-		function validateForm() {
-			// ฟังก์ชันนี้เกี่ยวข้องกับการตรวจสอบความถูกต้องของเขตข้อมูลฟอร์ม
-			var x, y, i, valid = true;
-			x = document.getElementsByClassName("tab");
-			y = x[currentTab].getElementsByTagName("input");
-			// A loop that checks every input field in the current tab:
-			for (i = 0; i < y.length; i++) {
-				// If a field is empty...
-				if (y[i].value == "") {
-					// add an "invalid" class to the field:
-					y[i].className += " invalid";
-					// and set the current valid status to false
-					valid = true;
-				}
-			}
-			// If the valid status is true, mark the step as finished and valid:
-			if (valid) {
-				document.getElementsByClassName("step")[currentTab].className += " finish";
-			}
-			return valid; // return the valid status
-		}
-
-		function fixStepIndicator(n) {
-			// ฟังก์ชันนี้จะลบคลาส "active" ของทุกขั้นตอน ......
-			var i, x = document.getElementsByClassName("step");
-			for (i = 0; i < x.length; i++) {
-				x[i].className = x[i].className.replace(" active", "");
-			}
-			//... และเพิ่มคลาส "active" ในขั้นตอนปัจจุบัน:
-			x[n].className += " active";
-		}
-	</script>
-	 -->
-
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$.ajax({
+					type : "GET",
+					url : "/MonthfindAll",
+					contentType : "application/json; charset=utf-8",
+					dataType : "json",
+					success : function(msg) {
+						for (var i = 0; i < msg.length; i++) {
+							$('#appliances').append(
+									'<option value="' + msg[i].id + '">'
+											+ msg[i].monthName + '</option>');
+						}
+					}
+				});
+			});
+</script>
 </html>

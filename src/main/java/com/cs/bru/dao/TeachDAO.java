@@ -21,15 +21,21 @@ public class TeachDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_teaching (teachID,startMonth,stopMonth,buddhist) VALUES(?,?,?,?)");
+					"INSERT INTO tb_teaching (teach_id,sum_hourweek,sum_hourterm,salary_tudsadee,salary_prtibad,salary_sum,subject_fk,tableteach_fk,user_fk) VALUES(?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
-			prepared.setString(1, bean.getTeachID());
-			prepared.setString(2, bean.getStartMonth());
-			prepared.setString(3, bean.getStopMonth());
-			prepared.setString(4, bean.getBuddhist());
+			prepared.setString(1, bean.getTeachId());
+			prepared.setInt(2, bean.getSumHourweek());
+			prepared.setInt(3, bean.getSumHourterm());
+			prepared.setInt(4, bean.getSalaryTudsadee());
+			prepared.setInt(5, bean.getSalaryPrtibad());
+			prepared.setInt(6, bean.getSalarySum());
+			prepared.setString(7, bean.getSubjactFk());
+			prepared.setString(8, bean.getTableteachFk());
+			prepared.setString(9, bean.getUserFk());
 			
 
 			prepared.executeUpdate();
+			System.out.println(bean);
 			/* System.out.println("sssssssss"); */
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -50,7 +56,7 @@ public class TeachDAO {
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
-				Teach teach = new Teach();
+				/*Teach teach = new Teach();
 				DateTime dateTime = new DateTime();
 				Subject subject = new Subject();
 				 
@@ -81,7 +87,7 @@ public class TeachDAO {
 				teach.setDateTime(dateTime);
 				teach.setSubject(subject);
 				
-				list.add(teach);
+				list.add(teach);*/
 			}
 
 		} catch (Exception e) {
@@ -104,10 +110,10 @@ public class TeachDAO {
 			prepared.setString(1, id);
 			ResultSet rs = prepared.executeQuery();
 			while (rs.next()) {
-				Subject.setSubjectId(rs.getString("teachID"));
+			/*	Subject.setSubjectId(rs.getString("teachID"));
 				Subject.setSubjectName(rs.getString("startMonth"));
 				Subject.setCredit(rs.getInt("stopMonth"));
-				Subject.setCreditHour(rs.getString("buddhist"));
+				Subject.setCreditHour(rs.getString("buddhist"));*/
 			
 				/*System.out.println(Subject);*/
 			}

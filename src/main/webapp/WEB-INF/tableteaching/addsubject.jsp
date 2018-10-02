@@ -15,6 +15,44 @@
 
 					<div class="card-body">
 						<form>
+								<div class="row">
+										<input type="hidden" id="teachId">
+										<input type="hidden" id="tebleTeachId">
+										<div class="col-md-3">
+												<div class="form-group">
+														<!-- <label class="bmd-label-floating">ปี่การศึกษา</label>
+														<input type="text" class="form-control" id="termYear"> -->
+														<select class="form-control bmd-label-floating dropdown-danger" id="termYear">
+												<option  value="" disabled selected>ปี่การศึกษา</option>
+												<option  value="2557"> 2557</option>
+												<option value="2558"> 2558</option>
+												<option value="2559"> 2559</option>
+												<option value="2560"> 2560</option>
+												<option value="2561"> 2561</option>
+												<option value="2562"> 2562</option>
+												<option value="2563"> 2563</option>
+												
+												
+											</select>
+												</div>
+										</div>
+										<div class="col-md-3">
+												<div class="form-group">
+												<!-- 		<label class="bmd-label-floating">ภาคเรียนที่</label>
+														<input type="text" class="form-control" id="teachTerm"> -->
+														<select class="form-control bmd-label-floating dropdown-danger" id="teachTerm">
+												<option  value="" disabled selected>ภาคเรียนที่</option>
+												<option  value="1"> 01</option>
+												<option value="2"> 02</option>
+												<option value="3"> 03</option>
+												
+												
+												</select>
+												</div>
+										</div>
+										</div>
+
+
 							 <div class="row">
 								<div class="col-md-3">
 									<div class="form-group">
@@ -26,20 +64,20 @@
 											
 										<!-- <label class="bmd-label-floating">เดือน</label> 
 										<input type="text" class="form-control" > -->
-										<select class="form-control bmd-label-floating">
-												<option  value="" disabled selected>เดือน</option>
-												<option  value="">มกราคม</option>
-												<option value="">กุมภาพันธ์</option>
-												<option value="">มีนาคม</option>
-												<option value="">เมษายน</option>
-												<option value="">พฤษภาคม</option>
-												<option value="">มิถุนายน</option>
-												<option value="">กรกฎาคม</option>
-												<option value="">สิงหาคม</option>
-												<option value="">กันยายน</option>
-												<option value="">ตุลาคม</option>
-												<option value="">พฤศจิกายน</option>
-												<option value="">ธันวาคม</option>
+										<select class="form-control bmd-label-floating" id="startMonth">
+												<option value="" disabled selected>เดือน</option>
+												<option value="1">มกราคม</option>
+												<option value="2">กุมภาพันธ์</option>
+												<option value="3">มีนาคม</option>
+												<option value="4">เมษายน</option>
+												<option value="5">พฤษภาคม</option>
+												<option value="6">มิถุนายน</option>
+												<option value="7">กรกฎาคม</option>
+												<option value="8">สิงหาคม</option>
+												<option value="9">กันยายน</option>
+												<option value="10">ตุลาคม</option>
+												<option value="11">พฤศจิกายน</option>
+												<option value="12">ธันวาคม</option>
 												
 											</select>
 										
@@ -51,40 +89,83 @@
 									</div>
 								</div>
 								<div class="col-md-3">
-									<div class="form-group">
-										 <!-- <label class="bmd-label-floating">เดือน</label>
-										<input type="text" class="form-control">  -->
-										<select class="form-control bmd-label-floating dropdown-danger">
+									 <div class="form-group">
+										<!--   <label class="bmd-label-floating">เดือน</label>
+										<input type="text" class="form-control"> -->  
+										<select class="form-control bmd-label-floating " id="stopMonth">
 												<option  value="" disabled selected>เดือน</option>
-												<option  value=""> มกราคม</option>
-												<option value=""> กุมภาพันธ์</option>
-												<option value=""> มีนาคม</option>
-												<option value=""> เมษายน</option>
-												<option value=""> พฤษภาคม</option>
-												<option value=""> มิถุนายน</option>
-												<option value=""> กรกฎาคม</option>
-												<option value=""> สิงหาคม</option>
-												<option value=""> กันยายน</option>
-												<option value=""> ตุลาคม</option>
-												<option value=""> พฤศจิกายน</option>
-												<option value=""> ธันวาคม</option>
+												<option  value="1"> มกราคม</option>
+												<option value="2"> กุมภาพันธ์</option>
+												<option value="3"> มีนาคม</option>
+												<option value="4"> เมษายน</option>
+												<option value="5"> พฤษภาคม</option>
+												<option value="6"> มิถุนายน</option>
+												<option value="7"> กรกฎาคม</option>
+												<option value="8"> สิงหาคม</option>
+												<option value="9"> กันยายน</option>
+												<option value="10"> ตุลาคม</option>
+												<option value="11"> พฤศจิกายน</option>
+												<option value="12"> ธันวาคม</option>
 												
 											</select>
-									</div>
+									</div> 
+									<!-- <div class="form-group">
+										 <label class="bmd-label-floating">เดือน</label>
+										<select class="form-control bmd-label-floating dropdown-danger" name="appliances" id="appliances">
+											<option value="">== กรุณาเลือก ==</option>
+										</select>
+									</div> -->
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<label class="bmd-label-floating">พ.ศ.</label>
-										<input type="text" class="form-control">
+									<!-- <label class="bmd-label-floating">พ.ศ.</label> -->
+									<!-- 	<input type="text" class="form-control"> -->
+										<select class="form-control bmd-label-floating dropdown-danger" id="teachYear">
+												 <option  value="" disabled selected>พ.ศ.</option> 
+												<option  value="2557"> 2557</option>
+												<option value="2558"> 2558</option>
+												<option value="2559"> 2559</option>
+												<option value="2560" class="active"> 2560</option>
+												<option value="2561"> 2561</option>
+												<option value="2562"> 2562</option>
+												<option value="2563"> 2563</option>
+												</select>
 									</div>
 								</div>
 
 							</div>
 							<div class="row">
+									<div class="col-md-3">
+											<div class="form-group">
+													
+												<!-- <label class="bmd-label-floating">เดือน</label> 
+												<input type="text" class="form-control" > -->
+												<select class="form-control bmd-label-floating" id="teachWeek">
+														<option  value="" disabled selected>วัน</option>
+														<option  value="1">จันทร์</option>
+														<option value="2">อังคาร</option>
+														<option value="3">พุธ</option>
+														<option value="4">พฤหัสบดี</option>
+														<option value="5">ศุกร์</option>
+														<option value="6">เสาร์</option>
+														<option value="7">อาทิศ</option>
+														
+														
+													</select>
+												
+											</div>
+										</div>
 								<div class="col-md-3">
 									<div class="form-group">
-										<label class="bmd-label-floating">section</label>
-										<input type="text" class="form-control" id="section">
+										<!-- <label class="bmd-label-floating">section</label> -->
+										<!-- <input type="text" class="form-control" id="section"> -->
+										<select class="form-control bmd-label-floating" id="section">
+														 <option  value="" disabled selected>section</option> 
+														<option  value="1">1</option>
+														<option value="2">2</option>
+														<option value="2">3</option>
+					
+													</select>
 									</div>
 								</div>
 								<div class="col-md-3">
@@ -92,6 +173,19 @@
 										<label class="bmd-label-floating">จำนวนนักศึกษา</label> <input type="number" class="form-control" id="studenNumber">
 									</div>
 								</div>
+								<div class="col-md-3">
+										<div class="form-group">
+											<!-- <label class="bmd-label-floating">section</label> -->
+											<!-- <input type="text" class="form-control" id="section"> -->
+											<select class="form-control bmd-label-floating" id="section">
+															 <option  value="" disabled selected>ระดับนักศึกษา</option> 
+															<option  value="1">ปริญญาตรี</option>
+															<option value="2">ปริญญาตรีโท</option>
+															<option value="3">ปริญญาตรีเอก</option>
+						
+														</select>
+										</div>
+									</div>
 
 							</div>
 
@@ -104,7 +198,7 @@
 								</div>
 
 								<button type="button" class="btn btn-white btn-round btn-just-icon" onclick="subjectSec()">
-									<i class="material-icons">search</i>
+								 <i class="material-icons">search</i> 
 									<div class="ripple-container"></div>
 								</button>
 
@@ -137,13 +231,13 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<label class="bmd-label-floating">ภาคทฤษฎี</label> <input type="text" class="form-control" id="tudsadee"
+										<label class="bmd-label-floating">ภาคทฤษฎี</label> <input type="number" class="form-control" id="tudsadee"
 										    disabled>
 									</div>
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<label class="bmd-label-floating">ภาคปัฏิบัติ</label> <input type="text" class="form-control" id="prtibad"
+										<label class="bmd-label-floating">ภาคปัฏิบัติ</label> <input type="number" class="form-control" id="prtibad"
 										    disabled>
 									</div>
 								</div>
@@ -160,28 +254,29 @@
 										<label class="bmd-label-floating">เริ่มการสอน</label>
 									</div>
 								</div>
-								<div class="col-md-1">
+								<div class="col-md-2">
 									<div class="form-group">
 										<input type="time" class="form-control" id="startTime">
 									</div>
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<label class="bmd-label-floating">สิ้นสุดการสอน</label>
-									</div>
-								</div>
-								<div class="col-md-1">
-									<div class="form-group">
-										<input type="time" class="form-control" id="stopTime">
-									</div>
-								</div>
-								<div class="col-md-1">
-									<div class="form-group">
-										<label class="bmd-label-floating">ห้อง</label>
+										<label class="bmd-label-floating">ถึง</label>
 									</div>
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
+										<input type="time" class="form-control" id="stopTime">
+									</div>
+								</div>
+								 <div class="col-md-2">
+									<div class="form-group">
+										<input type="text" class="form-control" id="data_time3">
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+											<label class="bmd-label-floating">ห้อง</label>
 										<input type="text" class="form-control" id="room">
 									</div>
 								</div>
@@ -374,7 +469,7 @@
 	</div>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function () {
 		buttons: [{
 			extend: 'collection',
@@ -425,24 +520,114 @@
 
 		})
 	});
-</script>
+</script> -->
+
+<script type="text/javascript">
+	 var time_a= $('#startTime').val();
+	 var time_b=$('#stopTime').val();
+	$("#data_time3").val("เวลาสอน");
+	
+	$(function(){
+		$("#startTime").val();
+		$("#stopTime").val();
+	
+		$("#startTime").keyup(function(){
+			time2diff($("#startTime").val(),$("#stopTime").val());
+		});
+		$("#stopTime").keyup(function(){
+			time2diff($("#startTime").val(),$("#stopTime").val());
+		}); 
+	});
+	</script>
+	
+	<script type="text/javascript">
+	function time2diff(time1,time2){
+		
+		var ted = parseInt($('#tudsadee').val());
+		var ptb = parseInt($('#prtibad').val());
+		 
+		var strTime2=("2014-01-01 "+time2+":00");
+		var strTime1=("2014-01-01 "+time1+":00");   
+	
+		var myDate2=new Date(strTime2);
+		var timeStamp2=myDate2.getTime();
+	
+		var myDate1=new Date(strTime1);
+		var timeStamp1=myDate1.getTime();
+	
+		var timeDiff=(timeStamp2-timeStamp1)/1000;
+		var minutesDiff=timeDiff/60;
+		var minutesRemain=minutesDiff%60;
+		var hoursDiff=(minutesDiff-minutesRemain)/60;   
+		
+		 var sum=ted+ptb;
+		 var mm = ( ptb == hoursDiff);
+		//  $("#data_time3").val(hoursDiff+"ชั่วโมง"+minutesRemain+"นาที");
+		$("#data_hour").val(hoursDiff);
+
+		 if (sum <= hoursDiff ) {
+			nn=hoursDiff+"ชั่วโมง"+minutesRemain+"นาที"
+			
+			} else{
+				nn="เวลาไม่พอ";
+				
+			// }else if(sum ){
+			// 	nn="เวลาเกิน";
+			 }
+
+		$("#data_time3").val(nn);
+		// $("#data_4").val(sum==hoursDiff);
+		
+		console.log(hoursDiff); 
+		console.log(minutesRemain);  
+		
+	}
+	time2diff(time_b,time_b);
+	</script>
 <script>
+		var teachIdS = $('#teachTerm').val();
+		var Year = $('#termYear').val();
+		var mm =Year+'-'+teachIdS;
+	$("#teachId").val(mm);
+	$("#tebleTeachId").val(mm);
 	//insert
 	function insertTeachingfrom() {
 		//	console.log(warranty)
-
+	
 
 		var insertTableTeaching = {
-			tebleTeachId: $('#room').val(),
+			
+		 	tebleTeachId: $('#tebleTeachId').val(),
+			teachTerm: $('#teachTerm').val(),
+	 		termYear: $('#termYear').val(),
+			teachWeek: $('#teachWeek').val(),
 			studenNumber: $('#studenNumber').val(),
 			section: $('#section').val(),
+			standardTeach: $('#standardTeach').val(),
+			startMonth: $('#startMonth').val(),
+			stopMonth: $('#stopMonth').val(),
+			teachYear: $('#teachYear').val(),
 			startTime: $('#startTime').val(),
 			stopTime: $('#stopTime').val(),
-			room: $('#room').val(),
+			room:$('#room').val(),
+			
 			userRoleid: $('#userRoleid').val(),
-			subjectRoleid: $('#subjectId').val()
+			subjectRoleid: $('#subjectId').val(),
+			teach :{
+				
+				teachId: $('#teachId').val(),
+				sumHourweek: $('#data_hour').val(),
+				// sumHourterm: $('#data_hour').val(),
+				// salaryTudsadee: $('#subjectId').val(),
+				// salaryPrtibad: $('#subjectId').val(),
+				// salarySum: $('#subjectId').val(),
+				// tableteachFk: $('#subjectId').val(),
+				
+				subjactFk : $('#subjectId').val(),
+				userFk :$('#userRoleid').val()
 		}
-
+		}
+		
 		$.ajax({
 			type: "POST",
 			url: "/insertTableTeaching",
@@ -458,7 +643,9 @@
 
 			}
 		});
+
 	}
+	
 </script>
 
 <script>
@@ -487,10 +674,10 @@
 							'<td>' + msg.standardTeach +'</td>' +
 							'<td>' + msg.startTime + '-' + msg.stopTime + '</td>' +
 							'<td>' + msg.room + '</td>' +
-							'<td class="text-center">' +
-							'<input type="hidden" value=' + msg.user.userId + '>' +
-							'<a>' +
-							'<span class="glyphicon glyphicon-remove"></span>' +
+							'<td class="td-actions text-right">' +
+							'<input type="hidden" value=' + msg.tebleTeachId + '>' +
+							'<a  rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">' +
+							'<i class="material-icons">close</i>' +
 							'</a>' +
 							'</td>' +
 							'</tr>';
@@ -512,15 +699,15 @@
 		// Do DELETE a Customer via JQUERY AJAX
 		$(document).on("click", "a", function () {
 
-			var customerId = $(this).parent().find('input').val();
+			var tebleTeachId = $(this).parent().find('input').val();
 			var workingObject = $(this);
 
 			$.ajax({
 				type: "DELETE",
-				url: "" + customerId,
+				url: "/updateTableTeaching/" + tebleTeachId,
 				success: function (resultMsg) {
 					$("#resultMsgDiv").html("<p style='background-color:#67597E; color:white; padding:20px 20px 20px 20px'>" +
-						"Customer with Id=" + customerId + " is deleted successfully!" +
+						"Customer with Id=" + tebleTeachId + " is deleted successfully!" +
 						"</p>");
 
 					workingObject.closest("tr").remove();
