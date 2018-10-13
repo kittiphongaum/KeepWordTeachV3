@@ -47,13 +47,13 @@ public class SubjectDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT subjact_id,subject_name,credit,credit_hour,tudsadee,prtibad FROM tb_subject");
+			sql.append("SELECT subject_id,subject_name,credit,credit_hour,tudsadee,prtibad FROM tb_subject");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
 				Subject bean = new Subject();
-				bean.setSubjectId(rs.getString("subjact_id"));
+				bean.setSubjectId(rs.getString("subject_id"));
 				bean.setSubjectName(rs.getString("subject_name"));
 				bean.setCredit(rs.getInt("credit"));
 				bean.setCreditHour(rs.getString("credit_hour"));

@@ -26,7 +26,7 @@ public class LoginController {
 	SubjectDAO subjectDAO;
 	
 	
-   	    @RequestMapping(value ="/index",method = RequestMethod.POST)
+   	    @RequestMapping(value ="/login",method = RequestMethod.POST)
 		public String authenLogin(String username, String password,Model model,HttpServletRequest request) {
 			String authen ="";
 			User userLog = new User();
@@ -45,17 +45,17 @@ public class LoginController {
 					request.getSession().setAttribute("loginUser",userLog);
 					request.getSession().setAttribute("listUser", userlist);
 					
-					authen="dashboard";
+					authen="index1";
 				} else {
 					request.getSession().setAttribute("LoginUser", userLog);
 					request.getSession().setAttribute("listUser", userlist);
-					authen="adminWelcom";
+					authen="login";
 				}
 				
 				
 			}else {
 				model.addAttribute("messessError","F");
-				authen = "index";
+				authen = "login";
 			}
 			
 			} catch (Exception e) {
@@ -69,6 +69,6 @@ public class LoginController {
 		request.getSession().removeAttribute("listUser");
 		model.addAttribute("messessError", "L");
 
-		return "index";
+		return "login";
 	}
 }

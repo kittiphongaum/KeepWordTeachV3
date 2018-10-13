@@ -7,34 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class FooController {
-	@RequestMapping("/dashboard")
+/*	@RequestMapping("/dashboard")
 	public String dashboard() {
-		
 		return "dashboard";
 	}
 	@RequestMapping("/tables")
 	public String tables() {
 		return"tables";
 	}
-	@RequestMapping("/")
-	public String welcome() {
-		return"index";
-	}
-	@RequestMapping("/user")
-	public String user() {
-	return "user";
-	}
-	@RequestMapping("/calendar")
-	public String calendar() {
-		return "calendar";
-	}
 	@RequestMapping("/home")
 	public String home() {
 		return "home";
-	}
-	@RequestMapping("/historyteach")
-	public String historyteach() {
-		return "historyteach";
 	}
 	@RequestMapping("/timetable")
 	public String timetable() {
@@ -52,10 +35,35 @@ public class FooController {
 	@RequestMapping("/test2")
 	public String test2() {
 		return "test2";
+	}*/
+	/*-----Web-----*/
+	@RequestMapping("/")
+	public String login() {
+		return "login";
 	}
 	@RequestMapping("/appcalendar")
 	public String appcalendar() {
 		return "appcalendar";
 	}
+	@RequestMapping("/keepword")
+	public String keepword() {
+		return "keepword";
+	}
 	
+	@RequestMapping("/historyteach")
+	public String historyteach() {
+		return "historyteach";
+	}
+	@RequestMapping("/calender")
+	public String calendar() {
+		return "calender";
+	}
+	@RequestMapping("/user")
+	public String user() {
+	return "user";
+	}
+	@RequestMapping("/index1")
+	public String welcome() {
+		return"index1";
+	}
 }

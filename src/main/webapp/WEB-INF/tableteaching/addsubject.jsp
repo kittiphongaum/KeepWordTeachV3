@@ -304,7 +304,6 @@
 				<table id="customerTable" class="table table-bordered table-hover">
 					<thead class="text-warning">
 						<tr>
-
 							<th rowspan="2">รหัสวิชา</th>
 							<th rowspan="3">ชื่อวิชา</th>
 							<th rowspan="2">section</th>
