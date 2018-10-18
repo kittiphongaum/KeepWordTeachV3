@@ -10,6 +10,8 @@ public class TableTeaching {
 	private int studenNumber;
 	private int section;
 	private int standardTeach;
+
+	private String sumHour;
 	
 	private String startMonth;
 	private String stopMonth;
@@ -34,6 +36,14 @@ public class TableTeaching {
 	}
 
 	
+
+	public String getSumHour() {
+		return sumHour;
+	}
+
+	public void setSumHour(String sumHour) {
+		this.sumHour = sumHour;
+	}
 
 	public Teach getTeach() {
 		return teach;

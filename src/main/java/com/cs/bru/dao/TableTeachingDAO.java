@@ -22,7 +22,7 @@ public class TableTeachingDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_table_teaching(teble_teach_id,teach_term,term_year,teach_week,section,studen_number,start_month,stop_month,teach_year,start_time,stop_time,standard_teach,room,user_roleid,subject_roleid,degree_studen)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_table_teaching(teble_teach_id,teach_term,term_year,teach_week,section,studen_number,start_month,stop_month,teach_year,start_time,stop_time,standard_teach,room,user_roleid,subject_roleid,degree_studen,sum_hour)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getTebleTeachId());
 			prepared.setString(2, bean.getTeachTerm());
@@ -44,7 +44,7 @@ public class TableTeachingDAO {
 			prepared.setString(14, bean.getUserRoleid());
 			prepared.setString(15, bean.getSubjectRoleid());
 			prepared.setString(16, bean.getDegreeStuden());
-			
+			prepared.setString(17, bean.getSumHour());
 
 			prepared.executeUpdate();
 			 /*System.out.println(bean);*/ 

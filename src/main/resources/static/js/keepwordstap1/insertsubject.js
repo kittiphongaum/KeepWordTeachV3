@@ -27,6 +27,8 @@
 			teachYear: $('#teachYear').val(),
 			startTime: $('#startTime').val(),
 			stopTime: $('#stopTime').val(),
+			degreeStuden: $('#degreeStuden').val(),
+			sumHour: $('#data_hour').val(),
 			room:$('#room').val(),
 			
 			userRoleid: $('#userRoleid').val(),
@@ -53,7 +55,12 @@
 			dataType: "json",
 			success: function (msg) {
 				// console.log(msg)
-				// window.location.href = msg.page;
+				if(msg.subjectRoleid !=null){
+					window.location.href = "http://localhost:1111/keepword"
+				}else{
+
+				}
+				
 				
 			},
 			

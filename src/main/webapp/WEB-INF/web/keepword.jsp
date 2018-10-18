@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-		  <%@page import="com.cs.bru.model.User"%>
+<%@page import="com.cs.bru.model.User"%>
 <%@ page import="java.util.List"%>
 <!DOCTYPE html >
 <html lang="en">
@@ -33,14 +33,14 @@
 	<!-- Custom CSS -->
 	<link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
 
-  <%
+	<%
    User  userLog = null;
     User  userByid = null; 
    User userByBean = null;
    String result = "";
 %>
 
-  <%
+	<%
   	userLog = (User) request.getSession().getAttribute("loginUser");
    /*  list = (List<User>) request.getSession().getAttribute("listUser");  */
      userByid = (User) request.getSession().getAttribute("listUser"); 
@@ -55,7 +55,7 @@
 		<div class="la-anim-1"></div>
 	</div>
 	<!-- /Preloader -->
-	<div class="wrapper  theme-5-active pimary-color-blue">
+	<div class="wrapper  theme-1-active pimary-color-blue">
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="mobile-only-brand pull-left">
 				<div class="nav-header pull-left">
@@ -75,14 +75,15 @@
 			<div id="mobile_only_nav" class="mobile-only-nav pull-right">
 				<ul class="nav navbar-right top-nav pull-right">
 
-					
+
 					<li class="dropdown app-drp">
-			<a  class="dropdown-toggle"><%=userByid.getUserId() %></a>
- <input type="hidden" id="userRoleid" value ="<%=userByid.getUserId()%>"> 
- </li>
-              <li class="dropdown app-drp">
+						<a class="dropdown-toggle">
+							<%=userByid.getUserId() %></a>
+						<input type="hidden" id="userRoleid" value="<%=userByid.getUserId()%>">
+					</li>
+					<li class="dropdown app-drp">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-apps top-nav-icon"></i></a>
-						
+
 						<ul class="dropdown-menu app-dropdown" data-dropdown-in="slideInRight" data-dropdown-out="flipOutX">
 							<li>
 								<div class="app-nicescroll-bar">
@@ -257,20 +258,16 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="panel panel-default card-view">
-							<div class="panel-heading">
-								<div class="pull-left">
-									<!-- <h6 class="panel-title txt-dark">ลงทะเบียนสอน</h6> -->
-								</div>
-								<div class="clearfix"></div>
-							</div>
+						
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
-									<form id="example-form-jook">
-										<h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">เพิ่มข้อมูลรายวิชา</span></h3>
+									<!-- <form id="example-form-jook"> -->
+										<!-- <h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">เพิ่มข้อมูลรายวิชา</span></h3> -->
 										<fieldset>
+											
 											<div class="row">
-													<input type="hidden" id="teachId" >
-													<input type="hidden" id="tebleTeachId">
+												<input type="hidden" id="teachId">
+												<input type="hidden" id="tebleTeachId">
 
 												<div class="container-fluid">
 													<div class="row">
@@ -284,124 +281,76 @@
 																</div>
 																<div class="panel-wrapper collapse in">
 																	<div class="panel-body">
-
-
 																		<div class="form-group">
-																			<div class="row">
-																				<div class="col-md-3 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label class="control-label mr-10 col-sm-12" for="email_inline">ระยะเวลาการสอน</label>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="span1"></div>
-																				<div class="form-wrap">
-																				<div class="col-md-3 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label for="exampleInputuname_3" class="col-sm-3 control-label">เดือน</label>
-																							<div class="col-sm-9">
-																								<!-- <input type="text" class="form-control input-daterange-datepicker" id="startMonth" placeholder=""value=""> -->
-																								<select id="startMonth" class="form-control " name="startMonth">
-																										<!-- required -->
-																									<option value="">เลือก</option>
-																									<option value="1">มกราคม</option>
-																									<option value="2">กุมพาพันธ์</option>
-																									<option value="3">มีนาคม</option>
-																									<option value="4">เมษายน</option>
-																									<option value="5">พฤษภาคม</option>
-																									<option value="6">มิถุนายน</option>
-																									<option value="7">กรกฎาคม</option>
-																									<option value="8">สิงหาคม</option>
-																									<option value="9">กันยายน</option>
-																									<option value="10">ตุลาคม</option>
-																									<option value="11">พฤศจิกายน</option>
-																									<option value="12">ธันวาคม</option>
-																								</select>
+																				<div class="row">
+																					<div class="col-md-3 col-xs-12">
+																						<div class="form-group">
+																							<div class="row">
+																								<label class="control-label mr-10 col-sm-12" for="email_inline">ระยะเวลาการสอน</label>
 																							</div>
 																						</div>
 																					</div>
-																				</div>
-																				</div>
-																				<div class="col-md-1 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label class="control-label mb-10" for="lastName">ถึง</label>
+																					<div class="span1"></div>
+																					<div class="form-wrap">
+																						<div class="col-md-3 col-xs-12">
+																							<div class="form-group">
+																								<div class='input-group date' id='mounthstartMonth'>
+																									<input type='text' class="form-control" id="startMonth" data-mask="99/99/9999">
+																									<span class="input-group-addon">
+																										<span class="fa fa-calendar"></span>
+																									</span>
+																								</div>
+																								
+																							</div>
 																						</div>
 																					</div>
+																					<div class="col-md-1 col-xs-12">
+																						<div class="form-group">
+																							<div class="row">
+																								<label class="control-label mb-10" for="lastName">ถึง</label>
+																							</div>
+																						</div>
 
-																				</div>
-																				<div class="col-md-3 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label for="exampleInputuname_3" class="col-sm-3 control-label">เดือน</label>
-																							<div class="col-sm-9">
-																								<!-- <input type="text" class="form-control" id="stopMonth" placeholder=""> -->
-																								<select id="stopMonth" class="form-control " name="startMonth">
-																									<option value="">เลือก</option>
-																									<option value="1">มกราคม</option>
-																									<option value="2">กุมพาพันธ์</option>
-																									<option value="3">มีนาคม</option>
-																									<option value="4">เมษายน</option>
-																									<option value="5">พฤษภาคม</option>
-																									<option value="6">มิถุนายน</option>
-																									<option value="7">กรกฎาคม</option>
-																									<option value="8">สิงหาคม</option>
-																									<option value="9">กันยายน</option>
-																									<option value="10">ตุลาคม</option>
-																									<option value="11">พฤศจิกายน</option>
-																									<option value="12">ธันวาคม</option>
-																								</select>
+																					</div>
+																					<div class="col-md-3 col-xs-12">
+																						<div class="form-group">
+																							<div class="row">
+																								<div class="form-group">
+																									<div class='input-group date' id='mounthstopMonth'>
+																										<input type='text' class="form-control" id="stopMonth" data-mask="99/99/9999">
+																										<span class="input-group-addon">
+																											<span class="fa fa-calendar"></span>
+																										</span>
+																									</div>
+																									
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="col-md-2 col-xs-12">
+																						<div class="form-group">
+																							<div class="row">
+																								<label for="exampleInputuname_3" class="col-sm-3 control-label">พ.ศ.</label>
+																								<div class="col-sm-9">
+																									<!-- <input type="text" class="form-control" id="teachYear" placeholder=""> -->
+																									<select id="teachYear" class="form-control " name="startMonth">
+																										
+																										<option value="2561">2561</option>
+																										<option value="2560">2560</option>
+																										<option value="2560">2559</option>
+																										<option value="2558">2558</option>
+																										<option value="2557">2557</option>
+																									</select>
+																								</div>
 																							</div>
 																						</div>
 																					</div>
 																				</div>
-																				<div class="col-md-2 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label for="exampleInputuname_3" class="col-sm-3 control-label">พ.ศ.</label>
-																							<div class="col-sm-9">
-																								<!-- <input type="text" class="form-control" id="teachYear" placeholder=""> -->
-																								<select id="teachYear" class="form-control " name="startMonth">
-																									<option value="2562">2562</option>
-																									<option value="2561">2561</option>
-																									<option value="2560">2560</option>
-																									<option value="2560">2559</option>
-																									<option value="2558">2558</option>
-																									<option value="2557">2557</option>
-																								</select>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-
+																			
 																		</div>
 																		<div class="form-group">
 																			<div class="row">
-																				<div class="col-md-3 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label for="exampleInputuname_3" class="col-sm-4 control-label">วัน</label>
-																							<div class="col-sm-8">
-																								<!-- <input type="text" class="form-control" id="teachWeek" placeholder=""> -->
-																								<select id="teachWeek" class="form-control " name="teachWeek">		
-																										<option value="">เลือกวัน</option>	
-																									<option value="1">วันจันทร์</option>
-																									<option value="2">วันอังคาร</option>
-																									<option value="3">วันพุธ</option>
-																									<option value="4">วันพฤหัสบดี</option>
-																									<option value="5">วันศุกร์</option>
-																									<option value="6">วันเสาร์</option>
-																									<option value="7">วันอาทิตย์</option>
-																									
-																									
-																								</select>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
+																				
 																				<div class="span1"></div>
 																				<div class="col-md-4 col-xs-12">
 																					<div class="form-group">
@@ -409,13 +358,13 @@
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ระดับนักศึกษา</label>
 																							<div class="col-sm-8">
 																								<!-- <input type="text" class="form-control" id="degreeStuden" placeholder=""> -->
-																								<select id="degreeStuden" class="form-control " name="degreeStuden">		
-																										<option value="1">ปริญญาตรี</option>	
+																								<select id="degreeStuden" class="form-control " name="degreeStuden">
+																									<option value="1">ปริญญาตรี</option>
 																									<option value="2">ปริญญาโท</option>
 																									<option value="3">ปริญญาเอก</option>
-																									
-																									
-																									
+
+
+
 																								</select>
 																							</div>
 																						</div>
@@ -428,16 +377,16 @@
 																						<div class="row">
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ปีการศึกษา</label>
 																							<div class="col-sm-8">
-																							
+
 																								<select id="termYear" class="form-control " name="termYear">
-																										
-																										<option value="2562 ">2562</option>
-																										<option value="2561">2561</option>
-																										<option value="2560">2560</option>
-																										<option value="2560">2559</option>
-																										<option value="2558">2558</option>
-																										<option value="2557">2557</option>
-																									</select>
+
+																								
+																									<option value="2561">2561</option>
+																									<option value="2560">2560</option>
+																									<option value="2560">2559</option>
+																									<option value="2558">2558</option>
+																									<option value="2557">2557</option>
+																								</select>
 																							</div>
 																						</div>
 																					</div>
@@ -450,12 +399,12 @@
 																							<div class="col-sm-6">
 																								<!-- <input type="text" class="form-control" id="teachTerm" placeholder=""> -->
 																								<select id="teachTerm" class="form-control " name="teachTerm">
-																										
-																										<option value="1 ">1</option>
-																										<option value="2">2</option>
-																										<option value="3">3</option>
-																									
-																									</select>
+
+																									<option value="1 ">1</option>
+																									<option value="2">2</option>
+																									<option value="3">3</option>
+
+																								</select>
 																							</div>
 																						</div>
 																					</div>
@@ -477,12 +426,13 @@
 
 
 												<div class="container-fluid">
+
 													<div class="row">
 														<div class="col-sm-12">
 															<div class="panel panel-default card-view">
 																<div class="panel-heading">
 																	<div class="pull-left">
-																		<h5 class="control-label mb-10" for="exampleCountry">เพิ่มรายวิชา</h5>
+																		<h5 class="control-label mb-10" for="exampleCountry">1. เพิ่มรายวิชา</h5>
 																	</div>
 																	<div class="clearfix"></div>
 																</div>
@@ -525,13 +475,13 @@
 																						<div class="row">
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">หน่วยกิต</label>
 																							<div class="col-sm-8">
-																								<input type="text" class="form-control" id="creditsum" placeholder=""disabled>
+																								<input type="text" class="form-control" id="creditsum" placeholder="" disabled>
 
 																							</div>
 																						</div>
 																					</div>
 																				</div>
-																				
+
 																			</div>
 
 																		</div>
@@ -545,7 +495,7 @@
 																						<div class="row">
 																							<label class="control-label mb-10 col-sm-6" for=" ">ภาคทฤษฎี</label>
 																							<div class="col-sm-6">
-																								<input  type="number" name="tudsadee" class="form-control " value="" id="tudsadee" disabled>
+																								<input type="number" name="tudsadee" class="form-control " value="" id="tudsadee" disabled>
 																							</div>
 																						</div>
 																					</div>
@@ -556,7 +506,7 @@
 																						<div class="row">
 																							<label class="control-label mb-10 col-sm-6" for="">ภาคปัฏิบัติ</label>
 																							<div class="col-sm-6">
-																								<input  type="number" name="tudsadee" class="form-control  " value="" id="prtibad" disabled>
+																								<input type="number" name="tudsadee" class="form-control  " value="" id="prtibad" disabled>
 																							</div>
 																						</div>
 																					</div>
@@ -569,14 +519,14 @@
 																							<div class="col-sm-8">
 																								<!-- <input type="number" class="form-control" id="section" placeholder=""> -->
 																								<select id="section" class="form-control " name="section">
-																										
-																										<option value="1 ">1</option>
-																										<option value="2">2</option>
-																										<option value="3">3</option>
-																										<option value="4">4</option>
-																										
-																									
-																									</select>
+
+																									<option value="1 ">1</option>
+																									<option value="2">2</option>
+																									<option value="3">3</option>
+																									<option value="4">4</option>
+
+
+																								</select>
 
 																							</div>
 																						</div>
@@ -586,7 +536,7 @@
 																			</div>
 
 																		</div>
-																		
+
 																		<div class="form-group">
 																			<div class="row">
 																				<div class="col-md-4 col-xs-12">
@@ -594,7 +544,7 @@
 																						<div class="row">
 																							<label class="control-label mb-10 col-sm-6" for="firstName">เวลาที่เริ่มการสอน</label>
 																							<div class="col-sm-6">
-																								<input  type="time" class="form-control " id="startTime">
+																								<input type="time" class="form-control " id="startTime">
 																							</div>
 																						</div>
 																					</div>
@@ -605,27 +555,32 @@
 																						<div class="row">
 																							<label class="control-label mb-10 col-sm-6" for="lastName">เวลาที่สิ้นสุดการสอน</label>
 																							<div class="col-sm-6">
-																								<input  type="time"  class="form-control " id="stopTime">
+																								<input type="time" class="form-control " id="stopTime">
 																							</div>
 																						</div>
 																					</div>
 																				</div>
+																				<input type="hidden" id="data_hour"/>
 																				<div class="span1"></div>
 																				<div class="col-md-4 col-xs-12">
 																					<div class="form-group">
 																						<div class="row">
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">รวมเวลาสอน</label>
 																							<div class="col-sm-8">
-																									<input  type="text" name="tudsadee" class="form-control  " value="" id="data_time3" disabled placeholder="รวมเวลาสอน">
+																								<input type="text" name="tudsadee" class="form-control  " value="" id="data_time3" disabled
+																								 placeholder="รวมเวลาสอน">
 																							</div>
 																						</div>
 																					</div>
 																				</div>
-																				
+
 
 																			</div>
-																			<div class="span1"></div>
-																			<div class="form-group">
+																			
+																		</div>
+																	
+																				<div class="span1"></div>
+																				<div class="form-group">
 																					<div class="row">
 																						<div class="col-md-4 col-xs-12">
 																							<div class="form-group">
@@ -634,96 +589,71 @@
 																									<div class="col-sm-8">
 																										<input type="text" name="room" class="form-control " value="" id="room">
 																									</div>
-		
+	
 																								</div>
 																							</div>
 																						</div>
-																					
-																				
-																			
-																			
-																					<div class="col-md-4 col-xs-12">
-																						<div class="form-group">
-																							<div class="row">
-																								<label for="exampleInputuname_3" class="col-sm-4 control-label">จำนวนนักศึกษา</label>
-																								<div class="col-sm-8">
-																									<input type="number" class="form-control" id="studenNumber" placeholder="">
+	
+	
+	
+	
+																						<div class="col-md-4 col-xs-12">
+																							<div class="form-group">
+																								<div class="row">
+																									<label for="exampleInputuname_3" class="col-sm-4 control-label">จำนวนนักศึกษา</label>
+																									<div class="col-sm-8">
+																										<input type="number" class="form-control" id="studenNumber" placeholder="">
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																						<div class="col-md-4 col-xs-12">
+																							<div class="form-group">
+																								<div class="row">
+																									<label for="exampleInputuname_3" class="col-sm-4 control-label">วัน</label>
+																									<div class="col-sm-8">
+																										<!-- <input type="text" class="form-control" id="teachWeek" placeholder=""> -->
+																										<select id="teachWeek" class="form-control " name="teachWeek">
+																											<option value="">เลือกวัน</option>
+																											<option value="1">วันจันทร์</option>
+																											<option value="2">วันอังคาร</option>
+																											<option value="3">วันพุธ</option>
+																											<option value="4">วันพฤหัสบดี</option>
+																											<option value="5">วันศุกร์</option>
+																											<option value="6">วันเสาร์</option>
+																											<option value="7">วันอาทิตย์</option>
+		
+		
+																										</select>
+																									</div>
 																								</div>
 																							</div>
 																						</div>
 																					</div>
-																				</div>
-																			</div>
+																				
 																		</div>
 																		<button type="submit" class="btn btn-primary pull-right" onclick="insertTeachingfrom()">
 																			<h4>เพิ่มวิชาสอน</h4>
 																		</button>
 																	</div>
+																
 																</div>
-
+															
 															</div>
-
+														
+	
 														</div>
-
-
+													
 													</div>
-													
-													
 												
-												</div> 
+
+												</div>
 
 											</div>
-											<%@include file="./keepwordstep/tableteach2.jsp" %>  
+										
 
-											
-										</fieldset>
-
-										<h3><span class="number"><i class="icon-bag txt-black"></i></span><span class="head-font capitalize-font">เลือกวิชาใช้เบิก</span></h3>
-										<fieldset>
-											 <div class="row">
-												<div class="col-sm-12">
-														<div class="panel panel-default card-view">
-														<div class="panel-heading">
-																<div class="pull-left">
-																	<h6 class="panel-title txt-dark">ตารางวิชา</h6>
-																</div>
-																<div class="clearfix"></div>
-															</div>
-															<div class="panel-wrapper collapse in">
-																	<div class="panel-body">
-																		<div class="table-wrap">
-																				<table id=" " >
-																						<thead class="text-warning">
-																							<tr>
-																								<th rowspan="Row">รหัสวิชา</th>
-																								<th rowspan="Row">ชื่อวิชา</th>
-																								<th rowspan="Row">จำนวนชั่วโมง</th>
-																								<th rowspan="Row">จำนวนเงิน</th>
-																								<th rowspan="Row">รวมเงิน</th>
-																								<th rowspan="Row">หมายเหตู</th>
-																						</tr>
-																					
-																							</thead>
-																						<tbody>
-
-																						</tbody>
-																						<!-- <tr>
-																								<th rowspan="2">รหัสวิชา</th>
-																								<th rowspan="2">ชื่อวิชา</th>
-																								<th rowspan="2">จำนวนชั่วโมง</th>
-																								<th rowspan="2">จำนวนเงิน</th>
-																								<th rowspan="2">รวมเงิน</th>
-																								<th rowspan="2">หมายเหตู</th>
-																						</tr> -->
-																				</table>
-																		</div>
-																	</div>
-																</div>	
-																										
-													</div>
-												</div>
-											</div> 
-											 <!-- <div class="row">
+											<%@include file="./keepwordstep/tableteach2.jsp" %>
+											<!-- <div class="row">
 												<div class="col-sm-12">
 													<div class="panel panel-default card-view">
 														<div class="panel-heading">
@@ -741,138 +671,141 @@
 														</div>
 													</div>
 												</div>
-											</div>  -->
+											</div> -->
+										
+										</fieldset>
+
+										<!-- <h3><span class="number"><i class="icon-bag txt-black"></i></span><span class="head-font capitalize-font">เลือกวิชาใช้เบิก</span></h3> -->
+										<fieldset>
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="panel panel-default card-view">
+														<div class="panel-heading">
+															<div class="pull-left">
+																<h6 class="panel-title txt-dark">ตารางวิชา</h6>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+														<div class="panel-wrapper collapse in">
+															<div class="panel-body">
+																<div class="table-wrap">
+																	<table id=" ">
+																		<thead class="text-warning">
+																			<tr>
+																				<th rowspan="Row">รหัสวิชา</th>
+																				<th rowspan="Row">ชื่อวิชา</th>
+																				<th rowspan="Row">จำนวนชั่วโมง</th>
+																				<th rowspan="Row">จำนวนเงิน</th>
+																				<th rowspan="Row">รวมเงิน</th>
+																				<th rowspan="Row">หมายเหตู</th>
+																			</tr>
+
+																		</thead>
+																		<tbody>
+
+																		</tbody>
+																		<!-- <tr>
+																								<th rowspan="2">รหัสวิชา</th>
+																								<th rowspan="2">ชื่อวิชา</th>
+																								<th rowspan="2">จำนวนชั่วโมง</th>
+																								<th rowspan="2">จำนวนเงิน</th>
+																								<th rowspan="2">รวมเงิน</th>
+																								<th rowspan="2">หมายเหตู</th>
+																						</tr> -->
+																	</table>
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<!-- Row -->
+
+											<!-- /Row -->
+
 										</fieldset>
 
 										<h3><span class="number"><i class="icon-credit-card txt-black"></i></span><span class="head-font capitalize-font">แก้ใข้เวลาสอน</span></h3>
+									
 										<fieldset>
 											<!--CREDIT CART PAYMENT-->
-											<div class="row">
-												<div class="col-sm-12">
-													<div class="form-group">
-														<label class="control-label mb-10" for="CreditCardType">card type:</label>
-														<select id="CreditCardType" name="CreditCardType" class="form-control required">
-															<option value="5">Visa</option>
-															<option value="6">MasterCard</option>
-															<option value="7">American Express</option>
-															<option value="8">Discover</option>
-														</select>
-													</div>
-													<div class="form-group">
-														<label class="control-label mb-10" for="cardNo">Credit Card Number:</label>
-														<input type="text" id="cardNo" data-mask="9999-9999-9999-9999" class="form-control required" name="car_number"
-														 value="" />
-													</div>
-													<div class="form-group">
-														<label class="control-label mb-10" for="cvv">card cvv:</label>
-														<input type="text" id="cvv" class="form-control  required" data-mask="999" name="car_code" value="" />
-													</div>
-													<div class="form-group">
-														<label class="control-label mb-10">expiration date:</label>
-														<div class="row">
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-																<select class="form-control required" name="month">
-																	<option value="">Month</option>
-																	<option value="1">01</option>
-																	<option value="2">02</option>
-																	<option value="3">03</option>
-																	<option value="4">04</option>
-																	<option value="5">05</option>
-																	<option value="6">06</option>
-																</select>
-															</div>
-															<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-																<select class="form-control required" name="year">
-																	<option value="1">Year</option>
-																	<option value="2">2001</option>
-																</select>
-															</div>
-														</div>
-													</div>
-													<div class="form-group mb-0">
-														<div class="row">
-															<div class="col-md-12">
-																<ul class="cards">
-																	<li class="visa hand"><img src="dist/img/1-s.png" alt="card" /></li>
-																	<li class="mastercard hand"><img src="dist/img/2-s.png" alt="card" /></li>
-																	<li class="amex hand"><img src="dist/img/3-s.png" alt="card" /></li>
-																	<li class="amex hand"><img src="dist/img/4-s.png" alt="card" /></li>
-																</ul>
-																<div class="clearfix"></div>
-															</div>
-														</div>
-													</div>
-
-												</div>
-											</div>
+										
+										
+												
+								
 											<!--CREDIT CART PAYMENT END-->
 										</fieldset>
-
-										<h3><span class="number"><i class="icon-basket-loaded txt-black"></i></span><span class="head-font capitalize-font">
-												บันทึก/พิมพ์</span></h3>
-										<fieldset>
-											<table class="table display product-overview" id="datable_1">
-												<thead>
-													<tr>
-														<th>Photo</th>
-														<th>Product</th>
-														<th>Quantity</th>
-														<th>price</th>
-														<th>Actions</th>
-													</tr>
-												</thead>
-												<tfoot>
-													<tr>
-														<th colspan="3">Subtotal:</th>
-														<th></th>
-														<th></th>
-													</tr>
-												</tfoot>
-												<tbody>
-													<tr>
-														<td>
-															<img src="dist/img/chair.jpg" alt="iMac" width="80">
-														</td>
-														<td>Rounded Chair</td>
-														<td>
-															<input class="vertical-spin" type="text" data-bts-button-down-class="btn btn-default"
-															 data-bts-button-up-class="btn btn-default" value="20" name="vertical-spin">
-														</td>
-														<td>$400</td>
-
-														<td><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>
-															<img src="dist/img/chair2.jpg" alt="iMac" width="80">
-														</td>
-														<td>Rounded Chair</td>
-														<td>
-															<input class="vertical-spin" type="text" data-bts-button-down-class="btn btn-default"
-															 data-bts-button-up-class="btn btn-default" value="10" name="vertical-spin">
-														</td>
-														<td>$450</td>
-														<td><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-													<tr>
-														<td>
-															<img src="dist/img/chair3.jpg" alt="iMac" width="80">
-														</td>
-														<td>Rounded Chair</td>
-														<td>
-															<input class="vertical-spin" type="text" data-bts-button-down-class="btn btn-default"
-															 data-bts-button-up-class="btn btn-default" value="15" name="vertical-spin">
-														</td>
-														<td>$470</td>
-
-														<td><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="fa fa-trash"></i></a></td>
-													</tr>
-												</tbody>
-											</table>
-										</fieldset>
-									</form>
-						<%-- 		 <%@include file="./keepwordstep/tebletaech1.jsp" %>   --%>
 								
+										<!-- <h3><span class="number"><i class="icon-basket-loaded txt-black"></i></span><span class="head-font capitalize-font">
+												บันทึก/พิมพ์</span></h3> -->
+										<fieldset>
+										
+										</fieldset>
+									<!-- </form> -->
+									<%-- 		 <%@include file="./keepwordstep/tebletaech1.jsp" %> --%>
+							<!-- Row -->
+							<!-- <div class="clearfix"></div>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="panel panel-default card-view">
+											<div class="panel-heading">
+												<div class="pull-left">
+													<h6 class="panel-title txt-dark">Date time picker</h6>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<div class="panel-wrapper collapse in">
+												<div class="panel-body">
+													<div class="form-wrap">
+														<form>
+															<div class="row">
+																<div class="col-sm-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10 text-left">date time pick</label>
+																		<div class='input-group date' id='datetimepicker5'>
+																			<input type='text' class="form-control">
+																			<span class="input-group-addon">
+																				<span class="fa fa-calendar"></span>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-sm-6">
+																	<div class="form-group">
+																		<label class="control-label mb-10 text-left">time pick</label>
+																		<div class='input-group date' id='datetimepicker2'>
+																			<input type='text' class="form-control" />
+																			<span class="input-group-addon">
+																				<span class="fa fa-clock-o"></span>
+																			</span>
+																		</div>
+																	</div>
+																</div>
+																<div class="col-sm-6">
+																	<label class="control-label mb-10 text-left">inline date pick</label>
+																	<div class="form-group">
+																		<div class='input-group date' id='datetimepicker3'></div>
+																	</div>
+																</div>
+																<div class="col-sm-6">
+																	<label class="control-label mb-10 text-left">inline date time pick</label>
+																	<div class="form-group">
+																		<div class='input-group date' id='datetimepicker4'></div>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div> -->
+							<!-- /Row -->
 								</div>
 							</div>
 						</div>
@@ -885,14 +818,26 @@
 		</div>
 
 	</div>
-	
+
 	<!---------------------------------------- JavaScript ------------------------------------>
+	<!-- Bootstrap Colorpicker CSS -->
+	<link href="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css"
+	 rel="stylesheet" type="text/css" />
+
+	<!-- Bootstrap Datetimepicker CSS -->
+	<link href="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+	 rel="stylesheet" type="text/css" />
+
+	<!-- Bootstrap Daterangepicker CSS -->
+	<link href="../assets_/vendors/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+	<!-- -------------- -->
 
 	<!-- jQuery -->
 	<script src="../assets_/vendors/bower_components/jquery/dist/jquery.min.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../assets_/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 	<script src="../assets_/vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 
 	<!-- Form Wizard JavaScript -->
@@ -930,93 +875,92 @@
 	<!-- Init JavaScript -->
 	<script src="../assets_/dist/js/init.js"></script>
 
+	<!-- Moment JavaScript -->
+	<script type="text/javascript" src="../assets_/vendors/bower_components/moment/min/moment-with-locales.min.js"></script>
 
 
-		<!-- Moment JavaScript -->
-		<script type="text/javascript" src="../assets_/vendors/bower_components/moment/min/moment-with-locales.min.js"></script>
+	<script src="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 
-	
-		<script src="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 
-	
-		<script type="text/javascript" src="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
-		<script src="../assets_/vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="../assets_/vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-		<!-- <script src="../assets_/dist/js/form-picker-data.js"></script> -->
+	<!-- <script src="../assets_/dist/js/form-picker-data.js"></script> -->
 
-<!-- <script src="../js/keepword.js"></script> -->
-<script src="../js/keepwordstap1/insertsubject.js"> </script>
-<script src="../js/keepwordstap1/searchsubject.js"></script>
-<script src="../js/keepwordstap1/stepfrom.js"></script>
-<!-- <script src="../js/keepwordstap1/time-teach.js"></script> -->
-<script src="../js/keepwordstap1/teachtable_1.js"></script>
-<!-- <script src="../js/keepwordstap1/tebleteach.js"></script> -->
-<!-- <script src="../js/keepwordstap2/updateteachtable.js"></script> -->
+	<!-- <script src="../js/keepword.js"></script> -->
+	<script src="../js/keepwordstap1/insertsubject.js"> </script>
+	<script src="../js/keepwordstap1/searchsubject.js"></script>
+	<script src="../js/keepwordstap1/stepfrom.js"></script>
+	<!-- <script src="../js/keepwordstap1/time-teach.js"></script> -->
+	<script src="../js/keepwordstap1/keepword_main.js"></script>
+	<!-- <script src="../js/keepwordstap1/tebleteach.js"></script> -->
+	<!-- <script src="../js/keepwordstap2/updateteachtable.js"></script> -->
 
 
 </body>
 
 <script type="text/javascript">
-	var time_a= $('#startTime').val();
-	var time_b=$('#stopTime').val();
-//    $("#data_time3").val("เวลาสอน");
-   
-   $(function(){
-	   $("#startTime").val();
-	   $("#stopTime").val();
-   
-	   $("#startTime").keyup(function(){
-		   time2diff($("#startTime").val(),$("#stopTime").val());
-	   });
-	   $("#stopTime").keyup(function(){
-		   time2diff($("#startTime").val(),$("#stopTime").val());
-	   }); 
-   });
-   </script>
-   
-   <script type="text/javascript">
-   function time2diff(time1,time2){
-	   
-	   var ted = parseInt($('#tudsadee').val());
-	   var ptb = parseInt($('#prtibad').val());
-		
-	   var strTime2=("2014-01-01 "+time2+":00");
-	   var strTime1=("2014-01-01 "+time1+":00");   
-   
-	   var myDate2=new Date(strTime2);
-	   var timeStamp2=myDate2.getTime();
-   
-	   var myDate1=new Date(strTime1);
-	   var timeStamp1=myDate1.getTime();
-   
-	   var timeDiff=(timeStamp2-timeStamp1)/1000;
-	   var minutesDiff=timeDiff/60;
-	   var minutesRemain=minutesDiff%60;
-	   var hoursDiff=(minutesDiff-minutesRemain)/60;   
-	   
-		var sum=ted+ptb;
-		var mm = ( ptb == hoursDiff);
-	   //  $("#data_time3").val(hoursDiff+"ชั่วโมง"+minutesRemain+"นาที");
-	   $("#data_hour").val(hoursDiff);
+	var time_a = $('#startTime').val();
+	var time_b = $('#stopTime').val();
+	//    $("#data_time3").val("เวลาสอน");
 
-		if (sum <= hoursDiff ) {
-		   nn=hoursDiff+"ชั่วโมง"+minutesRemain+"นาที"
-		   
-		   } else{
-			   nn="เวลาไม่พอ";
-			   
-		   // }else if(sum ){
-		   // 	nn="เวลาเกิน";
-			}
+	$(function () {
+		$("#startTime").val();
+		$("#stopTime").val();
 
-	   $("#data_time3").val(nn);
-	   // $("#data_4").val(sum==hoursDiff);
-	   
-	   console.log(hoursDiff); 
-	   console.log(minutesRemain);  
-	   
-   }
-   time2diff(time_b,time_b);
-   </script>
+		$("#startTime").keyup(function () {
+			time2diff($("#startTime").val(), $("#stopTime").val());
+		});
+		$("#stopTime").keyup(function () {
+			time2diff($("#startTime").val(), $("#stopTime").val());
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	function time2diff(time1, time2) {
+
+		var ted = parseInt($('#tudsadee').val());
+		var ptb = parseInt($('#prtibad').val());
+
+		var strTime2 = ("2014-01-01 " + time2 + ":00");
+		var strTime1 = ("2014-01-01 " + time1 + ":00");
+
+		var myDate2 = new Date(strTime2);
+		var timeStamp2 = myDate2.getTime();
+
+		var myDate1 = new Date(strTime1);
+		var timeStamp1 = myDate1.getTime();
+
+		var timeDiff = (timeStamp2 - timeStamp1) / 1000;
+		var minutesDiff = timeDiff / 60;
+		var minutesRemain = minutesDiff % 60;
+		var hoursDiff = (minutesDiff - minutesRemain) / 60;
+
+		var sum = ted + ptb;
+		var mm = (ptb == hoursDiff);
+		//  $("#data_time3").val(hoursDiff+"ชั่วโมง"+minutesRemain+"นาที");
+		$("#data_hour").val(hoursDiff+":"+minutesRemain);
+
+		if (sum <= hoursDiff) {
+			nn = hoursDiff + "ชั่วโมง" + minutesRemain + "นาที"
+
+		} else {
+			nn = "เวลาไม่พอ";
+
+			// }else if(sum ){
+			// 	nn="เวลาเกิน";
+		}
+
+		$("#data_time3").val(nn);
+		// $("#data_4").val(sum==hoursDiff);
+
+		console.log(hoursDiff);
+		console.log(minutesRemain);
+
+	}
+	time2diff(time_b, time_b);
+</script>
+
 </html>

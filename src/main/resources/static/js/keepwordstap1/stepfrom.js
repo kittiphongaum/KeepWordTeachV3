@@ -40,8 +40,8 @@ $(function(){
 				if (currentIndex < newIndex)
 				{
 					// To remove error styles
-					form_2.find(".body:eq(" + newIndex + ") label.error").remove();
-					form_2.find(".body:eq(" + newIndex + ") .error").removeClass("error");
+					// form_2.find(".body:eq(" + newIndex + ") label.error").remove();
+					// form_2.find(".body:eq(" + newIndex + ") .error").removeClass("error");
 				}
 				form_2.validate().settings.ignore = ":disabled,:hidden";
 				return form_2.valid();

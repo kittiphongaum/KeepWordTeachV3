@@ -30,7 +30,7 @@
 				<div class="la-anim-1"></div>
 			</div>
 			<!-- /Preloader -->
-			<div class="wrapper  theme-5-active pimary-color-blue">
+			<div class="wrapper  theme-1-active pimary-color-blue">
 	!-- Top Menu Items -->
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="mobile-only-brand pull-left">
