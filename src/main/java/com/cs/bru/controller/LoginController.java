@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cs.bru.dao.SubjectDAO;
+import com.cs.bru.dao.TableTeachingDAO;
 import com.cs.bru.dao.UserDAO;
 import com.cs.bru.login.LoginDAO;
+import com.cs.bru.model.TableTeaching;
 import com.cs.bru.model.User;
 @Controller
 public class LoginController {
@@ -24,6 +26,8 @@ public class LoginController {
 	LoginDAO loginDAO;
 	@Autowired
 	SubjectDAO subjectDAO;
+	@Autowired
+	TableTeachingDAO tableTeachingDAO;
 	
 	
    	    @RequestMapping(value ="/login",method = RequestMethod.POST)
@@ -32,18 +36,25 @@ public class LoginController {
 			User userLog = new User();
 			User userlist = new User();
 			
+			List<TableTeaching> listtable = new ArrayList<>();
 			List<User> UseridAll = new ArrayList<>();
 			
 			try {
-			
+				
 				userLog = userDAO.login(username, password);
 				userlist = userDAO.findById(userLog.getUserId());
-			
+				
+//				listtable =tableTeachingDAO.findById(userLog.getUserId());
+				
 			if(userLog.getUserId() != null && userLog.getUserPass() != null ) {
 				if (userLog.getPositionTeach().equals("U")) { 
 					
+				
 					request.getSession().setAttribute("loginUser",userLog);
 					request.getSession().setAttribute("listUser", userlist);
+			
+				//	request.getSession().setAttribute("tablelist",listtable);
+			
 					
 					authen="index1";
 				} else {

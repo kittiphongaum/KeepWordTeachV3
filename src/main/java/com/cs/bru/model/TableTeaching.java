@@ -8,7 +8,9 @@ public class TableTeaching {
 	private String termYear;
 	private String teachWeek;
 	private int studenNumber;
+	
 	private int section;
+	
 	private int standardTeach;
 
 	private String sumHour;

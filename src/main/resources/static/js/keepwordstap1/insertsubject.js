@@ -44,7 +44,15 @@
 				
 		// 			subjactFk : $('#subjectId').val(),
 		// 			userFk :$('#userRoleid').val()
-		// }
+		// },
+		subject :{
+			subjectId: $('#subjectId').val(),
+			subjectName: $('#subjectName').val(),
+			// credit: $('#credit').val(),
+			// creditHour: $('#creditHour').val(),
+			tudsadee: $('#tudsadee').val(),
+			prtibad: $('#prtibad').val()
+		}
 		}
 		
 		$.ajax({
@@ -54,9 +62,9 @@
 			data: JSON.stringify(insertTableTeaching),
 			dataType: "json",
 			success: function (msg) {
-				// console.log(msg)
+				 console.log(msg)
 				if(msg.subjectRoleid !=null){
-					window.location.href = "http://localhost:1111/keepword"
+					window.location.href = "localhost:1111/keepword"
 				}else{
 
 				}

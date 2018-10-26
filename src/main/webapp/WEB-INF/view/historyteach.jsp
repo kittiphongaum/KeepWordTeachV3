@@ -344,9 +344,7 @@ function seachteachtorm() {
         dataType : 'json',
         success: function (result) {
             $.each(result, function (index, msg) {
-
                 var SubjectRow = '<tr>' +
-
                     '<td>' + msg.subject.subjectId + '</td>' +
                     '<td>' + msg.subject.subjectName + '</td>' +
                     '<td>' + msg.section + '</td>' +

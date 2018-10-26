@@ -139,7 +139,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
 					</li>
 					<li class="dropdown auth-drp">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="dist/img/user1.png" alt="user_auth"
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_dist/img/user1.png" alt="user_auth"
 							 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
 						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
 							<li>
@@ -197,6 +197,14 @@
 				<li>
 					<a class="active" href="./keepword" data-toggle="collapse" data-target="#app_dr">
 						<div class="pull-left"><i class="icon-note mr-20"></i><span class="right-nav-text">ลงทะเบียนสอน </span></div>
+						<div class="clearfix"></div>
+					</a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+					</ul>
+				</li>
+				<li>
+					<a  href="./stipend" data-toggle="collapse" data-target="#app_dr">
+						<div class="pull-left"><i class="icon-share-alt mr-20"></i><span class="right-nav-text">จักการเบิกค่าสอน</span></div>
 						<div class="clearfix"></div>
 					</a>
 					<ul id="app_dr" class="collapse collapse-level-1">

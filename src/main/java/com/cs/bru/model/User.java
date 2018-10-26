@@ -6,6 +6,7 @@ public class User {
 		private int Id;
 		private String userId;
 		private String userPass;
+		private String prefixName;
 		private String userFname;
 		private String userLname;
 		private String positionTeach;
@@ -101,6 +102,12 @@ public class User {
 		}
 		public User() {
 			super();
+		}
+		public String getPrefixName() {
+			return prefixName;
+		}
+		public void setPrefixName(String prefixName) {
+			this.prefixName = prefixName;
 		}
 		
 		

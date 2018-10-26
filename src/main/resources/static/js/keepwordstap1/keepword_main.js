@@ -22,7 +22,7 @@ $(document).ready(function () {
                         '<td>' + msg.room + '</td>' +
                         '<td class="td-actions text-nowrap">' +
                         '<input type="hidden" value=' + msg.tebleTeachId + '>' +
-                        '<a  rel="tooltip" title="Remove" class="mr-25" >' +
+                        '<a  rel="tooltip" title="Remove" class="mr-25" onclick="deleteid()">' +
                         '<i class="fa fa-close text-danger"></i>' +
                         '</a>' +
                         '</td>' +
@@ -48,7 +48,7 @@ $(document).ready(function () {
 
 
     // Do DELETE a Customer via JQUERY AJAX
-    $(document).on("click", "a", function () {
+    function deleteid() {
 
         var tebleTeachId = $(this).parent().find('input').val();
         var workingObject = $(this);
@@ -72,7 +72,7 @@ $(document).ready(function () {
                 // console.log("ERROR: 11", e,);
             }
         });
-    });
+    };
 
 
     /*FormPicker Init*/

@@ -183,6 +183,7 @@ public class UserDAO  {
 			while (rs.next()) {
 				bean.setId(rs.getInt("id"));
 				bean.setUserId(rs.getString("user_id"));
+				bean.setPrefixName(rs.getString("prefix_name"));
 				bean.setUserFname(rs.getString("user_name"));
 				bean.setUserLname(rs.getString("user_lastname"));
 				bean.setPositionTeach(rs.getString("position_teach"));

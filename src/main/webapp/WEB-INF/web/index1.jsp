@@ -183,10 +183,19 @@
 					</ul>
 				</li>
 				<li>
+					<a  href="./stipend" data-toggle="collapse" data-target="#app_dr">
+						<div class="pull-left"><i class="icon-share-alt mr-20"></i><span class="right-nav-text">จักการเบิกค่าสอน</span></div>
+						<div class="clearfix"></div>
+					</a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+					</ul>
+				</li>
+				<li>
 					<a href="./historyteach" data-toggle="collapse" data-target="#app_dr" ><div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวิติการสอน </span></div><div class="clearfix"></div></a>
 					<ul id="app_dr" class="collapse collapse-level-1">			
 					</ul>
 				</li>
+				
 				<li>
 					<a href="./user" data-toggle="collapse" data-target="#app_dr" href="./keepword"><div class="pull-left"><i class="icon-user  mr-20"></i><span class="right-nav-text">ข้อมูลผู้ใช้ </span></div><div class="clearfix"></div></a>
 					<ul id="app_dr" class="collapse collapse-level-1">			

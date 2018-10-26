@@ -22,6 +22,7 @@ import com.cs.bru.dao.TableTeachingDAO;
 import com.cs.bru.dao.TeachDAO;
 import com.cs.bru.model.TableTeaching;
 import com.cs.bru.model.Teach;
+import com.cs.bru.service.DateofTeachSevice;
 import com.cs.bru.service.ServiceTableTeaching;
 import com.mysql.fabric.xmlrpc.base.Data;
 import com.mysql.jdbc.TimeUtil;
@@ -37,6 +38,8 @@ public class TableTeachingController {
 	MonthDAO monthDAO;
 	@Autowired
 	TeachDAO teachDAO;
+	@Autowired
+	DateofTeachSevice SevicedateofTeach;
 	
 	
 	@RequestMapping("/TableTeachingAll")
@@ -54,7 +57,7 @@ public class TableTeachingController {
 	
 
 	@RequestMapping(value="/insertTableTeaching")
-	   public void insertTableTeaching(@RequestBody TableTeaching insertTableTeaching) {
+	   public String insertTableTeaching(@RequestBody TableTeaching insertTableTeaching) {
 	//	Teach teach1 =new Teach();
 //		SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
 //		String inputSting1 = "23 01 2018";
@@ -67,27 +70,29 @@ public class TableTeachingController {
 //				Date date2 = myFormat.parse(inputSting2);
 //				long diff = date2.getTime()- date1.getTime();
 //				System.out.println("Days: " + diff);
-			 
-				   id=(insertTableTeaching.getTermYear()+"-"+insertTableTeaching.getTeachTerm()+"-"+"00"+insertTableTeaching.getSection());
-				 
+				   id=(insertTableTeaching.getTermYear()+insertTableTeaching.getTeachTerm()+insertTableTeaching.getSection()+insertTableTeaching.getSubject().getSubjectId());
 				   insertTableTeaching.setTebleTeachId(id);
-			   
 			   if (insertTableTeaching.getStudenNumber()>=20 && insertTableTeaching.getStudenNumber()<=35 ) {
 				   insertTableTeaching.setStandardTeach(120);	   
 				   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+				   SevicedateofTeach.keepword(insertTableTeaching);
+				   
 				   
 //				   teachDAO.insertTeach(insertTableTeaching.getTeach());
 			} else if (insertTableTeaching.getStudenNumber()<=69 && insertTableTeaching.getStudenNumber()>=36) {
 				insertTableTeaching.setStandardTeach(180);
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+				 SevicedateofTeach.keepword(insertTableTeaching);
 //				 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}else if (insertTableTeaching.getStudenNumber()>=70 &&insertTableTeaching.getStudenNumber()<=89) {
 				insertTableTeaching.setStandardTeach(240);
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+				 SevicedateofTeach.keepword(insertTableTeaching);
 //				 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}else if (insertTableTeaching.getStudenNumber()>=90) {
 				insertTableTeaching.setStandardTeach(300);
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+				 SevicedateofTeach.keepword(insertTableTeaching);
 //				 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}
 			else {
@@ -98,7 +103,7 @@ public class TableTeachingController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
+		return "keepword";
 	   }
 	@RequestMapping( value = "/TableTeachingOne")
 	public List<TableTeaching> gotoUpdate(Model model ,@RequestBody TableTeachingBean tableTeachingById) {	
@@ -121,7 +126,7 @@ public class TableTeachingController {
 	@RequestMapping("/TableTeachingOneSeachByid")
 	public  List<TableTeaching> getTable(@RequestBody TeachSeachBean1 id1){	
 		List<TableTeaching> list = new ArrayList<>();
-		list = tableTeachingDAO.findByIdSeachTeach(id1.getTeachIdS1(), id1.getTeachIdS2(), id1.getTeachIdS3());
+		list = tableTeachingDAO.findByIdSeachTeach(id1.getUserid(), id1.getTerm(), id1.getYear(),id1.getDegree());
 		 return list;
 	}
 	

@@ -66,4 +66,9 @@ public class FooController {
 	public String welcome() {
 		return"index1";
 	}
+	
+	@RequestMapping("/stipend")
+	public String stipend() {
+		return"stipend";
+	}
 }

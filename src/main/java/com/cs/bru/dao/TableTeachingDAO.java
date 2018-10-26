@@ -138,7 +138,7 @@ public class TableTeachingDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT teble_teach_id,studen_number,section,start_time,stop_time,standard_teach,room,subject_roleid,subject_id,subject_name,credit,credit_hour,user_roleid,user_id,user_name,user_lastname FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_id = ?");
+			sql.append("SELECT *,tb_subject.*,tb_user.* FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_id = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, id);
 			ResultSet rs = prepared.executeQuery();
@@ -149,12 +149,22 @@ public class TableTeachingDAO {
 				User user =new User();
 				
 				teach.setTebleTeachId(rs.getString("teble_teach_id"));
-				teach.setStudenNumber(rs.getInt("studen_number"));
+				teach.setDegreeStuden(rs.getString("degree_studen"));
+				teach.setTeachTerm(rs.getString("teach_term"));
+				teach.setTermYear(rs.getString("term_year"));
+				teach.setTeachWeek(rs.getString("teach_week"));
 				teach.setSection(rs.getInt("section"));
-				teach.setStartTime(rs.getString("start_time"));
-				teach.setStopTime(rs.getString("stop_time"));
-				teach.setRoom(rs.getString("room"));
+				teach.setStudenNumber(rs.getInt("studen_number"));
+				
+				teach.setStartMonth(rs.getString("start_month"));
+				teach.setStopMonth(rs.getString("stop_month"));
+				teach.setTeachYear(rs.getString("teach_year"));
+				
+				teach.setStartTime(rs.getString("start_month"));
+				teach.setStopTime(rs.getString("stop_month"));
+				teach.setSumHour(rs.getString("sum_hour"));
 				teach.setStandardTeach(rs.getInt("standard_teach"));
+				teach.setRoom(rs.getString("room"));
 				
 			
 				teach.setSubjectRoleid(rs.getString("subject_roleid"));
@@ -163,11 +173,17 @@ public class TableTeachingDAO {
 				subject.setSubjectName(rs.getString("subject_name"));
 				subject.setCredit(rs.getInt("credit"));
 				subject.setCreditHour(rs.getString("credit_hour"));
+				subject.setTudsadee(rs.getInt("tudsadee"));
+				subject.setPrtibad(rs.getInt("prtibad"));
 				
 				teach.setUserRoleid(rs.getString("user_roleid"));
 				user.setUserId(rs.getString("user_id"));
 				user.setUserFname(rs.getString("user_name"));
 				user.setUserLname(rs.getString("user_lastname"));
+				user.setFaculty(rs.getString("faculty"));
+				user.setMojor(rs.getString("mojor"));
+				user.setBaseHour(rs.getInt("baseHour"));
+				user.setBaseKrm(rs.getInt("baseKrm"));
 				
 				teach.setSubject(subject);
 				teach.setUser(user);
@@ -181,18 +197,22 @@ public class TableTeachingDAO {
 		}
 		return list;
 	}
-	public List<TableTeaching> findByIdSeachTeach(String id1,String id2,String id3) {
+	public List<TableTeaching> findByIdSeachTeach(String userid,String term,String year,String degree) {
 		List<TableTeaching> list = new ArrayList<TableTeaching>();
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT teble_teach_id,studen_number,section,start_time,stop_time,standard_teach,room,subject_roleid,subject_id,subject_name,credit,credit_hour,user_roleid,user_id,user_name,user_lastname FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_id = ?and teach_term=?and term_year=?");
+			sql.append("SELECT teble_teach_id,degree_studen,teach_term,term_year,teach_week,section,studen_number,start_month,stop_month,teach_year,start_time,stop_time,sum_hour,standard_teach,room,");
+			sql.append("subject_roleid,subject_id,subject_name,credit,credit_hour,tudsadee,prtibad,user_roleid,user_id,prefix_name,user_name,user_lastname,user_lastname,position_teach,faculty,mojor,baseHour,baseKrm");
+			sql.append("FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_id = ? and teach_term=? and term_year=? and degree_studen=?  ");
+			
 			prepared = con.openConnect().prepareStatement(sql.toString());
-			prepared.setString(1, id1);
-			prepared.setString(2, id2);
-			prepared.setString(3, id3);
+			prepared.setString(1, userid);
+			prepared.setString(2, term);
+			prepared.setString(3, year);
+			prepared.setString(4, degree);
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
@@ -201,12 +221,23 @@ public class TableTeachingDAO {
 				User user =new User();
 				
 				teach.setTebleTeachId(rs.getString("teble_teach_id"));
-				teach.setStudenNumber(rs.getInt("studen_number"));
+				teach.setDegreeStuden(rs.getString("degree_studen"));
+				teach.setTeachTerm(rs.getString("teach_term"));
+				teach.setTermYear(rs.getString("term_year"));
+				teach.setTeachWeek(rs.getString("teach_week"));
 				teach.setSection(rs.getInt("section"));
-				teach.setStartTime(rs.getString("start_time"));
-				teach.setStopTime(rs.getString("stop_time"));
-				teach.setRoom(rs.getString("room"));
+				teach.setStudenNumber(rs.getInt("studen_number"));
+				
+				teach.setStartMonth(rs.getString("start_month"));
+				teach.setStopMonth(rs.getString("stop_month"));
+				teach.setTeachYear(rs.getString("teach_year"));
+				
+				teach.setStartTime(rs.getString("start_month"));
+				teach.setStopTime(rs.getString("stop_month"));
+				teach.setSumHour(rs.getString("sum_hour"));
 				teach.setStandardTeach(rs.getInt("standard_teach"));
+				teach.setRoom(rs.getString("room"));
+				
 				
 			
 				teach.setSubjectRoleid(rs.getString("subject_roleid"));
