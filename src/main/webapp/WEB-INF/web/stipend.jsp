@@ -41,6 +41,7 @@
    User userByBean = null;
    List<TableTeaching> listtable = null;
    String result = "";
+   Integer a=0;
 %>
 
 	<%
@@ -264,9 +265,9 @@
 				</div>
 				<!-- /Title -->
 	
-				<input type="text" id="teachTerm">
+				<!-- <input type="text" id="teachTerm">
 				<input type="text" id="termYear" >
-				<input type="text" id="degree" >
+				<input type="text" id="degree" > -->
 			
 
 				<!-- Row -->
@@ -300,7 +301,9 @@
 																				<div class="row">
 																				</div>
 																			</div>
+																			
 																		<div class="form-group">
+																			<form>
 																			<div class="row">
 																				<div class="span1"></div>
 																				<div class="col-md-4 col-xs-12">
@@ -309,7 +312,7 @@
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ระดับนักศึกษา</label>
 																							<div class="col-sm-8">
 																								<!-- <input type="text" class="form-control" id="degreeStuden" placeholder=""> -->
-																								<select id="degreeStuden" class="form-control " name="degreeStuden">
+																								<select id="degreeS4" class="form-control " name="degreeStuden">
 																									<option value="1">ปริญญาตรี</option>
 																									<option value="2">ปริญญาโท</option>
 																									<option value="3">ปริญญาเอก</option>
@@ -323,7 +326,7 @@
 																						<div class="row">
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ปีการศึกษา</label>
 																							<div class="col-sm-8">
-																								<select id="termYear" class="form-control " name="termYear">
+																								<select id="yearS3" class="form-control " name="termYear">
 																									<option value="2561">2561</option>
 																									<option value="2560">2560</option>
 																									<option value="2560">2559</option>
@@ -341,7 +344,7 @@
 																							<label for="exampleInputuname_3" class="col-sm-6 control-label">ภาคเรียน</label>
 																							<div class="col-sm-6">
 																								<!-- <input type="text" class="form-control" id="teachTerm" placeholder=""> -->
-																								<select id="teachTerm" class="form-control " name="teachTerm">
+																								<select id="termS2" class="form-control " name="teachTerm">
 
 																									<option value="1 ">1</option>
 																									<option value="2">2</option>
@@ -352,9 +355,13 @@
 																						</div>
 																					</div>
 																				</div>
+																				<a type="submit" class="btn btn-success mr-10 pull-left" onclick="tableuteach()">
+																					<h6>ค้นหา</h6>
+																				</a>
 																			</div>
+																		</form>
 																		</div>
-
+																	
 
 																	</div>
 																</div>
@@ -397,6 +404,26 @@
 
                                                                         </thead>
 																		<tbody>
+																	<%-- 	<%
+																		
+														for (int i = 0; i < listtable.size(); i++) {
+													%>
+
+													<tr>
+														<td><%=a = a + 1%></td>
+														<td><%=listtable.get(i).getSubject().getSubjectId()%></td>
+														<td><%=listtable.get(i).getSubject().getSubjectName()%></td>
+														<td><%=listtable.get(i).getStudenNumber()%></td>
+														<td><%=listtable.get(i).getSubject().getTudsadee()%></td>
+														<td><%=listtable.get(i).getSubject().getPrtibad()%></td>
+												
+														
+														<td ><button  class="btn btn-success btn-icon-anim btn-square"
+															onclick="gotoUpdateggggg('<%=listtable.get(i).getTebleTeachId()%>')">ดู</button></td>
+													</tr>
+													<%
+														}
+													%> --%>
                                                                         </tbody>
                                                                        <thead>
                                                                             <td colspan="4">รวม</td>
@@ -545,9 +572,10 @@
 
     <script src="../assets_/dist/js/form-xeditable-data.js"></script>
 
-     <script src="../js/stipend/stipend-main.js"></script>
+     <!-- <script src="../js/stipend/stipend-main.js"></script> -->
 
-	<script src="../js/keepwordstap1/stepfrom.js"></script>
+	 <!-- <script src="../js/keepwordstap1/keepword_main.js"></script> -->
+	<script src="../js/stipend/tableteaching.js"></script>
 
 	<!-- <script src="../js/keepwordstap1/keepword_main.js"></script> -->
 	

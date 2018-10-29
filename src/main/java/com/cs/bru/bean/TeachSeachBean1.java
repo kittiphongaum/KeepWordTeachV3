@@ -1,35 +1,35 @@
 package com.cs.bru.bean;
 
 public class TeachSeachBean1 {
-	private String userid;
-	private String term;
-	private String year;
-	private String degree;
-	public String getUserid() {
-		return userid;
+	private String useridS1;
+	private String termS2;
+	private String yearS3;
+	private String degreeS4;
+	public String getUseridS1() {
+		return useridS1;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUseridS1(String useridS1) {
+		this.useridS1 = useridS1;
 	}
-	public String getTerm() {
-		return term;
+	public String getTermS2() {
+		return termS2;
 	}
-	public void setTerm(String term) {
-		this.term = term;
+	public void setTermS2(String termS2) {
+		this.termS2 = termS2;
 	}
-	public String getYear() {
-		return year;
+	public String getYearS3() {
+		return yearS3;
 	}
-	public void setYear(String year) {
-		this.year = year;
+	public void setYearS3(String yearS3) {
+		this.yearS3 = yearS3;
 	}
-	public String getDegree() {
-		return degree;
+	public String getDegreeS4() {
+		return degreeS4;
 	}
-	public void setDegree(String degree) {
-		this.degree = degree;
+	public void setDegreeS4(String degreeS4) {
+		this.degreeS4 = degreeS4;
 	}
-
+	
 	
 	
 	

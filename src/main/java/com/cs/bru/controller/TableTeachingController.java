@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cs.bru.bean.TableTeachingBean;
@@ -123,10 +124,10 @@ public class TableTeachingController {
 		tableTeachingDAO.delete(id);
 		return "OK!";
 	}
-	@RequestMapping("/TableTeachingOneSeachByid")
-	public  List<TableTeaching> getTable(@RequestBody TeachSeachBean1 id1){	
+	@RequestMapping(value="/TableTeachingOneSeachByid", method = RequestMethod.POST)
+	public  List<TableTeaching> getTablest(@RequestBody TeachSeachBean1 id1){	
 		List<TableTeaching> list = new ArrayList<>();
-		list = tableTeachingDAO.findByIdSeachTeach(id1.getUserid(), id1.getTerm(), id1.getYear(),id1.getDegree());
+		list = tableTeachingDAO.findByIdSeachTeach(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
 		 return list;
 	}
 	

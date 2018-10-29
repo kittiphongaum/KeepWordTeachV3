@@ -204,15 +204,13 @@ public class TableTeachingDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT teble_teach_id,degree_studen,teach_term,term_year,teach_week,section,studen_number,start_month,stop_month,teach_year,start_time,stop_time,sum_hour,standard_teach,room,");
-			sql.append("subject_roleid,subject_id,subject_name,credit,credit_hour,tudsadee,prtibad,user_roleid,user_id,prefix_name,user_name,user_lastname,user_lastname,position_teach,faculty,mojor,baseHour,baseKrm");
-			sql.append("FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_id = ? and teach_term=? and term_year=? and degree_studen=?  ");
+			sql.append("SELECT teble_teach_id,degree_studen,teach_term,term_year,teach_week,section,studen_number,start_month,stop_month,teach_year,start_time,stop_time,sum_hour,standard_teach,room,subject_roleid,subject_id,subject_name,credit,credit_hour,tudsadee,prtibad,user_roleid,user_id,prefix_name,user_name,user_lastname,user_lastname,position_teach,faculty,mojor,baseHour,baseKrm FROM tb_table_teaching INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_user on tb_table_teaching.user_roleid = tb_user.user_id WHERE user_roleid =? and teach_term=? and term_year=? and degree_studen=? ");
 			
 			prepared = con.openConnect().prepareStatement(sql.toString());
-			prepared.setString(1, userid);
-			prepared.setString(2, term);
-			prepared.setString(3, year);
-			prepared.setString(4, degree);
+			prepared.setString(1,userid);
+			prepared.setString(2,term);
+			prepared.setString(3,year);
+			prepared.setString(4,degree);
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
@@ -246,18 +244,26 @@ public class TableTeachingDAO {
 				subject.setSubjectName(rs.getString("subject_name"));
 				subject.setCredit(rs.getInt("credit"));
 				subject.setCreditHour(rs.getString("credit_hour"));
+				subject.setTudsadee(rs.getInt("tudsadee"));
+				subject.setPrtibad(rs.getInt("prtibad"));
 				
 				teach.setUserRoleid(rs.getString("user_roleid"));
 				user.setUserId(rs.getString("user_id"));
+				user.setPrefixName(rs.getString("prefix_name"));
 				user.setUserFname(rs.getString("user_name"));
 				user.setUserLname(rs.getString("user_lastname"));
-				
+				user.setPositionTeach(rs.getString("position_teach"));
+				user.setFaculty(rs.getString("faculty"));
+				user.setMojor(rs.getString("mojor"));
+				user.setBaseHour(rs.getInt("baseHour"));
+				user.setBaseKrm(rs.getInt("baseKrm"));
+			
 				teach.setSubject(subject);
 				teach.setUser(user);
 				list.add(teach);
 				
 			}
-
+		
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
