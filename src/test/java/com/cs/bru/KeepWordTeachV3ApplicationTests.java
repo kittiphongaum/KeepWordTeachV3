@@ -6,18 +6,25 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import com.cs.bru.dao.HolidayDAO;
+import com.cs.bru.model.HolidayTh;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class KeepWordTeachV3ApplicationTests {
-
+	@Autowired
+	HolidayDAO holidayDAO;
 	@Test
 //	 public static void main(String[] args) {
 //		   Calendar c = Calendar.getInstance(  );    // today
@@ -37,7 +44,14 @@ public class KeepWordTeachV3ApplicationTests {
 //		   System.out.println("Minute: " + c.get(Calendar.MINUTE));
 //		   System.out.println("Second: " + c.get(Calendar.SECOND));
 //	   }
+
 	public static void main(String[] args) throws ParseException {
+	List<HolidayTh> holiTh=new ArrayList<>();
+		
+		
+		String holiT ="01/01/2018";
+		
+		
 	      Calendar cal = Calendar.getInstance();
 	      Calendar cal2 = Calendar.getInstance();
 	      DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -51,7 +65,7 @@ public class KeepWordTeachV3ApplicationTests {
 //      LocalDate next2Week = today3.plus(1, ChronoUnit.WEEKS);
 //      System.out.println("Next week: " + next2Week);
       
-	      String w ="05/11/2018";
+	      String w ="01/01/2018";
 			Date today = sdf.parse(w);
 			Date today2 = sdf.parse("26/11/2018");
 			//today = new Date();
@@ -72,7 +86,12 @@ public class KeepWordTeachV3ApplicationTests {
 			      System.out.println("Next week"+ f +" : "+ next2Week);
 			      f=f+1;
 			      String cc = next2Week.format(formatter);
-			      System.out.println(cc+1);
+			  
+			      int day =next2Week.getDayOfMonth();
+			      int month=next2Week.getMonthValue();
+			      int  year=next2Week.getYear();
+			      
+			      
 			}
 		
 			

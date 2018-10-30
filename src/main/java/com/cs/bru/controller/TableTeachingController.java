@@ -128,6 +128,7 @@ public class TableTeachingController {
 	public  List<TableTeaching> getTablest(@RequestBody TeachSeachBean1 id1){	
 		List<TableTeaching> list = new ArrayList<>();
 		list = tableTeachingDAO.findByIdSeachTeach(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+		
 		 return list;
 	}
 	

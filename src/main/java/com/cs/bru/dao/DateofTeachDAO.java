@@ -20,7 +20,7 @@ public class DateofTeachDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_dateofteach(dateofteach_id,weekofyear_dft,dayofyear_dft,monthofyear_dft,yearofteach_dft,tudsadee_dft,prtibad_dft,summyhour_dft,subject_dft,user_dft)VALUES (?,?,?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_dateofteach(dateofteach_id,weekofyear_dft,dayofyear_dft,monthofyear_dft,yearofteach_dft,tudsadee_dft,prtibad_dft,summyhour_dft,subject_dft,user_dft,holiday_dft)VALUES (?,?,?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getDateofteachId());
 			prepared.setInt(2, bean.getWeekofyearDft());
@@ -33,7 +33,7 @@ public class DateofTeachDAO {
 
 			prepared.setString(9, bean.getSubjectDft());
 			prepared.setString(10, bean.getUserDft());
-		
+		prepared.setString(11, bean.getHolidayDft());
 
 			prepared.executeUpdate();
 			 /*System.out.println(bean);*/ 

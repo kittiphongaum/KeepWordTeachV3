@@ -11,6 +11,7 @@ public class DateofTeach {
 	private int prtibadDft ;
 	private int summyhourDft ;
 	private String subjectDft;
+	private String holidayDft;
 	private String userDft;
 	 private Subject subject;
 	 private User user;
@@ -91,6 +92,12 @@ public class DateofTeach {
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+	public String getHolidayDft() {
+		return holidayDft;
+	}
+	public void setHolidayDft(String holidayDft) {
+		this.holidayDft = holidayDft;
 	}
 	 
 }

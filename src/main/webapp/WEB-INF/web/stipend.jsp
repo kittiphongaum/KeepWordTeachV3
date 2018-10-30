@@ -15,8 +15,8 @@
 	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Elmer Admin, Elmeradmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 	<meta name="author" content="hencework" />
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../assets_/favicon.ico">
+	<link rel="icon" href="../assets_/favicon.ico" type="image/x-icon">
 	<!-- vector map CSS -->
 	<link href="../assets_/vendors/bower_components/jquery-wizard.js/css/wizard.css" rel="stylesheet" type="text/css" />
 
@@ -201,7 +201,7 @@
 					</ul>
 				</li>
 				<li>
-					<a  href="./keepword" data-toggle="collapse" data-target="#app_dr">
+					<a href="./keepword" data-toggle="collapse" data-target="#app_dr">
 						<div class="pull-left"><i class="icon-note mr-20"></i><span class="right-nav-text">ลงทะเบียนสอน </span></div>
 						<div class="clearfix"></div>
 					</a>
@@ -264,46 +264,46 @@
 					<!-- /Breadcrumb -->
 				</div>
 				<!-- /Title -->
-	
+
 				<!-- <input type="text" id="teachTerm">
 				<input type="text" id="termYear" >
 				<input type="text" id="degree" > -->
-			
+
 
 				<!-- Row -->
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="panel panel-default card-view">
-						
+
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<!-- <form id="example-form-jook"> -->
-										<!-- <h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">เพิ่มข้อมูลรายวิชา</span></h3> -->
-										<fieldset>
-											
-											<div class="row">
-												<input type="hidden" id="teachId">
-												<input type="hidden" id="tebleTeachId">
+									<!-- <h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">เพิ่มข้อมูลรายวิชา</span></h3> -->
+									<fieldset>
 
-												<div class="container-fluid">
-													<div class="row">
-														<div class="col-sm-12">
-															<div class="panel panel-default card-view">
-																<div class="panel-heading">
-																	<div class="pull-left">
-																		<h5 for="exampleCountry" class="control-label mb-10">บันทึกแบบการเบิก</h5>
-																	</div>
-																	<div class="clearfix"></div>
+										<div class="row">
+											<input type="hidden" id="teachId">
+											<input type="hidden" id="tebleTeachId">
+
+											<div class="container-fluid">
+												<div class="row">
+													<div class="col-sm-12">
+														<div class="panel panel-default card-view">
+															<div class="panel-heading">
+																<div class="pull-left">
+																	<h5 for="exampleCountry" class="control-label mb-10">บันทึกแบบการเบิก</h5>
 																</div>
-																<div class="panel-wrapper collapse in">
-																	<div class="panel-body">
-																		<div class="form-group">
-																				<div class="row">
-																				</div>
-																			</div>
-																			
-																		<div class="form-group">
-																			<form>
+																<div class="clearfix"></div>
+															</div>
+															<div class="panel-wrapper collapse in">
+																<div class="panel-body">
+																	<div class="form-group">
+																		<div class="row">
+																		</div>
+																	</div>
+
+																	<div class="form-group">
+																		<form>
 																			<div class="row">
 																				<div class="span1"></div>
 																				<div class="col-md-4 col-xs-12">
@@ -326,7 +326,8 @@
 																						<div class="row">
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ปีการศึกษา</label>
 																							<div class="col-sm-8">
-																								<select id="yearS3" class="form-control " name="termYear">
+																								<select id="yearS3" class="form-control " name="termYear" >
+																									<option value=""></option>
 																									<option value="2561">2561</option>
 																									<option value="2560">2560</option>
 																									<option value="2560">2559</option>
@@ -360,149 +361,192 @@
 																				</a>
 																			</div>
 																		</form>
-																		</div>
-																	
+																	</div>
 
+
+																</div>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+
+										<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+														<h5 class="modal-title" id="exampleModalLabel1">แก้ใขสถานะวิชา</h5>
+													</div>
+													<div class="modal-body">
+														<form>
+																<div class="form-group">
+															<div class="row">
+																<div class="col-md-12">
+																	<div class="form-group">
+																		<label class="control-label mb-10">เลือกสถานะวิชา</label>
+																		<select class="selectpicker" data-style="form-control btn-default btn-outline ">
+																			<option value="1">ปกติ</option>
+																			<option value="2">ใช้เบิกทั้งหมด</option>
+																			<option value="3">ใช้แบ่งหน่วย</option>
+																		</select>
 																	</div>
 																</div>
 															</div>
 														</div>
-
-													</div>
-
-												</div>
-											</div>
-
-										
-
-									</fieldset>
-												
-											<div class="row">
-												<div class="col-sm-12">
-													<div class="panel panel-default card-view">
-														<div class="panel-heading">
-															<div class="pull-left">
-																<h6 class="panel-title txt-dark">ตารางวิชา</h6>
+															<div class="form-group">
+															<div class="row">
+															<div class="col-md-12 col-xs-12">
+																	<div class="form-group">
+																		<div class="row">
+																			<label for="exampleInputuname_3" class="col-sm-6 control-label">ใช้เป็นฐาน/คาบ</label>
+																			<div class="col-sm-6">
+																				<input type="text" class="form-control" id="" placeholder="">
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																
 															</div>
-															<div class="clearfix"></div>
-														</div>
-														<div class="panel-wrapper collapse in">
-															<div class="panel-body">
-																<div class="table-wrap">
-																	<table id="Tableupdateteach" class="table table-hover table-bordered mb-0">
-																		<thead class="text-warning">
-																			<tr >
-																				<th scope="col">รหัสวิชา</th>
-																				<th scope="col">ชื่อวิชา</th>
-																				<th scope="col">จำนวนชั่วโมง</th>
-                                                                                <th scope="col">จำนวนนักศึกษา</th>
-                                                                                <th scope="col">ใช้เป็นฐาน/คาบ</th>
-																				<th scope="col">ใช้เบิก/หน่วยชั่วโมง</th>
-																				
-																				<th scope="col">หมายเหตู</th>
-																			</tr>
-
-                                                                        </thead>
-																		<tbody>
-																	<%-- 	<%
-																		
-														for (int i = 0; i < listtable.size(); i++) {
-													%>
-
-													<tr>
-														<td><%=a = a + 1%></td>
-														<td><%=listtable.get(i).getSubject().getSubjectId()%></td>
-														<td><%=listtable.get(i).getSubject().getSubjectName()%></td>
-														<td><%=listtable.get(i).getStudenNumber()%></td>
-														<td><%=listtable.get(i).getSubject().getTudsadee()%></td>
-														<td><%=listtable.get(i).getSubject().getPrtibad()%></td>
-												
-														
-														<td ><button  class="btn btn-success btn-icon-anim btn-square"
-															onclick="gotoUpdateggggg('<%=listtable.get(i).getTebleTeachId()%>')">ดู</button></td>
-													</tr>
-													<%
-														}
-													%> --%>
-                                                                        </tbody>
-                                                                       <thead>
-                                                                            <td colspan="4">รวม</td>
-                                                                            <td scope="col"></td>
-                                                                            <td scope="col"></td>
-                                                                            <td scope="col"></td>
-                                                                       </thead>
-																	
-																	</table>
+															<div class="row">
+															<div class="col-md-12 col-xs-12">
+																	<div class="form-group">
+																		<div class="row">
+																			<label for="exampleInputuname_3" class="col-sm-6 control-label">ใช้เบิก/หน่วยชั่วโมง</label>
+																			<div class="col-sm-6">
+																				<input type="text" class="form-control" id="" placeholder="">
+																			</div>
+																		</div>
+																	</div>
 																</div>
 															</div>
 														</div>
-
+														</form>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+														<button type="button" class="btn btn-primary">บันทึก</button>
 													</div>
 												</div>
-											</div>		
+											</div>
+										</div>
+
+
+									</fieldset>
+
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="panel panel-default card-view">
+												<div class="panel-heading">
+													<div class="pull-left">
+														<h6 class="panel-title txt-dark">ตารางวิชา</h6>
+													</div>
+													<div class="clearfix"></div>
+												</div>
+												<div class="panel-wrapper collapse in">
+													<div class="panel-body">
+														<div class="table-wrap">
+															<table id="customerTable2" class="table table-hover table-bordered mb-0">
+																<thead class="text-warning">
+																	<tr>
+																		<th scope="col">รหัสวิชา</th>
+																		<th scope="col">Section</th>
+																		<th scope="col">จำนวนหน่วยกิต</th>
+																		<th scope="col">จำนวนนักศึกษา</th>
+																		<th scope="col">อัตราสอน/ชั่วโมง</th>
+																		<th scope="col">ใช้เป็นฐาน/คาบ</th>
+																		<th scope="col">ใช้เบิก/หน่วยชั่วโมง</th>
+
+																		<th scope="col">หมายเหตู</th>
+																	</tr>
+
+																</thead>
+																<tbody>
+
+
+																</tbody>
+																<thead>
+																	<td colspan="4">รวม</td>
+																	<td scope="col"></td>
+																	<td scope="col"></td>
+																	<td scope="col"></td>
+																	<td scope="col"></td>
+																</thead>
+
+															</table>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-                </div>
-                <!-- Row -->
-					<div class="row">
-                            <div class="col-sm-12">
-                                <div class="panel panel-default card-view">
-                                    <div class="panel-heading">
-                                        <div class="pull-left">
-                                            <h6 class="panel-title txt-dark">X -Editable Popup  editor</h6>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="panel-wrapper collapse in">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <table style="clear: both" class="table table-bordered table-striped" id="user_2">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td style="width:35%">Simple text field</td>
-                                                                <td style="width:65%"><a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username">superuser</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Empty text field, required</td>
-                                                                <td><a href="#" id="firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Select, local array, custom display</td>
-                                                                <td><a href="#" id="sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Select, error while loading</td>
-                                                                <td><a href="#" id="status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Combodate</td>
-                                                                <td><a href="#" id="dob" data-type="combodate" data-value="1984-05-15" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1"  data-title="Select Date of birth"></a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Textarea, buttons below</td>
-                                                                <td><a href="#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">awesome user!</a></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Row -->
+				</div>
+				<!-- Row -->
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">...</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="table-wrap">
+												<table id="customerTable3" class="table table-hover table-bordered mb-0">
+													<thead class="text-warning">
+														<tr>
+															<th scope="col">#</th>
+															<th scope="col">สัปดาห์ที่สอน</th>
+															<th scope="col">วัน/เดือน/ปี</th>
+															<th scope="col">รายวิชา</th>
+															<th scope="col">ภาคทฤษฏี</th>
+															<th scope="col">ภาคปฏิบัติ</th>
+															<th scope="col">รวม</th>
+
+															<th scope="col">หมายเหตู</th>
+														</tr>
+
+													</thead>
+													<tbody>
+
+
+													</tbody>
+													<thead>
+														<td colspan="4">รวม</td>
+														<td scope="col"></td>
+														<td scope="col"></td>
+														<td scope="col"></td>
+														<td scope="col"></td>
+													</thead>
+
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row -->
 				<!-- /Row -->
 			</div>
 
 		</div>
 
 	</div>
-
-	<!---------------------------------------- JavaScript ------------------------------------>
 	<!-- Bootstrap Colorpicker CSS -->
 	<link href="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css"
 	 rel="stylesheet" type="text/css" />
@@ -514,6 +558,72 @@
 	<!-- Bootstrap Daterangepicker CSS -->
 	<link href="../assets_/vendors/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
 	<!-- -------------- -->
+	<!-- select2 CSS -->
+	<link href="../assets_/vendors/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- switchery CSS -->
+	<link href="../assets_/vendors/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" type="text/css" />
+	<!-- bootstrap-select CSS -->
+	<link href="vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- bootstrap-tagsinput CSS -->
+	<link href="../assets_/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet"
+	 type="text/css" />
+
+	<!-- bootstrap-touchspin CSS -->
+	<link href="../assets_/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet"
+	 type="text/css" />
+
+	<!-- multi-select CSS -->
+	<link href="../assets_/vendors/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+
+	<!-- Bootstrap Switches CSS -->
+	<link href="../assets_/vendors/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet"
+	 type="text/css" />
+
+	<!-- Bootstrap Datetimepicker CSS -->
+	<link href="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+	 rel="stylesheet" type="text/css" />
+
+	<!-- Switchery JavaScript -->
+	<script src="../assets_/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+
+	<!-- Select2 JavaScript -->
+	<script src="../assets_/vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+
+	<!-- Bootstrap Select JavaScript -->
+	<script src="../assets_/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+	<!-- Bootstrap Tagsinput JavaScript -->
+	<script src="../assets_/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+
+	<!-- Bootstrap Touchspin JavaScript -->
+	<script src="../assets_/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+	<!-- Multiselect JavaScript -->
+	<script src="../assets_/vendors/bower_components/multiselect/js/jquery.multi-select.js"></script>
+
+
+	<!-- Bootstrap Switch JavaScript -->
+	<script src="../assets_/vendors/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+	<!-- Bootstrap Datetimepicker JavaScript -->
+	<script type="text/javascript" src="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Form Advance Init JavaScript -->
+	<script src="../assets_/dist/js/form-advance-data.js"></script>
+
+	<!-- Slimscroll JavaScript -->
+	<script src="../assets_/dist/js/jquery.slimscroll.js"></script>
+
+	<!-- Fancy Dropdown JS -->
+	<script src="../assets_/dist/js/dropdown-bootstrap-extended.js"></script>
+
+	<!-- Owl JavaScript -->
+	<script src="../assets_/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+	<!---------------------------------------- JavaScript ------------------------------------>
+
 
 	<!-- jQuery -->
 	<script src="../assets_/vendors/bower_components/jquery/dist/jquery.min.js"></script>
@@ -570,19 +680,23 @@
 	<script src="../assets_/vendors/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 
-    <script src="../assets_/dist/js/form-xeditable-data.js"></script>
+	<!-- <script src="../assets_/dist/js/form-xeditable-data.js"></script> -->
 
-     <!-- <script src="../js/stipend/stipend-main.js"></script> -->
+	<!-- <script src="../js/stipend/stipend-main.js"></script> -->
 
-	 <!-- <script src="../js/keepwordstap1/keepword_main.js"></script> -->
+	<!-- <script src="../js/keepwordstap1/keepword_main.js"></script> -->
 	<script src="../js/stipend/tableteaching.js"></script>
 
 	<!-- <script src="../js/keepwordstap1/keepword_main.js"></script> -->
-	
-    <!-- xeditable css -->
-    <script type="text/javascript" src="../assets_/vendors/bower_components/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-    <link href="../assets_/vendors/bower_components/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
-		<!-- Form-xeditable Init JavaScript -->
+
+	<!-- xeditable css -->
+	<script type="text/javascript" src="../assets_/vendors/bower_components/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+	<link href="../assets_/vendors/bower_components/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
+	<!-- Form-xeditable Init JavaScript -->
+
+
+
+
 
 </body>
 
