@@ -25,7 +25,7 @@ function tableuteach() {
                         '<td>' + msg.subject.credit + "(" + msg.subject.creditHour + ")" + '</td>' +
                         '<td>' + msg.studenNumber + '</td>' +
                         '<td>' + msg.standardTeach +'</td>' +
-                        '<td>' + msg.startTime + '-' + msg.stopTime + '</td>' +
+                        '<td>' + msg.startTime +'-'+ msg.stopTime + '</td>' +
                      
                         '<td class="td-actions text-right">' +
                         '<input type="hidden" value=' + msg.tebleTeachId + '>' +
