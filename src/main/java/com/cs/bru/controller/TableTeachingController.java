@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cs.bru.bean.TableTeachingBean;
 import com.cs.bru.bean.TeachSeachBean1;
+import com.cs.bru.dao.HolidayDAO;
 import com.cs.bru.dao.MonthDAO;
 import com.cs.bru.dao.TableTeachingDAO;
 import com.cs.bru.dao.TeachDAO;
@@ -27,6 +28,7 @@ import com.cs.bru.service.DateofTeachSevice;
 import com.cs.bru.service.ServiceTableTeaching;
 import com.mysql.fabric.xmlrpc.base.Data;
 import com.mysql.jdbc.TimeUtil;
+import com.cs.bru.model.HolidayTh;
 import com.cs.bru.model.Month;
 
 @RestController
@@ -41,7 +43,8 @@ public class TableTeachingController {
 	TeachDAO teachDAO;
 	@Autowired
 	DateofTeachSevice SevicedateofTeach;
-	
+	@Autowired
+	HolidayDAO holidayDAO;
 	
 	@RequestMapping("/TableTeachingAll")
 	public List<TableTeaching> TableTeaching(){
@@ -65,7 +68,8 @@ public class TableTeachingController {
 //		String inputSting2 = "23 03 2018";
 		String id;
 		
-		
+		 String oh="holiday";
+	
 		   try {
 //				Date date1 = myFormat.parse(inputSting1);
 //				Date date2 = myFormat.parse(inputSting2);
@@ -76,24 +80,24 @@ public class TableTeachingController {
 			   if (insertTableTeaching.getStudenNumber()>=20 && insertTableTeaching.getStudenNumber()<=35 ) {
 				   insertTableTeaching.setStandardTeach(120);	   
 				   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
-				   SevicedateofTeach.keepword(insertTableTeaching);
+				   SevicedateofTeach.keepword(insertTableTeaching,oh);
 				   
 				   
 //				   teachDAO.insertTeach(insertTableTeaching.getTeach());
 			} else if (insertTableTeaching.getStudenNumber()<=69 && insertTableTeaching.getStudenNumber()>=36) {
 				insertTableTeaching.setStandardTeach(180);
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
-				 SevicedateofTeach.keepword(insertTableTeaching);
+				 SevicedateofTeach.keepword(insertTableTeaching,oh);
 //				 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}else if (insertTableTeaching.getStudenNumber()>=70 &&insertTableTeaching.getStudenNumber()<=89) {
 				insertTableTeaching.setStandardTeach(240);
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
-				 SevicedateofTeach.keepword(insertTableTeaching);
+				 SevicedateofTeach.keepword(insertTableTeaching,oh);
 //				 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}else if (insertTableTeaching.getStudenNumber()>=90) {
 				insertTableTeaching.setStandardTeach(300);
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
-				 SevicedateofTeach.keepword(insertTableTeaching);
+				 SevicedateofTeach.keepword(insertTableTeaching,oh);
 //				 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}
 			else {
@@ -128,9 +132,14 @@ public class TableTeachingController {
 	public  List<TableTeaching> getTablest(@RequestBody TeachSeachBean1 id1){	
 		List<TableTeaching> list = new ArrayList<>();
 		list = tableTeachingDAO.findByIdSeachTeach(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
-		
+	
 		 return list;
 	}
-	
+	@RequestMapping("/ho")
+	public List<HolidayTh>listHo(){
+	List<HolidayTh>list =new ArrayList<>();
+	list=holidayDAO.holidayThFile();
+	return list;
+} 
 	
 }

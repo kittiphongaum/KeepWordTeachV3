@@ -10,9 +10,11 @@ public class DateofTeach {
 	private int tudsadeeDft ;
 	private int prtibadDft ;
 	private int summyhourDft ;
+	private int moneyDft;
 	private String subjectDft;
 	private String holidayDft;
 	private String userDft;
+	
 	 private Subject subject;
 	 private User user;
 	public int getDtimeId() {
@@ -98,6 +100,12 @@ public class DateofTeach {
 	}
 	public void setHolidayDft(String holidayDft) {
 		this.holidayDft = holidayDft;
+	}
+	public int getMoneyDft() {
+		return moneyDft;
+	}
+	public void setMoneyDft(int moneyDft) {
+		this.moneyDft = moneyDft;
 	}
 	 
 }

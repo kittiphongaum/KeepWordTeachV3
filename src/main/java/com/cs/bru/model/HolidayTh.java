@@ -2,33 +2,28 @@ package com.cs.bru.model;
 
 public class HolidayTh {
 	private int holidayId;
-	private String holidayDay;
-	private String holidayMonth;
+	private int holidayDay;
+	private int holidayMonth;
 	private String holidayYear;
 	private String holidayDayofyear;
+	private String holidayRow;
 	private HolidayBru holidayBrubean;
-	public HolidayBru getHolidayBrubean() {
-		return holidayBrubean;
-	}
-	public void setHolidayBrubean(HolidayBru holidayBrubean) {
-		this.holidayBrubean = holidayBrubean;
-	}
 	public int getHolidayId() {
 		return holidayId;
 	}
 	public void setHolidayId(int holidayId) {
 		this.holidayId = holidayId;
 	}
-	public String getHolidayDay() {
+	public int getHolidayDay() {
 		return holidayDay;
 	}
-	public void setHolidayDay(String holidayDay) {
+	public void setHolidayDay(int holidayDay) {
 		this.holidayDay = holidayDay;
 	}
-	public String getHolidayMonth() {
+	public int getHolidayMonth() {
 		return holidayMonth;
 	}
-	public void setHolidayMonth(String holidayMonth) {
+	public void setHolidayMonth(int holidayMonth) {
 		this.holidayMonth = holidayMonth;
 	}
 	public String getHolidayYear() {
@@ -43,4 +38,17 @@ public class HolidayTh {
 	public void setHolidayDayofyear(String holidayDayofyear) {
 		this.holidayDayofyear = holidayDayofyear;
 	}
+	public String getHolidayRow() {
+		return holidayRow;
+	}
+	public void setHolidayRow(String holidayRow) {
+		this.holidayRow = holidayRow;
+	}
+	public HolidayBru getHolidayBrubean() {
+		return holidayBrubean;
+	}
+	public void setHolidayBrubean(HolidayBru holidayBrubean) {
+		this.holidayBrubean = holidayBrubean;
+	}
+		
 }

@@ -139,7 +139,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
 					</li>
 					<li class="dropdown auth-drp">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_dist/img/user1.png" alt="user_auth"
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
 							 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
 						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
 							<li>
@@ -408,7 +408,7 @@
 																								<!-- <input type="text" class="form-control" id="teachTerm" placeholder=""> -->
 																								<select id="teachTerm" class="form-control " name="teachTerm">
 
-																									<option value="1 ">1</option>
+																									<option value="1">1</option>
 																									<option value="2">2</option>
 																									<option value="3">3</option>
 

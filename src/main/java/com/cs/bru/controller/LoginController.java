@@ -57,10 +57,17 @@ public class LoginController {
 			
 					
 					authen="index1";
-				} else {
+				}
+//				} else if (userLog.getPositionTeach().equals("A")) {
+//
+//					request.getSession().setAttribute("loginUser",userLog);
+//					request.getSession().setAttribute("listUser", userlist);
+//					authen="index-admin";
+//				}
+				else {
 					request.getSession().setAttribute("LoginUser", userLog);
 					request.getSession().setAttribute("listUser", userlist);
-					authen="login";
+					authen="index-admin";
 				}
 				
 				

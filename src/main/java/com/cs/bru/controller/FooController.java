@@ -78,4 +78,9 @@ public class FooController {
 		
 		return"stipend";
 	}
+	
+	@RequestMapping("/index-admin")
+	public String indexadmin() {
+		return"index-admin";
+	}
 }

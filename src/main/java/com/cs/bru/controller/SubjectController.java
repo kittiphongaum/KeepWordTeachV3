@@ -66,7 +66,7 @@ public class SubjectController {
 	@RequestMapping("/teach")
 	public List<Teach> teaching(){
 		List<Teach>list = new ArrayList<>();
-		list=teachDAO.findAll();
+		
 		return list;
 	}
 //	@RequestMapping( value = "/seachsub",method = RequestMethod.POST)

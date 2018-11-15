@@ -22,7 +22,7 @@ public class HolidayDAO {
 		HolidayBru holibru = new HolidayBru();
 
 		try {
-			sql.append("SELECT * FROM tb_holiday_bru");
+			sql.append("SELECT * FROM tb_holiday_bru WHERE holiday_row =?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			ResultSet rs = prepared.executeQuery();
 
@@ -43,28 +43,34 @@ public class HolidayDAO {
 		}
 		return holibru;
 	}
-public List<HolidayTh> holidayThfindAll() {
+public List<HolidayTh> holidayThFile() {
 	List<HolidayTh> hoTh = new ArrayList<>();
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
-		HolidayTh holiTh = new HolidayTh();
+		
 
 		try {
 			sql.append("SELECT * FROM tb_holiday_th");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			ResultSet rs = prepared.executeQuery();
 
+	
+			
+
 			while (rs.next()) {
-				
-				
+				HolidayTh holiTh = new HolidayTh();
 				holiTh.setHolidayId(rs.getInt("holiday_id"));
-				holiTh.setHolidayDay(rs.getString("holiday_day"));
-				holiTh.setHolidayMonth(rs.getString("holiday_month"));
+				holiTh.setHolidayDay(rs.getInt("holiday_day"));
+				holiTh.setHolidayMonth(rs.getInt("holiday_month"));
 				holiTh.setHolidayYear(rs.getString("holiday_year"));
 				holiTh.setHolidayDayofyear(rs.getString("holiday_dayofyear"));
-			
+				holiTh.setHolidayRow(rs.getString("holiday_row"));
+				
+				hoTh.add(holiTh);
 			}
+		
+			
 
 		} catch (Exception e) {
 			// TODO: handle exception

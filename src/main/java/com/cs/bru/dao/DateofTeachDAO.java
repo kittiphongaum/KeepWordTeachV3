@@ -12,6 +12,7 @@ import com.cs.bru.model.Subject;
 import com.cs.bru.model.User;
 import com.cs.bru.util.ConnectDB;
 
+
 @Repository
 public class DateofTeachDAO {
 	public void insertDateofTeach(DateofTeach bean) throws Exception {
@@ -20,7 +21,7 @@ public class DateofTeachDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_dateofteach(dateofteach_id,weekofyear_dft,dayofyear_dft,monthofyear_dft,yearofteach_dft,tudsadee_dft,prtibad_dft,summyhour_dft,subject_dft,user_dft,holiday_dft)VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_dateofteach(dateofteach_id,weekofyear_dft,dayofyear_dft,monthofyear_dft,yearofteach_dft,tudsadee_dft,prtibad_dft,summyhour_dft,subject_dft,user_dft,holiday_dft,money_dft)VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getDateofteachId());
 			prepared.setInt(2, bean.getWeekofyearDft());
@@ -34,7 +35,7 @@ public class DateofTeachDAO {
 			prepared.setString(9, bean.getSubjectDft());
 			prepared.setString(10, bean.getUserDft());
 		prepared.setString(11, bean.getHolidayDft());
-
+			prepared.setInt(12, bean.getMoneyDft());
 			prepared.executeUpdate();
 			 /*System.out.println(bean);*/ 
 		} catch (Exception e) {
@@ -42,16 +43,19 @@ public class DateofTeachDAO {
 			e.printStackTrace();
 		}
 	}
-	public List<DateofTeach> findById(String id) {
+	public List<DateofTeach> findById(String userid ,String term,String year) {
 		List<DateofTeach> list = new ArrayList<DateofTeach>();
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT dateofteach_id,weekofyear_dft,dayofyear_dft,monthofyear_dft,yearofteach_dft,tudsadee_dft,prtibad_dft,summyhour_dft,subject_dft,subject_id,subject_name,credit,credit_hour,tudsadee,prtibad,user_dft,user_id,user_name,user_lastname,baseHour,baseKrm FROM tb_dateofteach INNER JOIN tb_subject on tb_dateofteach.subject_dft = tb_subject.subject_id INNER JOIN tb_user on tb_dateofteach.user_dft = tb_user.user_id WHERE user_id = ?");
+			sql.append("SELECT dateofteach_id,weekofyear_dft,dayofyear_dft,monthofyear_dft,yearofteach_dft,tudsadee_dft,prtibad_dft,summyhour_dft,subject_dft,subject_id,subject_name,credit,credit_hour,tudsadee,prtibad,user_dft,user_id,user_name,user_lastname,baseHour,baseKrm "
+					+ "FROM tb_dateofteach INNER JOIN tb_subject on tb_dateofteach.subject_dft = tb_subject.subject_id INNER JOIN tb_user on tb_dateofteach.user_dft = tb_user.user_id WHERE tb_user.user_id =? and tb_table_teaching.teach_term =?  and tb_table_teaching.teach_year=?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
-			prepared.setString(1, id);
+			prepared.setString(1, userid);
+			prepared.setString(2, term);
+			prepared.setString(3, year);
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
@@ -94,4 +98,20 @@ public class DateofTeachDAO {
 		}
 		return list;
 	}
+	// update
+		public void update(DateofTeach bean) {
+			ConnectDB con = new ConnectDB();
+			PreparedStatement prepared = null;
+			StringBuilder sql = new StringBuilder();
+			try {
+				sql.append("UPDATE tb_dateofteach SET  money_dft=?  WHERE dateofteach_id = ?");
+				prepared = con.openConnect().prepareStatement(sql.toString());
+				prepared.setInt(1, bean.getMoneyDft());
+				prepared.setString(2, bean.getDateofteachId());
+				prepared.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+		}// end method update
 }

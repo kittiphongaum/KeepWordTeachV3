@@ -51,8 +51,6 @@
    /*  userByBean = (User) request.getAttribute("resultBean"); 
     result = (String) request.getAttribute("messesUpdate");  */
     listtable =(List<TableTeaching>)request.getSession().getAttribute("tablelist");
-    
-
 %>
 </head>
 
@@ -145,7 +143,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
 					</li>
 					<li class="dropdown auth-drp">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="dist/img/user1.png" alt="user_auth"
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
 							 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
 						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
 							<li>
@@ -449,7 +447,7 @@
 												<div class="panel-wrapper collapse in">
 													<div class="panel-body">
 														<div class="table-wrap">
-															<table id="customerTable2" class="table table-hover table-bordered mb-0">
+															<table id="customerTableTeach" class="table table-hover table-bordered mb-0">
 																<thead class="text-warning">
 																	<tr>
 																		<th scope="col">รหัสวิชา</th>
@@ -495,7 +493,7 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">...</h6>
+									<h6 class="panel-title txt-dark">รายละเอียดการสอน/วัน</h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -534,6 +532,7 @@
 												</table>
 											</div>
 										</div>
+										
 									</div>
 								</div>
 							</div>
@@ -542,6 +541,9 @@
 				</div>
 				<!-- /Row -->
 				<!-- /Row -->
+					<button type="submit" class="btn btn-primary pull-right" onclick="insertTeachingfrom()">
+																			<h4>บันทึก และ พิมพ์</h4>
+																		</button>
 			</div>
 
 		</div>

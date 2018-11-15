@@ -7,10 +7,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.cs.bru.bean.TeachInsertBean;
-import com.cs.bru.model.DateTime;
-import com.cs.bru.model.Subject;
+import com.cs.bru.model.TableTeaching;
 import com.cs.bru.model.Teach;
+import com.cs.bru.model.User;
 import com.cs.bru.util.ConnectDB;
 
 @Repository
@@ -21,21 +20,24 @@ public class TeachDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_teaching (teach_id,sum_hourweek,sum_hourterm,salary_tudsadee,salary_prtibad,salary_sum,subject_fk,tableteach_fk,user_fk) VALUES(?,?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_teaching (teach_id,sum_hour_term,hoursum_tudsadee,hoursum_prtibad,money_tudsadee,money_prtibad,salary_sum,"
+					+ "dateofteach_fk,subject_fk,tableteach_fk,user_fk) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getTeachId());
-			prepared.setInt(2, bean.getSumHourweek());
-			prepared.setInt(3, bean.getSumHourterm());
-			prepared.setInt(4, bean.getSalaryTudsadee());
-			prepared.setInt(5, bean.getSalaryPrtibad());
-			prepared.setInt(6, bean.getSalarySum());
-			prepared.setString(7, bean.getSubjactFk());
-			prepared.setString(8, bean.getTableteachFk());
-			prepared.setString(9, bean.getUserFk());
+			prepared.setInt(2, bean.getSumHourTerm());
+			prepared.setInt(3, bean.getHoursumTudsadee());
+			prepared.setInt(4, bean.getHoursumPrtibad());
+			prepared.setInt(5, bean.getMoneyTudsadee());
+			prepared.setInt(6, bean.getMoneyPrtibad());
+			prepared.setInt(7, bean.getSalarySum());
+			prepared.setString(8, bean.getDateofteachFk());
+			prepared.setString(9, bean.getSubjactFk());
+			prepared.setString(10, bean.getTableteachFk());
+			prepared.setString(11, bean.getUserFk());
 			
 
 			prepared.executeUpdate();
-			System.out.println(bean);
+//			System.out.println(bean);
 			/* System.out.println("sssssssss"); */
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -44,50 +46,41 @@ public class TeachDAO {
 	}
 
 	
-	public List<Teach> findAll() {
+	public List<Teach> teschASCfileAll(String userid,String term,String year,String degree) {
 		List<Teach> list = new ArrayList<>();
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT teachID,startMonth,stopMonth,buddhist,teachRowDat,datetime_id,weekteach,dateteach,teachRowSub,subjactid,subjactName,credit,creditHour,Tudsadee,Prtibad FROM tb_teaching RIGHT JOIN tb_datetime on tb_teaching.teachRowDat = tb_datetime.datetime_id INNER JOIN tb_subject on tb_teaching.teachRowSub = tb_subject.subjactid");
+			sql.append("SELECT tb_teaching.*,tb_user.*,tb_table_teaching.* FROM tb_teaching INNER JOIN tb_user on tb_teaching.user_fk = tb_user.user_id INNER JOIN tb_table_teaching on tb_teaching.tableteach_fk = tb_table_teaching.teble_teach_id WHERE tb_user.user_id =? and tb_table_teaching.teach_term = ? and tb_table_teaching.teach_year= ? and tb_table_teaching.degree_studen=? ORDER BY tb_teaching.salary_sum ASC;");
 			prepared = con.openConnect().prepareStatement(sql.toString());
+			prepared.setString(1,userid);
+			prepared.setString(2,term);
+			prepared.setString(3,year);
+			prepared.setString(4,degree);
 			ResultSet rs = prepared.executeQuery();
 
 			while (rs.next()) {
-				/*Teach teach = new Teach();
-				DateTime dateTime = new DateTime();
-				Subject subject = new Subject();
-				 
-				teach.setTeachID(rs.getString("teach_id"));
-				teach.setStartMonth(rs.getString("start_month"));
-				teach.setStopMonth(rs.getString("stop_month"));
-				teach.setDegreeSt(rs.getString("degree_st"));
-				teach.setStudentNumber(rs.getInt("student_number"));
-				teach.setSection(rs.getString("section"));
+				Teach teach = new Teach();
+				User users =new User();
+				TableTeaching table = new TableTeaching();
+								 
+				teach.setTeachId(rs.getString("teach_id"));
+				teach.setSumHourTerm(rs.getInt("sum_hour_term"));
+				teach.setHoursumTudsadee(rs.getInt("hoursum_tudsadee"));
+				teach.setHoursumPrtibad(rs.getInt("hoursum_prtibad"));
+				teach.setMoneyTudsadee(rs.getInt("money_tudsadee"));
+				teach.setMoneyPrtibad(rs.getInt("money_prtibad"));
+				teach.setSalarySum(rs.getInt("salary_sum"));
+			
+				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
+				teach.setSubjactFk(rs.getString("subject_fk"));
+				teach.setTableteachFk(rs.getString("tableteach_fk"));
+				teach.setUserFk(rs.getString("user_fk"));
 				
-				teach.setBuddhist(rs.getString("buddhist"));
 				
-				teach.setDattimeFk(rs.getString("dattime_fk"));
-				
-				dateTime.setDatetTmeId(rs.getInt("subjact_fk"));
-				dateTime.setWeekTeach(rs.getString("weekteach"));
-				dateTime.setDateTeach(rs.getString("dateteach"));
-				
-				teach.setSubjactFk(rs.getString("teachRowDat"));
-				
-				subject.setSubjectId(rs.getString("subjactid"));
-				subject.setSubjectName(rs.getString("subjactName"));
-				subject.setCredit(rs.getInt("credit"));
-				subject.setCreditHour(rs.getString("creditHour"));
-				subject.setTudsadee(rs.getInt("Tudsadee"));
-				subject.setPrtibad(rs.getInt("Prtibad"));
-
-				teach.setDateTime(dateTime);
-				teach.setSubject(subject);
-				
-				list.add(teach);*/
+				list.add(teach);
 			}
 
 		} catch (Exception e) {
@@ -97,31 +90,38 @@ public class TeachDAO {
 		return list;
 	}
 
-	public Subject findOne(String id) {
-
+	public List<Teach> findOne(String id) {
+		List<Teach>list =new ArrayList<>();
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
-		Subject Subject = new Subject();
+	
 
 		try {
-			sql.append(" SELECT * FROM tb_teaching WHERE teachID = 1");
+			sql.append(" SELECT * FROM tb_teaching WHERE teach_id = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, id);
 			ResultSet rs = prepared.executeQuery();
 			while (rs.next()) {
-			/*	Subject.setSubjectId(rs.getString("teachID"));
-				Subject.setSubjectName(rs.getString("startMonth"));
-				Subject.setCredit(rs.getInt("stopMonth"));
-				Subject.setCreditHour(rs.getString("buddhist"));*/
-			
-				/*System.out.println(Subject);*/
+				Teach teach =new Teach();
+				teach.setTeachId(rs.getString("teach_id"));
+				teach.setSumHourTerm(rs.getInt("sum_hour_term"));
+				teach.setHoursumTudsadee(rs.getInt("hoursum_tudsadee"));
+				teach.setHoursumPrtibad(rs.getInt("hoursum_prtibad"));
+				teach.setMoneyTudsadee(rs.getInt("money_tudsadee"));
+				teach.setMoneyPrtibad(rs.getInt("money_prtibad"));
+				teach.setSalarySum(rs.getInt("salary_sum"));
+				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
+				teach.setSubjactFk(rs.getString("subject_fk"));
+				teach.setTableteachFk(rs.getString("tableteach_fk"));
+				teach.setUserFk(rs.getString("user_fk"));
+				list.add(teach);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 
-		return Subject;
+		return list;
 	}
 }

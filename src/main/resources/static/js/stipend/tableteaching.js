@@ -10,10 +10,14 @@ function tableuteach() {
     $.ajax({
         type: "POST",
         contentType : "application/json",
-        url: "/TableTeachingOneSeachByid",
+        url: "/TeachOneSeachByid",
         data: JSON.stringify(id1),
         dataType : 'json',
         success: function (result) {
+            // for (let i = 0; i < result.length; i++) {
+            //     const element = array[i];
+            //     console.log(element);
+            // }
             $.each(result, function (index, msg) {
                 var SubjectRow = '<tr>' +
                     '<td>' + msg.subject.subjectId + '</td>' +
@@ -33,7 +37,7 @@ function tableuteach() {
                     '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
                     '</tr>';
 
-                $('#customerTable2 tbody').append(SubjectRow);
+                $('#customerTableTeach tbody').append(SubjectRow);
                
             });
 
