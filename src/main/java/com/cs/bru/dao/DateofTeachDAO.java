@@ -104,14 +104,33 @@ public class DateofTeachDAO {
 			PreparedStatement prepared = null;
 			StringBuilder sql = new StringBuilder();
 			try {
-				sql.append("UPDATE tb_dateofteach SET  money_dft=?  WHERE dateofteach_id = ?");
+				sql.append("UPDATE tb_dateofteach SET  money_dft=? statusbase =?  WHERE dateofteach_id = ?");
 				prepared = con.openConnect().prepareStatement(sql.toString());
 				prepared.setInt(1, bean.getMoneyDft());
-				prepared.setString(2, bean.getDateofteachId());
+				prepared.setString(2, bean.getStatusBase());
+				prepared.setString(3, bean.getDateofteachId());
 				prepared.executeUpdate();
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
 
 		}// end method update
+		
+		// update
+				public void updateDay(DateofTeach bean) {
+					ConnectDB con = new ConnectDB();
+					PreparedStatement prepared = null;
+					StringBuilder sql = new StringBuilder();
+					try {
+						sql.append("UUPDATE tb_dateofteach SET  statusbase =?  WHERE subject_dft = ?");
+						prepared = con.openConnect().prepareStatement(sql.toString());
+
+						prepared.setString(1, bean.getStatusBase());
+						prepared.setString(2, bean.getSubjectDft());
+						prepared.executeUpdate();
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+
+				}// end method update
 }

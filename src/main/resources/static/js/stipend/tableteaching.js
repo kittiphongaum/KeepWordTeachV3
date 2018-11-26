@@ -10,34 +10,27 @@ function tableuteach() {
     $.ajax({
         type: "POST",
         contentType : "application/json",
-        url: "/TeachOneSeachByid",
+        url: "/TeachOneSeachByid1",
         data: JSON.stringify(id1),
         dataType : 'json',
         success: function (result) {
-            // for (let i = 0; i < result.length; i++) {
-            //     const element = array[i];
-            //     console.log(element);
-            // }
+    console.log(result);
             $.each(result, function (index, msg) {
                 var SubjectRow = '<tr>' +
-                    '<td>' + msg.subject.subjectId + '</td>' +
-                    '<td>' + msg.section + '</td>' +
-                    '<td>' + msg.subject.credit + "(" + msg.subject.creditHour + ")" + '</td>' +
-                    '<td>' + msg.studenNumber + '</td>' +
-                    '<td>' + msg.standardTeach +'</td>' +
-                    '<td>'+'</td>' +
-                    '<td>' + '</td>' +
-                    // '<td class="td-actions text-right">' +
-                    // '<input type="hidden" value=' + msg.tebleTeachId + '>' +
-                    // '<a  rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">' +
-                    // '<i class="material-icons">close</i>' +
-                    // '</a>' +
-                    // '</td>' +
+                    '<td>' + msg.tableTeaching.subject.subjectId + '</td>' +
+                    '<td>' + msg.tableTeaching.subject.section + '</td>' +
+                    '<td>' + msg.tableTeaching.subject.credit + "(" + msg.tableTeaching.subject.creditHour + ")" + '</td>' +
+                    '<td>' + msg.tableTeaching.studenNumber + '</td>' +
+                    '<td>' + msg.tableTeaching.standardTeach +'</td>' +
+                    '<td>'+msg.basecram+'</td>' +
+                    '<td>'+msg.baseHour+'</td>' +
+                    '<td>'+msg.salarySum+'</td>' +
+              
                  
-                    '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+                    // '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
                     '</tr>';
 
-                $('#customerTableTeach tbody').append(SubjectRow);
+                $('#customerTable2 tbody').append(SubjectRow);
                
             });
 
@@ -45,8 +38,43 @@ function tableuteach() {
             $("#customerTable2 tbody tr:even").addClass("success");
         },
         error: function (e) {
-            // alert("ERROR: 22", e);
-            // console.log("ERROR: 22", e);
+            alert("ERROR: 22", e);
+            console.log("ERROR: 22", e);
+        }
+    });
+    $.ajax({
+        type: "POST",
+        contentType : "application/json",
+        url: "/TeachOneSeachByid1",
+        data: JSON.stringify(id1),
+        dataType : 'json',
+        success: function (result) {
+    console.log(result);
+            $.each(result, function (index, msg) {
+                var SubjectRow = '<tr>' +
+                    '<td>' + msg.tableTeaching.subject.subjectId + '</td>' +
+                    '<td>' + msg.tableTeaching.subject.section + '</td>' +
+                    '<td>' + msg.tableTeaching.subject.credit + "(" + msg.tableTeaching.subject.creditHour + ")" + '</td>' +
+                    '<td>' + msg.tableTeaching.studenNumber + '</td>' +
+                    '<td>' + msg.tableTeaching.standardTeach +'</td>' +
+                    '<td>'+msg.basecram+'</td>' +
+                    '<td>'+msg.baseHour+'</td>' +
+                    '<td>'+msg.salarySum+'</td>' +
+              
+                 
+                    // '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+                    '</tr>';
+
+                $('#customerTable3 tbody').append(SubjectRow);
+               
+            });
+
+            $("#customerTable3 tbody tr:odd").addClass("info");
+            $("#customerTable3 tbody tr:even").addClass("success");
+        },
+        error: function (e) {
+            alert("ERROR: 22", e);
+            console.log("ERROR: 22", e);
         }
     });
 };

@@ -51,7 +51,7 @@
 				<div class="mobile-only-brand pull-left">
 					<div class="nav-header pull-left">
 						<div class="logo-wrap">
-							<a href="index1">
+							<a href="./index-admin">
 								<img class="brand-img" src="" alt="brand" />
 								<span class="brand-text">Welcome</span>
 							</a>
@@ -179,7 +179,7 @@
 						<i class="zmdi zmdi-more"></i>
 					</li>
 					<li>
-						<a class="active" href="./index-admin" data-toggle="collapse" data-target="#dashboard_dr">
+						<a  href="./index-admin" data-toggle="collapse" data-target="#dashboard_dr">
 							<div class="pull-left"><i class="ti-layout-grid2  mr-20"></i><span class="right-nav-text">หน้าหลัก</span></div>
 							<div class="clearfix"></div>
 						</a>
@@ -188,15 +188,16 @@
 						</ul>
 					</li>
 					<li>
-						<a href="./people-add" data-toggle="collapse" data-target="#app_dr">
+						<a  href="./people-add" data-toggle="collapse" data-target="#app_dr">
 							<div class="pull-left"><i class="icon-people mr-20"></i><span class="right-nav-text">ข้อมูลผู้สอน</span></div>
 							<div class="clearfix"></div>
 						</a>
 						<ul id="app_dr" class="collapse collapse-level-1">
 						</ul>
 					</li>
+					
 					<li>
-						<a href="./holiday-add" data-toggle="collapse" data-target="#app_dr">
+						<a href="./history-add" data-toggle="collapse" data-target="#app_dr">
 							<div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวัติการเบิก</span></div>
 							<div class="clearfix"></div>
 						</a>
@@ -204,7 +205,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="./subject-add" data-toggle="collapse" data-target="#app_dr">
+						<a class="active" href="./subject-add" data-toggle="collapse" data-target="#app_dr">
 							<div class="pull-left"><i data-icon="o" class="linea-icon linea-basic mr-20"></i><span class="right-nav-text">เพิ่มรายวิชา</span></div>
 							<div class="clearfix"></div>
 						</a>
@@ -669,352 +670,7 @@
 			<!-- Main Content -->
 			<div class="page-wrapper">
 				<div class="container-fluid pt-25">
-					<!-- Row -->
-					<div class="row">
-						<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-						   <div class="panel panel-default card-view panel-refresh">
-									<div class="refresh-container">
-										<div class="la-anim-1"></div>
-									</div>
-									<div class="panel-heading">
-										<div class="pull-left">
-											<h6 class="panel-title txt-dark">Pending Items</h6>
-										</div>
-										<div class="pull-right">
-											<a href="#" class="pull-left inline-block refresh mr-15">
-												<i class="zmdi zmdi-replay"></i>
-											</a>
-											<div class="pull-left inline-block dropdown">
-												<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
-												<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-													<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>option 1</a></li>
-													<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>option 2</a></li>
-													<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>option 3</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body">
-										<div id="e_chart_1" class="" style="height:242px;"></div>
-										<div class="label-chatrs mt-15">
-											<div class="mb-5">
-												<span class="clabels inline-block bg-purple mr-5"></span>
-												<span class="clabels-text font-12 inline-block txt-dark capitalize-font">Actions pending</span>
-											</div>
-											<div class="mb-5">
-												<span class="clabels inline-block bg-skyblue mr-5"></span>
-												<span class="clabels-text font-12 inline-block txt-dark capitalize-font">decision pending</span>
-											</div>
-											<div class="">
-												<span class="clabels inline-block bg-blue mr-5"></span>
-												<span class="clabels-text font-12 inline-block txt-dark capitalize-font">chage request pending</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-	
-						<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-							<div class="panel panel-default card-view panel-refresh">
-								<div class="refresh-container">
-									<div class="la-anim-1"></div>
-								</div>
-								<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">Task Status</h6>
-									</div>
-									<div class="pull-right">
-										<a href="#" class="pull-left inline-block refresh">
-											<i class="zmdi zmdi-replay"></i>
-										</a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body">
-										<div id="e_chart_2" class="" style="height:330px;"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-	
-						<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-						   <div class="panel panel-default card-view panel-refresh">
-									<div class="refresh-container">
-										<div class="la-anim-1"></div>
-									</div>
-									<div class="panel-heading">
-										<div class="pull-left">
-											<h6 class="panel-title txt-dark">Budget</h6>
-										</div>
-										<div class="pull-right">
-											<a href="#" class="pull-left inline-block refresh">
-												<i class="zmdi zmdi-replay"></i>
-											</a>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-									<div class="panel-wrapper collapse in">
-										<div class="panel-body">
-											<div id="e_chart_3" class="" style="height:294px;"></div>
-											<div class="label-chatrs mt-15">
-												<div class="inline-block mr-15">
-													<span class="clabels inline-block bg-pink mr-5"></span>
-													<span class="clabels-text font-12 inline-block txt-dark capitalize-font">planned</span>
-												</div>
-												<div class="inline-block">
-													<span class="clabels inline-block bg-blue mr-5"></span>
-													<span class="clabels-text font-12 inline-block txt-dark capitalize-font">actual</span>
-												</div>
-											</div>
-										</div>
-									</div>
-							</div>
-						</div>
-	
-						<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-						   <div class="panel panel-default card-view panel-refresh">
-									<div class="refresh-container">
-										<div class="la-anim-1"></div>
-									</div>
-									<div class="panel-heading">
-										<div class="pull-left">
-											<h6 class="panel-title txt-dark">Risks</h6>
-										</div>
-										<div class="pull-right">
-											<a href="#" class="pull-left inline-block refresh">
-												<i class="zmdi zmdi-replay"></i>
-											</a>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body">
-										<div id="e_chart_4" class="" style="height:330px;"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /Row -->
-	
-					<!-- Row -->
-					<div class="row">
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
-							<div class="panel card-view">
-								<div class="panel-heading small-panel-heading relative">
-									<div class="pull-left">
-										<h6 class="panel-title">Invoices</h6>
-									</div>
-									<div class="clearfix"></div>
-									<div class="head-overlay"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body row pa-0">
-										<div class="sm-data-box">
-											<div class="container-fluid">
-												<div class="row">
-													<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-														<span class="weight-500 uppercase-font block">due</span>
-														<span class="txt-dark block counter">$<span class="counter-anim">15678</span></span>
-													</div>
-													<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-														<span class="weight-500 uppercase-font block">overdue</span>
-														<span class="txt-dark block counter">$<span class="counter-anim">45678</span></span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel card-view">
-								<div class="panel-heading small-panel-heading relative">
-									<div class="pull-left">
-										<h6 class="panel-title">Monthly Revenue</h6>
-									</div>
-									<div class="clearfix"></div>
-									<div class="head-overlay"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body row pa-0">
-										<div class="sm-data-box">
-											<div class="container-fluid">
-												<div class="row">
-													<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-														<span class="block"><i class="zmdi zmdi-trending-up txt-success font-18 mr-5"></i><span class="weight-500 uppercase-font">growth</span></span>
-														<span class="txt-dark block counter">$<span class="counter-anim">15,678</span></span>
-													</div>
-													<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-														<div id="sparkline_4" style="width: 100px; overflow: hidden; margin: 0px auto;"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default card-view">
-									<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">My Stats</h6>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-									<div class="panel-wrapper collapse in">
-										<div class="panel-body row">
-											<div class="">
-												<div class="pl-15 pr-15 mb-15">
-													<div class="pull-left">
-														<i class="zmdi zmdi-collection-folder-image inline-block mr-10 font-16"></i>
-														<span class="inline-block txt-dark">Active Projects</span>
-													</div>
-													<span class="inline-block txt-warning pull-right weight-500">12</span>
-													<div class="clearfix"></div>
-												</div>
-												<hr class="light-grey-hr mt-0 mb-15"/>
-												<div class="pl-15 pr-15 mb-15">
-													<div class="pull-left">
-														<i class="zmdi zmdi-format-list-bulleted inline-block mr-10 font-16"></i>
-														<span class="inline-block txt-dark">Task Pending</span>
-													</div>
-													<span class="inline-block txt-danger pull-right weight-500">23</span>
-													<div class="clearfix"></div>
-												</div>
-												<hr class="light-grey-hr mt-0 mb-15"/>
-												<div class="pl-15 pr-15 mb-15">
-													<div class="pull-left">
-														<i class="zmdi zmdi-ticket-star inline-block mr-10 font-16"></i>
-														<span class="inline-block txt-dark">Support Tickets</span>
-													</div>
-													<span class="inline-block txt-primary pull-right weight-500">43</span>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-						</div>
-	
-						<div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
-							<div class="panel panel-default card-view">
-								<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">Project Status</h6>
-									</div>
-									<div class="pull-right">
-										<a href="#" class="pull-left inline-block full-screen mr-15">
-											<i class="zmdi zmdi-fullscreen"></i>
-										</a>
-										<div class="pull-left inline-block dropdown">
-											<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
-											<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Update</a></li>
-												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>Edit</a></li>
-												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>Remove</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body row pa-0">
-										<div class="table-wrap">
-											<div class="table-responsive">
-											  <table class="table table-hover mb-0">
-												<thead>
-												  <tr>
-													<th>Task</th>
-													<th>Progress</th>
-													<th>Deadline</th>
-													</tr>
-												</thead>
-												<tbody>
-												  <tr>
-													<td>CMVM Digitisation of paper records</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-danger" style="width: 35%"></div>
-													  </div></td>
-													<td>Jan 18, 2017</td>
-	
-												  </tr>
-												  <tr>
-													<td>Data management plans</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-													  </div></td>
-													<td>Dec 1, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>REF readiness</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-success" style="width: 100%"></div>
-													  </div></td>
-													<td>Nov 12, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Storage Strategy</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-primary" style="width: 70%"></div>
-													  </div></td>
-													<td>Oct 9, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Network Infrastructure strategy</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-primary" style="width: 85%"></div>
-													  </div></td>
-													<td>Sept 2, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Flexible Server hosting</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-													  </div></td>
-													<td>August 11, 2015</td>
-	
-												  </tr>
-												   <tr>
-													<td>Virtual Desktop software access</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-													  </div></td>
-													<td>June 11, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Server hosting Issues</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-													  </div></td>
-													<td>August 11, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Cpanel Issues</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-warning" style="width: 60%"></div>
-													  </div></td>
-													<td>Sep 11, 2016</td>
-	
-												  </tr>
-												</tbody>
-											  </table>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Row -->
+
 	
 					<!-- Row -->
 					<div class="row">
@@ -1022,7 +678,7 @@
 							<div class="panel panel-default card-view">
 								<div class="panel-heading">
 									<div class="pull-left">
-										<h6 class="panel-title txt-dark">customer support</h6>
+										<h6 class="panel-title txt-dark">ตารรางวิชา</h6>
 									</div>
 									<div class="pull-right">
 										<a href="#" class="pull-left inline-block full-screen">

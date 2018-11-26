@@ -447,7 +447,7 @@
 												<div class="panel-wrapper collapse in">
 													<div class="panel-body">
 														<div class="table-wrap">
-															<table id="customerTableTeach" class="table table-hover table-bordered mb-0">
+															<table id="customerTable2" class="table table-hover table-bordered mb-0">
 																<thead class="text-warning">
 																	<tr>
 																		<th scope="col">รหัสวิชา</th>
@@ -538,12 +538,13 @@
 							</div>
 						</div>
 					</div>
+					<button type="submit" class="btn btn-primary pull-right" onclick="insertTeachingfrom()">
+						<h4>บันทึก และ พิมพ์</h4>
+					</button>
 				</div>
 				<!-- /Row -->
 				<!-- /Row -->
-					<button type="submit" class="btn btn-primary pull-right" onclick="insertTeachingfrom()">
-																			<h4>บันทึก และ พิมพ์</h4>
-																		</button>
+					
 			</div>
 
 		</div>

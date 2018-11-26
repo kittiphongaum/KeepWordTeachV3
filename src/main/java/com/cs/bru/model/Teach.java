@@ -15,6 +15,9 @@ public class Teach {
 	private String subjactFk;
 	private String tableteachFk;
 	private String userFk;
+	private int baseHour;
+	private int basecram;
+	
 	private DateofTeach dateofTeach;
 	private Subject subject;
 	private TableTeaching tableTeaching;
@@ -114,6 +117,18 @@ public class Teach {
 	}
 	public void setUsers(User users) {
 		this.users = users;
+	}
+	public int getBaseHour() {
+		return baseHour;
+	}
+	public void setBaseHour(int baseHour) {
+		this.baseHour = baseHour;
+	}
+	public int getBasecram() {
+		return basecram;
+	}
+	public void setBasecram(int basecram) {
+		this.basecram = basecram;
 	}
 	
 	

@@ -169,7 +169,7 @@ public class UserDAO  {
 		return list;
 	}
 	
-	public User findById(String id)  {
+	public  User findById(String id)  {
 		User bean = new User();
 		ConnectDB con = new ConnectDB();
 		PreparedStatement preperd = null;

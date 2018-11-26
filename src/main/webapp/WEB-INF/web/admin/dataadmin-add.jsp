@@ -51,7 +51,7 @@
 				<div class="mobile-only-brand pull-left">
 					<div class="nav-header pull-left">
 						<div class="logo-wrap">
-							<a href="index1">
+							<a href="./index-admin">
 								<img class="brand-img" src="" alt="brand" />
 								<span class="brand-text">Welcome</span>
 							</a>
@@ -179,7 +179,7 @@
 						<i class="zmdi zmdi-more"></i>
 					</li>
 					<li>
-						<a class="active" href="./index-admin" data-toggle="collapse" data-target="#dashboard_dr">
+						<a  href="./index-admin" data-toggle="collapse" data-target="#dashboard_dr">
 							<div class="pull-left"><i class="ti-layout-grid2  mr-20"></i><span class="right-nav-text">หน้าหลัก</span></div>
 							<div class="clearfix"></div>
 						</a>
@@ -188,15 +188,16 @@
 						</ul>
 					</li>
 					<li>
-						<a href="./people-add" data-toggle="collapse" data-target="#app_dr">
+						<a  href="./people-add" data-toggle="collapse" data-target="#app_dr">
 							<div class="pull-left"><i class="icon-people mr-20"></i><span class="right-nav-text">ข้อมูลผู้สอน</span></div>
 							<div class="clearfix"></div>
 						</a>
 						<ul id="app_dr" class="collapse collapse-level-1">
 						</ul>
 					</li>
+					
 					<li>
-						<a href="./holiday-add" data-toggle="collapse" data-target="#app_dr">
+						<a href="./history-add" data-toggle="collapse" data-target="#app_dr">
 							<div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวัติการเบิก</span></div>
 							<div class="clearfix"></div>
 						</a>
@@ -220,7 +221,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="./dataadmin-add" data-toggle="collapse" data-target="#app_dr">
+						<a class="active" href="./dataadmin-add" data-toggle="collapse" data-target="#app_dr">
 							<div class="pull-left"><i class="icon-user  mr-20"></i><span class="right-nav-text">ข้อมูลผู้ใช้ </span></div>
 							<div class="clearfix"></div>
 						</a>

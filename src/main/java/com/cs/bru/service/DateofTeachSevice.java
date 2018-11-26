@@ -122,11 +122,11 @@ public class DateofTeachSevice {
 			  
 			  
 			  dateofTeachDao.insertDateofTeach(ofteach);
-			 
+				dFt.setMoneyDft(insertTableTeaching.getStandardTeach());
 			
 			}
 			dFt.setDateofteachId(insertTableTeaching.getTebleTeachId());
-			dFt.setMoneyDft(sumhourtrme);
+		
 			System.out.println(sumhourtrme);
 			dateofTeachDao.update(dFt);
 			
