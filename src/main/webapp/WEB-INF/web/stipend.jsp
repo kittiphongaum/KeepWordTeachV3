@@ -447,7 +447,7 @@
 												<div class="panel-wrapper collapse in">
 													<div class="panel-body">
 														<div class="table-wrap">
-															<table id="customerTable2" class="table table-hover table-bordered mb-0">
+															<table id="customerTable1" class="table table-hover table-bordered mb-0">
 																<thead class="text-warning">
 																	<tr>
 																		<th scope="col">รหัสวิชา</th>
@@ -502,7 +502,7 @@
 									<div class="row">
 										<div class="col-md-12">
 											<div class="table-wrap">
-												<table id="customerTable3" class="table table-hover table-bordered mb-0">
+												<table id="customerTable2" class="table table-hover table-bordered mb-0">
 													<thead class="text-warning">
 														<tr>
 															<th scope="col">#</th>

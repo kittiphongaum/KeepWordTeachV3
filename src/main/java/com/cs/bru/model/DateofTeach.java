@@ -18,6 +18,7 @@ public class DateofTeach {
 	
 	 private Subject subject;
 	 private User user;
+	 private TableTeaching  tableTeaching;
 	public int getDtimeId() {
 		return dtimeId;
 	}
@@ -113,6 +114,12 @@ public class DateofTeach {
 	}
 	public void setStatusBase(String statusBase) {
 		this.statusBase = statusBase;
+	}
+	public TableTeaching getTableTeaching() {
+		return tableTeaching;
+	}
+	public void setTableTeaching(TableTeaching tableTeaching) {
+		this.tableTeaching = tableTeaching;
 	}
 	
 	

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import com.cs.bru.model.DateofTeach;
 import com.cs.bru.model.Subject;
+import com.cs.bru.model.TableTeaching;
+import com.cs.bru.model.Teach;
 import com.cs.bru.model.User;
 import com.cs.bru.util.ConnectDB;
 
@@ -120,9 +122,11 @@ public class DateofTeachDAO {
 				public void updateDay(DateofTeach bean) {
 					ConnectDB con = new ConnectDB();
 					PreparedStatement prepared = null;
+					
+					
 					StringBuilder sql = new StringBuilder();
 					try {
-						sql.append("UUPDATE tb_dateofteach SET  statusbase =?  WHERE subject_dft = ?");
+						sql.append("UPDATE tb_dateofteach SET  statusbase =?  WHERE subject_dft = ?");
 						prepared = con.openConnect().prepareStatement(sql.toString());
 
 						prepared.setString(1, bean.getStatusBase());
@@ -133,4 +137,95 @@ public class DateofTeachDAO {
 					}
 
 				}// end method update
+				
+				//ระยะเวลาสอน
+				public   List<DateofTeach> fileASCDay(String userid,String term,String year,String degree) {
+					List<DateofTeach> list = new ArrayList<>();
+					ConnectDB con = new ConnectDB();
+					PreparedStatement prepared = null;
+					StringBuilder sql = new StringBuilder();
+
+					try {
+						sql.append("SELECT tb_dateofteach.*,tb_table_teaching.*,tb_subject.*,tb_user.* FROM tb_dateofteach INNER JOIN tb_user on tb_dateofteach.user_dft = tb_user.user_id INNER JOIN tb_table_teaching on tb_dateofteach.dateofteach_id = tb_table_teaching.teble_teach_id INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id WHERE tb_user.user_id =? and tb_table_teaching.teach_term = ? and tb_table_teaching.teach_year= ? and tb_table_teaching.degree_studen=? and tb_dateofteach.statusbase='1' ORDER BY tb_dateofteach.weekofyear_dft ASC");
+						prepared = con.openConnect().prepareStatement(sql.toString());
+						prepared.setString(1,userid);
+						prepared.setString(2,term);
+						prepared.setString(3,year);
+						prepared.setString(4,degree);
+						ResultSet rs = prepared.executeQuery();
+
+						while (rs.next()) {
+							DateofTeach day = new DateofTeach();
+							User users =new User();
+							TableTeaching table = new TableTeaching();
+											 
+							day.setDateofteachId(rs.getString("dateofteach_id"));
+							day.setWeekofyearDft(rs.getInt("weekofyear_dft"));
+							day.setDayofyearDft(rs.getString("dayofyear_dft"));
+							day.setMonthofyearDft(rs.getString("monthofyear_dft"));
+							day.setYearofteachDft(rs.getString("yearofteach_dft"));
+							day.setTudsadeeDft(rs.getInt("tudsadee_dft"));
+							day.setPrtibadDft(rs.getInt("prtibad_dft"));
+							day.setSummyhourDft(rs.getInt("summyhour_dft"));
+							day.setMoneyDft(rs.getInt("money_dft"));
+							day.setHolidayDft(rs.getString("holiday_dft"));
+							day.setStatusBase(rs.getString("statusbase"));
+							
+							day.setSubjectDft(rs.getString("subject_dft"));
+							day.setUserDft(rs.getString("user_dft"));
+							
+							TableTeaching tableteach = new TableTeaching();
+							Subject subject = new Subject();
+							User user =new User();
+							
+							tableteach.setTebleTeachId(rs.getString("teble_teach_id"));
+							tableteach.setDegreeStuden(rs.getString("degree_studen"));
+							tableteach.setTeachTerm(rs.getString("teach_term"));
+							tableteach.setTermYear(rs.getString("term_year"));
+							tableteach.setTeachWeek(rs.getString("teach_week"));
+							tableteach.setSection(rs.getInt("section"));
+							tableteach.setStudenNumber(rs.getInt("studen_number"));
+							
+							tableteach.setStartMonth(rs.getString("start_month"));
+							tableteach.setStopMonth(rs.getString("stop_month"));
+							tableteach.setTeachYear(rs.getString("teach_year"));
+							
+							tableteach.setStartTime(rs.getString("start_month"));
+							tableteach.setStopTime(rs.getString("stop_month"));
+							tableteach.setSumHour(rs.getString("sum_hour"));
+							tableteach.setStandardTeach(rs.getInt("standard_teach"));
+							tableteach.setRoom(rs.getString("room"));
+							
+						
+							tableteach.setSubjectRoleid(rs.getString("subject_roleid"));
+							
+							subject.setSubjectId(rs.getString("subject_id"));
+							subject.setSubjectName(rs.getString("subject_name"));
+							subject.setCredit(rs.getInt("credit"));
+							subject.setCreditHour(rs.getString("credit_hour"));
+							subject.setTudsadee(rs.getInt("tudsadee"));
+							subject.setPrtibad(rs.getInt("prtibad"));
+							
+							tableteach.setUserRoleid(rs.getString("user_roleid"));
+							user.setUserId(rs.getString("user_id"));
+							user.setUserFname(rs.getString("user_name"));
+							user.setUserLname(rs.getString("user_lastname"));
+							user.setFaculty(rs.getString("faculty"));
+							user.setMojor(rs.getString("mojor"));
+							user.setBaseHour(rs.getInt("baseHour"));
+							user.setBaseKrm(rs.getInt("baseKrm"));
+							
+							tableteach.setSubject(subject);
+							day.setTableTeaching(tableteach);
+							day.setUser(user);
+							
+							list.add(day);
+						}
+
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+					return list;
+				}
 }

@@ -30,12 +30,12 @@ function tableuteach() {
                     // '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
                     '</tr>';
 
-                $('#customerTable2 tbody').append(SubjectRow);
+                $('#customerTable1 tbody').append(SubjectRow);
                
             });
 
-            $("#customerTable2 tbody tr:odd").addClass("info");
-            $("#customerTable2 tbody tr:even").addClass("success");
+            $("#customerTable1 tbody tr:odd").addClass("info");
+            $("#customerTable1 tbody tr:even").addClass("success");
         },
         error: function (e) {
             alert("ERROR: 22", e);
@@ -43,34 +43,34 @@ function tableuteach() {
         }
     });
     $.ajax({
-        type: "POST",
+        type: "GET",
         contentType : "application/json",
-        url: "/TeachOneSeachByid1",
+        url: "/teachCon",
         data: JSON.stringify(id1),
         dataType : 'json',
         success: function (result) {
     console.log(result);
-            $.each(result, function (index, msg) {
-                var SubjectRow = '<tr>' +
-                    '<td>' + msg.tableTeaching.subject.subjectId + '</td>' +
-                    '<td>' + msg.tableTeaching.subject.section + '</td>' +
-                    '<td>' + msg.tableTeaching.subject.credit + "(" + msg.tableTeaching.subject.creditHour + ")" + '</td>' +
-                    '<td>' + msg.tableTeaching.studenNumber + '</td>' +
-                    '<td>' + msg.tableTeaching.standardTeach +'</td>' +
-                    '<td>'+msg.basecram+'</td>' +
-                    '<td>'+msg.baseHour+'</td>' +
-                    '<td>'+msg.salarySum+'</td>' +
+            $.each(result, function (index, msg1) {
+                var SubjectRow1 = '<tr>' +
+                    '<td>' + ""+ '</td>' +
+                    '<td>' + msg1.weekofyearDft + '</td>' +
+                    '<td>' + msg1.dayofyearDft + "/" + msg1.monthofyearDft+ "/" +msg1.yearofteachDft+ '</td>' +
+                    '<td>' + msg1.tableTeaching.subject.subjectId  + '</td>' +
+                    '<td>' + msg1.tudsadeeDft+'</td>' +
+                    '<td>'+msg1.prtibadDft+'</td>' +
+                    '<td>'+""+'</td>' +
+                    '<td>'+'</td>' +
               
                  
                     // '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
                     '</tr>';
 
-                $('#customerTable3 tbody').append(SubjectRow);
+                $('#customerTable2 tbody').append(SubjectRow1);
                
             });
 
-            $("#customerTable3 tbody tr:odd").addClass("info");
-            $("#customerTable3 tbody tr:even").addClass("success");
+            $("#customerTable2 tbody tr:odd").addClass("info");
+            $("#customerTable2 tbody tr:even").addClass("success");
         },
         error: function (e) {
             alert("ERROR: 22", e);

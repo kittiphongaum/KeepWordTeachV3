@@ -794,6 +794,9 @@
 					</div>
 					<!-- /Row -->
 
+					
+
+					</div>
 						<!-- Row -->
 						<div class="row">
 							<div class="col-sm-12">
