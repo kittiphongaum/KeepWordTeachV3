@@ -55,16 +55,39 @@ public class TeachController {
 	}
 	   return "dashboard";
    }
-
-   @RequestMapping(value="/teachCon", method = RequestMethod.GET)
+   @RequestMapping(value="/tCon", method = RequestMethod.GET)
+public List<Teach>contest(){
+	   
+	   List<Teach> li= new ArrayList<>();
+	   li=teachDAO.teschASCfileAll("u","1","2561","1");
+	return li;
+}
+   
+   @RequestMapping(value="/teachFoday", method = RequestMethod.GET)
 	public  List<DateofTeach> ASCfileAll(){	
 		List<DateofTeach> list = new ArrayList<>();
+		List<Teach> listtach =new ArrayList<>();
 		String userid = "u";
 		String term ="1";
 		String year = "2561";
 		String de = "1";
 		list = dateofTeachDAO.fileASCDay(userid, term, year,de);
-//		
+		listtach=teachDAO.teschASCfileAll(userid, term, year, de);
+		for (int i = 0; i < list.size(); i++) {
+		//	int tsd =list.get(i).getTeach().getSubject().getTudsadee(),tsdAdd =0;
+		//	int ptb =list.get(i).getTeach().getSubject().getPrtibad();
+		//	int sspt = tsd+ptb;
+	//	String ccg = list.get(i).getTeach().getTableTeaching().getSubject().getSubjectId();
+			System.out.println(list.get(i).getTeach().getBasecram());
+			System.out.println(list.get(i).getTeach().getBaseHour());
+			if (list.get(i).getTeach().getBasecram()!=0) {
+		System.out.println("BaseHour"+list.get(i).getTeach().getSubjactFk()+"::: BBBB");
+		
+			}else { 
+				System.out.println("Basecccc"+list.get(i).getTeach().getSubjactFk()+"::: ccccc");
+			}
+			
+		}
 		 return list;
 	}
    @RequestMapping(value="/dateofday",method = RequestMethod.POST)
@@ -89,10 +112,6 @@ public class TeachController {
          
 //		 List<Integer> baseHour = Arrays.asList(4,4,4,4);    //เรียงตามวิชา
 //	        Collections.sort(baseHour); //sorting collection
-	
-	    
-	       
-	        
 //	        int base =4; 
 	        int su = 0;
 	        int sum = 0,go=0;
@@ -103,7 +122,8 @@ public class TeachController {
 	     
 	        for(int i=0; i<list.size(); i++) {
 	        	int setBaseHour= 0,setBasecram=0,day=0,dday=0;;
-	        	
+	        	teach.setBaseHour(0);
+    			teach.setBasecram(0);
 	        	int sumtp=list.get(i).getTableTeaching().getSubject().getPrtibad()+list.get(i).getTableTeaching().getSubject().getTudsadee();
 	        	 int bh=users.getBaseHour();//ฐานเบิก
 	        	sum += sumtp;
@@ -117,11 +137,15 @@ public class TeachController {
 	        			System.out.println(" แบ่ง     :: "+xx+" "+((ggg-xx)));
 
 	        			list.get(i).setBaseHour(ggg-xx);
+	        			
 	        			day=ggg-xx;
 	        			list.get(i).setBasecram(xx);
 	        			dday=xx;
 	        			summho += ggg-xx;
 	        			summbh +=xx;
+	        			
+	        			teach.setBaseHour(day);
+	        			teach.setBasecram(dday);
 	        			checkRound = false;
 	        		}else {
 	        			System.out.println("ใช้เบิก :: "+"  "+(ggg));
@@ -129,30 +153,44 @@ public class TeachController {
 	        			summho += ggg;
 	        			setBaseHour=ggg;
 	        			list.get(i).setBaseHour(ggg);
+	        			teach.setBaseHour(ggg);
 	        		}
 	        		
 	        	} else {
 	        		summbh+=sumtp;
       			System.out.println(" ฐาน คาบ :: "+sumtp);
       			list.get(i).setBasecram(sumtp);
-      			su += sumtp;    			 
+ //     			teach.setBasecram(sumtp);
+      			su += sumtp;
+      			
 	        	}
 //	        	teach.setBasecram(summbh);
 //	        	teach.setBaseHour(summho);
+	        	 if (day==0 ) {
+	 				dayday.setStatusBase("1");
+	 			} else {
+	 				dayday.setStatusBase("2");
+	 			} 
+	        	 int setTsd=0,setPsd=0;
+	       if (list.get(i).getSubject().getTudsadee()!=0) {
+	    	   setTsd=(xx-list.get(i).getSubject().getTudsadee());
+	    	   setPsd=(list.get(i).getSubject().getPrtibad());
+	    	   
+		} else {
+			dayday.setStatusBase("2");
+		}
 	       
-	        if (day==0 || dday==0) {
-				dayday.setStatusBase("1");
-			} else {
-				dayday.setStatusBase("2");
-			} 
-				
+	        dayday.setTudsadeeDft(setTsd);
+			dayday.setPrtibadDft(setPsd);
+				teach.setTeachId(list.get(i).getTeachId());
+				teachDAO.updateBase(teach);
 			
 	        dayday.setSubjectDft(list.get(i).getSubjactFk());
 	        
 	        dateofTeachDAO.updateDay(dayday);
 	     
 	        
-	        	System.out.println("--------------------------------------"+"::"+summbh+":::"+summho);
+	   //     	System.out.println("--------------------------------------"+"::"+summbh+":::"+summho);
 //	            list.get(i).setBaseHour(summbh);
 //	        	list.get(i).setBasecram(summho);
 	        	

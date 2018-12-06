@@ -324,7 +324,7 @@
 																						<div class="row">
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ปีการศึกษา</label>
 																							<div class="col-sm-8">
-																								<select id="yearS3" class="form-control " name="termYear" >
+																								<select id="yearS3" class="form-control " name="termYear">
 																									<option value=""></option>
 																									<option value="2561">2561</option>
 																									<option value="2560">2560</option>
@@ -377,51 +377,51 @@
 												<div class="modal-content">
 													<div class="modal-header">
 														<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-														<h5 class="modal-title" id="exampleModalLabel1">แก้ใขสถานะวิชา</h5>
+														<h5 class="modal-title" id="exampleModalLabel1">แก้ใขวันหยุด</h5>
 													</div>
 													<div class="modal-body">
 														<form>
-																<div class="form-group">
-															<div class="row">
-																<div class="col-md-12">
-																	<div class="form-group">
-																		<label class="control-label mb-10">เลือกสถานะวิชา</label>
-																		<select class="selectpicker" data-style="form-control btn-default btn-outline ">
-																			<option value="1">ปกติ</option>
-																			<option value="2">ใช้เบิกทั้งหมด</option>
-																			<option value="3">ใช้แบ่งหน่วย</option>
-																		</select>
-																	</div>
-																</div>
-															</div>
-														</div>
 															<div class="form-group">
-															<div class="row">
-															<div class="col-md-12 col-xs-12">
-																	<div class="form-group">
-																		<div class="row">
-																			<label for="exampleInputuname_3" class="col-sm-6 control-label">ใช้เป็นฐาน/คาบ</label>
-																			<div class="col-sm-6">
-																				<input type="text" class="form-control" id="" placeholder="">
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																
-															</div>
-															<div class="row">
-															<div class="col-md-12 col-xs-12">
-																	<div class="form-group">
-																		<div class="row">
-																			<label for="exampleInputuname_3" class="col-sm-6 control-label">ใช้เบิก/หน่วยชั่วโมง</label>
-																			<div class="col-sm-6">
-																				<input type="text" class="form-control" id="" placeholder="">
-																			</div>
+																<div class="row">
+																	<div class="col-md-12">
+																		<div class="form-group">
+																			<label class="control-label mb-10">เลือกสถานะวิชา</label>
+																			<select class="selectpicker" data-style="form-control btn-default btn-outline ">
+																				<option value="1">ปกติ</option>
+																				<option value="2">ใช้เบิกทั้งหมด</option>
+																				<option value="3">ใช้แบ่งหน่วย</option>
+																			</select>
 																		</div>
 																	</div>
 																</div>
 															</div>
-														</div>
+															<div class="form-group">
+																<div class="row">
+																	<div class="col-md-12 col-xs-12">
+																		<div class="form-group">
+																			<div class="row">
+																				<label for="exampleInputuname_3" class="col-sm-6 control-label">ใช้เป็นฐาน/คาบ</label>
+																				<div class="col-sm-6">
+																					<input type="text" class="form-control" id="" placeholder="">
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																</div>
+																<div class="row">
+																	<div class="col-md-12 col-xs-12">
+																		<div class="form-group">
+																			<div class="row">
+																				<label for="exampleInputuname_3" class="col-sm-6 control-label">ใช้เบิก/หน่วยชั่วโมง</label>
+																				<div class="col-sm-6">
+																					<input type="text" class="form-control" id="" placeholder="">
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
 														</form>
 													</div>
 													<div class="modal-footer">
@@ -447,7 +447,7 @@
 												<div class="panel-wrapper collapse in">
 													<div class="panel-body">
 														<div class="table-wrap">
-															<table id="customerTable1" class="table table-hover table-bordered mb-0">
+															<table id="Table1" class="table table-hover table-bordered mb-0">
 																<thead class="text-warning">
 																	<tr>
 																		<th scope="col">รหัสวิชา</th>
@@ -460,20 +460,14 @@
 
 																		<th scope="col">หมายเหตู</th>
 																	</tr>
-
 																</thead>
-																<tbody>
-
-
-																</tbody>
+																<tbody></tbody>
 																<thead>
-																	<td colspan="4">รวม</td>
-																	<td scope="col"></td>
-																	<td scope="col"></td>
-																	<td scope="col"></td>
-																	<td scope="col"></td>
+																	<td colspan="5">รวม</td>
+																	<td scope="col" id="tfood"></td>
+																	<td scope="col" id="tarHo"></td>
+																	<td scope="col" id="sumsrry"></td>
 																</thead>
-
 															</table>
 														</div>
 													</div>
@@ -502,7 +496,7 @@
 									<div class="row">
 										<div class="col-md-12">
 											<div class="table-wrap">
-												<table id="customerTable2" class="table table-hover table-bordered mb-0">
+												<table id="Table2" class="table table-hover table-bordered mb-0">
 													<thead class="text-warning">
 														<tr>
 															<th scope="col">#</th>
@@ -518,21 +512,20 @@
 
 													</thead>
 													<tbody>
-
-
 													</tbody>
 													<thead>
-														<td colspan="4">รวม</td>
-														<td scope="col"></td>
-														<td scope="col"></td>
-														<td scope="col"></td>
-														<td scope="col"></td>
+															<td colspan="4">รวม</td>
+															<td scope="col" id="sumTsd"></td>
+															<td scope="col" id="sumPsb"></td>
+															<td scope="col"id="tableSum"></td>
+															<td scope="col"></td>
+															
 													</thead>
 
 												</table>
 											</div>
 										</div>
-										
+
 									</div>
 								</div>
 							</div>
@@ -544,11 +537,11 @@
 				</div>
 				<!-- /Row -->
 				<!-- /Row -->
-					
+
 			</div>
 
 		</div>
-
+		<input type="hidden" id="">
 	</div>
 	<!-- Bootstrap Colorpicker CSS -->
 	<link href="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css"
@@ -702,6 +695,157 @@
 
 
 </body>
+<script>
+	function tableuteach() {
 
+		var id1 = {
+			useridS1: $("#userRoleid").val(),
+			termS2: $("#termS2").val(),
+			yearS3: $("#yearS3").val(),
+			degreeS4: $("#degreeS4").val()
+		};
+		$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: "/TeachOneSeachByid1",
+			data: JSON.stringify(id1),
+			dataType: 'json',
+
+			success: function (msg) {
+				var tfood = 0;
+				var table1 = "";
+				var sumtarm = 0;
+				var tarm, tarHo = 0,
+					sumsrry = 0;
+
+				for (var i = 0; i < msg.length; i++) {
+					tarm = msg[i].basecram;
+					//	sumtarm=parseInt(tarm);
+					tfood = (tfood + tarm);
+					tarHo += msg[i].baseHour;
+					sumsrry += msg[i].salarySum;
+					table1 +=
+						'<tr>' +
+						'<td>' + msg[i].tableTeaching.subject.subjectId + '</td>' +
+						'<td>' + msg[i].tableTeaching.subject.section + '</td>' +
+						'<td>' + msg[i].tableTeaching.subject.credit + "(" + msg[i].tableTeaching.subject.creditHour + ")" + '</td>' +
+						'<td>' + msg[i].tableTeaching.studenNumber + '</td>' +
+						'<td>' + msg[i].tableTeaching.standardTeach + '</td>' +
+						'<td>' + msg[i].basecram + '</td>' +
+						'<td>' + msg[i].baseHour + '</td>' +
+						'<td>' + msg[i].salarySum + '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+				}
+				if (tfood < tarm) {
+					tfood += "  ฐานไม่พอ";
+				}
+				$('#Table1 tbody').append(table1);
+				$('#tfood').append(tfood);
+				$('#tarHo').append(tarHo);
+				$('#sumsrry').append(sumsrry);
+				//	$('#Table1 tfood').append(tfood);
+				//	$("#Table1 tbody tr:odd").addClass("info");
+				//	$("#Table1 tbody tr:even").addClass("success");
+			},
+			error: function (e) {
+				alert("ERROR: Table1", e);
+				console.log("ERROR: Table1", e);
+			}
+		});
+	};
+	$.ajax({
+		type: "POST",
+		contentType: "application/json",
+		url: "/teachFoday",
+//		data: JSON.stringify(id1),
+		dataType: 'json',
+		success: function (msg1) {
+			var table2 = "";
+			var tableSum = 0,sumPsb=0,sumTsd=0;
+			var hh = "";
+			var sumtsdp = 0,
+				tsd = 0,
+				tsd1 = 0,psb;
+			for (var i = 0; i < msg1.length; i++) {
+				var gg = i + 1;
+				var hol = "";
+				//sumtsdp=(msg1[i].tudsadeeDft+msg1[i].prtibadDft);
+				tsd1 = msg1[i].tudsadeeDft;
+				psb =msg1[i].prtibadDft;
+				hh = msg1[i].holidayDft;
+				// if (msg1[i].teach.basecram != 0) {
+				// 		tsd1 = (tsd-1);
+				// }
+				if (hh == "holiday") {
+					hol = "(วันหยุด)";
+				}
+				sumtsdp = tsd1 + psb;
+				table2 +=
+					'<tr>' +
+					'<td>' + gg + '</td>' +
+					'<td>' + msg1[i].weekofyearDft + '</td>' +
+					'<td>' + msg1[i].dayofyearDft + "/" + msg1[i].month.monthName + "/" + msg1[i].yearofteachDft + hol + '</td>' +
+					'<td>' + msg1[i].teach.tableTeaching.subject.subjectId + '</td>' +
+					'<td>' + tsd1 + '</td>' +
+					'<td>' + psb + '</td>' +
+					'<td>' + sumtsdp + '</td>' +
+					'<td>' + '<a data-target="#exampleModal"  data-toggle="modal"' +
+					' class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></span>' +
+					'</a>' +
+					'</td>' +
+					// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+					'</tr>';
+					sumTsd+=tsd1;
+					sumPsb+=msg1[i].prtibadDft;
+					tableSum+=sumtsdp;
+			}								
+			$('#Table2 tbody').append(table2);
+			$('#sumTsd').append(sumTsd);
+			$('#sumPsb').append(sumPsb);
+			$('#tableSum').append(tableSum);
+			//		$('#Table2 tfoot').append(table1);		
+		},
+		error: function (e) {
+			alert("ERROR: Table2", e);
+			console.log("ERROR: Table2", e);
+		}
+	});
+
+</script>
+<script>
+	$(function () {
+
+		$('#no1').keyup(function () {
+			updateTotal();
+		});
+		$('#no2').keyup(function () {
+			updateTotal();
+		});
+
+		$('#no3').keyup(function () {
+			updateTotal();
+		});
+
+		var updateTotal = function () {
+			var input1 = parseInt($('#no1').val());
+			var input2 = parseInt($('#no2').val());
+			var input3 = parseInt($('#no3').val());
+			var totals1 = parseFloat(input1 * 10) || "";
+			var totals2 = parseFloat(input2 * 20) || "";
+			var totals3 = parseFloat(input3 * 30) || "";
+			//parseFloat($('#totals').val()) || 0; 
+			$('#po1').text(totals1);
+			$('#po2').text(totals2);
+			$('#po3').text(totals3);
+			var totals4 = parseFloat(totals1 + totals2 + totals3) || "";
+			$('#so1').text(totals4);
+		};
+		// output_total.text(total);
+
+
+	});
+</script>
+<script></script>
 
 </html>

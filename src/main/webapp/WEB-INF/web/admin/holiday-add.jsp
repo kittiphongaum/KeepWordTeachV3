@@ -793,10 +793,8 @@
 						</div>
 					</div>
 					<!-- /Row -->
-
-					
-
-					</div>
+									
+				</div>
 						<!-- Row -->
 						<div class="row">
 							<div class="col-sm-12">

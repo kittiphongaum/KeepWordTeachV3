@@ -15,10 +15,12 @@ public class DateofTeach {
 	private String subjectDft;
 	private String holidayDft;
 	private String userDft;
+	private Teach teach;
 	
 	 private Subject subject;
 	 private User user;
 	 private TableTeaching  tableTeaching;
+	 private Month month;
 	public int getDtimeId() {
 		return dtimeId;
 	}
@@ -120,6 +122,18 @@ public class DateofTeach {
 	}
 	public void setTableTeaching(TableTeaching tableTeaching) {
 		this.tableTeaching = tableTeaching;
+	}
+	public Month getMonth() {
+		return month;
+	}
+	public void setMonth(Month month) {
+		this.month = month;
+	}
+	public Teach getTeach() {
+		return teach;
+	}
+	public void setTeach(Teach teach) {
+		this.teach = teach;
 	}
 	
 	

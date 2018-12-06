@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.cs.bru.model.DateofTeach;
+import com.cs.bru.model.Month;
 import com.cs.bru.model.Subject;
 import com.cs.bru.model.TableTeaching;
 import com.cs.bru.model.Teach;
@@ -146,7 +147,9 @@ public class DateofTeachDAO {
 					StringBuilder sql = new StringBuilder();
 
 					try {
-						sql.append("SELECT tb_dateofteach.*,tb_table_teaching.*,tb_subject.*,tb_user.* FROM tb_dateofteach INNER JOIN tb_user on tb_dateofteach.user_dft = tb_user.user_id INNER JOIN tb_table_teaching on tb_dateofteach.dateofteach_id = tb_table_teaching.teble_teach_id INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id WHERE tb_user.user_id =? and tb_table_teaching.teach_term = ? and tb_table_teaching.teach_year= ? and tb_table_teaching.degree_studen=? and tb_dateofteach.statusbase='1' ORDER BY tb_dateofteach.weekofyear_dft ASC");
+						sql.append("SELECT tb_dateofteach.*,tb_teaching.*,tb_table_teaching.*,tb_subject.*,tb_user.*,tb_month.* FROM tb_dateofteach "
+								+ "INNER JOIN tb_teaching on tb_dateofteach.subject_dft=tb_teaching.subject_fk INNER JOIN tb_user on tb_teaching.user_fk = tb_user.user_id INNER JOIN tb_table_teaching on tb_teaching.tableteach_fk = tb_table_teaching.teble_teach_id INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_month on tb_dateofteach.monthofyear_dft=tb_month.month_id "
+								+ "WHERE tb_user.user_id =? and tb_table_teaching.teach_term = ? and tb_table_teaching.teach_year= ? and tb_table_teaching.degree_studen=? and tb_dateofteach.statusbase='2' and tb_dateofteach.holiday_dft='work' ORDER BY tb_dateofteach.weekofyear_dft ASC");
 						prepared = con.openConnect().prepareStatement(sql.toString());
 						prepared.setString(1,userid);
 						prepared.setString(2,term);
@@ -156,9 +159,7 @@ public class DateofTeachDAO {
 
 						while (rs.next()) {
 							DateofTeach day = new DateofTeach();
-							User users =new User();
-							TableTeaching table = new TableTeaching();
-											 
+							Month month =new Month();
 							day.setDateofteachId(rs.getString("dateofteach_id"));
 							day.setWeekofyearDft(rs.getInt("weekofyear_dft"));
 							day.setDayofyearDft(rs.getString("dayofyear_dft"));
@@ -173,6 +174,25 @@ public class DateofTeachDAO {
 							
 							day.setSubjectDft(rs.getString("subject_dft"));
 							day.setUserDft(rs.getString("user_dft"));
+							//ตรางสอน
+							Teach teach = new Teach();
+							User users =new User();
+							TableTeaching table = new TableTeaching();
+											 
+							teach.setTeachId(rs.getString("teach_id"));
+							teach.setSumHourTerm(rs.getInt("sum_hour_term"));
+							teach.setHoursumTudsadee(rs.getInt("hoursum_tudsadee"));
+							teach.setHoursumPrtibad(rs.getInt("hoursum_prtibad"));
+							teach.setMoneyTudsadee(rs.getInt("money_tudsadee"));
+							teach.setMoneyPrtibad(rs.getInt("money_prtibad"));
+							teach.setSalarySum(rs.getInt("salary_sum"));
+						
+							teach.setBaseHour(rs.getInt("basehour"));
+							teach.setBasecram(rs.getInt("basecram"));
+							teach.setDateofteachFk(rs.getString("dateofteach_fk"));
+							teach.setSubjactFk(rs.getString("subject_fk"));
+							teach.setTableteachFk(rs.getString("tableteach_fk"));
+							teach.setUserFk(rs.getString("user_fk"));
 							
 							TableTeaching tableteach = new TableTeaching();
 							Subject subject = new Subject();
@@ -215,9 +235,21 @@ public class DateofTeachDAO {
 							user.setBaseHour(rs.getInt("baseHour"));
 							user.setBaseKrm(rs.getInt("baseKrm"));
 							
+
+							
+							
+							month.setMonthId(rs.getString("month_id"));
+							month.setMonthName(rs.getString("month_name"));
+							month.setMonthLastname(rs.getString("month_lastname"));
+				
+							
+					
 							tableteach.setSubject(subject);
-							day.setTableTeaching(tableteach);
-							day.setUser(user);
+							teach.setTableTeaching(tableteach);
+							teach.setUsers(user);
+							day.setMonth(month);
+							
+							day.setTeach(teach);
 							
 							list.add(day);
 						}

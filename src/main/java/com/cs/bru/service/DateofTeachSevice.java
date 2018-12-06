@@ -119,8 +119,6 @@ public class DateofTeachSevice {
 				prt=prt+insertTableTeaching.getSubject().getPrtibad();
 			  
 			  
-			  
-			  
 			  dateofTeachDao.insertDateofTeach(ofteach);
 				dFt.setMoneyDft(insertTableTeaching.getStandardTeach());
 			
@@ -140,18 +138,14 @@ public class DateofTeachSevice {
 	
 			
 			String ee= "u";
-					String ff= "1";
-							String dd="2561";
+			String ff= "1";
+			String dd="2561";
 		//	asList = teachDAO.teschASCfileAll(ee,ff, dd);
 			
 //			if (asList.get(1) != null) {
 //				System.out.println("888888888");
 //			}
-			for (int m = 0; m < asList.size(); m++) {
-				
-				System.out.println(asList.get(m).getSalarySum()+"000");
-			}
-	
+			
 		
 	}
 }

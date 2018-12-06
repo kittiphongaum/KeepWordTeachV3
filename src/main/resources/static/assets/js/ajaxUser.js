@@ -9,8 +9,8 @@ $(document).ready(function() {
 		dataType : "json",
 		success : function(msg) {
 			console.log('Success')
-			/* for(var i=0; i<msg.length; i++) {
-				$('#personnelId').append('<option value="' + msg[i].personnelId+ '">' + msg[i].facultyName + ' / ' + msg[i].departmentName + ' / ' + msg[i].positionName + ' / ' + msg[i].subPositionName +'</option>'); */
+			 for(var i=0; i<msg.length; i++) {
+				$('#personnelId').append('<option value="' + msg[i].personnelId+ '">' + msg[i].facultyName + ' / ' + msg[i].departmentName + ' / ' + msg[i].positionName + ' / ' + msg[i].subPositionName +'</option>');
         if (msg.userId != null) {
                     $('#userFname').val(msg.userFname);
                     // $('#userLname').val(msg.userLname);

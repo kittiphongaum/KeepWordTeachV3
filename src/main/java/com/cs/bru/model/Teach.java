@@ -4,19 +4,18 @@ public class Teach {
 	private int id;
 	private String teachId;
 	private int  sumHourTerm;
-
 	private int  hoursumTudsadee;
 	private int  hoursumPrtibad;
 	private int  moneyTudsadee;
 	private int  moneyPrtibad;
 	private int  salarySum;
-	
+	private int baseHour;
+	private int basecram;
 	private String dateofteachFk;
 	private String subjactFk;
 	private String tableteachFk;
 	private String userFk;
-	private int baseHour;
-	private int basecram;
+
 	
 	private DateofTeach dateofTeach;
 	private Subject subject;

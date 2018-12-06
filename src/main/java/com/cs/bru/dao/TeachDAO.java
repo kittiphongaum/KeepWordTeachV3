@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.cs.bru.model.DateofTeach;
 import com.cs.bru.model.Subject;
 import com.cs.bru.model.TableTeaching;
 import com.cs.bru.model.Teach;
@@ -77,6 +78,8 @@ public class TeachDAO {
 				teach.setMoneyPrtibad(rs.getInt("money_prtibad"));
 				teach.setSalarySum(rs.getInt("salary_sum"));
 			
+				teach.setBaseHour(rs.getInt("basehour"));
+				teach.setBaseHour(rs.getInt("basecram"));
 				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 				teach.setSubjactFk(rs.getString("subject_fk"));
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
@@ -171,4 +174,24 @@ public class TeachDAO {
 
 		return list;
 	}
+	// update
+	public void updateBase(Teach bean) {
+		ConnectDB con = new ConnectDB();
+		PreparedStatement prepared = null;
+		
+		
+		StringBuilder sql = new StringBuilder();
+		try {
+			sql.append("UPDATE tb_teaching SET  basehour =? ,  basecram=?  WHERE teach_id =?");
+			prepared = con.openConnect().prepareStatement(sql.toString());
+
+			prepared.setInt(1, bean.getBaseHour());
+			prepared.setInt(2, bean.getBasecram());
+			prepared.setString(3, bean.getTeachId());
+			prepared.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}// end method update
 }
