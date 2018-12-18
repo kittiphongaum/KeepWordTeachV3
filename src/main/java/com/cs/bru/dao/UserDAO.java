@@ -112,6 +112,7 @@ public class UserDAO  {
 				User user = new User();
 				
 				user.setUserId(rs.getString("user_id"));
+				user.setPrefixName(rs.getString("prefix_name"));
 				user.setUserFname(rs.getString("user_name"));
 				user.setUserLname(rs.getString("user_lastname"));
 				user.setPositionTeach(rs.getString("position_teach"));
@@ -212,13 +213,12 @@ public class UserDAO  {
 			PreparedStatement prepared = null;
 			StringBuilder sql = new StringBuilder();
 			try {
-				sql.append("UPDATE tb_user SET  user_name = ? , user_lastname = ?,faculty =?,mojor=? WHERE user_id = ? ");
+				sql.append("UPDATE tb_user SET prefix_name=? ,user_name =? , user_lastname =? WHERE user_id =?");
 				prepared = con.openConnect().prepareStatement(sql.toString());
-				prepared.setString(1, bean.getUserFname());
-				prepared.setString(2, bean.getUserLname());
-				prepared.setString(3, bean.getFaculty());
-				prepared.setString(4, bean.getMojor());
-				
+				prepared.setString(1, bean.getPrefixName());
+				prepared.setString(2, bean.getUserFname());
+				prepared.setString(3, bean.getUserLname());
+				prepared.setString(4, bean.getUserId());
 				prepared.executeUpdate();
 				
 		

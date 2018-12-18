@@ -359,7 +359,7 @@ function insertUserfrom() {
     	$.ajax({
 			type : "POST",
 			contentType : "application/json",
-			url :"/update" ,
+			url :"/updateUser" ,
 			data : JSON.stringify(userUpdate),
 			dataType : 'json',
     

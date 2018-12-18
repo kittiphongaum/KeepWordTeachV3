@@ -127,11 +127,13 @@ public class DateofTeachDAO {
 					
 					StringBuilder sql = new StringBuilder();
 					try {
-						sql.append("UPDATE tb_dateofteach SET  statusbase =?  WHERE subject_dft = ?");
+						sql.append("UPDATE tb_dateofteach SET  statusbase =?,tudsadee_dft=?,prtibad_dft=? WHERE subject_dft =?");
 						prepared = con.openConnect().prepareStatement(sql.toString());
 
 						prepared.setString(1, bean.getStatusBase());
-						prepared.setString(2, bean.getSubjectDft());
+						prepared.setInt(2, bean.getTudsadeeDft());
+						prepared.setInt(3, bean.getPrtibadDft());
+						prepared.setString(4, bean.getSubjectDft());
 						prepared.executeUpdate();
 					} catch (Exception e) {
 						// TODO: handle exception

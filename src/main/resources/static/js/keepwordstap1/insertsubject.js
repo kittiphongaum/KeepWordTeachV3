@@ -63,8 +63,9 @@
 			dataType: "json",
 			success: function (msg) {
 				 console.log(msg)
-				if(msg.subjectRoleid !=null){
-					window.location.href = "localhost:1111/keepword"
+				if(msg !=null){
+					location.reload(); 
+				
 				}else{
 
 				}

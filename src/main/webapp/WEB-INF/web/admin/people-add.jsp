@@ -21,6 +21,11 @@
     <link href="../assets_/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet"
         type="text/css" />
 
+        	
+		<!-- vector map CSS -->
+		<link href="../assets_/vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		
+		
     <!-- Custom CSS -->
     <link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
 
@@ -68,8 +73,6 @@
             </div>
             <div id="mobile_only_nav" class="mobile-only-nav pull-right">
                 <ul class="nav navbar-right top-nav pull-right">
-
-
                     <li class="dropdown app-drp">
                         <a class="dropdown-toggle">
                             <%=userByid.getUserId() %></a>
@@ -133,42 +136,20 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
                     </li>
                     <li class="dropdown auth-drp">
+                    <li class="dropdown auth-drp">
                         <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png"
                                 alt="user_auth" class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
                         <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
                             <li>
-                                <a href="profile.html"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
+                                <a href="./user"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
                             </li>
                             <li>
-                                <a href="#"><i class="zmdi zmdi-card"></i><span>my balance</span></a>
+                                <a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log
+                                        Out</span></a>
                             </li>
-                            <li>
-                                <a href="inbox.html"><i class="zmdi zmdi-email"></i><span>Inbox</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="zmdi zmdi-settings"></i><span>Settings</span></a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="sub-menu show-on-hover">
-                                <a href="#" class="dropdown-toggle pr-0 level-2-drp"><i class="zmdi zmdi-check text-success"></i>
-                                    available</a>
-                                <ul class="dropdown-menu open-left-side">
-                                    <li>
-                                        <a href="#"><i class="zmdi zmdi-check text-success"></i><span>available</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="zmdi zmdi-circle-o text-warning"></i><span>busy</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="zmdi zmdi-minus-circle-outline text-danger"></i><span>offline</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
-                            </li>
+                            <form name="logoutForm" action="/" method="post" th:hidden="true"></form>
                         </ul>
+                    </li>
                     </li>
                 </ul>
             </div>
@@ -184,13 +165,14 @@
                 </li>
                 <li>
                     <a href="./index-admin" data-toggle="collapse" data-target="#dashboard_dr">
-                        <div class="pull-left"><i class="ti-layout-grid2  mr-20"></i><span class="right-nav-text">หน้าหลัก</span></div>
+                        <div class="pull-left"><i class="ti-layout-grid2  mr-20"></i><span class="right-nav-text">หน้าแรก</span></div>
                         <div class="clearfix"></div>
                     </a>
                     <ul id="dashboard_dr" class="collapse collapse-level-1">
 
                     </ul>
                 </li>
+
                 <li>
                     <a class="active" href="./people-add" data-toggle="collapse" data-target="#app_dr">
                         <div class="pull-left"><i class="icon-people mr-20"></i><span class="right-nav-text">ข้อมูลผู้สอน</span></div>
@@ -762,17 +744,124 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="panel panel-default card-view">
-                            	<div class="panel-heading">
-                                        <div class="pull-left">
-                                            <h6 class="panel-title txt-dark">sortable table</h6>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                            <div class="panel-wrapper collapse in">
-                                <div class="panel-body">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">+
+                                        เพิ่มผู้สอน</button>
+                                    <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">×</button>
+                                                    <h5 class="modal-title" id="myModalLabel">เพิ่มผู้สอน</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- Row -->
+                                                    <div class="panel-wrapper collapse in">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                    <div class="form-wrap">
+                                                                <form>
+                                                                    <input type="hidden" id="userId" name="userId">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">รหัสผู้สอน</label>
+                                                                                <input type="text" name="userid" class="form-control"
+                                                                                    id="adduserid" value=""required="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">คำนำหน้า</label>
+                                                                                <input type="text" name="userid" class="form-control"
+                                                                                    id="addprrfname" value="" required="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">ชื่อ</label>
+                                                                                <input type="text" name="userFname"
+                                                                                    class="form-control" id="adduserFname"
+                                                                                    value="" required="">
 
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">นามสกุล</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="adduserLname" value=""required="">
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">สาขาวิชา</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="addfaculty" value=""required="">
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">คณะ</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="addmojor" value=""required="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">ตำแหน่ง</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="addpositionTeach" value=""required="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">มีฐานชั่วโมง/คาบ</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="addbaseHour" value=""required="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-group">
+                                                                                <label class="bmd-label-floating">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="addbaseKrm" value=""required="">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer " >
+                                                                            <button type="submit" class="btn btn-success btn-rounded"
+                                                                               aria-hidden="false">Save</button>
+                                                                            <button type="button" class="btn btn-default btn-rounded"
+                                                                                data-dismiss="modal">Cancel</button>
+                                                                        </div>
+                                                                </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                              
+                                                </div>
+                                               
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
                                 </div>
+                                <div class="clearfix"></div>
                             </div>
+
                         </div>
                     </div>
 
@@ -785,7 +874,7 @@
                                 <div class="panel-body">
                                     <div class="table-wrap">
                                         <div class="table-responsive">
-                                            <table id="example" class="table table-hover display  pb-30">
+                                            <table id="tebleListUser" class=" display  pb-30">
                                                 <thead>
                                                     <tr>
                                                         <th>รหัส</th>
@@ -799,13 +888,13 @@
                                                 </thead>
                                                 <tfoot>
                                                     <tr>
-                                                            <th>รหัส</th>
-                                                            <th>ชื่อ นามสกุล</th>
-                                                            <th>ตำแหน่ง</th>
-                                                            <th>สาขา</th>
-                                                            <th>คณะ</th>
-                                                            <th>ฐานชั่วโมง/คาบ</th>
-                                                            <th>ใช้เบิก/หน่วยชั่วโมง</th>
+                                                        <th>รหัส</th>
+                                                        <th>ชื่อ นามสกุล</th>
+                                                        <th>ตำแหน่ง</th>
+                                                        <th>สาขา</th>
+                                                        <th>คณะ</th>
+                                                        <th>ฐานชั่วโมง/คาบ</th>
+                                                        <th>ใช้เบิก/หน่วยชั่วโมง</th>
                                                     </tr>
                                                 </tfoot>
                                                 <tbody>
@@ -820,6 +909,88 @@
                     </div>
                 </div>
                 <!-- /Row -->
+             	<!-- Row -->
+				<div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-default card-view">
+                                <div class="panel-heading">
+                                    <div class="pull-left">
+                                        <h6 class="panel-title txt-dark">Complex Header</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="panel-wrapper collapse in">
+                                    <div class="panel-body">
+                                        <div class="table-wrap">
+                                            <div class="table-responsive">
+                                                <table id="datable_2" class="table table-hover table-bordered display mb-30" >
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2">Name</th>
+                                                            <th colspan="2">HR Information</th>
+                                                            <th colspan="3">Contact</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Position</th>
+                                                            <th>Salary</th>
+                                                            <th>Office</th>
+                                                            <th>Extn.</th>
+                                                            <th>E-mail</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Position</th>
+                                                            <th>Salary</th>
+                                                            <th>Office</th>
+                                                            <th>Extn.</th>
+                                                            <th>E-mail</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            <td>$320,800</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>5421</td>
+                                                            <td>t.nixon@datatables.net</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Accountant</td>
+                                                            <td>$170,750</td>
+                                                            <td>Tokyo</td>
+                                                            <td>8422</td>
+                                                            <td>g.winters@datatables.net</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Junior Technical Author</td>
+                                                            <td>$86,000</td>
+                                                            <td>San Francisco</td>
+                                                            <td>1562</td>
+                                                            <td>a.cox@datatables.net</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                            <td>$433,060</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>6224</td>
+                                                            <td>c.kelly@datatables.net</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>	
+                                    </div>	
+                                </div>	
+                            </div>	
+                        </div>
+                    </div>
+                    <!-- /Row -->
             </div>
             <!-- Footer -->
 
@@ -846,7 +1017,7 @@
     <!-- Data table JavaScript -->
     <script src="../assets_/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="../assets_/dist/js/productorders-data.js"></script>
-
+    <script src="../assets_/dist/js/dataTables-data.js"></script>
     <!-- Owl JavaScript -->
     <script src="../assets_/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
 
@@ -888,5 +1059,92 @@
     <script src="../assets_/dist/js/export-table-data.js"></script>
 
 </body>
+<script>
+/*Export Table Init*/
+$(document).ready(function() {
+    $('#tebleListUser').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            { extend:'copy', attr: { id: 'allan' } }, 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} ),
+
+
+$(function(){
+    var userid = $("#userRoleid").val();
+$.ajax({
+    type: "GET",
+    contentType: "application/json",
+    url: "/userFileById1",
+    dataType: 'json',
+    success: function (msg) { 
+        var table = "";
+        if (msg.userId != null) {
+            for (var i = 0; i < msg.length; i++) {
+				
+					table +=
+						'<tr>' +
+						'<td>' + msg[i].prefixName + '</td>' +
+						'<td>' + msg[i].userFname + '</td>' +
+						'<td>' + msg[i].positionTeach + '</td>' +
+						'<td>' + msg[i].faculty + '</td>' +
+						'<td>' + msg[i].mojor + '</td>' +
+						'<td>' + msg[i].baseHour + '</td>' +
+						'<td>' + msg[i].baseKrm + '</td>' +
+						
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+				}
+                $('#tebleListUser tbody').append(table);
+        } else {
+            $('#alert').append('<center>ไม่มีข้อมูล</center>');
+        }        
+    },
+    error: function (e) {
+      
+    }
+});
+});
+
+</script>
+<script>
+    $(function () {
+        var table = $('#userFileById').DataTable({
+            "sAjaxSource": "/userFileById",
+            "sAjaxDataProp": "",
+            "order": [
+                [0, "asc"]
+            ],
+            "aoColumns": [{
+                    "mData": "id"
+                },
+                {
+                    "mData": "userFname"
+                },
+                {
+                    "mData": "userLname"
+                },
+                {
+                    "mData": "positionTeach"
+                },
+                {
+                    "mData": "faculty"
+                },
+                {
+                    "mData": "mojor"
+                },
+                {
+                    "mData": "baseHour"
+                },
+                {
+                    "mData": "baseKrm"
+                }
+
+
+            ]
+        })
+    });
+</script>
 
 </html>

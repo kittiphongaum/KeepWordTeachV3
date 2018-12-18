@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cs.bru.bean.UserBean;
 import com.cs.bru.dao.TeachDAO;
 import com.cs.bru.dao.UserDAO;
+import com.cs.bru.model.TableTeaching;
 import com.cs.bru.model.Teach;
 import com.cs.bru.model.Test;
 import com.cs.bru.model.User;
@@ -117,7 +118,7 @@ public class UserController {
 			return userByBean;
 		}
 		//update
-		@RequestMapping(value="/update",method = RequestMethod.POST)
+		@RequestMapping(value="/updateUser",method = RequestMethod.POST)
 		public User update(Model model,@RequestBody User userUpdate) {	
 			User userByBean = new User();
 			userByBean = userDAO.findById(userUpdate.getUserId());
@@ -126,6 +127,7 @@ public class UserController {
 				/*userByBean = userDAO.findById(userUpdate.getUserId());*/
 				/*model.addAttribute("resultBean", userByBean);
 				model.addAttribute("messesUpdate", "S");*/
+				
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
@@ -133,5 +135,17 @@ public class UserController {
 				model.addAttribute("messesUpdate", "F");*/
 			}
 			return userByBean;
+		}
+		@GetMapping("/userFileById/{id}")
+		public  User getUserByid(@PathVariable String id){	
+		   User list =new User();
+		   list=userDAO.findById(id);
+			 return list;
+		}
+		@GetMapping("/userFileById")
+		public  List<User> getFooUser(){	
+		  List<User> list=new ArrayList<>();
+		   list=userDAO.findAll();
+			 return list;
 		}
 }

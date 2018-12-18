@@ -78,8 +78,6 @@
 			</div>
 			<div id="mobile_only_nav" class="mobile-only-nav pull-right">
 				<ul class="nav navbar-right top-nav pull-right">
-
-
 					<li class="dropdown app-drp">
 						<a class="dropdown-toggle">
 							<%=userByid.getUserId() %></a>
@@ -143,41 +141,19 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
 					</li>
 					<li class="dropdown auth-drp">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
-							 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
-						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-							<li>
-								<a href="profile.html"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="zmdi zmdi-card"></i><span>my balance</span></a>
-							</li>
-							<li>
-								<a href="inbox.html"><i class="zmdi zmdi-email"></i><span>Inbox</span></a>
-							</li>
-							<li>
-								<a href="#"><i class="zmdi zmdi-settings"></i><span>Settings</span></a>
-							</li>
-							<li class="divider"></li>
-							<li class="sub-menu show-on-hover">
-								<a href="#" class="dropdown-toggle pr-0 level-2-drp"><i class="zmdi zmdi-check text-success"></i> available</a>
-								<ul class="dropdown-menu open-left-side">
-									<li>
-										<a href="#"><i class="zmdi zmdi-check text-success"></i><span>available</span></a>
-									</li>
-									<li>
-										<a href="#"><i class="zmdi zmdi-circle-o text-warning"></i><span>busy</span></a>
-									</li>
-									<li>
-										<a href="#"><i class="zmdi zmdi-minus-circle-outline text-danger"></i><span>offline</span></a>
-									</li>
-								</ul>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<a href="#"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
-							</li>
-						</ul>
+							<li class="dropdown auth-drp">
+									<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
+										 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
+									<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+										<li>
+											<a href="./user"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
+										</li>
+										<li>
+											<a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
+										</li>
+									<form name="logoutForm" action="/" method="post" th:hidden="true"></form>
+									</ul>
+								</li>
 					</li>
 				</ul>
 			</div>
@@ -208,7 +184,7 @@
 				</li>
 				<li>
 					<a class="active" href="./stipend" data-toggle="collapse" data-target="#app_dr">
-						<div class="pull-left"><i class="icon-share-alt mr-20"></i><span class="right-nav-text">การเบิกค่าสอน</span></div>
+						<div class="pull-left"><i class="icon-share-alt mr-20"></i><span class="right-nav-text">จักการเบิกค่าสอน</span></div>
 						<div class="clearfix"></div>
 					</a>
 					<ul id="app_dr" class="collapse collapse-level-1">
@@ -697,7 +673,6 @@
 </body>
 <script>
 	function tableuteach() {
-
 		var id1 = {
 			useridS1: $("#userRoleid").val(),
 			termS2: $("#termS2").val(),
@@ -743,7 +718,7 @@
 				$('#Table1 tbody').append(table1);
 				$('#tfood').append(tfood);
 				$('#tarHo').append(tarHo);
-				$('#sumsrry').append(sumsrry);
+				$('#sumsrry').append("");
 				//	$('#Table1 tfood').append(tfood);
 				//	$("#Table1 tbody tr:odd").addClass("info");
 				//	$("#Table1 tbody tr:even").addClass("success");
@@ -753,12 +728,11 @@
 				console.log("ERROR: Table1", e);
 			}
 		});
-	};
-	$.ajax({
+		$.ajax({
 		type: "POST",
 		contentType: "application/json",
 		url: "/teachFoday",
-//		data: JSON.stringify(id1),
+		data: JSON.stringify(id1),
 		dataType: 'json',
 		success: function (msg1) {
 			var table2 = "";
@@ -781,6 +755,7 @@
 					hol = "(วันหยุด)";
 				}
 				sumtsdp = tsd1 + psb;
+				sumtsdp=sumtsdp-1;
 				table2 +=
 					'<tr>' +
 					'<td>' + gg + '</td>' +
@@ -811,6 +786,8 @@
 			console.log("ERROR: Table2", e);
 		}
 	});
+	};
+
 
 </script>
 <script>
@@ -846,6 +823,59 @@
 
 	});
 </script>
-<script></script>
+<script>
+		//insert
+		function insertTeachfrom() {
+		var insertTableTeaching = {
+		 	tebleTeachId: $('#tebleTeachId').val(),
+			teachTerm: $('#teachTerm').val(),
+	 		termYear: $('#termYear').val(),
+			teachWeek: $('#teachWeek').val(),
+			studenNumber: $('#studenNumber').val(),
+			section: $('#section').val(),
+			standardTeach: $('#standardTeach').val(),
+			startMonth: $('#startMonth').val(),
+			stopMonth: $('#stopMonth').val(),
+			teachYear: $('#teachYear').val(),
+			startTime: $('#startTime').val(),
+			stopTime: $('#stopTime').val(),
+			degreeStuden: $('#degreeStuden').val(),
+			sumHour: $('#data_hour').val(),
+			room:$('#room').val(),
+			userRoleid: $('#userRoleid').val(),
+			subjectRoleid: $('#subjectId').val(),
+		
+		subject :{
+			subjectId: $('#subjectId').val(),
+			subjectName: $('#subjectName').val(),
+			// credit: $('#credit').val(),
+			// creditHour: $('#creditHour').val(),
+			tudsadee: $('#tudsadee').val(),
+			prtibad: $('#prtibad').val()
+		}
+		}
+		$.ajax({
+			type: "POST",
+			url: "/insertTableTeaching",
+			contentType: "application/json; charset=utf-8",
+			data: JSON.stringify(insertTableTeaching),
+			dataType: "json",
+			success: function (msg) {
+				 console.log(msg)
+				if(msg !=null){
+					location.reload(); 
+				
+				}else{
+
+				}
+			},
+			
+			error: function () {
+
+			}
+		});
+
+	}
+</script>
 
 </html>

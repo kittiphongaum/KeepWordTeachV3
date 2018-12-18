@@ -60,6 +60,10 @@ public class FooController {
 	public String historyteach() {
 		return "historyteach";
 	}
+	@RequestMapping("/keepwordstep2")
+	public String keepwordstep2() {
+		return "keepwordstep2";
+	}
 	@RequestMapping("/calender")
 	public String calendar() {
 		return "calender";

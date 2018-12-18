@@ -2835,7 +2835,7 @@ a#toggle_mobile_nav {
         width: 225px;
         padding-top: 19px; }
         .navbar.navbar-inverse.navbar-fixed-top .nav-header .logo-wrap .brand-img {
-          margin-right: 10px;
+          margin-right: auto;
           position: relative;
           top: 3px; }
         .navbar.navbar-inverse.navbar-fixed-top .nav-header .logo-wrap .brand-text {

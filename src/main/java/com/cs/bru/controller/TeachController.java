@@ -63,28 +63,30 @@ public List<Teach>contest(){
 	return li;
 }
    
-   @RequestMapping(value="/teachFoday", method = RequestMethod.GET)
-	public  List<DateofTeach> ASCfileAll(){	
+   @RequestMapping(value="/teachFoday", method = RequestMethod.POST)
+	public  List<DateofTeach> ASCfileAll(@RequestBody TeachSeachBean1 id1){	
 		List<DateofTeach> list = new ArrayList<>();
 		List<Teach> listtach =new ArrayList<>();
-		String userid = "u";
-		String term ="1";
-		String year = "2561";
-		String de = "1";
-		list = dateofTeachDAO.fileASCDay(userid, term, year,de);
-		listtach=teachDAO.teschASCfileAll(userid, term, year, de);
+	//	String userid = "u";
+	//	String term ="1";
+	//	String year = "2561";
+	//	String de = "1";
+		list =dateofTeachDAO.fileASCDay(id1.getUseridS1(),id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4()/*userid="u",term,year,de*/);
+
+		//list = dateofTeachDAO.fileASCDay(userid, term, year,de);
+	//	listtach=teachDAO.teschASCfileAll(userid, term, year, de);
 		for (int i = 0; i < list.size(); i++) {
 		//	int tsd =list.get(i).getTeach().getSubject().getTudsadee(),tsdAdd =0;
 		//	int ptb =list.get(i).getTeach().getSubject().getPrtibad();
 		//	int sspt = tsd+ptb;
 	//	String ccg = list.get(i).getTeach().getTableTeaching().getSubject().getSubjectId();
-			System.out.println(list.get(i).getTeach().getBasecram());
-			System.out.println(list.get(i).getTeach().getBaseHour());
+		//	System.out.println(list.get(i).getTeach().getBasecram());
+		//	System.out.println(list.get(i).getTeach().getBaseHour());
 			if (list.get(i).getTeach().getBasecram()!=0) {
-		System.out.println("BaseHour"+list.get(i).getTeach().getSubjactFk()+"::: BBBB");
+//		System.out.println("BaseHour"+list.get(i).getTeach().getSubjactFk()+"::: BBBB");
 		
 			}else { 
-				System.out.println("Basecccc"+list.get(i).getTeach().getSubjactFk()+"::: ccccc");
+	//			System.out.println("Basecccc"+list.get(i).getTeach().getSubjactFk()+"::: ccccc");
 			}
 			
 		}
@@ -119,51 +121,62 @@ public List<Teach>contest(){
 	        boolean checkRound = true;
 	        boolean che =true;
 	        int summbh=0,summho=0, xx =0, ggg=0;
-	     
+	     int setTsd=0,setPsd=0;
 	        for(int i=0; i<list.size(); i++) {
 	        	int setBaseHour= 0,setBasecram=0,day=0,dday=0;;
 	        	teach.setBaseHour(0);
     			teach.setBasecram(0);
-	        	int sumtp=list.get(i).getTableTeaching().getSubject().getPrtibad()+list.get(i).getTableTeaching().getSubject().getTudsadee();
+    		setTsd=list.get(i).getTableTeaching().getSubject().getPrtibad();
+    		setPsd=list.get(i).getTableTeaching().getSubject().getTudsadee();
+	        	int sumtp=setTsd+setPsd;
 	        	 int bh=users.getBaseHour();//ฐานเบิก
 	        	sum += sumtp;
-	        	if(sum > bh) {
-	        		 ggg=(sumtp-1);
-	        		if(checkRound) {
-	        		
-					int h=sumtp+bh;
-	        	//		int xx = (sum-(baseHour.get(i)-1));
-	        			 xx = (h-sum);
-	        			System.out.println(" แบ่ง     :: "+xx+" "+((ggg-xx)));
+	        	if (setTsd!=0 && setPsd!=0) {
+	        		if(sum > bh) {
+		        		 ggg=(sumtp-1);
+		        		if(checkRound) {
+		        		
+						int h=sumtp+bh;
+		        	//		int xx = (sum-(baseHour.get(i)-1));
+		        			 xx = (h-sum);
+		        		//	System.out.println(" แบ่ง     :: "+xx+" "+((ggg-xx)));
 
-	        			list.get(i).setBaseHour(ggg-xx);
-	        			
-	        			day=ggg-xx;
-	        			list.get(i).setBasecram(xx);
-	        			dday=xx;
-	        			summho += ggg-xx;
-	        			summbh +=xx;
-	        			
-	        			teach.setBaseHour(day);
-	        			teach.setBasecram(dday);
-	        			checkRound = false;
-	        		}else {
-	        			System.out.println("ใช้เบิก :: "+"  "+(ggg));
-	        			day =ggg;
-	        			summho += ggg;
-	        			setBaseHour=ggg;
-	        			list.get(i).setBaseHour(ggg);
-	        			teach.setBaseHour(ggg);
-	        		}
-	        		
-	        	} else {
-	        		summbh+=sumtp;
-      			System.out.println(" ฐาน คาบ :: "+sumtp);
-      			list.get(i).setBasecram(sumtp);
- //     			teach.setBasecram(sumtp);
-      			su += sumtp;
-      			
-	        	}
+		        			list.get(i).setBaseHour(ggg-xx);
+		        			
+		        			day=ggg-xx;
+		        			list.get(i).setBasecram(xx);
+		        			dday=xx;
+		        			summho += ggg-xx;
+		        			summbh +=xx;
+		        			
+		        			teach.setBaseHour(day);
+		        			teach.setBasecram(dday);
+		        			checkRound = false;
+		        		}else {
+		        	//		System.out.println("ใช้เบิก :: "+"  "+(ggg));
+		        			day =ggg;
+		        			summho += ggg;
+		        			setBaseHour=ggg;
+		        			list.get(i).setBaseHour(ggg);
+		        			teach.setBaseHour(ggg);
+		        		}
+		        		
+		        	} else {
+		        		summbh+=sumtp;
+	      	//		System.out.println(" ฐาน คาบ :: "+sumtp);
+	      			list.get(i).setBasecram(sumtp);
+	 //     			teach.setBasecram(sumtp);
+	      			su += sumtp;
+	      			
+		        	}
+				} else {
+			   		summbh+=sumtp;
+			      	//		System.out.println(" ฐาน คาบ :: "+sumtp);
+			      			list.get(i).setBasecram(sumtp);
+			 //     			teach.setBasecram(sumtp);
+			      			su += sumtp;
+				}
+	        	
 //	        	teach.setBasecram(summbh);
 //	        	teach.setBaseHour(summho);
 	        	 if (day==0 ) {
@@ -171,21 +184,41 @@ public List<Teach>contest(){
 	 			} else {
 	 				dayday.setStatusBase("2");
 	 			} 
-	        	 int setTsd=0,setPsd=0;
-	       if (list.get(i).getSubject().getTudsadee()!=0) {
-	    	   setTsd=(xx-list.get(i).getSubject().getTudsadee());
-	    	   setPsd=(list.get(i).getSubject().getPrtibad());
-	    	   
+	        	
+	        	
+	//        	 int bass=list.get(i).getSubject().getTudsadee();
+	        	 int setT=0;
+	       if (setTsd!=0) {
+	//    	   setTsd=(xx-list.get(i).getSubject().getTudsadee());
+	    //	   setPsd=(list.get(i).getSubject().getPrtibad());
+	    	   setT=(setTsd-dday);
+	    	   setTsd=setT;
+	    	   System.out.println(setT);
+	    	   if (setT<0) {
+	    		   int gg=0;
+	    		   gg=(setT+setPsd);
+	    		   setPsd=gg;
+	    		   setTsd=0;
+				System.out.println(gg);
+			} else if (setT>setTsd){
+			
+				System.out.println("...");
+				System.out.println("...");
+			}else {
+				 System.out.println(setTsd+"TTT"+setT);
+			}
+	    	  
+	    	  
 		} else {
-			dayday.setStatusBase("2");
+			System.out.println(setTsd+"PPP");
 		}
-	       
+//	       
 	        dayday.setTudsadeeDft(setTsd);
-			dayday.setPrtibadDft(setPsd);
-				teach.setTeachId(list.get(i).getTeachId());
+	        dayday.setPrtibadDft(setPsd);
+//				teach.setTeachId(list.get(i).getTeachId());
 				teachDAO.updateBase(teach);
 			
-	        dayday.setSubjectDft(list.get(i).getSubjactFk());
+	        dayday.setSubjectDft(list.get(i).getSubjactFk()); 
 	        
 	        dateofTeachDAO.updateDay(dayday);
 	     

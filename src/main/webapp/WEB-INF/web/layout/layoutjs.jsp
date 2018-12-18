@@ -50,4 +50,58 @@
 
 	<!-- Init JavaScript -->
 	<script src="../assets_/dist/js/init.js"></script>
+
+
 	<script src="../assets_/dist/js/dashboard5-data.js"></script>
+
+		<!-- jQuery -->
+		<script src="../assets_/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="../assets_/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!-- Moment JavaScript -->
+		<script type="text/javascript" src="../assets_/vendors/bower_components/moment/min/moment-with-locales.min.js"></script>
+
+		<!-- Bootstrap Colorpicker JavaScript -->
+		<script src="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+
+		<!-- Switchery JavaScript -->
+		<script src="../assets_/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+
+		<!-- Select2 JavaScript -->
+		<script src="../assets_/vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+
+		<!-- Bootstrap Select JavaScript -->
+		<script src="../assets_/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+		<!-- Bootstrap Tagsinput JavaScript -->
+		<script src="../assets_/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+
+		<!-- Bootstrap Touchspin JavaScript -->
+		<script src="../assets_/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+		<!-- Multiselect JavaScript -->
+		<script src="../assets_/vendors/bower_components/multiselect/js/jquery.multi-select.js"></script>
+
+
+		<!-- Bootstrap Switch JavaScript -->
+		<script src="../assets_/vendors/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+		<!-- Bootstrap Datetimepicker JavaScript -->
+		<script type="text/javascript" src="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+		<!-- Form Advance Init JavaScript -->
+		<script src="../assets_/dist/js/form-advance-data.js"></script>
+
+		<!-- Slimscroll JavaScript -->
+		<script src="../assets_/dist/js/jquery.slimscroll.js"></script>
+
+		<!-- Fancy Dropdown JS -->
+		<script src="../assets_/dist/js/dropdown-bootstrap-extended.js"></script>
+
+		<!-- Owl JavaScript -->
+		<script src="../assets_/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+		<!-- Init JavaScript -->
+		<script src="../assets_/dist/js/init.js"></script>
