@@ -30,7 +30,8 @@
 		<link href="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
 
 
-
+	<!--alerts CSS -->
+	<link href="../assets_/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
 		<!-- Custom CSS -->
 		<link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
 

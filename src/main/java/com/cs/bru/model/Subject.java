@@ -10,6 +10,7 @@ public class Subject {
 	private String creditHour;
 	private int tudsadee;
 	private int prtibad;
+	private String statusSubjeact;
 	
 	public Subject() {
 		super();
@@ -66,6 +67,13 @@ public class Subject {
 	public void setPrtibad(int prtibad) {
 		this.prtibad = prtibad;
 	}
+	public String getStatusSubjeact() {
+		return statusSubjeact;
+	}
+	public void setStatusSubjeact(String statusSubjeact) {
+		this.statusSubjeact = statusSubjeact;
+	}
+	
 	
 	
 }

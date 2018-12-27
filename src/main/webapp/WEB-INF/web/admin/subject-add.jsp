@@ -785,20 +785,11 @@
 									
 										
 										
-												
-														<!-- <input type="checkbox" checked class="js-switch js-switch-1" data-color="#DCDCDC"/> -->
-														<!-- <input type="checkbox" checked class="js-switch js-switch-1" data-color="#4aa23c"/> -->
-														<!-- <input type="checkbox" checked class="js-switch js-switch-1" data-color="#f8b32d"/> -->
-														<input type="checkbox" checked class="js-switch js-switch-1" data-color="#f33923"/>
-														<input type="checkbox" checked class="js-switch js-switch-1" data-color="#667add"/>
-														<input type="checkbox" checked class="js-switch js-switch-1" data-color="#fd7397"/>
-														<input type="checkbox" class="js-switch js-switch-1"  data-color="#4aa23c" data-secondary-color="#f33923" />
-														<input type="checkbox" class="js-switch js-switch-1"  data-color="#4aa23c" data-secondary-color="#f33923" />
-												
-										
-														
-									
-					
+				
+						
+									<!-- <img src="../assets_/dist/img/sweetalert/alert4.png" alt="alert" class="img-responsive model_img" id="sa-warning1">  -->
+									<!-- <a type="button" class="label label-danger "alt="alert" id="sa-warningteach">ปิด</a> -->
+									<a type="button" alt="alert" id="sa-warningteach"  class="label label-success ">เปิด</a>
 				<!-- Row -->
 				<div class="row">
 					<div class="col-sm-12">
@@ -944,13 +935,19 @@ $(document).ready(function() {
 			//	var sumtarm = 0;
 			//	var tarm, tarHo = 0,
 				//	sumsrry = 0;
-
+				
 				for (var i = 0; i < msg.length; i++) {
 				//	tarm = msg[i].basecram;
 				//	//	sumtarm=parseInt(tarm);
 				//	tfood = (tfood + tarm);
 				//	tarHo += msg[i].baseHour;
 				//	sumsrry += msg[i].salarySum;
+				var  status="1";
+			if (msg[i].statusSubjeact==status) {
+				status='<span class="label label-success ">เปิด</span>';
+			} else {
+				status='<span class="label label-danger ">ปิด</span>';
+			}
 					table1 +=
 						'<tr>' +
 						'<td>' + msg[i].subjectId + '</td>' +
@@ -959,11 +956,7 @@ $(document).ready(function() {
 						'<td>' + msg[i].creditHour + '</td>' +
 						'<td>' + msg[i].tudsadee + '</td>' +
 						'<td>' + msg[i].prtibad + '</td>' +
-						'<td>'+'<input id="check_box_switch" type="checkbox" data-off-text="False" data-on-text="True"  class="bs-switch">'+
-														'<label>This Switch is Set to'+
-															'<span id="check_box_value" ></span>'+
-														'</label>'+
-							'</td>'+
+						'<td>'+status+'</td>'+
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
 						'</tr>';
 				}
@@ -983,6 +976,40 @@ $(document).ready(function() {
 				console.log("ERROR: Table1", e);
 			}
 		});
+});
+</script>
+<script>
+/*SweetAlert Init*/
+
+$(function() {
+	"use strict";
+	
+	var SweetAlert = function() {};
+
+    //examples 
+    SweetAlert.prototype.init = function() {
+   
+    //Warning Message
+    $('#sa-warningteach,.sa-warningteach').on('click',function(e){
+	    swal({   
+            title: "คุณแน่ใจไหม?",   
+            text: "คุณต้องการเปลียนสถานะวิชาหรือไม่",   
+            type: "warning",   
+            showCancelButton: true,   
+            confirmButtonColor: "#f8b32d",   
+            confirmButtonText: "YES",   
+            closeOnConfirm: false 
+        }, function(){   
+            swal("เรียบร้อย", "สถานะได้ถูกเปลียนแล้ว", "success"); 
+        });
+		return false;
+    });
+
+    },
+    //init
+    $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert;
+	
+	$.SweetAlert.init();
 });
 </script>
 </html>

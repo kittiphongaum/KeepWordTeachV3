@@ -105,3 +105,26 @@
 
 		<!-- Init JavaScript -->
 		<script src="../assets_/dist/js/init.js"></script>
+	
+		<!-- jQuery -->
+		<script src="../assets_/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		
+		<!-- Bootstrap Core JavaScript -->
+		<script src="../assets_/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		
+		<!-- Owl JavaScript -->
+		<script src="../assets_/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+		<!-- Switchery JavaScript -->
+		<script src="../assets_/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+		
+		<!-- Sweet-Alert  -->
+		<script src="../assets_/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+		
+		<script src="../assets_/dist/js/sweetalert-data.js"></script>
+		
+		<!-- Slimscroll JavaScript -->
+		<script src="../assets_/dist/js/jquery.slimscroll.js"></script>
+	
+		<!-- Fancy Dropdown JS -->
+		<script src="../assets_/dist/js/dropdown-bootstrap-extended.js"></script>

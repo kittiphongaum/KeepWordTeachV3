@@ -47,7 +47,7 @@ public class SubjectDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT subject_id,subject_name,credit,credit_hour,tudsadee,prtibad FROM tb_subject");
+			sql.append("SELECT subject_id,subject_name,credit,credit_hour,tudsadee,prtibad,status_subject FROM tb_subject");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			ResultSet rs = prepared.executeQuery();
 
@@ -59,6 +59,7 @@ public class SubjectDAO {
 				bean.setCreditHour(rs.getString("credit_hour"));
 				bean.setTudsadee(rs.getInt("tudsadee"));
 				bean.setPrtibad(rs.getInt("prtibad"));
+				bean.setStatusSubjeact(rs.getString("status_subject"));
 
 				list.add(bean);
 			}

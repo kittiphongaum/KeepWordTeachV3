@@ -28,6 +28,14 @@
 
 	<!-- Custom CSS -->
 	<link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
+<style>
+
+/*# sourceMappingURL=style.css.map */
+#colorgenY {
+  background-color:  #443166 ;
+ /* background-image: linear-gradient(to bottom right, #443166 , yellow ) Standard syntax (must be last) */
+}
+</style>
 </head>
 <%
 User  userLog = null;
@@ -153,8 +161,8 @@ Integer a=0;
 				</div>
 		</nav>
 		<!-- Left Sidebar Menu -->
-		<div class="fixed-sidebar-left">
-			<ul class="nav navbar-nav side-nav nicescroll-bar">
+		<div class="fixed-sidebar-left ">
+			<ul class="nav navbar-nav side-nav nicescroll-bar " id="colorgenY">
 					<li class="navigation-header">
 						<span>Manu</span>
 						<i class="zmdi zmdi-more"></i>

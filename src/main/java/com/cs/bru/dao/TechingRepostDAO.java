@@ -45,13 +45,13 @@ public class TechingRepostDAO {
 		}
 		return list;
 	}
-	public List<TechingRepost> findOne(String userId) {
+	public TechingRepost findOne(String userId) {
 
 		ConnectDB con = new ConnectDB();
 		PreparedStatement prepared = null;
 		StringBuilder sql = new StringBuilder();
-		List<TechingRepost> list =new ArrayList<>();
-	
+		//List<TechingRepost> list =new ArrayList<>();
+		  TechingRepost techingRepost = new TechingRepost();
 
 		try {
 			sql.append(" SELECT * FROM tb_teach_report WHERE teach_report_id = ?");
@@ -62,7 +62,7 @@ public class TechingRepostDAO {
 			ResultSet rs = prepared.executeQuery();
 		
 			while (rs.next()) {
-               TechingRepost techingRepost = new TechingRepost();
+             
 				
 				techingRepost.setTeachReportId(rs.getString("teach_report_id"));
 				techingRepost.setResumPst(rs.getInt("resum_pst"));
@@ -74,7 +74,7 @@ public class TechingRepostDAO {
 
 				
 				
-				list.add(techingRepost);
+				//list.add(techingRepost);
 			}
 			
 			
@@ -83,7 +83,7 @@ public class TechingRepostDAO {
 			e.printStackTrace();
 		}
 
-		return list;
+		return techingRepost;
 	}
 	// update
 			public void update(TechingRepost bean) {

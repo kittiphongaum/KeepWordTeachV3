@@ -90,7 +90,6 @@ public class UserController {
 		   public String insertUser(@RequestBody User insertUser) {
 			   try {
 				userDAO.insertUser(insertUser);
-				
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
