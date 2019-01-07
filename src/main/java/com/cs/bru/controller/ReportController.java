@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -48,6 +50,34 @@ public class ReportController {
         // Faz a exportação do relatório para o HttpServletResponse
         final OutputStream outputStream = response.getOutputStream();
         JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
+    }
+    @RequestMapping("/pdf")
+    public void reporttest()throws JRException,IOException {
+    	  // Compile jrxml file.
+        JasperReport jasperReport = JasperCompileManager
+                .compileReport("C:/Users/JookDdook/JaspersoftWorkspace/MyReports/userreport.jrxml");
+  
+        // Parameters for report
+        Map<String, Object> parameters = new HashMap<String, Object>();
+  
+        // DataSource
+        // This is simple example, no database.
+        // then using empty datasource.
+        JRDataSource dataSource = new JREmptyDataSource();
+  
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,
+                parameters, dataSource);
+  
+     
+        // Make sure the output directory exists.
+        File outDir = new File("C:/Users/JookDdook/JaspersoftWorkspace/MyReports");
+        outDir.mkdirs();
+  
+        // Export to PDF.
+        JasperExportManager.exportReportToPdfFile(jasperPrint,
+                "C:/Users/JookDdook/JaspersoftWorkspace/MyReports/userreport.pdf");
+         
+        System.out.println("Done!");
     }
 }
 
