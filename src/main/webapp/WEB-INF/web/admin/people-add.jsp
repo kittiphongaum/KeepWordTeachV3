@@ -21,11 +21,12 @@
     <link href="../assets_/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet"
         type="text/css" />
 
-        	
-		<!-- vector map CSS -->
-		<link href="../assets_/vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css"/>
-		
-		
+
+    <!-- vector map CSS -->
+    <link href="../assets_/vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+
+
     <!-- Custom CSS -->
     <link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
 
@@ -141,7 +142,7 @@
                                 alt="user_auth" class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
                         <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
                             <li>
-                                <a href="./user"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
+                                <a href="./dataadmin-add"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
                             </li>
                             <li>
                                 <a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log
@@ -746,10 +747,10 @@
                         <div class="panel panel-default card-view">
                             <div class="panel-heading">
                                 <div class="pull-left">
-                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">+
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">+
                                         เพิ่มผู้สอน</button>
-                                    <div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                        aria-hidden="true">
+                                    <div id="myModal1" class="modal fade in" tabindex="-1" role="dialog"
+                                        aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -762,97 +763,138 @@
                                                     <div class="panel-wrapper collapse in">
                                                         <div class="row">
                                                             <div class="col-sm-12">
-                                                                    <div class="form-wrap">
-                                                                <form>
-                                                                    <input type="hidden" id="userId" name="userId">
-                                                                    <div class="row">
-                                                                        <div class="col-md-3">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">รหัสผู้สอน</label>
-                                                                                <input type="text" name="userid" class="form-control"
-                                                                                    id="adduserid" value=""required="">
+                                                                <div class="form-wrap">
+                                                                    <form>
+                                                                        <input type="hidden" id="userId" name="userId">
+                                                                        <div class="row">
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">รหัสผู้สอน</label>
+                                                                                    <input type="text" name="userid"
+                                                                                        class="form-control" id="insertuserId"
+                                                                                        value="" required="">
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-md-3">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">คำนำหน้า</label>
-                                                                                <input type="text" name="userid" class="form-control"
-                                                                                    id="addprrfname" value="" required="">
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">รหัสผ่าน</label>
+                                                                                    <input type="text" name="userid"
+                                                                                        class="form-control" id="insertuserPass"
+                                                                                        value="" required="">
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-md-3">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">ชื่อ</label>
-                                                                                <input type="text" name="userFname"
-                                                                                    class="form-control" id="adduserFname"
-                                                                                    value="" required="">
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">คำนำหน้า</label>
+                                                                                    <input type="text" name="userid"
+                                                                                        class="form-control" id="insertprefixName"
+                                                                                        value="" required="">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">ชื่อ</label>
+                                                                                    <input type="text" name="userFname"
+                                                                                        class="form-control" id="insertuserFname"
+                                                                                        value="" required="">
 
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-md-3">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">นามสกุล</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    id="adduserLname" value=""required="">
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">นามสกุล</label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        id="insertuserLname" value=""
+                                                                                        required="">
 
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-3">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">ตำแหน่ง</label>
+                                                                                    <!-- <input type="text" class="form-control"
+                                                                                    id="insertpositionTeach" value=""required=""> -->
+                                                                                    <!-- <div id="positionTeachSETshow">
+                                                                                    </div> -->
+                                                                                    <select id="insertpositionTeach"
+                                                                                        class="form-control " name="teachWeek"
+                                                                                        required="">
+                                                                                        <option value="อาจารย์พิเศษ">อาจารย์พิเศษ</option>
+                                                                                        <option value="อาจารย์">อาจารย์</option>
+                                                                                    </select>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">สาขาวิชา</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    id="addfaculty" value=""required="">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">สาขาวิชา</label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        id="insertfaculty" value=""
+                                                                                        required="">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">คณะ</label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        id="insertMojor" value=""
+                                                                                        required="">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- <div id="pos">
+                                                            
+                                                                    </div> -->
 
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">คณะ</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    id="addmojor" value=""required="">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                        <div class="row">
 
-                                                                    <div class="row">
-                                                                        <div class="col-md-4">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">ตำแหน่ง</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    id="addpositionTeach" value=""required="">
+                                                                            <div class="col-md-4">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">มีฐานชั่วโมง/คาบ</label>
+                                                                                    <input type="number" class="form-control"
+                                                                                        id="insertbaseHour" value=""
+                                                                                        required="">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
+                                                                                    <input type="number" class="form-control"
+                                                                                        id="insertbaseKrm" value=""
+                                                                                        required="">
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4">
+                                                                                <div class="form-group">
+                                                                                    <label class="bmd-label-floating">สถานะผู้ใช้</label>
+                                                                                    <!-- <input type="text" class="form-control"
+                                                                                    id="insertstatusLogin" value=""required=""> -->
+                                                                                    <select id="insertstatusLogin"
+                                                                                        class="form-control " name="teachWeek"
+                                                                                        required="">
+                                                                                        <option value="U">ผู้สอน</option>
+                                                                                        <option value="A">ผู้ดูแลระบบ</option>
+                                                                                    </select>
+
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-md-4">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">มีฐานชั่วโมง/คาบ</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    id="addbaseHour" value=""required="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-4">
-                                                                            <div class="form-group">
-                                                                                <label class="bmd-label-floating">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    id="addbaseKrm" value=""required="">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer " >
+                                                                        <div class="modal-footer ">
                                                                             <button type="submit" class="btn btn-success btn-rounded"
-                                                                               aria-hidden="false">Save</button>
+                                                                                aria-hidden="false" onclick="peopleInsert()">Save</button>
                                                                             <button type="button" class="btn btn-default btn-rounded"
                                                                                 data-dismiss="modal">Cancel</button>
                                                                         </div>
-                                                                </form>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                              
+
                                                 </div>
-                                               
+
                                             </div>
                                             <!-- /.modal-content -->
                                         </div>
@@ -866,41 +908,209 @@
                     </div>
 
                 </div>
-                <!-- Row -->
+                <!-- <row> -->
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default card-view">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default card-view pa-0">
                             <div class="panel-wrapper collapse in">
-                                <div class="panel-body">
-                                    <div class="table-wrap">
-                                        <div class="table-responsive">
-                                            <table id="tebleListUser" class=" display  pb-30">
-                                                <thead>
-                                                    <tr>
-                                                        <th>รหัส</th>
-                                                        <th>ชื่อ นามสกุล</th>
-                                                        <th>ตำแหน่ง</th>
-                                                        <th>สาขา</th>
-                                                        <th>คณะ</th>
-                                                        <th>ฐานชั่วโมง/คาบ</th>
-                                                        <th>ใช้เบิก/หน่วยชั่วโมง</th>
-                                                    </tr>
-                                                </thead>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th>รหัส</th>
-                                                        <th>ชื่อ นามสกุล</th>
-                                                        <th>ตำแหน่ง</th>
-                                                        <th>สาขา</th>
-                                                        <th>คณะ</th>
-                                                        <th>ฐานชั่วโมง/คาบ</th>
-                                                        <th>ใช้เบิก/หน่วยชั่วโมง</th>
-                                                    </tr>
-                                                </tfoot>
-                                                <tbody>
+                                <div class="panel-body pa-0">
+                                    <div class="contact-list">
+                                        <div class="row">
+                                            <aside class="col-lg-2 col-md-4 pr-0">
+                                                <div class="mt-20 mb-20 ml-15 mr-15">
+                                                    <a href="#myModal" data-toggle="modal" title="Compose" class="btn btn-success btn-block">
+                                                        เพิ่มผู้สอน
+                                                    </a>
+                                                    <!-- Modal -->
+                                                    <div aria-hidden="true" role="dialog" tabindex="-1" id="myModal"
+                                                        class="modal fade" style="display: none;">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-hidden="true">×</button>
+                                                                    <h4 class="modal-title" id="myModalLabel">เพิ่มผู้สอน</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form class="form-horizontal form-material ">
 
-                                                </tbody>
-                                            </table>
+                                                                        <div class="form-group">
+                                                                            <div class="col-md-12 mb-20">
+                                                                                <label class="control-label mb-10 text-left">รหัสผู้สอน</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="รหัสผู้สอน" d="insertuserId"
+                                                                                    required="">
+                                                                            </div>
+                                                                            <div class="col-md-12 mb-20">
+                                                                                <label class="control-label mb-10 text-left">รหัสผ่าน</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="รหัสผ่าน" id="insertuserPass"
+                                                                                    value="" required="">
+                                                                            </div>
+                                                                            <div class="col-md-12 mb-20">
+                                                                                <div class="col-sm-2">
+                                                                                <label class="control-label mb-10">คำนำหน้า</label>
+                                                                            </div>
+                                                                                <!-- <input type="text" name="userid" class="form-control"
+                                                                                    id="insertprefixName" value=""
+                                                                                    required=""> -->
+                                                                                    <div class="radio-list ">
+                                                                                            <div class="radio-inline pl-0">
+                                                                                                <span class="radio radio-info">
+                                                                                                    <input type="radio" name="radio5" id="radio_5" value="option1">
+                                                                                            <label for="radio_5">นาย</label>
+                                                                                            </span>
+                                                                                            </div>
+                                                                                            <div class="radio-inline">
+                                                                                                <span class="radio radio-info">
+                                                                                                    <input type="radio" name="radio5" id="radio_6" value="option2">
+                                                                                            <label for="radio_6">นาง</label>
+                                                                                            </span>
+                                                                                            </div>
+                                                                                            <div class="radio-inline">
+                                                                                                    <span class="radio radio-info">
+                                                                                                        <input type="radio" name="radio5" id="radio_6" value="option2">
+                                                                                                <label for="radio_6">นางสาว</label>
+                                                                                                </span>
+                                                                                                </div>
+                                                                                        </div>
+                                                                            </div>
+                                                                            <div class="col-md-12 mb-20">
+                                                                            <div class="col-md-6 ">
+                                                                                <label class="control-label mb-10 text-left">ชื่อ</label>
+                                                                                <input type="text" name="userFname"
+                                                                                    class="form-control" id="insertuserFname"
+                                                                                    value="" required>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <label class="control-label mb-10 text-left">นามสกุล</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="insertuserLname" value=""
+                                                                                    required="">
+                                                                            </div>
+                                                                        </div>
+                                                                            <div class="col-md-12 mb-20">
+                                                                                <label class="control-label mb-10 text-left">ตำแหน่ง</label>
+
+                                                                                <select id="insertpositionTeach" class="form-control "
+                                                                                    name="teachWeek" required="">
+                                                                                    <option value="อาจารย์พิเศษ">อาจารย์พิเศษ</option>
+                                                                                    <option value="อาจารย์">อาจารย์</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="col-md-12 mb-20">
+                                                                                    <label class="control-label mb-10 text-left">คณะ</label>
+                                                                                    <input type="text" class="form-control"
+                                                                                        id="insertMojor" value="" required="">
+    
+                                                                                </div>
+                                                                            <div class="col-md-12 mb-20">
+                                                                                <label class="control-label mb-10 text-left">สาขาวิชา</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    id="insertfaculty" value=""
+                                                                                    required="">
+                                                                            </div>
+                                                                            
+                                                                            <div class="col-md-12">
+                                                                            <div class="col-md-6 mb-20">
+                                                                                <label class="control-label mb-10 text-left">มีฐานชั่วโมง/คาบ</label>
+                                                                                <input type="number" class="form-control"
+                                                                                    id="insertbaseHour" value=""
+                                                                                    required="">
+
+                                                                            </div>
+                                                                            <div class="col-md-6 mb-20">
+                                                                                <label class="control-label mb-10 text-left">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
+                                                                                <input type="number" class="form-control"
+                                                                                    id="insertbaseKrm" value=""
+                                                                                    required="">
+
+                                                                            </div>
+                                                                        </div>
+                                                                            <div class="col-md-12 mb-20">
+                                                                                <label class="control-label mb-10 text-left">สถานะผู้ใช้</label>
+                                                                                <select id="insertstatusLogin" class="form-control "
+                                                                                    name="teachWeek" required="">
+                                                                                    <option value="U">ผู้สอน</option>
+                                                                                    <option value="A">ผู้ดูแลระบบ</option>
+                                                                                </select>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-info waves-effect"
+                                                                        data-dismiss="modal">Save</button>
+                                                                    <button type="button" class="btn btn-default waves-effect"
+                                                                        data-dismiss="modal">Cancel</button>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /.modal-content -->
+                                                        </div>
+                                                        <!-- /.modal-dialog -->
+                                                    </div>
+                                                    <!-- /.modal -->
+                                                </div>
+                                                <ul class="inbox-nav mb-30">
+                                                    <li class="active">
+                                                        <a href="#">Work <span class="label label-primary ml-10">12</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">design <span class="label label-danger ml-10">20</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">family <span class="label label-warning ml-10">2</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">friends<span class="label label-info ml-10">30</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">office <span class="label label-success ml-10">2</span></a>
+                                                    </li>
+                                                </ul>
+
+
+                                            </aside>
+
+                                            <aside class="col-lg-10 col-md-8 pl-0">
+                                                <div class="panel pa-0">
+                                                    <div class="panel-wrapper collapse in">
+                                                        <div class="panel-body  pa-0">
+                                                            <div class="table-responsive mb-30">
+                                                                <table id="tableuserAll" class="table  display table-hover mb-30"
+                                                                    data-page-size="10">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>รหัส</th>
+                                                                            <th>ชื่อ นามสกุล</th>
+                                                                            <th>ตำแหน่ง</th>
+                                                                            <th>สาขา</th>
+                                                                            <th>คณะ</th>
+                                                                            <th>ฐานชั่วโมง/คาบ</th>
+                                                                            <th>ใช้เบิก/หน่วยชั่วโมง</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tfoot>
+                                                                        <tr>
+                                                                            <th>รหัส</th>
+                                                                            <th>ชื่อ นามสกุล</th>
+                                                                            <th>ตำแหน่ง</th>
+                                                                            <th>สาขา</th>
+                                                                            <th>คณะ</th>
+                                                                            <th>ฐานชั่วโมง/คาบ</th>
+                                                                            <th>ใช้เบิก/หน่วยชั่วโมง</th>
+                                                                        </tr>
+                                                                    </tfoot>
+                                                                    <tbody>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </aside>
                                         </div>
                                     </div>
                                 </div>
@@ -909,88 +1119,6 @@
                     </div>
                 </div>
                 <!-- /Row -->
-             	<!-- Row -->
-				<div class="row">
-                        <div class="col-sm-12">
-                            <div class="panel panel-default card-view">
-                                <div class="panel-heading">
-                                    <div class="pull-left">
-                                        <h6 class="panel-title txt-dark">Complex Header</h6>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="panel-wrapper collapse in">
-                                    <div class="panel-body">
-                                        <div class="table-wrap">
-                                            <div class="table-responsive">
-                                                <table id="datable_2" class="table table-hover table-bordered display mb-30" >
-                                                    <thead>
-                                                        <tr>
-                                                            <th rowspan="2">Name</th>
-                                                            <th colspan="2">HR Information</th>
-                                                            <th colspan="3">Contact</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Position</th>
-                                                            <th>Salary</th>
-                                                            <th>Office</th>
-                                                            <th>Extn.</th>
-                                                            <th>E-mail</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Salary</th>
-                                                            <th>Office</th>
-                                                            <th>Extn.</th>
-                                                            <th>E-mail</th>
-                                                        </tr>
-                                                    </tfoot>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>$320,800</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>5421</td>
-                                                            <td>t.nixon@datatables.net</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>$170,750</td>
-                                                            <td>Tokyo</td>
-                                                            <td>8422</td>
-                                                            <td>g.winters@datatables.net</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Ashton Cox</td>
-                                                            <td>Junior Technical Author</td>
-                                                            <td>$86,000</td>
-                                                            <td>San Francisco</td>
-                                                            <td>1562</td>
-                                                            <td>a.cox@datatables.net</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Cedric Kelly</td>
-                                                            <td>Senior Javascript Developer</td>
-                                                            <td>$433,060</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>6224</td>
-                                                            <td>c.kelly@datatables.net</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>	
-                                    </div>	
-                                </div>	
-                            </div>	
-                        </div>
-                    </div>
-                    <!-- /Row -->
             </div>
             <!-- Footer -->
 
@@ -1060,73 +1188,86 @@
 
 </body>
 <script>
-/*Export Table Init*/
-$(document).ready(function() {
-    $('#tebleListUser').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            { extend:'copy', attr: { id: 'allan' } }, 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} ),
+    /*DataTable Init*/
+
+    "use strict";
+
+    $(document).ready(function () {
+        "use strict";
+
+        $('#userAll').DataTable();
+        $('#datable_2').DataTable({
+            "lengthChange": false
+        });
+    });
+
+    /*Export Table Init*/
+    $(document).ready(function () {
+            $('#tebleListUser1').DataTable({
+                // dom: 'Bfrtip',
+                // buttons: [
+                //     { extend:'copy', attr: { id: 'allan' } }, 'csv', 'excel', 'pdf', 'print'
+                // ]
+            });
+        }),
 
 
-$(function(){
-    var userid = $("#userRoleid").val();
-$.ajax({
-    type: "GET",
-    contentType: "application/json",
-    url: "/userFileById1",
-    dataType: 'json',
-    success: function (msg) { 
-        var table = "";
-        if (msg.userId != null) {
-            for (var i = 0; i < msg.length; i++) {
-				
-					table +=
-						'<tr>' +
-						'<td>' + msg[i].prefixName + '</td>' +
-						'<td>' + msg[i].userFname + '</td>' +
-						'<td>' + msg[i].positionTeach + '</td>' +
-						'<td>' + msg[i].faculty + '</td>' +
-						'<td>' + msg[i].mojor + '</td>' +
-						'<td>' + msg[i].baseHour + '</td>' +
-						'<td>' + msg[i].baseKrm + '</td>' +
-						
-						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
-						'</tr>';
-				}
-                $('#tebleListUser tbody').append(table);
-        } else {
-            $('#alert').append('<center>ไม่มีข้อมูล</center>');
-        }        
-    },
-    error: function (e) {
-      
-    }
-});
-});
+        $(document).ready(function () {
+            // var userid = $("#userRoleid").val();
+            $.ajax({
+                type: "GET",
+                contentType: "application/json",
+                url: "/userAll",
+                dataType: 'json',
+                success: function (msg) {
+                    var table = "";
+                    if (msg.userId != null) {
+                        for (var i = 0; i < msg.length; i++) {
 
+                            table +=
+                                '<tr>' +
+                                '<td>' + msg[i].userId + '</td>' +
+                                '<td>' + msg[i].prefixName + " " + msg[i].userFname + " " + msg[i].userLname +
+                                '</td>' +
+                                '<td>' + msg[i].positionTeach + '</td>' +
+                                '<td>' + msg[i].faculty + '</td>' +
+                                '<td>' + msg[i].mojor + '</td>' +
+                                '<td>' + msg[i].baseHour + '</td>' +
+                                '<td>' + msg[i].baseKrm + '</td>' +
+
+                                // '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+                                '</tr>';
+                        }
+                        $('#userAll1 tbody').append(table);
+                    } else {
+                        $('#alert').append('<center>ไม่มีข้อมูล</center>');
+                    }
+                },
+                error: function (e) {
+
+                }
+            });
+        });
 </script>
 <script>
-    $(function () {
-        var table = $('#userFileById').DataTable({
-            "sAjaxSource": "/userFileById",
+    $(document).ready(function () {
+        var table = $('#tableuserAll').DataTable({
+            "sAjaxSource": "/userAll",
             "sAjaxDataProp": "",
             "order": [
                 [0, "asc"]
             ],
             "aoColumns": [{
-                    "mData": "id"
+                    "mData": "userId"
                 },
                 {
-                    "mData": "userFname"
+                    "mData": "",
+                    "mRender": function (data, type, full) {
+                        return full.userFname + "  " + full.userLname;
+                    }
                 },
                 {
                     "mData": "userLname"
-                },
-                {
-                    "mData": "positionTeach"
                 },
                 {
                     "mData": "faculty"
@@ -1141,10 +1282,80 @@ $.ajax({
                     "mData": "baseKrm"
                 }
 
-
             ]
         })
     });
+
+    function peopleInsert() {
+
+
+        var insertUser = {
+
+            userId: $('#insertuserId').val(),
+            userPass: $('#insertuserPass').val(),
+            prefixName: $('#insertprefixName').val(),
+            userFname: $('#insertuserFname').val(),
+            userLname: $('#insertuserLname').val(),
+            positionTeach: $('#insertpositionTeach').val(),
+            faculty: $('#insertfaculty').val(),
+            mojor: $('#insertMojor').val(),
+            baseHour: $('#insertbaseHour').val(),
+            baseKrm: $('#insertbaseKrm').val(),
+            statusLogin: $('#insertstatusLogin').val()
+        };
+        $.ajax({
+            type: "POST",
+            url: "/insertUser",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(insertUser),
+            dataType: "json",
+            success: function (msg) {
+                console.log(msg)
+                if (msg != null) {
+                    location.reload();
+
+                }
+            }
+
+        });
+
+    }
 </script>
+<!-- <script>
+$(document).ready(function () {
+    var ppos;
+    var positionTeachSET =' <select id="insertpositionTeach" class="form-control " name="teachWeek"required="">'+
+                            '<option value="A">อาจารย์พิเศษ</option>'+
+                            '<option value="อาจารย์พิเศษ">ผู้ดูแลระบบ</option>'+
+                             '</select>';
+         $('#positionTeachSETshow').append(positionTeachSET);
+    // var position = $('#insertpositionTeach').val();
+    var position= $('#insertpositionTeach').val();
+    var pos="";
+    if (position =='อาจารย์พิเศษ') {
+        pos="";
+    } else {
+        
+        pos='<div class="row">'+
+          '<div class="col-md-6">'+
+             '<div class="form-group">'+
+                 '<label class="bmd-label-floating">สาขาวิชา</label>'+
+                    '<input type="text" class="form-control"'+
+                       'id="insertfaculty" value=""required="">'+
+                 '</div>'+
+                   '</div>'+
+                     '<div class="col-md-6">'+
+                    '<div class="form-group">'+
+                     '<label class="bmd-label-floating">คณะ</label>'+
+                     '<input type="text" class="form-control"'+
+                     'id="insertMojor" value=""required="">'+
+                     '</div>'+
+                     '</div>'+
+                      '</div>';
+    }
+    $('#pos').append(pos);
+        
+});
+</script> -->
 
 </html>

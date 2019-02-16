@@ -39,7 +39,7 @@ public class UserController {
 	
 
 	
-	@RequestMapping("/UserAll")
+	@RequestMapping("/userAll")
 	public List<User> userFoo(){
 		List<User>list = new ArrayList<>();
 		list=userDAO.findAll();
@@ -87,14 +87,14 @@ public class UserController {
 		
 		
 		@RequestMapping("/insertUser")
-		   public String insertUser(@RequestBody User insertUser) {
+		   public User insertUser(@RequestBody User insertUser) {
 			   try {
 				userDAO.insertUser(insertUser);
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.printStackTrace();
 			}
-			   return "user";
+			   return insertUser;
 		   }
 		
 		

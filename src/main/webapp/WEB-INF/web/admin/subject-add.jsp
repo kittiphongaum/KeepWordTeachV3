@@ -23,31 +23,36 @@
 	<!-- Custom CSS -->
 	<link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
 	<!-- Bootstrap Colorpicker CSS -->
-	<link href="./assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css"/>
-		
+	<link href="./assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css"
+	 rel="stylesheet" type="text/css" />
+
 	<!-- select2 CSS -->
-	<link href="./assets_/vendors/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css"/>
-	
+	<link href="./assets_/vendors/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+
 	<!-- switchery CSS -->
-	<link href="./assets_/vendors/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" type="text/css"/>
-	
+	<link href="./assets_/vendors/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" type="text/css" />
+
 	<!-- bootstrap-select CSS -->
-	<link href="./assets_/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
-	
+	<link href="./assets_/vendors/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet"
+	 type="text/css" />
+
 	<!-- bootstrap-tagsinput CSS -->
-	<link href="./assets_/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" type="text/css"/>
-	
+	<link href="./assets_/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" type="text/css" />
+
 	<!-- bootstrap-touchspin CSS -->
-	<link href="./assets_/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css"/>
-	
+	<link href="./assets_/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet"
+	 type="text/css" />
+
 	<!-- multi-select CSS -->
-	<link href="./assets_/vendors/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css"/>
-	
+	<link href="./assets_/vendors/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+
 	<!-- Bootstrap Switches CSS -->
-	<link href="./assets_/vendors/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
-	
+	<link href="./assets_/vendors/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet"
+	 type="text/css" />
+
 	<!-- Bootstrap Datetimepicker CSS -->
-	<link href="./assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
+	<link href="./assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+	 rel="stylesheet" type="text/css" />
 	<%@include file="../layout/layoutcss.jsp" %>
 	<%
    User  userLog = null;
@@ -155,20 +160,21 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
 					</li>
 					<li class="dropdown auth-drp">
-					<li class="dropdown auth-drp">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
-							 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
-						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-							<li>
-								<a href="./user"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
-							</li>
-							<li>
-								<a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
-							</li>
-							<form name="logoutForm" action="/" method="post" th:hidden="true"></form>
-						</ul>
-					</li>
-					</li>
+						<li class="dropdown auth-drp">
+							<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png"
+									alt="user_auth" class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
+							<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+								<li>
+									<a href="./dataadmin-add"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
+								</li>
+								<li>
+									<a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log
+											Out</span></a>
+								</li>
+								<form name="logoutForm" action="/" method="post" th:hidden="true"></form>
+							</ul>
+						</li>
+						</li>
 				</ul>
 			</div>
 		</nav>
@@ -247,436 +253,7 @@
 		</div>
 		<!-- /Left Sidebar Menu -->
 
-		<!-- Right Sidebar Menu -->
-		<div class="fixed-sidebar-right">
-			<ul class="right-sidebar">
-				<li>
-					<div class="tab-struct custom-tab-1">
-						<ul role="tablist" class="nav nav-tabs" id="right_sidebar_tab">
-							<li class="active" role="presentation"><a aria-expanded="true" data-toggle="tab" role="tab" id="chat_tab_btn"
-								 href="#chat_tab">chat</a></li>
-							<li role="presentation" class=""><a data-toggle="tab" id="messages_tab_btn" role="tab" href="#messages_tab"
-								 aria-expanded="false">messages</a></li>
-							<li role="presentation" class=""><a data-toggle="tab" id="todo_tab_btn" role="tab" href="#todo_tab"
-								 aria-expanded="false">todo</a></li>
-						</ul>
-						<div class="tab-content" id="right_sidebar_content">
-							<div id="chat_tab" class="tab-pane fade active in" role="tabpanel">
-								<div class="chat-cmplt-wrap">
-									<div class="chat-box-wrap">
-										<div class="add-friend">
-											<a href="javascript:void(0)" class="inline-block txt-grey">
-												<i class="zmdi zmdi-more"></i>
-											</a>
-											<span class="inline-block txt-dark">users</span>
-											<a href="javascript:void(0)" class="inline-block text-right txt-grey"><i class="zmdi zmdi-plus"></i></a>
-											<div class="clearfix"></div>
-										</div>
-										<form role="search" class="chat-search pl-15 pr-15 pb-15">
-											<div class="input-group">
-												<input type="text" id="example-input1-group2" name="example-input1-group2" class="form-control" placeholder="Search">
-												<span class="input-group-btn">
-													<button type="button" class="btn  btn-default"><i class="zmdi zmdi-search"></i></button>
-												</span>
-											</div>
-										</form>
-										<div id="chat_list_scroll">
-											<div class="nicescroll-bar">
-												<ul class="chat-list-wrap">
-													<li class="chat-list">
-														<div class="chat-body">
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Clay Masse</span>
-																		<span class="time block truncate txt-grey">No one saves us but ourselves.</span>
-																	</div>
-																	<div class="status away"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user1.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Evie Ono</span>
-																		<span class="time block truncate txt-grey">Unity is strength</span>
-																	</div>
-																	<div class="status offline"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user2.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Madalyn Rascon</span>
-																		<span class="time block truncate txt-grey">Respect yourself if you would have others respect you.</span>
-																	</div>
-																	<div class="status online"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user3.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Mitsuko Heid</span>
-																		<span class="time block truncate txt-grey">I’m thankful.</span>
-																	</div>
-																	<div class="status online"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Ezequiel Merideth</span>
-																		<span class="time block truncate txt-grey">Patience is bitter.</span>
-																	</div>
-																	<div class="status offline"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user1.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Jonnie Metoyer</span>
-																		<span class="time block truncate txt-grey">Genius is eternal patience.</span>
-																	</div>
-																	<div class="status online"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user2.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Angelic Lauver</span>
-																		<span class="time block truncate txt-grey">Every burden is a blessing.</span>
-																	</div>
-																	<div class="status away"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user3.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Priscila Shy</span>
-																		<span class="time block truncate txt-grey">Wise to resolve, and patient to perform.</span>
-																	</div>
-																	<div class="status online"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-															<a href="javascript:void(0)">
-																<div class="chat-data">
-																	<img class="user-img img-circle" src="dist/img/user4.png" alt="user" />
-																	<div class="user-data">
-																		<span class="name block capitalize-font">Linda Stack</span>
-																		<span class="time block truncate txt-grey">Our patience will achieve more than our force.</span>
-																	</div>
-																	<div class="status away"></div>
-																	<div class="clearfix"></div>
-																</div>
-															</a>
-														</div>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="recent-chat-box-wrap">
-										<div class="recent-chat-wrap">
-											<div class="panel-heading ma-0">
-												<div class="goto-back">
-													<a id="goto_back" href="javascript:void(0)" class="inline-block txt-grey">
-														<i class="zmdi zmdi-chevron-left"></i>
-													</a>
-													<span class="inline-block txt-dark">ryan</span>
-													<a href="javascript:void(0)" class="inline-block text-right txt-grey"><i class="zmdi zmdi-more"></i></a>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-											<div class="panel-wrapper collapse in">
-												<div class="panel-body pa-0">
-													<div class="chat-content">
-														<ul class="nicescroll-bar pt-20">
-															<li class="friend">
-																<div class="friend-msg-wrap">
-																	<img class="user-img img-circle block pull-left" src="dist/img/user.png" alt="user" />
-																	<div class="msg pull-left">
-																		<p>Hello Jason, how are you, it's been a long time since we last met?</p>
-																		<div class="msg-per-detail text-right">
-																			<span class="msg-time txt-grey">2:30 PM</span>
-																		</div>
-																	</div>
-																	<div class="clearfix"></div>
-																</div>
-															</li>
-															<li class="self mb-10">
-																<div class="self-msg-wrap">
-																	<div class="msg block pull-right"> Oh, hi Sarah I'm have got a new job now and is going great.
-																		<div class="msg-per-detail text-right">
-																			<span class="msg-time txt-grey">2:31 pm</span>
-																		</div>
-																	</div>
-																	<div class="clearfix"></div>
-																</div>
-															</li>
-															<li class="self">
-																<div class="self-msg-wrap">
-																	<div class="msg block pull-right"> How about you?
-																		<div class="msg-per-detail text-right">
-																			<span class="msg-time txt-grey">2:31 pm</span>
-																		</div>
-																	</div>
-																	<div class="clearfix"></div>
-																</div>
-															</li>
-															<li class="friend">
-																<div class="friend-msg-wrap">
-																	<img class="user-img img-circle block pull-left" src="dist/img/user.png" alt="user" />
-																	<div class="msg pull-left">
-																		<p>Not too bad.</p>
-																		<div class="msg-per-detail  text-right">
-																			<span class="msg-time txt-grey">2:35 pm</span>
-																		</div>
-																	</div>
-																	<div class="clearfix"></div>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div class="input-group">
-														<input type="text" id="input_msg_send" name="send-msg" class="input-msg-send form-control" placeholder="Type something">
-														<div class="input-group-btn emojis">
-															<div class="dropup">
-																<button type="button" class="btn  btn-default  dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-mood"></i></button>
-																<ul class="dropdown-menu dropdown-menu-right">
-																	<li><a href="javascript:void(0)">Action</a></li>
-																	<li><a href="javascript:void(0)">Another action</a></li>
-																	<li class="divider"></li>
-																	<li><a href="javascript:void(0)">Separated link</a></li>
-																</ul>
-															</div>
-														</div>
-														<div class="input-group-btn attachment">
-															<div class="fileupload btn  btn-default"><i class="zmdi zmdi-attachment-alt"></i>
-																<input type="file" class="upload">
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 
-							<div id="messages_tab" class="tab-pane fade" role="tabpanel">
-								<div class="message-box-wrap">
-									<div class="msg-search">
-										<a href="javascript:void(0)" class="inline-block txt-grey">
-											<i class="zmdi zmdi-more"></i>
-										</a>
-										<span class="inline-block txt-dark">messages</span>
-										<a href="javascript:void(0)" class="inline-block text-right txt-grey"><i class="zmdi zmdi-search"></i></a>
-										<div class="clearfix"></div>
-									</div>
-									<div class="set-height-wrap">
-										<div class="streamline message-box nicescroll-bar">
-											<a href="javascript:void(0)">
-												<div class="sl-item unread-message">
-													<div class="sl-avatar avatar avatar-sm avatar-circle">
-														<img class="img-responsive img-circle" src="dist/img/user.png" alt="avatar" />
-													</div>
-													<div class="sl-content">
-														<span class="inline-block capitalize-font   pull-left message-per">Clay Masse</span>
-														<span class="inline-block font-11  pull-right message-time">12:28 AM</span>
-														<div class="clearfix"></div>
-														<span class=" truncate message-subject">Themeforest message sent via your envato market profile</span>
-														<p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsu messm quia dolor sit amet,
-															consectetur, adipisci velit</p>
-													</div>
-												</div>
-											</a>
-											<a href="javascript:void(0)">
-												<div class="sl-item">
-													<div class="sl-avatar avatar avatar-sm avatar-circle">
-														<img class="img-responsive img-circle" src="dist/img/user1.png" alt="avatar" />
-													</div>
-													<div class="sl-content">
-														<span class="inline-block capitalize-font   pull-left message-per">Evie Ono</span>
-														<span class="inline-block font-11  pull-right message-time">1 Feb</span>
-														<div class="clearfix"></div>
-														<span class=" truncate message-subject">Pogody theme support</span>
-														<p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-															adipisci velit</p>
-													</div>
-												</div>
-											</a>
-											<a href="javascript:void(0)">
-												<div class="sl-item">
-													<div class="sl-avatar avatar avatar-sm avatar-circle">
-														<img class="img-responsive img-circle" src="dist/img/user2.png" alt="avatar" />
-													</div>
-													<div class="sl-content">
-														<span class="inline-block capitalize-font   pull-left message-per">Madalyn Rascon</span>
-														<span class="inline-block font-11  pull-right message-time">31 Jan</span>
-														<div class="clearfix"></div>
-														<span class=" truncate message-subject">Congratulations from design nominees</span>
-														<p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-															adipisci velit</p>
-													</div>
-												</div>
-											</a>
-											<a href="javascript:void(0)">
-												<div class="sl-item unread-message">
-													<div class="sl-avatar avatar avatar-sm avatar-circle">
-														<img class="img-responsive img-circle" src="dist/img/user3.png" alt="avatar" />
-													</div>
-													<div class="sl-content">
-														<span class="inline-block capitalize-font   pull-left message-per">Ezequiel Merideth</span>
-														<span class="inline-block font-11  pull-right message-time">29 Jan</span>
-														<div class="clearfix"></div>
-														<span class=" truncate message-subject">Themeforest item support message</span>
-														<p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-															adipisci velit</p>
-													</div>
-												</div>
-											</a>
-											<a href="javascript:void(0)">
-												<div class="sl-item unread-message">
-													<div class="sl-avatar avatar avatar-sm avatar-circle">
-														<img class="img-responsive img-circle" src="dist/img/user4.png" alt="avatar" />
-													</div>
-													<div class="sl-content">
-														<span class="inline-block capitalize-font   pull-left message-per">Jonnie Metoyer</span>
-														<span class="inline-block font-11  pull-right message-time">27 Jan</span>
-														<div class="clearfix"></div>
-														<span class=" truncate message-subject">Help with beavis contact form</span>
-														<p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-															adipisci velit</p>
-													</div>
-												</div>
-											</a>
-											<a href="javascript:void(0)">
-												<div class="sl-item">
-													<div class="sl-avatar avatar avatar-sm avatar-circle">
-														<img class="img-responsive img-circle" src="dist/img/user.png" alt="avatar" />
-													</div>
-													<div class="sl-content">
-														<span class="inline-block capitalize-font   pull-left message-per">Priscila Shy</span>
-														<span class="inline-block font-11  pull-right message-time">19 Jan</span>
-														<div class="clearfix"></div>
-														<span class=" truncate message-subject">Your uploaded theme is been selected</span>
-														<p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-															adipisci velit</p>
-													</div>
-												</div>
-											</a>
-											<a href="javascript:void(0)">
-												<div class="sl-item">
-													<div class="sl-avatar avatar avatar-sm avatar-circle">
-														<img class="img-responsive img-circle" src="dist/img/user1.png" alt="avatar" />
-													</div>
-													<div class="sl-content">
-														<span class="inline-block capitalize-font   pull-left message-per">Linda Stack</span>
-														<span class="inline-block font-11  pull-right message-time">13 Jan</span>
-														<div class="clearfix"></div>
-														<span class=" truncate message-subject"> A new rating has been received</span>
-														<p class="txt-grey truncate">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-															adipisci velit</p>
-													</div>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div id="todo_tab" class="tab-pane fade" role="tabpanel">
-								<div class="todo-box-wrap">
-									<div class="add-todo">
-										<a href="javascript:void(0)" class="inline-block txt-grey">
-											<i class="zmdi zmdi-more"></i>
-										</a>
-										<span class="inline-block txt-dark">todo list</span>
-										<a href="javascript:void(0)" class="inline-block text-right txt-grey"><i class="zmdi zmdi-plus"></i></a>
-										<div class="clearfix"></div>
-									</div>
-									<div class="set-height-wrap">
-										<!-- Todo-List -->
-										<ul class="todo-list nicescroll-bar">
-											<li class="todo-item">
-												<div class="checkbox checkbox-default">
-													<input type="checkbox" id="checkbox01" />
-													<label for="checkbox01">Record The First Episode</label>
-												</div>
-											</li>
-											<li>
-												<hr class="light-grey-hr" />
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-pink">
-													<input type="checkbox" id="checkbox02" />
-													<label for="checkbox02">Prepare The Conference Schedule</label>
-												</div>
-											</li>
-											<li>
-												<hr class="light-grey-hr" />
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-warning">
-													<input type="checkbox" id="checkbox03" checked />
-													<label for="checkbox03">Decide The Live Discussion Time</label>
-												</div>
-											</li>
-											<li>
-												<hr class="light-grey-hr" />
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-success">
-													<input type="checkbox" id="checkbox04" checked />
-													<label for="checkbox04">Prepare For The Next Project</label>
-												</div>
-											</li>
-											<li>
-												<hr class="light-grey-hr" />
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-danger">
-													<input type="checkbox" id="checkbox05" checked />
-													<label for="checkbox05">Finish Up AngularJs Tutorial</label>
-												</div>
-											</li>
-											<li>
-												<hr class="light-grey-hr" />
-											</li>
-											<li class="todo-item">
-												<div class="checkbox checkbox-purple">
-													<input type="checkbox" id="checkbox06" checked />
-													<label for="checkbox06">Finish Infinity Project</label>
-												</div>
-											</li>
-											<li>
-												<hr class="light-grey-hr" />
-											</li>
-										</ul>
-										<!-- /Todo-List -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<!-- /Right Sidebar Menu -->
 
 
 
@@ -710,26 +287,26 @@
 																			<div class="col-md-3">
 																				<div class="form-group">
 																					<label class="bmd-label-floating">รหัสวิชา</label>
-																					<input type="text" name="userid" class="form-control" id="adduserid" value="" required="">
+																					<input type="text" name="userid" class="form-control" id="subjectId" value="" required="">
 																				</div>
 																			</div>
 																			<div class="col-md-3">
 																				<div class="form-group">
 																					<label class="bmd-label-floating">ชื่อวิชา</label>
-																					<input type="text" name="userid" class="form-control" id="addprrfname" value="" required="">
+																					<input type="text" name="userid" class="form-control" id="subjectName" value="" required="">
 																				</div>
 																			</div>
 																			<div class="col-md-3">
 																				<div class="form-group">
 																					<label class="bmd-label-floating">หน่วยกิตรวม</label>
-																					<input type="text" name="userFname" class="form-control" id="adduserFname" value="" required="">
+																					<input type="text" name="userFname" class="form-control" id="credit" value="" required="">
 
 																				</div>
 																			</div>
 																			<div class="col-md-3">
 																				<div class="form-group">
 																					<label class="bmd-label-floating">หนวยกิต</label>
-																					<input type="text" class="form-control" id="adduserLname" value="" required="">
+																					<input type="text" class="form-control" id="creditHour" value="" required="">
 
 																				</div>
 																			</div>
@@ -738,21 +315,21 @@
 																			<div class="col-md-6">
 																				<div class="form-group">
 																					<label class="bmd-label-floating">ทฤษฏี</label>
-																					<input type="text" class="form-control" id="addfaculty" value="" required="">
+																					<input type="text" class="form-control" id="tudsadee" value="" required="">
 
 																				</div>
 																			</div>
 																			<div class="col-md-6">
 																				<div class="form-group">
 																					<label class="bmd-label-floating">ปฏิบัติ</label>
-																					<input type="text" class="form-control" id="addmojor" value="" required="">
+																					<input type="text" class="form-control" id="prtibad" value="" required="">
 																				</div>
 																			</div>
 																		</div>
 
-																		
+
 																		<div class="modal-footer ">
-																			<button type="submit" class="btn btn-success btn-rounded" aria-hidden="false">Save</button>
+																			<button type="submit" class="btn btn-success btn-rounded" aria-hidden="false" onclick="subjectInsert()">Save</button>
 																			<button type="button" class="btn btn-default btn-rounded" data-dismiss="modal">Cancel</button>
 																		</div>
 																	</form>
@@ -777,19 +354,13 @@
 
 				</div>
 				<!-- Row -->
-			
-							
-						
-								
-								
-									
-										
-										
-				
-						
-									<!-- <img src="../assets_/dist/img/sweetalert/alert4.png" alt="alert" class="img-responsive model_img" id="sa-warning1">  -->
-									<!-- <a type="button" class="label label-danger "alt="alert" id="sa-warningteach">ปิด</a> -->
-									<a type="button" alt="alert" id="sa-warningteach"  class="label label-success ">เปิด</a>
+
+
+
+
+				<!-- <img src="../assets_/dist/img/sweetalert/alert4.png" alt="alert" class="img-responsive model_img" id="sa-warning1">  -->
+				<!-- <a type="button" class="label label-danger "alt="alert" id="sa-warningteach">ปิด</a> -->
+				<a type="button" alt="alert"  id="sa" class="label label-success ">เปิด</a>
 				<!-- Row -->
 				<div class="row">
 					<div class="col-sm-12">
@@ -839,11 +410,12 @@
 					</div>
 				</div>
 			</div>
+			
 			<!-- Footer -->
 			<footer class="footer container-fluid pl-30 pr-30">
 				<div class="row">
 					<div class="col-sm-12">
-						<p>2017 &copy; Elmer. Pampered by Hencework</p>
+						<p>Jook_D_Dook @kittiphong Aumphimai</p>
 					</div>
 				</div>
 			</footer>
@@ -896,31 +468,31 @@
 	<!-- Init JavaScript -->
 	<script src="../assets_/dist/js/init.js"></script>
 	<script src="../assets_/dist/js/dashboard3-data.js"></script>
-			<!-- Moment JavaScript -->
-			<script type="text/javascript" src="vendors/bower_components/moment/min/moment-with-locales.min.js"></script>
-		<!-- Bootstrap Colorpicker JavaScript -->
-		<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-			<!-- Select2 JavaScript -->
-			<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
-		<!-- Bootstrap Select JavaScript -->
-		<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-		<!-- Bootstrap Tagsinput JavaScript -->
-		<script src="vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+	<!-- Moment JavaScript -->
+	<script type="text/javascript" src="vendors/bower_components/moment/min/moment-with-locales.min.js"></script>
+	<!-- Bootstrap Colorpicker JavaScript -->
+	<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+	<!-- Select2 JavaScript -->
+	<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+	<!-- Bootstrap Select JavaScript -->
+	<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<!-- Bootstrap Tagsinput JavaScript -->
+	<script src="vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 	<!-- Bootstrap Touchspin JavaScript -->
 	<script src="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
-		<!-- Multiselect JavaScript -->
-		<script src="vendors/bower_components/multiselect/js/jquery.multi-select.js"></script>
-			<!-- Bootstrap Switch JavaScript -->
-			<script src="vendors/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
-		<!-- Bootstrap Datetimepicker JavaScript -->
-		<script type="text/javascript" src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-			<!-- Form Advance Init JavaScript -->
-			<script src="../assets_/dist/js/form-advance-data.js"></script>
-			<%@include file="../layout/layoutjs.jsp"%>
+	<!-- Multiselect JavaScript -->
+	<script src="vendors/bower_components/multiselect/js/jquery.multi-select.js"></script>
+	<!-- Bootstrap Switch JavaScript -->
+	<script src="vendors/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+	<!-- Bootstrap Datetimepicker JavaScript -->
+	<script type="text/javascript" src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<!-- Form Advance Init JavaScript -->
+	<script src="../assets_/dist/js/form-advance-data.js"></script>
+	<%@include file="../layout/layoutjs.jsp"%>
 </body>
 <script>
-$(document).ready(function() {
-	
+	$(document).ready(function () {
+
 
 		$.ajax({
 			type: "GET",
@@ -930,24 +502,25 @@ $(document).ready(function() {
 			dataType: 'json',
 
 			success: function (msg) {
-			//	var tfood = 0;
+				//	var tfood = 0;
 				var table1 = "";
-			//	var sumtarm = 0;
-			//	var tarm, tarHo = 0,
+				//	var sumtarm = 0;
+				//	var tarm, tarHo = 0,
 				//	sumsrry = 0;
-				
+
 				for (var i = 0; i < msg.length; i++) {
-				//	tarm = msg[i].basecram;
-				//	//	sumtarm=parseInt(tarm);
-				//	tfood = (tfood + tarm);
-				//	tarHo += msg[i].baseHour;
-				//	sumsrry += msg[i].salarySum;
-				var  status="1";
-			if (msg[i].statusSubjeact==status) {
-				status='<span class="label label-success ">เปิด</span>';
-			} else {
-				status='<span class="label label-danger ">ปิด</span>';
-			}
+					//	tarm = msg[i].basecram;
+					//	//	sumtarm=parseInt(tarm);
+					//	tfood = (tfood + tarm);
+					//	tarHo += msg[i].baseHour;
+					//	sumsrry += msg[i].salarySum;
+					var status = "1";
+					if (msg[i].statusSubjeact == status) {
+						// status = '<a class="label label-success " id="sa-warningteach">เปิด</a>';
+						status='<a type="button" alt="alert" id="sa-warningteach" class="label label-success ">เปิด</a>';
+					} else {
+						status = '<a class="label label-danger ">ปิด</a>';
+					}
 					table1 +=
 						'<tr>' +
 						'<td>' + msg[i].subjectId + '</td>' +
@@ -956,17 +529,17 @@ $(document).ready(function() {
 						'<td>' + msg[i].creditHour + '</td>' +
 						'<td>' + msg[i].tudsadee + '</td>' +
 						'<td>' + msg[i].prtibad + '</td>' +
-						'<td>'+status+'</td>'+
+						'<td>' + status + '</td>' +
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
 						'</tr>';
 				}
-			//	if (tfood < tarm) {
-			//		tfood += "  ฐานไม่พอ";
-			//	}
+				//	if (tfood < tarm) {
+				//		tfood += "  ฐานไม่พอ";
+				//	}
 				$('#sujectTable tbody').append(table1);
-			//	$('#tfood').append(tfood);
-		//		$('#tarHo').append(tarHo);
-			//	$('#sumsrry').append("");
+				//	$('#tfood').append(tfood);
+				//		$('#tarHo').append(tarHo);
+				//	$('#sumsrry').append("");
 				//	$('#Table1 tfood').append(tfood);
 				//	$("#Table1 tbody tr:odd").addClass("info");
 				//	$("#Table1 tbody tr:even").addClass("success");
@@ -976,40 +549,79 @@ $(document).ready(function() {
 				console.log("ERROR: Table1", e);
 			}
 		});
-});
+	});
 </script>
 <script>
-/*SweetAlert Init*/
+	/*SweetAlert Init*/
 
-$(function() {
-	"use strict";
-	
-	var SweetAlert = function() {};
+	$(function () {
+		"use strict";
 
-    //examples 
-    SweetAlert.prototype.init = function() {
-   
-    //Warning Message
-    $('#sa-warningteach,.sa-warningteach').on('click',function(e){
-	    swal({   
-            title: "คุณแน่ใจไหม?",   
-            text: "คุณต้องการเปลียนสถานะวิชาหรือไม่",   
-            type: "warning",   
-            showCancelButton: true,   
-            confirmButtonColor: "#f8b32d",   
-            confirmButtonText: "YES",   
-            closeOnConfirm: false 
-        }, function(){   
-            swal("เรียบร้อย", "สถานะได้ถูกเปลียนแล้ว", "success"); 
-        });
-		return false;
-    });
+		var SweetAlert = function () {};
 
-    },
-    //init
-    $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert;
-	
-	$.SweetAlert.init();
-});
+		//examples 
+		SweetAlert.prototype.init = function () {
+
+				//Warning Message
+				 $('#sa,.sa').on('click', function (e) {
+				
+					swal({
+						title: "คุณแน่ใจไหม?",
+						text: "คุณต้องการเปลียนสถานะวิชาหรือไม่",
+						type: "warning",
+						showCancelButton: true,
+						confirmButtonColor: "#f8b32d",
+						confirmButtonText: "YES",
+						closeOnConfirm: false,
+						if () {
+							alert("YYYYYY");
+						}
+					}, function () {
+						swal("เรียบร้อย", "สถานะได้ถูกเปลียนแล้ว", "success");
+
+					});
+					return false;
+				});
+
+			},
+			//init
+			$.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert;
+
+		$.SweetAlert.init();
+	});
+		
 </script>
+<script>
+	function subjectInsert() {
+
+
+		var insertSubjech = {
+
+			subjectId: $('#subjectId').val(),
+			subjectName: $('#subjectName').val(),
+			credit: $('#credit').val(),
+			creditHour: $('#creditHour').val(),
+			tudsadee: $('#tudsadee').val(),
+			prtibad: $('#prtibad').val(),
+			// statusSubjeact: $('#statusSubjeact').val("1")
+		};
+		$.ajax({
+			type: "POST",
+			url: "/insertSubject",
+			contentType: "application/json; charset=utf-8",
+			data: JSON.stringify(insertSubjech),
+			dataType: "json",
+			success: function (msg) {
+				console.log(msg)
+				if (msg != null) {
+					location.reload();
+
+				}
+			}
+
+		});
+
+	}
+</script>
+
 </html>

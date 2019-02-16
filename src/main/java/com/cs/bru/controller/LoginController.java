@@ -47,7 +47,7 @@ public class LoginController {
 //				listtable =tableTeachingDAO.findById(userLog.getUserId());
 				
 			if(userLog.getUserId() != null && userLog.getUserPass() != null ) {
-				if (userLog.getPositionTeach().equals("U")) { 
+				if (userLog.getStatusLogin().equals("U")) { 
 					
 				
 					request.getSession().setAttribute("loginUser",userLog);

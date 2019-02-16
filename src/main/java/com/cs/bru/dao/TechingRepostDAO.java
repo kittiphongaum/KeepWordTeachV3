@@ -54,7 +54,7 @@ public class TechingRepostDAO {
 		  TechingRepost techingRepost = new TechingRepost();
 
 		try {
-			sql.append(" SELECT * FROM tb_teach_report WHERE teach_report_id = ?");
+			sql.append(" SELECT * FROM tb_teach_report WHERE user_report_fk = ?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 	
 			prepared.setString(1,userId);
@@ -84,6 +84,47 @@ public class TechingRepostDAO {
 		}
 
 		return techingRepost;
+	}
+	//listId
+	public List<TechingRepost> findlistId(String userId) {
+
+		ConnectDB con = new ConnectDB();
+		PreparedStatement prepared = null;
+		StringBuilder sql = new StringBuilder();
+		List<TechingRepost> list =new ArrayList<>();
+		  
+
+		try {
+			sql.append(" SELECT * FROM tb_teach_report WHERE user_report_fk = ?");
+			prepared = con.openConnect().prepareStatement(sql.toString());
+	
+			prepared.setString(1,userId);
+	
+			ResultSet rs = prepared.executeQuery();
+		
+			while (rs.next()) {
+				TechingRepost techingRepost = new TechingRepost();
+				
+				techingRepost.setTeachReportId(rs.getString("teach_report_id"));
+				techingRepost.setResumPst(rs.getInt("resum_pst"));
+				techingRepost.setResumTsd(rs.getInt("resum_tsd"));
+				techingRepost.setRepostSum(rs.getInt("repost_sum"));
+				techingRepost.setUserepRortFK(rs.getString("user_report_fk"));
+				techingRepost.setDateteachFK(rs.getString("dateteach_fk"));
+				techingRepost.setTeachingFk(rs.getString("teaching_fk"));
+
+				
+				
+				list.add(techingRepost);
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		return list;
 	}
 	// update
 			public void update(TechingRepost bean) {

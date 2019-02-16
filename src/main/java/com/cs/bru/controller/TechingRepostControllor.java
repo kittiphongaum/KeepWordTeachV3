@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,12 +31,15 @@ public class TechingRepostControllor {
 
 	// fileByid
 	@GetMapping("/TechingRepost/{id}")
-	public TechingRepost TechingRepostfileByid(@PathVariable String id) {
-		TechingRepost list = new TechingRepost();
-		list = techingRepostDAO.findOne(id);
+	public List<TechingRepost> TechingRepostfileByid(@PathVariable String id) {
+		List<TechingRepost> list = new ArrayList<>();
+		list = techingRepostDAO.findlistId(id);
 		return list;
 	}
-
+	public TechingRepost hitoryFileId() {
+		
+		return null;
+	}
 	// update
 	@RequestMapping(value = "/TechingRepostfile", method = RequestMethod.POST)
 	public TechingRepost update(Model model, @RequestBody TechingRepost userUpdate) {
@@ -51,14 +55,20 @@ public class TechingRepostControllor {
 	}
 
 	// insert
-	@RequestMapping("/insertTechingRepost")
-	public String insertTechingRepost(@RequestBody TechingRepost insert) {
+	@PostMapping(value="/insertTechingRepost")
+	public TechingRepost insertTechingRepost(@RequestBody TechingRepost insertTableAsRepost) {
 		try {
-			techingRepostDAO.insertTechingRepost(insert);
+			
+			//techingRepostDAO.insertTechingRepost(insertTableAsRepost);
+			//System.out.println(insertTableAsRepost);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "user";
+			
+		return insertTableAsRepost;
 	}
+	//historyteach
+	
+
 }

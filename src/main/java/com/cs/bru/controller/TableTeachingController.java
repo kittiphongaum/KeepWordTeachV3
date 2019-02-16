@@ -135,11 +135,6 @@ public class TableTeachingController {
 	
 		 return list;
 	}
-	@RequestMapping("/ho")
-	public List<HolidayTh>listHo(){
-	List<HolidayTh>list =new ArrayList<>();
-	list=holidayDAO.holidayThFile();
-	return list;
-} 
+	
 	
 }

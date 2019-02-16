@@ -68,7 +68,7 @@
 				<div class="nav-header pull-left">
 					<div class="logo-wrap">
 						<a href="index1">
-							<img class="brand-img" src="" alt="brand" />
+							<img class="brand-img" src="../assets_/dist/img/logo.png" alt="brand" />
 							<span class="brand-text">KeepWork</span>
 						</a>
 					</div>
@@ -370,8 +370,6 @@
 																							<div class="col-sm-8">
 
 																								<select id="termYear" class="form-control " name="termYear">
-
-																								
 																									<option value="2561">2561</option>
 																									<option value="2560">2560</option>
 																									<option value="2560">2559</option>

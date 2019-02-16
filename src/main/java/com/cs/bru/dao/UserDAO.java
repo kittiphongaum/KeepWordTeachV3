@@ -54,6 +54,7 @@ public class UserDAO  {
 				bean.setUserLname(rs.getString("user_lastname"));
 				bean.setPositionTeach(rs.getString("position_teach"));
 				bean.setFaculty(rs.getString("faculty"));
+				bean.setStatusLogin(rs.getString("status_login"));
 				
 				a = bean.getUserId();
 			
@@ -76,7 +77,7 @@ public class UserDAO  {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_user (user_id,user_pass,user_name,user_lastname,position_teach,faculty,mojor,baseHour,baseKrm) VALUES(?,?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_user (user_id,user_pass,user_name,user_lastname,position_teach,faculty,mojor,baseHour,baseKrm,status_login) VALUES(?,?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getUserId());
 			prepared.setString(2, bean.getUserPass());
@@ -87,7 +88,7 @@ public class UserDAO  {
 			prepared.setString(7, bean.getMojor());
 			prepared.setInt(8, bean.getBaseHour());
 			prepared.setInt(9, bean.getBaseKrm());
-			
+			prepared.setString(10, bean.getStatusLogin());
 
 			prepared.executeUpdate();
 			/* System.out.println("sssssssss"); */
@@ -120,7 +121,7 @@ public class UserDAO  {
 				user.setMojor(rs.getString("mojor"));
 				user.setBaseHour(rs.getInt("baseHour"));
 				user.setBaseKrm(rs.getInt("baseKrm"));
-				
+				user.setStatusLogin(rs.getString("status_login"));
 				
 				list.add(user);
 			}
@@ -157,6 +158,7 @@ public class UserDAO  {
 				user.setMojor(rs.getString("mojor"));
 				user.setBaseHour(rs.getInt("baseHour"));
 				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setStatusLogin(rs.getString("status_login"));
 				list.add(user);
 				/*System.out.println(Subject);*/
 			}
@@ -192,6 +194,7 @@ public class UserDAO  {
 				bean.setMojor(rs.getString("mojor"));
 				bean.setBaseHour(rs.getInt("baseHour"));
 				bean.setBaseKrm(rs.getInt("baseKrm"));
+				bean.setStatusLogin(rs.getString("status_login"));
 				
 				/*System.out.println(bean);*/
 			}

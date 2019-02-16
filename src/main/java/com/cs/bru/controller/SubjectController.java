@@ -45,15 +45,16 @@ public class SubjectController {
 		return subject;
 	}
 		
-	@RequestMapping("/insertSubject")
-	   public String insertTeach(@RequestBody Subject insertSubjech) {
+	@RequestMapping(value="/insertSubject",method = RequestMethod.POST)
+	   public Subject insertTeach(@RequestBody Subject insertSubjech) {
 		   try {
+			   insertSubjech.setStatusSubjeact("1");
 			subjectDAO.insertSubject(insertSubjech);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		   return "insertSubject";
+		  return insertSubjech;
 	   }
 
 	

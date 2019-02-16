@@ -14,6 +14,7 @@ public class User {
 		private String mojor;
 		private int baseHour;
 		private int baseKrm;
+		private String statusLogin;
 		private Teach Teach;
 		
 		
@@ -108,6 +109,12 @@ public class User {
 		}
 		public void setPrefixName(String prefixName) {
 			this.prefixName = prefixName;
+		}
+		public String getStatusLogin() {
+			return statusLogin;
+		}
+		public void setStatusLogin(String statusLogin) {
+			this.statusLogin = statusLogin;
 		}
 		
 		

@@ -256,7 +256,7 @@ Integer a=0;
 								<div class="panel-wrapper collapse in">
 									<div class="panel-body">
 										<div class="table-wrap">
-											<table id="Table1" class="table table-hover table-bordered mb-0">
+											<table id="tebleRepostShow" class="table table-hover table-bordered mb-0">
 												<thead class="text-warning">
 														<tr>
 																<th rowspan="2">#</th>
@@ -268,14 +268,20 @@ Integer a=0;
 																<th rowspan="2">หมายเหตู</th>
 														</tr>
 												</thead>
-												<tbody></tbody>
+												<tbody>	
+												</tbody>
 											
 											</table>
 										</div>
 									</div>
 								</div>
-
+								<!-- <div class="row" id=mass></div>
+								<div class="text-center ">
+								<p class="text-danger">ไม่มีข้อมูล</p>
+								<p><a href="/keepword" class="text-primary" ><----กรุณาลงทะเบียนสอน-></a></p>
+							</div> -->
 							</div>
+							
 						</div>
 					</div>
 					<!-- /row -->
@@ -284,6 +290,7 @@ Integer a=0;
 
 	</div>
 </body>
+
 <!---------------------------------------- JavaScript ------------------------------------>
 
 <!-- jQuery -->
@@ -313,8 +320,7 @@ Integer a=0;
 <!-- Fancy Dropdown JS -->
 <script src="../assets_/dist/js/dropdown-bootstrap-extended.js"></script>
 
-<!-- Sparkline JavaScript -->
-<script src="../assets_/vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+	
 
 <!-- Owl JavaScript -->
 <script src="../assets_/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
@@ -335,4 +341,59 @@ Integer a=0;
 <script src="../assets_/dist/js/init.js"></script>
 <script src="../assets_/dist/js/dashboard5-data.js"></script>
 
+<script>
+		$(function () {
+			   var userid = $("#userRoleid").val();
+
+			   $.ajax({
+				   type: "GET",
+				   contentType: "application/json",
+				   url: "/TechingRepost/"+userid,
+				   dataType: 'json',
+				   success: function (msgTable) {
+					  
+						   var tebleRepost="";
+						   var tebleRepost1="";
+						  
+							
+					   for (var i = 0; i < msgTable.length; i++) {
+						   var num = i + 1;
+						   tebleRepost +=
+							   '<tr>' +
+							   '<td>' + num + '</td>' +
+							   '<td>' + msgTable[i].teachReportId +'</td>' +
+							   '<td>' + msgTable[i].resumPst + '</td>' +
+							   '<td>' + msgTable[i].resumTsd+ '</td>' +
+							   '<td>' + msgTable[i].repostSum+ '</td>' +
+							   '<td>' + msgTable[i].userepRortFK + '</td>' +
+							   '<td>' + msgTable[i].dateteachFK + '</td>' +
+							  '<td>' +  '<button type="button" class="btn btn-primary btn-outline btn-icon left-icon" onclick="javascript:window.print();">'+
+											'<i class="fa fa-print"></i><span> Print</span>'+
+										'</button>' + '</td>' +
+							   '</tr>';
+				   
+					   }
+					   if (tebleRepost =="") {
+							tebleRepost +='<tr>'+
+									   '<td colspan="6">'+
+										   '<div class="text-center ">'+
+												   '<p class="text-danger">ไม่มีข้อมูล</p>'+
+													   '<p><a href="/keepword" class="text-primary" ><----กรุณาลงทะเบียนสอน---></a></p>'+
+													   '</div>'+
+													   '</td>'+
+											   '</tr>';
+						   } 
+						   $('#tebleRepostShow tbody').append(tebleRepost);
+	   
+					
+				   },
+				   error: function (e) {
+						alert("ERROR: tebleRepost",e);
+						console.log("ERROR: tebleRepost", e);
+				   }
+			   });
+	   });
+	   
+	   
+	   </script>
 </html>

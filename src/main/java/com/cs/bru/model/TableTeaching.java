@@ -28,6 +28,7 @@ public class TableTeaching {
 	private Subject subject;
 	private User user;
 	private Teach teach;
+	private DateofTeach dateofTeach;
 	public TableTeaching() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -201,6 +202,14 @@ public class TableTeaching {
 
 	public void setDegreeStuden(String degreeStuden) {
 		this.degreeStuden = degreeStuden;
+	}
+
+	public DateofTeach getDateofTeach() {
+		return dateofTeach;
+	}
+
+	public void setDateofTeach(DateofTeach dateofTeach) {
+		this.dateofTeach = dateofTeach;
 	}
 
 	

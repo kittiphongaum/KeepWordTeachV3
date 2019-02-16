@@ -15,7 +15,8 @@ public class Teach {
 	private String subjactFk;
 	private String tableteachFk;
 	private String userFk;
-
+	private int statusTeach;
+	private int statusTeaching;
 	
 	private DateofTeach dateofTeach;
 	private Subject subject;
@@ -128,6 +129,18 @@ public class Teach {
 	}
 	public void setBasecram(int basecram) {
 		this.basecram = basecram;
+	}
+	public int getStatusTeach() {
+		return statusTeach;
+	}
+	public void setStatusTeach(int statusTeach) {
+		this.statusTeach = statusTeach;
+	}
+	public int getStatusTeaching() {
+		return statusTeaching;
+	}
+	public void setStatusTeaching(int statusTeaching) {
+		this.statusTeaching = statusTeaching;
 	}
 	
 	

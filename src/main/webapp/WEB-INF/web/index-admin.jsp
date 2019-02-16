@@ -130,42 +130,21 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
 						</li>
 						<li class="dropdown auth-drp">
-							<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
-								 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
-							<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-								<li>
-									<a href="profile.html"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
-								</li>
-								<li>
-									<a href="#"><i class="zmdi zmdi-card"></i><span>my balance</span></a>
-								</li>
-								<li>
-									<a href="inbox.html"><i class="zmdi zmdi-email"></i><span>Inbox</span></a>
-								</li>
-								<li>
-									<a href="#"><i class="zmdi zmdi-settings"></i><span>Settings</span></a>
-								</li>
-								<li class="divider"></li>
-								<li class="sub-menu show-on-hover">
-									<a href="#" class="dropdown-toggle pr-0 level-2-drp"><i class="zmdi zmdi-check text-success"></i> available</a>
-									<ul class="dropdown-menu open-left-side">
-										<li>
-											<a href="#"><i class="zmdi zmdi-check text-success"></i><span>available</span></a>
-										</li>
-										<li>
-											<a href="#"><i class="zmdi zmdi-circle-o text-warning"></i><span>busy</span></a>
-										</li>
-										<li>
-											<a href="#"><i class="zmdi zmdi-minus-circle-outline text-danger"></i><span>offline</span></a>
-										</li>
-									</ul>
-								</li>
-								<li class="divider"></li>
-								<li>
-									<a href="#"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
-								</li>
-							</ul>
-						</li>
+							<li class="dropdown auth-drp">
+								<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png"
+										alt="user_auth" class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
+								<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+									<li>
+										<a href="./dataadmin-add"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
+									</li>
+									<li>
+										<a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log
+												Out</span></a>
+									</li>
+									<form name="logoutForm" action="/" method="post" th:hidden="true"></form>
+								</ul>
+							</li>
+							</li>
 					</ul>
 				</div>
 			</nav>
@@ -802,347 +781,18 @@
 					<!-- /Row -->
 	
 					<!-- Row -->
-					<div class="row">
-						<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
-							<div class="panel card-view">
-								<div class="panel-heading small-panel-heading relative">
-									<div class="pull-left">
-										<h6 class="panel-title">Invoices</h6>
-									</div>
-									<div class="clearfix"></div>
-									<div class="head-overlay"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body row pa-0">
-										<div class="sm-data-box">
-											<div class="container-fluid">
-												<div class="row">
-													<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-														<span class="weight-500 uppercase-font block">due</span>
-														<span class="txt-dark block counter">$<span class="counter-anim">15678</span></span>
-													</div>
-													<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-														<span class="weight-500 uppercase-font block">overdue</span>
-														<span class="txt-dark block counter">$<span class="counter-anim">45678</span></span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel card-view">
-								<div class="panel-heading small-panel-heading relative">
-									<div class="pull-left">
-										<h6 class="panel-title">Monthly Revenue</h6>
-									</div>
-									<div class="clearfix"></div>
-									<div class="head-overlay"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body row pa-0">
-										<div class="sm-data-box">
-											<div class="container-fluid">
-												<div class="row">
-													<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-														<span class="block"><i class="zmdi zmdi-trending-up txt-success font-18 mr-5"></i><span class="weight-500 uppercase-font">growth</span></span>
-														<span class="txt-dark block counter">$<span class="counter-anim">15,678</span></span>
-													</div>
-													<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
-														<div id="sparkline_4" style="width: 100px; overflow: hidden; margin: 0px auto;"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default card-view">
-									<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">My Stats</h6>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-									<div class="panel-wrapper collapse in">
-										<div class="panel-body row">
-											<div class="">
-												<div class="pl-15 pr-15 mb-15">
-													<div class="pull-left">
-														<i class="zmdi zmdi-collection-folder-image inline-block mr-10 font-16"></i>
-														<span class="inline-block txt-dark">Active Projects</span>
-													</div>
-													<span class="inline-block txt-warning pull-right weight-500">12</span>
-													<div class="clearfix"></div>
-												</div>
-												<hr class="light-grey-hr mt-0 mb-15"/>
-												<div class="pl-15 pr-15 mb-15">
-													<div class="pull-left">
-														<i class="zmdi zmdi-format-list-bulleted inline-block mr-10 font-16"></i>
-														<span class="inline-block txt-dark">Task Pending</span>
-													</div>
-													<span class="inline-block txt-danger pull-right weight-500">23</span>
-													<div class="clearfix"></div>
-												</div>
-												<hr class="light-grey-hr mt-0 mb-15"/>
-												<div class="pl-15 pr-15 mb-15">
-													<div class="pull-left">
-														<i class="zmdi zmdi-ticket-star inline-block mr-10 font-16"></i>
-														<span class="inline-block txt-dark">Support Tickets</span>
-													</div>
-													<span class="inline-block txt-primary pull-right weight-500">43</span>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-						</div>
-	
-						<div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
-							<div class="panel panel-default card-view">
-								<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">Project Status</h6>
-									</div>
-									<div class="pull-right">
-										<a href="#" class="pull-left inline-block full-screen mr-15">
-											<i class="zmdi zmdi-fullscreen"></i>
-										</a>
-										<div class="pull-left inline-block dropdown">
-											<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-more-vert"></i></a>
-											<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>Update</a></li>
-												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>Edit</a></li>
-												<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-trash" aria-hidden="true"></i>Remove</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body row pa-0">
-										<div class="table-wrap">
-											<div class="table-responsive">
-											  <table class="table table-hover mb-0">
-												<thead>
-												  <tr>
-													<th>Task</th>
-													<th>Progress</th>
-													<th>Deadline</th>
-													</tr>
-												</thead>
-												<tbody>
-												  <tr>
-													<td>CMVM Digitisation of paper records</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-danger" style="width: 35%"></div>
-													  </div></td>
-													<td>Jan 18, 2017</td>
-	
-												  </tr>
-												  <tr>
-													<td>Data management plans</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-													  </div></td>
-													<td>Dec 1, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>REF readiness</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-success" style="width: 100%"></div>
-													  </div></td>
-													<td>Nov 12, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Storage Strategy</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-primary" style="width: 70%"></div>
-													  </div></td>
-													<td>Oct 9, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Network Infrastructure strategy</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-primary" style="width: 85%"></div>
-													  </div></td>
-													<td>Sept 2, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Flexible Server hosting</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-													  </div></td>
-													<td>August 11, 2015</td>
-	
-												  </tr>
-												   <tr>
-													<td>Virtual Desktop software access</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-													  </div></td>
-													<td>June 11, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Server hosting Issues</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-													  </div></td>
-													<td>August 11, 2016</td>
-	
-												  </tr>
-												  <tr>
-													<td>Cpanel Issues</td>
-													<td><div class="progress progress-xs mb-0 ">
-														<div class="progress-bar progress-bar-warning" style="width: 60%"></div>
-													  </div></td>
-													<td>Sep 11, 2016</td>
-	
-												  </tr>
-												</tbody>
-											  </table>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				
 					<!-- Row -->
 	
 					<!-- Row -->
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="panel panel-default card-view">
-								<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">customer support</h6>
-									</div>
-									<div class="pull-right">
-										<a href="#" class="pull-left inline-block full-screen">
-											<i class="zmdi zmdi-fullscreen"></i>
-										</a>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body row pa-0">
-										<div class="table-wrap">
-											<div class="table-responsive">
-												<table class="table display product-overview border-none" id="support_table">
-													<thead>
-														<tr>
-															<th>ticket ID</th>
-															<th>Customer</th>
-															<th>issue</th>
-															<th>Date</th>
-															<th>Status</th>
-															<th>Actions</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>#85457898</td>
-															<td>Jens Brincker</td>
-															<td>Elmer chart</td>
-															<td>Oct 27</td>
-															<td>
-																<span class="label label-primary">done</span>
-															</td>
-															<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
-														</tr>
-														<tr>
-															<td>#85457897</td>
-															<td>Mark Hay</td>
-															<td>PSD resolution</td>
-															<td>Oct 26</td>
-															<td>
-																<span class="label label-warning ">Pending</span>
-															</td>
-															<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
-														</tr>
-														<tr>
-															<td>#85457896</td>
-															<td>Anthony Davie</td>
-															<td>Cinnabar</td>
-															<td>Oct 25</td>
-															<td>
-																<span class="label label-primary">done</span>
-															</td>
-															<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
-														</tr>
-														<tr>
-															<td>#85457895</td>
-															<td>David Perry</td>
-															<td>Felix PSD</td>
-															<td>Oct 25</td>
-															<td>
-																<span class="label label-danger">pending</span>
-															</td>
-															<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
-														</tr>
-														<tr>
-															<td>#85457894</td>
-															<td>Anthony Davie</td>
-															<td>Beryl iphone</td>
-															<td>Oct 25</td>
-															<td>
-																<span class="label label-primary">done</span>
-															</td>
-															<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
-														</tr>
-														<tr>
-															<td>#85457893</td>
-															<td>Alan Gilchrist</td>
-															<td>Pogody button</td>
-															<td>Oct 22</td>
-															<td>
-																<span class="label label-warning ">Pending</span>
-															</td>
-															<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
-														</tr>
-														<tr>
-															<td>#85457892</td>
-															<td>Mark Hay</td>
-															<td>Beavis sidebar</td>
-															<td>Oct 18</td>
-															<td>
-																<span class="label label-primary">done</span>
-															</td>
-															<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
-														</tr>
-														<tr>
-															<td>#85457891</td>
-															<td>Sue Woodger</td>
-															<td>Pogody header</td>
-															<td>Oct 17</td>
-															<td>
-																<span class="label label-danger">pending</span>
-															</td>
-															<td><a href="javascript:void(0)" class="pr-10" data-toggle="tooltip" title="completed" ><i class="zmdi zmdi-check"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete"></i></a></td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				
 					<!-- /Row -->
 				</div>
 				<!-- Footer -->
 				<footer class="footer container-fluid pl-30 pr-30">
 					<div class="row">
 						<div class="col-sm-12">
-							<p>2017 &copy; Elmer. Pampered by Hencework</p>
+							<p>Jppk_D_Dook  @Kittiphong Aumphimai</p>
 						</div>
 					</div>
 				</footer>

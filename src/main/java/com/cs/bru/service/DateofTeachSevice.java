@@ -37,12 +37,12 @@ public class DateofTeachSevice {
 	@Autowired
 	TeachController teachCon;
 
-	public void keepword(@RequestBody TableTeaching insertTableTeaching,String ho) throws Exception {
+	public TableTeaching keepword(@RequestBody TableTeaching insertTableTeaching,String ho) throws Exception {
 
 		List<HolidayTh> holiTh=new ArrayList<>();
 		List<Teach> asList =new ArrayList<>();
 			
-		holiTh=holidayDAO.holidayThFile();
+		holiTh=holidayDAO.holidayThFileAll();
 		DateofTeach dFt=new DateofTeach();
 		
 //		------teach-----
@@ -64,7 +64,7 @@ public class DateofTeachSevice {
 			cal2.setTime(today2);
 			int a,b,c,i,j,k,l,sumTP = 0;
 			a = cal2.get(Calendar.WEEK_OF_YEAR);
-			b =cal.get(Calendar.WEEK_OF_YEAR);
+			b =cal.get(Calendar.WEEK_OF_YEAR)+543;
 			c = a - b;
 			System.out.println(c+1);
 			int f=1, tud =0, prt=0;
@@ -110,10 +110,10 @@ public class DateofTeachSevice {
 					ofteach.setHolidayDft("work");
 					System.out.println("work");
 					
-					sumTP=ofteach.getSummyhourDft()*insertTableTeaching.getStandardTeach();
+					sumTP=ofteach.getSummyhourDft()+insertTableTeaching.getStandardTeach();
 					System.out.println(sumTP);
 					//เงิน/ขั่วโมง
-					  sumhourtrme=sumhourtrme+sumTP;
+					  sumhourtrme+=sumTP;
 				}
 			 tud=tud+insertTableTeaching.getSubject().getTudsadee();
 				prt=prt+insertTableTeaching.getSubject().getPrtibad();
@@ -146,6 +146,6 @@ public class DateofTeachSevice {
 //				System.out.println("888888888");
 //			}
 			
-		
+		return insertTableTeaching;
 	}
 }

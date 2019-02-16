@@ -107,7 +107,7 @@ public class DateofTeachDAO {
 			PreparedStatement prepared = null;
 			StringBuilder sql = new StringBuilder();
 			try {
-				sql.append("UPDATE tb_dateofteach SET  money_dft=? statusbase =?  WHERE dateofteach_id = ?");
+				sql.append("UPDATE tb_dateofteach SET  money_dft=? ,statusbase =?  WHERE dateofteach_id = ?");
 				prepared = con.openConnect().prepareStatement(sql.toString());
 				prepared.setInt(1, bean.getMoneyDft());
 				prepared.setString(2, bean.getStatusBase());
@@ -118,6 +118,27 @@ public class DateofTeachDAO {
 			}
 
 		}// end method update
+		// update
+				public void updateTsdPtb(DateofTeach bean) {
+					ConnectDB con = new ConnectDB();
+					PreparedStatement prepared = null;
+					StringBuilder sql = new StringBuilder();
+					try {
+						sql.append("UPDATE tb_dateofteach SET  tudsadee_dft=? ,prtibad_dft =?,summyhour_dft=? ,status_dateofteach=? WHERE subject_dft = ?");
+						prepared = con.openConnect().prepareStatement(sql.toString());
+						prepared.setInt(1, bean.getTudsadeeDft());
+						prepared.setInt(2, bean.getPrtibadDft());
+						prepared.setInt(3, bean.getSummyhourDft());
+						prepared.setInt(4, bean.getStatusDateofteach());
+						prepared.setString(5, bean.getSubjectDft());
+						
+						prepared.executeUpdate();
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+
+				}// end method update
 		
 		// update
 				public void updateDay(DateofTeach bean) {
@@ -195,7 +216,7 @@ public class DateofTeachDAO {
 							teach.setSubjactFk(rs.getString("subject_fk"));
 							teach.setTableteachFk(rs.getString("tableteach_fk"));
 							teach.setUserFk(rs.getString("user_fk"));
-							
+							teach.setStatusTeaching(rs.getInt("status_teaching"));
 							TableTeaching tableteach = new TableTeaching();
 							Subject subject = new Subject();
 							User user =new User();
@@ -261,5 +282,136 @@ public class DateofTeachDAO {
 						e.printStackTrace();
 					}
 					return list;
+				}
+				
+				public   List<DateofTeach> fileList() {
+					List<DateofTeach> list = new ArrayList<>();
+					ConnectDB con = new ConnectDB();
+					PreparedStatement prepared = null;
+					StringBuilder sql = new StringBuilder();
+
+					try {
+						sql.append("SELECT * FROM tb_dateofteach WHERE  money_dft='1' and holiday_dft='work'and statusbase='2'and user_dft='u'");
+						prepared = con.openConnect().prepareStatement(sql.toString());
+//						prepared.setString(1,userid);
+//						prepared.setString(2,term);
+//						prepared.setString(3,year);
+//						prepared.setString(4,degree);
+						ResultSet rs = prepared.executeQuery();
+
+						while (rs.next()) {
+							DateofTeach day = new DateofTeach();
+							day.setDateofteachId(rs.getString("dateofteach_id"));
+							day.setWeekofyearDft(rs.getInt("weekofyear_dft"));
+							day.setDayofyearDft(rs.getString("dayofyear_dft"));
+							day.setMonthofyearDft(rs.getString("monthofyear_dft"));
+							day.setYearofteachDft(rs.getString("yearofteach_dft"));
+							day.setTudsadeeDft(rs.getInt("tudsadee_dft"));
+							day.setPrtibadDft(rs.getInt("prtibad_dft"));
+							day.setSummyhourDft(rs.getInt("summyhour_dft"));
+							day.setMoneyDft(rs.getInt("money_dft"));
+							day.setHolidayDft(rs.getString("holiday_dft"));
+							day.setStatusBase(rs.getString("statusbase"));
+							
+							day.setSubjectDft(rs.getString("subject_dft"));
+							day.setUserDft(rs.getString("user_dft"));
+							
+						
+							list.add(day);
+							
+						}
+
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+					return list;
+				}
+				public   List<DateofTeach> fileListByid(String userid ,String subjectId) {
+					List<DateofTeach> list = new ArrayList<>();
+					ConnectDB con = new ConnectDB();
+					PreparedStatement prepared = null;
+					StringBuilder sql = new StringBuilder();
+
+					try {
+						sql.append("SELECT * FROM tb_dateofteach WHERE  status_dateofteach='2' and holiday_dft='work'and statusbase='2'and user_dft=? and subject_dft=?");
+						prepared = con.openConnect().prepareStatement(sql.toString());
+						prepared.setString(1,userid);
+						prepared.setString(2,subjectId);
+//						prepared.setString(3,year);
+//						prepared.setString(4,degree);
+						ResultSet rs = prepared.executeQuery();
+
+						while (rs.next()) {
+							DateofTeach day = new DateofTeach();
+							day.setDateofteachId(rs.getString("dateofteach_id"));
+							day.setWeekofyearDft(rs.getInt("weekofyear_dft"));
+							day.setDayofyearDft(rs.getString("dayofyear_dft"));
+							day.setMonthofyearDft(rs.getString("monthofyear_dft"));
+							day.setYearofteachDft(rs.getString("yearofteach_dft"));
+							day.setTudsadeeDft(rs.getInt("tudsadee_dft"));
+							day.setPrtibadDft(rs.getInt("prtibad_dft"));
+							day.setSummyhourDft(rs.getInt("summyhour_dft"));
+							day.setMoneyDft(rs.getInt("money_dft"));
+							day.setStatusDateofteach(rs.getInt("status_dateofteach"));
+							day.setHolidayDft(rs.getString("holiday_dft"));
+							day.setStatusBase(rs.getString("statusbase"));
+							
+							day.setSubjectDft(rs.getString("subject_dft"));
+							day.setUserDft(rs.getString("user_dft"));
+							
+						
+							list.add(day);
+							
+						}
+
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+					return list;
+				}
+				
+				//หาวิชาจะเอาไปรวมทฤษฎี
+				public  List<DateofTeach> fileListSubjectByid(String subjectId) {
+					ConnectDB con = new ConnectDB();
+					PreparedStatement prepared = null;
+					StringBuilder sql = new StringBuilder();
+					
+					List<DateofTeach> list = new ArrayList<>();
+					try {
+						sql.append("SELECT * FROM tb_dateofteach WHERE subject_dft=?");
+						prepared = con.openConnect().prepareStatement(sql.toString());
+						prepared.setString(1,subjectId);
+//						prepared.setString(2,term);
+//						prepared.setString(3,year);
+//						prepared.setString(4,degree);
+						ResultSet rs = prepared.executeQuery();
+
+						while (rs.next()) {
+							DateofTeach day = new DateofTeach();
+							day.setDateofteachId(rs.getString("dateofteach_id"));
+							day.setWeekofyearDft(rs.getInt("weekofyear_dft"));
+							day.setDayofyearDft(rs.getString("dayofyear_dft"));
+							day.setMonthofyearDft(rs.getString("monthofyear_dft"));
+							day.setYearofteachDft(rs.getString("yearofteach_dft"));
+							day.setTudsadeeDft(rs.getInt("tudsadee_dft"));
+							day.setPrtibadDft(rs.getInt("prtibad_dft"));
+							day.setSummyhourDft(rs.getInt("summyhour_dft"));
+							day.setMoneyDft(rs.getInt("money_dft"));
+							day.setHolidayDft(rs.getString("holiday_dft"));
+							day.setStatusBase(rs.getString("statusbase"));
+							
+							day.setSubjectDft(rs.getString("subject_dft"));
+							day.setUserDft(rs.getString("user_dft"));
+							
+							list.add(day);
+						}
+
+					} catch (Exception e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
+					return  list;
 				}
 }

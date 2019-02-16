@@ -22,7 +22,7 @@ public class SubjectDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_subject (subject_id,subject_name,credit,credit_hour,tudsadee,prtibad) VALUES(?,?,?,?,?,?) ");
+					"INSERT INTO tb_subject (subject_id,subject_name,credit,credit_hour,tudsadee,prtibad,status_subject) VALUES(?,?,?,?,?,?,?) ");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getSubjectId());
 			prepared.setString(2, bean.getSubjectName());
@@ -30,7 +30,7 @@ public class SubjectDAO {
 			prepared.setString(4, bean.getCreditHour());
 			prepared.setInt(5, bean.getTudsadee());
 			prepared.setInt(6, bean.getPrtibad());
-
+			prepared.setString(7, bean.getStatusSubjeact());
 			prepared.executeUpdate();
 			/* System.out.println("sssssssss"); */
 		} catch (Exception e) {

@@ -12,6 +12,7 @@ public class DateofTeach {
 	private int summyhourDft ;
 	private int moneyDft;
 	private String statusBase;
+	private int statusDateofteach;
 	private String subjectDft;
 	private String holidayDft;
 	private String userDft;
@@ -134,6 +135,12 @@ public class DateofTeach {
 	}
 	public void setTeach(Teach teach) {
 		this.teach = teach;
+	}
+	public int getStatusDateofteach() {
+		return statusDateofteach;
+	}
+	public void setStatusDateofteach(int statusDateofteach) {
+		this.statusDateofteach = statusDateofteach;
 	}
 	
 	

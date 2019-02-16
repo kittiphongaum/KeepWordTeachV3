@@ -1,17 +1,19 @@
 package com.cs.bru.model;
 
 public class HolidayTh {
-	private int holidayId;
+	private String holidayId;
 	private int holidayDay;
 	private int holidayMonth;
 	private String holidayYear;
 	private String holidayDayofyear;
 	private String holidayRow;
+	private String locationHoli;
 	private HolidayBru holidayBrubean;
-	public int getHolidayId() {
+	
+	public String getHolidayId() {
 		return holidayId;
 	}
-	public void setHolidayId(int holidayId) {
+	public void setHolidayId(String holidayId) {
 		this.holidayId = holidayId;
 	}
 	public int getHolidayDay() {
@@ -50,5 +52,12 @@ public class HolidayTh {
 	public void setHolidayBrubean(HolidayBru holidayBrubean) {
 		this.holidayBrubean = holidayBrubean;
 	}
+	public String getLocationHoli() {
+		return locationHoli;
+	}
+	public void setLocationHoli(String locationHoli) {
+		this.locationHoli = locationHoli;
+	}
+	
 		
 }

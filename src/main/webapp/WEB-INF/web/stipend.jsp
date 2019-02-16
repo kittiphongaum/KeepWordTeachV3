@@ -72,7 +72,7 @@
 				<div class="nav-header pull-left">
 					<div class="logo-wrap">
 						<a href="index1">
-							<img class="brand-img" src="" alt="brand" />
+							<img class="brand-img" src="../assets_/dist/img/logo.png" alt="brand" />
 							<span class="brand-text">KeepWork</span>
 						</a>
 					</div>
@@ -148,19 +148,19 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
 					</li>
 					<li class="dropdown auth-drp">
-							<li class="dropdown auth-drp">
-									<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
-										 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
-									<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-										<li>
-											<a href="./user"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
-										</li>
-										<li>
-											<a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
-										</li>
-									<form name="logoutForm" action="/" method="post" th:hidden="true"></form>
-									</ul>
-								</li>
+					<li class="dropdown auth-drp">
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
+							 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
+						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+							<li>
+								<a href="./user"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
+							</li>
+							<li>
+								<a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
+							</li>
+							<form name="logoutForm" action="/" method="post" th:hidden="true"></form>
+						</ul>
+					</li>
 					</li>
 				</ul>
 			</div>
@@ -254,113 +254,111 @@
 				<!-- Row -->
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="panel panel-default card-view">
-
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body">
+					
 									<!-- <form id="example-form-jook"> -->
 									<!-- <h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">เพิ่มข้อมูลรายวิชา</span></h3> -->
-									<fieldset>
 
-										<div class="row">
-											<input type="hidden" id="teachId">
-											<input type="hidden" id="tebleTeachId">
 
-											<div class="container-fluid">
-												<div class="row">
-													<div class="col-sm-12">
-														<div class="panel panel-default card-view">
-															<div class="panel-heading">
-																<div class="pull-left">
-																	<h5 for="exampleCountry" class="control-label mb-10">บันทึกแบบการเบิก</h5>
-																</div>
-																<div class="clearfix"></div>
+									<div class="row">
+										<input type="hidden" id="teachId">
+										<input type="hidden" id="tebleTeachId">
+
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-sm-12">
+													<div class="panel panel-default card-view">
+														<div class="panel-heading">
+															<div class="pull-left">
+																<h5 for="exampleCountry" class="control-label mb-10">บันทึกแบบการเบิก</h5>
 															</div>
-															<div class="panel-wrapper collapse in">
-																<div class="panel-body">
-																	<div class="form-group">
-																		<div class="row">
-																		</div>
+															<div class="clearfix"></div>
+														</div>
+														<div class="panel-wrapper collapse in">
+															<div class="panel-body">
+																<div class="form-group">
+																	<div class="row">
 																	</div>
-
-																	<div class="form-group">
-																		<form>
-																			<div class="row">
-																				<div class="span1"></div>
-																				<div class="col-md-4 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ระดับนักศึกษา</label>
-																							<div class="col-sm-8">
-																								<!-- <input type="text" class="form-control" id="degreeStuden" placeholder=""> -->
-																								<select id="degreeS4" class="form-control " name="degreeStuden">
-																									<option value="1">ปริญญาตรี</option>
-																									<option value="2">ปริญญาโท</option>
-																									<option value="3">ปริญญาเอก</option>
-																								</select>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="col-md-3 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ปีการศึกษา</label>
-																							<div class="col-sm-8">
-																								<select id="yearS3" class="form-control " name="termYear">
-																									<option value=""></option>
-																									<option value="2561">2561</option>
-																									<option value="2560">2560</option>
-																									<option value="2560">2559</option>
-																									<option value="2558">2558</option>
-																									<option value="2557">2557</option>
-																								</select>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="span1"></div>
-																				<div class="col-md-2 col-xs-12">
-																					<div class="form-group">
-																						<div class="row">
-																							<label for="exampleInputuname_3" class="col-sm-6 control-label">ภาคเรียน</label>
-																							<div class="col-sm-6">
-																								<!-- <input type="text" class="form-control" id="teachTerm" placeholder=""> -->
-																								<select id="termS2" class="form-control " name="teachTerm">
-
-																									<option value="1 ">1</option>
-																									<option value="2">2</option>
-																									<option value="3">3</option>
-
-																								</select>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				<a type="submit" class="btn btn-success mr-10 pull-left" onclick="tableuteach()">
-																					<h6>ค้นหา</h6>
-																				</a>
-																			</div>
-																		</form>
-																	</div>
-
-
 																</div>
+
+																<div class="form-group">
+																	<form>
+																		<div class="row">
+																			<div class="span1"></div>
+																			<div class="col-md-4 col-xs-12">
+																				<div class="form-group">
+																					<div class="row">
+																						<label for="exampleInputuname_3" class="col-sm-4 control-label">ระดับนักศึกษา</label>
+																						<div class="col-sm-8">
+																							<!-- <input type="text" class="form-control" id="degreeStuden" placeholder=""> -->
+																							<select id="degreeS4" class="form-control " name="degreeStuden">
+																								<option value="1">ปริญญาตรี</option>
+																								<option value="2">ปริญญาโท</option>
+																								<option value="3">ปริญญาเอก</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="col-md-3 col-xs-12">
+																				<div class="form-group">
+																					<div class="row">
+																						<label for="exampleInputuname_3" class="col-sm-4 control-label">ปีการศึกษา</label>
+																						<div class="col-sm-8">
+																							<select id="yearS3" class="form-control " name="termYear">
+																								<option value=""></option>
+																								<option value="2561">2561</option>
+																								<option value="2560">2560</option>
+																								<option value="2560">2559</option>
+																								<option value="2558">2558</option>
+																								<option value="2557">2557</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="span1"></div>
+																			<div class="col-md-2 col-xs-12">
+																				<div class="form-group">
+																					<div class="row">
+																						<label for="exampleInputuname_3" class="col-sm-6 control-label">ภาคเรียน</label>
+																						<div class="col-sm-6">
+																							<!-- <input type="text" class="form-control" id="teachTerm" placeholder=""> -->
+																							<select id="termS2" class="form-control " name="teachTerm">
+
+																								<option value="1 ">1</option>
+																								<option value="2">2</option>
+																								<option value="3">3</option>
+
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<a type="submit" class="btn btn-success mr-10 pull-left" onclick="tableuteach()">
+																				<h6>ค้นหา</h6>
+																			</a>
+																		</div>
+																	</form>
+																</div>
+
+
 															</div>
 														</div>
 													</div>
-
 												</div>
 
 											</div>
-										</div>
 
-										<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="modal fade" id="exampleModal_UpdateDay" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
 											<div class="modal-dialog" role="document">
 												<div class="modal-content">
 													<div class="modal-header">
 														<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-														<h5 class="modal-title" id="exampleModalLabel1">แก้ใขวันหยุด</h5>
+														<h5 class="modal-title">แก้ใข วันเวลาทีสอน</h5>
 													</div>
 													<div class="modal-body">
 														<form>
@@ -368,43 +366,40 @@
 																<div class="row">
 																	<div class="col-md-12">
 																		<div class="form-group">
-																			<label class="control-label mb-10">เลือกสถานะวิชา</label>
-																			<select class="selectpicker" data-style="form-control btn-default btn-outline ">
-																				<option value="1">ปกติ</option>
-																				<option value="2">ใช้เบิกทั้งหมด</option>
-																				<option value="3">ใช้แบ่งหน่วย</option>
-																			</select>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="form-group">
-																<div class="row">
-																	<div class="col-md-12 col-xs-12">
-																		<div class="form-group">
-																			<div class="row">
-																				<label for="exampleInputuname_3" class="col-sm-6 control-label">ใช้เป็นฐาน/คาบ</label>
-																				<div class="col-sm-6">
-																					<input type="text" class="form-control" id="" placeholder="">
-																				</div>
+																			<label class="control-label mb-10">วันเวลา เดิม</label>
+																			<div class="col-sm-6">
+																				<input type="text" class="form-control" id="" placeholder="">
 																			</div>
 																		</div>
 																	</div>
+																</div>
+																<div class="form-group">
+																	<div class="row">
+																		<div class="col-md-12 col-xs-12">
+																			<div class="form-group">
+																				<div class="row">
+																					<label for="exampleInputuname_3" class="col-sm-6 control-label">เวลาที่ทำการเปลียน</label>
+																					<div class="col-sm-6">
+																						<input type="text" class="form-control" id="" placeholder="">
+																					</div>
+																				</div>
+																			</div>
+																		</div>
 
-																</div>
-																<div class="row">
-																	<div class="col-md-12 col-xs-12">
-																		<div class="form-group">
-																			<div class="row">
-																				<label for="exampleInputuname_3" class="col-sm-6 control-label">ใช้เบิก/หน่วยชั่วโมง</label>
-																				<div class="col-sm-6">
-																					<input type="text" class="form-control" id="" placeholder="">
+																	</div>
+																	<div class="row">
+																		<div class="col-md-12 col-xs-12">
+																			<div class="form-group">
+																				<div class="row">
+																					<label for="exampleInputuname_3" class="col-sm-6 control-label"></label>
+																					<div class="col-sm-6">
+																						<input type="text" class="form-control" id="" placeholder="">
+																					</div>
 																				</div>
 																			</div>
 																		</div>
 																	</div>
 																</div>
-															</div>
 														</form>
 													</div>
 													<div class="modal-footer">
@@ -414,9 +409,10 @@
 												</div>
 											</div>
 										</div>
+									</div>
 
+									<div class="row" id=mass></div>
 
-									</fieldset>
 
 									<div class="row">
 										<div class="col-sm-12">
@@ -429,8 +425,8 @@
 												</div>
 												<div class="panel-wrapper collapse in">
 													<div class="panel-body">
-														<div class="table-wrap">
-															<table id="Table1" class="table table-hover table-bordered mb-0">
+														<div class="table-wrap text-center">
+															<table id="Table1" class="table table-hover table-bordered mb-0 ">
 																<thead class="text-warning">
 																	<tr>
 																		<th scope="col">รหัสวิชา</th>
@@ -449,7 +445,8 @@
 																	<td colspan="5">รวม</td>
 																	<td scope="col" id="tfood"></td>
 																	<td scope="col" id="tarHo"></td>
-																	<td scope="col" id="sumsrry"></td>
+																	<td scope="col" ></td>
+																	<!-- id="sumsrry" -->
 																</thead>
 															</table>
 														</div>
@@ -459,11 +456,8 @@
 											</div>
 										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
+				
 				<!-- Row -->
 				<div class="row">
 					<div class="col-sm-12">
@@ -478,9 +472,9 @@
 								<div class="panel-body">
 									<div class="row">
 										<div class="col-md-12">
-											<div class="table-wrap">
+											<div class="table-wrap text-center">
 												<table id="Table2" class="table table-hover table-bordered mb-0">
-													<thead class="text-warning">
+													<thead class="text-warning ">
 														<tr>
 															<th scope="col">#</th>
 															<th scope="col">สัปดาห์ที่สอน</th>
@@ -488,7 +482,7 @@
 															<th scope="col">รายวิชา</th>
 															<th scope="col">ภาคทฤษฏี</th>
 															<th scope="col">ภาคปฏิบัติ</th>
-															<th scope="col">รวม</th>
+															<th scope="col" >รวม</th>
 
 															<th scope="col">หมายเหตู</th>
 														</tr>
@@ -497,12 +491,12 @@
 													<tbody>
 													</tbody>
 													<thead>
-															<td colspan="4">รวม</td>
-															<td scope="col" id="sumTsd"></td>
-															<td scope="col" id="sumPsb"></td>
-															<td scope="col"id="tableSum"></td>
-															<td scope="col"></td>
-															
+														<td colspan="4">รวม</td>
+														<td scope="col" id="sumTsd"></td>
+														<td scope="col" id="sumPsb"></td>
+														<td scope="col" id="tableSum"></td>
+														<td scope="col"></td>
+
 													</thead>
 
 												</table>
@@ -510,11 +504,188 @@
 										</div>
 
 									</div>
+
 								</div>
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary pull-right" onclick="insertTeachingfrom()">
+				</div>
+				<div class="row">
+						<div class="col-sm-12">
+							<div class="panel panel-default card-view">
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">จำนวนวิชาที่ขอเบิก</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="panel-wrapper collapse in">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="table-wrap text-center">
+													<table id="listSubject" class="table table-hover table-bordered mb-0">
+														<thead class="text-warning ">
+															<tr>
+																<th scope="col">#</th>
+																<th scope="col">ชื่อผู้สอน</th>
+																<th scope="col">รายวิชา</th>
+																<th scope="col">จำนวนทฤษฏี</th>
+																<th scope="col">จำนวนปฏิบัติ</th>
+																<th scope="col">จำนวนชั่วโมง</th>
+																<th scope="col">จำนวนเงิน/ชั่วโมง</th>
+																<th scope="col">รวมเงิน</th>
+
+															</tr>
+	
+														</thead>
+														<tbody>
+														</tbody>
+														<thead>
+															<td colspan="5">รวม</td>
+															<td scope="col" id="sumTsd"></td>
+															<td scope="col" id="sumPsb"></td>
+														
+														
+	
+														</thead>
+	
+													</table>
+												</div>
+											</div>
+	
+										</div>
+	
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<div class="row">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="panel panel-default card-view">
+									<div class="panel-heading">
+										<div class="pull-left">
+											<h5 for="exampleCountry" class="control-label mb-10">จำนวนเงินที่ขอเบิก</h5>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="panel-wrapper collapse in">
+										<div class="panel-body">
+											<div class="form-group">
+												<div class="row">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<form>
+													<div class="row">
+														<div class="span1"></div>
+														<div class="col-md-4 col-xs-12">
+															<div class="form-group">
+																<div class="row control-label">
+																	<label  class="col-sm-4 ">เวลาที่สอน</label>
+																	<div class="col-sm-2" id="show_sum_day_tsd">
+																		<input type="hidden" id="show_sum_day_tsd_fk" > 
+																	
+																	</div>
+																	<div class="col-sm-6">
+																		<p>หน่วยชั่วโมง(ทฤษฎี)</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-4 col-xs-12">
+															<div class="form-group">
+																<div class="row control-label">
+																	<p class="col-sm-6 ">อัตราหน่วยชั่วโมง(ทฤษฎี)</p>
+																	<div class="col-sm-4" id="stsus_base">
+																		<input type="hidden" id="stsus_base_fk" > 
+																	</div>
+																	<div class="col-sm-2 control-label">
+																		<p>บาท</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="span1"></div>
+														<div class="col-md-4 col-xs-12">
+															<div class="form-group">
+																<div class="row">
+																	<p class="col-sm-6 control-label">รวมเป็นเงิน</p>
+																	<div class="col-sm-4" id="show_sum_tsd">
+																	<input type="hidden" id="show_sum_tsd_fk" > 
+																	</div>
+																	<div class="col-sm-2 control-label">
+																		<p>บาท</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													
+													</div>
+													<div class="row control-label">
+														<div class="span1"></div>
+														<div class="col-md-4 col-xs-12">
+															<div class="form-group">
+																<div class="row">
+																	<p for="exampleInputuname_3" class="col-sm-4 ">เวลาที่สอน</p>
+																	<div class="col-sm-2"id="show_sum_day_ptb">
+																			<input type="hidden" id="show_sum_day_ptb_fk" > 
+																	</div>
+																	<div class="col-sm-6 ">
+																		<p>หน่วยชั่วโมง(ปฏิบัติ)</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-md-4 col-xs-12">
+															<div class="form-group">
+																<div class="row">
+																	<p class="col-sm-6 ">อัตราหน่วยชั่วโมง(ปฏิบัติ)</p>
+																	<div class="col-sm-4" id="stsus_base1">
+																		
+																	</div>
+																	<div class="col-sm-2 ">
+																		<p>บาท</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="span1"></div>
+														<div class="col-md-4 col-xs-12">
+															<div class="form-group">
+																<div class="row">
+																	<p class="col-sm-6 ">รวมเป็นเงิน</p>
+																	<div class="col-sm-4" id="show_sum_ptb">
+																			<input type="hidden" id="show_sum_ptb_fk" > 
+																	</div>
+																	<div class="col-sm-2 ">
+																		<p>บาท</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													
+													</div>
+												</form>
+											</div>
+
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+					<button type="submit" class="btn btn-primary pull-right" onclick="insertTableAsRepostfrom()">
 						<h4>บันทึก และ พิมพ์</h4>
 					</button>
 				</div>
@@ -686,14 +857,20 @@
 			yearS3: $("#yearS3").val(),
 			degreeS4: $("#degreeS4").val()
 		};
+		var show_sum_day_tsd_fk;
+		var mass__link;
+		var mass = "";
+		var show_standardTeach;
 		$.ajax({
 			type: "POST",
 			contentType: "application/json",
 			url: "/TeachOneSeachByid1",
+			//url: "/dateTest",
 			data: JSON.stringify(id1),
 			dataType: 'json',
 
 			success: function (msg) {
+				mass__link = msg;
 				var tfood = 0;
 				var table1 = "";
 				var sumtarm = 0;
@@ -701,15 +878,15 @@
 					sumsrry = 0;
 
 				for (var i = 0; i < msg.length; i++) {
-					tarm = msg[i].basecram;
-					//	sumtarm=parseInt(tarm);
-					tfood = (tfood + tarm);
-					tarHo += msg[i].baseHour;
-					sumsrry += msg[i].salarySum;
+				 	tarm = msg[i].basecram;
+				// 	//	sumtarm=parseInt(tarm);
+				 	tfood = (tfood + tarm);
+				 	tarHo += msg[i].baseHour;
+				 	sumsrry += msg[i].salarySum;
 					table1 +=
 						'<tr>' +
 						'<td>' + msg[i].tableTeaching.subject.subjectId + '</td>' +
-						'<td>' + msg[i].tableTeaching.subject.section + '</td>' +
+						'<td>' + msg[i].tableTeaching.section + '</td>' +
 						'<td>' + msg[i].tableTeaching.subject.credit + "(" + msg[i].tableTeaching.subject.creditHour + ")" + '</td>' +
 						'<td>' + msg[i].tableTeaching.studenNumber + '</td>' +
 						'<td>' + msg[i].tableTeaching.standardTeach + '</td>' +
@@ -718,17 +895,38 @@
 						'<td>' + msg[i].salarySum + '</td>' +
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
 						'</tr>';
+				 show_standardTeach= msg[i].tableTeaching.standardTeach;
+				
 				}
+				
 				if (tfood < tarm) {
-					tfood += "  ฐานไม่พอ";
+					tfood += "ฐานไม่พอ";
 				}
+				if (table1 == null) {
+					tfood = "";
+					tarHo = "";
+				}
+				
+
 				$('#Table1 tbody').append(table1);
+				
 				$('#tfood').append(tfood);
 				$('#tarHo').append(tarHo);
-				$('#sumsrry').append("");
+				$('#sumsrry').append(sumsrry);
+				var stsus_base='<p>'+show_standardTeach+'</p>';
+				$('#stsus_base_fk').val(show_standardTeach);
+				$('#stsus_base').append(stsus_base);
+				$('#stsus_base1').append(stsus_base);
 				//	$('#Table1 tfood').append(tfood);
 				//	$("#Table1 tbody tr:odd").addClass("info");
 				//	$("#Table1 tbody tr:even").addClass("success");
+				if (table1 == null) {
+					mass = '<div class="text-center ">' +
+						'<p class="text-danger">ไม่มีข้อมูล</p>' +
+						'<p><a href="/keepword" class="text-primary" ><----กรุณาลงทะเบียนสอน---></a></p>' +
+						'</div>';
+				}
+				$('#mass').append(mass);
 			},
 			error: function (e) {
 				alert("ERROR: Table1", e);
@@ -736,68 +934,181 @@
 			}
 		});
 		$.ajax({
-		type: "POST",
-		contentType: "application/json",
-		url: "/teachFoday",
-		data: JSON.stringify(id1),
-		dataType: 'json',
-		success: function (msg1) {
-			var table2 = "";
-			var tableSum = 0,sumPsb=0,sumTsd=0;
-			var hh = "";
-			var sumtsdp = 0,
-				tsd = 0,
-				tsd1 = 0,psb;
-			for (var i = 0; i < msg1.length; i++) {
-				var gg = i + 1;
-				var hol = "";
-				//sumtsdp=(msg1[i].tudsadeeDft+msg1[i].prtibadDft);
-				tsd1 = msg1[i].tudsadeeDft;
-				psb =msg1[i].prtibadDft;
-				hh = msg1[i].holidayDft;
-				// if (msg1[i].teach.basecram != 0) {
-				// 		tsd1 = (tsd-1);
-				// }
-				if (hh == "holiday") {
-					hol = "(วันหยุด)";
+			type: "POST",
+			contentType: "application/json",
+			url: "/teachFoday2",
+			data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg1) {
+			
+
+				var table2 = "";
+				var tableSum = 0,
+					sumPsb = 0,
+					sumTsd = 0;
+				var hh = "";
+				var sumtsdp = 0,
+					tsd = 0,
+					tsd1 = 0,
+					psb,sum_maney_tsd=0,sum_maney_ptb=0;
+
+
+				for (var i = 0; i < msg1.length; i++) {
+					var gg = i + 1;
+					var hol = "";
+					var _sum_tsd=0,_sum_ptb=0;
+					//sumtsdp=(msg1[i].tudsadeeDft+msg1[i].prtibadDft);
+					tsd1 = msg1[i].tudsadeeDft;
+					psb = msg1[i].prtibadDft;
+					hh = msg1[i].holidayDft;
+					// if (msg1[i].teach.basecram != 0) {
+					// 		tsd1 = (tsd-1);
+					// }
+					_sum_tsd=tsd1*msg1[i].teach.tableTeaching.standardTeach;
+					_sum_ptb=psb*msg1[i].teach.tableTeaching.standardTeach;
+					if (hh == "holiday") {
+						hol = "(วันหยุด)";
+					}
+					sumtsdp = msg1[i].summyhourDft;
+
+					table2 +=
+						'<tr>' +
+						'<td>' + gg + '</td>' +
+						'<td>' + msg1[i].weekofyearDft + '</td>' +
+						'<td>' + msg1[i].dayofyearDft + "/" + msg1[i].month.monthName + "/" + msg1[i].yearofteachDft + hol + '</td>' +
+						'<td>' + msg1[i].teach.tableTeaching.subject.subjectId + '</td>' +
+						'<td>' + tsd1 + '</td>' +
+						'<td>' + psb + '</td>' +
+						'<td>' + sumtsdp + '</td>' +
+						'<td>' + '<a data-target="#exampleModal_UpdateDay"  data-toggle="modal"' +
+						' class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></span>' +
+						'</a>' +
+						'</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+					sumTsd += tsd1;
+					sumPsb += msg1[i].prtibadDft;
+					tableSum += sumtsdp;
+				
+					sum_maney_tsd+=_sum_tsd;	
+					sum_maney_ptb +=_sum_ptb;
 				}
-				sumtsdp = tsd1 + psb;
-				sumtsdp=sumtsdp-1;
-				table2 +=
-					'<tr>' +
-					'<td>' + gg + '</td>' +
-					'<td>' + msg1[i].weekofyearDft + '</td>' +
-					'<td>' + msg1[i].dayofyearDft + "/" + msg1[i].month.monthName + "/" + msg1[i].yearofteachDft + hol + '</td>' +
-					'<td>' + msg1[i].teach.tableTeaching.subject.subjectId + '</td>' +
-					'<td>' + tsd1 + '</td>' +
-					'<td>' + psb + '</td>' +
-					'<td>' + sumtsdp + '</td>' +
-					'<td>' + '<a data-target="#exampleModal"  data-toggle="modal"' +
-					' class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></span>' +
-					'</a>' +
-					'</td>' +
-					// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
-					'</tr>';
-					sumTsd+=tsd1;
-					sumPsb+=msg1[i].prtibadDft;
-					tableSum+=sumtsdp;
-			}								
-			$('#Table2 tbody').append(table2);
-			$('#sumTsd').append(sumTsd);
-			$('#sumPsb').append(sumPsb);
-			$('#tableSum').append(tableSum);
-			//		$('#Table2 tfoot').append(table1);		
-		},
-		error: function (e) {
-			alert("ERROR: Table2", e);
-			console.log("ERROR: Table2", e);
-		}
-	});
+				if (table2 == null) {
+					sumTsd = "";
+					sumPsb = "";
+					tableSum = "";
+				}
+			
+				$('#Table2 tbody').append(table2);
+
+
+				var show_sum_day_tsd='<p>'+sumTsd+'</P>';
+				$('#show_sum_day_tsd').append(show_sum_day_tsd);
+				$('#show_sum_day_tsd_fk').val(sumTsd);
+				
+				var ptb_sum='<p>'+sumPsb+'</p>';
+				$('#show_sum_day_ptb').append(ptb_sum);
+				$('#show_sum_day_ptb_fk').val(ptb_sum);
+
+
+				var show_sum_tsd='<p>'+sum_maney_tsd+'</p>';
+				$('#show_sum_tsd').append(show_sum_tsd);
+				$('#show_sum_day_tsd_fk').val(show_sum_tsd);
+
+				var show_sum_ptb='<p>'+sum_maney_ptb+'</p>';
+				$('#show_sum_ptb').append(show_sum_ptb);
+				$('#show_sum_ptb_fk').val(show_sum_ptb);
+
+				$('#sumTsd').append(sumTsd);
+               
+				$('#sumPsb').append(sumPsb);
+				$('#tableSum').append(tableSum);
+				//		$('#Table2 tfoot').append(table1);	
+			//	var table3=""; 
+			//	var money_tsd="",money_ptb="";
+
+				// for (var index = 0; index < msg1.length; index++) {
+
+				// 	var subject_id= msg1[index].teach.subject.subjectId;
+					
+				// 	if (subject_id==) {
+						
+				// 	}
+
+				// 	table3+='<tr>' +
+				// 		'<td>' + gg + '</td>' +
+				// 		'<td>' + msg1[i].weekofyearDft + '</td>' +
+				// 		'<td>' + msg1[i].dayofyearDft + "/" + msg1[i].month.monthName + "/" + msg1[i].yearofteachDft + hol + '</td>' +
+				// 		'<td>' + msg1[i].teach.tableTeaching.subject.subjectId + '</td>' +
+				// 		'<td>' + tsd1 + '</td>' +
+				// 		'<td>' + psb + '</td>' +
+				// 		'<td>' + sumtsdp + '</td>' +
+				// 		'<td>' + '<a data-target="#exampleModal_UpdateDay"  data-toggle="modal"' +
+				// 		' class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></span>' +
+				// 		'</a>' +
+				// 		'</td>' +
+
+						
+				// 		'</tr>';
+				// 		money_tsd=
+				//}
+			
+				//$('#Table3 tbody').append(table3);
+			},
+			error: function (e) {
+				alert("ERROR: Table2", e);
+				console.log("ERROR: Table2", e);
+			}
+		});
+		$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: "/listDay",
+			data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (subjectSum) {
+			
+
+				var tableSunject = "";
+			
+
+
+				for (var i = 0; i < subjectSum.length; i++) {
+					var num = i + 1;
+				
+					tableSunject +=
+						'<tr>' +
+						'<td>' + num + '</td>' +
+						'<td>' + subjectSum[i].salaryuserFk + '</td>' +
+						'<td>' + subjectSum[i].salarySubjeatFk  + '</td>' +
+						'<td>' + subjectSum[i].salarySumTudsadee+ '</td>' +
+						'<td>' + subjectSum[i].sumTudsadeePrtibad+ '</td>' +
+						'<td>' + subjectSum[i].sumTudsadeePrtibad + '</td>' +
+						'<td>' + subjectSum[i].salaryStatus + '</td>' +
+						'<td>' + subjectSum[i].salaryStatus + '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+			
+				}
+				
+			
+				$('#listSubject tbody').append(tableSunject);
+
+			},
+			error: function (e) {
+				alert("ERROR: listSubject", e);
+				console.log("ERROR: listSubject", e);
+			}
+		});
+			
+		
+	
+		
+
 	};
-
-
 </script>
 <script>
+
 	$(function () {
 
 		$('#no1').keyup(function () {
@@ -831,52 +1142,41 @@
 	});
 </script>
 <script>
-		//insert
-		function insertTeachfrom() {
-		var insertTableTeaching = {
-		 	tebleTeachId: $('#tebleTeachId').val(),
-			teachTerm: $('#teachTerm').val(),
-	 		termYear: $('#termYear').val(),
-			teachWeek: $('#teachWeek').val(),
-			studenNumber: $('#studenNumber').val(),
-			section: $('#section').val(),
-			standardTeach: $('#standardTeach').val(),
-			startMonth: $('#startMonth').val(),
-			stopMonth: $('#stopMonth').val(),
-			teachYear: $('#teachYear').val(),
-			startTime: $('#startTime').val(),
-			stopTime: $('#stopTime').val(),
-			degreeStuden: $('#degreeStuden').val(),
-			sumHour: $('#data_hour').val(),
-			room:$('#room').val(),
-			userRoleid: $('#userRoleid').val(),
-			subjectRoleid: $('#subjectId').val(),
-		
-		subject :{
-			subjectId: $('#subjectId').val(),
-			subjectName: $('#subjectName').val(),
-			// credit: $('#credit').val(),
-			// creditHour: $('#creditHour').val(),
-			tudsadee: $('#tudsadee').val(),
-			prtibad: $('#prtibad').val()
-		}
-		}
+	//insert
+	function insertTableAsRepostfrom() {
+		var d = new Date();
+		var day = d.getDate();
+		var mouth = d.getMonth()+1;
+		var year = d.getFullYear()+543;
+		var idFk =$('#userRoleid').val()
+		var idAs = day+"/"+mouth+"/"+year+idFk
+		var insertTableAsRepost = {
+			teachReportId: (idAs),
+			resumPst: $('#resumPst').val(),
+			resumTsd: $('#resumTsd').val(),
+			repostSum: $('#repostSum').val(),
+			userepRortFK: $('#userepRortFK').val(),
+			dateteachFK: $('#dateteachFK').val(),
+			teachingFk: $('#teachingFk').val()	
+			}
+	
+					
+
+				
 		$.ajax({
 			type: "POST",
-			url: "/insertTableTeaching",
+			url: "/insertTechingRepost",
 			contentType: "application/json; charset=utf-8",
-			data: JSON.stringify(insertTableTeaching),
+			data: JSON.stringify(insertTableAsRepost),
 			dataType: "json",
 			success: function (msg) {
-				 console.log(msg)
-				if(msg !=null){
-					location.reload(); 
-				
-				}else{
+				console.log(msg)
+				if (msg != null) {
+					location.href ="/historyteach";
 
-				}
+				} 
 			},
-			
+
 			error: function () {
 
 			}
