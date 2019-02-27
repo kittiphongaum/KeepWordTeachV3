@@ -20,10 +20,16 @@
 	<!-- vector map CSS -->
 	<link href="../assets_/vendors/bower_components/jquery-wizard.js/css/wizard.css" rel="stylesheet" type="text/css" />
 
+		<!-- Data table CSS -->
+		<link href="../assets_/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+	<!-- Bootstrap Colorpicker CSS -->
+		<link href="./assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css"
+		rel="stylesheet" type="text/css" />
 	<!-- jquery-steps css -->
 	<link rel="stylesheet" href="../assets_/vendors/bower_components/jquery.steps/demo/css/jquery.steps.css">
 
-
+	<!-- switchery CSS -->
+	<link href="./assets_/vendors/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" type="text/css" />
 	<!-- <link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css"> -->
 	<!-- Data table CSS -->
 	<link href="../assets_/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -34,6 +40,8 @@
 
 	<!-- Custom CSS -->
 	<link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
+		<!--alerts CSS -->
+		<link href="./assets_/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
 	<style>
 
 		/*# sourceMappingURL=style.css.map */
@@ -191,7 +199,7 @@
 				</li>
 				<li>
 					<a class="active" href="./stipend" data-toggle="collapse" data-target="#app_dr">
-						<div class="pull-left"><i class="icon-share-alt mr-20"></i><span class="right-nav-text">จักการเบิกค่าสอน</span></div>
+						<div class="pull-left"><i class="ti-check-box mr-20"></i><span class="right-nav-text">จักการเบิกค่าสอน</span></div>
 						<div class="clearfix"></div>
 					</a>
 					<ul id="app_dr" class="collapse collapse-level-1">
@@ -443,7 +451,7 @@
 																<tbody></tbody>
 																<thead>
 																	<td colspan="5">รวม</td>
-																	<td scope="col" id="tfood"></td>
+																	<td scope="col" id="tfood" ></td>
 																	<td scope="col" id="tarHo"></td>
 																	<td scope="col" ></td>
 																	<!-- id="sumsrry" -->
@@ -530,11 +538,10 @@
 																<th scope="col">#</th>
 																<th scope="col">ชื่อผู้สอน</th>
 																<th scope="col">รายวิชา</th>
-																<th scope="col">จำนวนทฤษฏี</th>
-																<th scope="col">จำนวนปฏิบัติ</th>
 																<th scope="col">จำนวนชั่วโมง</th>
 																<th scope="col">จำนวนเงิน/ชั่วโมง</th>
 																<th scope="col">รวมเงิน</th>
+																<th scope="col">สถานะวิชา</th>
 
 															</tr>
 	
@@ -543,8 +550,8 @@
 														</tbody>
 														<thead>
 															<td colspan="5">รวม</td>
-															<td scope="col" id="sumTsd"></td>
-															<td scope="col" id="sumPsb"></td>
+															<td scope="col" id="formoney"></td>
+															<td scope="col" ></td>
 														
 														
 	
@@ -669,7 +676,19 @@
 																</div>
 															</div>
 														</div>
-													
+														<div class="col-md-6 col-xs-12">
+																<div class="form-group">
+																	<div class="row">
+																		<p class="col-sm-4 ">รวมเป็นเงินทั้งหมด</p>
+																	    <p  class="col-sm-6" id="formoney1"> </p>
+																	
+																		<div class="col-sm-2 ">
+																			<p>บาท</p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														
 													</div>
 												</form>
 											</div>
@@ -685,9 +704,12 @@
 					</div>
 				</div>
 
-					<button type="submit" class="btn btn-primary pull-right" onclick="insertTableAsRepostfrom()">
-						<h4>บันทึก และ พิมพ์</h4>
+					<button alt="alert"  id="s" type="button" class="btn btn-primary pull-right" onclick="insertTableAsRepostfrom()">
+						<h4>บันทึก</h4>
+						<!-- onclick="insertTableAsRepostfrom()" -->
 					</button>
+					<input type="hidden" id="Chckid" value="stsus_base">
+				
 				</div>
 				<!-- /Row -->
 				<!-- /Row -->
@@ -695,7 +717,7 @@
 			</div>
 
 		</div>
-		<input type="hidden" id="">
+		
 	</div>
 	<!-- Bootstrap Colorpicker CSS -->
 	<link href="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css"
@@ -792,7 +814,7 @@
 
 	<!-- Data table JavaScript -->
 	<script src="../assets_/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-
+	
 	<!-- Bootstrap Touchspin JavaScript -->
 	<script src="../assets_/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
 
@@ -812,8 +834,8 @@
 	<!-- Owl JavaScript -->
 	<script src="../assets_/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
 
-	<!-- Switchery JavaScript -->
-	<script src="../assets_/vendors/bower_components/switchery/dist/switchery.min.js"></script>
+	
+	
 
 	<!-- Init JavaScript -->
 	<script src="../assets_/dist/js/init.js"></script>
@@ -843,8 +865,18 @@
 	<script type="text/javascript" src="../assets_/vendors/bower_components/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 	<link href="../assets_/vendors/bower_components/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
 	<!-- Form-xeditable Init JavaScript -->
-
-
+		<!-- Sweet-Alert  -->
+		<script src="../assets_/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+		
+	
+		<!-- Sweet-Alert  -->
+		<script src="../assets_/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+		
+		<script src="../assets_/dist/js/sweetalert-data.js"></script>
+		
+	
+	
+	
 
 
 
@@ -893,6 +925,7 @@
 						'<td>' + msg[i].basecram + '</td>' +
 						'<td>' + msg[i].baseHour + '</td>' +
 						'<td>' + msg[i].salarySum + '</td>' +
+					
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
 						'</tr>';
 				 show_standardTeach= msg[i].tableTeaching.standardTeach;
@@ -940,7 +973,7 @@
 			data: JSON.stringify(id1),
 			dataType: 'json',
 			success: function (msg1) {
-			
+		
 
 				var table2 = "";
 				var tableSum = 0,
@@ -957,6 +990,7 @@
 					var gg = i + 1;
 					var hol = "";
 					var _sum_tsd=0,_sum_ptb=0;
+					alert(222);
 					//sumtsdp=(msg1[i].tudsadeeDft+msg1[i].prtibadDft);
 					tsd1 = msg1[i].tudsadeeDft;
 					psb = msg1[i].prtibadDft;
@@ -1063,29 +1097,29 @@
 		$.ajax({
 			type: "POST",
 			contentType: "application/json",
-			url: "/listDay",
+			url: "/FileBylistIdSETstatus",
 			data: JSON.stringify(id1),
 			dataType: 'json',
 			success: function (subjectSum) {
 			
 
 				var tableSunject = "";
-			
+			var formoney=0;
 
 
 				for (var i = 0; i < subjectSum.length; i++) {
 					var num = i + 1;
-				
+					formoney+=subjectSum[i].setstatusSubjectMoney;
 					tableSunject +=
 						'<tr>' +
 						'<td>' + num + '</td>' +
-						'<td>' + subjectSum[i].salaryuserFk + '</td>' +
-						'<td>' + subjectSum[i].salarySubjeatFk  + '</td>' +
-						'<td>' + subjectSum[i].salarySumTudsadee+ '</td>' +
-						'<td>' + subjectSum[i].sumTudsadeePrtibad+ '</td>' +
-						'<td>' + subjectSum[i].sumTudsadeePrtibad + '</td>' +
-						'<td>' + subjectSum[i].salaryStatus + '</td>' +
-						'<td>' + subjectSum[i].salaryStatus + '</td>' +
+						'<td>' + subjectSum[i].user.prefixName +" "+subjectSum[i].user.userFname+" "+subjectSum[i].user.userLname+'</td>' +
+						'<td>' + subjectSum[i].setstatusSubId  + '</td>' +
+						'<td>' + subjectSum[i].setstatusSubjectHour+ '</td>' +
+						'<td>' + subjectSum[i].setstatusSubjectBase+ '</td>' +
+						'<td>' + subjectSum[i].setstatusSubjectMoney + '</td>' +
+						'<td>' + subjectSum[i].statusSubjectbean.statusSubjectName + '</td>' +
+					
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
 						'</tr>';
 			
@@ -1094,10 +1128,12 @@
 			
 				$('#listSubject tbody').append(tableSunject);
 
+				$('#formoney').append(formoney)
+				$('#formoney1').append(formoney)
 			},
 			error: function (e) {
-				alert("ERROR: listSubject", e);
-				console.log("ERROR: listSubject", e);
+				alert("ERROR: table3", e);
+				console.log("ERROR: table3", e);
 			}
 		});
 			
@@ -1144,26 +1180,28 @@
 <script>
 	//insert
 	function insertTableAsRepostfrom() {
-		var d = new Date();
+
+		var idchek=$('#stsus_base_fk').val();
+	if (idchek !=0) {
+		swal({   
+			title: "เรียบร้อย",   
+             type: "success", 
+			text: "ระบบได้ทำการบันทึกแล้ว",
+			confirmButtonColor: "#4aa23c"},
+			function(){ 
+			var d = new Date();
 		var day = d.getDate();
 		var mouth = d.getMonth()+1;
 		var year = d.getFullYear()+543;
-		var idFk =$('#userRoleid').val()
-		var idAs = day+"/"+mouth+"/"+year+idFk
-		var insertTableAsRepost = {
-			teachReportId: (idAs),
-			resumPst: $('#resumPst').val(),
-			resumTsd: $('#resumTsd').val(),
-			repostSum: $('#repostSum').val(),
-			userepRortFK: $('#userepRortFK').val(),
-			dateteachFK: $('#dateteachFK').val(),
-			teachingFk: $('#teachingFk').val()	
-			}
-	
-					
-
-				
-		$.ajax({
+		var idFk =$('#userRoleid').val();
+		var idAs = (day+"/"+mouth+"/"+year+idFk);
+			var insertTableAsRepost = {
+			useridS1: $("#userRoleid").val(),
+			termS2: $("#termS2").val(),
+			yearS3: $("#yearS3").val(),
+			degreeS4: $("#degreeS4").val()
+		};
+				$.ajax({
 			type: "POST",
 			url: "/insertTechingRepost",
 			contentType: "application/json; charset=utf-8",
@@ -1178,11 +1216,98 @@
 			},
 
 			error: function () {
-
 			}
 		});
-
+			
+        });
+		
+	} else {
+		swal({   
+            title: "การุณากรอกข้อมูแล้วกดค้นหา",   
+            text: "เพื่อตรวจสอบความถูกต้อง",   
+            timer: 3000,   
+            showConfirmButton: false 
+        });
+		
 	}
+					
+
+				
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: "/insertTechingRepost",
+	// 		contentType: "application/json; charset=utf-8",
+	// 		data: JSON.stringify(insertTableAsRepost),
+	// 		dataType: "json",
+	// 		success: function (msg) {
+	// 			console.log(msg)
+	// 			if (msg != null) {
+	// 				location.href ="/historyteach";
+
+	// 			} 
+	// 		},
+
+	// 		error: function () {
+	// 		}
+	// 	});
+
+	 }
+
+</script>
+<script>
+	$(function () {
+		"use strict";
+
+		var SweetAlert = function () {};
+
+		//examples 
+		SweetAlert.prototype.init = function () {
+
+				//Warning Message
+				 $('#sa,.sa').on('click', function (e) {
+				
+					swal({
+						title: "คุณแน่ใจไหม?",
+						text: "คุณต้องการเปลียนสถานะวิชาหรือไม่",
+						type: "warning",
+						showCancelButton: true,
+						confirmButtonColor: "#f8b32d",
+						confirmButtonText: "YES",
+						closeOnConfirm: false,
+					
+					}, function () {
+						swal("เรียบร้อย", "สถานะได้ถูกเปลียนแล้ว", "success");
+
+					});
+					return false;
+				});
+
+			},
+			//init
+			$.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert;
+
+		$.SweetAlert.init();
+	});
+	 //Auto Close Timer
+	 $('#msg-close').on('click',function(e){
+        swal({   
+            title: "Auto close alert!",   
+            text: "I will close in 2 seconds.",   
+            timer: 2000,   
+            showConfirmButton: false 
+        });
+		return false;
+    });
+	 //Success Message
+	 $('#msg-success').on('click',function(e){
+        swal({   
+			title: "good job!",   
+             type: "success", 
+			text: "Lorem ipsum dolor sit amet",
+			confirmButtonColor: "#4aa23c",   
+        });
+		return false;
+    });
 </script>
 
 </html>

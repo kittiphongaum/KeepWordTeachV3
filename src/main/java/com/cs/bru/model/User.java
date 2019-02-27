@@ -1,5 +1,8 @@
 package com.cs.bru.model;
 
+import javax.persistence.Entity;
+
+
 public class User {
 	
 	

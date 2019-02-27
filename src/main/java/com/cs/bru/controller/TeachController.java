@@ -21,6 +21,7 @@ import com.cs.bru.bean.TeachSeachBean1;
 import com.cs.bru.dao.DateTimeDAO;
 import com.cs.bru.dao.DateofTeachDAO;
 import com.cs.bru.dao.SalarySubjectDAO;
+import com.cs.bru.dao.StatusTpDAO;
 import com.cs.bru.dao.SubjectDAO;
 import com.cs.bru.dao.TableTeachingDAO;
 import com.cs.bru.dao.TeachDAO;
@@ -29,6 +30,7 @@ import com.cs.bru.model.DateTime;
 import com.cs.bru.model.DateofTeach;
 import com.cs.bru.model.HolidayTh;
 import com.cs.bru.model.Salary;
+import com.cs.bru.model.StatusTP;
 import com.cs.bru.model.Subject;
 import com.cs.bru.model.TableTeaching;
 import com.cs.bru.model.Teach;
@@ -38,6 +40,8 @@ import ch.qos.logback.core.net.SyslogOutputStream;
 
 @RestController
 public class TeachController {
+	@Autowired
+	StatusTpDAO statusTpDAO;
 	@Autowired
 	TeachDAO teachDAO;
 	@Autowired
@@ -143,7 +147,7 @@ public class TeachController {
 						teach.setBasecram(dday);
 						checkRound = false;
 					} else {
-	//				 System.out.println("ใช้เบิก :: "+" "+(ggg));
+					 System.out.println("ใช้เบิก :: "+" "+(ggg));
 						day = ggg;
 						summho += ggg;
 						setBaseHour = ggg;
@@ -153,7 +157,7 @@ public class TeachController {
 
 				} else {
 					summbh += sumtp;
-//					 System.out.println(" ฐาน คาบ :: "+sumtp);
+					 System.out.println(" ฐาน คาบ :: "+sumtp);
 					list.get(i).setBasecram(sumtp);
 					// teach.setBasecram(sumtp);
 					su += sumtp;
@@ -213,6 +217,7 @@ public class TeachController {
 			teach.setBasecram(list.get(i).getBasecram());
 //			System.out.println(list.get(i).getBasecram());
 			teach.setStatusTeaching(2);
+			
 			teachDAO.updateBase(teach);
 
 			dayday.setSubjectDft(list.get(i).getSubjactFk());
@@ -297,6 +302,7 @@ public class TeachController {
 		List<DateofTeach> list22 = new ArrayList<>();
 		List<Teach> listtach = new ArrayList<>();
 		DateofTeach dateofbean = new DateofTeach();
+	
 		list = dateofTeachDAO.fileASCDay(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),
 				id1.getDegreeS4()/* userid="u",term,year,de */);
 		try {
@@ -309,7 +315,8 @@ public class TeachController {
 //				set_ptb=(ptb+tsd);
 //				list.get(i).setSummyhourDft(set_ptb);
 //				System.out.println("getStatusDateofteach==="+list.get(i).getStatusDateofteach());
-				if (list.get(i).getStatusDateofteach()!=2 ) {
+				
+				if (list.get(i).getStatusDateofteach()!=2) {
 //					
 					if (list.get(i).getPrtibadDft() != 0) {
 						set_ptb=ptb/2;
@@ -339,7 +346,7 @@ public class TeachController {
 	               dateofbean.setSubjectDft(list.get(i).getSubjectDft());;
 	               dateofbean.setStatusDateofteach(2);
 	//               System.out.println(dateofbean.getTudsadeeDft()+"**************");
-  //             System.out.println( dateofbean.getStatusDateofteach());
+            //   System.out.println( dateofbean.getStatusDateofteach());
 	               
 	               dateofTeachDAO.updateTsdPtb(dateofbean);
 	              
@@ -361,11 +368,13 @@ public class TeachController {
 	public List<Salary> salarySum(@RequestBody TeachSeachBean1 id1) {
 		Salary subjectAdd = new Salary();
 		Salary subjectShow = new Salary();
-
+		StatusTP tpSet =new StatusTP();
+		StatusTP tpSetShe =new StatusTP();
 		List<DateofTeach> subjectById = new ArrayList<>();
 		List<Teach> teaching = new ArrayList<>();
 		List<Salary> salaryList = new ArrayList<>();
-
+		
+ 
 		try {
 			
 			teaching = teachDAO.findByIdUser(id1.getUseridS1());
@@ -376,44 +385,79 @@ public class TeachController {
 					subjectById = dateofTeachDAO.fileListByid(teaching.get(i).getUserFk(),
 							teaching.get(i).getSubjactFk());
 
-					int sumtsd = 0, sumpsb = 0, sumtsd_ptb = 0;
+					int sumtsd = 0, sumpsb = 0, sumtsd_ptb = 0,basemoney=0;
 					for (int j = 0; j < subjectById.size(); j++) {
 						int tt=subjectById.get(j).getTudsadeeDft();
 						int pp=subjectById.get(j).getPrtibadDft();
+						
 						sumpsb = (sumpsb+pp);
+						
 						sumtsd = (sumtsd+tt);
 						
-						int sAS=(sumpsb+sumtsd);
-						sumtsd_ptb += (sAS);
 						
+					 basemoney= subjectById.get(j).getMoneyDft();
 						
 					}
-//					System.out.println(sumpsb +":::" +"ปปปปปป");
-//					System.out.println(sumtsd +":::" +"ทททท");
+				//	System.out.println(sumpsb +":::" +"ปปปปปป");
+				//	System.out.println(sumtsd +":::" +"ทททททท");
+				//	System.out.println(sumpsb+sumtsd);
+				//	System.out.println(basemoney);
+					int ASD= sumpsb+sumtsd;
+					int AAA =ASD*basemoney;
+					int h=0;
+					tpSetShe=statusTpDAO.SunjectTPbean(teaching.get(i).getTeachId());
+				//	System.out.println(tpSetShe.getSetstatusSubId()+".................");
+					if (tpSetShe.getSetstatusSubId()==null) {
+						
 					
-					System.out.println(teaching.get(i).getSubjactFk() +":::" +"วิชา1รอบ"+sumpsb+":::"+sumtsd+"::"+sumtsd_ptb);
+					//ทฤษฎี
+					tpSet.setSetstatusSubjectId(teaching.get(i).getTeachId());
+					tpSet.setSetstatusSubjectHour(sumtsd);
+					tpSet.setSetstatusSubjectBase(basemoney);
+					tpSet.setSetstatusSubjectMoney(sumtsd*basemoney);
+					tpSet.setStatusSubject(2);
+					tpSet.setSetjectUserid(teaching.get(i).getUserFk());
+					tpSet.setTechingSetjectId(teaching.get(i).getTeachId());
+					tpSet.setSetstatusSubId(teaching.get(i).getSubjactFk());
+					statusTpDAO.insertStsubject(tpSet);
+					//ปฏิบัติ
+					tpSet.setSetstatusSubjectId(teaching.get(i).getTeachId());
+					tpSet.setSetstatusSubjectHour(sumpsb);
+					tpSet.setSetstatusSubjectBase(basemoney);
+					tpSet.setSetstatusSubjectMoney(sumpsb*basemoney);
+					tpSet.setStatusSubject(1);
+					tpSet.setSetjectUserid(teaching.get(i).getUserFk());
+					tpSet.setTechingSetjectId(teaching.get(i).getTeachId());
+					tpSet.setSetstatusSubId(teaching.get(i).getSubjactFk());
+					statusTpDAO.insertStsubject(tpSet);
+			
+					}
+					System.out.println(teaching.get(i).getSubjactFk() +":::" +"วิชา"+(h+1)+"รอบ"+sumpsb+":::"+sumtsd+"::"+AAA);
+					
 					
 					subjectShow = salarySubjectDAO.salaryListById(teaching.get(i).getTeachId());
-					// System.out.println(subjectShow.getSalaryStatus());
+				//	 System.out.println(subjectShow.getSalaryStatus());
 					if (subjectShow.getSalaryStatus() != 2) {
+						System.out.println(subjectShow.getSalaryStatus());
 						subjectAdd.setSalaryId(teaching.get(i).getTeachId());
 				//		 System.out.println(sumpsb+"::sumpsb");
 				//		 System.out.println(sumtsd+"::sumtsd");
 				//		 System.out.println(sumtsd_ptb+"::sumtsd_ptb");
 						subjectAdd.setSalarySumTudsadee(sumtsd);
 						subjectAdd.setSalarySumPrtibad(sumpsb);
-						subjectAdd.setSumTudsadeePrtibad(sumtsd_ptb);
+						subjectAdd.setSumTudsadeePrtibad(sumtsd+sumpsb);
 						subjectAdd.setSalaryStatus(2);
 						subjectAdd.setSalarySubjeatFk(teaching.get(i).getSubjactFk());
 						subjectAdd.setSalaryuserFk(teaching.get(i).getUserFk());
-						System.out.println(subjectAdd.getSalarySumTudsadee()+"+++"+subjectAdd.getSalarySumPrtibad()+":++:");
+					//	System.out.println(subjectAdd.getSalarySumTudsadee()+"+++"+subjectAdd.getSalarySumPrtibad()+":++:");
 					
+						
 						salarySubjectDAO.insertSalary(subjectAdd);
 					}
 
 	//				System.out.println("---------------");
 				} else {
-					System.out.println("::: NOOOOOO");
+			//		System.out.println("::: NOOOOOO");
 				}
 
 			}
@@ -435,7 +479,7 @@ public class TeachController {
 	@GetMapping(value = "salaryId")
 	public Salary salaryId() {
 		Salary sa = new Salary();
-		sa = salarySubjectDAO.salaryListById("2561124124903");
+		sa = salarySubjectDAO.salaryListById("25611141001");
 		return sa;
 	}
 

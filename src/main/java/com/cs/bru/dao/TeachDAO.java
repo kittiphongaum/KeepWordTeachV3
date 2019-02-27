@@ -85,6 +85,7 @@ public class TeachDAO {
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
 				teach.setUserFk(rs.getString("user_fk"));
 				teach.setStatusTeach(rs.getInt("status_teach"));
+				teach.setStatusTeaching(rs.getInt("status_teaching"));
 				TableTeaching tableteach = new TableTeaching();
 				Subject subject = new Subject();
 				User user =new User();

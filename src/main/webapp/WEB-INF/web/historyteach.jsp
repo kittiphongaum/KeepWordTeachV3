@@ -242,51 +242,150 @@ Integer a=0;
 				</div>
 				<!-- /Title -->
 				<!-- row -->
-				
+
 				<div class="row">
 
-						<div class="col-sm-12">
-							<div class="panel panel-default card-view">
-								<div class="panel-heading">
-									<div class="pull-left">
-										<h6 class="panel-title txt-dark">ตารางวิชา</h6>
-									</div>
-									<div class="clearfix"></div>
+				
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">ตารางวิชา</h6>
 								</div>
-								<div class="panel-wrapper collapse in">
-									<div class="panel-body">
-										<div class="table-wrap">
-											<table id="tebleRepostShow" class="table table-hover table-bordered mb-0">
-												<thead class="text-warning">
-														<tr>
-																<th rowspan="2">#</th>
-																<th rowspan="2">ตำแหน่งผู้ทำการสอน</th>
-																<th rowspan="2">ผู้ได้รับเชินให้สอน</th>
-																<th rowspan="2">จำนวนหน่วยชั่วโมง</th>
-																<th rowspan="2">วันเดือนปี ที่ทำการสอน</th>
-																<th rowspan="2">ปีการศึกษา/ภาคเรียน</th>
-																<th rowspan="2">หมายเหตู</th>
-														</tr>
-												</thead>
-												<tbody>	
-												</tbody>
-											
-											</table>
-										</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="table-wrap">
+										<table id="tebleRepostShow" class="table table-hover table-bordered mb-0" >
+											<thead class="text-warning">
+												<tr>
+													<th rowspan="2" data-breakpoints="xs">#</th>
+													<th rowspan="2">ตำแหน่งผู้ทำการสอน</th>
+													<th rowspan="2">ผู้ได้รับเชินให้สอน</th>
+													<th rowspan="2">จำนวนหน่วยชั่วโมง</th>
+													<th rowspan="2">วันเดือนปี ที่ทำการสอน</th>
+													<th rowspan="2">ปีการศึกษา/ภาคเรียน</th>
+													<th rowspan="2">หมายเหตู</th>
+												
+												</tr>
+											</thead>
+											<tbody>
+											</tbody>
+
+										</table>
 									</div>
 								</div>
-								<!-- <div class="row" id=mass></div>
+							</div>
+							<!-- <div class="row" id=mass></div>
 								<div class="text-center ">
 								<p class="text-danger">ไม่มีข้อมูล</p>
 								<p><a href="/keepword" class="text-primary" ><----กรุณาลงทะเบียนสอน-></a></p>
 							</div> -->
-							</div>
+					
+
+					</div>
+				</div>
+		
+			
+				<!-- <form action="/teach_pdf" method="GET" target="_blank">
+					
+						 <input class="btn btn-primary btn-outline btn-icon left-icon" type="submit">
+						
+							<i class="fa fa-print"></i><span> Print</span> 
+							<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+								<i class="fa fa-print"></i><span> Print</span>
+							</button>
 							
+					</form> -->
+				<!-- /row -->
+				<!-- Row -->
+				<!-- <div class="panel-group accordion-struct" role="tablist" aria-multiselectable="true">
+					<div class="panel-heading activestate" role="tab" id="headingFive">
+						<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank" class="collapsed"
+						 role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+						 aria-controls="collapseSix">
+							<i class="fa fa-print"></i><span> Print</span>
+						</button>
+					</div>
+
+					<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+
+						<div class="col-sm-8">
+							<div class="col-sm-2">
+								<form action="/teach_pdf" method="GET" target="_blank">
+									<button type="submit" formtarget="_blank" class="btn btn-primary btn-outline btn-icon left-icon">
+										<i class="fa fa-print"></i><span>เอกสาร 1</span>
+									</button>
+								</form>
+							</div>
+
+							<div class="col-sm-2">
+								<form action="/teach_pdf" method="GET" target="_blank">
+									<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+										<i class="fa fa-print"></i><span> เอกสาร2</span>
+									</button>
+								</form>
+							</div>
+
+							<div class="col-sm-2">
+								<form action="/teach_pdf" method="GET" target="_blank">
+									<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+										<i class="fa fa-print"></i><span> เอกสาร3</span>
+									</button>
+								</form>
+							</div>
+							<div class="col-sm-2">
+								<form action="/teach_pdf" method="GET" target="_blank">
+									<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+										<i class="fa fa-print"></i><span> เอกสาร4</span>
+									</button>
+								</form>
+							</div>
 						</div>
 					</div>
-					<!-- /row -->
+				</div> -->
+
+				<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+
+					<div class="col-sm-8">
+						<div class="col-sm-2">
+							<form action="/teach_pdf" method="GET" target="_blank">
+								<button type="submit" formtarget="_blank" class="btn btn-primary btn-outline btn-icon left-icon">
+									<i class="fa fa-print"></i><span>เอกสาร 1</span>
+								</button>
+							</form>
+						</div>
+
+						<div class="col-sm-2">
+							<form action="/teach_pdf" method="GET" target="_blank">
+								<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+									<i class="fa fa-print"></i><span> เอกสาร2</span>
+								</button>
+							</form>
+						</div>
+						<div class="col-sm-2">
+							<form action="/teach_pdf" method="GET" target="_blank">
+								<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+									<i class="fa fa-print"></i><span> เอกสาร3</span>
+								</button>
+							</form>
+						</div>
+
+						<div class="col-sm-2">
+							<form action="/teach_pdf" method="GET" target="_blank">
+								<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+									<i class="fa fa-print"></i><span> เอกสาร4</span>
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			
 			</div>
 		</div>
+		<!-- /Row -->
+	</div>
+	</div>
 
 	</div>
 </body>
@@ -320,7 +419,7 @@ Integer a=0;
 <!-- Fancy Dropdown JS -->
 <script src="../assets_/dist/js/dropdown-bootstrap-extended.js"></script>
 
-	
+
 
 <!-- Owl JavaScript -->
 <script src="../assets_/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
@@ -341,59 +440,103 @@ Integer a=0;
 <script src="../assets_/dist/js/init.js"></script>
 <script src="../assets_/dist/js/dashboard5-data.js"></script>
 
-<script>
-		$(function () {
-			   var userid = $("#userRoleid").val();
+<script src="../assets_/vendors/bower_components/FooTable/compiled/footable.min.js" type="text/javascript"></script>
 
-			   $.ajax({
-				   type: "GET",
-				   contentType: "application/json",
-				   url: "/TechingRepost/"+userid,
-				   dataType: 'json',
-				   success: function (msgTable) {
-					  
-						   var tebleRepost="";
-						   var tebleRepost1="";
-						  
-							
-					   for (var i = 0; i < msgTable.length; i++) {
-						   var num = i + 1;
-						   tebleRepost +=
-							   '<tr>' +
-							   '<td>' + num + '</td>' +
-							   '<td>' + msgTable[i].teachReportId +'</td>' +
-							   '<td>' + msgTable[i].resumPst + '</td>' +
-							   '<td>' + msgTable[i].resumTsd+ '</td>' +
-							   '<td>' + msgTable[i].repostSum+ '</td>' +
-							   '<td>' + msgTable[i].userepRortFK + '</td>' +
-							   '<td>' + msgTable[i].dateteachFK + '</td>' +
-							  '<td>' +  '<button type="button" class="btn btn-primary btn-outline btn-icon left-icon" onclick="javascript:window.print();">'+
-											'<i class="fa fa-print"></i><span> Print</span>'+
-										'</button>' + '</td>' +
-							   '</tr>';
-				   
-					   }
-					   if (tebleRepost =="") {
-							tebleRepost +='<tr>'+
-									   '<td colspan="6">'+
-										   '<div class="text-center ">'+
-												   '<p class="text-danger">ไม่มีข้อมูล</p>'+
-													   '<p><a href="/keepword" class="text-primary" ><----กรุณาลงทะเบียนสอน---></a></p>'+
-													   '</div>'+
-													   '</td>'+
-											   '</tr>';
-						   } 
-						   $('#tebleRepostShow tbody').append(tebleRepost);
-	   
-					
-				   },
-				   error: function (e) {
-						alert("ERROR: tebleRepost",e);
-						console.log("ERROR: tebleRepost", e);
-				   }
-			   });
-	   });
-	   
-	   
-	   </script>
+<script>
+	$(function () {
+		var userid = $("#userRoleid").val();
+
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/TechingRepost/" + userid,
+			dataType: 'json',
+			success: function (msgTable) {
+
+				var tebleRepost = "";
+				var tebleRepost1 = "";
+
+
+				for (var i = 0; i < msgTable.length; i++) {
+					var num = i + 1;
+					tebleRepost +=
+						'<tr>' +
+						'<td>' + num + '</td>' +
+						'<td>' + msgTable[i].teachReportId + '</td>' +
+						'<td>' + msgTable[i].resumPst + '</td>' +
+						'<td>' + msgTable[i].resumTsd + '</td>' +
+						'<td>' + msgTable[i].repostSum + '</td>' +
+						'<td>' + msgTable[i].userepRortFK + '</td>' +
+						'<td>' + msgTable[i].dateteachFK + '</td>' +
+						'<td>' + '<div class="panel-group accordion-struct" role="tablist" aria-multiselectable="true">' +
+						'<div class="panel-heading activestate" role="tab" id="headingFive">' +
+						'<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank" class="collapsed"' +
+						'role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"' +
+						'aria-controls="collapseSix">' +
+						'<i class="fa fa-print"></i><span> Print</span>' +
+						'</button>' +
+						'</div>' +
+
+
+						'</td>' +
+						'</tr>';
+
+
+				}
+				if (tebleRepost == "") {
+					tebleRepost += '<tr>' +
+						'<td colspan="6">' +
+						'<div class="text-center ">' +
+						'<p class="text-danger">ไม่มีข้อมูล</p>' +
+						'<p><a href="/keepword" class="text-primary" ><----กรุณาลงทะเบียนสอน---></a></p>' +
+						'</div>' +
+						'</td>' +
+						'</tr>';
+				}
+
+				$('#tebleRepostShow tbody').append(tebleRepost);
+
+
+			},
+			error: function (e) {
+				alert("ERROR: tebleRepost", e);
+				console.log("ERROR: tebleRepost", e);
+			}
+		});
+	});
+</script>
+<script>
+	function tests() {
+		//	window.replace="/teach_pdf";
+		window.open("/teach_pdf");
+		//	window.open("/teach_pdf"),
+		//	window.open("/teach_pdf")
+	}
+</script>
+
+<script>
+	/*FooTable Init*/
+	$(function () {
+		"use strict";
+
+		/*Init FooTable*/
+		$('#').footable();
+		/*Editing FooTable*/
+		$editor.on('submit', function (e) {
+			if (this.checkValidity && !this.checkValidity()) return;
+			e.preventDefault();
+			var row = $modal.data('row'),
+				values = {};
+
+			if (row instanceof Row) {
+				row.val(values);
+			} else {
+				values.id = uid++;
+				ft.rows.add(values);
+			}
+			$modal.modal('hide');
+		});
+	});
+</script>
+
 </html>

@@ -488,7 +488,7 @@
 	<script type="text/javascript" src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 	<!-- Form Advance Init JavaScript -->
 	<script src="../assets_/dist/js/form-advance-data.js"></script>
-	<%@include file="../layout/layoutjs.jsp"%>
+	<!-- <%@include file="../layout/layoutjs.jsp"%> -->
 </body>
 <script>
 	$(document).ready(function () {

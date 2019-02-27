@@ -17,7 +17,6 @@
 		<div class="row">
 			<div class="eleven column">
 				<form action="/report" method="POST" target="_blank">
-					
 					<input class="button-primary" type="submit" value="Imprimir">
 				</form>
 			</div>
@@ -31,7 +30,7 @@
 <script>
 function fn(){
 	
-	window.open('https://www.google.com','_blank'),
+
 	window.open('https://www.youtube.com','_blank');
 
 }

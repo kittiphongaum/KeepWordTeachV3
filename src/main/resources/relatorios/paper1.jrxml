@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="paper1" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b5bb0184-a0f2-4e91-ada3-bc947ba1140d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="dataconnet"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="211"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="783"/>
+	<import value="org.apache.commons.codec.binary.*"/>
+	<import value="org.apache.commons.codec.binary.Base64"/>
+	<parameter name="id" class="java.lang.String"/>
+	<parameter name="where_command" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{id} == null || $P{id} == "" ? "" : " AND  user_id = '" + $P{id} + "'"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT keepworkteach3.tb_teaching.user_fk,
+	keepworkteach3.tb_teaching.id,
+	keepworkteach3.tb_teaching.teach_id,
+	keepworkteach3.tb_teaching.dateofteach_fk,
+	keepworkteach3.tb_teaching.basecram,
+	keepworkteach3.tb_teaching.tableteach_fk,
+	keepworkteach3.tb_teaching.subject_fk,
+	keepworkteach3.tb_teaching.basehour,
+	tb_table_teaching.user_roleid,
+	tb_table_teaching.section,
+	tb_table_teaching.sum_hour,
+	tb_table_teaching.standard_teach,
+	tb_table_teaching.teble_teach_id,
+	tb_table_teaching.degree_studen,
+	tb_table_teaching.teach_year,
+	tb_table_teaching.studen_number,
+	tb_table_teaching.term_year,
+	tb_table_teaching.teach_term,
+	tb_table_teaching.room,
+	tb_table_teaching.subject_roleid,
+	tb_subject.prtibad,
+	tb_subject.status_subject,
+	tb_subject.subject_id,
+	tb_subject.subject_name,
+	tb_subject.tudsadee,
+	tb_subject.credit_hour,
+	tb_subject.credit,
+	tb_user.id,
+	tb_user.position_teach,
+	tb_user.user_lastname,
+	tb_user.prefix_name,
+	tb_user.baseHour,
+	tb_user.mojor,
+	tb_user.user_id,
+	tb_user.user_name,
+	keepworkteach3.tb_teaching.salary_sum,
+	keepworkteach3.tb_teaching.money_prtibad,
+	keepworkteach3.tb_teaching.money_tudsadee,
+	keepworkteach3.tb_teaching.hoursum_prtibad,
+	keepworkteach3.tb_teaching.hoursum_tudsadee,
+	keepworkteach3.tb_teaching.sum_hour_term
+FROM keepworkteach3.tb_teaching
+	INNER JOIN tb_user ON 
+	 keepworkteach3.tb_teaching.user_fk = tb_user.user_id 
+	INNER JOIN tb_table_teaching ON 
+	 keepworkteach3.tb_teaching.tableteach_fk = tb_table_teaching.teble_teach_id 
+	INNER JOIN tb_subject ON 
+	 tb_table_teaching.subject_roleid = tb_subject.subject_id 
+WHERE 
+	 user_id='570112230061']]>
+	</queryString>
+	<field name="user_fk" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="user_fk"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="teach_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="teach_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="dateofteach_fk" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="dateofteach_fk"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="basecram" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="basecram"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="tableteach_fk" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tableteach_fk"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="subject_fk" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="subject_fk"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="basehour" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="basehour"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="user_roleid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="user_roleid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="section" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="section"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="sum_hour" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sum_hour"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="standard_teach" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="standard_teach"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="teble_teach_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="teble_teach_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="degree_studen" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="degree_studen"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="teach_year" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="teach_year"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="studen_number" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="studen_number"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="term_year" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="term_year"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="teach_term" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="teach_term"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="room" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="room"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="subject_roleid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="subject_roleid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_table_teaching"/>
+	</field>
+	<field name="prtibad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="prtibad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_subject"/>
+	</field>
+	<field name="status_subject" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="status_subject"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_subject"/>
+	</field>
+	<field name="subject_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="subject_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_subject"/>
+	</field>
+	<field name="subject_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="subject_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_subject"/>
+	</field>
+	<field name="tudsadee" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="tudsadee"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_subject"/>
+	</field>
+	<field name="credit_hour" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="credit_hour"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_subject"/>
+	</field>
+	<field name="credit" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="credit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_subject"/>
+	</field>
+	<field name="COLUMN_28" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_user"/>
+	</field>
+	<field name="position_teach" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="position_teach"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_user"/>
+	</field>
+	<field name="user_lastname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="user_lastname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_user"/>
+	</field>
+	<field name="prefix_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prefix_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_user"/>
+	</field>
+	<field name="baseHour" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="baseHour"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_user"/>
+	</field>
+	<field name="mojor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="mojor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_user"/>
+	</field>
+	<field name="user_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="user_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_user"/>
+	</field>
+	<field name="user_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="user_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_user"/>
+	</field>
+	<field name="salary_sum" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="salary_sum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="money_prtibad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="money_prtibad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="money_tudsadee" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="money_tudsadee"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="hoursum_prtibad" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="hoursum_prtibad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="hoursum_tudsadee" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="hoursum_tudsadee"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<field name="sum_hour_term" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="sum_hour_term"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_teaching"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="470" y="0" width="84" height="30" uuid="0a7c1a57-93d7-478f-995a-a2d915510bba"/>
+				<box>
+					<pen lineWidth="1.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[เอกสาร ก - 1]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="208" splitType="Stretch">
+			<textField>
+				<reportElement x="440" y="0" width="80" height="30" uuid="010b74f0-f709-44e8-9a37-f4f2f42a87fc"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{teach_year}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="370" y="0" width="70" height="30" uuid="9509748f-6207-4e84-bc3d-7f518ce95766"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ปีการศึกษา]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="0" width="60" height="30" uuid="410f327a-031b-4798-bbd8-212421983aaa"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{term_year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="30" height="30" uuid="70d2664c-273e-4d83-a015-c73cd2119a75"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{teach_term}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="0" width="10" height="30" uuid="b9dc9b6c-9f28-456c-a9a7-8630f9935bd5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="80" height="30" uuid="7e17b62a-a2d4-415c-bef4-81ab8498e1fb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ภาคการศึกษาที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="160" height="30" uuid="7b78c4f9-6689-4bde-add0-427d6556b802"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[สรุปรายการเบิกค่าสอนภาคปกติ ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="50" width="90" height="20" uuid="085bdbd1-51b4-449f-8308-a750c999b6ee"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="82" width="90" height="25" uuid="507e8234-2a50-408f-ba7f-a97a4f9bbeec"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ชื่อ - นามสกุล]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="95" y="82" width="170" height="25" uuid="9024018b-6b1a-4b88-9230-3a95c2587154"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prefix_name}+" "+$F{user_name}+" "+$F{user_lastname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="265" y="82" width="60" height="25" uuid="cc80d6e3-05b4-4d7f-987c-63069d7234d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ตำแหน่ง]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="325" y="82" width="199" height="25" uuid="8507d261-b9ec-4f0d-b369-d8975ed9610f"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{user_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="275" y="107" width="170" height="25" uuid="1a81ac60-5cbb-4220-8023-4f977fc12064"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="65" y="107" width="170" height="25" uuid="2c62b9e3-4c2b-4adb-90ff-bed930e8a419"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mojor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="107" width="60" height="25" uuid="ad9977f7-fe58-45c8-9a80-6848900d5c56"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[สาขาวิชา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="132" width="60" height="25" uuid="4160452f-f367-4ce5-9ba4-b4c2683b73cc"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[มีฐานชั่วโมง]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="65" y="132" width="119" height="25" uuid="bf5d0727-d259-4caf-bf46-ec5cd34ce7c3"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{baseHour}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="185" y="132" width="40" height="25" uuid="0f6b087c-053c-42c5-b190-20e2b6a575f2"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[คาบ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="132" width="119" height="25" uuid="6a95cf85-4c5f-4554-bc77-6c836a031e98"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[เบิกค่าสอนพิเศษได้ไม่เกิน]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="344" y="132" width="140" height="25" uuid="0f75ac50-1c60-4bc2-980f-47aacfb53db9"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New"/>
+				</textElement>
+			</textField>
+			<staticText>
+				<reportElement x="484" y="132" width="60" height="25" uuid="2c34890e-0538-4c1c-a10c-f40db4b59da8"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[หน่วยชั่วโมง]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="170" width="150" height="25" uuid="800c794f-0b34-4586-92d7-1938dfa093c6"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[นักศึกษาภาคปกติ  ชั้นปีที่  1 - 5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="108" width="40" height="25" uuid="82537820-deeb-4e74-a2a8-bdac458673af"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[คณะ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="80" height="39" uuid="dd8a96e7-7f13-4811-8780-b0360d01d25a"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[รหัสวิชา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="50" height="39" uuid="d3af8472-f119-4ba9-b343-2e4f83bb1138"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ชุดวิชา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="0" width="60" height="39" uuid="d94674d3-ef7a-49fd-8f68-c855486867dc"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[section]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="0" width="110" height="19" uuid="349fe82a-d6b5-4cf6-a70b-21439a6a80e5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[จำนวนหน่วยกิต]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="19" width="40" height="20" uuid="edd8b67f-707b-4573-a1b3-99a1f8130a3d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[นก.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="19" width="70" height="20" uuid="cbf5e9ab-ebe8-434f-97de-3a547942b2c3"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ชม.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="80" height="39" uuid="f95ff9ab-72f3-4973-a3fe-fb02fa7bb3e3"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[จำนวนนักศึกษา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="70" height="39" uuid="83c0ebca-8e80-44e6-a525-3568a1242496"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ใช้เป็นฐาน/คาบ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="105" height="39" uuid="47b66c7b-6d81-4513-b333-f9cce0f0dd0d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ใช้เป็นหน่อย/ชั่วโมง]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="80" height="32" uuid="4600a0ad-4bc6-4dc9-b8be-ccefcec54c04"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subject_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="105" height="32" uuid="cd461729-5f7d-4807-9901-cc5f05ba4ed4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{basehour}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="70" height="32" uuid="ce6cac65-237a-4f74-877f-7bb803df4ff4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{basecram}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="80" height="32" uuid="efaf885c-5265-4ebd-a680-238f7e15a1ce"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studen_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="70" height="32" uuid="b7c60804-6ac5-44ed-95ca-eddd12e753fa"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{credit_hour}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="40" height="32" uuid="29eb9c73-0e3e-49e5-b891-e9fc02178e3c"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{credit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="60" height="32" uuid="67c9debe-f19a-4685-b1e0-bebfdce68c5c"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{section}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="50" height="32" uuid="487c5a49-6b5d-4dee-a669-68b212c4238a"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="172" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="76" width="225" height="90" uuid="91831997-4abd-43aa-9b0c-a339d0fcacb0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<text><![CDATA[หมายเหตุ : "ตำแหน่ง" หมายว่า
+ตำแหน่งผู้บริหารมหาวิทยาลัยราชภัฏบุรีรัมย์
+เรื่อง การเบิกค่าสอนพิเศษและค่าสอนภาระงานสอน
+ในมหาลัยราชภัฏบุรีรัมย์ พ.ศ.2557]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="71" width="50" height="30" uuid="102ae7ec-f798-49dc-95a1-4ba67b3e3f64"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<text><![CDATA[ลงชื่อ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="310" y="71" width="148" height="30" uuid="a70c02af-5e80-4a89-afe7-5692f9e42b5f"/>
+				<box>
+					<pen lineWidth="1.25" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</textField>
+			<staticText>
+				<reportElement x="456" y="71" width="50" height="30" uuid="2099b19f-fbfe-4929-8927-9b9e36395665"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<text><![CDATA[ผู้เบิก]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="298" y="101" width="169" height="30" uuid="17eb421f-050c-4408-bdfa-5bcc40d5058e"/>
+				<box>
+					<pen lineWidth="1.25" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prefix_name}+" "+$F{user_name}+" "+$F{user_lastname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="277" y="103" width="20" height="30" uuid="8b6bceed-932e-4dc2-8e04-7dbee00c9fb4"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<text><![CDATA[(]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="101" width="19" height="30" uuid="0fb5feb8-4741-43ac-9b2b-9c64e310bace"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="387" y="136" width="46" height="30" uuid="76b132a9-50dd-4c57-a8b4-f368504761d3"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="136" width="50" height="30" uuid="8d2d921f-b779-40ea-8b09-f3251241312a"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<text><![CDATA[เดือน]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="295" y="136" width="46" height="30" uuid="8679689f-13dc-4340-8ea0-641c35f24a5e"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="243" y="136" width="50" height="30" uuid="f9ede4c0-61c9-49fc-93c2-5ef19898da39"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<text><![CDATA[ลงชื่อ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="136" width="50" height="30" uuid="d5e337ed-e430-49bd-a329-16fb02cb9b15"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<text><![CDATA[พ.ศ.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="478" y="136" width="51" height="30" uuid="ceb82a3c-9fd9-4cdb-a1d7-7e707a8fa518"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="380" height="28" uuid="d95275c8-0a98-40db-b905-429903b738be"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[รวม]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="0" width="70" height="28" uuid="26751f09-6179-40a2-9559-32b15232e6e8"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="105" height="28" uuid="fc0f197f-50c9-43b2-a784-249da87ae443"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

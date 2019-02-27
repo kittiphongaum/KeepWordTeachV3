@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.cs.bru.controller.TeachController;
 import com.cs.bru.dao.DateofTeachDAO;
 import com.cs.bru.dao.HolidayDAO;
+import com.cs.bru.dao.TableTeachingDAO;
 import com.cs.bru.dao.TeachDAO;
 import com.cs.bru.model.DateofTeach;
 import com.cs.bru.model.HolidayTh;
@@ -36,6 +37,8 @@ public class DateofTeachSevice {
 	TeachDAO teachDAO;
 	@Autowired
 	TeachController teachCon;
+	@Autowired 
+	TableTeachingDAO tableTeachingDAO;
 
 	public TableTeaching keepword(@RequestBody TableTeaching insertTableTeaching,String ho) throws Exception {
 
@@ -52,6 +55,7 @@ public class DateofTeachSevice {
 		teach.setTeachId(insertTableTeaching.getTebleTeachId());
 		
 	     Calendar cal = Calendar.getInstance();
+	  
 	      Calendar cal2 = Calendar.getInstance();
 	      DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -64,7 +68,7 @@ public class DateofTeachSevice {
 			cal2.setTime(today2);
 			int a,b,c,i,j,k,l,sumTP = 0;
 			a = cal2.get(Calendar.WEEK_OF_YEAR);
-			b =cal.get(Calendar.WEEK_OF_YEAR)+543;
+			b =cal.get(Calendar.WEEK_OF_YEAR);
 			c = a - b;
 			System.out.println(c+1);
 			int f=1, tud =0, prt=0;
@@ -90,7 +94,7 @@ public class DateofTeachSevice {
 			      int  year=next2Week.getYear();
 			      
 			ofteach.setMonthofyearDft(String.valueOf(month));
-			ofteach.setYearofteachDft(String.valueOf(year));
+			ofteach.setYearofteachDft(String.valueOf(year+543));
 			ofteach.setDayofyearDft(String.valueOf(day));
 
 			j=(insertTableTeaching.getSubject().getTudsadee());
@@ -126,14 +130,19 @@ public class DateofTeachSevice {
 			dFt.setDateofteachId(insertTableTeaching.getTebleTeachId());
 		
 			System.out.println(sumhourtrme);
-			dateofTeachDao.update(dFt);
+			//dateofTeachDao.update(dFt);
 			
 			
 			teach.setHoursumTudsadee(tud);
 			teach.setHoursumPrtibad(prt);
 			teach.setSalarySum(sumhourtrme);
 			teach.setTableteachFk(insertTableTeaching.getTebleTeachId());
-			
+//			String start=today+("00/00/543");
+//			String stop=today2+("00/00/543");
+//			System.out.println(start+"");
+//			insertTableTeaching.setStartTime(start);
+//			insertTableTeaching.setStopTime(stop);
+			//tableTeachingDAO.insertTableTeaching(insertTableTeaching);
 			teachDAO.insertTeach(teach);
 	
 			

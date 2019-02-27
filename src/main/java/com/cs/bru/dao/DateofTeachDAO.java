@@ -194,7 +194,7 @@ public class DateofTeachDAO {
 							day.setMoneyDft(rs.getInt("money_dft"));
 							day.setHolidayDft(rs.getString("holiday_dft"));
 							day.setStatusBase(rs.getString("statusbase"));
-							
+							day.setStatusDateofteach(rs.getInt("status_dateofteach"));
 							day.setSubjectDft(rs.getString("subject_dft"));
 							day.setUserDft(rs.getString("user_dft"));
 							//ตรางสอน
