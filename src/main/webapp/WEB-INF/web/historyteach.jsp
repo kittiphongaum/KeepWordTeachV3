@@ -242,17 +242,109 @@ Integer a=0;
 				</div>
 				<!-- /Title -->
 				<!-- row -->
-
 				<div class="row">
-
-				
 						<div class="panel panel-default card-view">
+
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark">ตารางวิชา</h6>
+									<h6 class="panel-title txt-dark">หลักฐานการเบิกจ่ายเงินค่าสอนพิเศษและค่าสอนเกินวาระงานสอนในอุดมศึกษา</h6>
 								</div>
 								<div class="clearfix"></div>
 							</div>
+					
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="table-wrap">
+										<table id="fildListRepost" class="table table-hover table-bordered mb-0" >
+											<thead class="text-warning">
+												<tr>
+													<th rowspan="2" data-breakpoints="xs">ลำดับ</th>
+													<th rowspan="2">ระยะเวลาที่สอน</th>
+													<th rowspan="2">ระดับการสอน</th>
+													<th rowspan="2">ตำแหน่งผู้ทำการสอน</th>
+													<th rowspan="2">ภาคเรียน/ปีการศึกษา</th>
+													<th rowspan="2">หมายเหตู</th>
+												
+												</tr>
+											</thead>
+											<tbody>
+												
+											</tbody>
+
+										</table>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+
+				</div>
+				<!-- <div class="panel-group accordion-struct" role="tablist" aria-multiselectable="true">
+					<div class="panel-heading activestate" role="tab" id="headingFive">
+						<input type="hidden" id="term" value="">
+						<input type="hidden" id="year" value="">
+						<input type="hidden" id="degree" value="">
+					<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank" class="collapsed"
+					role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+					aria-controls="collapseSix" onclick="tableSETRepost()" >
+					<i class="fa fa-print"></i><span> Print</span>
+					</button>
+					</div> -->
+				<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+				<div class="row">
+						<div class="panel panel-default card-view">
+
+							<div class="panel-heading">
+								<div class="clearfix"></div>
+							</div>
+
+							
+									<div class="panel-body">
+							<div class="form-group panel-title txt-dark">
+								
+										<div class="row">
+												<div class="span1"></div>
+									<div class="col-md-4 col-xs-12">
+										<div class="form-group">
+											<div class="row">
+												<label for="exampleInputuname_3" class="col-sm-12 control-label">ส่วนราชการ มหาวิทยาลัยราชภัฏบุรีรัมย์</label>
+													<!-- <input type="text" class="form-control" id="degreeStuden" placeholder=""> -->
+											</div>
+										</div>
+									</div>
+											<!-- <div class="col-md-3 col-xs-12">
+												<div class="form-group">
+													<div class="row">
+														<label for="exampleInputuname_3" class="col-sm-3 control-label">คณะ</label>
+														<input type="text" class="col-sm-9" id="mojor">
+													</div>
+												</div>
+											</div>
+											<div class="span1"></div>
+											<div class="col-md-2 col-xs-12">
+												<div class="form-group">
+													<div class="row">
+														<label for="exampleInputuname_3" class="col-sm-6 control-label">ภาคเรียน</label>
+														<div class="col-sm-6">
+																<p>................</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="span1"></div>
+											<div class="col-md-2 col-xs-12">
+												<div class="form-group">
+													<div class="row">
+														<label for="exampleInputuname_3" class="col-sm-6 control-label">พ.ศ.</label>
+														<div class="col-sm-6">
+																<p>................</p>
+														</div>
+													</div>
+												</div>
+											</div> -->
+										</div>
+									</div>
+							</div>		
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<div class="table-wrap">
@@ -260,22 +352,86 @@ Integer a=0;
 											<thead class="text-warning">
 												<tr>
 													<th rowspan="2" data-breakpoints="xs">#</th>
-													<th rowspan="2">ตำแหน่งผู้ทำการสอน</th>
-													<th rowspan="2">ผู้ได้รับเชินให้สอน</th>
 													<th rowspan="2">จำนวนหน่วยชั่วโมง</th>
-													<th rowspan="2">วันเดือนปี ที่ทำการสอน</th>
-													<th rowspan="2">ปีการศึกษา/ภาคเรียน</th>
+													<th rowspan="2">จำนวนเงิน</th>
 													<th rowspan="2">หมายเหตู</th>
 												
 												</tr>
 											</thead>
 											<tbody>
 											</tbody>
-
+											<thead>
+													<td scope="col">รวม</td>
+													<td scope="col" id="tfHour"></td>
+													<td scope="col" id="tfMon"></td>
+													<td scope="col" ></td>
+													<!-- id="sumsrry" -->
+												</thead>
 										</table>
 									</div>
 								</div>
 							</div>
+							
+							<div class="row">
+									<div class="col-sm-2">
+											<div class="form-group">
+										<form action="repostPaper1" method="POST" target="_blank">
+											<input type="hidden" name="useridS1"id="pe_user1">
+											<input type="hidden" name="termS2"  id="pe_term1">
+											<input type="hidden" name="yearS3" id="pe_year1">
+											<input type="hidden" name="degreeS4" id="pe_degree1" >
+										
+											<button type="submit" formtarget="_blank" class="btn btn-primary btn-outline btn-icon left-icon" >
+												<i class="fa fa-print"></i><span>เอกสาร1</span>
+											</button>
+										</form>
+									</div>
+									</div>
+								
+									<div class="col-sm-2">
+											<div class="form-group">
+										<form action="repostPaper2" method="POST" target="_blank">
+												<input type="hidden" name="useridS1"id="pe_user2">
+												<input type="hidden" name="termS2"  id="pe_term2">
+												<input type="hidden" name="yearS3" id="pe_year2">
+												<input type="hidden" name="degreeS4" id="pe_degree2" >
+											<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+												<i class="fa fa-print"></i><span> เอกสาร2</span>
+											</button>
+										</form>
+									</div>
+								</div>
+									
+									<div class="col-sm-2">
+											<div class="form-group">
+										<form action="repostpaper3" method="POST" target="_blank">
+											<input type="hidden" name="useridS1"id="pe_user3">
+											<input type="hidden" name="termS2"  id="pe_term3">
+											<input type="hidden" name="yearS3" id="pe_year3">
+											<input type="hidden" name="degreeS4" id="pe_degree3" >
+											<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+												<i class="fa fa-print"></i><span> เอกสาร3</span>
+											</button>
+										</form>
+									</div>
+								</div>
+			
+									
+									<div class="col-sm-2">
+											<div class="form-group">
+										<form action="repostPaper4" method="POST" target="_blank">
+											<input type="hidden" name="useridS1"id="pe_user4">
+											<input type="hidden" name="termS2"  id="pe_term4">
+											<input type="hidden" name="yearS3" id="pe_year4">
+											<input type="hidden" name="degreeS4" id="pe_degree4" >
+											<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+												<i class="fa fa-print"></i><span> เอกสาร4</span>
+											</button>
+										</form>
+									</div>
+								</div>
+								</div>
+					
 							<!-- <div class="row" id=mass></div>
 								<div class="text-center ">
 								<p class="text-danger">ไม่มีข้อมูล</p>
@@ -285,7 +441,7 @@ Integer a=0;
 
 					</div>
 				</div>
-		
+				</div>
 			
 				<!-- <form action="/teach_pdf" method="GET" target="_blank">
 					
@@ -345,7 +501,7 @@ Integer a=0;
 					</div>
 				</div> -->
 
-				<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+				<!-- <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
 
 					<div class="col-sm-8">
 						<div class="col-sm-2">
@@ -379,7 +535,7 @@ Integer a=0;
 							</form>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			
 			</div>
 		</div>
@@ -441,7 +597,6 @@ Integer a=0;
 <script src="../assets_/dist/js/dashboard5-data.js"></script>
 
 <script src="../assets_/vendors/bower_components/FooTable/compiled/footable.min.js" type="text/javascript"></script>
-
 <script>
 	$(function () {
 		var userid = $("#userRoleid").val();
@@ -449,39 +604,117 @@ Integer a=0;
 		$.ajax({
 			type: "GET",
 			contentType: "application/json",
-			url: "/TechingRepost/" + userid,
+			url: "/fildListRepost/"+userid,
 			dataType: 'json',
 			success: function (msgTable) {
 
 				var tebleRepost = "";
-				var tebleRepost1 = "";
-
+				var tebleRepost3 = "";
+				var figu = "";
 
 				for (var i = 0; i < msgTable.length; i++) {
 					var num = i + 1;
-					tebleRepost +=
+					tebleRepost3 +=
 						'<tr>' +
 						'<td>' + num + '</td>' +
-						'<td>' + msgTable[i].teachReportId + '</td>' +
-						'<td>' + msgTable[i].resumPst + '</td>' +
-						'<td>' + msgTable[i].resumTsd + '</td>' +
-						'<td>' + msgTable[i].repostSum + '</td>' +
-						'<td>' + msgTable[i].userepRortFK + '</td>' +
-						'<td>' + msgTable[i].dateteachFK + '</td>' +
+						'<td>' + msgTable[i].tableTeaching.startMonthString+"-"+msgTable[i].tableTeaching.stopMonthString + '</td>' +
+						'<td>' + msgTable[i].degreeStuden.nameDegree + '</td>' +
+						'<td>' + msgTable[i].user.positionTeach + '</td>' +
+						'<td>' + msgTable[i].tableTeaching.teachTerm+" "+"/"+" "+msgTable[i].tableTeaching.teachYear + '</td>' +
+						
 						'<td>' + '<div class="panel-group accordion-struct" role="tablist" aria-multiselectable="true">' +
 						'<div class="panel-heading activestate" role="tab" id="headingFive">' +
+						'<input type="hidden" id="term" value='+msgTable[i].tableTeaching.teachTerm+'>'+
+						'<input type="hidden" id="year" value='+ msgTable[i].tableTeaching.termYear+'>'+
+						'<input type="hidden" id="degree" value='+ msgTable[i].tableTeaching.degreeStuden+'>'+
+						'<input type="hidden" id="mojor" value='+ msgTable[i].repostMoney+'>'+
 						'<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank" class="collapsed"' +
 						'role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"' +
-						'aria-controls="collapseSix">' +
+						'aria-controls="collapseSix" onclick="tableSETRepost()">' +
 						'<i class="fa fa-print"></i><span> Print</span>' +
 						'</button>' +
 						'</div>' +
 
 
-						'</td>' +
+						// '</td>' +
 						'</tr>';
 
 
+				}
+				if (tebleRepost3 == "") {
+					tebleRepost3 += '<tr>' +
+						'<td colspan="6">' +
+						'<div class="text-center ">' +
+						'<p class="text-danger">ไม่มีข้อมูล</p>' +
+						'<p><a href="/keepword" class="text-primary" ><----กรุณาลงทะเบียนสอน---></a></p>' +
+						'</div>' +
+						'</td>' +
+						'</tr>';
+				}
+
+				$('#fildListRepost tbody').append(tebleRepost3);
+
+
+			},
+			error: function (e) {
+				alert("ERROR: tebleRepost1", e);
+				console.log("ERROR: tebleRepost1", e);
+			}
+		});
+	});
+</script>
+<script>
+	function tableSETRepost() {
+		var id1 = {
+			useridS1: $("#userRoleid").val(),
+			termS2: $("#term").val(),
+			yearS3: $("#year").val(),
+			degreeS4: $("#degree").val()
+		};
+		$('#pe_user1').val(id1.useridS1);
+		$('#pe_term1').val(id1.termS2);
+		$('#pe_year1').val(id1.yearS3);
+		$('#pe_degree1').val(id1.degreeS4);
+
+		$('#pe_user2').val(id1.useridS1);
+		$('#pe_term2').val(id1.termS2);
+		$('#pe_year2').val(id1.yearS3);
+		$('#pe_degree2').val(id1.degreeS4);
+
+		$('#pe_user3').val(id1.useridS1);
+		$('#pe_term3').val(id1.termS2);
+		$('#pe_year3').val(id1.yearS3);
+		$('#pe_degree3').val(id1.degreeS4);
+
+		$('#pe_user4').val(id1.useridS1);
+		$('#pe_term4').val(id1.termS2);
+		$('#pe_year4').val(id1.yearS3);
+		$('#pe_degree4').val(id1.degreeS4);
+		$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: "/salaryAndRepost" ,
+			data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msgTable) {
+
+				var tebleRepost = "";
+				var tebleRepost1 = "";
+var tfHour=0;
+var tfMon=0;
+var tfHourR="";
+var tfMonR="";
+				for (var i = 0; i < msgTable.length; i++) {
+					var num = i + 1;
+					tebleRepost +=
+						'<tr>' +
+						'<td>' + num + '</td>' +
+						'<td>' + msgTable[i].sumTudsadeePrtibadHour + '</td>' +
+						'<td>' + msgTable[i].salarySummoney + '</td>' +		
+						'<td>' + msgTable[i].statusSubject.statusSubjectName + '</td>' +	
+						'</tr>';
+						tfHour+= msgTable[i].sumTudsadeePrtibadHour;
+						tfMon+=msgTable[i].salarySummoney;
 				}
 				if (tebleRepost == "") {
 					tebleRepost += '<tr>' +
@@ -493,17 +726,19 @@ Integer a=0;
 						'</td>' +
 						'</tr>';
 				}
-
+				tfHourR= tfHour+" "+"ชั่วโมง";
+				tfMonR= tfMon+" "+"บาท";
 				$('#tebleRepostShow tbody').append(tebleRepost);
-
-
+				
+				$('#tfHour').append(tfHourR);
+				$('#tfMon').append(tfMonR);
 			},
 			error: function (e) {
-				alert("ERROR: tebleRepost", e);
-				console.log("ERROR: tebleRepost", e);
+				alert("ERROR: tebleRepost2", e);
+				console.log("ERROR: tebleRepost2", e);
 			}
 		});
-	});
+	};
 </script>
 <script>
 	function tests() {
@@ -537,6 +772,32 @@ Integer a=0;
 			$modal.modal('hide');
 		});
 	});
+</script>
+<script>
+	var id1 = {
+			useridS1: $("#userRoleid").val(),
+			termS2: $("#term").val(),
+			yearS3: $("#year").val(),
+			degreeS4: $("#degree").val()
+		};
+    function prpost() {
+		$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: "/repostPaper1" ,
+			data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msgTable) {
+
+				window.open('/repostPaper1','_blank');
+			},
+			error: function (e) {
+				alert("ERROR: tebleRepost2", e);
+				console.log("ERROR: tebleRepost2", e);
+			}
+		});
+	
+};
 </script>
 
 </html>

@@ -86,8 +86,8 @@ public class UserDAO  {
 			prepared.setString(5, bean.getPositionTeach());
 			prepared.setString(6, bean.getFaculty());
 			prepared.setString(7, bean.getMojor());
-			prepared.setInt(8, bean.getBaseHour());
-			prepared.setInt(9, bean.getBaseKrm());
+			prepared.setInt(8, bean.getUserbaseHour());
+			prepared.setInt(9, bean.getUserbaseKrm());
 			prepared.setString(10, bean.getStatusLogin());
 
 			prepared.executeUpdate();
@@ -105,7 +105,7 @@ public class UserDAO  {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT * FROM tb_user");
+			sql.append("SELECT * FROM tb_user WHERE tb_user.status_login='U'");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			ResultSet rs = prepared.executeQuery();
 
@@ -119,8 +119,8 @@ public class UserDAO  {
 				user.setPositionTeach(rs.getString("position_teach"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
-				user.setBaseHour(rs.getInt("baseHour"));
-				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
 				user.setStatusLogin(rs.getString("status_login"));
 				
 				list.add(user);
@@ -156,8 +156,8 @@ public class UserDAO  {
 				user.setPositionTeach(rs.getString("position_teach"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
-				user.setBaseHour(rs.getInt("baseHour"));
-				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
 				user.setStatusLogin(rs.getString("status_login"));
 				list.add(user);
 				/*System.out.println(Subject);*/
@@ -192,8 +192,8 @@ public class UserDAO  {
 				bean.setPositionTeach(rs.getString("position_teach"));
 				bean.setFaculty(rs.getString("faculty"));
 				bean.setMojor(rs.getString("mojor"));
-				bean.setBaseHour(rs.getInt("baseHour"));
-				bean.setBaseKrm(rs.getInt("baseKrm"));
+				bean.setUserbaseHour(rs.getInt("baseHour"));
+				bean.setUserbaseKrm(rs.getInt("baseKrm"));
 				bean.setStatusLogin(rs.getString("status_login"));
 				
 				/*System.out.println(bean);*/

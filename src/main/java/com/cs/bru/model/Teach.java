@@ -18,6 +18,9 @@ public class Teach {
 	private int statusTeach;
 	private int statusTeaching;
 	
+	private int reostSumBaseHour;
+	private int reostSumbasecram;
+	
 	private DateofTeach dateofTeach;
 	private Subject subject;
 	private TableTeaching tableTeaching;
@@ -88,12 +91,7 @@ public class Teach {
 	public void setTableteachFk(String tableteachFk) {
 		this.tableteachFk = tableteachFk;
 	}
-	public String getUserFk() {
-		return userFk;
-	}
-	public void setUserFk(String userFk) {
-		this.userFk = userFk;
-	}
+
 	public DateofTeach getDateofTeach() {
 		return dateofTeach;
 	}
@@ -141,6 +139,24 @@ public class Teach {
 	}
 	public void setStatusTeaching(int statusTeaching) {
 		this.statusTeaching = statusTeaching;
+	}
+	public String getUserFk() {
+		return userFk;
+	}
+	public void setUserFk(String userFk) {
+		this.userFk = userFk;
+	}
+	public int getReostSumBaseHour() {
+		return reostSumBaseHour;
+	}
+	public void setReostSumBaseHour(int reostSumBaseHour) {
+		this.reostSumBaseHour = reostSumBaseHour;
+	}
+	public int getReostSumbasecram() {
+		return reostSumbasecram;
+	}
+	public void setReostSumbasecram(int reostSumbasecram) {
+		this.reostSumbasecram = reostSumbasecram;
 	}
 	
 	

@@ -210,12 +210,12 @@ public class DateofTeachDAO {
 							teach.setMoneyPrtibad(rs.getInt("money_prtibad"));
 							teach.setSalarySum(rs.getInt("salary_sum"));
 						
-							teach.setBaseHour(rs.getInt("basehour"));
-							teach.setBasecram(rs.getInt("basecram"));
+							teach.setBaseHour(rs.getInt("teach_basehour"));
+							teach.setBasecram(rs.getInt("teach_basecram"));
 							teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 							teach.setSubjactFk(rs.getString("subject_fk"));
 							teach.setTableteachFk(rs.getString("tableteach_fk"));
-							teach.setUserFk(rs.getString("user_fk"));
+							//teach.setUserFk(rs.getString("user_fk"));
 							teach.setStatusTeaching(rs.getInt("status_teaching"));
 							TableTeaching tableteach = new TableTeaching();
 							Subject subject = new Subject();
@@ -255,8 +255,8 @@ public class DateofTeachDAO {
 							user.setUserLname(rs.getString("user_lastname"));
 							user.setFaculty(rs.getString("faculty"));
 							user.setMojor(rs.getString("mojor"));
-							user.setBaseHour(rs.getInt("baseHour"));
-							user.setBaseKrm(rs.getInt("baseKrm"));
+							user.setUserbaseHour(rs.getInt("baseHour"));
+							user.setUserbaseKrm(rs.getInt("baseKrm"));
 							
 
 							

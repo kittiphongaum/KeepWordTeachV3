@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-	  
+	<%@page import="com.cs.bru.model.User"%>
+	<%@ page import="java.util.List"%>
  <!DOCTYPE html > 
 <html lang="en">
 <head>
@@ -32,6 +33,21 @@
 		 /* background-image: linear-gradient(to bottom right, #443166 , yellow ) Standard syntax (must be last) */
 		}
 		</style>
+		<%
+		User  userLog = null;
+		 User  userByid = null; 
+		User userByBean = null;
+		String result = "";
+	 %>
+	 
+		 <%
+		   userLog = (User) request.getSession().getAttribute("loginUser");
+		/*  list = (List<User>) request.getSession().getAttribute("listUser");  */
+		  userByid = (User) request.getSession().getAttribute("listUser"); 
+		/*  userByBean = (User) request.getAttribute("resultBean"); 
+		 result = (String) request.getAttribute("messesUpdate");  */
+	 
+	 %>
 </head>
 <body>
 		<div class="preloader-it">
@@ -44,7 +60,7 @@
 		<div class="mobile-only-brand pull-left">
 			<div class="nav-header pull-left">
 				<div class="logo-wrap">
-					<a href="index.html">
+					<a href="index1.html">
 						<img class="brand-img" src="../assets_/dist/img/logo.png" alt="brand"/>
 						<span class="brand-text">KeepWork</span>
 					</a>
@@ -56,102 +72,86 @@
 			
 		</div>
 		<div id="mobile_only_nav" class="mobile-only-nav pull-right">
-			<ul class="nav navbar-right top-nav pull-right">
-			
-				<li class="dropdown app-drp">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-apps top-nav-icon"></i></a>
-					<ul class="dropdown-menu app-dropdown" data-dropdown-in="slideInRight" data-dropdown-out="flipOutX">
-						<li>
-							<div class="app-nicescroll-bar">
-								<ul class="app-icon-wrap pa-10">
-									<li>
-										<a href="weather.html" class="connection-item">
-										<i class="zmdi zmdi-cloud-outline txt-info"></i>
-										<span class="block">weather</span>
-										</a>
-									</li>
-									<li>
-										<a href="inbox.html" class="connection-item">
-										<i class="zmdi zmdi-email-open txt-success"></i>
-										<span class="block">e-mail</span>
-										</a>
-									</li>
-									<li>
-										<a href="calendar.html" class="connection-item">
-										<i class="zmdi zmdi-calendar-check txt-primary"></i>
-										<span class="block">calendar</span>
-										</a>
-									</li>
-									<li>
-										<a href="vector-map.html" class="connection-item">
-										<i class="zmdi zmdi-map txt-danger"></i>
-										<span class="block">map</span>
-										</a>
-									</li>
-									<li>
-										<a href="chats.html" class="connection-item">
-										<i class="zmdi zmdi-comment-outline txt-warning"></i>
-										<span class="block">chat</span>
-										</a>
-									</li>
-									<li>
-										<a href="contact-card.html" class="connection-item">
-										<i class="zmdi zmdi-assignment-account"></i>
-										<span class="block">contact</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="app-box-bottom-wrap">
-								<hr class="light-grey-hr ma-0"/>
-								<a class="block text-center read-all" href="javascript:void(0)"> more </a>
-							</div>
-						</li>
-					</ul>
-				</li>
-				<li class="dropdown full-width-drp">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
-				</li>
-				<li class="dropdown auth-drp">
-					<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="dist/img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
-					<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
-						<li>
-							<a href="profile.html"><i class="zmdi zmdi-account"></i><span>Profile</span></a>
-						</li>
-						<li>
-							<a href="#"><i class="zmdi zmdi-card"></i><span>my balance</span></a>
-						</li>
-						<li>
-							<a href="inbox.html"><i class="zmdi zmdi-email"></i><span>Inbox</span></a>
-						</li>
-						<li>
-							<a href="#"><i class="zmdi zmdi-settings"></i><span>Settings</span></a>
-						</li>
-						<li class="divider"></li>
-						<li class="sub-menu show-on-hover">
-							<a href="#" class="dropdown-toggle pr-0 level-2-drp"><i class="zmdi zmdi-check text-success"></i> available</a>
-							<ul class="dropdown-menu open-left-side">
-								<li>
-									<a href="#"><i class="zmdi zmdi-check text-success"></i><span>available</span></a>
+				<ul class="nav navbar-right top-nav pull-right">
+					<li class="dropdown app-drp">
+						<a class="dropdown-toggle">
+							<%=userByid.getUserId() %></a>
+						<input type="hidden" id="userRoleid" value="<%=userByid.getUserId()%>">
+					</li>
+					<li class="dropdown app-drp">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-apps top-nav-icon"></i></a>
+
+						<ul class="dropdown-menu app-dropdown" data-dropdown-in="slideInRight" data-dropdown-out="flipOutX">
+							<li>
+								<div class="app-nicescroll-bar">
+									<ul class="app-icon-wrap pa-10">
+										<li>
+											<a href="weather.html" class="connection-item">
+												<i class="zmdi zmdi-cloud-outline txt-info"></i>
+												<span class="block">weather</span>
+											</a>
+										</li>
+										<li>
+											<a href="inbox.html" class="connection-item">
+												<i class="zmdi zmdi-email-open txt-success"></i>
+												<span class="block">e-mail</span>
+											</a>
+										</li>
+										<li>
+											<a href="./calendar" class="connection-item">
+												<i class="zmdi zmdi-calendar-check txt-primary"></i>
+												<span class="block">calendar</span>
+											</a>
+										</li>
+										<li>
+											<a href="vector-map.html" class="connection-item">
+												<i class="zmdi zmdi-map txt-danger"></i>
+												<span class="block">map</span>
+											</a>
+										</li>
+										<li>
+											<a href="chats.html" class="connection-item">
+												<i class="zmdi zmdi-comment-outline txt-warning"></i>
+												<span class="block">chat</span>
+											</a>
+										</li>
+										<li>
+											<a href="contact-card.html" class="connection-item">
+												<i class="zmdi zmdi-assignment-account"></i>
+												<span class="block">contact</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="app-box-bottom-wrap">
+									<hr class="light-grey-hr ma-0" />
+									<a class="block text-center read-all" href="javascript:void(0)"> more </a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown full-width-drp">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="zmdi zmdi-more-vert top-nav-icon"></i></a>
+					</li>
+					<li class="dropdown auth-drp">
+							<li class="dropdown auth-drp">
+									<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../assets_/dist/img/user1.png" alt="user_auth"
+										 class="user-auth-img img-circle" /><span class="user-online-status"></span></a>
+									<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+										<li>
+											<a href="./user"><i class="zmdi zmdi-account"></i><span>บันชีผู้ใช้</span></a>
+										</li>
+										<li>
+											<a href="javascript: document.logoutForm.submit()"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
+										</li>
+									<form name="logoutForm" action="/" method="post" th:hidden="true"></form>
+									</ul>
 								</li>
-								<li>
-									<a href="#"><i class="zmdi zmdi-circle-o text-warning"></i><span>busy</span></a>
-								</li>
-								<li>
-									<a href="#"><i class="zmdi zmdi-minus-circle-outline text-danger"></i><span>offline</span></a>
-								</li>
-							</ul>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a href="#"><i class="zmdi zmdi-power"></i><span>Log Out</span></a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
+					</li>
+				</ul>
+			</div>
 	</nav>
 	<!-- Left Sidebar Menu -->
 	<div class="fixed-sidebar-left">
@@ -161,32 +161,57 @@
 					<i class="zmdi zmdi-more"></i>
 				</li>
 				<li>
-					<a  href="./index1" data-toggle="collapse" data-target="#dashboard_dr" ><div class="pull-left"><i class="ti-layout-grid2  mr-20"></i><span class="right-nav-text">Dashboard</span></div><div class="clearfix"></div></a>
+					<a href="./index1" data-toggle="collapse" data-target="#dashboard_dr">
+						<div class="pull-left"><i class="ti-layout-grid2  mr-20"></i><span class="right-nav-text">Dashboard</span></div>
+						<div class="clearfix"></div>
+					</a>
 					<ul id="dashboard_dr" class="collapse collapse-level-1">
-						
+
 					</ul>
 				</li>
 				<li>
-					<a href="./keepword" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="icon-note mr-20"></i><span class="right-nav-text">ลงทะเบียนสอน </span></div><div class="clearfix"></div></a>
-					<ul id="app_dr" class="collapse collapse-level-1">			
+					<a  href="./keepword" data-toggle="collapse" data-target="#app_dr">
+						<div class="pull-left"><i class="icon-note mr-20"></i><span class="right-nav-text">ลงทะเบียนสอน </span></div>
+						<div class="clearfix"></div>
+					</a>
+					<ul id="app_dr" class="collapse collapse-level-1">
 					</ul>
 				</li>
 				<li>
-					<a href="./historyteach" data-toggle="collapse" data-target="#app_dr" ><div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวิติการสอน </span></div><div class="clearfix"></div></a>
-					<ul id="app_dr" class="collapse collapse-level-1">			
+					<a  href="./stipend" data-toggle="collapse" data-target="#app_dr">
+						<div class="pull-left"><i class="icon-share-alt mr-20"></i><span class="right-nav-text">จักการเบิกค่าสอน</span></div>
+						<div class="clearfix"></div>
+					</a>
+					<ul id="app_dr" class="collapse collapse-level-1">
 					</ul>
 				</li>
 				<li>
-					<a href="./user" data-toggle="collapse" data-target="#app_dr" href="./keepword"><div class="pull-left"><i class="icon-user  mr-20"></i><span class="right-nav-text">ข้อมูลผู้ใช้ </span></div><div class="clearfix"></div></a>
-					<ul id="app_dr" class="collapse collapse-level-1">			
+					<a href="./historyteach" data-toggle="collapse" data-target="#app_dr">
+						<div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวิติการสอน </span></div>
+						<div class="clearfix"></div>
+					</a>
+					<ul id="app_dr" class="collapse collapse-level-1">
 					</ul>
 				</li>
 				<li>
-					<a class="active" href="./calender" data-toggle="collapse" data-target="#app_dr"><div class="pull-left"><i class="icon-calender mr-20"></i><span class="right-nav-text">calendar </span></div><div class="clearfix"></div></a>
-					<ul id="app_dr" class="collapse collapse-level-1">					
+					<a href="./user" data-toggle="collapse" data-target="#app_dr" href="./keepword">
+						<div class="pull-left"><i class="icon-user  mr-20"></i><span class="right-nav-text">ข้อมูลผู้ใช้ </span></div>
+						<div class="clearfix"></div>
+					</a>
+					<ul id="app_dr" class="collapse collapse-level-1">
 					</ul>
 				</li>
-				<li><hr class="light-grey-hr mb-10"/></li>	
+				<li>
+					<a class="active" href="./calender" data-toggle="collapse" data-target="#app_dr">
+						<div class="pull-left"><i class="icon-calender mr-20"></i><span class="right-nav-text">calendar </span></div>
+						<div class="clearfix"></div>
+					</a>
+					<ul id="app_dr" class="collapse collapse-level-1">
+					</ul>
+				</li>
+				<li>
+					<hr class="light-grey-hr mb-10" />
+				</li>
 			</ul>
 		</div>
 		<!-- Main Content -->
@@ -201,7 +226,7 @@
 					<!-- Breadcrumb -->
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 					  <ol class="breadcrumb">
-						<li><a href="index.html">Dashboard</a></li>
+						<li><a href="index1">Dashboard</a></li>
 						
 						<li class="active"><span>calendar</span></li>
 					  </ol>
@@ -215,13 +240,13 @@
 						<div class="panel panel-default card-view">
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
-									<div class="add-event-wrap">
+									<!-- <div class="add-event-wrap">
 										<div class="calendar-event btn btn-success">My Event One <a href="javascript:void(0);" class="remove-calendar-event"><i class="fa fa-times fa-fw"></i></a></div>
 										<div class="calendar-event btn btn-info">My Event Two <a href="javascript:void(0);" class="remove-calendar-event"><i class="fa fa-times fa-fw"></i></a></div>
 										<div class="calendar-event btn btn-warning">My Event Three <a href="javascript:void(0);" class="remove-calendar-event"><i class="fa fa-times fa-fw"></i></a></div>
 										<div class="calendar-event btn btn-primary">My Event Four <a href="javascript:void(0);" class="remove-calendar-event"><i class="fa fa-times fa-fw"></i></a></div>
 										<input type="text" placeholder="Add Event and hit enter" class="form-control add-event mt-30">
-									</div>
+									</div> -->
 									<div class="calendar-wrap mt-40">
 									  <div id="calendar"></div>
 									</div>

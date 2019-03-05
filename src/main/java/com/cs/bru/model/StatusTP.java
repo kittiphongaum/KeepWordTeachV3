@@ -9,9 +9,12 @@ public class StatusTP {
 	private String setjectUserid;
 	private String techingSetjectId;
 	private String setstatusSubId;
+	private String saleryThaibaht;
+	
 	private Teach teach;
 	private User  user;
 	private TableTeaching tableTeaching;
+	private DegreeStuden degreeStuden;
 	private StatusSubject statusSubjectbean;
 	public String getSetstatusSubjectId() {
 		return setstatusSubjectId;
@@ -84,6 +87,18 @@ public class StatusTP {
 	}
 	public void setStatusSubjectbean(StatusSubject statusSubjectbean) {
 		this.statusSubjectbean = statusSubjectbean;
+	}
+	public String getSaleryThaibaht() {
+		return saleryThaibaht;
+	}
+	public void setSaleryThaibaht(String saleryThaibaht) {
+		this.saleryThaibaht = saleryThaibaht;
+	}
+	public DegreeStuden getDegreeStuden() {
+		return degreeStuden;
+	}
+	public void setDegreeStuden(DegreeStuden degreeStuden) {
+		this.degreeStuden = degreeStuden;
 	}
 	
 }

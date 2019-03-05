@@ -13,25 +13,15 @@ public class User {
 		private String userFname;
 		private String userLname;
 		private String positionTeach;
+		private String positionUser;
 		private String faculty;
 		private String mojor;
-		private int baseHour;
-		private int baseKrm;
+		private int userbaseHour;
+		private int userbaseKrm;
 		private String statusLogin;
 		private Teach Teach;
-		
-		
-		
-		
-		
 		public int getId() {
 			return Id;
-		}
-		@Override
-		public String toString() {
-			return "User [Id=" + Id + ", userId=" + userId + ", userPass=" + userPass + ", userFname=" + userFname
-					+ ", userLname=" + userLname + ", positionTeach=" + positionTeach + ", faculty=" + faculty
-					+ ", mojor=" + mojor + ", baseHour=" + baseHour + ", baseKrm=" + baseKrm + "]";
 		}
 		public void setId(int id) {
 			Id = id;
@@ -47,6 +37,12 @@ public class User {
 		}
 		public void setUserPass(String userPass) {
 			this.userPass = userPass;
+		}
+		public String getPrefixName() {
+			return prefixName;
+		}
+		public void setPrefixName(String prefixName) {
+			this.prefixName = prefixName;
 		}
 		public String getUserFname() {
 			return userFname;
@@ -66,6 +62,12 @@ public class User {
 		public void setPositionTeach(String positionTeach) {
 			this.positionTeach = positionTeach;
 		}
+		public String getPositionUser() {
+			return positionUser;
+		}
+		public void setPositionUser(String positionUser) {
+			this.positionUser = positionUser;
+		}
 		public String getFaculty() {
 			return faculty;
 		}
@@ -78,40 +80,17 @@ public class User {
 		public void setMojor(String mojor) {
 			this.mojor = mojor;
 		}
-		public int getBaseHour() {
-			return baseHour;
+		public int getUserbaseHour() {
+			return userbaseHour;
 		}
-		public void setBaseHour(int baseHour) {
-			this.baseHour = baseHour;
+		public void setUserbaseHour(int userbaseHour) {
+			this.userbaseHour = userbaseHour;
 		}
-		public int getBaseKrm() {
-			return baseKrm;
+		public int getUserbaseKrm() {
+			return userbaseKrm;
 		}
-		public void setBaseKrm(int baseKrm) {
-			this.baseKrm = baseKrm;
-		}
-		public User(int id, String userId, String userPass, String userFname, String userLname, String positionTeach,
-				String faculty, String mojor, int baseHour, int baseKrm) {
-			super();
-			Id = id;
-			this.userId = userId;
-			this.userPass = userPass;
-			this.userFname = userFname;
-			this.userLname = userLname;
-			this.positionTeach = positionTeach;
-			this.faculty = faculty;
-			this.mojor = mojor;
-			this.baseHour = baseHour;
-			this.baseKrm = baseKrm;
-		}
-		public User() {
-			super();
-		}
-		public String getPrefixName() {
-			return prefixName;
-		}
-		public void setPrefixName(String prefixName) {
-			this.prefixName = prefixName;
+		public void setUserbaseKrm(int userbaseKrm) {
+			this.userbaseKrm = userbaseKrm;
 		}
 		public String getStatusLogin() {
 			return statusLogin;
@@ -120,7 +99,7 @@ public class User {
 			this.statusLogin = statusLogin;
 		}
 		
-		
+	
 		
 		
 }

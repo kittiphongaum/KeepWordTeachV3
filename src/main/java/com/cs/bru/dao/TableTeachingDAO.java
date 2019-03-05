@@ -22,7 +22,7 @@ public class TableTeachingDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_table_teaching(teble_teach_id,teach_term,term_year,teach_week,section,studen_number,start_month,stop_month,teach_year,start_time,stop_time,standard_teach,room,user_roleid,subject_roleid,degree_studen,sum_hour)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+					"INSERT INTO tb_table_teaching(teble_teach_id,teach_term,term_year,teach_week,section,studen_number,start_month,stop_month,teach_year,start_time,stop_time,standard_teach,room,user_roleid,subject_roleid,degree_studen,sum_hour,start_month_string,stop_month_string)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getTebleTeachId());
 			prepared.setString(2, bean.getTeachTerm());
@@ -45,6 +45,8 @@ public class TableTeachingDAO {
 			prepared.setString(15, bean.getSubjectRoleid());
 			prepared.setString(16, bean.getDegreeStuden());
 			prepared.setString(17, bean.getSumHour());
+			prepared.setString(18, bean.getStartMonthString());
+			prepared.setString(19, bean.getStopMonthString());
 
 			prepared.executeUpdate();
 			 /*System.out.println(bean);*/ 
@@ -182,8 +184,8 @@ public class TableTeachingDAO {
 				user.setUserLname(rs.getString("user_lastname"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
-				user.setBaseHour(rs.getInt("baseHour"));
-				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
 				
 				teach.setSubject(subject);
 				teach.setUser(user);
@@ -255,8 +257,8 @@ public class TableTeachingDAO {
 				user.setPositionTeach(rs.getString("position_teach"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
-				user.setBaseHour(rs.getInt("baseHour"));
-				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
 			
 				teach.setSubject(subject);
 				teach.setUser(user);

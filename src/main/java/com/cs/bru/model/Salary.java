@@ -6,9 +6,19 @@ public class Salary {
 		private int salarySumPrtibad;
 		private int sumTudsadeePrtibad;
 		private int salaryStatus;
+	
+		
+		private int sumTudsadeePrtibadHour;
+		private int salarySummoney;
+		private String saleryTaibaht;
+		private int salarySetatatusId;
+		private String salaryTableteahing;
 		private String salarySubjeatFk;
 		private String salaryuserFk;
 		private String salaryDateofteach;
+		private User user;
+		private StatusSubject statusSubject;
+		private TableTeaching tableTeaching;
 		
 		public String getSalaryId() {
 			return salaryId;
@@ -58,5 +68,54 @@ public class Salary {
 		public void setSalaryuserFk(String salaryuserFk) {
 			this.salaryuserFk = salaryuserFk;
 		}
+		public int getSumTudsadeePrtibadHour() {
+			return sumTudsadeePrtibadHour;
+		}
+		public void setSumTudsadeePrtibadHour(int sumTudsadeePrtibadHour) {
+			this.sumTudsadeePrtibadHour = sumTudsadeePrtibadHour;
+		}
+		public int getSalarySummoney() {
+			return salarySummoney;
+		}
+		public void setSalarySummoney(int salarySummoney) {
+			this.salarySummoney = salarySummoney;
+		}
+		public String getSaleryTaibaht() {
+			return saleryTaibaht;
+		}
+		public void setSaleryTaibaht(String saleryTaibaht) {
+			this.saleryTaibaht = saleryTaibaht;
+		}
+		public int getSalarySetatatusId() {
+			return salarySetatatusId;
+		}
+		public void setSalarySetatatusId(int salarySetatatusId) {
+			this.salarySetatatusId = salarySetatatusId;
+		}
+		public TableTeaching getTableTeaching() {
+			return tableTeaching;
+		}
+		public void setTableTeaching(TableTeaching tableTeaching) {
+			this.tableTeaching = tableTeaching;
+		}
+		public String getSalaryTableteahing() {
+			return salaryTableteahing;
+		}
+		public void setSalaryTableteahing(String salaryTableteahing) {
+			this.salaryTableteahing = salaryTableteahing;
+		}
+		public User getUser() {
+			return user;
+		}
+		public void setUser(User user) {
+			this.user = user;
+		}
+		public StatusSubject getStatusSubject() {
+			return statusSubject;
+		}
+		public void setStatusSubject(StatusSubject statusSubject) {
+			this.statusSubject = statusSubject;
+		}
+		
 		
 }

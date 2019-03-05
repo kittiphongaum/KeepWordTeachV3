@@ -9,9 +9,12 @@ public class ConnectDB {
 		Connection connect=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/keepworkteach3" + "?user=root&password=");
+			//connect = DriverManager.getConnection("jdbc:mysql://localhost/keepworkteach3" + "?user=root&password=");
+			connect = DriverManager.getConnection("jdbc:mysql://localhost/keepworkteach3?useUnicode=yes&characterEncoding=UTF-8","root","");
+			
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return connect;
 	}

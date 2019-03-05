@@ -121,7 +121,7 @@ public  class ServiceThaiBaht {
 	            }
 	            buffer.append(SCALE_TH[scale_idx]);
 	        }
-	        System.out.println(buffer);
+	      //  System.out.println(buffer);
 	        return buffer.toString();
 	        
 	    }

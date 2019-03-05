@@ -1,6 +1,6 @@
 	
 	//insert
-	function insertTeachingfrom() {
+	function insertTeachingfrom1() {
 		//	console.log(warranty)
 //		var teachIdS = $('#teachTerm').val();
 //		var Year = $('#termYear').val();

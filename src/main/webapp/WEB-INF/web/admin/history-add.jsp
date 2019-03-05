@@ -52,7 +52,7 @@
 					<div class="nav-header pull-left">
 						<div class="logo-wrap">
 							<a href="./index-admin">
-								<img class="brand-img" src="" alt="brand" />
+								<img class="brand-img" src="../assets_/dist/img/logo3.png" alt="brand" />
 								<span class="brand-text">Welcome</span>
 							</a>
 						</div>

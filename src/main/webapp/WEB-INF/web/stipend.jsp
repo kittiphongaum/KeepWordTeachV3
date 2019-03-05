@@ -535,7 +535,7 @@
 													<table id="listSubject" class="table table-hover table-bordered mb-0">
 														<thead class="text-warning ">
 															<tr>
-																<th scope="col">#</th>
+																<th scope="col">ลำดับ</th>
 																<th scope="col">ชื่อผู้สอน</th>
 																<th scope="col">รายวิชา</th>
 																<th scope="col">จำนวนชั่วโมง</th>
@@ -681,14 +681,14 @@
 																	<div class="row">
 																		<p class="col-sm-4 ">รวมเป็นเงินทั้งหมด</p>
 																	    <p  class="col-sm-6" id="formoney1"> </p>
-																	
+																	<input type="hidden" id="formoney2">
 																		<div class="col-sm-2 ">
 																			<p>บาท</p>
 																		</div>
 																	</div>
 																</div>
 															</div>
-														
+															<input type="hidden" id="tableTeaching_id">
 													</div>
 												</form>
 											</div>
@@ -984,14 +984,15 @@
 					tsd = 0,
 					tsd1 = 0,
 					psb,sum_maney_tsd=0,sum_maney_ptb=0;
+					
 
-
+					var tableTeaching_id="";
 				for (var i = 0; i < msg1.length; i++) {
 					var gg = i + 1;
 					var hol = "";
 					var _sum_tsd=0,_sum_ptb=0;
-					alert(222);
 					//sumtsdp=(msg1[i].tudsadeeDft+msg1[i].prtibadDft);
+					tableTeaching_id = msg1[i].teach.teachId;
 					tsd1 = msg1[i].tudsadeeDft;
 					psb = msg1[i].prtibadDft;
 					hh = msg1[i].holidayDft;
@@ -1032,9 +1033,11 @@
 					sumPsb = "";
 					tableSum = "";
 				}
+				
 			
 				$('#Table2 tbody').append(table2);
 
+				$('#tableTeaching_id').val(tableTeaching_id);
 
 				var show_sum_day_tsd='<p>'+sumTsd+'</P>';
 				$('#show_sum_day_tsd').append(show_sum_day_tsd);
@@ -1042,16 +1045,18 @@
 				
 				var ptb_sum='<p>'+sumPsb+'</p>';
 				$('#show_sum_day_ptb').append(ptb_sum);
-				$('#show_sum_day_ptb_fk').val(ptb_sum);
+				$('#show_sum_day_ptb_fk').val(sumPsb);
 
 
 				var show_sum_tsd='<p>'+sum_maney_tsd+'</p>';
 				$('#show_sum_tsd').append(show_sum_tsd);
-				$('#show_sum_day_tsd_fk').val(show_sum_tsd);
+				$('#show_sum_tsd_fk').val(sum_maney_tsd);
+				//รวม
+				$('#salary_hour_TSD').val(show_sum_tsd);
 
 				var show_sum_ptb='<p>'+sum_maney_ptb+'</p>';
 				$('#show_sum_ptb').append(show_sum_ptb);
-				$('#show_sum_ptb_fk').val(show_sum_ptb);
+				$('#show_sum_ptb_fk').val(sum_maney_ptb);
 
 				$('#sumTsd').append(sumTsd);
                
@@ -1130,6 +1135,7 @@
 
 				$('#formoney').append(formoney)
 				$('#formoney1').append(formoney)
+				$('#formoney2').val(formoney)
 			},
 			error: function (e) {
 				alert("ERROR: table3", e);
@@ -1194,18 +1200,30 @@
 		var mouth = d.getMonth()+1;
 		var year = d.getFullYear()+543;
 		var idFk =$('#userRoleid').val();
-		var idAs = (day+"/"+mouth+"/"+year+idFk);
-			var insertTableAsRepost = {
-			useridS1: $("#userRoleid").val(),
-			termS2: $("#termS2").val(),
-			yearS3: $("#yearS3").val(),
-			degreeS4: $("#degreeS4").val()
+		var tableteach_Id=$("#tableTeaching_id").val();
+		var idAs = (day+"/"+mouth+"/"+year+"/"+idFk);
+			var salaryFinalBean = {
+				idRepost:(idAs),
+				salaryIdUser:(idFk),
+				tableteachId:(tableteach_Id),
+				salaryMoney:$("#formoney2").val(),
+				tudsadeeBean:{
+					 tudsadeeHour:$("#show_sum_day_tsd_fk").val(),
+					 tudsadeemoney:$("#show_sum_tsd_fk").val(),
+					 tudsadeeStatus:(2)
+			},
+			prtibadBean:{
+				prtibadHour:$("#show_sum_day_ptb_fk").val(),
+				prtibadMoney:$("#show_sum_ptb_fk").val(),
+				prtibadStatus:(1)
+				}
+				
 		};
 				$.ajax({
 			type: "POST",
-			url: "/insertTechingRepost",
+			url: "/insertSalaryFinalBean",
 			contentType: "application/json; charset=utf-8",
-			data: JSON.stringify(insertTableAsRepost),
+			data: JSON.stringify(salaryFinalBean),
 			dataType: "json",
 			success: function (msg) {
 				console.log(msg)

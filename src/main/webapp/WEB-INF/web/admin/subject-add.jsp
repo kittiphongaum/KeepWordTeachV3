@@ -84,7 +84,7 @@
 				<div class="nav-header pull-left">
 					<div class="logo-wrap">
 						<a href="./index-admin">
-							<img class="brand-img" src="./assets_/dist/img/logo.png" alt="brand" />
+							<img class="brand-img" src="../assets_/dist/img/logo3.png" alt="brand" />
 							<span class="brand-text">Welcome</span>
 						</a>
 					</div>
@@ -359,9 +359,9 @@
 
 
 				<!-- <img src="../assets_/dist/img/sweetalert/alert4.png" alt="alert" class="img-responsive model_img" id="sa-warning1">  -->
-				<!-- <a type="button" class="label label-danger "alt="alert" id="sa-warningteach">ปิด</a> -->
-				<a type="button" alt="alert"  id="sa" class="label label-success ">เปิด</a>
+				<!-- <a type="button" class="label label-danger "alt="alert" id="sa-warningteach">ปิด</a> -->	
 				<!-- Row -->
+				<a type="button" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a onclick="deletesubjectId()" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger" ></i></a>
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="panel panel-default card-view">
@@ -471,24 +471,22 @@
 	<!-- Moment JavaScript -->
 	<script type="text/javascript" src="vendors/bower_components/moment/min/moment-with-locales.min.js"></script>
 	<!-- Bootstrap Colorpicker JavaScript -->
-	<script src="vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+	<script src="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 	<!-- Select2 JavaScript -->
-	<script src="vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
+	<script src="../assets_/vendors/bower_components/select2/dist/js/select2.full.min.js"></script>
 	<!-- Bootstrap Select JavaScript -->
-	<script src="vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="../assets_/vendors/bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<!-- Bootstrap Tagsinput JavaScript -->
-	<script src="vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+	<script src="../assets_/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 	<!-- Bootstrap Touchspin JavaScript -->
-	<script src="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+	<script src="../assets_/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
 	<!-- Multiselect JavaScript -->
-	<script src="vendors/bower_components/multiselect/js/jquery.multi-select.js"></script>
+	<script src="../assets_/vendors/bower_components/multiselect/js/jquery.multi-select.js"></script>
 	<!-- Bootstrap Switch JavaScript -->
-	<script src="vendors/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+	<script src="../assets_/vendors/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
 	<!-- Bootstrap Datetimepicker JavaScript -->
-	<script type="text/javascript" src="vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-	<!-- Form Advance Init JavaScript -->
-	<script src="../assets_/dist/js/form-advance-data.js"></script>
-	<!-- <%@include file="../layout/layoutjs.jsp"%> -->
+	<script type="text/javascript" src="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	
 </body>
 <script>
 	$(document).ready(function () {
@@ -529,7 +527,7 @@
 						'<td>' + msg[i].creditHour + '</td>' +
 						'<td>' + msg[i].tudsadee + '</td>' +
 						'<td>' + msg[i].prtibad + '</td>' +
-						'<td>' + status + '</td>' +
+						'<td>' +'<input type="hidden"id="up_subjectId"value='+msg[i].subjectId+'> <a  class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a onclick="deletesubjectId()" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger" ></i></a>' + '</td>' +
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
 						'</tr>';
 				}
@@ -549,6 +547,32 @@
 				console.log("ERROR: Table1", e);
 			}
 		});
+function deletesubjectId() {
+
+var up_subjectId = { id:$("#up_subjectId").val()}
+
+
+$.ajax({
+	type: "GET",
+	url: "/deletesubject/" + up_subjectId.id,
+	dataType: "json",
+	contentType: "application/json",
+   
+    success: function (resultMsg) {
+		
+		alert("คุณได้บลบวิชา"+resultMsg.subjectName)
+        // workingObject.closest("tr").remove();
+
+        // // re-css for table
+        // $("#sujectTable tbody tr:odd").addClass("info");
+        // $("#sujectTable tbody tr:even").addClass("success");
+    },
+    error: function (e) {
+        alert("ERROR: ", e,);
+        console.log("ERROR: ", e,);
+    }
+});
+};
 	});
 </script>
 <script>
@@ -621,7 +645,9 @@
 
 		});
 
-	}
+	};
+	
+
 </script>
 
 </html>

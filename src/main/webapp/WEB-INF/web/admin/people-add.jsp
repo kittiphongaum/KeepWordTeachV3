@@ -60,7 +60,7 @@
                 <div class="nav-header pull-left">
                     <div class="logo-wrap">
                         <a href="./index-admin">
-                            <img class="brand-img" src="" alt="brand" />
+                            <img class="brand-img" src="../assets_/dist/img/logo3.png" alt="brand" />
                             <span class="brand-text">Welcome</span>
                         </a>
                     </div>
@@ -233,516 +233,12 @@
         </div>
         <!-- /Left Sidebar Menu -->
 
-        <!-- Right Sidebar Menu -->
-        <div class="fixed-sidebar-right">
-            <ul class="right-sidebar">
-                <li>
-                    <div class="tab-struct custom-tab-1">
-                        <ul role="tablist" class="nav nav-tabs" id="right_sidebar_tab">
-                            <li class="active" role="presentation"><a aria-expanded="true" data-toggle="tab" role="tab"
-                                    id="chat_tab_btn" href="#chat_tab">chat</a></li>
-                            <li role="presentation" class=""><a data-toggle="tab" id="messages_tab_btn" role="tab" href="#messages_tab"
-                                    aria-expanded="false">messages</a></li>
-                            <li role="presentation" class=""><a data-toggle="tab" id="todo_tab_btn" role="tab" href="#todo_tab"
-                                    aria-expanded="false">todo</a></li>
-                        </ul>
-                        <div class="tab-content" id="right_sidebar_content">
-                            <div id="chat_tab" class="tab-pane fade active in" role="tabpanel">
-                                <div class="chat-cmplt-wrap">
-                                    <div class="chat-box-wrap">
-                                        <div class="add-friend">
-                                            <a href="javascript:void(0)" class="inline-block txt-grey">
-                                                <i class="zmdi zmdi-more"></i>
-                                            </a>
-                                            <span class="inline-block txt-dark">users</span>
-                                            <a href="javascript:void(0)" class="inline-block text-right txt-grey"><i
-                                                    class="zmdi zmdi-plus"></i></a>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <form role="search" class="chat-search pl-15 pr-15 pb-15">
-                                            <div class="input-group">
-                                                <input type="text" id="example-input1-group2" name="example-input1-group2"
-                                                    class="form-control" placeholder="Search">
-                                                <span class="input-group-btn">
-                                                    <button type="button" class="btn  btn-default"><i class="zmdi zmdi-search"></i></button>
-                                                </span>
-                                            </div>
-                                        </form>
-                                        <div id="chat_list_scroll">
-                                            <div class="nicescroll-bar">
-                                                <ul class="chat-list-wrap">
-                                                    <li class="chat-list">
-                                                        <div class="chat-body">
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Clay
-                                                                            Masse</span>
-                                                                        <span class="time block truncate txt-grey">No
-                                                                            one saves us but ourselves.</span>
-                                                                    </div>
-                                                                    <div class="status away"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user1.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Evie
-                                                                            Ono</span>
-                                                                        <span class="time block truncate txt-grey">Unity
-                                                                            is strength</span>
-                                                                    </div>
-                                                                    <div class="status offline"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user2.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Madalyn
-                                                                            Rascon</span>
-                                                                        <span class="time block truncate txt-grey">Respect
-                                                                            yourself if you would have others respect
-                                                                            you.</span>
-                                                                    </div>
-                                                                    <div class="status online"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user3.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Mitsuko
-                                                                            Heid</span>
-                                                                        <span class="time block truncate txt-grey">I’m
-                                                                            thankful.</span>
-                                                                    </div>
-                                                                    <div class="status online"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Ezequiel
-                                                                            Merideth</span>
-                                                                        <span class="time block truncate txt-grey">Patience
-                                                                            is bitter.</span>
-                                                                    </div>
-                                                                    <div class="status offline"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user1.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Jonnie
-                                                                            Metoyer</span>
-                                                                        <span class="time block truncate txt-grey">Genius
-                                                                            is eternal patience.</span>
-                                                                    </div>
-                                                                    <div class="status online"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user2.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Angelic
-                                                                            Lauver</span>
-                                                                        <span class="time block truncate txt-grey">Every
-                                                                            burden is a blessing.</span>
-                                                                    </div>
-                                                                    <div class="status away"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user3.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Priscila
-                                                                            Shy</span>
-                                                                        <span class="time block truncate txt-grey">Wise
-                                                                            to resolve, and patient to perform.</span>
-                                                                    </div>
-                                                                    <div class="status online"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                            <a href="javascript:void(0)">
-                                                                <div class="chat-data">
-                                                                    <img class="user-img img-circle" src="dist/img/user4.png"
-                                                                        alt="user" />
-                                                                    <div class="user-data">
-                                                                        <span class="name block capitalize-font">Linda
-                                                                            Stack</span>
-                                                                        <span class="time block truncate txt-grey">Our
-                                                                            patience will achieve more than our force.</span>
-                                                                    </div>
-                                                                    <div class="status away"></div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="recent-chat-box-wrap">
-                                        <div class="recent-chat-wrap">
-                                            <div class="panel-heading ma-0">
-                                                <div class="goto-back">
-                                                    <a id="goto_back" href="javascript:void(0)" class="inline-block txt-grey">
-                                                        <i class="zmdi zmdi-chevron-left"></i>
-                                                    </a>
-                                                    <span class="inline-block txt-dark">ryan</span>
-                                                    <a href="javascript:void(0)" class="inline-block text-right txt-grey"><i
-                                                            class="zmdi zmdi-more"></i></a>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </div>
-                                            <div class="panel-wrapper collapse in">
-                                                <div class="panel-body pa-0">
-                                                    <div class="chat-content">
-                                                        <ul class="nicescroll-bar pt-20">
-                                                            <li class="friend">
-                                                                <div class="friend-msg-wrap">
-                                                                    <img class="user-img img-circle block pull-left"
-                                                                        src="dist/img/user.png" alt="user" />
-                                                                    <div class="msg pull-left">
-                                                                        <p>Hello Jason, how are you, it's been a long
-                                                                            time since we last met?</p>
-                                                                        <div class="msg-per-detail text-right">
-                                                                            <span class="msg-time txt-grey">2:30 PM</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="self mb-10">
-                                                                <div class="self-msg-wrap">
-                                                                    <div class="msg block pull-right"> Oh, hi Sarah I'm
-                                                                        have got a new job now and is going great.
-                                                                        <div class="msg-per-detail text-right">
-                                                                            <span class="msg-time txt-grey">2:31 pm</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="self">
-                                                                <div class="self-msg-wrap">
-                                                                    <div class="msg block pull-right"> How about you?
-                                                                        <div class="msg-per-detail text-right">
-                                                                            <span class="msg-time txt-grey">2:31 pm</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="friend">
-                                                                <div class="friend-msg-wrap">
-                                                                    <img class="user-img img-circle block pull-left"
-                                                                        src="dist/img/user.png" alt="user" />
-                                                                    <div class="msg pull-left">
-                                                                        <p>Not too bad.</p>
-                                                                        <div class="msg-per-detail  text-right">
-                                                                            <span class="msg-time txt-grey">2:35 pm</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="input-group">
-                                                        <input type="text" id="input_msg_send" name="send-msg" class="input-msg-send form-control"
-                                                            placeholder="Type something">
-                                                        <div class="input-group-btn emojis">
-                                                            <div class="dropup">
-                                                                <button type="button" class="btn  btn-default  dropdown-toggle"
-                                                                    data-toggle="dropdown"><i class="zmdi zmdi-mood"></i></button>
-                                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                                    <li><a href="javascript:void(0)">Action</a></li>
-                                                                    <li><a href="javascript:void(0)">Another action</a></li>
-                                                                    <li class="divider"></li>
-                                                                    <li><a href="javascript:void(0)">Separated link</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="input-group-btn attachment">
-                                                            <div class="fileupload btn  btn-default"><i class="zmdi zmdi-attachment-alt"></i>
-                                                                <input type="file" class="upload">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="messages_tab" class="tab-pane fade" role="tabpanel">
-                                <div class="message-box-wrap">
-                                    <div class="msg-search">
-                                        <a href="javascript:void(0)" class="inline-block txt-grey">
-                                            <i class="zmdi zmdi-more"></i>
-                                        </a>
-                                        <span class="inline-block txt-dark">messages</span>
-                                        <a href="javascript:void(0)" class="inline-block text-right txt-grey"><i class="zmdi zmdi-search"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="set-height-wrap">
-                                        <div class="streamline message-box nicescroll-bar">
-                                            <a href="javascript:void(0)">
-                                                <div class="sl-item unread-message">
-                                                    <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                        <img class="img-responsive img-circle" src="dist/img/user.png"
-                                                            alt="avatar" />
-                                                    </div>
-                                                    <div class="sl-content">
-                                                        <span class="inline-block capitalize-font   pull-left message-per">Clay
-                                                            Masse</span>
-                                                        <span class="inline-block font-11  pull-right message-time">12:28
-                                                            AM</span>
-                                                        <div class="clearfix"></div>
-                                                        <span class=" truncate message-subject">Themeforest message
-                                                            sent via your envato market profile</span>
-                                                        <p class="txt-grey truncate">Neque porro quisquam est qui
-                                                            dolorem ipsu messm quia dolor sit amet, consectetur,
-                                                            adipisci velit</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <div class="sl-item">
-                                                    <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                        <img class="img-responsive img-circle" src="dist/img/user1.png"
-                                                            alt="avatar" />
-                                                    </div>
-                                                    <div class="sl-content">
-                                                        <span class="inline-block capitalize-font   pull-left message-per">Evie
-                                                            Ono</span>
-                                                        <span class="inline-block font-11  pull-right message-time">1
-                                                            Feb</span>
-                                                        <div class="clearfix"></div>
-                                                        <span class=" truncate message-subject">Pogody theme support</span>
-                                                        <p class="txt-grey truncate">Neque porro quisquam est qui
-                                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                                            velit</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <div class="sl-item">
-                                                    <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                        <img class="img-responsive img-circle" src="dist/img/user2.png"
-                                                            alt="avatar" />
-                                                    </div>
-                                                    <div class="sl-content">
-                                                        <span class="inline-block capitalize-font   pull-left message-per">Madalyn
-                                                            Rascon</span>
-                                                        <span class="inline-block font-11  pull-right message-time">31
-                                                            Jan</span>
-                                                        <div class="clearfix"></div>
-                                                        <span class=" truncate message-subject">Congratulations from
-                                                            design nominees</span>
-                                                        <p class="txt-grey truncate">Neque porro quisquam est qui
-                                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                                            velit</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <div class="sl-item unread-message">
-                                                    <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                        <img class="img-responsive img-circle" src="dist/img/user3.png"
-                                                            alt="avatar" />
-                                                    </div>
-                                                    <div class="sl-content">
-                                                        <span class="inline-block capitalize-font   pull-left message-per">Ezequiel
-                                                            Merideth</span>
-                                                        <span class="inline-block font-11  pull-right message-time">29
-                                                            Jan</span>
-                                                        <div class="clearfix"></div>
-                                                        <span class=" truncate message-subject">Themeforest item
-                                                            support message</span>
-                                                        <p class="txt-grey truncate">Neque porro quisquam est qui
-                                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                                            velit</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <div class="sl-item unread-message">
-                                                    <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                        <img class="img-responsive img-circle" src="dist/img/user4.png"
-                                                            alt="avatar" />
-                                                    </div>
-                                                    <div class="sl-content">
-                                                        <span class="inline-block capitalize-font   pull-left message-per">Jonnie
-                                                            Metoyer</span>
-                                                        <span class="inline-block font-11  pull-right message-time">27
-                                                            Jan</span>
-                                                        <div class="clearfix"></div>
-                                                        <span class=" truncate message-subject">Help with beavis
-                                                            contact form</span>
-                                                        <p class="txt-grey truncate">Neque porro quisquam est qui
-                                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                                            velit</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <div class="sl-item">
-                                                    <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                        <img class="img-responsive img-circle" src="dist/img/user.png"
-                                                            alt="avatar" />
-                                                    </div>
-                                                    <div class="sl-content">
-                                                        <span class="inline-block capitalize-font   pull-left message-per">Priscila
-                                                            Shy</span>
-                                                        <span class="inline-block font-11  pull-right message-time">19
-                                                            Jan</span>
-                                                        <div class="clearfix"></div>
-                                                        <span class=" truncate message-subject">Your uploaded theme is
-                                                            been selected</span>
-                                                        <p class="txt-grey truncate">Neque porro quisquam est qui
-                                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                                            velit</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <div class="sl-item">
-                                                    <div class="sl-avatar avatar avatar-sm avatar-circle">
-                                                        <img class="img-responsive img-circle" src="dist/img/user1.png"
-                                                            alt="avatar" />
-                                                    </div>
-                                                    <div class="sl-content">
-                                                        <span class="inline-block capitalize-font   pull-left message-per">Linda
-                                                            Stack</span>
-                                                        <span class="inline-block font-11  pull-right message-time">13
-                                                            Jan</span>
-                                                        <div class="clearfix"></div>
-                                                        <span class=" truncate message-subject"> A new rating has been
-                                                            received</span>
-                                                        <p class="txt-grey truncate">Neque porro quisquam est qui
-                                                            dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                                                            velit</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="todo_tab" class="tab-pane fade" role="tabpanel">
-                                <div class="todo-box-wrap">
-                                    <div class="add-todo">
-                                        <a href="javascript:void(0)" class="inline-block txt-grey">
-                                            <i class="zmdi zmdi-more"></i>
-                                        </a>
-                                        <span class="inline-block txt-dark">todo list</span>
-                                        <a href="javascript:void(0)" class="inline-block text-right txt-grey"><i class="zmdi zmdi-plus"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="set-height-wrap">
-                                        <!-- Todo-List -->
-                                        <ul class="todo-list nicescroll-bar">
-                                            <li class="todo-item">
-                                                <div class="checkbox checkbox-default">
-                                                    <input type="checkbox" id="checkbox01" />
-                                                    <label for="checkbox01">Record The First Episode</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <hr class="light-grey-hr" />
-                                            </li>
-                                            <li class="todo-item">
-                                                <div class="checkbox checkbox-pink">
-                                                    <input type="checkbox" id="checkbox02" />
-                                                    <label for="checkbox02">Prepare The Conference Schedule</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <hr class="light-grey-hr" />
-                                            </li>
-                                            <li class="todo-item">
-                                                <div class="checkbox checkbox-warning">
-                                                    <input type="checkbox" id="checkbox03" checked />
-                                                    <label for="checkbox03">Decide The Live Discussion Time</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <hr class="light-grey-hr" />
-                                            </li>
-                                            <li class="todo-item">
-                                                <div class="checkbox checkbox-success">
-                                                    <input type="checkbox" id="checkbox04" checked />
-                                                    <label for="checkbox04">Prepare For The Next Project</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <hr class="light-grey-hr" />
-                                            </li>
-                                            <li class="todo-item">
-                                                <div class="checkbox checkbox-danger">
-                                                    <input type="checkbox" id="checkbox05" checked />
-                                                    <label for="checkbox05">Finish Up AngularJs Tutorial</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <hr class="light-grey-hr" />
-                                            </li>
-                                            <li class="todo-item">
-                                                <div class="checkbox checkbox-purple">
-                                                    <input type="checkbox" id="checkbox06" checked />
-                                                    <label for="checkbox06">Finish Infinity Project</label>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <hr class="light-grey-hr" />
-                                            </li>
-                                        </ul>
-                                        <!-- /Todo-List -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!-- /Right Sidebar Menu -->
-
-
-
         <!-- Main Content -->
 
         <div class="page-wrapper">
             <div class="container-fluid pt-25">
                 <!-- Row -->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-sm-12">
                         <div class="panel panel-default card-view">
                             <div class="panel-heading">
@@ -759,7 +255,7 @@
                                                     <h5 class="modal-title" id="myModalLabel">เพิ่มผู้สอน</h5>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <!-- Row -->
+                                                    <!-- Row
                                                     <div class="panel-wrapper collapse in">
                                                         <div class="row">
                                                             <div class="col-sm-12">
@@ -812,10 +308,7 @@
                                                                             <div class="col-md-3">
                                                                                 <div class="form-group">
                                                                                     <label class="bmd-label-floating">ตำแหน่ง</label>
-                                                                                    <!-- <input type="text" class="form-control"
-                                                                                    id="insertpositionTeach" value=""required=""> -->
-                                                                                    <!-- <div id="positionTeachSETshow">
-                                                                                    </div> -->
+                                                                                    
                                                                                     <select id="insertpositionTeach"
                                                                                         class="form-control " name="teachWeek"
                                                                                         required="">
@@ -843,10 +336,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <!-- <div id="pos">
-                                                            
-                                                                    </div> -->
-
+                                                                   
                                                                         <div class="row">
 
                                                                             <div class="col-md-4">
@@ -869,8 +359,7 @@
                                                                             <div class="col-md-4">
                                                                                 <div class="form-group">
                                                                                     <label class="bmd-label-floating">สถานะผู้ใช้</label>
-                                                                                    <!-- <input type="text" class="form-control"
-                                                                                    id="insertstatusLogin" value=""required=""> -->
+                                                                             
                                                                                     <select id="insertstatusLogin"
                                                                                         class="form-control " name="teachWeek"
                                                                                         required="">
@@ -896,9 +385,9 @@
                                                 </div>
 
                                             </div>
-                                            <!-- /.modal-content -->
+                                         
                                         </div>
-                                        <!-- /.modal-dialog -->
+                                     
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -907,7 +396,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
                 <!-- <row> -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -932,44 +421,44 @@
                                                                     <h4 class="modal-title" id="myModalLabel">เพิ่มผู้สอน</h4>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    <form class="form-horizontal form-material ">
-
+                                                                    <form class="form-horizontal form-material "name="myform" action="insertUser1" method="POST" target="_parent">
+                                                                     <!-- <form data-toggle="validator" role="form"> -->
                                                                         <div class="form-group">
                                                                             <div class="col-md-12 mb-20">
                                                                                 <label class="control-label mb-10 text-left">รหัสผู้สอน</label>
-                                                                                <input type="text" class="form-control"
-                                                                                    placeholder="รหัสผู้สอน" d="insertuserId"
-                                                                                    required="">
+                                                                                <input type="text" class="form-control" name="userId"
+                                                                                    placeholder="รหัสผู้สอน" id="insertuserId"
+                                                                                    required>
                                                                             </div>
                                                                             <div class="col-md-12 mb-20">
+                                                                                    <input type="hidden" name="length" value="8">
                                                                                 <label class="control-label mb-10 text-left">รหัสผ่าน</label>
                                                                                 <input type="text" class="form-control"
-                                                                                    placeholder="รหัสผ่าน" id="insertuserPass"
-                                                                                    value="" required="">
+                                                                                    placeholder="รหัสผ่าน" id="row_password" name="userPass"
+                                                                                    value="" required=""disabled>
+                                                                                 <input type="button" class="button" value="Generate" onClick="generate();" tabindex="2">
                                                                             </div>
                                                                             <div class="col-md-12 mb-20">
                                                                                 <div class="col-sm-2">
                                                                                 <label class="control-label mb-10">คำนำหน้า</label>
                                                                             </div>
-                                                                                <!-- <input type="text" name="userid" class="form-control"
-                                                                                    id="insertprefixName" value=""
-                                                                                    required=""> -->
+                                                                           
                                                                                     <div class="radio-list ">
                                                                                             <div class="radio-inline pl-0">
                                                                                                 <span class="radio radio-info">
-                                                                                                    <input type="radio" name="radio5" id="radio_5" value="option1">
+                                                                                                    <input type="radio" name="prefixName" id="radio_5" value="option1">
                                                                                             <label for="radio_5">นาย</label>
                                                                                             </span>
                                                                                             </div>
                                                                                             <div class="radio-inline">
                                                                                                 <span class="radio radio-info">
-                                                                                                    <input type="radio" name="radio5" id="radio_6" value="option2">
+                                                                                                    <input type="radio" name="prefixName" id="radio_6" value="option2">
                                                                                             <label for="radio_6">นาง</label>
                                                                                             </span>
                                                                                             </div>
                                                                                             <div class="radio-inline">
                                                                                                     <span class="radio radio-info">
-                                                                                                        <input type="radio" name="radio5" id="radio_6" value="option2">
+                                                                                                        <input type="radio" name="prefixName" id="radio_6" value="option2">
                                                                                                 <label for="radio_6">นางสาว</label>
                                                                                                 </span>
                                                                                                 </div>
@@ -979,95 +468,243 @@
                                                                             <div class="col-md-6 ">
                                                                                 <label class="control-label mb-10 text-left">ชื่อ</label>
                                                                                 <input type="text" name="userFname"
-                                                                                    class="form-control" id="insertuserFname"
+                                                                                    class="form-control" id="userFname"
                                                                                     value="" required>
                                                                             </div>
                                                                             <div class="col-md-6">
                                                                                 <label class="control-label mb-10 text-left">นามสกุล</label>
-                                                                                <input type="text" class="form-control"
+                                                                                <input type="text" class="form-control" name="userLname"
                                                                                     id="insertuserLname" value=""
                                                                                     required="">
                                                                             </div>
                                                                         </div>
                                                                             <div class="col-md-12 mb-20">
-                                                                                <label class="control-label mb-10 text-left">ตำแหน่ง</label>
+                                                                                <label class="control-label mb-10 text-left">ตำแหน่งสอน</label>
 
                                                                                 <select id="insertpositionTeach" class="form-control "
-                                                                                    name="teachWeek" required="">
+                                                                                    name="positionTeach" required>
+                                                                                    <option value="อาจารย์ประจำ">อาจารย์ประจำ</option>
                                                                                     <option value="อาจารย์พิเศษ">อาจารย์พิเศษ</option>
-                                                                                    <option value="อาจารย์">อาจารย์</option>
+                                                                                    <option value="พนักงานมหาวิทยาลัย">พนักงานมหาวิทยาลัย</option>
+                                                                                    <option value="อาจารย์อัตราจ้าง">อาจารย์อัตราจ้าง</option>
                                                                                 </select>
                                                                             </div>
                                                                             <div class="col-md-12 mb-20">
+                                                                                    <label class="control-label mb-10 text-left">ตำแหน่งประจำ</label>
+                                                                                    <input type="text" class="form-control" name="positionUser"
+                                                                                    id="insertuserLname" value=""
+                                                                                    required>
+                                                                                </div>
+                                                                            <div class="col-md-12 mb-20">
                                                                                     <label class="control-label mb-10 text-left">คณะ</label>
-                                                                                    <input type="text" class="form-control"
-                                                                                        id="insertMojor" value="" required="">
+                                                                                    <input type="text" class="form-control" name="faculty"
+                                                                                        id="insertMojor" value="" required>
     
                                                                                 </div>
                                                                             <div class="col-md-12 mb-20">
                                                                                 <label class="control-label mb-10 text-left">สาขาวิชา</label>
-                                                                                <input type="text" class="form-control"
+                                                                                <input type="text" class="form-control"name="mojor"
                                                                                     id="insertfaculty" value=""
-                                                                                    required="">
+                                                                                    required>
                                                                             </div>
                                                                             
                                                                             <div class="col-md-12">
                                                                             <div class="col-md-6 mb-20">
                                                                                 <label class="control-label mb-10 text-left">มีฐานชั่วโมง/คาบ</label>
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" class="form-control"name="userbaseHour"
                                                                                     id="insertbaseHour" value=""
-                                                                                    required="">
+                                                                                    required>
 
                                                                             </div>
                                                                             <div class="col-md-6 mb-20">
                                                                                 <label class="control-label mb-10 text-left">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
-                                                                                <input type="number" class="form-control"
+                                                                                <input type="number" class="form-control"name="userbaseKrm"
                                                                                     id="insertbaseKrm" value=""
-                                                                                    required="">
+                                                                                    required>
 
                                                                             </div>
                                                                         </div>
                                                                             <div class="col-md-12 mb-20">
                                                                                 <label class="control-label mb-10 text-left">สถานะผู้ใช้</label>
                                                                                 <select id="insertstatusLogin" class="form-control "
-                                                                                    name="teachWeek" required="">
+                                                                                    name="statusLogin" required>
                                                                                     <option value="U">ผู้สอน</option>
                                                                                     <option value="A">ผู้ดูแลระบบ</option>
                                                                                 </select>
 
                                                                             </div>
                                                                         </div>
+                                                                        <div class="modal-footer">
+                                                                                <button type="submit" class="btn btn-info waves-effect"  aria-hidden="false">Save</button>
+                                                                                <button type="button" class="btn btn-default waves-effect"
+                                                                                    data-dismiss="modal">Cancel</button>
+                                                                            </div>
                                                                     </form>
                                                                 </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-info waves-effect"
-                                                                        data-dismiss="modal">Save</button>
-                                                                    <button type="button" class="btn btn-default waves-effect"
-                                                                        data-dismiss="modal">Cancel</button>
-                                                                </div>
+                                                               
+                                                           
                                                             </div>
                                                             <!-- /.modal-content -->
                                                         </div>
                                                         <!-- /.modal-dialog -->
                                                     </div>
                                                     <!-- /.modal -->
+                                                      <!-- Modal -->
+                                                      <div aria-hidden="true" role="dialog" tabindex="-1" id="myModalUpdate"
+                                                      class="modal fade" style="display: none;">
+                                                      <div class="modal-dialog">
+                                                          <div class="modal-content">
+                                                              <div class="modal-header">
+                                                                  <button type="button" class="close" data-dismiss="modal"
+                                                                      aria-hidden="true">×</button>
+                                                                  <h4 class="modal-title" id="myModalLabel">เพิ่มผู้สอน</h4>
+                                                              </div>
+                                                              <div class="modal-body">
+                                                                  <form class="form-horizontal form-material "name="myform" action="insertUser1" method="POST" target="_parent">
+                                                                   <!-- <form data-toggle="validator" role="form"> -->
+                                                                      <div class="form-group">
+                                                                          <div class="col-md-12 mb-20">
+                                                                              <label class="control-label mb-10 text-left">รหัสผู้สอน</label>
+                                                                              <input type="text" class="form-control" name="userId"
+                                                                                  placeholder="รหัสผู้สอน" id="up_userPass"
+                                                                                  required>
+                                                                          </div>
+                                                                          <div class="col-md-12 mb-20">
+                                                                                  <input type="hidden" name="length" value="8">
+                                                                              <label class="control-label mb-10 text-left">รหัสผ่าน</label>
+                                                                              <input type="text" class="form-control"
+                                                                                  placeholder="รหัสผ่าน" id="row_password" name="userPass"
+                                                                                  value="" required=""disabled>
+                                                                               <input type="button" class="button" value="Generate" onClick="generate();" tabindex="2">
+                                                                          </div>
+                                                                          <div class="col-md-12 mb-20">
+                                                                              <div class="col-sm-2">
+                                                                              <label class="control-label mb-10">คำนำหน้า</label>
+                                                                          </div>
+                                                                         
+                                                                                  <div class="radio-list ">
+                                                                                          <div class="radio-inline pl-0">
+                                                                                              <span class="radio radio-info">
+                                                                                                  <input type="radio" name="prefixName" id="radio_5" value="option1">
+                                                                                          <label for="radio_5">นาย</label>
+                                                                                          </span>
+                                                                                          </div>
+                                                                                          <div class="radio-inline">
+                                                                                              <span class="radio radio-info">
+                                                                                                  <input type="radio" name="prefixName" id="radio_6" value="option2">
+                                                                                          <label for="radio_6">นาง</label>
+                                                                                          </span>
+                                                                                          </div>
+                                                                                          <div class="radio-inline">
+                                                                                                  <span class="radio radio-info">
+                                                                                                      <input type="radio" name="prefixName" id="radio_6" value="option2">
+                                                                                              <label for="radio_6">นางสาว</label>
+                                                                                              </span>
+                                                                                              </div>
+                                                                                      </div>
+                                                                          </div>
+                                                                          <div class="col-md-12 mb-20">
+                                                                          <div class="col-md-6 ">
+                                                                              <label class="control-label mb-10 text-left">ชื่อ</label>
+                                                                              <input type="text" name="userFname"
+                                                                                  class="form-control" id="up_userFname"
+                                                                                  value="" required>
+                                                                          </div>
+                                                                          <div class="col-md-6">
+                                                                              <label class="control-label mb-10 text-left">นามสกุล</label>
+                                                                              <input type="text" class="form-control" name="userLname"
+                                                                                  id="up_userLname" value=""
+                                                                                  required="">
+                                                                          </div>
+                                                                      </div>
+                                                                          <div class="col-md-12 mb-20">
+                                                                              <label class="control-label mb-10 text-left">ตำแหน่งสอน</label>
+
+                                                                              <select id="insertpositionTeach" class="form-control "
+                                                                                  name="positionTeach" required>
+                                                                                  <option value="อาจารย์ประจำ">อาจารย์ประจำ</option>
+                                                                                  <option value="อาจารย์พิเศษ">อาจารย์พิเศษ</option>
+                                                                                  <option value="พนักงานมหาวิทยาลัย">พนักงานมหาวิทยาลัย</option>
+                                                                                  <option value="อาจารย์อัตราจ้าง">อาจารย์อัตราจ้าง</option>
+                                                                              </select>
+                                                                          </div>
+                                                                          <div class="col-md-12 mb-20">
+                                                                                  <label class="control-label mb-10 text-left">ตำแหน่งประจำ</label>
+                                                                                  <input type="text" class="form-control" name="positionUser"
+                                                                                  id="insertuserLname" value=""
+                                                                                  required>
+                                                                              </div>
+                                                                          <div class="col-md-12 mb-20">
+                                                                                  <label class="control-label mb-10 text-left">คณะ</label>
+                                                                                  <input type="text" class="form-control" name="faculty"
+                                                                                      id="insertMojor" value="" required>
+  
+                                                                              </div>
+                                                                          <div class="col-md-12 mb-20">
+                                                                              <label class="control-label mb-10 text-left">สาขาวิชา</label>
+                                                                              <input type="text" class="form-control"name="mojor"
+                                                                                  id="insertfaculty" value=""
+                                                                                  required>
+                                                                          </div>
+                                                                          
+                                                                          <div class="col-md-12">
+                                                                          <div class="col-md-6 mb-20">
+                                                                              <label class="control-label mb-10 text-left">มีฐานชั่วโมง/คาบ</label>
+                                                                              <input type="number" class="form-control"name="userbaseHour"
+                                                                                  id="insertbaseHour" value=""
+                                                                                  required>
+
+                                                                          </div>
+                                                                          <div class="col-md-6 mb-20">
+                                                                              <label class="control-label mb-10 text-left">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
+                                                                              <input type="number" class="form-control"name="userbaseKrm"
+                                                                                  id="insertbaseKrm" value=""
+                                                                                  required>
+
+                                                                          </div>
+                                                                      </div>
+                                                                          <div class="col-md-12 mb-20">
+                                                                              <label class="control-label mb-10 text-left">สถานะผู้ใช้</label>
+                                                                              <select id="insertstatusLogin" class="form-control "
+                                                                                  name="statusLogin" required>
+                                                                                  <option value="U">ผู้สอน</option>
+                                                                                  <option value="A">ผู้ดูแลระบบ</option>
+                                                                              </select>
+
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="modal-footer">
+                                                                              <button type="submit" class="btn btn-info waves-effect"  aria-hidden="false">Save</button>
+                                                                              <button type="button" class="btn btn-default waves-effect"
+                                                                                  data-dismiss="modal">Cancel</button>
+                                                                          </div>
+                                                                  </form>
+                                                              </div>
+                                                           
+                                                         
+                                                          </div>
+                                                          <!-- /.modal-content -->
+                                                      </div>
+                                                      <!-- /.modal-dialog -->
+                                                  </div>
+                                                  <!-- /.modal -->
+                                                
+                                                  <!-- <a href="#myModalUpdate" data-toggle="modal" title="Compose" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"onclick="myModalUpdate()"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a> -->
                                                 </div>
                                                 <ul class="inbox-nav mb-30">
                                                     <li class="active">
-                                                        <a href="#">Work <span class="label label-primary ml-10">12</span></a>
+                                                        <a href="#">อาจารประจำ<span class="label label-primary ml-10">12</span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">design <span class="label label-danger ml-10">20</span></a>
+                                                        <a href="#">อาจารพิเศษ<span class="label label-danger ml-10">20</span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">family <span class="label label-warning ml-10">2</span></a>
+                                                        <a href="#">พนักงานมหาวิทยาลัย <span class="label label-warning ml-10">2</span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">friends<span class="label label-info ml-10">30</span></a>
+                                                        <a href="#">อาจารย์อัตราจ้าง<span class="label label-info ml-10">30</span></a>
                                                     </li>
-                                                    <li>
-                                                        <a href="#">office <span class="label label-success ml-10">2</span></a>
-                                                    </li>
+                                                   
                                                 </ul>
 
 
@@ -1089,6 +726,7 @@
                                                                             <th>คณะ</th>
                                                                             <th>ฐานชั่วโมง/คาบ</th>
                                                                             <th>ใช้เบิก/หน่วยชั่วโมง</th>
+                                                                            <th>หมายเหตุ</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tfoot>
@@ -1100,6 +738,7 @@
                                                                             <th>คณะ</th>
                                                                             <th>ฐานชั่วโมง/คาบ</th>
                                                                             <th>ใช้เบิก/หน่วยชั่วโมง</th>
+                                                                            <th>หมายเหตุ</th>
                                                                         </tr>
                                                                     </tfoot>
                                                                     <tbody>
@@ -1185,6 +824,7 @@
     <script src="../assets_/vendors/bower_components/datatables.net-buttons/js/buttons.html5.min.js"></script>
     <script src="../assets_/vendors/bower_components/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="../assets_/dist/js/export-table-data.js"></script>
+    <script src="../assets_/vendors/bower_components/bootstrap-validator/dist/validator.min.js"></script>
 
 </body>
 <script>
@@ -1257,8 +897,14 @@
             "order": [
                 [0, "asc"]
             ],
-            "aoColumns": [{
-                    "mData": "userId"
+            "aoColumns": [
+                {
+
+                    "mData": "",
+                    "mRender": function (data, type, full) {
+                        // return data='<input type="text" id="updateuserid" value='+full.userId+'>';
+                        return full.userId;
+                    }
                 },
                 {
                     "mData": "",
@@ -1276,14 +922,42 @@
                     "mData": "mojor"
                 },
                 {
-                    "mData": "baseHour"
+                    "mData": "userbaseHour"
                 },
                 {
-                    "mData": "baseKrm"
+                    "mData": "userbaseKrm"
+                },{
+                    "mData": "",
+                    "mRender": function (data, type, full) {
+                        return data='<a href="#myModalUpdate" data-toggle="modal" title="Compose" onclick="myModalUpdate()" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>';
+                    }
                 }
+
 
             ]
         })
+          // Do DELETE a Customer via JQUERY AJAX
+    function deleteid() {
+
+var tebleTeachId = $(this).parent().find('input').val();
+var workingObject = $(this);
+
+$.ajax({
+    type: "DELETE",
+    url: "/updateTableTeaching/" + tebleTeachId,
+    success: function (resultMsg) {
+        workingObject.closest("tr").remove();
+
+        // re-css for table
+        $("#customerTable1 tbody tr:odd").addClass("info");
+        $("#customerTable1 tbody tr:even").addClass("success");
+    },
+    error: function (e) {
+        // alert("ERROR: 11", e,);
+        // console.log("ERROR: 11", e,);
+    }
+});
+};
     });
 
     function peopleInsert() {
@@ -1320,6 +994,57 @@
         });
 
     }
+</script>
+<script>
+function randomPassword(length) {
+    var chars = "abcdefghijklmnopqrstuvwxyz!@#$%_&ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    var pass = "";
+    for (var x = 0; x < length; x++) {
+        var i = Math.floor(Math.random() * chars.length);
+        pass += chars.charAt(i);
+    }
+    return pass;
+}
+
+function generate() {
+    myform.row_password.value = randomPassword(myform.length.value);
+}
+</script>
+<script>
+function myModalUpdate() {
+
+		
+            var	userbean = $('#updateuserid').val();
+		
+		$.ajax({
+			type: "GET",
+			url: "/Customers/"+userBean,
+			contentType: "application/json; charset=utf-8",
+	//		data: JSON.stringify(UserBean),
+			dataType: "json",
+			success: function (msg) {
+			
+				if (msg.userId != null) {
+					$('#up_userPass').val(msg.userId);
+                    $('#up_userPass').val(msg.userPass);
+                    $('#up_prefixName').val(msg.prefixName);
+                    $('#up_userFname').val(msg.userFname);
+                    $('#up_userLname').val(msg.userLname);
+                    $('#up_positionTeach').val(msg.positionTeach);
+                    $('#up_positionUser').val(msg.positionUser);
+                    $('#up_faculty').val(msg.faculty);
+                    $('#up_mojor').val(msg.mojor);
+                    $('#up_userbaseHour').val(msg.userbaseHour);
+                    $('#up_userbaseKrm').val(msg.userbaseKrm);
+
+				} else if (msg.userId == null) {
+					$('#alert').append('<center>ไม่มีข้อมูล</center>');
+				}
+			}
+
+		});
+
+	};
 </script>
 <!-- <script>
 $(document).ready(function () {

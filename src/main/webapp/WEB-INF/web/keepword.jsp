@@ -254,8 +254,8 @@
 								<div class="panel-body">
 									<!-- <form id="example-form-jook"> -->
 										<!-- <h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">เพิ่มข้อมูลรายวิชา</span></h3> -->
-										<fieldset>
-											
+									
+									
 											<div class="row">
 												<input type="hidden" id="teachId">
 												<input type="hidden" id="tebleTeachId">
@@ -264,6 +264,7 @@
 													<div class="row">
 														<div class="col-sm-12">
 															<div class="panel panel-default card-view">
+																	
 																<div class="panel-heading">
 																	<div class="pull-left">
 																		<h5 for="exampleCountry" class="control-label mb-10">บันทึกแบบการเบิก</h5>
@@ -273,6 +274,7 @@
 																<div class="panel-wrapper collapse in">
 																	<div class="panel-body">
 																		<div class="form-group">
+																				
 																				<div class="row">
 																					<div class="col-md-3 col-xs-12">
 																						<div class="form-group">
@@ -298,7 +300,7 @@
 																					<div class="col-md-1 col-xs-12">
 																						<div class="form-group">
 																							<div class="row">
-																								<label class="control-label mb-10" for="lastName">ถึง</label>
+																								<label class="control-label mb-10" for="lastName" required>ถึง</label>
 																							</div>
 																						</div>
 
@@ -404,6 +406,7 @@
 
 																	</div>
 																</div>
+															
 															</div>
 														</div>
 
@@ -411,20 +414,13 @@
 
 												</div>
 											</div>
-											<div class="row">
-
-
+											
 												<div class="container-fluid">
 
 													<div class="row">
 														<div class="col-sm-12">
 															<div class="panel panel-default card-view">
-																<div class="panel-heading">
-																	<div class="pull-left">
-																		<h5 class="control-label mb-10" for="exampleCountry">1. เพิ่มรายวิชา</h5>
-																	</div>
-																	<div class="clearfix"></div>
-																</div>
+																
 																<div class="panel-wrapper collapse in">
 																	<div class="panel-body">
 
@@ -436,7 +432,7 @@
 																							<label for="exampleInputuname_3" class="col-sm-3 control-label">รหัสวิชา</label>
 																							<div class="col-sm-9">
 																								<div class="input-group">
-																									<input type="text" class="form-control" id="subjectId" placeholder="">
+																									<input type="text" class="form-control" id="subjectId" placeholder="" required>
 																									<span class="input-group-btn">
 																										<button type="button" class="btn btn-success btn-anim" onclick="subjectSec()"><i class="icon-rocket"></i><span
 																											 class="btn-text">ค้นหา</span></button>
@@ -507,9 +503,9 @@
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">section</label>
 																							<div class="col-sm-8">
 																								<!-- <input type="number" class="form-control" id="section" placeholder=""> -->
-																								<select id="section" class="form-control " name="section">
+																								<select id="section" class="form-control " name="section" required>
 
-																									<option value="1 ">1</option>
+																									<option value="1">1</option>
 																									<option value="2">2</option>
 																									<option value="3">3</option>
 																									<option value="4">4</option>
@@ -533,7 +529,7 @@
 																						<div class="row">
 																							<label class="control-label mb-10 col-sm-6" for="firstName">เวลาที่เริ่มการสอน</label>
 																							<div class="col-sm-6">
-																								<input type="time" class="form-control " id="startTime">
+																								<input type="time" class="form-control " id="startTime" required>
 																							</div>
 																						</div>
 																					</div>
@@ -544,7 +540,7 @@
 																						<div class="row">
 																							<label class="control-label mb-10 col-sm-6" for="lastName">เวลาที่สิ้นสุดการสอน</label>
 																							<div class="col-sm-6">
-																								<input type="time" class="form-control " id="stopTime">
+																								<input type="time" class="form-control " id="stopTime" required>
 																							</div>
 																						</div>
 																					</div>
@@ -572,11 +568,12 @@
 																				<div class="form-group">
 																					<div class="row">
 																						<div class="col-md-4 col-xs-12">
-																							<div class="form-group">
+																							<div class="form-group has-feedback ">
 																								<div class="row">
 																									<label class="control-label mb-10 col-sm-4" for="">ห้องเรียน</label>
-																									<div class="col-sm-8">
-																										<input type="text" name="room" class="form-control " value="" id="room">
+																									<div class="col-sm-8 input-group">
+																										<input type="text" name="room" class="form-control"value=""pattern="0-9" id="room" required >
+																										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 																									</div>
 	
 																								</div>
@@ -591,7 +588,7 @@
 																								<div class="row">
 																									<label for="exampleInputuname_3" class="col-sm-4 control-label">จำนวนนักศึกษา</label>
 																									<div class="col-sm-8">
-																										<input type="number" class="form-control" id="studenNumber" placeholder="">
+																										<input type="number" class="form-control" id="studenNumber" placeholder="" required>
 																									</div>
 																								</div>
 																							</div>
@@ -602,7 +599,7 @@
 																									<label for="exampleInputuname_3" class="col-sm-4 control-label">วัน</label>
 																									<div class="col-sm-8">
 																										<!-- <input type="text" class="form-control" id="teachWeek" placeholder=""> -->
-																										<select id="teachWeek" class="form-control " name="teachWeek">
+																										<select id="teachWeek" class="form-control " name="teachWeek" required>
 																											<option value="">เลือกวัน</option>
 																											<option value="1">วันจันทร์</option>
 																											<option value="2">วันอังคาร</option>
@@ -622,7 +619,7 @@
 																				
 																		</div>
 																		<button type="submit" class="btn btn-primary pull-right" onclick="insertTeachingfrom()">
-																			<h4>เพิ่มวิชาสอน</h4>
+																				<span class="btn-text">เพิ่มวิชาสอน</span>
 																		</button>
 																	</div>
 																
@@ -638,101 +635,92 @@
 
 												</div>
 
+	<!-- Row -->
+	<!-- <div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default card-view">
+					<div class="panel-heading">
+						<div class="pull-left">
+							<h6 class="panel-title txt-dark">บันทึกแบบการเบิก</h6>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="panel-wrapper collapse in">
+						<div class="panel-body">
+							
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-wrap">
+										<form data-toggle="validator" role="form">
+											
+											
+												
+											<div class="form-group">
+												<label for="inputName" class="control-label mb-10">Name</label>
+												<input type="text" class="form-control" id="inputName" placeholder="Cina Saffary" required>
 											</div>
-										
-
-											<%@include file="./keepwordstep/tableteach2.jsp" %>
-											<!-- <div class="row">
-												<div class="col-sm-12">
-													<div class="panel panel-default card-view">
-														<div class="panel-heading">
-															<div class="pull-left">
-																<h6 class="panel-title txt-dark">jsgrid Table</h6>
-															</div>
-															<div class="clearfix"></div>
-														</div>
-														<div class="panel-wrapper collapse in">
-															<div class="panel-body">
-																<div class="table-wrap">
-																	<div id="jsgrid_1"></div>
-																</div>
-															</div>
-														</div>
+											<div class="form-group has-feedback">
+												<label for="inputTwitter" class="control-label mb-10">Twitter</label>
+												<div class="input-group">
+													<span class="input-group-addon">@</span>
+													<input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" id="inputTwitter" placeholder="1000hz" required>
+													<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+												</div>
+												
+												<div class="help-block with-errors">Hey look, this one has feedback icons!</div>
+											</div>
+											<div class="form-group">
+												<label for="inputEmail" class="control-label mb-10">Email</label>
+												<input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="form-group">
+												<label for="inputPassword" class="control-label mb-10">Password</label>
+												<div class="row">
+													<div class="form-group col-sm-12">
+														<input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+														<div class="help-block">Minimum of 6 characters</div>
 													</div>
-												</div>
-											</div> -->
-										
-										</fieldset>
-
-										<!-- <h3><span class="number"><i class="icon-bag txt-black"></i></span><span class="head-font capitalize-font">เลือกวิชาใช้เบิก</span></h3> -->
-									
-									
-								
-									
-								
-									<%-- 		 <%@include file="./keepwordstep/tebletaech1.jsp" %> --%>
-							<!-- Row -->
-							<!-- <div class="clearfix"></div>
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="panel panel-default card-view">
-											<div class="panel-heading">
-												<div class="pull-left">
-													<h6 class="panel-title txt-dark">Date time picker</h6>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-											<div class="panel-wrapper collapse in">
-												<div class="panel-body">
-													<div class="form-wrap">
-														<form>
-															<div class="row">
-																<div class="col-sm-6">
-																	<div class="form-group">
-																		<label class="control-label mb-10 text-left">date time pick</label>
-																		<div class='input-group date' id='datetimepicker5'>
-																			<input type='text' class="form-control">
-																			<span class="input-group-addon">
-																				<span class="fa fa-calendar"></span>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-sm-6">
-																	<div class="form-group">
-																		<label class="control-label mb-10 text-left">time pick</label>
-																		<div class='input-group date' id='datetimepicker2'>
-																			<input type='text' class="form-control" />
-																			<span class="input-group-addon">
-																				<span class="fa fa-clock-o"></span>
-																			</span>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-sm-6">
-																	<label class="control-label mb-10 text-left">inline date pick</label>
-																	<div class="form-group">
-																		<div class='input-group date' id='datetimepicker3'></div>
-																	</div>
-																</div>
-																<div class="col-sm-6">
-																	<label class="control-label mb-10 text-left">inline date time pick</label>
-																	<div class="form-group">
-																		<div class='input-group date' id='datetimepicker4'></div>
-																	</div>
-																</div>
-															</div>
-														</form>
+													<div class="form-group col-sm-12">
+														<input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+														<div class="help-block with-errors"></div>
 													</div>
 												</div>
 											</div>
-										</div>
+											<div class="form-group">
+												<div class="radio">
+												  <input type="radio" name="underwear" id="box" required>
+												  <label for="box"> Boxers </label>
+												</div>
+												<div class="radio">
+												  <input type="radio" name="underwear" id="bri" required>
+												  <label for="bri"> Briefs </label>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="checkbox">
+													<input type="checkbox" id="terms" data-error="Before you check yourself" required>
+													<label for="terms" >Check yourself</label>
+													<div class="help-block with-errors"></div>
+												</div>
+											</div>
+											<div class="form-group mb-0">
+												<button type="submit" class="btn btn-success btn-anim"><i class="icon-rocket"></i><span class="btn-text">submit</span></button>
+											</div>
+										</form>
 									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!-- /Row -->
+											<%@include file="./keepwordstep/tableteach2.jsp" %>
 
-							</div> -->
-							<!-- /Row -->
+									<%-- 		 <%@include file="./keepwordstep/tebletaech1.jsp" %> --%>
+						
 								</div>
 							</div>
 						</div>
@@ -821,6 +809,8 @@
 	<script src="../js/keepwordstap1/stepfrom.js"></script>
 	<!-- <script src="../js/keepwordstap1/time-teach.js"></script> -->
 	<script src="../js/keepwordstap1/keepword_main.js"></script>
+	<script src="../assets_/vendors/bower_components/bootstrap-validator/dist/validator.min.js"></script>
+		
 	<!-- <script src="../js/keepwordstap1/tebleteach.js"></script> -->
 	<!-- <script src="../js/keepwordstap2/updateteachtable.js"></script> -->
 
@@ -889,5 +879,62 @@
 	}
 	time2diff(time_b, time_b);
 </script>
+<script>
 
+	//insert
+	function insertTeachingfrom() {	
+	
+
+		var insertTableTeaching = {	
+		 	tebleTeachId: $('#tebleTeachId').val(),
+			teachTerm: $('#teachTerm').val(),
+	 		termYear: $('#termYear').val(),
+			teachWeek: $('#teachWeek').val(),
+			studenNumber: $('#studenNumber').val(),
+			section: $('#section').val(),
+			standardTeach: $('#standardTeach').val(),
+			startMonth: $('#startMonth').val(),
+			stopMonth: $('#stopMonth').val(),
+			teachYear: $('#teachYear').val(),
+			startTime: $('#startTime').val(),
+			stopTime: $('#stopTime').val(),
+			degreeStuden: $('#degreeStuden').val(),
+			sumHour: $('#data_hour').val(),
+			room:$('#room').val(),
+			
+			userRoleid: $('#userRoleid').val(),
+			subjectRoleid: $('#subjectId').val(),
+		subject :{
+			subjectId: $('#subjectId').val(),
+			subjectName: $('#subjectName').val(),
+			tudsadee: $('#tudsadee').val(),
+			prtibad: $('#prtibad').val()
+		}
+		}
+		
+		$.ajax({
+			type: "POST",
+			url: "/insertTableTeaching",
+			contentType:"application/json; charset=utf-8",
+			data: JSON.stringify(insertTableTeaching),
+			dataType: "json",
+			success: function (msg) {
+				 console.log(msg)
+				if(msg !=null){
+					location.reload(); 
+				
+				}else{
+
+				}
+				
+				
+			},
+			
+			error: function () {
+
+			}
+		});
+
+	}
+</script>
 </html>

@@ -8,6 +8,12 @@ public class TechingRepost {
 	private String userepRortFK;
 	private String dateteachFK;
 	private String teachingFk;
+	private String reportThaibaht;
+	private int statusRepost;
+	private int repostMoney;
+	private TableTeaching tableTeaching;
+	private User user;
+	private DegreeStuden degreeStuden;
 	public String getTeachReportId() {
 		return teachReportId;
 	}
@@ -49,6 +55,42 @@ public class TechingRepost {
 	}
 	public void setTeachingFk(String teachingFk) {
 		this.teachingFk = teachingFk;
+	}
+	public String getReportThaibaht() {
+		return reportThaibaht;
+	}
+	public void setReportThaibaht(String reportThaibaht) {
+		this.reportThaibaht = reportThaibaht;
+	}
+	public int getStatusRepost() {
+		return statusRepost;
+	}
+	public void setStatusRepost(int statusRepost) {
+		this.statusRepost = statusRepost;
+	}
+	public int getRepostMoney() {
+		return repostMoney;
+	}
+	public void setRepostMoney(int repostMoney) {
+		this.repostMoney = repostMoney;
+	}
+	public TableTeaching getTableTeaching() {
+		return tableTeaching;
+	}
+	public void setTableTeaching(TableTeaching tableTeaching) {
+		this.tableTeaching = tableTeaching;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public DegreeStuden getDegreeStuden() {
+		return degreeStuden;
+	}
+	public void setDegreeStuden(DegreeStuden degreeStuden) {
+		this.degreeStuden = degreeStuden;
 	}
 	
 }

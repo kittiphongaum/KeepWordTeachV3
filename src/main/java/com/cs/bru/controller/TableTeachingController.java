@@ -26,6 +26,7 @@ import com.cs.bru.model.TableTeaching;
 import com.cs.bru.model.Teach;
 import com.cs.bru.service.DateofTeachSevice;
 import com.cs.bru.service.ServiceTableTeaching;
+import com.cs.bru.service.SetHourSevice;
 import com.mysql.fabric.xmlrpc.base.Data;
 import com.mysql.jdbc.TimeUtil;
 import com.cs.bru.model.HolidayTh;
@@ -45,6 +46,8 @@ public class TableTeachingController {
 	DateofTeachSevice SevicedateofTeach;
 	@Autowired
 	HolidayDAO holidayDAO;
+	@Autowired
+	SetHourSevice setHourSevice;
 	
 	@RequestMapping("/TableTeachingAll")
 	public List<TableTeaching> TableTeaching(){
@@ -61,7 +64,7 @@ public class TableTeachingController {
 	
 
 	@PostMapping(value="/insertTableTeaching")
-	   public String insertTableTeaching(@RequestBody TableTeaching insertTableTeaching) {
+	   public TableTeaching insertTableTeaching(@RequestBody TableTeaching insertTableTeaching) throws Exception {
 	//	Teach teach1 =new Teach();
 //		SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
 //		String inputSting1 = "23 01 2018";
@@ -69,8 +72,11 @@ public class TableTeachingController {
 		String id;
 		
 		 String oh="holiday";
-	
+		 String startMonth =setHourSevice.sethourDay(insertTableTeaching.getStartMonth());
+		 String stopMonth =setHourSevice.sethourDay(insertTableTeaching.getStopMonth());
 		   try {
+			   insertTableTeaching.setStartMonthString(startMonth);
+			   insertTableTeaching.setStopMonthString(stopMonth);
 //				Date date1 = myFormat.parse(inputSting1);
 //				Date date2 = myFormat.parse(inputSting2);
 //				long diff = date2.getTime()- date1.getTime();
@@ -108,7 +114,7 @@ public class TableTeachingController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return "keepword";
+		return insertTableTeaching;
 	   }
 	@RequestMapping( value = "/TableTeachingOne")
 	public List<TableTeaching> gotoUpdate(Model model ,@RequestBody TableTeachingBean tableTeachingById) {	

@@ -22,11 +22,525 @@ CREATE TABLE IF NOT EXISTS `auto_id_test` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2019 DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.auto_id_test: ~1 rows (approximately)
+-- Dumping data for table keepworkteach3.auto_id_test: ~0 rows (approximately)
 /*!40000 ALTER TABLE `auto_id_test` DISABLE KEYS */;
 INSERT INTO `auto_id_test` (`id`) VALUES
 	(2018);
 /*!40000 ALTER TABLE `auto_id_test` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.car
+CREATE TABLE IF NOT EXISTS `car` (
+  `id` bigint(20) NOT NULL,
+  `brand` varchar(255) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
+  `fuel` varchar(255) DEFAULT NULL,
+  `model` varchar(255) DEFAULT NULL,
+  `year` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- Dumping data for table keepworkteach3.car: 486 rows
+/*!40000 ALTER TABLE `car` DISABLE KEYS */;
+INSERT INTO `car` (`id`, `brand`, `color`, `fuel`, `model`, `year`) VALUES
+	(1, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(2, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(3, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(4, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(5, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(6, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(7, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(8, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(9, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(10, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(11, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(12, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(13, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(14, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(15, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(16, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(17, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(18, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(19, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(20, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(21, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(22, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(23, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(24, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(25, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(26, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(27, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(28, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(29, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(30, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(31, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(32, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(33, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(34, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(35, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(36, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(37, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(38, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(39, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(40, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(41, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(42, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(43, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(44, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(45, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(46, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(47, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(48, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(49, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(50, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(51, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(52, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(53, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(54, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(55, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(56, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(57, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(58, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(59, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(60, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(61, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(62, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(63, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(64, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(65, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(66, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(67, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(68, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(69, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(70, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(71, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(72, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(73, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(74, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(75, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(76, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(77, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(78, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(79, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(80, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(81, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(82, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(83, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(84, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(85, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(86, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(87, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(88, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(89, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(90, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(91, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(92, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(93, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(94, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(95, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(96, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(97, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(98, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(99, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(100, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(101, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(102, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(103, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(104, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(105, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(106, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(107, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(108, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(109, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(110, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(111, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(112, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(113, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(114, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(115, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(116, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(117, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(118, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(119, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(120, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(121, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(122, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(123, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(124, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(125, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(126, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(127, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(128, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(129, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(130, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(131, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(132, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(133, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(134, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(135, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(136, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(137, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(138, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(139, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(140, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(141, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(142, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(143, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(144, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(145, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(146, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(147, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(148, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(149, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(150, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(151, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(152, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(153, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(154, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(155, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(156, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(157, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(158, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(159, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(160, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(161, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(162, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(163, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(164, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(165, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(166, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(167, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(168, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(169, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(170, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(171, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(172, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(173, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(174, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(175, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(176, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(177, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(178, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(179, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(180, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(181, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(182, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(183, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(184, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(185, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(186, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(187, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(188, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(189, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(190, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(191, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(192, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(193, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(194, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(195, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(196, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(197, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(198, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(199, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(200, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(201, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(202, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(203, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(204, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(205, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(206, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(207, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(208, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(209, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(210, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(211, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(212, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(213, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(214, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(215, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(216, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(217, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(218, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(219, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(220, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(221, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(222, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(223, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(224, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(225, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(226, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(227, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(228, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(229, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(230, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(231, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(232, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(233, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(234, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(235, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(236, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(237, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(238, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(239, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(240, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(241, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(242, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(243, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(244, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(245, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(246, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(247, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(248, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(249, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(250, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(251, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(252, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(253, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(254, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(255, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(256, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(257, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(258, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(259, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(260, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(261, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(262, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(263, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(264, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(265, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(266, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(267, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(268, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(269, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(270, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(271, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(272, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(273, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(274, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(275, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(276, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(277, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(278, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(279, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(280, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(281, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(282, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(283, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(284, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(285, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(286, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(287, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(288, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(289, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(290, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(291, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(292, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(293, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(294, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(295, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(296, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(297, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(298, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(299, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(300, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(301, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(302, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(303, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(304, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(305, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(306, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(307, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(308, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(309, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(310, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(311, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(312, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(313, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(314, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(315, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(316, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(317, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(318, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(319, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(320, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(321, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(322, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(323, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(324, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(325, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(326, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(327, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(328, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(329, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(330, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(331, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(332, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(333, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(334, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(335, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(336, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(337, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(338, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(339, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(340, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(341, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(342, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(343, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(344, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(345, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(346, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(347, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(348, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(349, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(350, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(351, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(352, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(353, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(354, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(355, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(356, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(357, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(358, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(359, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(360, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(361, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(362, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(363, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(364, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(365, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(366, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(367, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(368, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(369, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(370, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(371, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(372, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(373, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(374, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(375, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(376, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(377, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(378, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(379, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(380, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(381, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(382, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(383, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(384, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(385, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(386, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(387, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(388, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(389, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(390, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(391, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(392, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(393, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(394, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(395, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(396, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(397, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(398, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(399, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(400, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(401, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(402, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(403, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(404, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(405, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(406, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(407, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(408, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(409, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(410, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(411, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(412, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(413, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(414, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(415, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(416, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(417, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(418, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(419, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(420, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(421, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(422, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(423, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(424, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(425, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(426, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(427, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(428, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(429, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(430, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(431, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(432, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(433, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(434, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(435, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(436, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(437, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(438, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(439, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(440, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(441, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(442, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(443, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(444, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(445, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(446, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(447, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(448, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(449, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(450, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(451, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(452, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(453, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(454, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(455, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(456, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(457, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(458, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(459, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(460, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(461, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(462, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(463, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(464, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(465, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(466, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(467, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(468, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(469, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(470, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(471, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(472, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(473, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(474, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(475, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(476, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(477, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016),
+	(478, 'Ford', 'Red', 'Diesel', 'Modeo', 2013),
+	(479, 'Alfa Romeo', 'Black', 'B98', 'Spider', 2016),
+	(480, 'Mersedes-Benz', 'Silver', 'Diesel', '180', 2011),
+	(481, 'Mersedes-Benz', 'Red', 'A95', 'A', 2017),
+	(482, 'Audi', 'Black', 'A95', 'A3', 2014),
+	(483, 'Toyota', 'Black', 'A95', 'Auris', 2013),
+	(484, 'Toyota', 'White', 'Diesel', 'Avensis', 2015),
+	(485, 'Nissan', 'Silver', 'A95', 'Micra', 2015),
+	(486, 'Nissan', 'Blue', 'Diesel', 'X-Trail', 2016);
+/*!40000 ALTER TABLE `car` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.cars
+CREATE TABLE IF NOT EXISTS `cars` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table keepworkteach3.cars: ~0 rows (approximately)
+/*!40000 ALTER TABLE `cars` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cars` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.employee
 CREATE TABLE IF NOT EXISTS `employee` (
@@ -41,20 +555,16 @@ CREATE TABLE IF NOT EXISTS `employee` (
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 
--- Dumping structure for table keepworkteach3.entry
-CREATE TABLE IF NOT EXISTS `entry` (
-  `ENTRY_ID` bigint(20) NOT NULL AUTO_INCREMENT,
-  `EMPLOYEE_ID` bigint(20) NOT NULL,
-  `START_TIME` datetime DEFAULT NULL,
-  `FINISH_TIME` datetime DEFAULT NULL,
-  PRIMARY KEY (`ENTRY_ID`),
-  KEY `EMPLOYEE_ID` (`EMPLOYEE_ID`),
-  CONSTRAINT `entry_ibfk_1` FOREIGN KEY (`EMPLOYEE_ID`) REFERENCES `employee` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Dumping structure for table keepworkteach3.hibernate_sequence
+CREATE TABLE IF NOT EXISTS `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.entry: ~0 rows (approximately)
-/*!40000 ALTER TABLE `entry` DISABLE KEYS */;
-/*!40000 ALTER TABLE `entry` ENABLE KEYS */;
+-- Dumping data for table keepworkteach3.hibernate_sequence: 1 rows
+/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
+INSERT INTO `hibernate_sequence` (`next_val`) VALUES
+	(487);
+/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_admin
 CREATE TABLE IF NOT EXISTS `tb_admin` (
@@ -64,7 +574,7 @@ CREATE TABLE IF NOT EXISTS `tb_admin` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.tb_admin: ~1 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_admin: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tb_admin` DISABLE KEYS */;
 INSERT INTO `tb_admin` (`id`, `AdminID`, `AdminName`) VALUES
 	(1, '11', 'ad');
@@ -105,28 +615,92 @@ CREATE TABLE IF NOT EXISTS `tb_dateofteach` (
   `summyhour_dft` int(11) DEFAULT NULL COMMENT 'รวมชั่วโมง',
   `money_dft` int(11) DEFAULT NULL,
   `holiday_dft` varchar(50) DEFAULT NULL,
+  `statusbase` int(11) DEFAULT NULL COMMENT 'วิชาที่ใช้เบิก',
+  `status_dateofteach` int(11) DEFAULT NULL,
   `subject_dft` varchar(50) DEFAULT NULL COMMENT 'วิชา',
   `user_dft` varchar(50) DEFAULT NULL COMMENT 'ผู้ใช้',
   PRIMARY KEY (`dtime_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 COMMENT='เวลาสอน';
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COMMENT='เวลาสอน';
 
--- Dumping data for table keepworkteach3.tb_dateofteach: ~13 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_dateofteach: ~35 rows (approximately)
 /*!40000 ALTER TABLE `tb_dateofteach` DISABLE KEYS */;
-INSERT INTO `tb_dateofteach` (`dtime_id`, `dateofteach_id`, `weekofyear_dft`, `dayofyear_dft`, `monthofyear_dft`, `yearofteach_dft`, `tudsadee_dft`, `prtibad_dft`, `summyhour_dft`, `money_dft`, `holiday_dft`, `subject_dft`, `user_dft`) VALUES
-	(53, '2561111', 0, NULL, NULL, NULL, 0, 0, 0, 1200, NULL, NULL, NULL),
-	(54, '2561111', 0, NULL, NULL, NULL, 0, 0, 0, 1200, NULL, NULL, NULL),
-	(55, '2561111', 0, NULL, NULL, NULL, 0, 0, 0, 1200, NULL, NULL, NULL),
-	(56, '2561111', 0, NULL, NULL, NULL, 0, 0, 0, 1200, NULL, NULL, NULL),
-	(57, '25611141001', 1, '1', '1', '2018', 2, 2, 4, 0, 'holiday', '41001', 'u'),
-	(58, '25611141001', 2, '8', '1', '2018', 2, 2, 4, 0, 'work', '41001', 'u'),
-	(59, '25611141001', 3, '15', '1', '2018', 2, 2, 4, 0, 'work', '41001', 'u'),
-	(60, '25611141001', 4, '22', '1', '2018', 2, 2, 4, 0, 'work', '41001', 'u'),
-	(61, '25611141002', 1, '6', '4', '2018', 3, 2, 5, 0, 'holiday', '41002', 'u'),
-	(62, '25611141002', 2, '13', '4', '2018', 3, 2, 5, 0, 'holiday', '41002', 'u'),
-	(63, '25611141002', 3, '20', '4', '2018', 3, 2, 5, 0, 'work', '41002', 'u'),
-	(64, '25611141002', 4, '27', '4', '2018', 3, 2, 5, 0, 'work', '41002', 'u'),
-	(65, '25611141002', 0, NULL, NULL, NULL, 0, 0, 0, 1200, NULL, NULL, NULL);
+INSERT INTO `tb_dateofteach` (`dtime_id`, `dateofteach_id`, `weekofyear_dft`, `dayofyear_dft`, `monthofyear_dft`, `yearofteach_dft`, `tudsadee_dft`, `prtibad_dft`, `summyhour_dft`, `money_dft`, `holiday_dft`, `statusbase`, `status_dateofteach`, `subject_dft`, `user_dft`) VALUES
+	(1, '2561114124903', 1, '1', '2', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(2, '2561114124903', 2, '8', '2', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(3, '2561114124903', 3, '15', '2', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(4, '2561114124903', 4, '22', '2', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(5, '2561114124903', 5, '1', '3', '2562', 2, 1, 3, 180, 'holiday', 2, 2, '4124903', '570112230061'),
+	(6, '2561114124903', 6, '8', '3', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(7, '2561114124903', 7, '15', '3', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(8, '2561114124903', 8, '22', '3', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(9, '2561114124903', 9, '29', '3', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(10, '2561114124903', 10, '5', '4', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(11, '2561114121301', 1, '1', '2', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(12, '2561114121301', 2, '8', '2', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(13, '2561114121301', 3, '15', '2', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(14, '2561114121301', 4, '22', '2', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(15, '2561114121301', 5, '1', '3', '2562', 1, 1, 2, 180, 'holiday', 2, 2, '4121301', '570112230061'),
+	(16, '2561114121301', 6, '8', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(17, '2561114121301', 7, '15', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(18, '2561114121301', 8, '22', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(19, '2561114121301', 9, '29', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(20, '2561114121301', 10, '5', '4', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
+	(21, '2561114124901', 1, '1', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(22, '2561114124901', 2, '8', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(23, '2561114124901', 3, '15', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(24, '2561114124901', 4, '22', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(25, '2561114124901', 5, '1', '3', '2562', 2, 2, 4, 120, 'holiday', 1, NULL, '4124901', '570112230061'),
+	(26, '2561114124901', 6, '8', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(27, '2561114124901', 7, '15', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(28, '2561114124901', 8, '22', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(29, '2561114124901', 9, '29', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(30, '2561114124901', 10, '5', '4', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(31, '2561124124901', 1, '1', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(32, '2561124124901', 2, '8', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(33, '2561124124901', 3, '15', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(34, '2561124124901', 4, '22', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(35, '2561124124901', 5, '1', '3', '2562', 2, 2, 4, 120, 'holiday', 1, NULL, '4124901', '570112230061'),
+	(36, '2561124124901', 6, '8', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(37, '2561124124901', 7, '15', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(38, '2561124124901', 8, '22', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(39, '2561124124901', 9, '29', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
+	(40, '2561124124901', 10, '5', '4', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061');
 /*!40000 ALTER TABLE `tb_dateofteach` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.tb_degree
+CREATE TABLE IF NOT EXISTS `tb_degree` (
+  `id_degree` int(11) DEFAULT NULL,
+  `name_degree` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ระดับการสอน';
+
+-- Dumping data for table keepworkteach3.tb_degree: ~3 rows (approximately)
+/*!40000 ALTER TABLE `tb_degree` DISABLE KEYS */;
+INSERT INTO `tb_degree` (`id_degree`, `name_degree`) VALUES
+	(1, 'ระดับปริญญาตรี'),
+	(2, 'ระดับปริญญาโท'),
+	(3, 'ระดับปริญญาเอก');
+/*!40000 ALTER TABLE `tb_degree` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.tb_faculty
+CREATE TABLE IF NOT EXISTS `tb_faculty` (
+  `faculty_id` int(11) DEFAULT NULL,
+  `faculty_name` varchar(50) DEFAULT NULL,
+  `person_faculty` varchar(50) DEFAULT NULL,
+  `majorsid_row` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='คณะ';
+
+-- Dumping data for table keepworkteach3.tb_faculty: ~8 rows (approximately)
+/*!40000 ALTER TABLE `tb_faculty` DISABLE KEYS */;
+INSERT INTO `tb_faculty` (`faculty_id`, `faculty_name`, `person_faculty`, `majorsid_row`) VALUES
+	(1, 'คณะครุศาสตร์', NULL, 0),
+	(4, 'คณะเทคโนโลยีอุตสาหกรรม', NULL, NULL),
+	(2, 'คณะเทคโนโลยีการเกษตร', NULL, NULL),
+	(3, 'คณะมนุษยศาสตร์และสังคมศาสตร์', NULL, NULL),
+	(5, 'คณะวิทยาศาสตร์', NULL, NULL),
+	(6, 'คณะวิทยาการจัดการ', NULL, NULL),
+	(7, 'คณะพยาบาลศาสตร์', NULL, NULL),
+	(8, 'บัณฑิตวิทยาลัย', NULL, NULL);
+/*!40000 ALTER TABLE `tb_faculty` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_holiday_bru
 CREATE TABLE IF NOT EXISTS `tb_holiday_bru` (
@@ -143,25 +717,48 @@ CREATE TABLE IF NOT EXISTS `tb_holiday_bru` (
 
 -- Dumping structure for table keepworkteach3.tb_holiday_th
 CREATE TABLE IF NOT EXISTS `tb_holiday_th` (
-  `holiday_id` int(11) DEFAULT NULL,
+  `holiday_id` char(50) DEFAULT NULL,
   `holiday_day` varchar(50) DEFAULT NULL,
   `holiday_month` varchar(50) DEFAULT NULL,
   `holiday_year` varchar(50) DEFAULT NULL,
   `holiday_dayofyear` varchar(50) DEFAULT NULL,
-  `holiday_row` varchar(50) DEFAULT NULL
+  `holiday_row` varchar(50) DEFAULT NULL,
+  `location_holi` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.tb_holiday_th: ~8 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_holiday_th: ~28 rows (approximately)
 /*!40000 ALTER TABLE `tb_holiday_th` DISABLE KEYS */;
-INSERT INTO `tb_holiday_th` (`holiday_id`, `holiday_day`, `holiday_month`, `holiday_year`, `holiday_dayofyear`, `holiday_row`) VALUES
-	(1, '1', '1', '2561', 'วันขึ้นปีใหม่', 'holiday'),
-	(2, '2', '1', '2561', 'วันหยุดชดเชยวันสิ้นปี', 'holiday'),
-	(3, '1', '3', '2561', 'วันมาฆบูชา', 'holiday'),
-	(4, '6', '4', '2561', 'วันจักรี', 'holiday'),
-	(5, '13', '4', '2561', 'วันสงกรานต์', 'holiday'),
-	(6, '14', '4', '2561', 'วันสงกรานต์', 'holiday'),
-	(7, '15', '4', '2561', 'วันสงกรานต์', 'holiday'),
-	(8, '16', '4', '2561', 'วันหยุดชดเชยวันสงกรานต์', 'holiday');
+INSERT INTO `tb_holiday_th` (`holiday_id`, `holiday_day`, `holiday_month`, `holiday_year`, `holiday_dayofyear`, `holiday_row`, `location_holi`) VALUES
+	('1', '1', '1', '2561', 'วันขึ้นปีใหม่', 'holiday', 'th'),
+	('2', '2', '1', '1', '1', 'holiday', '1'),
+	('3', '1', '3', '2561', 'วันมาฆบูชา', 'holiday', 'th'),
+	('4', '6', '4', '2561', 'วันจักรี', 'holiday', 'th'),
+	('5', '13', '4', '2561', 'วันสงกรานต์', 'holiday', 'th'),
+	('6', '14', '4', '2561', 'วันสงกรานต์', 'holiday', 'th'),
+	('7', '15', '4', '2561', 'วันสงกรานต์', 'holiday', 'th'),
+	('8', '16', '4', '2561', 'วันหยุดชดเชยวันสงกรานต์', 'holiday', 'th'),
+	('9', '1', '5', '2561', 'วันแรงงาน', 'holiday', 'th'),
+	('10', '14', '5', '2561', 'วันพืชมงคล', 'holiday', 'th'),
+	('11', '29', '5', '2561', 'วันวิสาขบูชา', 'holiday', 'th'),
+	('12', '15', '6', '2561', 'จุดจบของเราะมะฎอน', 'holiday', 'th'),
+	('13', '27', '7', '2561', '	วันอาสาฬหบูชา ', 'holiday', 'th'),
+	('24', '28', '7', '2561', '	วันเข้าพรรษา', 'holiday', 'th'),
+	('25', '28', '7', '2561', 'วันเกิดของพระบาทสมเด็จพระเจ้าอยู่หัว', 'holiday', 'th'),
+	('26', '30', '7', '2561', 'วันหยุดชดเชยวันเกิดของพระบาทสมเด็จพระเจ้าอยู่หัว', 'holiday', 'th'),
+	('27', '12', '8', '2561', 'วันแม่แห่งชาติ', 'holiday', 'th'),
+	('29', '13', '10', '2561', 'วันคล้ายวันสวรรคต พระบาทสมเด็จพระปรมินทรมหาภูมิพลอ', 'holiday', 'th'),
+	('30', '15', '10', '2561', '	วันหยุดชดเชยวันคล้ายวันสวรรคต พระบาทสมเด็จพระปรมิ', 'holiday', 'th'),
+	('31', '23', '10', '2561', 'วันปิยมหาราช', 'holiday', 'th'),
+	('32', '5', '12', '2561', 'วันคล้ายวันพระราชสมภพ รัชกาลที่ 9', 'holiday', 'th'),
+	('33', '10', '12', '2561', 'วันรัฐธรรมนูญ', 'holiday', 'th'),
+	('34', '25', '12', '2561', 'คริสต์มาส', 'holiday', 'th'),
+	('35', '31', '12', '2561', 'วันส่งท้ายปีเก่า', '', 'th'),
+	('36', '2', '1', '1', '1', NULL, '1'),
+	('3', '3', '3', '3', '3', NULL, '3'),
+	('32', '3', '3', '3', '3', 'holiday', '3'),
+	('32', '3', '3', '3', '3', 'holiday', '3'),
+	('123', '4', '4', '4', '4', 'holiday', '4'),
+	('2039', '19', '1', '2019', 'hhh', 'holiday', 'th');
 /*!40000 ALTER TABLE `tb_holiday_th` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_login
@@ -181,41 +778,164 @@ INSERT INTO `tb_login` (`id`, `LogUsername`, `LogPassword`, `LogRole`, `LogStatu
 	(2, 'a', '12', '1', 'A');
 /*!40000 ALTER TABLE `tb_login` ENABLE KEYS */;
 
+-- Dumping structure for table keepworkteach3.tb_majors
+CREATE TABLE IF NOT EXISTS `tb_majors` (
+  `majors_id` varchar(50) DEFAULT NULL,
+  `majors_name` varchar(50) DEFAULT NULL,
+  `person_majors` varchar(50) DEFAULT NULL,
+  `row_facltykf` int(11) DEFAULT NULL,
+  `row_degree` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='สาขาวิชา';
+
+-- Dumping data for table keepworkteach3.tb_majors: ~59 rows (approximately)
+/*!40000 ALTER TABLE `tb_majors` DISABLE KEYS */;
+INSERT INTO `tb_majors` (`majors_id`, `majors_name`, `person_majors`, `row_facltykf`, `row_degree`) VALUES
+	('001', 'นาฏศิลป์', NULL, 1, 1),
+	('002', 'คณิตศาสตร์', NULL, 1, 1),
+	('003', 'การศึกษาปฐมวัย', NULL, 1, 1),
+	('004', 'เทคโนโลยีและคอมพิวเตอร์เพื่อการศึกษา', NULL, 1, 1),
+	('005', 'สังคมศึกษา', NULL, 1, 1),
+	('006', 'ภาษาอังกฤษ', NULL, 1, 1),
+	('007', 'วิทยาศาสตร์ทั่วไป', NULL, 1, 1),
+	('008', 'ภาษาไทย', NULL, 1, 1),
+	('009', '	ศิลปศึกษา', NULL, 1, 1),
+	('010', '	ดนตรีศึกษา', NULL, 1, 1),
+	('011', '	พลศึกษา', NULL, 1, 1),
+	('012', 'ฟิสิกส์', NULL, 1, 1),
+	('013', 'หลักสูตรและการจัดการเรียนรู้', NULL, 1, 2),
+	('017', 'การบริหารการศึกษา', NULL, 1, 3),
+	('015', 'วิจัยและประเมินผล', NULL, 1, 2),
+	('016', 'ดนตรีศึกษา', NULL, 1, 2),
+	('014', 'การบริหารการศึกษา', NULL, 1, 2),
+	('018', 'เทคโนโลยีสถาปัตยกรรม', NULL, 2, 1),
+	('019', 'เทคโนโลยีการจัดการอุตสาหกรรม', NULL, 2, 1),
+	('020', 'เทคโนโลยีวิศวกรรมโยธา', NULL, 2, 1),
+	('021', 'เทคโนโลยีวิศวกรรมไฟฟ้า', NULL, 2, 1),
+	('022', 'เทคโนโลยีเซรามิกส์และการออกแบบ', NULL, 2, 1),
+	('023', 'เทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์', NULL, 2, 1),
+	('024', 'ออกแบบผลิตภัณฑ์อุตสาหกรรม', NULL, 2, 1),
+	('025', 'เกษตรศาสตร์', NULL, 3, 1),
+	('026', 'ประมง', NULL, 3, 1),
+	('027', 'สัตวศาสตร์', NULL, 3, 1),
+	('028', 'การพัฒนาสังคม', NULL, 4, 1),
+	('030', 'ภาษาไทย', NULL, 4, 1),
+	('031', 'บรรณารักษ์ศาสตร์และสารสนเทศศาสตร์', NULL, 4, 1),
+	('038', 'ภาษาอังกฤษ', NULL, 4, 2),
+	('033', 'ภาษาอังกฤษธุรกิจ', NULL, 4, 1),
+	('035', 'ดนตรีสากล', NULL, 4, 1),
+	('034', 'คอมพิวเตอร์ศิลปะและการออกแบบ', NULL, 4, 1),
+	('039', 'รัฐประศาสนศาสตร์', NULL, 4, 2),
+	('037', 'นิติศาสตร์', NULL, 4, 1),
+	('032', 'ภาษาอังกฤษ', NULL, 4, 1),
+	('036', 'รัฐประศาสนศาสตร์', NULL, 4, 1),
+	('040', 'ภูมิสารสนเทศ', NULL, 5, 1),
+	('041', 'เคมี', NULL, 5, 1),
+	('042', 'วิทยาศาสตร์สิ่งแวดล้อม', NULL, 5, 1),
+	('043', 'สาธารณสุขชุมชน', NULL, 5, 1),
+	('044', 'สถิติประยุกต์', NULL, 5, 1),
+	('045', 'ชีววิทยา', NULL, 5, 1),
+	('046', 'เทคโนโลยีสารสนเทศ', NULL, 5, 1),
+	('047', 'วิทยาการคอมพิวเตอร์', NULL, 5, 1),
+	('048', 'คณิตศาสตร์', NULL, 5, 1),
+	('050', '	วิทยาศาสตร์การกีฬา', NULL, 5, 1),
+	('051', 'วิทยาศาสตร์สิ่งทอ', NULL, 5, 1),
+	('052', 'วิทยาศาสตร์การอาหาร', NULL, 5, 1),
+	('053', 'การบัญชี', NULL, 6, 1),
+	('054', 'การสื่อสารมวลชน', NULL, 6, 1),
+	('055', 'การท่องเที่ยวและการโรงแรม', NULL, 6, 1),
+	('056', 'เศรษฐศาสตร์', NULL, 6, 1),
+	('057', 'การเงินและการธนาคาร', NULL, 6, 1),
+	('058', 'การจัดการ', NULL, 6, 1),
+	('059', 'การตลาด', NULL, 6, 1),
+	('060', 'การบริหารทรัพยากรมนุษย์', NULL, 6, 1),
+	('061', 'คอมพิวเตอร์ธุรกิจ', NULL, 6, 1);
+/*!40000 ALTER TABLE `tb_majors` ENABLE KEYS */;
+
 -- Dumping structure for table keepworkteach3.tb_month
 CREATE TABLE IF NOT EXISTS `tb_month` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `month_id` varchar(50) DEFAULT NULL,
   `month_name` varchar(50) DEFAULT NULL,
+  `month_lastname` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='เดือน';
 
 -- Dumping data for table keepworkteach3.tb_month: ~12 rows (approximately)
 /*!40000 ALTER TABLE `tb_month` DISABLE KEYS */;
-INSERT INTO `tb_month` (`id`, `month_id`, `month_name`) VALUES
-	(1, '1', 'มกราคม'),
-	(2, '2', 'กุมพาพันธ์'),
-	(3, '3', 'มีนาคม'),
-	(4, '4', 'เมษายน'),
-	(5, '5', 'พฤษภาคม'),
-	(6, '6', 'มิถุนายน'),
-	(7, '7', 'กรกฎาคม'),
-	(8, '8', 'สิงหาคม'),
-	(9, '9', 'กันยายน'),
-	(10, '10', 'ตุลาคม'),
-	(11, '11', 'พฤศจิกายน'),
-	(12, '12', 'ธันวาคม');
+INSERT INTO `tb_month` (`id`, `month_id`, `month_name`, `month_lastname`) VALUES
+	(1, '1', 'มกราคม', 'ม.ค.'),
+	(2, '2', 'กุมพาพันธ์', 'ก.พ.'),
+	(3, '3', 'มีนาคม', 'มี.ค.'),
+	(4, '4', 'เมษายน', 'เม.ย.'),
+	(5, '5', 'พฤษภาคม', 'พ.ค'),
+	(6, '6', 'มิถุนายน', 'มิ.ย'),
+	(7, '7', 'กรกฎาคม', 'ก.ค.'),
+	(8, '8', 'สิงหาคม', 'ส.ค.'),
+	(9, '9', 'กันยายน', 'ก.ย.'),
+	(10, '10', 'ตุลาคม', 'ต.ค.'),
+	(11, '11', 'พฤศจิกายน', 'พ.ย.'),
+	(12, '12', 'ธันวาคม', 'ธ.ค.');
 /*!40000 ALTER TABLE `tb_month` ENABLE KEYS */;
 
--- Dumping structure for table keepworkteach3.tb_stipend
-CREATE TABLE IF NOT EXISTS `tb_stipend` (
+-- Dumping structure for table keepworkteach3.tb_salary
+CREATE TABLE IF NOT EXISTS `tb_salary` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `stipend_id` varchar(50) NOT NULL DEFAULT '0',
+  `salary_id` varchar(50) DEFAULT NULL,
+  `salary_sum_tudsadee` int(11) DEFAULT NULL COMMENT 'รวม ท',
+  `salary_sum_prtibad` int(11) DEFAULT NULL COMMENT 'รวม ป',
+  `sum_tudsadee_prtibad_hour` int(11) DEFAULT NULL COMMENT 'รวม ท ป',
+  `salary_status` int(11) DEFAULT NULL COMMENT 'เงินรวม',
+  `salary_baseteach` int(11) DEFAULT NULL COMMENT 'อัตราการ เบิก',
+  `salary_subject_fk` varchar(50) DEFAULT NULL COMMENT 'วิชา',
+  `salary_userfk` varchar(50) DEFAULT NULL COMMENT 'ผู้ใช้',
+  `salary_dateofteach` varchar(50) DEFAULT NULL COMMENT 'ตารางสอน',
+  `salary_summoney` int(11) DEFAULT NULL COMMENT 'รวมเงิน',
+  `salery_thaibaht` varchar(50) DEFAULT NULL COMMENT 'อักษรเงิน',
+  `salary_setatatus_id` int(11) DEFAULT NULL COMMENT 'ตารางทฤษฎีปฏิบัติ',
+  `salary_tableteahing` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ค่าจ้าง-เงินเดือน';
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.tb_stipend: ~0 rows (approximately)
-/*!40000 ALTER TABLE `tb_stipend` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tb_stipend` ENABLE KEYS */;
+-- Dumping data for table keepworkteach3.tb_salary: ~2 rows (approximately)
+/*!40000 ALTER TABLE `tb_salary` DISABLE KEYS */;
+INSERT INTO `tb_salary` (`id`, `salary_id`, `salary_sum_tudsadee`, `salary_sum_prtibad`, `sum_tudsadee_prtibad_hour`, `salary_status`, `salary_baseteach`, `salary_subject_fk`, `salary_userfk`, `salary_dateofteach`, `salary_summoney`, `salery_thaibaht`, `salary_setatatus_id`, `salary_tableteahing`) VALUES
+	(28, '2561114124903', NULL, NULL, 18, 0, NULL, NULL, '570112230061', NULL, 3240, 'แปดพันหนึ่งร้อยบาทถ้วน', 1, '2561114124903'),
+	(29, '2561114124903', NULL, NULL, 27, 0, NULL, NULL, '570112230061', NULL, 4860, 'แปดพันหนึ่งร้อยบาทถ้วน', 2, '2561114124903');
+/*!40000 ALTER TABLE `tb_salary` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.tb_setstatus_subject
+CREATE TABLE IF NOT EXISTS `tb_setstatus_subject` (
+  `setstatus_subject_id` varchar(50) DEFAULT NULL,
+  `setstatus_subject_hour` int(11) DEFAULT NULL,
+  `setstatus_subject_base` int(11) DEFAULT NULL,
+  `setstatus_subject_money` int(11) DEFAULT NULL,
+  `status_subject` int(11) DEFAULT NULL,
+  `setject_userid` varchar(50) DEFAULT NULL,
+  `teching_setject_id` varchar(50) DEFAULT NULL,
+  `setstatus_subid` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='paper2';
+
+-- Dumping data for table keepworkteach3.tb_setstatus_subject: ~4 rows (approximately)
+/*!40000 ALTER TABLE `tb_setstatus_subject` DISABLE KEYS */;
+INSERT INTO `tb_setstatus_subject` (`setstatus_subject_id`, `setstatus_subject_hour`, `setstatus_subject_base`, `setstatus_subject_money`, `status_subject`, `setject_userid`, `teching_setject_id`, `setstatus_subid`) VALUES
+	('2561114124903', 18, 180, 3240, 2, '570112230061', '2561114124903', '4124903'),
+	('2561114124903', 9, 180, 1620, 1, '570112230061', '2561114124903', '4124903'),
+	('2561114121301', 9, 180, 1620, 2, '570112230061', '2561114121301', '4121301'),
+	('2561114121301', 9, 180, 1620, 1, '570112230061', '2561114121301', '4121301');
+/*!40000 ALTER TABLE `tb_setstatus_subject` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.tb_status_subject
+CREATE TABLE IF NOT EXISTS `tb_status_subject` (
+  `status_subject_id` int(1) DEFAULT NULL,
+  `status_subject_name` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ปฎิบัติ-ทฤษฎี';
+
+-- Dumping data for table keepworkteach3.tb_status_subject: ~2 rows (approximately)
+/*!40000 ALTER TABLE `tb_status_subject` DISABLE KEYS */;
+INSERT INTO `tb_status_subject` (`status_subject_id`, `status_subject_name`) VALUES
+	(1, 'ปฎิบัติ'),
+	(2, 'ทฤษฎี');
+/*!40000 ALTER TABLE `tb_status_subject` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_subject
 CREATE TABLE IF NOT EXISTS `tb_subject` (
@@ -226,18 +946,37 @@ CREATE TABLE IF NOT EXISTS `tb_subject` (
   `credit_hour` varchar(5) DEFAULT NULL,
   `tudsadee` int(2) DEFAULT NULL COMMENT 'ทฤษฎิ',
   `prtibad` int(2) DEFAULT NULL COMMENT 'ปฏิบัติ',
+  `status_subject` int(2) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='วิชาที่สอน';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='วิชาที่สอน';
 
 -- Dumping data for table keepworkteach3.tb_subject: ~5 rows (approximately)
 /*!40000 ALTER TABLE `tb_subject` DISABLE KEYS */;
-INSERT INTO `tb_subject` (`Id`, `subject_id`, `subject_name`, `credit`, `credit_hour`, `tudsadee`, `prtibad`) VALUES
-	(1, '1', 'วิท', 3, '2-3-5', 2, 3),
-	(2, '51001', 'คณิต', 3, '2-2-5', 2, 2),
-	(3, '41001', 'คอม', 2, '2-2-5', 2, 2),
-	(10, '41002', 'อังกฤษ', 3, '3-2-5', 3, 2),
-	(11, '41003', 'วิททยาศาสตร์', 3, '2-2-5', 2, 2);
+INSERT INTO `tb_subject` (`Id`, `subject_id`, `subject_name`, `credit`, `credit_hour`, `tudsadee`, `prtibad`, `status_subject`) VALUES
+	(2, '51001', 'คณิต', 3, '2-2-5', 2, 2, 2),
+	(3, '41001', 'คอม', 2, '2-2-5', 2, 2, 2),
+	(10, '4124903', 'อังกฤษ', 3, '3-2-5', 2, 2, 1),
+	(11, '4121301', 'วิททยาศาสตร์', 3, '2-2-5', 2, 2, 2),
+	(12, '4124901', 'คณิต', 3, '2-2-5', 2, 2, 1),
+	(15, '1', '1', 1, '1', 1, 1, 1);
 /*!40000 ALTER TABLE `tb_subject` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.tb_subjectsum_hour
+CREATE TABLE IF NOT EXISTS `tb_subjectsum_hour` (
+  `subjectsum_hour_id` varchar(50) NOT NULL DEFAULT '0',
+  `subjectsum_tudsadee` int(11) NOT NULL DEFAULT '0',
+  `subjectsum_prtibad` int(11) NOT NULL DEFAULT '0',
+  `subjectsum_money` int(11) NOT NULL DEFAULT '0',
+  `subjectsum_subject_id` varchar(50) NOT NULL DEFAULT '0',
+  `subjectsum_status` int(11) NOT NULL DEFAULT '0',
+  `subjectsum_user_id` varchar(50) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ค่าจ้าง-เงินเดือน';
+
+-- Dumping data for table keepworkteach3.tb_subjectsum_hour: ~1 rows (approximately)
+/*!40000 ALTER TABLE `tb_subjectsum_hour` DISABLE KEYS */;
+INSERT INTO `tb_subjectsum_hour` (`subjectsum_hour_id`, `subjectsum_tudsadee`, `subjectsum_prtibad`, `subjectsum_money`, `subjectsum_subject_id`, `subjectsum_status`, `subjectsum_user_id`) VALUES
+	('1', 2, 2, 2, '2', 2, '0');
+/*!40000 ALTER TABLE `tb_subjectsum_hour` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_table_teaching
 CREATE TABLE IF NOT EXISTS `tb_table_teaching` (
@@ -250,7 +989,9 @@ CREATE TABLE IF NOT EXISTS `tb_table_teaching` (
   `section` int(11) DEFAULT NULL,
   `studen_number` int(11) DEFAULT NULL,
   `start_month` varchar(50) DEFAULT NULL,
+  `start_month_string` varchar(50) DEFAULT NULL,
   `stop_month` varchar(50) DEFAULT NULL,
+  `stop_month_string` varchar(50) DEFAULT NULL,
   `teach_year` varchar(50) DEFAULT NULL,
   `start_time` varchar(50) DEFAULT NULL,
   `stop_time` varchar(50) DEFAULT NULL,
@@ -260,14 +1001,15 @@ CREATE TABLE IF NOT EXISTS `tb_table_teaching` (
   `user_roleid` varchar(50) DEFAULT NULL,
   `subject_roleid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.tb_table_teaching: ~3 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_table_teaching: ~4 rows (approximately)
 /*!40000 ALTER TABLE `tb_table_teaching` DISABLE KEYS */;
-INSERT INTO `tb_table_teaching` (`id`, `teble_teach_id`, `degree_studen`, `teach_term`, `term_year`, `teach_week`, `section`, `studen_number`, `start_month`, `stop_month`, `teach_year`, `start_time`, `stop_time`, `sum_hour`, `standard_teach`, `room`, `user_roleid`, `subject_roleid`) VALUES
-	(6, '2561111', '1', '1', '2561', '', 1, 23, '06/04/2018', '27/04/2018', '2561', '07:00', '11:58', '4:0', 120, '', 'u', '1'),
-	(7, '25611141001', '1', '1', '2561', '5', 1, 23, '01/01/2018', '22/01/2018', '2561', '07:00', '11:00', '4:0', 120, '', 'u', '41001'),
-	(8, '25611141002', '1', '1', '2561', '', 1, 23, '06/04/2018', '27/04/2018', '2561', '', '', 'NaN:NaN', 120, '', 'u', '41002');
+INSERT INTO `tb_table_teaching` (`id`, `teble_teach_id`, `degree_studen`, `teach_term`, `term_year`, `teach_week`, `section`, `studen_number`, `start_month`, `start_month_string`, `stop_month`, `stop_month_string`, `teach_year`, `start_time`, `stop_time`, `sum_hour`, `standard_teach`, `room`, `user_roleid`, `subject_roleid`) VALUES
+	(1, '2561114124903', '1', '1', '2561', '1', 1, 38, '01/02/2019', 'กุมพาพันธ์', '31/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '255', '570112230061', '4124903'),
+	(2, '2561114121301', '1', '1', '2561', '2', 1, 49, '01/02/2019', 'กุมพาพันธ์', '31/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '332', '570112230061', '4121301'),
+	(3, '2561114124901', '1', '1', '2561', '5', 1, 23, '01/02/2019', 'กุมพาพันธ์', '31/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 120, '654', '570112230061', '4124901'),
+	(4, '2561124124901', '1', '1', '2561', '4', 2, 26, '01/02/2019', 'กุมพาพันธ์', '31/03/2019', 'มีนาคม', '2561', '04:00', '10:00', '6:0', 120, '150210', '570112230061', '4124901');
 /*!40000 ALTER TABLE `tb_table_teaching` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_teaching
@@ -280,18 +1022,47 @@ CREATE TABLE IF NOT EXISTS `tb_teaching` (
   `money_tudsadee` int(11) DEFAULT NULL,
   `money_prtibad` int(11) DEFAULT NULL,
   `salary_sum` int(11) DEFAULT NULL COMMENT 'รวมเงินเดือน',
+  `teach_basehour` int(11) DEFAULT NULL COMMENT 'ฐาน/ชม',
+  `teach_basecram` int(11) DEFAULT NULL COMMENT 'ฐาน/คาบ',
   `dateofteach_fk` varchar(50) DEFAULT NULL,
   `subject_fk` varchar(50) DEFAULT NULL COMMENT 'role วิชา',
   `tableteach_fk` varchar(50) DEFAULT NULL COMMENT 'role ตารางเรียน',
   `user_fk` varchar(50) DEFAULT NULL COMMENT 'role ผู้สอน',
+  `status_teach` int(2) DEFAULT '0' COMMENT 'สถานะสอน',
+  `status_teaching` int(1) DEFAULT '0' COMMENT 'สถานะใช่เบิก',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='ตารางเบิกการสอน';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='ตารางเบิกการสอน';
 
--- Dumping data for table keepworkteach3.tb_teaching: ~1 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_teaching: ~4 rows (approximately)
 /*!40000 ALTER TABLE `tb_teaching` DISABLE KEYS */;
-INSERT INTO `tb_teaching` (`id`, `teach_id`, `sum_hour_term`, `hoursum_tudsadee`, `hoursum_prtibad`, `money_tudsadee`, `money_prtibad`, `salary_sum`, `dateofteach_fk`, `subject_fk`, `tableteach_fk`, `user_fk`) VALUES
-	(1, '1', 1, 1, 1, 1, 1, 1, '1', '1', '1', '1');
+INSERT INTO `tb_teaching` (`id`, `teach_id`, `sum_hour_term`, `hoursum_tudsadee`, `hoursum_prtibad`, `money_tudsadee`, `money_prtibad`, `salary_sum`, `teach_basehour`, `teach_basecram`, `dateofteach_fk`, `subject_fk`, `tableteach_fk`, `user_fk`, `status_teach`, `status_teaching`) VALUES
+	(1, '2561114124903', 0, 20, 20, 0, 0, 1656, 3, 0, NULL, '4124903', '2561114124903', '570112230061', 2, 2),
+	(2, '2561114121301', 0, 20, 20, 0, 0, 1656, 2, 1, NULL, '4121301', '2561114121301', '570112230061', 2, 2),
+	(3, '2561114124901', 0, 20, 20, 0, 0, 1116, 0, 4, NULL, '4124901', '2561114124901', '570112230061', 1, 2),
+	(4, '2561124124901', 0, 20, 20, 0, 0, 1116, 0, 4, NULL, '4124901', '2561124124901', '570112230061', 1, 2);
 /*!40000 ALTER TABLE `tb_teaching` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.tb_teach_report
+CREATE TABLE IF NOT EXISTS `tb_teach_report` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `teach_report_id` varchar(50) DEFAULT NULL,
+  `resum_pst` int(11) DEFAULT NULL COMMENT 'ทฤษฏีรวม',
+  `resum_tsd` int(11) DEFAULT NULL COMMENT 'ปัฎิบัติรวม',
+  `repost_sum` int(11) DEFAULT NULL COMMENT 'รวม ท-ป',
+  `repost_money` int(11) DEFAULT NULL,
+  `report_thaibaht` varchar(50) DEFAULT NULL COMMENT 'บาท',
+  `user_report_fk` varchar(50) DEFAULT NULL,
+  `dateteach_fk` varchar(50) DEFAULT NULL,
+  `teaching_fk` varchar(50) DEFAULT NULL,
+  `status_repost` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table keepworkteach3.tb_teach_report: ~0 rows (approximately)
+/*!40000 ALTER TABLE `tb_teach_report` DISABLE KEYS */;
+INSERT INTO `tb_teach_report` (`id`, `teach_report_id`, `resum_pst`, `resum_tsd`, `repost_sum`, `repost_money`, `report_thaibaht`, `user_report_fk`, `dateteach_fk`, `teaching_fk`, `status_repost`) VALUES
+	(5, '3/3/2562/570112230061', 0, 0, 45, 8100, 'แปดพันหนึ่งร้อยบาทถ้วน', '570112230061', NULL, '2561114124903', 2);
+/*!40000 ALTER TABLE `tb_teach_report` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_user
 CREATE TABLE IF NOT EXISTS `tb_user` (
@@ -301,22 +1072,44 @@ CREATE TABLE IF NOT EXISTS `tb_user` (
   `prefix_name` varchar(50) DEFAULT NULL,
   `user_name` varchar(50) DEFAULT NULL COMMENT 'ชื่อ',
   `user_lastname` varchar(50) DEFAULT NULL COMMENT 'นามสกุล',
-  `position_teach` varchar(50) DEFAULT NULL COMMENT 'ตำแหน่งผู้สอน',
+  `position_teach` varchar(50) DEFAULT NULL COMMENT 'ตำแหน่งการเบิก',
+  `position_user` varchar(50) DEFAULT NULL COMMENT 'ตำแหน่งผู้สอน',
   `faculty` varchar(50) DEFAULT NULL COMMENT 'คณะ',
   `mojor` varchar(50) DEFAULT NULL COMMENT 'สาขา',
   `baseHour` int(2) DEFAULT NULL COMMENT 'ฐานหน่วยคาบ',
   `baseKrm` int(2) DEFAULT NULL COMMENT 'ฐานหน่วยชั่วโมง',
+  `status_login` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.tb_user: ~4 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_user: ~12 rows (approximately)
 /*!40000 ALTER TABLE `tb_user` DISABLE KEYS */;
-INSERT INTO `tb_user` (`id`, `user_id`, `user_pass`, `prefix_name`, `user_name`, `user_lastname`, `position_teach`, `faculty`, `mojor`, `baseHour`, `baseKrm`) VALUES
-	(2, 'u', 'u', NULL, 'kittiphong', 'tesching', 'U', 'วิทยาการคอม', 'คณิตศาสตร์', 9, 6),
-	(3, 'a', 'a', NULL, 'hh', 'jo', 'A', 'jo', 'jo', 8, 6),
-	(4, '001', '001', NULL, '2', '4', 'U', '4', '44', 8, 6),
-	(5, 't', 't', NULL, 'gg', 'gg', 'T', 'gg', 'gg', 8, 8);
+INSERT INTO `tb_user` (`id`, `user_id`, `user_pass`, `prefix_name`, `user_name`, `user_lastname`, `position_teach`, `position_user`, `faculty`, `mojor`, `baseHour`, `baseKrm`, `status_login`) VALUES
+	(2, 'u', 'u', '???', 'kitti', 'Aum', 'U', NULL, 'วิทยาการคอม', 'วิทยาศาสตร์', 9, 6, 'U'),
+	(3, 'a', 'a', NULL, 'hh', 'jo', 'Admin', NULL, 'jo', 'jo', 8, 6, 'A'),
+	(5, 't', 't', NULL, 'gg', 'gg', 'T', NULL, 'gg', 'gg', 8, 8, NULL),
+	(7, '123', '123', 'นาย', 'kkk', 'kkkk', 'U', NULL, 'อังกฤษ', 'ครุ', 9, 5, 'U'),
+	(10, '570112230061', '1234', 'นาย', 'กิตติพงษ์', 'อุ่มพิมาย', 'อาจารย์ประจำ', 'หัวหน้าสาขา', 'วิทยาการคอม', 'วิทยาศาตร์', 9, 6, 'U'),
+	(11, '', '', NULL, '', '', 'อาจารย์พิเศษ', NULL, '', '', 0, 0, 'U'),
+	(12, '1', NULL, NULL, '1', '1', 'อาจารย์พิเศษ', NULL, '1', '1', 1, 1, 'U'),
+	(13, '1', NULL, NULL, '1', '1', 'อาจารย์พิเศษ', NULL, '1', '1', 1, 1, 'U'),
+	(14, '2', NULL, NULL, '2', '2', 'อาจารย์ประจำ', NULL, '2', '2', 2, 2, 'U'),
+	(15, '2', NULL, NULL, '2', '2', 'อาจารย์ประจำ', NULL, '2', '2', 2, 2, 'U'),
+	(16, '222', NULL, NULL, '22', '2', 'อาจารย์ประจำ', NULL, '22', '22', 22, 22, 'U'),
+	(17, '222', NULL, NULL, '22', '2', 'อาจารย์ประจำ', NULL, '22', '22', 22, 22, 'U');
 /*!40000 ALTER TABLE `tb_user` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `ID` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `username` varchar(60) DEFAULT NULL,
+  `password` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table keepworkteach3.users: ~0 rows (approximately)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

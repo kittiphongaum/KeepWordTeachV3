@@ -43,39 +43,7 @@
 		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-sm-12">
-		<div class="panel panel-default card-view">
-			<div class="panel-heading">
-				<div class="pull-left">
-					<h6 class="panel-title txt-dark">ตรารงวิชา</h6>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="panel-wrapper collapse in">
-				<div class="panel-body">
-					<table id="subjectteach" class="table table-hover table-bordered mb-0">
-						<thead class="text-warning">
-							<tr>
-								<th rowspan="2">รหัสวิชา</th>
-								<th rowspan="2">ชื่อวิชา</th>
-								<th rowspan="2">จำนวนชั่วโมง</th>
-								<th rowspan="2">จำนวนเงิน</th>
-								<th rowspan="2">รวมเงิน</th>
-								<th rowspan="2">หมายเหตู</th>
-						</tr>
-					
-							</thead>
-						<tbody>
-						</tbody>
 
-					</table>
-				
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
 
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> -->

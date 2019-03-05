@@ -74,7 +74,7 @@ public class TeachController {
 	public List<Teach> contest() {
 
 		List<Teach> li = new ArrayList<>();
-		li = teachDAO.teschASCfileAll("u", "1", "2561", "1");
+		li = teachDAO.teschASCfileAll("570112230061", "1", "2561", "1");
 		return li;
 	}
 
@@ -94,7 +94,6 @@ public class TeachController {
 		// String year = "2561";
 		// String de = "1";
 		list = teachDAO.teschASCfileAll(userid = id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),
-
 				id1.getDegreeS4()/* userid="u",term,year,de */);
 
 		User users = new User();
@@ -124,7 +123,7 @@ public class TeachController {
 			setTsd = list.get(i).getTableTeaching().getSubject().getPrtibad();
 			setPsd = list.get(i).getTableTeaching().getSubject().getTudsadee();
 			int sumtp = setTsd + setPsd;
-			int bh = users.getBaseHour();// ฐานเบิก
+			int bh = users.getUserbaseHour();// ฐานเบิก
 			sum += sumtp;
 			if (setTsd != 0 && setPsd != 0) {
 				if (sum > bh) {
@@ -361,7 +360,7 @@ public class TeachController {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return list22;
+		return list;
 	}
 
 	@RequestMapping(value = "/listDay", method = RequestMethod.POST)
@@ -416,7 +415,7 @@ public class TeachController {
 					tpSet.setSetstatusSubjectBase(basemoney);
 					tpSet.setSetstatusSubjectMoney(sumtsd*basemoney);
 					tpSet.setStatusSubject(2);
-					tpSet.setSetjectUserid(teaching.get(i).getUserFk());
+				//	tpSet.setSetjectUserid(teaching.get(i).getUserFk());
 					tpSet.setTechingSetjectId(teaching.get(i).getTeachId());
 					tpSet.setSetstatusSubId(teaching.get(i).getSubjactFk());
 					statusTpDAO.insertStsubject(tpSet);
@@ -435,25 +434,25 @@ public class TeachController {
 					System.out.println(teaching.get(i).getSubjactFk() +":::" +"วิชา"+(h+1)+"รอบ"+sumpsb+":::"+sumtsd+"::"+AAA);
 					
 					
-					subjectShow = salarySubjectDAO.salaryListById(teaching.get(i).getTeachId());
-				//	 System.out.println(subjectShow.getSalaryStatus());
-					if (subjectShow.getSalaryStatus() != 2) {
-						System.out.println(subjectShow.getSalaryStatus());
-						subjectAdd.setSalaryId(teaching.get(i).getTeachId());
-				//		 System.out.println(sumpsb+"::sumpsb");
-				//		 System.out.println(sumtsd+"::sumtsd");
-				//		 System.out.println(sumtsd_ptb+"::sumtsd_ptb");
-						subjectAdd.setSalarySumTudsadee(sumtsd);
-						subjectAdd.setSalarySumPrtibad(sumpsb);
-						subjectAdd.setSumTudsadeePrtibad(sumtsd+sumpsb);
-						subjectAdd.setSalaryStatus(2);
-						subjectAdd.setSalarySubjeatFk(teaching.get(i).getSubjactFk());
-						subjectAdd.setSalaryuserFk(teaching.get(i).getUserFk());
-					//	System.out.println(subjectAdd.getSalarySumTudsadee()+"+++"+subjectAdd.getSalarySumPrtibad()+":++:");
-					
-						
-						salarySubjectDAO.insertSalary(subjectAdd);
-					}
+//					subjectShow = salarySubjectDAO.salaryListById(teaching.get(i).getTeachId());
+//				//	 System.out.println(subjectShow.getSalaryStatus());
+//					if (subjectShow.getSalaryStatus() != 2) {
+//						System.out.println(subjectShow.getSalaryStatus());
+//						subjectAdd.setSalaryId(teaching.get(i).getTeachId());
+//				//		 System.out.println(sumpsb+"::sumpsb");
+//				//		 System.out.println(sumtsd+"::sumtsd");
+//				//		 System.out.println(sumtsd_ptb+"::sumtsd_ptb");
+//						subjectAdd.setSalarySumTudsadee(sumtsd);
+//						subjectAdd.setSalarySumPrtibad(sumpsb);
+//						subjectAdd.setSumTudsadeePrtibad(sumtsd+sumpsb);
+//						subjectAdd.setSalaryStatus(2);
+//						subjectAdd.setSalarySubjeatFk(teaching.get(i).getSubjactFk());
+//						subjectAdd.setSalaryuserFk(teaching.get(i).getUserFk());
+//					//	System.out.println(subjectAdd.getSalarySumTudsadee()+"+++"+subjectAdd.getSalarySumPrtibad()+":++:");
+//					
+//						
+//						salarySubjectDAO.insertSalary(subjectAdd);
+//					}
 
 	//				System.out.println("---------------");
 				} else {
@@ -496,7 +495,7 @@ public class TeachController {
 	public List<DateofTeach> teest() {
 
 		List<DateofTeach> subjectById = new ArrayList<>();
-		subjectById = dateofTeachDAO.fileListByid("570112230061","41003");
+		subjectById = dateofTeachDAO.fileListByid("570112230061","4124901");
 
 		return subjectById;
 	}

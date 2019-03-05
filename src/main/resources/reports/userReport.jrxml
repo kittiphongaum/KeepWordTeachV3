@@ -1,57 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="userReport" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4e5bed02-4811-4318-a141-3091a111b36d">
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cars" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="81009a31-11e5-494b-9ef1-14c9122bcc33">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="211"/>
-	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="783"/>
-	<queryString language="SQL">
+	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="id" class="java.lang.Integer"/>
-	<field name="user_id" class="java.lang.String"/>
-	<field name="user_pass" class="java.lang.String"/>
-	<field name="prefix_name" class="java.lang.String"/>
-	<field name="user_name" class="java.lang.String"/>
-	<field name="user_lastname" class="java.lang.String"/>
-	<field name="position_teach" class="java.lang.String"/>
+	<field name="userId" class="java.lang.String"/>
+	<field name="userPass" class="java.lang.String"/>
+	<field name="prefixName" class="java.lang.String"/>
+	<field name="userFname" class="java.lang.String"/>
+	<field name="userLname" class="java.lang.String"/>
+	<field name="positionTeach" class="java.lang.String"/>
 	<field name="faculty" class="java.lang.String"/>
 	<field name="mojor" class="java.lang.String"/>
 	<field name="baseHour" class="java.lang.Integer"/>
 	<field name="baseKrm" class="java.lang.Integer"/>
-	<group name="id">
-		<groupExpression><![CDATA[$F{id}]]></groupExpression>
-	</group>
-	<group name="user_id">
-		<groupExpression><![CDATA[$F{user_id}]]></groupExpression>
-	</group>
-	<group name="user_pass">
-		<groupExpression><![CDATA[$F{user_pass}]]></groupExpression>
-	</group>
-	<group name="prefix_name">
-		<groupExpression><![CDATA[$F{prefix_name}]]></groupExpression>
-	</group>
-	<group name="user_name">
-		<groupExpression><![CDATA[$F{user_name}]]></groupExpression>
-	</group>
-	<group name="user_lastname">
-		<groupExpression><![CDATA[$F{user_lastname}]]></groupExpression>
-	</group>
-	<group name="position_teach">
-		<groupExpression><![CDATA[$F{position_teach}]]></groupExpression>
-	</group>
-	<group name="faculty">
-		<groupExpression><![CDATA[$F{faculty}]]></groupExpression>
-	</group>
-	<group name="mojor">
-		<groupExpression><![CDATA[$F{mojor}]]></groupExpression>
-	</group>
-	<group name="baseHour">
-		<groupExpression><![CDATA[$F{baseHour}]]></groupExpression>
-	</group>
-	<group name="baseKrm">
-		<groupExpression><![CDATA[$F{baseKrm}]]></groupExpression>
-	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -141,7 +104,7 @@
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{user_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{userId}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement stretchType="RelativeToBandHeight" x="115" y="0" width="170" height="22" uuid="0a77d04e-9959-4b61-a257-bea20c45b5d1"/>
@@ -153,7 +116,7 @@
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{user_name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{prefixName}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement stretchType="RelativeToBandHeight" x="285" y="0" width="110" height="22" uuid="1ec7c44d-fe48-411b-8288-b3a5e6c1b14b"/>
@@ -165,7 +128,7 @@
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{user_lastname}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{userLname}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement stretchType="RelativeToBandHeight" x="395" y="0" width="160" height="22" uuid="38a2d753-fa86-4c20-bfaf-3833678abff1"/>
@@ -177,7 +140,7 @@
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{position_teach}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{positionTeach}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

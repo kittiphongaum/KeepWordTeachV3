@@ -35,7 +35,7 @@ public class TeachDAO {
 			prepared.setString(8, bean.getDateofteachFk());
 			prepared.setString(9, bean.getSubjactFk());
 			prepared.setString(10, bean.getTableteachFk());
-			prepared.setString(11, bean.getUserFk());
+		//	prepared.setString(11, bean.getUserFk());
 			
 
 			prepared.executeUpdate();
@@ -77,13 +77,13 @@ public class TeachDAO {
 				teach.setMoneyTudsadee(rs.getInt("money_tudsadee"));
 				teach.setMoneyPrtibad(rs.getInt("money_prtibad"));
 				teach.setSalarySum(rs.getInt("salary_sum"));
-			
-				teach.setBaseHour(rs.getInt("basehour"));
-				teach.setBasecram(rs.getInt("basecram"));
+				
+				teach.setBaseHour(rs.getInt("teach_basehour"));
+				teach.setBasecram(rs.getInt("teach_basecram"));
 				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 				teach.setSubjactFk(rs.getString("subject_fk"));
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
-				teach.setUserFk(rs.getString("user_fk"));
+			//	teach.setUserFk(rs.getString("user_fk"));
 				teach.setStatusTeach(rs.getInt("status_teach"));
 				teach.setStatusTeaching(rs.getInt("status_teaching"));
 				TableTeaching tableteach = new TableTeaching();
@@ -124,8 +124,8 @@ public class TeachDAO {
 				user.setUserLname(rs.getString("user_lastname"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
-				user.setBaseHour(rs.getInt("baseHour"));
-				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
 				
 				tableteach.setSubject(subject);
 				teach.setTableTeaching(tableteach);
@@ -169,7 +169,7 @@ public class TeachDAO {
 				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 				teach.setSubjactFk(rs.getString("subject_fk"));
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
-				teach.setUserFk(rs.getString("user_fk"));
+			//	teach.setUserFk(rs.getString("user_fk"));
 				
 				subject.setSubjectId(rs.getString("subject_id"));
 				subject.setSubjectName(rs.getString("subject_name"));
@@ -188,8 +188,8 @@ public class TeachDAO {
 				user.setPositionTeach(rs.getString("position_teach"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
-				user.setBaseHour(rs.getInt("baseHour"));
-				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
 				user.setStatusLogin(rs.getString("status_login"));
 				
 				list.add(teach);
@@ -221,12 +221,12 @@ public class TeachDAO {
 				teach.setMoneyTudsadee(rs.getInt("money_tudsadee"));
 				teach.setMoneyPrtibad(rs.getInt("money_prtibad"));
 				teach.setSalarySum(rs.getInt("salary_sum"));
-				teach.setBaseHour(rs.getInt("basehour"));
-				teach.setBasecram(rs.getInt("basehour"));
+				teach.setBaseHour(rs.getInt("teach_basehour"));
+				teach.setBasecram(rs.getInt("teach_basecram"));
 				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 				teach.setSubjactFk(rs.getString("subject_fk"));
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
-				teach.setUserFk(rs.getString("user_fk"));
+			//	teach.setUserFk(rs.getString("user_fk"));
 				list.add(teach);
 			}
 		} catch (Exception e) {
@@ -269,10 +269,10 @@ public class TeachDAO {
 				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 				teach.setSubjactFk(rs.getString("subject_fk"));
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
-				teach.setUserFk(rs.getString("user_fk"));
+			//	teach.setUserFk(rs.getString("user_fk"));
 				
-				teach.setBaseHour(rs.getInt("basehour"));
-				teach.setBasecram(rs.getInt("basecram"));
+				teach.setBaseHour(rs.getInt("teach_basehour"));
+				teach.setBasecram(rs.getInt("teach_basecram"));
 				
 				subject.setSubjectId(rs.getString("subject_id"));
 				subject.setSubjectName(rs.getString("subject_name"));
@@ -291,8 +291,8 @@ public class TeachDAO {
 				user.setPositionTeach(rs.getString("position_teach"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
-				user.setBaseHour(rs.getInt("baseHour"));
-				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
 				user.setStatusLogin(rs.getString("status_login"));
 				
 				teach.setSubject(subject);
@@ -315,7 +315,7 @@ public class TeachDAO {
 		
 		StringBuilder sql = new StringBuilder();
 		try {
-			sql.append("UPDATE tb_teaching SET  basehour =? ,  basecram=?,status_teach=?,status_teaching=?  WHERE teach_id =?");
+			sql.append("UPDATE tb_teaching SET  teach_basehour =? ,  teach_basecram=?,status_teach=?,status_teaching=?  WHERE teach_id =?");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 
 			prepared.setInt(1, bean.getBaseHour());

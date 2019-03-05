@@ -22,6 +22,7 @@ public class DateofTeach {
 	 private User user;
 	 private TableTeaching  tableTeaching;
 	 private Month month;
+	 private DegreeStuden degreeStuden;
 	public int getDtimeId() {
 		return dtimeId;
 	}
@@ -141,6 +142,12 @@ public class DateofTeach {
 	}
 	public void setStatusDateofteach(int statusDateofteach) {
 		this.statusDateofteach = statusDateofteach;
+	}
+	public DegreeStuden getDegreeStuden() {
+		return degreeStuden;
+	}
+	public void setDegreeStuden(DegreeStuden degreeStuden) {
+		this.degreeStuden = degreeStuden;
 	}
 	
 	

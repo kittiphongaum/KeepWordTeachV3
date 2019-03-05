@@ -52,7 +52,7 @@
 					<div class="nav-header pull-left">
 						<div class="logo-wrap">
 							<a href="./index-admin">
-								<img class="brand-img" src="" alt="brand" />
+								<img class="brand-img" src="../assets_/dist/img/logo3.png" alt="brand" />
 								<span class="brand-text">Welcome</span>
 							</a>
 						</div>
@@ -751,13 +751,13 @@
 														<div class="col-md-4">
 															<div class="form-group">
 																<label class="bmd-label-floating">มีฐานชั่วโมง/คาบ</label>
-																<input type="text" class="form-control" id="baseHour" value="<%=userByid.getBaseHour()%>" disabled>
+																<input type="text" class="form-control" id="baseHour" value="<%=userByid.getUserbaseHour()%>" disabled>
 															</div>
 														</div>
 														<div class="col-md-4">
 															<div class="form-group">
 																<label class="bmd-label-floating">เบิกค่าสอนพิเศษได้ไม่เกิน/หน่วยชั่วโมง</label>
-																<input type="text" class="form-control" id="baseKrm" value="<%=userByid.getBaseKrm()%>" disabled>
+																<input type="text" class="form-control" id="baseKrm" value="<%=userByid.getUserbaseKrm()%>" disabled>
 															</div>
 														</div>
 													</div>

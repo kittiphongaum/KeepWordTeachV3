@@ -105,4 +105,20 @@ public class SubjectDAO {
 
 		return subject;
 	}
+	// delete
+		public void delete(String id) {
+			ConnectDB con = new ConnectDB();
+			PreparedStatement prepared = null;
+			StringBuilder sql = new StringBuilder();
+			try {
+				sql.append(" DELETE FROM tb_subject WHERE subject_id =?");
+				prepared = con.openConnect().prepareStatement(sql.toString());
+				prepared.setString(1, id);
+				prepared.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				
+			}
+		} // end method delete
 }

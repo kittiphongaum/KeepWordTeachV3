@@ -26,6 +26,8 @@ public class TableTeaching {
 	private String userRoleid;
 	private String subjectRoleid;
 	private Subject subject;
+	private String startMonthString;
+	private String stopMonthString;
 	private User user;
 	private Teach teach;
 	private DateofTeach dateofTeach;
@@ -210,6 +212,22 @@ public class TableTeaching {
 
 	public void setDateofTeach(DateofTeach dateofTeach) {
 		this.dateofTeach = dateofTeach;
+	}
+
+	public String getStartMonthString() {
+		return startMonthString;
+	}
+
+	public void setStartMonthString(String startMonthString) {
+		this.startMonthString = startMonthString;
+	}
+
+	public String getStopMonthString() {
+		return stopMonthString;
+	}
+
+	public void setStopMonthString(String stopMonthString) {
+		this.stopMonthString = stopMonthString;
 	}
 
 	

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -86,5 +86,19 @@ public class SubjectController {
 	@GetMapping("/subject1/{id}")
 	public  Subject getUser(@PathVariable String id) throws SQLException{	
 		return subjectService.get(id);
+	}
+	@GetMapping("/deletesubject/{id}")
+	public Subject deletesubject(@PathVariable String id) throws SQLException{	
+			Subject subject= new Subject();
+			subject=subjectDAO.findOne(id);
+		try {
+			
+				subjectDAO.delete(id);
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return subject;
 	}
 }

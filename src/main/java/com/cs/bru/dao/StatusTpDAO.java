@@ -148,8 +148,8 @@ public List<StatusTP> SunjectTPFileBylist(String userid,String term,String year,
 				user.setPositionTeach(rs.getString("position_teach"));
 				user.setFaculty(rs.getString("faculty"));
 				user.setMojor(rs.getString("mojor"));
-				user.setBaseHour(rs.getInt("baseHour"));
-				user.setBaseKrm(rs.getInt("baseKrm"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
 				
 				stp.setTeach(teach);
 				stp.setTableTeaching(tableTeaching);
@@ -165,4 +165,42 @@ public List<StatusTP> SunjectTPFileBylist(String userid,String term,String year,
 		}
 		return tp;
 	} 
+//SumSalery
+public List<StatusTP> sumjectTPsumSalery(String userid,String term,String year,String degree,int statusSubject)throws SQLException{
+	
+	ConnectDB con = new ConnectDB();
+	PreparedStatement preperd = null;
+	StringBuilder sql = new StringBuilder();
+	List<StatusTP>  tplist =new ArrayList<>();
+
+	try {
+		sql.append("SELECT tb_setstatus_subject.*,tb_teaching.*,tb_user.*,tb_table_teaching.*,tb_status_subject.* FROM tb_setstatus_subject INNER JOIN tb_teaching on tb_setstatus_subject.teching_setject_id = tb_teaching.teach_id INNER JOIN tb_table_teaching on tb_teaching.tableteach_fk = tb_table_teaching.teble_teach_id INNER JOIN tb_user on tb_teaching.user_fk=tb_user.user_id INNER JOIN tb_status_subject on tb_setstatus_subject.status_subject=tb_status_subject.status_subject_id WHERE tb_user.user_id =? and tb_table_teaching.teach_term =? and tb_table_teaching.teach_year=? and tb_table_teaching.degree_studen=?AND status_subject=?");
+		preperd = con.openConnect().prepareStatement(sql.toString());
+		preperd.setString(1,userid);
+		preperd.setString(2,term);
+		preperd.setString(3,year);
+		preperd.setString(4,degree);
+		preperd.setInt(5,statusSubject);
+		ResultSet rs = preperd.executeQuery();
+		while(rs.next()) {
+			StatusTP stp = new StatusTP();
+			TableTeaching table =new TableTeaching(); 
+			stp.setSetstatusSubjectId(rs.getString("setstatus_subject_id"));
+			stp.setSetstatusSubjectHour(rs.getInt("setstatus_subject_hour"));
+			stp.setSetstatusSubjectBase(rs.getInt("setstatus_subject_base"));
+			stp.setSetstatusSubjectMoney(rs.getInt("setstatus_subject_money"));
+			stp.setStatusSubject(rs.getInt("status_subject"));
+			stp.setSetjectUserid(rs.getString("setject_userid"));
+			stp.setTechingSetjectId(rs.getString("teching_setject_id"));
+			stp.setSetstatusSubId(rs.getString("setstatus_subid"));
+			
+			//table.setTebleTeachId(rs.getString(""));
+		}
+		
+		
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	return tplist;
+} 
 }

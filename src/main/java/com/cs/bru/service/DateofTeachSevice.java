@@ -130,7 +130,7 @@ public class DateofTeachSevice {
 			dFt.setDateofteachId(insertTableTeaching.getTebleTeachId());
 		
 			System.out.println(sumhourtrme);
-			//dateofTeachDao.update(dFt);
+			dateofTeachDao.update(dFt);
 			
 			
 			teach.setHoursumTudsadee(tud);
