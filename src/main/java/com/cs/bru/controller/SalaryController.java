@@ -17,9 +17,12 @@ import com.cs.bru.bean.TeachSeachBean1;
 import com.cs.bru.dao.RepostDAO;
 import com.cs.bru.dao.SalarySubjectDAO;
 import com.cs.bru.dao.StatusTpDAO;
+import com.cs.bru.dao.SubjectsumHourDAO;
 import com.cs.bru.dao.TechingRepostDAO;
 import com.cs.bru.model.Salary;
 import com.cs.bru.model.StatusTP;
+import com.cs.bru.model.SubjectsumHour;
+import com.cs.bru.model.Teach;
 import com.cs.bru.model.TechingRepost;
 import com.cs.bru.service.ServiceThaiBaht;
 
@@ -35,6 +38,8 @@ public class SalaryController {
 	TechingRepostDAO techingRepostDAO;
 	@Autowired
 	RepostDAO repostDAO;
+	@Autowired
+	SubjectsumHourDAO subjectsumHourDAO;
 	
 	@GetMapping(value="StatusTpFilebean")
 	public StatusTP StatusTpFilebean () throws SQLException {
@@ -73,9 +78,11 @@ public class SalaryController {
 	@PostMapping(value="insertstatusFile")
 	public  List<StatusTP> insertstatusFile (@RequestBody TeachSeachBean1 id1) throws SQLException {
 		List<StatusTP> ttp=new ArrayList<>();
-		List<StatusTP> addsumject=new ArrayList<>();
+		
 		List<StatusTP> sumsalery =new ArrayList<>();
+	
 		Salary salarySeve =new Salary();
+	
 		try {
 			ttp=statusTpDAO.SunjectTPFileBylist(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(), id1.getDegreeS4());
 			for (int i = 0; i < ttp.size(); i++) {
@@ -113,13 +120,9 @@ public class SalaryController {
 					salarySubjectDAO.insertSalarySeve(salarySeve);
 				}
 			}
-			addsumject=repostDAO.listdayrepostPaper2(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(), id1.getDegreeS4());
-			int subH=0,sumM=0;
-			for (int j = 0; j < addsumject.size(); j++) {
-				subH+=addsumject.get(j).getSetstatusSubjectHour();
-				sumM+=addsumject.get(j).getSetstatusSubjectMoney();
-				
-			}
+			
+			
+			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -132,10 +135,18 @@ public class SalaryController {
 	@PostMapping(value="insertSalaryFinalBean")
 	public  List<Salary> insertSalaryFinalBean (@RequestBody SalaryFinalBean salaryFinalBean) throws SQLException {
 		List<StatusTP> ttp=new ArrayList<>();
+		List<Teach> addsumject=new ArrayList<>();
 		List<Salary> salary= new ArrayList<>();
 		TechingRepost techingRepost =new TechingRepost();
+		List<StatusTP> subjectSum =new ArrayList<>();
 		Salary inssalary= new Salary(); 
 		TechingRepost tech =new TechingRepost();
+		SubjectsumHour subjectsumHour=new SubjectsumHour();
+		SubjectsumHour cacksubjectsumHour=new SubjectsumHour();
+		String user=salaryFinalBean.getTeachSeachBean1().getUseridS1();
+		String trem =salaryFinalBean.getTeachSeachBean1().getTermS2();
+		String year=salaryFinalBean.getTeachSeachBean1().getYearS3();
+		String degree=salaryFinalBean.getTeachSeachBean1().getDegreeS4();
 		
 		try {
 			tech=techingRepostDAO.findBean(salaryFinalBean.getTableteachId());
@@ -175,6 +186,38 @@ public class SalaryController {
 				techingRepost.setStatusRepost(2);
 			techingRepostDAO.insertTechingRepostSalary(techingRepost);
 			}
+			
+			addsumject=repostDAO.repostPaper1(user,trem,year,degree);
+			
+			
+			for (int j = 0; j < addsumject.size(); j++) {
+				
+				if (addsumject.get(j).getStatusTeach()==2) {
+					cacksubjectsumHour=subjectsumHourDAO.salarysumHourByID(addsumject.get(j).getTeachId());
+					if (cacksubjectsumHour.getSubjectsumStatus()!=2) {
+						
+					
+					int subH=0,sumM=0;
+					subjectSum=statusTpDAO.listAllSumsubject(user,trem,year,degree,addsumject.get(j).getSubjactFk());
+					for (int m = 0; m < subjectSum.size(); m++) {
+						subH+=subjectSum.get(m).getSetstatusSubjectHour();
+						sumM+=subjectSum.get(m).getSetstatusSubjectMoney();
+						   
+						
+					}
+					System.out.println(subH);
+					subjectsumHour.setSubjectsumHourId(addsumject.get(j).getTeachId());
+					subjectsumHour.setSubjectsumTeachTd(addsumject.get(j).getTeachId());
+					subjectsumHour.setSubjectsumUserId(addsumject.get(j).getUserFk());
+					subjectsumHour.setSubjectsumPrtibad(subH);
+					subjectsumHour.setSubjectsumMoney(sumM);
+					subjectsumHour.setSubjectsumSubjectTd(addsumject.get(j).getSubjactFk());
+					subjectsumHour.setSubjectsumStatus(2);
+					subjectsumHourDAO.insert(subjectsumHour);
+				}
+				}
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -206,4 +249,12 @@ public class SalaryController {
 		
 		return list;
 	}
+	@GetMapping(value="fild")
+	public List<Teach> fildListRepost() {
+		List<Teach> list=new ArrayList<>();
+		list=repostDAO.repostPaper1("570112230061", "1", "2561","1");
+		
+		return list;
+	}
+
 }

@@ -1216,6 +1216,12 @@
 				prtibadHour:$("#show_sum_day_ptb_fk").val(),
 				prtibadMoney:$("#show_sum_ptb_fk").val(),
 				prtibadStatus:(1)
+				},
+				teachSeachBean1:{
+					useridS1: $("#userRoleid").val(),
+					termS2: $("#termS2").val(),
+					yearS3: $("#yearS3").val(),
+					degreeS4: $("#degreeS4").val()
 				}
 				
 		};

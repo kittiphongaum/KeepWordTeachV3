@@ -106,7 +106,9 @@ public class PdfController {
 
 	        //List<Teach> cars =(List<Teach>) teachDAO.findByIdUser("570112230061");
 	        List<Teach> teach = (List<Teach>) repostDAO.repostPaper1(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
-	     //   System.out.println(cars);
+	   
+	        
+	        //   System.out.println(cars);
 	    //    List<User> cars = (List<User>) userlistPDF.findAll();
 	        //Data source Set
 	        JRDataSource dataSource = new JRBeanCollectionDataSource(teach);

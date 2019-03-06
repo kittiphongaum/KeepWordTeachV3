@@ -8,6 +8,7 @@ public class SubjectsumHour {
 	private String subjectsumSubjectTd;
 	private int subjectsumStatus;
 	private String subjectsumUserId;
+	private String subjectsumTeachTd;
 	public String getSubjectsumHourId() {
 		return subjectsumHourId;
 	}
@@ -49,6 +50,12 @@ public class SubjectsumHour {
 	}
 	public void setSubjectsumUserId(String subjectsumUserId) {
 		this.subjectsumUserId = subjectsumUserId;
+	}
+	public String getSubjectsumTeachTd() {
+		return subjectsumTeachTd;
+	}
+	public void setSubjectsumTeachTd(String subjectsumTeachTd) {
+		this.subjectsumTeachTd = subjectsumTeachTd;
 	}
 	
 	

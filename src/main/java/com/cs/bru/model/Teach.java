@@ -25,6 +25,7 @@ public class Teach {
 	private Subject subject;
 	private TableTeaching tableTeaching;
 	private User users;
+
 	public int getId() {
 		return id;
 	}

@@ -7,6 +7,7 @@ public class SalaryFinalBean {
 	private String tableteachId;
 	private TudsadeeBean tudsadeeBean;
 	private PrtibadBean prtibadBean;
+	private TeachSeachBean1 teachSeachBean1;
 	public int getSalaryMoney() {
 		return salaryMoney;
 	}
@@ -42,6 +43,12 @@ public class SalaryFinalBean {
 	}
 	public void setIdRepost(String idRepost) {
 		this.idRepost = idRepost;
+	}
+	public TeachSeachBean1 getTeachSeachBean1() {
+		return teachSeachBean1;
+	}
+	public void setTeachSeachBean1(TeachSeachBean1 teachSeachBean1) {
+		this.teachSeachBean1 = teachSeachBean1;
 	}
 	
 	
