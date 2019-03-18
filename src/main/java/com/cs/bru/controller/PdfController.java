@@ -9,6 +9,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tools.ant.taskdefs.Exit;
+import org.apache.zookeeper.server.ExitCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
@@ -31,6 +33,7 @@ import com.cs.bru.model.Car;
 import com.cs.bru.model.DateofTeach;
 import com.cs.bru.model.Salary;
 import com.cs.bru.model.StatusTP;
+import com.cs.bru.model.SubjectsumHour;
 import com.cs.bru.model.Teach;
 import com.cs.bru.model.User;
 import com.cs.bru.service.SeviceListPDF;
@@ -100,6 +103,8 @@ public class PdfController {
 	        Resource resource = context.getResource("classpath:relatorios/paper1.jrxml");
 	        //Compile to jasperReport
 	        InputStream inputStream = resource.getInputStream();
+	       
+	        
 	        JasperReport report = JasperCompileManager.compileReport(inputStream);
 	        //Parameters Set
 	        Map<String, Object> params = new HashMap<>();
@@ -121,6 +126,7 @@ public class PdfController {
 	       
 	        //Export PDF Stream
 	        JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
+	        System.out.println(jasperPrint);
 	    }
 	 
 	 
@@ -156,7 +162,7 @@ public class PdfController {
 	 @PostMapping(path = "/repostpaper3")
 	    @ResponseBody
 	    public void listrepostpaper3(HttpServletResponse response,@ModelAttribute("SpringWeb")TeachSeachBean1 id1) throws Exception {
-		 	
+		 List<Salary> list=new ArrayList<Salary>();
 	        //Get JRXML template from resources folder
 	        Resource resource = context.getResource("classpath:relatorios/paper3.jrxml");
 	        //Compile to jasperReport
@@ -166,11 +172,33 @@ public class PdfController {
 	        Map<String, Object> params = new HashMap<>();
 
 	        //List<Teach> cars =(List<Teach>) teachDAO.findByIdUser("570112230061");
-	        List<DateofTeach> cars = (List<DateofTeach>) repostDAO.listrepostpaper3(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
-	     //   System.out.println(cars);
+	        List<DateofTeach> li = (List<DateofTeach>) repostDAO.listrepostpaper3(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+
+			int summPrtibad=0,moneyPrtibad=0,summTesdee=0,moneyTesdee=0;
+			for (int m = 0; m < li.size(); m++) {
+				list=repostDAO.listdayrepostPaper4(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+				for (int i = 0; i < list.size(); i++) {
+					if (list.get(i).getSalarySetatatusId()==1) {
+						summPrtibad=(list.get(i).getSumTudsadeePrtibadHour());
+						moneyPrtibad=(list.get(i).getSalarySummoney());
+					}
+					if (list.get(i).getSalarySetatatusId()==2) {
+						summTesdee=(list.get(i).getSumTudsadeePrtibadHour());
+						moneyTesdee =(list.get(i).getSalarySummoney());
+					}
+				}
+				li.get(m).getSumTsdPsd().setSummPrtibad(summPrtibad);
+				li.get(m).getSumTsdPsd().setSummMoneyPrtibad(moneyPrtibad);
+				li.get(m).getSumTsdPsd().setSummTesdee(summTesdee);
+				li.get(m).getSumTsdPsd().setSummMoneyTesdee(moneyTesdee);
+				
+				
+			}
+			
+	        //   System.out.println(cars);
 	    //    List<User> cars = (List<User>) userlistPDF.findAll();
 	        //Data source Set
-	        JRDataSource dataSource = new JRBeanCollectionDataSource(cars);
+	        JRDataSource dataSource = new JRBeanCollectionDataSource(li);
 	        params.put("datasource", dataSource);
 
 	        //Make jasperPrint
@@ -209,9 +237,9 @@ public class PdfController {
 	        //Export PDF Stream
 	        JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
 	    }
-	 @GetMapping(path = "/repostPaper5")
+	 @PostMapping(path = "/repostPaper5")
 	    @ResponseBody
-	    public void listdayrepostPaper5(HttpServletResponse response) throws Exception {
+	    public void listdayrepostPaper5(HttpServletResponse response,@ModelAttribute("SpringWeb")TeachSeachBean1 id1) throws Exception {
 		 	
 	        //Get JRXML template from resources folder
 	        Resource resource = context.getResource("classpath:relatorios/paper5.jrxml");
@@ -221,8 +249,9 @@ public class PdfController {
 	        //Parameters Set
 	        Map<String, Object> params = new HashMap<>();
 
-	        List<Teach> cars =(List<Teach>) teachDAO.findByIdUser("570112230061");
-//	        List<Salary> cars = (List<Salary>) repostDAO.listdayrepostPaper4(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+	     //   List<Teach> cars =(List<Teach>) teachDAO.findByIdUser("570112230061");
+	        List<SubjectsumHour> cars = (List<SubjectsumHour>) repostDAO.listdayrepostPaper5(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+	  
 	     //   System.out.println(cars);
 	    //   List<User> cars = (List<User>) userlistPDF.findAll();
 	        //Data source Set
@@ -230,7 +259,7 @@ public class PdfController {
 	        params.put("datasource", dataSource);
 
 	        //Make jasperPrint
-	        JasperPrint jasperPrint = JasperFillManager.fillReport(report,params);
+	        JasperPrint jasperPrint = JasperFillManager.fillReport(report,params,dataSource);
 	        //Media Type
 	        response.setContentType(MediaType.APPLICATION_PDF_VALUE);
 	       
@@ -254,7 +283,33 @@ public class PdfController {
 	 @GetMapping(value = "/repostpaper3test")
 		public List<DateofTeach> repostpaper2test() {
 			List<DateofTeach> li = new ArrayList<>();
+			
+			List<Salary> list=new ArrayList<Salary>();
+			
 			li = repostDAO.listrepostpaper3("570112230061", "1", "2561", "1");
+			int summPrtibad=0,moneyPrtibad=0,summTesdee=0,moneyTesdee=0;
+			for (int m = 0; m < li.size(); m++) {
+				list=repostDAO.listdayrepostPaper4("570112230061", "1", "2561", "1");
+				for (int i = 0; i < list.size(); i++) {
+					if (list.get(i).getSalarySetatatusId()==1) {
+						summPrtibad=(list.get(i).getSumTudsadeePrtibadHour());
+						moneyPrtibad=(list.get(i).getSalarySummoney());
+						System.out.println(moneyPrtibad);
+					}
+					if (list.get(i).getSalarySetatatusId()==2) {
+						summTesdee=(list.get(i).getSumTudsadeePrtibadHour());
+						moneyTesdee =(list.get(i).getSalarySummoney());
+					}
+				}
+				li.get(m).getSumTsdPsd().setSummPrtibad(summPrtibad);
+				li.get(m).getSumTsdPsd().setSummMoneyPrtibad(moneyPrtibad);
+				li.get(m).getSumTsdPsd().setSummTesdee(summTesdee);
+				li.get(m).getSumTsdPsd().setSummMoneyTesdee(moneyTesdee);
+				System.out.println(summPrtibad);
+				
+				
+			}
+			
 			return li;
 		}
 	 @GetMapping(value="repostpaper2test")
@@ -267,6 +322,12 @@ public class PdfController {
 		public  List<Salary> repostpaper4test() {
 			List<Salary> list=new ArrayList<Salary>();
 				list=repostDAO.listdayrepostPaper4("570112230061", "1", "2561", "1");
+			return list;
+		}
+	 @GetMapping(value="repostpaper5test")
+		public  List<SubjectsumHour> repostpaper5test() {
+			List<SubjectsumHour> list=new ArrayList<SubjectsumHour>();
+				list=repostDAO.listdayrepostPaper5("570112230061", "1", "2561", "1");
 			return list;
 		}
 }

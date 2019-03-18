@@ -21,7 +21,7 @@ public class SubjectsumHourDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_subjectsum_hour (subjectsum_hour_id,subjectsum_tudsadee,subjectsum_prtibad,subjectsum_money,subjectsum_subject_id,subjectsum_status,subjectsum_user_id) VALUES(?,?,?,?,?,?,?)");
+					"INSERT INTO tb_subjectsum_hour (subjectsum_hour_id,subjectsum_tudsadee,subjectsum_prtibad,subjectsum_money,subjectsum_subject_id,subjectsum_status,subjectsum_user_id,subjectsum_teach_id,subjectsum_pepostset) VALUES(?,?,?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getSubjectsumHourId());
 			prepared.setInt(2, bean.getSubjectsumTudsadee());
@@ -30,6 +30,8 @@ public class SubjectsumHourDAO {
 			prepared.setString(5, bean.getSubjectsumSubjectTd());
 			prepared.setInt(6, bean.getSubjectsumStatus());
 			prepared.setString(7, bean.getSubjectsumUserId());
+			prepared.setString(8, bean.getSubjectsumTeachTd());
+			prepared.setInt(9, bean.getRepostSet());
 		
 
 			prepared.executeUpdate();

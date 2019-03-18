@@ -1,5 +1,7 @@
 package com.cs.bru.model;
 
+import com.cs.bru.bean.SumTsdPsd;
+
 public class DateofTeach {
 	private int dtimeId;
 	private String dateofteachId;
@@ -23,6 +25,7 @@ public class DateofTeach {
 	 private TableTeaching  tableTeaching;
 	 private Month month;
 	 private DegreeStuden degreeStuden;
+	 private SumTsdPsd sumTsdPsd;
 	public int getDtimeId() {
 		return dtimeId;
 	}
@@ -148,6 +151,12 @@ public class DateofTeach {
 	}
 	public void setDegreeStuden(DegreeStuden degreeStuden) {
 		this.degreeStuden = degreeStuden;
+	}
+	public SumTsdPsd getSumTsdPsd() {
+		return sumTsdPsd;
+	}
+	public void setSumTsdPsd(SumTsdPsd sumTsdPsd) {
+		this.sumTsdPsd = sumTsdPsd;
 	}
 	
 	

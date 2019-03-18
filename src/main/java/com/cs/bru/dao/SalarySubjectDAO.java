@@ -25,7 +25,7 @@ public class SalarySubjectDAO {
 		StringBuilder sql = new StringBuilder();
 		try {
 			sql.append(
-					"INSERT INTO tb_salary(salary_id,salary_sum_tudsadee,salary_sum_prtibad,sum_tudsadee_prtibad,salary_status,salary_subject_fk,salary_userfk)VALUES (?,?,?,?,?,?,?)");
+					"INSERT INTO tb_salary(salary_id,salary_sum_tudsadee,salary_sum_prtibad,sum_tudsadee_prtibad_hour,salary_status,salary_subject_fk,salary_userfk)VALUES (?,?,?,?,?,?,?)");
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, bean.getSalaryId());
 			prepared.setInt(2, bean.getSalarySumTudsadee());

@@ -9,6 +9,11 @@ public class SubjectsumHour {
 	private int subjectsumStatus;
 	private String subjectsumUserId;
 	private String subjectsumTeachTd;
+	private Subject  subject;
+	private User user;
+	private Teach teach;
+	private TableTeaching tableTeaching;
+	private int repostSet;
 	public String getSubjectsumHourId() {
 		return subjectsumHourId;
 	}
@@ -56,6 +61,36 @@ public class SubjectsumHour {
 	}
 	public void setSubjectsumTeachTd(String subjectsumTeachTd) {
 		this.subjectsumTeachTd = subjectsumTeachTd;
+	}
+	public Subject getSubject() {
+		return subject;
+	}
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Teach getTeach() {
+		return teach;
+	}
+	public void setTeach(Teach teach) {
+		this.teach = teach;
+	}
+	public TableTeaching getTableTeaching() {
+		return tableTeaching;
+	}
+	public void setTableTeaching(TableTeaching tableTeaching) {
+		this.tableTeaching = tableTeaching;
+	}
+	public int getRepostSet() {
+		return repostSet;
+	}
+	public void setRepostSet(int repostSet) {
+		this.repostSet = repostSet;
 	}
 	
 	

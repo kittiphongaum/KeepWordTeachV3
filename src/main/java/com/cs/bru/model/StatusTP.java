@@ -16,6 +16,7 @@ public class StatusTP {
 	private TableTeaching tableTeaching;
 	private DegreeStuden degreeStuden;
 	private StatusSubject statusSubjectbean;
+	private TechingRepost techingRepost;
 	public String getSetstatusSubjectId() {
 		return setstatusSubjectId;
 	}
@@ -99,6 +100,12 @@ public class StatusTP {
 	}
 	public void setDegreeStuden(DegreeStuden degreeStuden) {
 		this.degreeStuden = degreeStuden;
+	}
+	public TechingRepost getTechingRepost() {
+		return techingRepost;
+	}
+	public void setTechingRepost(TechingRepost techingRepost) {
+		this.techingRepost = techingRepost;
 	}
 	
 }

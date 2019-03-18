@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.SystemPropertyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -62,7 +63,7 @@ public class SalaryController {
 		
 		return ttp;
 	}
-	@PostMapping(value="FileBylistIdSETstatus")
+	@PostMapping(value="fileBylistIdSETstatus")
 	public  List<StatusTP> statusFileBylistId (@RequestBody TeachSeachBean1 id1) throws SQLException {
 		List<StatusTP> ttp=new ArrayList<>();
 		try {
@@ -101,6 +102,7 @@ public class SalaryController {
 					salarySeve.setSalaryuserFk(ttp.get(i).getSetjectUserid());
 					salarySeve.setSalaryTableteahing(ttp.get(i).getTechingSetjectId());
 					salarySubjectDAO.insertSalarySeve(salarySeve);
+					System.out.println("salarySubjectDAO");
 				}
 				if (ttp.get(i).getStatusSubject()==2) {
 					sumsalery=statusTpDAO.sumjectTPsumSalery(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(), id1.getDegreeS4(),ttp.get(i).getStatusSubject());
@@ -199,17 +201,31 @@ public class SalaryController {
 					
 					int subH=0,sumM=0;
 					subjectSum=statusTpDAO.listAllSumsubject(user,trem,year,degree,addsumject.get(j).getSubjactFk());
+				int sumt=0,sump=0;int po=1;
 					for (int m = 0; m < subjectSum.size(); m++) {
-						subH+=subjectSum.get(m).getSetstatusSubjectHour();
-						sumM+=subjectSum.get(m).getSetstatusSubjectMoney();
-						   
 						
+						
+						sumM+=subjectSum.get(m).getSetstatusSubjectMoney();
+						if (subjectSum.get(m).getStatusSubject()==2) {
+							sumt+=subjectSum.get(m).getSetstatusSubjectHour(); 
+						}
+						if (subjectSum.get(m).getStatusSubject()==1) {
+							sump+=subjectSum.get(m).getSetstatusSubjectHour();
+						}
+						if (subjectSum.get(m).getTableTeaching().getStudenNumber()>20) {
+							po=2;
+						}
+					
+						System.out.println(subjectSum.get(m).getTableTeaching().getStudenNumber()+".............");
 					}
+					subjectsumHour.setRepostSet(po);
 					System.out.println(subH);
+					
 					subjectsumHour.setSubjectsumHourId(addsumject.get(j).getTeachId());
 					subjectsumHour.setSubjectsumTeachTd(addsumject.get(j).getTeachId());
 					subjectsumHour.setSubjectsumUserId(addsumject.get(j).getUserFk());
-					subjectsumHour.setSubjectsumPrtibad(subH);
+					subjectsumHour.setSubjectsumPrtibad(sump);
+					subjectsumHour.setSubjectsumTudsadee(sumt);
 					subjectsumHour.setSubjectsumMoney(sumM);
 					subjectsumHour.setSubjectsumSubjectTd(addsumject.get(j).getSubjactFk());
 					subjectsumHour.setSubjectsumStatus(2);
@@ -235,6 +251,13 @@ public class SalaryController {
 		
 		return hi;
 	}
+	@GetMapping(value="salaryAndRepost1")
+	public List<Salary> salaryAndRepost1() {
+		List<Salary> hi=new ArrayList<Salary>();
+		 hi=salarySubjectDAO.salaryListByIdMoney("570112230061", "1", "2561","1");
+		
+		return hi;
+	}
 	@GetMapping(value="fildListAndRepost")
 	public List<TechingRepost> fildListAndRepost() {
 		List<TechingRepost> list=new ArrayList<TechingRepost>();
@@ -245,6 +268,7 @@ public class SalaryController {
 	@GetMapping(value="fildListRepost/{id}")
 	public List<TechingRepost> fildListRepost(@PathVariable String id) {
 		List<TechingRepost> list=new ArrayList<TechingRepost>();
+		
 		list=techingRepostDAO.historyfindRepost(id);
 		
 		return list;

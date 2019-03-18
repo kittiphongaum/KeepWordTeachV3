@@ -183,14 +183,14 @@
                     </ul>
                 </li>
 
-                <li>
+                <!-- <li>
                     <a href="./history-add" data-toggle="collapse" data-target="#app_dr">
                         <div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวัติการเบิก</span></div>
                         <div class="clearfix"></div>
                     </a>
                     <ul id="app_dr" class="collapse collapse-level-1">
                     </ul>
-                </li>
+                </li> -->
                 <li>
                     <a href="./subject-add" data-toggle="collapse" data-target="#app_dr">
                         <div class="pull-left"><i data-icon="o" class="linea-icon linea-basic mr-20"></i><span class="right-nav-text">เพิ่มรายวิชา</span></div>
@@ -497,15 +497,30 @@
                                                                                 </div>
                                                                             <div class="col-md-12 mb-20">
                                                                                     <label class="control-label mb-10 text-left">คณะ</label>
-                                                                                    <input type="text" class="form-control" name="faculty"
-                                                                                        id="insertMojor" value="" required>
+                                                                                    <!-- <input type="text" class="form-control" name="faculty"
+                                                                                        id="insertMojor" value="" required> -->
+                                                                                        <select class="form-control "id="facultyd54"
+                                                                                          name="faculty" required>
+                                                                                    <option value="1">คณะครุศาสตร์</option>
+                                                                                    <option value="2">คณะเทคโนโลยีอุตสาหกรรม</option>
+                                                                                    <option value="3">คณะเทคโนโลยีการเกษตร</option>
+                                                                                    <option value="4">คณะมนุษยศาสตร์และสังคมศาสตร์</option>
+                                                                                    <option value="5">คณะวิทยาศาสตร์</option>
+                                                                                    <option value="6">คณะวิทยาการจัดการ</option>
+                                                                                    <option value="7">คณะพยาบาลศาสตร์</option>
+                                                                                   
+                                                                                </select>
     
                                                                                 </div>
                                                                             <div class="col-md-12 mb-20">
                                                                                 <label class="control-label mb-10 text-left">สาขาวิชา</label>
-                                                                                <input type="text" class="form-control"name="mojor"
+                                                                                <!-- <input type="text" class="form-control"name="mojor"
                                                                                     id="insertfaculty" value=""
-                                                                                    required>
+                                                                                    required> -->
+                                                                                    <select id="dropdownUserkk" class="form-control "
+                                                                                    name="faculty" required>
+                                                                          </select>
+                                                                                    
                                                                             </div>
                                                                             
                                                                             <div class="col-md-12">
@@ -688,21 +703,21 @@
                                                       <!-- /.modal-dialog -->
                                                   </div>
                                                   <!-- /.modal -->
-                                                
+                                                  <!-- <span class="label label-primary ml-10">12</span> -->
                                                   <!-- <a href="#myModalUpdate" data-toggle="modal" title="Compose" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"onclick="myModalUpdate()"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a> -->
                                                 </div>
                                                 <ul class="inbox-nav mb-30">
                                                     <li class="active">
-                                                        <a href="#">อาจารประจำ<span class="label label-primary ml-10">12</span></a>
+                                                        <a href="#">อาจารประจำ</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">อาจารพิเศษ<span class="label label-danger ml-10">20</span></a>
+                                                        <a href="#">อาจารพิเศษ</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">พนักงานมหาวิทยาลัย <span class="label label-warning ml-10">2</span></a>
+                                                        <a href="#">พนักงานมหาวิทยาลัย</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">อาจารย์อัตราจ้าง<span class="label label-info ml-10">30</span></a>
+                                                        <a href="#">อาจารย์อัตราจ้าง</a>
                                                     </li>
                                                    
                                                 </ul>
@@ -828,6 +843,29 @@
 
 </body>
 <script>
+    	$(document).ready(function () {
+            var ig =$('#facultyd54').val();
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "dropdownUser/"+ig,
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg) {
+		
+				for (var i = 0; i < msg.length; i++) {
+                //    $('#dropdownUserkk').append('<option value='+msg[i].majors.majorsName+'></option>');
+                    $('#dropdownUserkk').append('<option >'+msg[i].majors.majorsName+'</option>');
+				}
+				
+			
+			},
+			error: function (e) {
+				alert("ERROR: Table1", e);
+				console.log("ERROR: Table1", e);
+			}
+		});
+	});
     /*DataTable Init*/
 
     "use strict";
@@ -929,7 +967,7 @@
                 },{
                     "mData": "",
                     "mRender": function (data, type, full) {
-                        return data='<a href="#myModalUpdate" data-toggle="modal" title="Compose" onclick="myModalUpdate()" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>';
+                        return data='<a href="#myModalUpdate" data-toggle="modal" title="Compose" onclick="gotoUpdate('+full.userId+')" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>';
                     }
                 }
 
@@ -947,7 +985,6 @@ $.ajax({
     url: "/updateTableTeaching/" + tebleTeachId,
     success: function (resultMsg) {
         workingObject.closest("tr").remove();
-
         // re-css for table
         $("#customerTable1 tbody tr:odd").addClass("info");
         $("#customerTable1 tbody tr:even").addClass("success");
@@ -958,7 +995,7 @@ $.ajax({
     }
 });
 };
-    });
+});
 
     function peopleInsert() {
 
@@ -1046,6 +1083,7 @@ function myModalUpdate() {
 
 	};
 </script>
+
 <!-- <script>
 $(document).ready(function () {
     var ppos;

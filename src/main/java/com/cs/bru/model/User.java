@@ -20,6 +20,13 @@ public class User {
 		private int userbaseKrm;
 		private String statusLogin;
 		private Teach Teach;
+		private Majors majors;
+		public Majors getMajors() {
+			return majors;
+		}
+		public void setMajors(Majors majors) {
+			this.majors = majors;
+		}
 		public int getId() {
 			return Id;
 		}

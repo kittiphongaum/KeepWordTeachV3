@@ -560,9 +560,12 @@ CREATE TABLE IF NOT EXISTS `hibernate_sequence` (
   `next_val` bigint(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.hibernate_sequence: 1 rows
+-- Dumping data for table keepworkteach3.hibernate_sequence: 4 rows
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
+	(1),
+	(487),
+	(487),
 	(487);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 
@@ -589,7 +592,7 @@ CREATE TABLE IF NOT EXISTS `tb_calendar` (
   `day_calen` int(11) NOT NULL,
   `status_day` varchar(50) NOT NULL COMMENT 'วันหยุด',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='ปฏิทิน';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table keepworkteach3.tb_calendar: ~6 rows (approximately)
 /*!40000 ALTER TABLE `tb_calendar` DISABLE KEYS */;
@@ -620,58 +623,30 @@ CREATE TABLE IF NOT EXISTS `tb_dateofteach` (
   `subject_dft` varchar(50) DEFAULT NULL COMMENT 'วิชา',
   `user_dft` varchar(50) DEFAULT NULL COMMENT 'ผู้ใช้',
   PRIMARY KEY (`dtime_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COMMENT='เวลาสอน';
+) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8 COMMENT='ข้อมูลรายละเอียดใบการเบิกค่าสอนพิเศษ';
 
--- Dumping data for table keepworkteach3.tb_dateofteach: ~35 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_dateofteach: ~12 rows (approximately)
 /*!40000 ALTER TABLE `tb_dateofteach` DISABLE KEYS */;
 INSERT INTO `tb_dateofteach` (`dtime_id`, `dateofteach_id`, `weekofyear_dft`, `dayofyear_dft`, `monthofyear_dft`, `yearofteach_dft`, `tudsadee_dft`, `prtibad_dft`, `summyhour_dft`, `money_dft`, `holiday_dft`, `statusbase`, `status_dateofteach`, `subject_dft`, `user_dft`) VALUES
-	(1, '2561114124903', 1, '1', '2', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(2, '2561114124903', 2, '8', '2', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(3, '2561114124903', 3, '15', '2', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(4, '2561114124903', 4, '22', '2', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(5, '2561114124903', 5, '1', '3', '2562', 2, 1, 3, 180, 'holiday', 2, 2, '4124903', '570112230061'),
-	(6, '2561114124903', 6, '8', '3', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(7, '2561114124903', 7, '15', '3', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(8, '2561114124903', 8, '22', '3', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(9, '2561114124903', 9, '29', '3', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(10, '2561114124903', 10, '5', '4', '2562', 2, 1, 3, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(11, '2561114121301', 1, '1', '2', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(12, '2561114121301', 2, '8', '2', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(13, '2561114121301', 3, '15', '2', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(14, '2561114121301', 4, '22', '2', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(15, '2561114121301', 5, '1', '3', '2562', 1, 1, 2, 180, 'holiday', 2, 2, '4121301', '570112230061'),
-	(16, '2561114121301', 6, '8', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(17, '2561114121301', 7, '15', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(18, '2561114121301', 8, '22', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(19, '2561114121301', 9, '29', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(20, '2561114121301', 10, '5', '4', '2562', 1, 1, 2, 180, 'work', 2, 2, '4121301', '570112230061'),
-	(21, '2561114124901', 1, '1', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(22, '2561114124901', 2, '8', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(23, '2561114124901', 3, '15', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(24, '2561114124901', 4, '22', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(25, '2561114124901', 5, '1', '3', '2562', 2, 2, 4, 120, 'holiday', 1, NULL, '4124901', '570112230061'),
-	(26, '2561114124901', 6, '8', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(27, '2561114124901', 7, '15', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(28, '2561114124901', 8, '22', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(29, '2561114124901', 9, '29', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(30, '2561114124901', 10, '5', '4', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(31, '2561124124901', 1, '1', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(32, '2561124124901', 2, '8', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(33, '2561124124901', 3, '15', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(34, '2561124124901', 4, '22', '2', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(35, '2561124124901', 5, '1', '3', '2562', 2, 2, 4, 120, 'holiday', 1, NULL, '4124901', '570112230061'),
-	(36, '2561124124901', 6, '8', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(37, '2561124124901', 7, '15', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(38, '2561124124901', 8, '22', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(39, '2561124124901', 9, '29', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061'),
-	(40, '2561124124901', 10, '5', '4', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4124901', '570112230061');
+	(143, '2561114124903', 1, '1', '3', '2562', 1, 1, 2, 180, 'holiday', 2, 2, '4124903', '570112230061'),
+	(144, '2561114124903', 2, '8', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(145, '2561114124903', 3, '15', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(146, '2561114124903', 4, '22', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4124903', '570112230061'),
+	(147, '2561114121301', 1, '1', '3', '2562', 2, 2, 4, 180, 'holiday', 1, NULL, '4121301', '570112230061'),
+	(148, '2561114121301', 2, '8', '3', '2562', 2, 2, 4, 180, 'work', 1, NULL, '4121301', '570112230061'),
+	(149, '2561114121301', 3, '15', '3', '2562', 2, 2, 4, 180, 'work', 1, NULL, '4121301', '570112230061'),
+	(150, '2561114121301', 4, '22', '3', '2562', 2, 2, 4, 180, 'work', 1, NULL, '4121301', '570112230061'),
+	(151, '2561124121301', 1, '1', '3', '2562', 2, 2, 4, 120, 'holiday', 1, NULL, '4121301', '570112230061'),
+	(152, '2561124121301', 2, '8', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4121301', '570112230061'),
+	(153, '2561124121301', 3, '15', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4121301', '570112230061'),
+	(154, '2561124121301', 4, '22', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4121301', '570112230061');
 /*!40000 ALTER TABLE `tb_dateofteach` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_degree
 CREATE TABLE IF NOT EXISTS `tb_degree` (
   `id_degree` int(11) DEFAULT NULL,
   `name_degree` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ระดับการสอน';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลระดับการสอน';
 
 -- Dumping data for table keepworkteach3.tb_degree: ~3 rows (approximately)
 /*!40000 ALTER TABLE `tb_degree` DISABLE KEYS */;
@@ -683,7 +658,7 @@ INSERT INTO `tb_degree` (`id_degree`, `name_degree`) VALUES
 
 -- Dumping structure for table keepworkteach3.tb_faculty
 CREATE TABLE IF NOT EXISTS `tb_faculty` (
-  `faculty_id` int(11) DEFAULT NULL,
+  `faculty_id` varchar(50) DEFAULT NULL,
   `faculty_name` varchar(50) DEFAULT NULL,
   `person_faculty` varchar(50) DEFAULT NULL,
   `majorsid_row` int(11) DEFAULT NULL
@@ -692,14 +667,14 @@ CREATE TABLE IF NOT EXISTS `tb_faculty` (
 -- Dumping data for table keepworkteach3.tb_faculty: ~8 rows (approximately)
 /*!40000 ALTER TABLE `tb_faculty` DISABLE KEYS */;
 INSERT INTO `tb_faculty` (`faculty_id`, `faculty_name`, `person_faculty`, `majorsid_row`) VALUES
-	(1, 'คณะครุศาสตร์', NULL, 0),
-	(4, 'คณะเทคโนโลยีอุตสาหกรรม', NULL, NULL),
-	(2, 'คณะเทคโนโลยีการเกษตร', NULL, NULL),
-	(3, 'คณะมนุษยศาสตร์และสังคมศาสตร์', NULL, NULL),
-	(5, 'คณะวิทยาศาสตร์', NULL, NULL),
-	(6, 'คณะวิทยาการจัดการ', NULL, NULL),
-	(7, 'คณะพยาบาลศาสตร์', NULL, NULL),
-	(8, 'บัณฑิตวิทยาลัย', NULL, NULL);
+	('5', 'คณะวิทยาศาสตร์', 'ผู้ช่วยศาสตราจารย์ ดร.สุภาพร ชืนชูจิตร', 5),
+	('1', 'คณะครุศาสตร์', 'กกกก', 1),
+	('4', 'คณะเทคโนโลยีอุตสาหกรรม', NULL, 4),
+	('2', 'คณะเทคโนโลยีการเกษตร', NULL, 2),
+	('3', 'คณะมนุษยศาสตร์และสังคมศาสตร์', NULL, 3),
+	('6', 'คณะวิทยาการจัดการ', NULL, 6),
+	('7', 'คณะพยาบาลศาสตร์', NULL, 7),
+	('8', 'บัณฑิตวิทยาลัย', NULL, 8);
 /*!40000 ALTER TABLE `tb_faculty` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_holiday_bru
@@ -724,9 +699,9 @@ CREATE TABLE IF NOT EXISTS `tb_holiday_th` (
   `holiday_dayofyear` varchar(50) DEFAULT NULL,
   `holiday_row` varchar(50) DEFAULT NULL,
   `location_holi` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ตารางวันหยุด';
 
--- Dumping data for table keepworkteach3.tb_holiday_th: ~28 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_holiday_th: ~30 rows (approximately)
 /*!40000 ALTER TABLE `tb_holiday_th` DISABLE KEYS */;
 INSERT INTO `tb_holiday_th` (`holiday_id`, `holiday_day`, `holiday_month`, `holiday_year`, `holiday_dayofyear`, `holiday_row`, `location_holi`) VALUES
 	('1', '1', '1', '2561', 'วันขึ้นปีใหม่', 'holiday', 'th'),
@@ -780,75 +755,75 @@ INSERT INTO `tb_login` (`id`, `LogUsername`, `LogPassword`, `LogRole`, `LogStatu
 
 -- Dumping structure for table keepworkteach3.tb_majors
 CREATE TABLE IF NOT EXISTS `tb_majors` (
+  `id_majors` varchar(4) DEFAULT NULL,
   `majors_id` varchar(50) DEFAULT NULL,
   `majors_name` varchar(50) DEFAULT NULL,
   `person_majors` varchar(50) DEFAULT NULL,
-  `row_facltykf` int(11) DEFAULT NULL,
-  `row_degree` int(11) DEFAULT NULL
+  `row_facltykf` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='สาขาวิชา';
 
 -- Dumping data for table keepworkteach3.tb_majors: ~59 rows (approximately)
 /*!40000 ALTER TABLE `tb_majors` DISABLE KEYS */;
-INSERT INTO `tb_majors` (`majors_id`, `majors_name`, `person_majors`, `row_facltykf`, `row_degree`) VALUES
-	('001', 'นาฏศิลป์', NULL, 1, 1),
-	('002', 'คณิตศาสตร์', NULL, 1, 1),
-	('003', 'การศึกษาปฐมวัย', NULL, 1, 1),
-	('004', 'เทคโนโลยีและคอมพิวเตอร์เพื่อการศึกษา', NULL, 1, 1),
-	('005', 'สังคมศึกษา', NULL, 1, 1),
-	('006', 'ภาษาอังกฤษ', NULL, 1, 1),
-	('007', 'วิทยาศาสตร์ทั่วไป', NULL, 1, 1),
-	('008', 'ภาษาไทย', NULL, 1, 1),
-	('009', '	ศิลปศึกษา', NULL, 1, 1),
-	('010', '	ดนตรีศึกษา', NULL, 1, 1),
-	('011', '	พลศึกษา', NULL, 1, 1),
-	('012', 'ฟิสิกส์', NULL, 1, 1),
-	('013', 'หลักสูตรและการจัดการเรียนรู้', NULL, 1, 2),
-	('017', 'การบริหารการศึกษา', NULL, 1, 3),
-	('015', 'วิจัยและประเมินผล', NULL, 1, 2),
-	('016', 'ดนตรีศึกษา', NULL, 1, 2),
-	('014', 'การบริหารการศึกษา', NULL, 1, 2),
-	('018', 'เทคโนโลยีสถาปัตยกรรม', NULL, 2, 1),
-	('019', 'เทคโนโลยีการจัดการอุตสาหกรรม', NULL, 2, 1),
-	('020', 'เทคโนโลยีวิศวกรรมโยธา', NULL, 2, 1),
-	('021', 'เทคโนโลยีวิศวกรรมไฟฟ้า', NULL, 2, 1),
-	('022', 'เทคโนโลยีเซรามิกส์และการออกแบบ', NULL, 2, 1),
-	('023', 'เทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์', NULL, 2, 1),
-	('024', 'ออกแบบผลิตภัณฑ์อุตสาหกรรม', NULL, 2, 1),
-	('025', 'เกษตรศาสตร์', NULL, 3, 1),
-	('026', 'ประมง', NULL, 3, 1),
-	('027', 'สัตวศาสตร์', NULL, 3, 1),
-	('028', 'การพัฒนาสังคม', NULL, 4, 1),
-	('030', 'ภาษาไทย', NULL, 4, 1),
-	('031', 'บรรณารักษ์ศาสตร์และสารสนเทศศาสตร์', NULL, 4, 1),
-	('038', 'ภาษาอังกฤษ', NULL, 4, 2),
-	('033', 'ภาษาอังกฤษธุรกิจ', NULL, 4, 1),
-	('035', 'ดนตรีสากล', NULL, 4, 1),
-	('034', 'คอมพิวเตอร์ศิลปะและการออกแบบ', NULL, 4, 1),
-	('039', 'รัฐประศาสนศาสตร์', NULL, 4, 2),
-	('037', 'นิติศาสตร์', NULL, 4, 1),
-	('032', 'ภาษาอังกฤษ', NULL, 4, 1),
-	('036', 'รัฐประศาสนศาสตร์', NULL, 4, 1),
-	('040', 'ภูมิสารสนเทศ', NULL, 5, 1),
-	('041', 'เคมี', NULL, 5, 1),
-	('042', 'วิทยาศาสตร์สิ่งแวดล้อม', NULL, 5, 1),
-	('043', 'สาธารณสุขชุมชน', NULL, 5, 1),
-	('044', 'สถิติประยุกต์', NULL, 5, 1),
-	('045', 'ชีววิทยา', NULL, 5, 1),
-	('046', 'เทคโนโลยีสารสนเทศ', NULL, 5, 1),
-	('047', 'วิทยาการคอมพิวเตอร์', NULL, 5, 1),
-	('048', 'คณิตศาสตร์', NULL, 5, 1),
-	('050', '	วิทยาศาสตร์การกีฬา', NULL, 5, 1),
-	('051', 'วิทยาศาสตร์สิ่งทอ', NULL, 5, 1),
-	('052', 'วิทยาศาสตร์การอาหาร', NULL, 5, 1),
-	('053', 'การบัญชี', NULL, 6, 1),
-	('054', 'การสื่อสารมวลชน', NULL, 6, 1),
-	('055', 'การท่องเที่ยวและการโรงแรม', NULL, 6, 1),
-	('056', 'เศรษฐศาสตร์', NULL, 6, 1),
-	('057', 'การเงินและการธนาคาร', NULL, 6, 1),
-	('058', 'การจัดการ', NULL, 6, 1),
-	('059', 'การตลาด', NULL, 6, 1),
-	('060', 'การบริหารทรัพยากรมนุษย์', NULL, 6, 1),
-	('061', 'คอมพิวเตอร์ธุรกิจ', NULL, 6, 1);
+INSERT INTO `tb_majors` (`id_majors`, `majors_id`, `majors_name`, `person_majors`, `row_facltykf`) VALUES
+	('001', '1', 'นาฏศิลป์', NULL, 1),
+	('002', '2', 'คณิตศาสตร์', NULL, 1),
+	('003', '3', 'การศึกษาปฐมวัย', NULL, 1),
+	('004', '4', 'เทคโนโลยีและคอมพิวเตอร์เพื่อการศึกษา', NULL, 1),
+	('005', '5', 'สังคมศึกษา', NULL, 1),
+	('006', '6', 'ภาษาอังกฤษ', NULL, 1),
+	('007', '7', 'วิทยาศาสตร์ทั่วไป', NULL, 1),
+	('008', '8', 'ภาษาไทย', NULL, 1),
+	('009', '9', '	ศิลปศึกษา', NULL, 1),
+	('010', '10', '	ดนตรีศึกษา', NULL, 1),
+	('011', '11', '	พลศึกษา', NULL, 1),
+	('012', '12', 'ฟิสิกส์', NULL, 1),
+	('013', '14', 'หลักสูตรและการจัดการเรียนรู้', NULL, 1),
+	('014', '15', 'การบริหารการศึกษา', NULL, 1),
+	('015', '16', 'วิจัยและประเมินผล', NULL, 1),
+	('016', '17', 'ดนตรีศึกษา', NULL, 1),
+	('017', '18', 'การบริหารการศึกษา', NULL, 1),
+	('018', '1', 'เทคโนโลยีสถาปัตยกรรม', NULL, 2),
+	('019', '2', 'เทคโนโลยีการจัดการอุตสาหกรรม', NULL, 2),
+	('020', '3', 'เทคโนโลยีวิศวกรรมโยธา', NULL, 2),
+	('021', '4', 'เทคโนโลยีวิศวกรรมไฟฟ้า', NULL, 2),
+	('022', '5', 'เทคโนโลยีเซรามิกส์และการออกแบบ', NULL, 2),
+	('023', '6', 'เทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์', NULL, 2),
+	('024', '7', 'ออกแบบผลิตภัณฑ์อุตสาหกรรม', NULL, 2),
+	('025', '1', 'เกษตรศาสตร์', NULL, 3),
+	('026', '2', 'ประมง', NULL, 3),
+	('027', '3', 'สัตวศาสตร์', NULL, 3),
+	('028', '1', 'การพัฒนาสังคม', NULL, 4),
+	('029', '2', 'ภาษาไทย', NULL, 4),
+	('030', '3', 'บรรณารักษ์ศาสตร์และสารสนเทศศาสตร์', NULL, 4),
+	('040', '4', 'ภาษาอังกฤษ', NULL, 4),
+	('041', '5', 'ภาษาอังกฤษธุรกิจ', NULL, 4),
+	('042', '6', 'ดนตรีสากล', NULL, 4),
+	('043', '7', 'คอมพิวเตอร์ศิลปะและการออกแบบ', NULL, 4),
+	('045', '8', 'รัฐประศาสนศาสตร์', NULL, 4),
+	('046', '9', 'นิติศาสตร์', NULL, 4),
+	('047', '10', 'ภาษาอังกฤษ', NULL, 4),
+	('048', '11', 'รัฐประศาสนศาสตร์', NULL, 4),
+	('049', '1', 'ภูมิสารสนเทศ', NULL, 5),
+	('050', '2', 'เคมี', NULL, 5),
+	('051', '3', 'วิทยาศาสตร์สิ่งแวดล้อม', NULL, 5),
+	('052', '4', 'สาธารณสุขชุมชน', NULL, 5),
+	('053', '5', 'สถิติประยุกต์', NULL, 5),
+	('054', '6', 'ชีววิทยา', NULL, 5),
+	('055', '7', 'เทคโนโลยีสารสนเทศ', NULL, 5),
+	('056', '8', 'วิทยาการคอมพิวเตอร์', 'นายณัฐพล แสนคำ', 5),
+	('057', '9', 'คณิตศาสตร์', NULL, 5),
+	('058', '10', '	วิทยาศาสตร์การกีฬา', NULL, 5),
+	('059', '11', 'วิทยาศาสตร์สิ่งทอ', NULL, 5),
+	('060', '12', 'วิทยาศาสตร์การอาหาร', NULL, 5),
+	('061', '1', 'การบัญชี', NULL, 6),
+	('062', '2', 'การสื่อสารมวลชน', NULL, 6),
+	('063', '3', 'การท่องเที่ยวและการโรงแรม', NULL, 6),
+	('064', '4', 'เศรษฐศาสตร์', NULL, 6),
+	('065', '5', 'การเงินและการธนาคาร', NULL, 6),
+	('066', '6', 'การจัดการ', NULL, 6),
+	('067', '7', 'การตลาด', NULL, 6),
+	('068', '8', 'การบริหารทรัพยากรมนุษย์', NULL, 6),
+	('069', '9', 'คอมพิวเตอร์ธุรกิจ', NULL, 6);
 /*!40000 ALTER TABLE `tb_majors` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_month
@@ -894,13 +869,13 @@ CREATE TABLE IF NOT EXISTS `tb_salary` (
   `salary_setatatus_id` int(11) DEFAULT NULL COMMENT 'ตารางทฤษฎีปฏิบัติ',
   `salary_tableteahing` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='ตารางทฤษฎีและปฏิบัติ';
 
 -- Dumping data for table keepworkteach3.tb_salary: ~2 rows (approximately)
 /*!40000 ALTER TABLE `tb_salary` DISABLE KEYS */;
 INSERT INTO `tb_salary` (`id`, `salary_id`, `salary_sum_tudsadee`, `salary_sum_prtibad`, `sum_tudsadee_prtibad_hour`, `salary_status`, `salary_baseteach`, `salary_subject_fk`, `salary_userfk`, `salary_dateofteach`, `salary_summoney`, `salery_thaibaht`, `salary_setatatus_id`, `salary_tableteahing`) VALUES
-	(28, '2561114124903', NULL, NULL, 18, 0, NULL, NULL, '570112230061', NULL, 3240, 'แปดพันหนึ่งร้อยบาทถ้วน', 1, '2561114124903'),
-	(29, '2561114124903', NULL, NULL, 27, 0, NULL, NULL, '570112230061', NULL, 4860, 'แปดพันหนึ่งร้อยบาทถ้วน', 2, '2561114124903');
+	(4, '2561114124903', NULL, NULL, 3, 0, NULL, NULL, '570112230061', NULL, 540, 'หนึ่งพันแปดสิบบาทถ้วน', 1, '2561114124903'),
+	(5, '2561114124903', NULL, NULL, 3, 0, NULL, NULL, '570112230061', NULL, 540, 'หนึ่งพันแปดสิบบาทถ้วน', 2, '2561114124903');
 /*!40000 ALTER TABLE `tb_salary` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_setstatus_subject
@@ -913,22 +888,20 @@ CREATE TABLE IF NOT EXISTS `tb_setstatus_subject` (
   `setject_userid` varchar(50) DEFAULT NULL,
   `teching_setject_id` varchar(50) DEFAULT NULL,
   `setstatus_subid` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='paper2';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลรายละเอียดวิชาที่ใช้เบิก ทฤษฎีต่อ วิชา';
 
--- Dumping data for table keepworkteach3.tb_setstatus_subject: ~4 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_setstatus_subject: ~2 rows (approximately)
 /*!40000 ALTER TABLE `tb_setstatus_subject` DISABLE KEYS */;
 INSERT INTO `tb_setstatus_subject` (`setstatus_subject_id`, `setstatus_subject_hour`, `setstatus_subject_base`, `setstatus_subject_money`, `status_subject`, `setject_userid`, `teching_setject_id`, `setstatus_subid`) VALUES
-	('2561114124903', 18, 180, 3240, 2, '570112230061', '2561114124903', '4124903'),
-	('2561114124903', 9, 180, 1620, 1, '570112230061', '2561114124903', '4124903'),
-	('2561114121301', 9, 180, 1620, 2, '570112230061', '2561114121301', '4121301'),
-	('2561114121301', 9, 180, 1620, 1, '570112230061', '2561114121301', '4121301');
+	('2561114124903', 3, 180, 540, 2, '570112230061', '2561114124903', '4124903'),
+	('2561114124903', 3, 180, 540, 1, '570112230061', '2561114124903', '4124903');
 /*!40000 ALTER TABLE `tb_setstatus_subject` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_status_subject
 CREATE TABLE IF NOT EXISTS `tb_status_subject` (
   `status_subject_id` int(1) DEFAULT NULL,
   `status_subject_name` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ปฎิบัติ-ทฤษฎี';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='สถานะ ปฎิบัติ-ทฤษฎี';
 
 -- Dumping data for table keepworkteach3.tb_status_subject: ~2 rows (approximately)
 /*!40000 ALTER TABLE `tb_status_subject` DISABLE KEYS */;
@@ -948,7 +921,7 @@ CREATE TABLE IF NOT EXISTS `tb_subject` (
   `prtibad` int(2) DEFAULT NULL COMMENT 'ปฏิบัติ',
   `status_subject` int(2) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='วิชาที่สอน';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='วิชาที่สอน';
 
 -- Dumping data for table keepworkteach3.tb_subject: ~5 rows (approximately)
 /*!40000 ALTER TABLE `tb_subject` DISABLE KEYS */;
@@ -957,8 +930,7 @@ INSERT INTO `tb_subject` (`Id`, `subject_id`, `subject_name`, `credit`, `credit_
 	(3, '41001', 'คอม', 2, '2-2-5', 2, 2, 2),
 	(10, '4124903', 'อังกฤษ', 3, '3-2-5', 2, 2, 1),
 	(11, '4121301', 'วิททยาศาสตร์', 3, '2-2-5', 2, 2, 2),
-	(12, '4124901', 'คณิต', 3, '2-2-5', 2, 2, 1),
-	(15, '1', '1', 1, '1', 1, 1, 1);
+	(12, '4124901', 'คณิต', 3, '2-2-5', 2, 2, 1);
 /*!40000 ALTER TABLE `tb_subject` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_subjectsum_hour
@@ -969,13 +941,15 @@ CREATE TABLE IF NOT EXISTS `tb_subjectsum_hour` (
   `subjectsum_money` int(11) NOT NULL DEFAULT '0',
   `subjectsum_subject_id` varchar(50) NOT NULL DEFAULT '0',
   `subjectsum_status` int(11) NOT NULL DEFAULT '0',
-  `subjectsum_user_id` varchar(50) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ค่าจ้าง-เงินเดือน';
+  `subjectsum_user_id` varchar(50) NOT NULL DEFAULT '0',
+  `subjectsum_teach_id` varchar(50) NOT NULL DEFAULT '0',
+  `subjectsum_pepostset` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลรายละเอียกรวมเงิน ต่อ วิชา';
 
 -- Dumping data for table keepworkteach3.tb_subjectsum_hour: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tb_subjectsum_hour` DISABLE KEYS */;
-INSERT INTO `tb_subjectsum_hour` (`subjectsum_hour_id`, `subjectsum_tudsadee`, `subjectsum_prtibad`, `subjectsum_money`, `subjectsum_subject_id`, `subjectsum_status`, `subjectsum_user_id`) VALUES
-	('1', 2, 2, 2, '2', 2, '0');
+INSERT INTO `tb_subjectsum_hour` (`subjectsum_hour_id`, `subjectsum_tudsadee`, `subjectsum_prtibad`, `subjectsum_money`, `subjectsum_subject_id`, `subjectsum_status`, `subjectsum_user_id`, `subjectsum_teach_id`, `subjectsum_pepostset`) VALUES
+	('2561114124903', 3, 3, 1080, '4124903', 2, '570112230061', '2561114124903', 2);
 /*!40000 ALTER TABLE `tb_subjectsum_hour` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_table_teaching
@@ -1001,15 +975,14 @@ CREATE TABLE IF NOT EXISTS `tb_table_teaching` (
   `user_roleid` varchar(50) DEFAULT NULL,
   `subject_roleid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COMMENT='ตารางเรียน///ตารางรายละเอียดการสอน';
 
--- Dumping data for table keepworkteach3.tb_table_teaching: ~4 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_table_teaching: ~3 rows (approximately)
 /*!40000 ALTER TABLE `tb_table_teaching` DISABLE KEYS */;
 INSERT INTO `tb_table_teaching` (`id`, `teble_teach_id`, `degree_studen`, `teach_term`, `term_year`, `teach_week`, `section`, `studen_number`, `start_month`, `start_month_string`, `stop_month`, `stop_month_string`, `teach_year`, `start_time`, `stop_time`, `sum_hour`, `standard_teach`, `room`, `user_roleid`, `subject_roleid`) VALUES
-	(1, '2561114124903', '1', '1', '2561', '1', 1, 38, '01/02/2019', 'กุมพาพันธ์', '31/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '255', '570112230061', '4124903'),
-	(2, '2561114121301', '1', '1', '2561', '2', 1, 49, '01/02/2019', 'กุมพาพันธ์', '31/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '332', '570112230061', '4121301'),
-	(3, '2561114124901', '1', '1', '2561', '5', 1, 23, '01/02/2019', 'กุมพาพันธ์', '31/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 120, '654', '570112230061', '4124901'),
-	(4, '2561124124901', '1', '1', '2561', '4', 2, 26, '01/02/2019', 'กุมพาพันธ์', '31/03/2019', 'มีนาคม', '2561', '04:00', '10:00', '6:0', 120, '150210', '570112230061', '4124901');
+	(27, '2561114124903', '1', '1', '2561', '1', 1, 38, '01/03/2019', 'มีนาคม', '22/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '255', '570112230061', '4124903'),
+	(28, '2561114121301', '1', '1', '2561', '4', 1, 40, '01/03/2019', 'มีนาคม', '22/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '253', '570112230061', '4121301'),
+	(29, '2561124121301', '1', '1', '2561', '', 2, 23, '01/03/2019', 'มีนาคม', '22/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 120, '253', '570112230061', '4121301');
 /*!40000 ALTER TABLE `tb_table_teaching` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_teaching
@@ -1031,15 +1004,14 @@ CREATE TABLE IF NOT EXISTS `tb_teaching` (
   `status_teach` int(2) DEFAULT '0' COMMENT 'สถานะสอน',
   `status_teaching` int(1) DEFAULT '0' COMMENT 'สถานะใช่เบิก',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='ตารางเบิกการสอน';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='ตารางเบิกการสอนเกินภาระงาน\r\nตารางเบิกการสอนเกินภาระงาน\r\nตารางขอเบิกการสอนเกินภาระงาน';
 
--- Dumping data for table keepworkteach3.tb_teaching: ~4 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_teaching: ~3 rows (approximately)
 /*!40000 ALTER TABLE `tb_teaching` DISABLE KEYS */;
 INSERT INTO `tb_teaching` (`id`, `teach_id`, `sum_hour_term`, `hoursum_tudsadee`, `hoursum_prtibad`, `money_tudsadee`, `money_prtibad`, `salary_sum`, `teach_basehour`, `teach_basecram`, `dateofteach_fk`, `subject_fk`, `tableteach_fk`, `user_fk`, `status_teach`, `status_teaching`) VALUES
-	(1, '2561114124903', 0, 20, 20, 0, 0, 1656, 3, 0, NULL, '4124903', '2561114124903', '570112230061', 2, 2),
-	(2, '2561114121301', 0, 20, 20, 0, 0, 1656, 2, 1, NULL, '4121301', '2561114121301', '570112230061', 2, 2),
-	(3, '2561114124901', 0, 20, 20, 0, 0, 1116, 0, 4, NULL, '4124901', '2561114124901', '570112230061', 1, 2),
-	(4, '2561124124901', 0, 20, 20, 0, 0, 1116, 0, 4, NULL, '4124901', '2561124124901', '570112230061', 1, 2);
+	(14, '2561114124903', 0, 8, 8, 0, 0, 552, 2, 1, NULL, '4124903', '2561114124903', '570112230061', 2, 2),
+	(15, '2561114121301', 0, 8, 8, 0, 0, 552, 0, 4, NULL, '4121301', '2561114121301', '570112230061', 1, 2),
+	(16, '2561124121301', 0, 8, 8, 0, 0, 372, 0, 4, NULL, '4121301', '2561124121301', '570112230061', 1, 2);
 /*!40000 ALTER TABLE `tb_teaching` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_teach_report
@@ -1056,13 +1028,28 @@ CREATE TABLE IF NOT EXISTS `tb_teach_report` (
   `teaching_fk` varchar(50) DEFAULT NULL,
   `status_repost` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='ออกรายงาน';
 
--- Dumping data for table keepworkteach3.tb_teach_report: ~0 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_teach_report: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tb_teach_report` DISABLE KEYS */;
 INSERT INTO `tb_teach_report` (`id`, `teach_report_id`, `resum_pst`, `resum_tsd`, `repost_sum`, `repost_money`, `report_thaibaht`, `user_report_fk`, `dateteach_fk`, `teaching_fk`, `status_repost`) VALUES
-	(5, '3/3/2562/570112230061', 0, 0, 45, 8100, 'แปดพันหนึ่งร้อยบาทถ้วน', '570112230061', NULL, '2561114124903', 2);
+	(2, '18/3/2562/570112230061', 0, 0, 6, 1080, 'หนึ่งพันแปดสิบบาทถ้วน', '570112230061', NULL, '2561114124903', 2);
 /*!40000 ALTER TABLE `tb_teach_report` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.tb_term
+CREATE TABLE IF NOT EXISTS `tb_term` (
+  `term_id` int(11) NOT NULL AUTO_INCREMENT,
+  `term_start` varchar(50) DEFAULT NULL,
+  `term_stop` varchar(50) DEFAULT NULL,
+  `term_year` varchar(50) DEFAULT NULL,
+  `term_teachyear` varchar(50) DEFAULT NULL,
+  `term_teachterm` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`term_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ปีการศึกษา ภาคเรียน';
+
+-- Dumping data for table keepworkteach3.tb_term: ~0 rows (approximately)
+/*!40000 ALTER TABLE `tb_term` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_term` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_user
 CREATE TABLE IF NOT EXISTS `tb_user` (
@@ -1076,40 +1063,29 @@ CREATE TABLE IF NOT EXISTS `tb_user` (
   `position_user` varchar(50) DEFAULT NULL COMMENT 'ตำแหน่งผู้สอน',
   `faculty` varchar(50) DEFAULT NULL COMMENT 'คณะ',
   `mojor` varchar(50) DEFAULT NULL COMMENT 'สาขา',
+  `user_img` varchar(50) DEFAULT NULL,
   `baseHour` int(2) DEFAULT NULL COMMENT 'ฐานหน่วยคาบ',
   `baseKrm` int(2) DEFAULT NULL COMMENT 'ฐานหน่วยชั่วโมง',
   `status_login` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='ข้อมูลผู้ใช้';
 
 -- Dumping data for table keepworkteach3.tb_user: ~12 rows (approximately)
 /*!40000 ALTER TABLE `tb_user` DISABLE KEYS */;
-INSERT INTO `tb_user` (`id`, `user_id`, `user_pass`, `prefix_name`, `user_name`, `user_lastname`, `position_teach`, `position_user`, `faculty`, `mojor`, `baseHour`, `baseKrm`, `status_login`) VALUES
-	(2, 'u', 'u', '???', 'kitti', 'Aum', 'U', NULL, 'วิทยาการคอม', 'วิทยาศาสตร์', 9, 6, 'U'),
-	(3, 'a', 'a', NULL, 'hh', 'jo', 'Admin', NULL, 'jo', 'jo', 8, 6, 'A'),
-	(5, 't', 't', NULL, 'gg', 'gg', 'T', NULL, 'gg', 'gg', 8, 8, NULL),
-	(7, '123', '123', 'นาย', 'kkk', 'kkkk', 'U', NULL, 'อังกฤษ', 'ครุ', 9, 5, 'U'),
-	(10, '570112230061', '1234', 'นาย', 'กิตติพงษ์', 'อุ่มพิมาย', 'อาจารย์ประจำ', 'หัวหน้าสาขา', 'วิทยาการคอม', 'วิทยาศาตร์', 9, 6, 'U'),
-	(11, '', '', NULL, '', '', 'อาจารย์พิเศษ', NULL, '', '', 0, 0, 'U'),
-	(12, '1', NULL, NULL, '1', '1', 'อาจารย์พิเศษ', NULL, '1', '1', 1, 1, 'U'),
-	(13, '1', NULL, NULL, '1', '1', 'อาจารย์พิเศษ', NULL, '1', '1', 1, 1, 'U'),
-	(14, '2', NULL, NULL, '2', '2', 'อาจารย์ประจำ', NULL, '2', '2', 2, 2, 'U'),
-	(15, '2', NULL, NULL, '2', '2', 'อาจารย์ประจำ', NULL, '2', '2', 2, 2, 'U'),
-	(16, '222', NULL, NULL, '22', '2', 'อาจารย์ประจำ', NULL, '22', '22', 22, 22, 'U'),
-	(17, '222', NULL, NULL, '22', '2', 'อาจารย์ประจำ', NULL, '22', '22', 22, 22, 'U');
+INSERT INTO `tb_user` (`id`, `user_id`, `user_pass`, `prefix_name`, `user_name`, `user_lastname`, `position_teach`, `position_user`, `faculty`, `mojor`, `user_img`, `baseHour`, `baseKrm`, `status_login`) VALUES
+	(2, 'u', 'u', '???', 'kitti', 'Aum', 'U', NULL, 'วิทยาการคอม', 'วิทยาศาสตร์', NULL, 9, 6, 'U'),
+	(3, 'a', 'a', NULL, 'hh', 'jo', 'Admin', NULL, 'jo', 'jo', NULL, 8, 6, 'A'),
+	(5, 't', 't', NULL, 'gg', 'gg', 'T', NULL, 'gg', 'gg', NULL, 8, 8, NULL),
+	(7, '123', '123', 'นาย', 'kkk', 'kkkk', 'U', NULL, 'อังกฤษ', 'ครุ', NULL, 9, 5, 'U'),
+	(10, '570112230061', '1234', 'นาย', 'กิตติพงษ์', 'อุ่มพิมาย', 'อาจารย์ประจำ', 'หัวหน้าสาขา', '5', '056', NULL, 9, 6, 'U'),
+	(11, '', '', NULL, '', '', 'อาจารย์พิเศษ', NULL, '', '', NULL, 0, 0, 'U'),
+	(12, '1', NULL, NULL, '1', '1', 'อาจารย์พิเศษ', NULL, '1', '1', NULL, 1, 1, 'U'),
+	(13, '1', NULL, NULL, '1', '1', 'อาจารย์พิเศษ', NULL, '1', '1', NULL, 1, 1, 'U'),
+	(14, '2', NULL, NULL, '2', '2', 'อาจารย์ประจำ', NULL, '2', '2', NULL, 2, 2, 'U'),
+	(15, '2', NULL, NULL, '2', '2', 'อาจารย์ประจำ', NULL, '2', '2', NULL, 2, 2, 'U'),
+	(16, '00447218', '1234', 'นาย', 'งบน้อย', 'เบิกพัน', 'อาจารย์ประจำ', 'อาจารย์', '5', '056', NULL, 9, 6, 'U'),
+	(17, '00442233', '1234', 'นางสาว', 'นายน้อย', 'มาก', 'อาจารย์ประจำ', 'อาจารย์', '5', '056', NULL, 9, 6, 'U');
 /*!40000 ALTER TABLE `tb_user` ENABLE KEYS */;
-
--- Dumping structure for table keepworkteach3.users
-CREATE TABLE IF NOT EXISTS `users` (
-  `ID` mediumint(9) NOT NULL AUTO_INCREMENT,
-  `username` varchar(60) DEFAULT NULL,
-  `password` varchar(60) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- Dumping data for table keepworkteach3.users: ~0 rows (approximately)
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

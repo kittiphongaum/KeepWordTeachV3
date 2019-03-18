@@ -180,14 +180,14 @@
 					<ul id="app_dr" class="collapse collapse-level-1">
 					</ul>
 				</li>
-				<li>
+				<!-- <li>
 					<a href="./holiday-add" data-toggle="collapse" data-target="#app_dr">
 						<div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวัติการเบิก</span></div>
 						<div class="clearfix"></div>
 					</a>
 					<ul id="app_dr" class="collapse collapse-level-1">
 					</ul>
-				</li>
+				</li> -->
 				<li>
 					<a href="./subject-add" data-toggle="collapse" data-target="#app_dr">
 						<div class="pull-left"><i data-icon="o" class="linea-icon linea-basic mr-20"></i><span class="right-nav-text">เพิ่มรายวิชา</span></div>
@@ -403,24 +403,17 @@
 								<div class="panel-body">
 									<div class="table-wrap">
 
-										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe">
+										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe" id="table1">
 											<thead>
 												<tr>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">สาาขาวิชา</th>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">หัวหน้าสาขา</th>
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">คณะบดี</th> -->
-													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th>
+													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="แก้ไข หัวหน้าสาขา">แก้ไข</abbr></th> -->
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Gross</th>  -->
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="title"><a href="javascript:void(0)">Avatar</a></td>
-													<td>1</td>
-													<!-- <td>2009</td> -->
-													<td></td>
-													<!-- <td><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a></td> -->
-												</tr>
 
 											</tbody>
 										</table>
@@ -430,7 +423,7 @@
 									<div class="emp-detail pl-15 pr-15">
 										<div class="mb-5">
 											<span class="inline-block capitalize-font mr-5">คณะบดี</span>
-											<span class="txt-dark">ดร.ฟกดฟาห่เสา่น่ร</span>
+											<span class="txt-dark" id="table1teacher"></span>
 										</div>
 										<!-- <div>
 														<span class="inline-block capitalize-font mr-5">salery:</span>
@@ -455,40 +448,24 @@
 										</span>
 									</div>
 								</div>
-								<!-- <div class="pull-right">
-												<div class="pull-left inline-block dropdown">
-													<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a>
-													<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-														<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>แก้ไขคณะวิชา</a></li>
-														<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>แก้ไขสาขาวิชา</a></li>
-													
-													</ul>
-												</div>
-											</div> -->
+							
 								<div class="clearfix"></div>
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<div class="table-wrap">
 
-										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe">
+										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe" id="table2">
 											<thead>
 												<tr>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">สาาขาวิชา</th>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">หัวหน้าสาขา</th>
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">คณะบดี</th> -->
-													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th>
+													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th> -->
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Gross</th>  -->
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="title"><a href="javascript:void(0)">Avatar</a></td>
-													<td>1</td>
-													<!-- <td>2009</td> -->
-													<td></td>
-													<!-- <td><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a></td> -->
-												</tr>
 
 											</tbody>
 										</table>
@@ -498,7 +475,7 @@
 									<div class="emp-detail pl-15 pr-15">
 										<div class="mb-5">
 											<span class="inline-block capitalize-font mr-5">คณะบดี</span>
-											<span class="txt-dark">ดร.ฟกดฟาห่เสา่น่ร</span>
+											<span class="txt-dark"id="table2teacher"></span>
 										</div>
 										<!-- <div>
 															<span class="inline-block capitalize-font mr-5">salery:</span>
@@ -523,40 +500,24 @@
 										</span>
 									</div>
 								</div>
-								<!-- <div class="pull-right">
-													<div class="pull-left inline-block dropdown">
-														<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a>
-														<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-															<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>แก้ไขคณะวิชา</a></li>
-															<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>แก้ไขสาขาวิชา</a></li>
-														
-														</ul>
-													</div>
-												</div> -->
 								<div class="clearfix"></div>
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<div class="table-wrap">
 
-										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe">
+										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe" id="table3">
 											<thead>
 												<tr>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">สาาขาวิชา</th>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">หัวหน้าสาขา</th>
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">คณะบดี</th> -->
-													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th>
+													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th> -->
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Gross</th>  -->
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="title"><a href="javascript:void(0)">Avatar</a></td>
-													<td>1</td>
-													<!-- <td>2009</td> -->
-													<td></td>
-													<!-- <td><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a></td> -->
-												</tr>
+
 
 											</tbody>
 										</table>
@@ -566,7 +527,7 @@
 									<div class="emp-detail pl-15 pr-15">
 										<div class="mb-5">
 											<span class="inline-block capitalize-font mr-5">คณะบดี</span>
-											<span class="txt-dark">ดร.ฟกดฟาห่เสา่น่ร</span>
+											<span class="txt-dark" id="table3teacher"></span>
 										</div>
 										<!-- <div>
 																<span class="inline-block capitalize-font mr-5">salery:</span>
@@ -591,40 +552,25 @@
 										</span>
 									</div>
 								</div>
-								<!-- <div class="pull-right">
-														<div class="pull-left inline-block dropdown">
-															<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a>
-															<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-																<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>แก้ไขคณะวิชา</a></li>
-																<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>แก้ไขสาขาวิชา</a></li>
-															
-															</ul>
-														</div>
-													</div> -->
+							
 								<div class="clearfix"></div>
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<div class="table-wrap">
 
-										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe">
+										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe" id="table4">
 											<thead>
 												<tr>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">สาาขาวิชา</th>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">หัวหน้าสาขา</th>
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">คณะบดี</th> -->
-													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th>
+													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th> -->
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Gross</th>  -->
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="title"><a href="javascript:void(0)">Avatar</a></td>
-													<td>1</td>
-													<!-- <td>2009</td> -->
-													<td></td>
-													<!-- <td><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a></td> -->
-												</tr>
+											
 
 											</tbody>
 										</table>
@@ -634,7 +580,7 @@
 									<div class="emp-detail pl-15 pr-15">
 										<div class="mb-5">
 											<span class="inline-block capitalize-font mr-5">คณะบดี</span>
-											<span class="txt-dark">ดร.ฟกดฟาห่เสา่น่ร</span>
+											<span class="txt-dark"id="table4teacher"></span>
 										</div>
 										<!-- <div>
 																	<span class="inline-block capitalize-font mr-5">salery:</span>
@@ -659,40 +605,24 @@
 										</span>
 									</div>
 								</div>
-								<!-- <div class="pull-right">
-															<div class="pull-left inline-block dropdown">
-																<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a>
-																<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-																	<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>แก้ไขคณะวิชา</a></li>
-																	<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>แก้ไขสาขาวิชา</a></li>
-																
-																</ul>
-															</div>
-														</div> -->
+						
 								<div class="clearfix"></div>
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<div class="table-wrap">
 
-										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe">
+										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe"id="table5">
 											<thead>
 												<tr>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">สาาขาวิชา</th>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">หัวหน้าสาขา</th>
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">คณะบดี</th> -->
-													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th>
+													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th> -->
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Gross</th>  -->
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="title"><a href="javascript:void(0)">Avatar</a></td>
-													<td>1</td>
-													<!-- <td>2009</td> -->
-													<td></td>
-													<!-- <td><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a></td> -->
-												</tr>
 
 											</tbody>
 										</table>
@@ -702,12 +632,9 @@
 									<div class="emp-detail pl-15 pr-15">
 										<div class="mb-5">
 											<span class="inline-block capitalize-font mr-5">คณะบดี</span>
-											<span class="txt-dark">ดร.ฟกดฟาห่เสา่น่ร</span>
+											<span class="txt-dark"id="table5teacher"></span>
 										</div>
-										<!-- <div>
-																		<span class="inline-block capitalize-font mr-5">salery:</span>
-																		<span class="txt-dark">$14000</span>
-																	</div>  -->
+								
 									</div>
 								</div>
 							</div>
@@ -727,40 +654,25 @@
 										</span>
 									</div>
 								</div>
-								<!-- <div class="pull-right">
-																<div class="pull-left inline-block dropdown">
-																	<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a>
-																	<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-																		<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>แก้ไขคณะวิชา</a></li>
-																		<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>แก้ไขสาขาวิชา</a></li>
-																	
-																	</ul>
-																</div>
-															</div> -->
+							
 								<div class="clearfix"></div>
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<div class="table-wrap">
 
-										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe">
+										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe"id="table6">
 											<thead>
 												<tr>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">สาาขาวิชา</th>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">หัวหน้าสาขา</th>
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">คณะบดี</th> -->
-													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th>
+													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th> -->
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Gross</th>  -->
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="title"><a href="javascript:void(0)">Avatar</a></td>
-													<td>1</td>
-													<!-- <td>2009</td> -->
-													<td></td>
-													<!-- <td><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a></td> -->
-												</tr>
+												
 
 											</tbody>
 										</table>
@@ -770,12 +682,9 @@
 									<div class="emp-detail pl-15 pr-15">
 										<div class="mb-5">
 											<span class="inline-block capitalize-font mr-5">คณะบดี</span>
-											<span class="txt-dark">ดร.ฟกดฟาห่เสา่น่ร</span>
+											<span class="txt-dark" id="table6teacher"></span>
 										</div>
-										<!-- <div>
-																			<span class="inline-block capitalize-font mr-5">salery:</span>
-																			<span class="txt-dark">$14000</span>
-																		</div>  -->
+								
 									</div>
 								</div>
 							</div>
@@ -795,40 +704,25 @@
 										</span>
 									</div>
 								</div>
-								<!-- <div class="pull-right">
-																	<div class="pull-left inline-block dropdown">
-																		<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a>
-																		<ul class="dropdown-menu bullet dropdown-menu-right"  role="menu">
-																			<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-reply" aria-hidden="true"></i>แก้ไขคณะวิชา</a></li>
-																			<li role="presentation"><a href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i>แก้ไขสาขาวิชา</a></li>
-																		
-																		</ul>
-																	</div>
-																</div> -->
+							
 								<div class="clearfix"></div>
 							</div>
 							<div class="panel-wrapper collapse in">
 								<div class="panel-body">
 									<div class="table-wrap">
 
-										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe">
+										<table class="tablesaw table-bordered table-hover table" data-tablesaw-mode="swipe"id="table7">
 											<thead>
 												<tr>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">สาาขาวิชา</th>
 													<th scope="col" data-tablesaw-sortable-col data-tablesaw-sortable-default-col data-tablesaw-priority="3">หัวหน้าสาขา</th>
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">คณะบดี</th> -->
-													<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th>
+													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1"><abbr title="Rotten Tomato Rating">แก้ไข</abbr></th> -->
 													<!-- <th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Gross</th>  -->
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="title"><a href="javascript:void(0)">Avatar</a></td>
-													<td>1</td>
-													<!-- <td>2009</td> -->
-													<td></td>
-													<!-- <td><a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="zmdi zmdi-edit txt-light"></i></a></td> -->
-												</tr>
+											
 
 											</tbody>
 										</table>
@@ -838,12 +732,9 @@
 									<div class="emp-detail pl-15 pr-15">
 										<div class="mb-5">
 											<span class="inline-block capitalize-font mr-5">คณะบดี</span>
-											<span class="txt-dark">ดร.ฟกดฟาห่เสา่น่ร</span>
+											<span class="txt-dark" id="table7teacher"></span>
 										</div>
-										<!-- <div>
-																				<span class="inline-block capitalize-font mr-5">salery:</span>
-																				<span class="txt-dark">$14000</span>
-																			</div>  -->
+									
 									</div>
 								</div>
 							</div>
@@ -851,20 +742,58 @@
 					</div>
 
 				</div>
-				<!-- Row -->
-			</div>
-			<!-- Footer -->
-			<footer class="footer container-fluid pl-30 pr-30">
-				<div class="row">
-					<div class="col-sm-12">
-						<p>Jppk_D_Dook @Kittiphong Aumphimai By-2019</p>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h5 class="modal-title" id="exampleModalLabel1">แก้ไข หัวหน้าสาขา</h5>
+							</div>
+							<div class="modal-body">
+								<form>
+
+									<div class="form-group">
+											<div class="col-4" id="personFaculty">
+												
+											</div>
+										<div class="col-4">
+											<label for="recipient-name" class="control-label mb-10">คำนำหน้า</label>
+											<input type="text" class="form-control" id="prename">
+										</div>
+										<div class="col-4">
+											<label for="recipient-name" class="control-label mb-10">ชื่อ</label>
+											<input type="text" class="form-control" id="name">
+										</div>
+										<div class="col-4">
+											<label for="recipient-name" class="control-label mb-10">นามสกุล</label>
+											<input type="text" class="form-control" id="lname">
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+								<button type="button" class="btn btn-primary">บันทึก</button>
+							</div>
+						</div>
 					</div>
 				</div>
-			</footer>
-			<!-- /Footer -->
 
+		
+			<!-- Row -->
 		</div>
-		<!-- /Main Content -->
+		<!-- Footer -->
+		<footer class="footer container-fluid pl-30 pr-30">
+			<div class="row">
+				<div class="col-sm-12">
+					<p>Jppk_D_Dook @Kittiphong Aumphimai By-2019</p>
+				</div>
+			</div>
+		</footer>
+		<!-- /Footer -->
+
+	</div>
+	<!-- /Main Content -->
 
 	</div>
 	<!-- /#wrapper -->
@@ -913,5 +842,293 @@
 	<script src="../assets_/vendors/bower_components/filament-tablesaw/dist/tablesaw.js"></script>
 	<script src="../assets_/dist/js/tablesaw-data.js"></script>
 </body>
+<script>
+
+</script>
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/listFaculty1",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg) {
+
+				var table1 = "";
+				 for (var i = 0; i < msg.length; i++) {
+				 	var teacher = "";
+					table1 +=
+						'<tr>' +
+						'<td>' + msg[i].majors.majorsName + '</td>' +
+					//	'<td>' + msg[i].majors.personMajors + '</td>' +
+					'<td>' + msg[i].majors.personMajors + '</td>' +
+						//'<td>' + msg[i].credit+'</td>' +
+						// '<td>' +'<input type="hidden"id="up_ma"value='+msg[i].majors.majorsId+'> <a  class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>' + '</td>' +
+
+						// '<td>' + '<input type="hidden" value=' + msg[i].majors.majorsId + '>' +
+						// '<a type="button" onclick="UP_Table1('+msg[i].majors.majorsId+')" class="text-inverse pr-10" title="แก้ไขสาขา" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit txt-warning"></a>' +
+						// '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+					teacher = msg[i].personFaculty;
+				}
+				$('#table1 tbody').append(table1);
+				$('#table1teacher ').append('<p>' + teacher + '</p>');
+			},
+			error: function (e) {
+				alert("ERROR: Table1", e);
+				console.log("ERROR: Table1", e);
+			}
+		});
+
+		
+	});
+	function UP_Table1(Ma) {
+		//var Ma = $(this).parent().find('input').val();
+		//var Ma = {mg:$('#up_ma').val()};
+	   $.ajax({
+		type: "GET",
+		contentType: "application/json",
+		url: "/gotoUpdateMajors1/" + Ma,
+		//data: JSON.stringify(id1),
+		dataType: 'json',
+		success: function (msg) {
+			$('#personFaculty').append('<p>'+msg.faculty.personFaculty+'</p>');
+			$('#prename').val(msg.majorsName);
+			$('#namefaculty').append('<p>'+msg.namefaculty+'<p>');
+		
+		},
+		error: function (e) {
+			alert("ERROR: Table1", e);
+			console.log("ERROR: Table1", e);
+		}
+	});
+};
+	
+</script>
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/listFaculty2",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg) {
+
+				var table1 = "";
+				for (var i = 0; i < msg.length; i++) {
+					teacher = "";
+					table1 +=
+						'<tr>' +
+						'<td>' + msg[i].majors.majorsName + '</td>' +
+						//'<td>' + msg[i].majors.personMajors + '</td>' +
+						'<td>' + msg[i].majors.personMajors + '</td>' +
+						//'<td>' + msg[i].credit+'</td>' +
+						// '<td>' +'<input type="hidden"id="up_ma"value='+msg[i].majors.majorsId+'> <a  class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>' + '</td>' +
+
+						// '<td>' + '<input type="hidden"id="up_ma"value=' + msg[i].majors.majorsId + '>' +
+						// '<a type="button" onclick="UP_Table1()" class="text-inverse pr-10" title="แก้ไขสาขา" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit txt-warning"></a>' +
+						// '</td>' +
+						// // '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+					teacher = msg[i].personFaculty;
+				}
+				$('#table2 tbody').append(table1);
+				$('#table2teacher ').append('<p>' + teacher + '</p>');
+			},
+			error: function (e) {
+				alert("ERROR: table2", e);
+				console.log("ERROR: table2", e);
+			}
+		});
+	});
+</script>
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/listFaculty3",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg) {
+
+				var table1 = "";
+				for (var i = 0; i < msg.length; i++) {
+					teacher = "";
+					table1 +=
+						'<tr>' +
+						'<td>' + msg[i].majors.majorsName + '</td>' +
+						'<td>' + msg[i].majors.personMajors + '</td>' +
+						//'<td>' + msg[i].credit+'</td>' +
+						// '<td>' +'<input type="hidden"id="up_ma"value='+msg[i].majors.majorsId+'> <a  class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>' + '</td>' +
+
+						// '<td>' + '<input type="hidden"id="up_ma"value=' + msg[i].majors.majorsId + '>' +
+						// '<a type="button" onclick="UP_Table1()" class="text-inverse pr-10" title="แก้ไขสาขา" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit txt-warning"></a>' +
+						// '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+					teacher = msg[i].personFaculty;
+				}
+				$('#table3 tbody').append(table1);
+				$('#table3teacher ').append('<p>' + teacher + '</p>');
+			},
+			error: function (e) {
+				alert("ERROR: Table3", e);
+				console.log("ERROR: Table3", e);
+			}
+		});
+	});
+</script>
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/listFaculty4",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg) {
+
+				var table1 = "";
+				for (var i = 0; i < msg.length; i++) {
+					teacher = "";
+					table1 +=
+						'<tr>' +
+						'<td>' + msg[i].majors.majorsName + '</td>' +
+						'<td>' + msg[i].majors.personMajors + '</td>' +
+						//'<td>' + msg[i].credit+'</td>' +
+						// '<td>' +'<input type="hidden"id="up_ma"value='+msg[i].majors.majorsId+'> <a  class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>' + '</td>' +
+
+						// '<td>' + '<input type="hidden"id="up_ma"value=' + msg[i].majors.majorsId + '>' +
+						// '<a type="button" onclick="UP_Table1()" class="text-inverse pr-10" title="แก้ไขสาขา" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit txt-warning"></a>' +
+						// '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+					teacher = msg[i].personFaculty;
+				}
+				$('#table4 tbody').append(table1);
+				$('#table3teacher ').append('<p>' + teacher + '</p>');
+			},
+			error: function (e) {
+				alert("ERROR: Table4", e);
+				console.log("ERROR: Table4", e);
+			}
+		});
+	});
+</script>
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/listFaculty5",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg) {
+
+				var table1 = "";
+				for (var i = 0; i < msg.length; i++) {
+					teacher = "";
+					table1 +=
+						'<tr>' +
+						'<td>' + msg[i].majors.majorsName + '</td>' +
+						'<td>' + msg[i].majors.personMajors + '</td>' +
+						//'<td>' + msg[i].credit+'</td>' +
+						// '<td>' +'<input type="hidden"id="up_ma"value='+msg[i].majors.majorsId+'> <a  class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>' + '</td>' +
+
+						// '<td>' + '<input type="hidden"id="up_ma"value=' + msg[i].majors.majorsId + '>' +
+						// '<a type="button" onclick="UP_Table1()" class="text-inverse pr-10" title="แก้ไขสาขา" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit txt-warning"></a>' +
+						// '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+					teacher = msg[i].personFaculty;
+				}
+				$('#table5 tbody').append(table1);
+				$('#table5teacher ').append('<p>' + teacher + '</p>');
+			},
+			error: function (e) {
+				alert("ERROR: Table5", e);
+				console.log("ERROR: Table5", e);
+			}
+		});
+	});
+</script>
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/listFaculty6",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg) {
+
+				var table1 = "";
+				for (var i = 0; i < msg.length; i++) {
+					teacher = "";
+					table1 +=
+						'<tr>' +
+						'<td>' + msg[i].majors.majorsName + '</td>' +
+						'<td>' + msg[i].majors.personMajors + '</td>' +
+						//'<td>' + msg[i].credit+'</td>' +
+						// '<td>' +'<input type="hidden"id="up_ma"value='+msg[i].majors.majorsId+'> <a  class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>' + '</td>' +
+
+						// '<td>' + '<input type="hidden"id="up_ma"value=' + msg[i].majors.majorsId + '>' +
+						// '<a type="button" onclick="UP_Table1()" class="text-inverse pr-10" title="แก้ไขสาขา" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit txt-warning"></a>' +
+						// '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+					teacher = msg[i].personFaculty;
+				}
+				$('#table6 tbody').append(table1);
+				$('#table6teacher ').append('<p>' + teacher + '</p>');
+			},
+			error: function (e) {
+				alert("ERROR: Table1", e);
+				console.log("ERROR: Table1", e);
+			}
+		});
+	});
+</script>
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/listFaculty7",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg) {
+
+				var table1 = "";
+				for (var i = 0; i < msg.length; i++) {
+					teacher = "";
+					table1 +=
+						'<tr>' +
+						'<td>' + msg[i].majors.majorsName + '</td>' +
+						'<td>' + msg[i].majors.personMajors + '</td>' +
+						//'<td>' + msg[i].credit+'</td>' +
+						// '<td>' +'<input type="hidden"id="up_ma"value='+msg[i].majors.majorsId+'> <a  class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a>' + '</td>' +
+
+						// '<td>' + '<input type="hidden"id="up_ma"value=' + msg[i].majors.majorsId + '>' +
+						// '<a type="button" onclick="UP_Table1()" class="text-inverse pr-10" title="แก้ไขสาขา" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit txt-warning"></a>' +
+						// '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+					teacher = msg[i].personFaculty;
+				}
+				$('#table7 tbody').append(table1);
+				$('#table7teacher ').append('<p>' + teacher + '</p>');
+			},
+			error: function (e) {
+				alert("ERROR: Table7", e);
+				console.log("ERROR: Table7", e);
+			}
+		});
+	});
+</script>
 
 </html>

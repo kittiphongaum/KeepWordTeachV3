@@ -375,9 +375,9 @@
 																	<div class="col-md-12">
 																		<div class="form-group">
 																			<label class="control-label mb-10">วันเวลา เดิม</label>
-																			<div class="col-sm-6">
-																				<input type="text" class="form-control" id="" placeholder="">
-																			</div>
+																		
+																				<input type="text" class="form-control" id="" placeholder="01/02/2561">
+																		
 																		</div>
 																	</div>
 																</div>
@@ -385,17 +385,16 @@
 																	<div class="row">
 																		<div class="col-md-12 col-xs-12">
 																			<div class="form-group">
-																				<div class="row">
+																			
 																					<label for="exampleInputuname_3" class="col-sm-6 control-label">เวลาที่ทำการเปลียน</label>
-																					<div class="col-sm-6">
-																						<input type="text" class="form-control" id="" placeholder="">
-																					</div>
-																				</div>
+																					
+																						<input type="date" class="form-control" id="" placeholder="">
+																			
 																			</div>
 																		</div>
 
 																	</div>
-																	<div class="row">
+																	<!-- <div class="row">
 																		<div class="col-md-12 col-xs-12">
 																			<div class="form-group">
 																				<div class="row">
@@ -406,7 +405,7 @@
 																				</div>
 																			</div>
 																		</div>
-																	</div>
+																	</div> -->
 																</div>
 														</form>
 													</div>
@@ -481,7 +480,7 @@
 									<div class="row">
 										<div class="col-md-12">
 											<div class="table-wrap text-center">
-												<table id="Table2" class="table table-hover table-bordered mb-0">
+												<table id="Table2_sub" class="table table-hover table-bordered mb-0">
 													<thead class="text-warning ">
 														<tr>
 															<th scope="col">#</th>
@@ -902,6 +901,7 @@
 			dataType: 'json',
 
 			success: function (msg) {
+			
 				mass__link = msg;
 				var tfood = 0;
 				var table1 = "";
@@ -942,7 +942,7 @@
 				
 
 				$('#Table1 tbody').append(table1);
-				
+		
 				$('#tfood').append(tfood);
 				$('#tarHo').append(tarHo);
 				$('#sumsrry').append(sumsrry);
@@ -1015,10 +1015,10 @@
 						'<td>' + tsd1 + '</td>' +
 						'<td>' + psb + '</td>' +
 						'<td>' + sumtsdp + '</td>' +
-						'<td>' + '<a data-target="#exampleModal_UpdateDay"  data-toggle="modal"' +
-						' class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></span>' +
-						'</a>' +
-						'</td>' +
+						// '<td>' + '<a data-target="#exampleModal_UpdateDay"  data-toggle="modal"' +
+						// ' class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-edit"></span>' +
+						// '</a>' +
+						// '</td>' +
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
 						'</tr>';
 					sumTsd += tsd1;
@@ -1035,7 +1035,7 @@
 				}
 				
 			
-				$('#Table2 tbody').append(table2);
+				$('#Table2_sub tbody').append(table2);
 
 				$('#tableTeaching_id').val(tableTeaching_id);
 
@@ -1102,12 +1102,10 @@
 		$.ajax({
 			type: "POST",
 			contentType: "application/json",
-			url: "/FileBylistIdSETstatus",
+			url: "/fileBylistIdSETstatus",
 			data: JSON.stringify(id1),
 			dataType: 'json',
 			success: function (subjectSum) {
-			
-
 				var tableSunject = "";
 			var formoney=0;
 
@@ -1132,7 +1130,7 @@
 				
 			
 				$('#listSubject tbody').append(tableSunject);
-
+		
 				$('#formoney').append(formoney)
 				$('#formoney1').append(formoney)
 				$('#formoney2').val(formoney)

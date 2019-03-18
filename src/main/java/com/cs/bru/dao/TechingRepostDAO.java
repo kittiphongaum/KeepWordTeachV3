@@ -310,6 +310,7 @@ public class TechingRepostDAO {
 						techingRepost.setTableTeaching(tableTeaching);
 						techingRepost.setUser(user);
 						techingRepost.setDegreeStuden(degree);
+						
 						list.add(techingRepost);
 					}
 					

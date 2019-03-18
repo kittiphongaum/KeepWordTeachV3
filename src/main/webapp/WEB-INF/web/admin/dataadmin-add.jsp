@@ -173,14 +173,14 @@
 						</ul>
 					</li>
 					
-					<li>
+					<!-- <li>
 						<a href="./history-add" data-toggle="collapse" data-target="#app_dr">
 							<div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวัติการเบิก</span></div>
 							<div class="clearfix"></div>
 						</a>
 						<ul id="app_dr" class="collapse collapse-level-1">
 						</ul>
-					</li>
+					</li> -->
 					<li>
 						<a href="./subject-add" data-toggle="collapse" data-target="#app_dr">
 							<div class="pull-left"><i data-icon="o" class="linea-icon linea-basic mr-20"></i><span class="right-nav-text">เพิ่มรายวิชา</span></div>

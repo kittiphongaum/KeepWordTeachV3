@@ -70,7 +70,7 @@ public class DateofTeachSevice {
 			a = cal2.get(Calendar.WEEK_OF_YEAR);
 			b =cal.get(Calendar.WEEK_OF_YEAR);
 			c = a - b;
-			System.out.println(c+1);
+	//		System.out.println(c+1);
 			int f=1, tud =0, prt=0;
 			 int sumhourtrme = 0;
 				DateofTeach ofteach =new DateofTeach();

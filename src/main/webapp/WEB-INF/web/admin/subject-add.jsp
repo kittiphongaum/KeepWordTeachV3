@@ -205,14 +205,14 @@
 					</ul>
 				</li>
 
-				<li>
+				<!-- <li>
 					<a href="./history-add" data-toggle="collapse" data-target="#app_dr">
 						<div class="pull-left"><i class="icon-docs mr-20"></i><span class="right-nav-text">ประวัติการเบิก</span></div>
 						<div class="clearfix"></div>
 					</a>
 					<ul id="app_dr" class="collapse collapse-level-1">
 					</ul>
-				</li>
+				</li> -->
 				<li>
 					<a class="active" href="./subject-add" data-toggle="collapse" data-target="#app_dr">
 						<div class="pull-left"><i data-icon="o" class="linea-icon linea-basic mr-20"></i><span class="right-nav-text">เพิ่มรายวิชา</span></div>
@@ -361,7 +361,7 @@
 				<!-- <img src="../assets_/dist/img/sweetalert/alert4.png" alt="alert" class="img-responsive model_img" id="sa-warning1">  -->
 				<!-- <a type="button" class="label label-danger "alt="alert" id="sa-warningteach">ปิด</a> -->	
 				<!-- Row -->
-				<a type="button" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a onclick="deletesubjectId()" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger" ></i></a>
+				<!-- <a type="button" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a onclick="deletesubjectId()" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger" ></i></a> -->
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="panel panel-default card-view">

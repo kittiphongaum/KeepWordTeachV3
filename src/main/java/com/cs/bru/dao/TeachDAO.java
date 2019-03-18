@@ -35,7 +35,7 @@ public class TeachDAO {
 			prepared.setString(8, bean.getDateofteachFk());
 			prepared.setString(9, bean.getSubjactFk());
 			prepared.setString(10, bean.getTableteachFk());
-		//	prepared.setString(11, bean.getUserFk());
+			prepared.setString(11, bean.getUserFk());
 			
 
 			prepared.executeUpdate();
@@ -208,7 +208,7 @@ public class TeachDAO {
 		StringBuilder sql = new StringBuilder();
 
 		try {
-			sql.append("SELECT * FROM tb_teaching WHERE status_teach='2'AND user_fk = ?" );
+			sql.append("SELECT * FROM tb_teaching WHERE status_teach='2' AND user_fk = ?" );
 			prepared = con.openConnect().prepareStatement(sql.toString());
 			prepared.setString(1, userId);
 			ResultSet rs = prepared.executeQuery();
@@ -226,7 +226,7 @@ public class TeachDAO {
 				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 				teach.setSubjactFk(rs.getString("subject_fk"));
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
-			//	teach.setUserFk(rs.getString("user_fk"));
+				teach.setUserFk(rs.getString("user_fk"));
 				list.add(teach);
 			}
 		} catch (Exception e) {
@@ -269,7 +269,7 @@ public class TeachDAO {
 				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 				teach.setSubjactFk(rs.getString("subject_fk"));
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
-			//	teach.setUserFk(rs.getString("user_fk"));
+				teach.setUserFk(rs.getString("user_fk"));
 				
 				teach.setBaseHour(rs.getInt("teach_basehour"));
 				teach.setBasecram(rs.getInt("teach_basecram"));

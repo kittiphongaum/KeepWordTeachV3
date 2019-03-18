@@ -30,6 +30,13 @@
 	<field name="user.userbaseKrm" class="java.lang.Integer"/>
 	<field name="degreeStuden.nameDegree" class="java.lang.String"/>
 	<field name="statusSubjectbean.statusSubjectName" class="java.lang.String"/>
+	<field name="techingRepost.reportThaibaht" class="java.lang.String"/>
+	<field name="techingRepost.repostMoney" class="java.lang.Integer"/>
+	<field name="techingRepost.repostSum" class="java.lang.Integer"/>
+	<field name="user.majors.majorsName" class="java.lang.String"/>
+	<field name="user.majors.personMajors" class="java.lang.String"/>
+	<field name="user.majors.faculty.facultyName" class="java.lang.String"/>
+	<field name="user.majors.faculty.personFaculty" class="java.lang.String"/>
 	<title>
 		<band height="32" splitType="Stretch">
 			<staticText>
@@ -45,7 +52,7 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="236" splitType="Stretch">
+		<band height="193" splitType="Stretch">
 			<staticText>
 				<reportElement x="157" y="0" width="240" height="30" uuid="b8f9dc64-c745-4af7-8d8e-898cbe4c8c99"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -72,86 +79,96 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="-1" y="120" width="80" height="30" uuid="78501bc1-6cd5-407f-9265-366dd0760be4"/>
+				<reportElement x="0" y="103" width="80" height="26" uuid="78501bc1-6cd5-407f-9265-366dd0760be4"/>
 				<textElement textAlignment="Left" verticalAlignment="Bottom">
 					<font fontName="TH Sarabun New" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ระดับการสอน]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="79" y="120" width="219" height="30" uuid="1a84eff0-8210-4be0-af19-7501d1eb51ed"/>
+				<reportElement x="80" y="103" width="219" height="26" uuid="1a84eff0-8210-4be0-af19-7501d1eb51ed"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<textElement verticalAlignment="Middle">
 					<font fontName="TH Sarabun New" size="16"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{degreeStuden.nameDegree}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="-1" y="150" width="80" height="27" uuid="13cffe17-85c6-4f02-bf0e-4c122276d18f"/>
+				<reportElement x="-1" y="130" width="80" height="27" uuid="13cffe17-85c6-4f02-bf0e-4c122276d18f"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="TH Sarabun New" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[คณะ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="79" y="150" width="219" height="27" uuid="89b499a9-de14-4067-8cd7-44ce70c97413"/>
+				<reportElement x="79" y="130" width="219" height="27" uuid="89b499a9-de14-4067-8cd7-44ce70c97413"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
 				<textElement verticalAlignment="Middle">
 					<font fontName="TH Sarabun New" size="16"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{user.mojor}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{user.majors.faculty.facultyName}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="79" y="190" width="59" height="28" uuid="5a9cf132-90f4-4a2a-b885-667c64f6c74d"/>
+				<reportElement x="79" y="160" width="59" height="20" uuid="5a9cf132-90f4-4a2a-b885-667c64f6c74d"/>
 				<textElement textAlignment="Left" verticalAlignment="Bottom">
-					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ประจำเดือน]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="139" y="190" width="219" height="27" uuid="13cd4d53-bbee-4a27-a019-711f16ddbc7a"/>
+				<reportElement x="139" y="160" width="219" height="19" uuid="13cd4d53-bbee-4a27-a019-711f16ddbc7a"/>
 				<box>
 					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="TH Sarabun New" size="19"/>
+					<font fontName="TH Sarabun New" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tableTeaching.startMonthString}+"-"+$F{tableTeaching.stopMonthString}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="389" y="190" width="41" height="28" uuid="33d54d50-d07b-4b87-a187-9bfdd1048c91"/>
-				<textElement textAlignment="Left" verticalAlignment="Bottom">
-					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+				<reportElement x="380" y="160" width="50" height="20" uuid="33d54d50-d07b-4b87-a187-9bfdd1048c91"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
 				</textElement>
 				<text><![CDATA[พ.ศ.]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="430" y="190" width="68" height="27" uuid="b5bed630-df5b-409e-9cbb-705f1434c45a"/>
+				<reportElement x="430" y="160" width="68" height="19" uuid="b5bed630-df5b-409e-9cbb-705f1434c45a"/>
 				<box>
 					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="TH Sarabun New" size="19"/>
+					<font fontName="TH Sarabun New" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tableTeaching.teachYear}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="276" y="90" width="276" height="30" uuid="2e6a8465-9e7c-497f-a3ac-aee5aa030b3f"/>
+				<reportElement x="80" y="80" width="210" height="20" uuid="2e6a8465-9e7c-497f-a3ac-aee5aa030b3f"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="TH Sarabun New" size="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{user.positionTeach}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="-1" y="90" width="277" height="30" uuid="60474afd-ed06-4858-b6c0-6da5ec645491"/>
+				<reportElement x="0" y="80" width="80" height="20" uuid="60474afd-ed06-4858-b6c0-6da5ec645491"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="TH Sarabun New" size="16" isBold="true"/>
+					<font fontName="TH Sarabun New" size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[ตำแหน่ง การการเบิกค่าสอนพิเศษและค่าสอนภาระงานสอน]]></text>
+				<text><![CDATA[เงินค่าสอนพิเศษ]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
@@ -331,16 +348,19 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{statusSubjectbean.statusSubjectName}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="0" y="0" width="58" height="32" uuid="f659859e-72f8-43a7-b4d6-09f8c5ba000c"/>
+			<textField>
+				<reportElement x="-1" y="0" width="59" height="32" uuid="53958350-a0c5-492e-9a87-491d69920a09"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<text><![CDATA[]]></text>
-			</staticText>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="TH Sarabun New" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<summary>
@@ -413,6 +433,7 @@
 				<textElement>
 					<font fontName="TH Sarabun New" size="16"/>
 				</textElement>
+				<textFieldExpression><![CDATA[$F{techingRepost.repostMoney}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="210" y="56" width="50" height="24" uuid="d312ab25-06e7-4716-97db-c2150069b771"/>
@@ -440,7 +461,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="TH Sarabun New" size="16"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{saleryThaibaht}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{techingRepost.reportThaibaht}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="-1" y="81" width="8" height="30" uuid="ae7670bc-792c-45aa-961c-9241860d7d00"/>
@@ -522,6 +543,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="TH Sarabun New" size="14"/>
 				</textElement>
+				<textFieldExpression><![CDATA[$F{techingRepost.repostMoney}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="52" y="148" width="157" height="30" uuid="88c75690-e88e-4291-b5b4-3f77d66947d0"/>

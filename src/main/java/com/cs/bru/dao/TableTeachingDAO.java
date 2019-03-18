@@ -48,6 +48,8 @@ public class TableTeachingDAO {
 			prepared.setString(18, bean.getStartMonthString());
 			prepared.setString(19, bean.getStopMonthString());
 
+			
+			System.out.println(bean.getStopMonthString()+":::");
 			prepared.executeUpdate();
 			 /*System.out.println(bean);*/ 
 		} catch (Exception e) {

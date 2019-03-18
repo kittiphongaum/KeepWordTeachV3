@@ -83,7 +83,14 @@ public class TableTeachingController {
 //				System.out.println("Days: " + diff);
 				   id=(insertTableTeaching.getTermYear()+insertTableTeaching.getTeachTerm()+insertTableTeaching.getSection()+insertTableTeaching.getSubject().getSubjectId());
 				   insertTableTeaching.setTebleTeachId(id);
-			   if (insertTableTeaching.getStudenNumber()>=20 && insertTableTeaching.getStudenNumber()<=35 ) {
+				   if (insertTableTeaching.getStudenNumber()>=0 && insertTableTeaching.getStudenNumber()<=19 ) {
+					   insertTableTeaching.setStandardTeach(100);	   
+					   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+					   SevicedateofTeach.keepword(insertTableTeaching,oh);
+					   
+					   
+//					   teachDAO.insertTeach(insertTableTeaching.getTeach());
+				} else if (insertTableTeaching.getStudenNumber()>=20 && insertTableTeaching.getStudenNumber()<=35 ) {
 				   insertTableTeaching.setStandardTeach(120);	   
 				   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
 				   SevicedateofTeach.keepword(insertTableTeaching,oh);
@@ -100,14 +107,11 @@ public class TableTeachingController {
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
 				 SevicedateofTeach.keepword(insertTableTeaching,oh);
 //				 teachDAO.insertTeach(insertTableTeaching.getTeach());
-			}else if (insertTableTeaching.getStudenNumber()>=90) {
+			}else{
 				insertTableTeaching.setStandardTeach(300);
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
 				 SevicedateofTeach.keepword(insertTableTeaching,oh);
 //				 teachDAO.insertTeach(insertTableTeaching.getTeach());
-			}
-			else {
-				
 			}
 			
 		} catch (Exception e) {

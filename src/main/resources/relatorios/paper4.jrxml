@@ -24,6 +24,10 @@
 	<field name="user.userbaseHour" class="java.lang.Integer"/>
 	<field name="user.userbaseKrm" class="java.lang.Integer"/>
 	<field name="statusSubject.statusSubjectName" class="java.lang.String"/>
+	<field name="user.majors.majorsName" class="java.lang.String"/>
+	<field name="user.majors.personMajors" class="java.lang.String"/>
+	<field name="user.majors.faculty.facultyName" class="java.lang.String"/>
+	<field name="user.majors.faculty.personFaculty" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -89,7 +93,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font fontName="TH Sarabun New" size="16"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{user.mojor}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{user.majors.faculty.facultyName}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="578" y="30" width="62" height="30" uuid="0d06c280-ba88-4403-a0e4-5804c8b8dde8"/>
@@ -440,7 +444,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="TH Sarabun New" size="16"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{salarySummoney}+$F{salarySummoney}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($V{PAGE_COUNT}+1)+$F{salarySummoney}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="238" y="20" width="40" height="24" uuid="8b2eb4d5-429f-4893-b498-cd16321083fd"/>
@@ -698,13 +702,6 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="326" y="160" width="203" height="20" uuid="0879ad50-6bf9-4d89-8126-b94d50b5d691"/>
-				<box>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
-				</box>
-				<text><![CDATA[]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="336" y="200" width="188" height="20" uuid="b911579f-3eaa-4765-9ffc-ed1242c30851"/>
 				<box>
 					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
@@ -719,13 +716,6 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="573" y="160" width="194" height="20" uuid="a2bc8525-5455-4d39-b1dd-a1098c1872f8"/>
-				<box>
-					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
-				</box>
-				<text><![CDATA[]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="595" y="200" width="173" height="20" uuid="5e217205-e809-4a47-afa6-af6682945248"/>
 				<box>
 					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
@@ -734,6 +724,21 @@
 			</staticText>
 			<staticText>
 				<reportElement x="606" y="96" width="173" height="20" uuid="d82e7b66-5c69-4514-a0f3-cebc86f3e63a"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="326" y="160" width="203" height="21" uuid="d9a05aea-39f8-4e1e-af09-1a63468bb584"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{user.majors.faculty.personFaculty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="573" y="163" width="194" height="17" uuid="bc898bf5-3392-4b41-9c93-a1e5fc5d8022"/>
 				<box>
 					<bottomPen lineWidth="1.0" lineStyle="Dotted"/>
 				</box>

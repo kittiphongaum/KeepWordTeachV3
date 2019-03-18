@@ -93,6 +93,9 @@ public class TeachController {
 		// String term ="1";
 		// String year = "2561";
 		// String de = "1";
+		try {
+			
+	
 		list = teachDAO.teschASCfileAll(userid = id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),
 				id1.getDegreeS4()/* userid="u",term,year,de */);
 
@@ -133,7 +136,7 @@ public class TeachController {
 						int h = sumtp + bh;
 						// int xx = (sum-(baseHour.get(i)-1));
 						xx = (h - sum);
-						// System.out.println(" แบ่ง :: "+xx+" "+((ggg-xx)));
+						 System.out.println(" แบ่ง :: "+xx+" "+((ggg-xx)));
 						list.get(i).setBaseHour(ggg - xx);
 
 						day = ggg - xx;
@@ -197,7 +200,7 @@ public class TeachController {
 					// System.out.println("...");
 		//			System.out.println("...");
 				} else {
-//					System.out.println(setTsd + "ทฏ" + setT);
+				System.out.println(setTsd + "ทฏ" + setT);
 				}
 
 			} else {
@@ -230,11 +233,15 @@ public class TeachController {
 
 			
 		}
-
+	
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 		return list;
 	}
 
-	@RequestMapping(value = "teachFoday", method = RequestMethod.POST)
+//	@PostMapping(value = "teachFoday")
 	public List<DateofTeach> ASCfileAll(@RequestBody TeachSeachBean1 id1) {
 		List<DateofTeach> list = new ArrayList<>();
 		List<Teach> listtach = new ArrayList<>();
@@ -244,8 +251,7 @@ public class TeachController {
 		// String term ="1";
 		// String year = "2561";
 		// String de = "1";
-		list = dateofTeachDAO.fileASCDay(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),
-				id1.getDegreeS4()/* userid="u",term,year,de */);
+		list = dateofTeachDAO.fileASCDay(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
 
 		// list = dateofTeachDAO.fileASCDay(userid, term, year,de);
 		// listtach=teachDAO.teschASCfileAll(userid, term, year, de);
@@ -258,7 +264,7 @@ public class TeachController {
 			int tsd = list.get(i).getTableTeaching().getSubject().getTudsadee();
 			int set_ptb;
 			int set_tsd;
-			if (list.get(i).getStatusDateofteach() == 0) {
+			if (list.get(i).getStatusDateofteach() != 2) {
 
 				if (list.get(i).getPrtibadDft() != 0) {
 					set_ptb = ptb / 2;
@@ -344,18 +350,18 @@ public class TeachController {
 	               dateofbean.setSummyhourDft(tsd_ptb);
 	               dateofbean.setSubjectDft(list.get(i).getSubjectDft());;
 	               dateofbean.setStatusDateofteach(2);
-	//               System.out.println(dateofbean.getTudsadeeDft()+"**************");
+              System.out.println(dateofbean.getTudsadeeDft()+"**************");
             //   System.out.println( dateofbean.getStatusDateofteach());
 	               
 	               dateofTeachDAO.updateTsdPtb(dateofbean);
 	              
 			} 
 
-			
-	         
+		
 	           
 			}
 			list22 = dateofTeachDAO.fileASCDay(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+			salarySum(id1);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -363,7 +369,7 @@ public class TeachController {
 		return list;
 	}
 
-	@RequestMapping(value = "/listDay", method = RequestMethod.POST)
+//	@RequestMapping(value = "/listDay", method = RequestMethod.POST)
 	public List<Salary> salarySum(@RequestBody TeachSeachBean1 id1) {
 		Salary subjectAdd = new Salary();
 		Salary subjectShow = new Salary();
@@ -397,15 +403,15 @@ public class TeachController {
 					 basemoney= subjectById.get(j).getMoneyDft();
 						
 					}
-				//	System.out.println(sumpsb +":::" +"ปปปปปป");
-				//	System.out.println(sumtsd +":::" +"ทททททท");
-				//	System.out.println(sumpsb+sumtsd);
-				//	System.out.println(basemoney);
+					System.out.println(sumpsb +":::" +"ปปปปปป");
+					System.out.println(sumtsd +":::" +"ทททททท");
+					System.out.println(sumpsb+sumtsd);
+					System.out.println(basemoney);
 					int ASD= sumpsb+sumtsd;
 					int AAA =ASD*basemoney;
 					int h=0;
 					tpSetShe=statusTpDAO.SunjectTPbean(teaching.get(i).getTeachId());
-				//	System.out.println(tpSetShe.getSetstatusSubId()+".................");
+					System.out.println(tpSetShe.getSetstatusSubId()+".................");
 					if (tpSetShe.getSetstatusSubId()==null) {
 						
 					
@@ -415,7 +421,7 @@ public class TeachController {
 					tpSet.setSetstatusSubjectBase(basemoney);
 					tpSet.setSetstatusSubjectMoney(sumtsd*basemoney);
 					tpSet.setStatusSubject(2);
-				//	tpSet.setSetjectUserid(teaching.get(i).getUserFk());
+					tpSet.setSetjectUserid(teaching.get(i).getUserFk());
 					tpSet.setTechingSetjectId(teaching.get(i).getTeachId());
 					tpSet.setSetstatusSubId(teaching.get(i).getSubjactFk());
 					statusTpDAO.insertStsubject(tpSet);

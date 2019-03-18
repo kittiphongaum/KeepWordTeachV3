@@ -382,7 +382,7 @@ Integer a=0;
 											<input type="hidden" name="degreeS4" id="pe_degree1" >
 										
 											<button type="submit" formtarget="_blank" class="btn btn-primary btn-outline btn-icon left-icon" >
-												<i class="fa fa-print"></i><span>เอกสาร1</span>
+												<i class="fa fa-print"></i><span>เอกสารหมายเลข1</span>
 											</button>
 										</form>
 									</div>
@@ -396,7 +396,7 @@ Integer a=0;
 												<input type="hidden" name="yearS3" id="pe_year2">
 												<input type="hidden" name="degreeS4" id="pe_degree2" >
 											<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
-												<i class="fa fa-print"></i><span> เอกสาร2</span>
+												<i class="fa fa-print"></i><span> เอกสารหมายเลข2</span>
 											</button>
 										</form>
 									</div>
@@ -410,7 +410,7 @@ Integer a=0;
 											<input type="hidden" name="yearS3" id="pe_year3">
 											<input type="hidden" name="degreeS4" id="pe_degree3" >
 											<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
-												<i class="fa fa-print"></i><span> เอกสาร3</span>
+												<i class="fa fa-print"></i><span>เอกสารหมายเลข3</span>
 											</button>
 										</form>
 									</div>
@@ -425,11 +425,24 @@ Integer a=0;
 											<input type="hidden" name="yearS3" id="pe_year4">
 											<input type="hidden" name="degreeS4" id="pe_degree4" >
 											<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
-												<i class="fa fa-print"></i><span> เอกสาร4</span>
+												<i class="fa fa-print"></i><span> เอกสารหมายเลข4</span>
 											</button>
 										</form>
 									</div>
 								</div>
+								<div class="col-sm-2">
+										<div class="form-group">
+									<form action="repostPaper5" method="POST" target="_blank">
+										<input type="hidden" name="useridS1"id="pe_user5">
+										<input type="hidden" name="termS2"  id="pe_term5">
+										<input type="hidden" name="yearS3" id="pe_year5">
+										<input type="hidden" name="degreeS4" id="pe_degree5" >
+										<button type="submit" class="btn btn-primary btn-outline btn-icon left-icon" formtarget="_blank">
+											<i class="fa fa-print"></i><span> เอกสารหมายเลข5</span>
+										</button>
+									</form>
+								</div>
+							</div>
 								</div>
 					
 							<!-- <div class="row" id=mass></div>
@@ -690,6 +703,11 @@ Integer a=0;
 		$('#pe_term4').val(id1.termS2);
 		$('#pe_year4').val(id1.yearS3);
 		$('#pe_degree4').val(id1.degreeS4);
+
+		$('#pe_user5').val(id1.useridS1);
+		$('#pe_term5').val(id1.termS2);
+		$('#pe_year5').val(id1.yearS3);
+		$('#pe_degree5').val(id1.degreeS4);
 		$.ajax({
 			type: "POST",
 			contentType: "application/json",
