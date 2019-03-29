@@ -223,6 +223,7 @@
 			</ul>
 		</div>
 		<!-- Main Content -->
+	
 		<div class="page-wrapper">
 			<div class="container-fluid">
 
@@ -241,11 +242,12 @@
 					<!-- /Breadcrumb -->
 				</div>
 				<!-- /Title -->
-
+		
+			
 				<input type="hidden" id="teachId">
 				<input type="hidden" id="tebleTeachId">
 
-				<!-- Row -->
+
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="panel panel-default card-view">
@@ -254,7 +256,63 @@
 								<div class="panel-body">
 									<!-- <form id="example-form-jook"> -->
 										<!-- <h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">เพิ่มข้อมูลรายวิชา</span></h3> -->
-									
+										<div class="col-sm-12">
+												<div class="panel panel-default card-view">
+													<div class="panel-heading">
+														<div class="pull-left">
+															<h6 class="panel-title txt-dark">ระยะเวลาที่สอน (ปีการศึกษา-ภาคเรียน)</h6>
+														</div>
+														
+														<div class="clearfix"></div>
+													</div>
+													<div id="term_tb_bean"></div>
+													 <!-- <div class="panel-wrapper collapse in">
+														<div class="panel-body">
+															<div class="form-wrap">
+																<form class="form-horizontal">
+																	<div class="form-group mb-0">
+																		<div class="col-sm-12">
+																			<div class="row text-center">
+																				
+																				<div class="col-sm-2">
+																					<label class="control-label mb-10">ระยะเวลาที่เริ่มสอน</label>
+																					<input class="form-control filled-input rounded-input" id="startMonth" value="" disabled > 
+																				</div>
+																				<div class="col-sm-2">
+																						<label class="control-label mb-10">ระยะเวลาที่สิ่นสุดสอน</label>
+																						<input type="text" class="form-control filled-input rounded-input" id="stopMonth" value="" disabled>    
+																					</div>
+																					<div class="col-sm-2">
+																							<label class="control-label mb-10">พ.ศ.</label>
+																							<input type="text" class="form-control filled-input rounded-input" id="teachYear"value=""  disabled>
+																						</div>
+																						<div class="col-sm-2">
+																								<label class="control-label mb-10">ปีการศึกษา</label>
+																								<input type="text" class="form-control filled-input rounded-input" id="degreeStuden"value=""disabled>
+																							</div>
+																							<div class="col-sm-2">
+																								<label class="control-label mb-10">ภาคเรียน</label>
+																								<input type="text" class="form-control filled-input rounded-input" id="teachTerm"value=""disabled>
+																					</div>
+																					<div class="col-sm-2">
+																							<label class="control-label mb-10">นักศึกษาระดับ</label>
+
+																							<select class="form-control filled-input rounded-input"  name="termTeachTerm"required id="degreeStuden">
+																									<option value="1">ปริญญาตรี</option>
+																									<option value="2">ปริญญาโท</option>
+																									<option value="3">ปริญญาเอก</option>
+																								
+																								</select>
+																				</div>
+																			</div>
+																		</div>	
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>  -->
+												</div>
+										</div>
 									
 											<div class="row">
 												<input type="hidden" id="teachId">
@@ -263,7 +321,7 @@
 												<div class="container-fluid">
 													<div class="row">
 														<div class="col-sm-12">
-															<div class="panel panel-default card-view">
+															<!-- <div class="panel panel-default card-view">
 																	
 																<div class="panel-heading">
 																	<div class="pull-left">
@@ -325,7 +383,7 @@
 																							<div class="row">
 																								<label for="exampleInputuname_3" class="col-sm-3 control-label">พ.ศ.</label>
 																								<div class="col-sm-9">
-																									<!-- <input type="text" class="form-control" id="teachYear" placeholder=""> -->
+																								
 																									<select id="teachYear" class="form-control " name="startMonth">
 																										
 																										<option value="2561">2561</option>
@@ -350,7 +408,7 @@
 																						<div class="row">
 																							<label for="exampleInputuname_3" class="col-sm-4 control-label">ระดับนักศึกษา</label>
 																							<div class="col-sm-8">
-																								<!-- <input type="text" class="form-control" id="degreeStuden" placeholder=""> -->
+																							
 																								<select id="degreeStuden" class="form-control " name="degreeStuden">
 																									<option value="1">ปริญญาตรี</option>
 																									<option value="2">ปริญญาโท</option>
@@ -388,7 +446,7 @@
 																						<div class="row">
 																							<label for="exampleInputuname_3" class="col-sm-6 control-label">ภาคเรียน</label>
 																							<div class="col-sm-6">
-																								<!-- <input type="text" class="form-control" id="teachTerm" placeholder=""> -->
+																							
 																								<select id="teachTerm" class="form-control " name="teachTerm">
 
 																									<option value="1">1</option>
@@ -407,7 +465,7 @@
 																	</div>
 																</div>
 															
-															</div>
+															</div> -->
 														</div>
 
 													</div>
@@ -420,7 +478,12 @@
 													<div class="row">
 														<div class="col-sm-12">
 															<div class="panel panel-default card-view">
-																
+																	<div class="panel-heading">
+																			<div class="pull-left">
+																				<h6 class="panel-title txt-dark">บันทึกรายละเอียด วิชา</h6>
+																			</div>
+																			<div class="clearfix"></div>
+																		</div>
 																<div class="panel-wrapper collapse in">
 																	<div class="panel-body">
 
@@ -936,5 +999,77 @@
 		});
 
 	}
+
+		$(document).ready(function () {
+		
+			$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/showTerm",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (term) {
+			
+				// $('#sh_termDateStart').val(term.termDateStart);
+				// $('#sh_termDateStop').val(term.termDateStop);
+				// $('#sh_termDateYear').val(term.termDateYear);
+				// $('#sh_termTeachYear').val(term.termTeachYear);
+				// $('#sh_termTeachTerm').val(term.termTeachTerm);
+			
+			var term='<div class="panel-wrapper collapse in">'+
+						'<div class="panel-body">'+
+							'<div class="form-wrap">'+
+								'<form class="form-horizontal">'+
+								'<div class="form-group mb-0">'+
+										'<div class="col-sm-12">'+
+											'<div class="row text-center">'+
+																
+													'<div class="col-sm-2">'+
+															'<label class="control-label mb-10">ระยะเวลาที่เริ่มสอน</label>'+
+															'<input class="form-control filled-input rounded-input" id="startMonth" value='+term.termDateStart+' disabled > '+
+															'</div>'+
+														'<div class="col-sm-2">'+
+															'<label class="control-label mb-10">ระยะเวลาที่สิ่นสุดสอน</label>'+
+																'<input type="text" class="form-control filled-input rounded-input" id="stopMonth" value="'+term.termDateStop+'" disabled> '+
+																	'</div>'+
+																	'<div class="col-sm-2">'+
+																	'<label class="control-label mb-10">พ.ศ.</label>'+
+																		'<input type="text" class="form-control filled-input rounded-input" id="teachYear"value="'+term.termTeachYear+'" disabled>'+
+																'</div>'+
+																		'<div class="col-sm-2">'+
+																						'<label class="control-label mb-10">ปีการศึกษา</label>'+
+																								'<input type="text" class="form-control filled-input rounded-input" id="termYear"value='+term.termTeachYear+' disabled>'+
+																							'</div>'+
+																							'<div class="col-sm-2">'+
+																								'<label class="control-label mb-10">ภาคเรียน</label>'+
+																								'<input type="text" class="form-control filled-input rounded-input" id="teachTerm"value='+term.termTeachTerm+' disabled>'+
+																					'</div>'+
+																					'<div class="col-sm-2">'+
+																							'<label class="control-label mb-10">นักศึกษาระดับ</label>'+
+																						
+																							'<select class="form-control filled-input rounded-input"  name="termTeachTerm"required id="degreeStuden">'+
+																									'<option value="1">ปริญญาตรี</option>'+
+																									'<option value="2">ปริญญาโท</option>'+
+																									'<option value="3">ปริญญาเอก</option>'+
+																								
+																								'</select>'+
+																				'</div>'+
+																			'</div>'+
+																		'</div>	'+
+																	'</div>'+
+																'</form>'+
+															'</div>'+
+														'</div>'+
+													'</div>';
+
+									$('#term_tb_bean').append(term)
+
+			},
+			error: function (e) {
+				alert("ERROR: table3", e);
+				console.log("ERROR: table3", e);
+			}
+		});
+		});
 </script>
 </html>

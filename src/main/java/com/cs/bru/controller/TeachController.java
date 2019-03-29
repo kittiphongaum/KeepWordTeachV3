@@ -74,7 +74,7 @@ public class TeachController {
 	public List<Teach> contest() {
 
 		List<Teach> li = new ArrayList<>();
-		li = teachDAO.teschASCfileAll("570112230061", "1", "2561", "1");
+		li = teachDAO.teschShowSub("570112230061", "1", "2561", "1");
 		return li;
 	}
 

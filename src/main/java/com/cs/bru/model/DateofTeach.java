@@ -1,6 +1,7 @@
 package com.cs.bru.model;
 
 import com.cs.bru.bean.SumTsdPsd;
+import com.cs.bru.bean.TeachSeachBean1;
 
 public class DateofTeach {
 	private int dtimeId;
@@ -11,12 +12,17 @@ public class DateofTeach {
 	private String yearofteachDft;
 	private int tudsadeeDft ;
 	private int prtibadDft ;
-	private int summyhourDft ;
+	private int summyhourDft;
 	private int moneyDft;
 	private String statusBase;
 	private int statusDateofteach;
 	private String subjectDft;
 	private String holidayDft;
+	private String specialteachingStartdateday;
+	private String specialteachingStopdateday;
+	private String specialteachingStarttimeday;
+	private String specialteachingStoptimeday;
+	private String special;
 	private String userDft;
 	private Teach teach;
 	
@@ -26,6 +32,9 @@ public class DateofTeach {
 	 private Month month;
 	 private DegreeStuden degreeStuden;
 	 private SumTsdPsd sumTsdPsd;
+	 
+	 private TeachSeachBean1 teachSeachBean1;
+	 
 	public int getDtimeId() {
 		return dtimeId;
 	}
@@ -157,6 +166,42 @@ public class DateofTeach {
 	}
 	public void setSumTsdPsd(SumTsdPsd sumTsdPsd) {
 		this.sumTsdPsd = sumTsdPsd;
+	}
+	public String getSpecialteachingStartdateday() {
+		return specialteachingStartdateday;
+	}
+	public void setSpecialteachingStartdateday(String specialteachingStartdateday) {
+		this.specialteachingStartdateday = specialteachingStartdateday;
+	}
+	public String getSpecialteachingStopdateday() {
+		return specialteachingStopdateday;
+	}
+	public void setSpecialteachingStopdateday(String specialteachingStopdateday) {
+		this.specialteachingStopdateday = specialteachingStopdateday;
+	}
+	public String getSpecialteachingStarttimeday() {
+		return specialteachingStarttimeday;
+	}
+	public void setSpecialteachingStarttimeday(String specialteachingStarttimeday) {
+		this.specialteachingStarttimeday = specialteachingStarttimeday;
+	}
+	public String getSpecialteachingStoptimeday() {
+		return specialteachingStoptimeday;
+	}
+	public void setSpecialteachingStoptimeday(String specialteachingStoptimeday) {
+		this.specialteachingStoptimeday = specialteachingStoptimeday;
+	}
+	public String getSpecial() {
+		return special;
+	}
+	public void setSpecial(String special) {
+		this.special = special;
+	}
+	public TeachSeachBean1 getTeachSeachBean1() {
+		return teachSeachBean1;
+	}
+	public void setTeachSeachBean1(TeachSeachBean1 teachSeachBean1) {
+		this.teachSeachBean1 = teachSeachBean1;
 	}
 	
 	

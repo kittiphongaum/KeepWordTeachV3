@@ -34,11 +34,18 @@ public class DateofTeachDAO {
 			prepared.setInt(6, bean.getTudsadeeDft());
 			prepared.setInt(7, bean.getPrtibadDft());
 			prepared.setInt(8, bean.getSummyhourDft());
-
+  
 			prepared.setString(9, bean.getSubjectDft());
 			prepared.setString(10, bean.getUserDft());
-		prepared.setString(11, bean.getHolidayDft());
+			prepared.setString(11, bean.getHolidayDft());
 			prepared.setInt(12, bean.getMoneyDft());
+			prepared.setString(13, bean.getSpecialteachingStartdateday());
+			prepared.setString(14, bean.getSpecialteachingStopdateday());
+			prepared.setString(15, bean.getSpecialteachingStarttimeday());
+			prepared.setString(16, bean.getSpecialteachingStoptimeday());
+			prepared.setString(17, bean.getSpecial());
+			
+			
 			prepared.executeUpdate();
 			 /*System.out.println(bean);*/ 
 		} catch (Exception e) {
@@ -215,7 +222,7 @@ public class DateofTeachDAO {
 							teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 							teach.setSubjactFk(rs.getString("subject_fk"));
 							teach.setTableteachFk(rs.getString("tableteach_fk"));
-							//teach.setUserFk(rs.getString("user_fk"));
+							teach.setUserFk(rs.getString("user_fk"));
 							teach.setStatusTeaching(rs.getInt("status_teaching"));
 							TableTeaching tableteach = new TableTeaching();
 							Subject subject = new Subject();
@@ -414,4 +421,6 @@ public class DateofTeachDAO {
 					}
 					return  list;
 				}
+				
+				
 }

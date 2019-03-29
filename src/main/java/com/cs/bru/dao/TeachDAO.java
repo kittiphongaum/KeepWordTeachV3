@@ -83,7 +83,7 @@ public class TeachDAO {
 				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
 				teach.setSubjactFk(rs.getString("subject_fk"));
 				teach.setTableteachFk(rs.getString("tableteach_fk"));
-			//	teach.setUserFk(rs.getString("user_fk"));
+				teach.setUserFk(rs.getString("user_fk"));
 				teach.setStatusTeach(rs.getInt("status_teach"));
 				teach.setStatusTeaching(rs.getInt("status_teaching"));
 				TableTeaching tableteach = new TableTeaching();
@@ -140,7 +140,99 @@ public class TeachDAO {
 		}
 		return list;
 	}
+	////******************************************
+	public   List<Teach> teschShowSub(String userid,String term,String year,String degree) {
+		List<Teach> list = new ArrayList<>();
+		ConnectDB con = new ConnectDB();
+		PreparedStatement prepared = null;
+		StringBuilder sql = new StringBuilder();
 
+		try {
+			sql.append("SELECT tb_teaching.*,tb_table_teaching.*,tb_subject.*,tb_user.* FROM tb_teaching "
+					+ "INNER JOIN tb_user on tb_teaching.user_fk = tb_user.user_id INNER JOIN tb_table_teaching on tb_teaching.tableteach_fk = tb_table_teaching.teble_teach_id INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id "
+					+ "WHERE status_teach='2'AND tb_user.user_id =? and tb_table_teaching.teach_term = ? and tb_table_teaching.teach_year= ? and tb_table_teaching.degree_studen=? ORDER BY tb_teaching.salary_sum ASC;");
+			prepared = con.openConnect().prepareStatement(sql.toString());
+			prepared.setString(1,userid);
+			prepared.setString(2,term);
+			prepared.setString(3,year);
+			prepared.setString(4,degree);
+			ResultSet rs = prepared.executeQuery();
+
+			while (rs.next()) {
+				Teach teach = new Teach();
+				User users =new User();
+				TableTeaching table = new TableTeaching();
+								 
+				teach.setTeachId(rs.getString("teach_id"));
+				teach.setSumHourTerm(rs.getInt("sum_hour_term"));
+				teach.setHoursumTudsadee(rs.getInt("hoursum_tudsadee"));
+				teach.setHoursumPrtibad(rs.getInt("hoursum_prtibad"));
+				teach.setMoneyTudsadee(rs.getInt("money_tudsadee"));
+				teach.setMoneyPrtibad(rs.getInt("money_prtibad"));
+				teach.setSalarySum(rs.getInt("salary_sum"));
+				
+				teach.setBaseHour(rs.getInt("teach_basehour"));
+				teach.setBasecram(rs.getInt("teach_basecram"));
+				teach.setDateofteachFk(rs.getString("dateofteach_fk"));
+				teach.setSubjactFk(rs.getString("subject_fk"));
+				teach.setTableteachFk(rs.getString("tableteach_fk"));
+				teach.setUserFk(rs.getString("user_fk"));
+				teach.setStatusTeach(rs.getInt("status_teach"));
+				teach.setStatusTeaching(rs.getInt("status_teaching"));
+				TableTeaching tableteach = new TableTeaching();
+				Subject subject = new Subject();
+				User user =new User();
+				
+				tableteach.setTebleTeachId(rs.getString("teble_teach_id"));
+				tableteach.setDegreeStuden(rs.getString("degree_studen"));
+				tableteach.setTeachTerm(rs.getString("teach_term"));
+				tableteach.setTermYear(rs.getString("term_year"));
+				tableteach.setTeachWeek(rs.getString("teach_week"));
+				tableteach.setSection(rs.getInt("section"));
+				tableteach.setStudenNumber(rs.getInt("studen_number"));
+				
+				tableteach.setStartMonth(rs.getString("start_month"));
+				tableteach.setStopMonth(rs.getString("stop_month"));
+				tableteach.setTeachYear(rs.getString("teach_year"));
+				
+				tableteach.setStartTime(rs.getString("start_month"));
+				tableteach.setStopTime(rs.getString("stop_month"));
+				tableteach.setSumHour(rs.getString("sum_hour"));
+				tableteach.setStandardTeach(rs.getInt("standard_teach"));
+				tableteach.setRoom(rs.getString("room"));
+				
+			
+				tableteach.setSubjectRoleid(rs.getString("subject_roleid"));
+				
+				subject.setSubjectId(rs.getString("subject_id"));
+				subject.setSubjectName(rs.getString("subject_name"));
+				subject.setCredit(rs.getInt("credit"));
+				subject.setCreditHour(rs.getString("credit_hour"));
+				subject.setTudsadee(rs.getInt("tudsadee"));
+				subject.setPrtibad(rs.getInt("prtibad"));
+				
+				tableteach.setUserRoleid(rs.getString("user_roleid"));
+				user.setUserId(rs.getString("user_id"));
+				user.setUserFname(rs.getString("user_name"));
+				user.setUserLname(rs.getString("user_lastname"));
+				user.setFaculty(rs.getString("faculty"));
+				user.setMojor(rs.getString("mojor"));
+				user.setUserbaseHour(rs.getInt("baseHour"));
+				user.setUserbaseKrm(rs.getInt("baseKrm"));
+				
+				tableteach.setSubject(subject);
+				teach.setTableTeaching(tableteach);
+				teach.setUsers(user);
+				
+				list.add(teach);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
 	public List<Teach> findOne(String id) {
 		List<Teach>list =new ArrayList<>();
 		ConnectDB con = new ConnectDB();

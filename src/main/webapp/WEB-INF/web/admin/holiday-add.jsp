@@ -21,6 +21,17 @@
 		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
 		<!-- Data table CSS -->
 		<link href="../assets_/vendors/bower_components/datatables.net-responsive/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Bootstrap Colorpicker CSS -->
+	<link href="../assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Bootstrap Datetimepicker CSS -->
+	<link href="../assets_/vendors/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Bootstrap Daterangepicker CSS -->
+	<link href="../assets_/vendors/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+
+
 		<!-- Custom CSS -->
 		<link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
 
@@ -252,27 +263,30 @@
 																	
 																	<div class="col-sm-2">
 																		<label class="control-label mb-10">ระยะเวลาที่เริ่มสอน</label>
-																		<input  class="form-control filled-input rounded-input" value="john do" > 
+																		<input class="form-control filled-input rounded-input" id="sh_termDateStart" disabled> 
 																	</div>
 																	<div class="col-sm-2">
 																			<label class="control-label mb-10">ระยะเวลาที่สิ่นสุดสอน</label>
-																			<input type="text" class="form-control filled-input rounded-input">
+																			<input type="text" class="form-control filled-input rounded-input" id="sh_termDateStop" disabled>    
 																		</div>
 																		<div class="col-sm-2">
 																				<label class="control-label mb-10">พ.ศ.</label>
-																				<input type="text" class="form-control filled-input rounded-input" >
+																				<input type="text" class="form-control filled-input rounded-input" id="sh_termDateYear"disabled>
 																			</div>
 																			<div class="col-sm-2">
 																					<label class="control-label mb-10">ปีการศึกษา</label>
-																					<input type="text" class="form-control filled-input rounded-input">
+																					<input type="text" class="form-control filled-input rounded-input" id="sh_termTeachYear"disabled>
 																				</div>
 																				<div class="col-sm-2">
 																					<label class="control-label mb-10">ภาคเรียน</label>
-																					<input type="text" class="form-control filled-input rounded-input" >
+																					<input type="text" class="form-control filled-input rounded-input" id="sh_termTeachTerm"disabled>
 																		</div>
 																		<div class="col-sm-2">
 																				<label class="control-label mb-20"></label>
-																		<a class="btn  btn-primary btn-rounded form-control"><i class="fa fa-pencil-square-o"></i><span class="btn-text">แก้ไข</span></a>
+																		<a onclick="upShowTerm()"class="btn  btn-primary btn-rounded form-control" formtarget="_blank" class="collapsed"
+																		role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+																		aria-controls="collapseSix"><i class="fa fa-pencil-square-o"></i><span class="btn-text" >แก้ไข</span></a>
+
 																	</div>
 																</div>
 															</div>	
@@ -284,6 +298,7 @@
 									
 									</div>
 										<!-- <<<<<< -->
+										<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
 										<div class="panel panel-default card-view">
 												<div class="panel-heading">
 														<div class="pull-left">
@@ -294,35 +309,44 @@
 										<div class="panel-wrapper collapse in">
 												<div class="panel-body">
 													<div class="form-wrap">
-														<form class="form-horizontal">
+														<form class="form-horizontal" action="updatetermAS" method="POST" >
 															<div class="form-group mb-0">
 																<div class="col-sm-12">
 																	<div class="row text-center">
 																		
 																		<div class="col-sm-2">
 																			<label class="control-label mb-10">ระยะเวลาที่เริ่มสอน</label>
-																			<input  class="form-control filled-input rounded-input" value="" type="date"> 
+																
+																			<input  class="form-control filled-input rounded-input" data-mask="99/99/9999" id="up_termDateStart" value="" type="text"value="11/22/33" name="termDateStart" required> 
+																		
 																		</div>
 																		<div class="col-sm-2">
 																				<label class="control-label mb-10">ระยะเวลาที่สิ่นสุดสอน</label>
-																				<input  class="form-control filled-input rounded-input" type="date">
+																				<input  class="form-control filled-input rounded-input"  data-mask="99/99/9999"id="up_termDateStop"type="text"value="" name="termDateStop" required>
 																			</div>
 																			<div class="col-sm-2">
 																					<label class="control-label mb-10">พ.ศ.</label>
-																					<input type="text" class="form-control filled-input rounded-input" >
+																					<input type="text" class="form-control filled-input rounded-input" id="up_termDateYear" data-mask="9999"value="" name="termDateYear" required>
 																				</div>
 																				<div class="col-sm-2">
 																						<label class="control-label mb-10">ปีการศึกษา</label>
-																						<input type="text" class="form-control filled-input rounded-input">
+																						<input type="text" class="form-control filled-input rounded-input" id="up_termTeachYear"data-mask="9999"value="" name="termTeachYear" required>
 																					</div>
 																					<div class="col-sm-2">
 																						<label class="control-label mb-10">ภาคเรียน</label>
-																						<input type="text" class="form-control filled-input rounded-input" >
+																						<!-- <input type="text" class="form-control filled-input rounded-input" value="" name="termTeachTerm" required> -->
+																						<select class="form-control filled-input rounded-input"  name="termTeachTerm"required id="up_termTeachTerm">
+																								<option value="1">1</option>
+																								<option value="2">2</option>
+																								<option value="3">3</option>
+																							
+																							</select>
 																			</div>
 																			<div class="col-sm-2">
 																					<label class="control-label mb-20"></label>
-																			<a class="btn  btn-success btn-rounded form-control"><i class="fa fa-pencil-square-o"></i><span class="btn-text">บันทึก</span></a>
+																			<button class="btn  btn-success btn-rounded form-control" type="submit"onclick="inserTerm()"><i class="fa fa-pencil-square-o"></i><span class="btn-text">บันทึก</span></button>
 																		</div>
+																		
 																	</div>
 																</div>	
 															</div>
@@ -331,6 +355,8 @@
 												</div>
 											</div>
 										</div>
+										</div>
+
 										<!-- >>>>>>>>>> -->
 								</div>
 							</div>
@@ -478,9 +504,7 @@
 						</div>
 					</div>
 					<!-- /Row -->
-			
-									
-				</div>
+				
 						<!-- Row -->
 						<!-- <div class="row">
 							<div class="col-sm-12">
@@ -564,11 +588,28 @@
 		
 	<!-- Init JavaScript -->
 	<script src="../assets_/dist/js/init.js"></script>
+
+		
+
+	<script src="../assets_/vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+	
+	<!-- Slimscroll JavaScript -->
+	<script src="../assets_/dist/js/jquery.slimscroll.js"></script>
+
+	<!-- Fancy Dropdown JS -->
+	<script src="../assets_/dist/js/dropdown-bootstrap-extended.js"></script>
+	
+	<!-- Owl JavaScript -->
+	<script src="../assets_/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+	<!-- Switchery JavaScript -->
+	<script src="../assets_/vendors/bower_components/switchery/dist/switchery.min.js"></script>
 	
 	</body>
 	<script>
 	$(document).ready(function () {
-
+	
+		
 
 $.ajax({
 	type: "GET",
@@ -636,24 +677,94 @@ var holidayTh = {
 	locationHoli: $('#tudsadee').val()
 	
 	
-};
-$.ajax({
-	type: "POST",
-	url: "/insertHoliday",
-	contentType: "application/json; charset=utf-8",
-	data: JSON.stringify(holidayTh),
-	dataType: "json",
-	success: function (msg) {
-		console.log(msg)
-		if (msg != null) {
-			location.reload();
-		
+	};
+	$.ajax({
+		type: "POST",
+		url: "/insertHoliday",
+		contentType: "application/json; charset=utf-8",
+		data: JSON.stringify(holidayTh),
+		dataType: "json",
+		success: function (msg) {
+			console.log(msg)
+			if (msg != null) {
+				location.reload();
+			
+			}
 		}
+
+	});
+
 	}
+	</script>
+	<script>
+		$(document).ready(function () {
+		
+			$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/showTerm",
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (term) {
+			
+				$('#sh_termDateStart').val(term.termDateStart);
+				$('#sh_termDateStop').val(term.termDateStop);
+				$('#sh_termDateYear').val(term.termDateYear);
+				$('#sh_termTeachYear').val(term.termTeachYear);
+				$('#sh_termTeachTerm').val(term.termTeachTerm);
 
-});
+			},
+			error: function (e) {
+				alert("ERROR: table3", e);
+				console.log("ERROR: table3", e);
+			}
+		});
+		});
+		function upShowTerm() {
+			var id =$('#idterm').val(1);
+			$.ajax({
+			type: "GET",
+			contentType: "application/json",
+			url: "/showTermByid/"+1,
+			//data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (term1) {
+			
+				$('#up_termDateStart').val(term1.termDateStart);
+				$('#up_termDateStop').val(term1.termDateStop);
+				$('#up_termDateYear').val(term1.termDateYear);
+				$('#up_termTeachYear').val(term1.termTeachYear);
+				$('#up_termTeachTerm').val(term1.termTeachTerm);
+			},
+			error: function (e) {
+				alert("ERROR: table3", e);
+				console.log("ERROR: table3", e);
+			}
+		});
+		}
+		// function inserTerm() {
+		// 	var id =$('#idterm').val(1);
+		// 	$.ajax({
+		// 	type: "GET",
+		// 	contentType: "application/json",
+		// 	url: "/showTermByid/"+1,
+		// 	data: JSON.stringify(id1),
+		// 	dataType: 'json',
+		// 	success: function (term1) {
+			
+		// 		$('#up_termDateStart').val(term1.termDateStart);
+		// 		$('#up_termDateStop').val(term1.termDateStop);
+		// 		$('#up_termDateYear').val(term1.termDateYear);
+		// 		$('#up_termTeachYear').val(term1.termTeachYear);
+		// 		$('#up_termTeachTerm').val(term1.termTeachTerm);
+		// 	},
+		// 	error: function (e) {
+		// 		alert("ERROR: table3", e);
+		// 		console.log("ERROR: table3", e);
+		// 	}
+		// });
+		// }
 
-}
 	</script>
 	</html>
 	

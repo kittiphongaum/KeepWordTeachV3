@@ -5,6 +5,7 @@ public class TeachSeachBean1 {
 	private String termS2;
 	private String yearS3;
 	private String degreeS4;
+	private String subbean;
 	public String getUseridS1() {
 		return useridS1;
 	}
@@ -29,6 +30,13 @@ public class TeachSeachBean1 {
 	public void setDegreeS4(String degreeS4) {
 		this.degreeS4 = degreeS4;
 	}
+	public String getSubbean() {
+		return subbean;
+	}
+	public void setSubbean(String subbean) {
+		this.subbean = subbean;
+	}
+	
 	
 	
 	

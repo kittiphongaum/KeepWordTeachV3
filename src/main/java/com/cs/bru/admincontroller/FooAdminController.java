@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.cs.bru.dao.TermDAO;
 import com.cs.bru.dao.UserDAO;
+import com.cs.bru.model.Term;
 import com.cs.bru.model.User;
 
 @Controller
@@ -14,6 +16,8 @@ public class FooAdminController {
 
 	@Autowired
 	UserDAO userDAO;
+	@Autowired
+	TermDAO termDAO;
 	
 	@RequestMapping("/people-add")
 	public String peopleadd() {
@@ -45,6 +49,19 @@ public class FooAdminController {
 			e.printStackTrace();
 		}
 		   return "admin/people-add";
+	   }
+	@PostMapping(path="updatetermAS")
+	   public String updatetermAS(@ModelAttribute("SpringWeb")Term term) {
+		   try {
+			   term.setTermId(1);
+			   termDAO.update(term);
+			   System.out.println(term.getTermTeachYear()+"++++");
+			   System.out.println(term.getTermDateStart()+"::"+term.getTermId());
+		} catch (Exception e) {
+			// TODO: handle exception  
+			e.printStackTrace();
+		}
+		   return "admin/holiday-add";
 	   }
 	
 	

@@ -259,8 +259,9 @@
 				<input type="text" id="degree" > -->
 
 
-				<!-- Row -->
-				<div class="row">
+		
+
+				<div class="row ">
 					<div class="col-sm-12">
 					
 									<!-- <form id="example-form-jook"> -->
@@ -333,7 +334,7 @@
 																							<!-- <input type="text" class="form-control" id="teachTerm" placeholder=""> -->
 																							<select id="termS2" class="form-control " name="teachTerm">
 
-																								<option value="1 ">1</option>
+																								<option value="1">1</option>
 																								<option value="2">2</option>
 																								<option value="3">3</option>
 
@@ -463,7 +464,144 @@
 											</div>
 										</div>
 									</div>
+		<!-- Row -->
+		<div class="col-sm-6">
+				<label class="control-label mb-20"></label>
+		<a onclick="sumjsctShow()"class="btn  btn-primary btn-rounded form-control" formtarget="_blank" class="collapsed"
+		role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+		aria-controls="collapseSix"><i class="fa fa-pencil-square-o"></i><span class="btn-text" >สอนชดเชย</span></a>
 
+	</div>
+	<!-- <<<<<< -->
+	<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+			<div class="panel panel-default card-view">
+					<div class="panel-heading">
+							<div class="pull-left">
+								<h6 class="panel-title txt-dark"></h6>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+			<div class="panel-wrapper collapse in">
+					<div class="panel-body">
+						<div class="form-wrap">
+							<form class="form-horizontal"  >
+								<div class="form-group mb-0">
+									<div class="col-sm-12">
+											<div class="form-group col-sm-12">
+													<label class="col-md-3 control-label " for="state-success">วิชาที่สอน</label>
+													<div class="col-md-6  has-success">
+															
+														<select class="form-control" id="sumjsctShowinc"  required >
+															</select>
+													</div>
+												</div>
+												<input type="text" id="sp_dateofteachId">
+												<input type="text" id="sp_subjectDft">
+												<input type="text" id="sp_userDft">
+
+											<div class="row text-center">
+
+											<div class="form-group col-sm-6">
+													<label class="col-md-3 control-label " for="state-success">วันที่สอนเดิม</label>
+													<div class="col-md-6  has-success">
+													
+														<select class="form-control " id="special_Startdate" name="termTeachTerm"required >
+															</select>
+													</div>
+												</div>
+												<div class="form-group col-sm-6">
+														<label class="col-md-3 control-label " for="state-success">เวลาเริ่มสอน</label>
+														<div class="col-md-6  has-success">
+														
+															<input type="text" id="special_Starttime" name="state-success" class="form-control" data-mask="99:99" placeholder="00:00 น." >
+														</div>
+													</div>
+													<div class="form-group col-sm-6">
+															<label class="col-md-3 control-label " for="state-success">วันที่สอนชดเชย</label>
+															<div class="col-md-6  has-success">
+																<input type="date" id="special_Stopdate" name="state-success" class="form-control" placeholder="">
+																
+															</div>
+														</div>
+														<div class="form-group col-sm-6">
+																<label class="col-md-3 control-label " for="state-success">สิ่นสุดเวลาสอน</label>
+																<div class="col-md-6  has-success">
+				
+																	<input type="text" id="special_Stoptime" name="state-success" class="form-control" data-mask="99:99" placeholder="00:00 น." >
+																</div>
+															</div>
+															<div class="form-group col-sm-6">
+																
+															</div>
+														<div class="form-group col-sm-6">
+															
+																<div class="col-md-6  has-success">
+				
+																	<button class="btn  btn-warning btn-rounded form-control" type="submit"onclick="insertSpecilTesch()"><i class="fa fa-pencil-square-o"></i><span class="btn-text">เพิ่มวิชาสอนพิเศษ</span></button>
+																</div>
+															</div>
+												</div>
+												<div class="row text-center">.
+														<div class="col-sm-12">
+														<div class="panel panel-default card-view">
+														<div class="panel-wrapper collapse in">
+																<div class="panel-body">
+																	<div class="row">
+																		<div class="col-md-12">
+																			<div class="table-wrap text-center">
+																				<table id="specialTable" class="table table-hover table-bordered mb-0">
+																					<thead class="text-warning ">
+																						<tr>
+																							<th scope="col">ลำดับ</th>
+																							<th scope="col">วันที่สอนเดิม</th>
+																							<th scope="col">วันที่สอนชดเชย</th>
+																							<th scope="col">รหัสวิชา</th>
+																							<th scope="col">เวลาเริ่มสอน</th>
+																							<th scope="col">เวลาสิ่นสุดการสอน</th>
+																							<th scope="col" >รวมชั่วโมงที่สอน</th>
+																						</tr>
+								
+																					</thead>
+																					<tbody>
+																					</tbody>
+																					<!-- <thead>
+																						<td colspan="4">รวม</td>
+																						<td scope="col" id="sumTsd"></td>
+																						<td scope="col" id="sumPsb"></td>
+																						<td scope="col" id="tableSum"></td>
+																						<td scope="col"></td>
+								
+																					</thead> -->
+								
+																				</table>
+																			</div>
+																		</div>
+								
+																	</div>
+								
+																</div>
+															</div>
+														</div>
+														</div>
+												</div>
+										<!-- <div class="row text-center pull-right">
+												<div class="">
+														<label class="control-label mb-20"></label>
+												<button class="btn  btn-success btn-rounded form-control" type="submit"onclick="inserTerm()"><i class="fa fa-pencil-square-o"></i><span class="btn-text">บันทึก</span></button>
+											</div>
+											
+										</div> -->
+									</div>	
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+
+			<!-- >>>>>>>>>> -->
+		<!-- Row -->
 				
 				<!-- Row -->
 				<div class="row">
@@ -931,6 +1069,8 @@
 				 show_standardTeach= msg[i].tableTeaching.standardTeach;
 				
 				}
+			
+
 				
 				if (tfood < tarm) {
 					tfood += "ฐานไม่พอ";
@@ -966,6 +1106,7 @@
 				console.log("ERROR: Table1", e);
 			}
 		});
+		
 		$.ajax({
 			type: "POST",
 			contentType: "application/json",
@@ -1149,6 +1290,11 @@
 </script>
 <script>
 
+
+</script>
+<script>
+	
+
 	$(function () {
 
 		$('#no1').keyup(function () {
@@ -1331,5 +1477,184 @@
 		return false;
     });
 </script>
+<!-- สอนพิเศษ -->
+<script>
+		function sumjsctShow() {
+			
+		var id1 = {
+			useridS1: $("#userRoleid").val(),
+			termS2: $("#termS2").val(),
+			yearS3: $("#yearS3").val(),
+			degreeS4: $("#degreeS4").val()
+		//	subjsctbean:$('#sub_idd').val()
 
+		};
+$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: "/srchsubject",
+		//url: "/dateTest",
+			data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg1) {
+
+				for (var j = 0; j < msg1.length; j++) {
+			//		alert(msg1);
+				//	if (mag[j].statusTeach=2) {
+					
+						$('#sumjsctShowinc').append('<option value='+msg1[j].tableTeaching.subject.subjectId+'>'+msg1[j].tableTeaching.subject.subjectId+'</option>');
+				//	}
+				
+	
+				}
+			},
+			error: function (e) {
+				alert("ERROR: tCon", e);
+				console.log("ERROR: tCon", e);
+			}
+		});
+   //#endregion
+
+ var sub =$('#sub_idd').val();
+		alert(sub);
+		var id1 = {
+			useridS1: $("#userRoleid").val(),
+			termS2: $("#termS2").val(),
+			yearS3: $("#yearS3").val(),
+			degreeS4: $("#degreeS4").val(),
+			subbean:(sub)
+
+		};
+       $.ajax({
+
+			type: "GET",
+			contentType: "application/json",
+			url: "/specialteachingsub",
+			//url: "/dateTest",
+		//	data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (msg1) {
+				for (var i = 0; i < msg1.length; i++) {
+			//		alert(msg1);
+				//	if (mag[j].statusTeach=2) {
+					
+						$('#special_Startdate').append('<option value="'+msg1[i].dayofyearDft+'/'+msg1[i].monthofyearDft+'/'+msg1[i].yearofteachDft+'">'+msg1[i].dayofyearDft + "/" + msg1[i].month.monthName + "/" + msg1[i].yearofteachDft +'</option>');
+				//	}
+				$('#sp_dateofteachId').val(msg1[i].dateofteachId);
+				 	 $('#sp_dayofyearDft').val(msg1[i].dayofyearDft);
+		 	$('#sp_monthofyearDft').val(msg1[i].monthofyearDft);
+			$('#sp_yearofteachDft').val(msg1[i].yearofteachDft);
+		// 		$('#sp_dateofteachId').val(msg1[i].dateofteachId);
+		// 	$('#sp_weekofyearDft').val(msg1[i].weekofyearDft);
+		// 	 $('#sp_dayofyearDft').val(msg1[i].dayofyearDft);
+		// 	$('#sp_monthofyearDft').val(msg1[i].monthofyearDft);
+		// 	$('#sp_yearofteachDft').val(msg1[i].yearofteachDft);
+		// 		$('#sp_tudsadeeDft').val(msg1[i].tudsadeeDft);
+		// 	$('#sp_prtibadDft').val(msg1[i].prtibadDft);
+		// 	$('#sp_summyhourDft').val(msg1[i].summyhourDft);
+		// 	$('#sp_moneyDft').val(msg1[i].moneyDft);
+		// 	$('#sp_statusBase').val(msg1[i].statusBase);
+		// 	 $('#sp_statusDateofteach').val(msg1[i].statusDateofteach);
+			$('#sp_subjectDft').val(msg1[i].subjectDft);
+		// 	$('#sp_holidayDft').val(msg1[i].holidayDft);
+		// 	$('#sp_specialteachingStartdateday').val(msg1[i].specialteachingStartdateday);
+		// 	$('#sp_specialteachingStopdateday').val(msg1[i].specialteachingStopdateday);
+		// 	$('#sp_specialteachingStarttimeday').val(msg1[i].specialteachingStarttimeday);
+		// 	$('#sp_specialteachingStoptimeday').val(msg1[i].specialteachingStoptimeday);
+		// $('#sp_special').val(msg1[i].special);
+		 $('#sp_userDft').val(msg1[i].userDft);
+				}
+			},
+			error: function (e) {
+				alert("ERROR: specialteachingsub", e);
+				console.log("ERROR: specialteachingsub", e);
+			}
+		});
+	
+
+	$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: "/tablespecialteachingsub",
+			data: JSON.stringify(id1),
+			dataType: 'json',
+			success: function (sp) {
+				var special = "";
+		
+
+			for (var m = 0; m < sp.length; m++) {
+				var i=m+1;
+			special +=
+						'<tr>' +
+						'<td>' + i + '</td>' +
+						'<td>' + sp[m].specialteachingStartdateday+'</td>' +
+						'<td>' + sp[m].specialteachingStopdateday  + '</td>' +
+						'<td>' + sp[m].subjectDft+ '</td>' +
+						'<td>' + sp[m].specialteachingStarttimeday+ '</td>' +
+						'<td>' + sp[m].specialteachingStoptimeday+ '</td>' +
+						'<td>' + '</td>' +
+						'<td>' + '</td>' +
+						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'</tr>';
+				}
+				$('#specialTable tbody').append(special);
+			},
+			error: function (e) {
+				alert("ERROR: table3", e);
+				console.log("ERROR: table3", e);
+			}
+		});
+	};
+</script>
+<script>
+	$(function () {
+		
+	})
+</script>
+<script>
+ function insertSpecilTesch() {
+
+
+	var tableteach_Id=$("#tableTeaching_id").val();
+		var specailDateofTeach={
+			
+			dateofteachId:$('#sp_dateofteachId').val(),
+		 subjectDft:$('#sp_subjectDft').val(),
+		 specialteachingStartdateday:$('#special_Startdate').val(),
+		 specialteachingStopdateday:$('#special_Stopdate').val(),
+		 specialteachingStarttimeday:$('#special_Starttime').val(),
+		 specialteachingStoptimeday:$('#special_Stoptime').val(),
+			userDft:$('#sp_userDft').val(),
+			teachSeachBean1:{
+				useridS1: $("#userRoleid").val(),
+				termS2: $("#termS2").val(),
+				yearS3: $("#yearS3").val(),
+				degreeS4: $("#degreeS4").val()
+			}
+		}
+
+	$.ajax({
+			type: "POST",
+			url: "/inserSepcil",
+			contentType: "application/json; charset=utf-8",
+			data: JSON.stringify(specailDateofTeach),
+			dataType: "json",
+			success: function (msg) {
+			
+				if(msg !=null){
+					location.reload(); 
+				
+				}else{
+
+				}
+				
+				
+			},
+			
+			error: function () {
+
+			}
+		});
+ };
+</script>
 </html>
