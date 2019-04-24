@@ -23,10 +23,13 @@ public class DaymonthyearService {
 		cal2.setTime(dmy);
 		int dd,mm,yy;
 		dd=cal2.get(Calendar.DAY_OF_MONTH);
-		mm=cal2.get(Calendar.MARCH);
-		yy=cal2.get(Calendar.YEAR);
-		System.out.println(dd+mm+yy);
+		mm=cal2.get(Calendar.MARCH)+1;
+		yy=cal2.get(Calendar.YEAR)+543;
 		
+		System.out.println(dd+mm+yy);
+		String d =Integer.toString(dd);
+		String m =Integer.toString(mm);
+		String y =Integer.toString(yy);
 		return ddmmyy;
 	}
 	

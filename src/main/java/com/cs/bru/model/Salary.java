@@ -1,5 +1,7 @@
 package com.cs.bru.model;
 
+import com.cs.bru.bean.SumBean;
+
 public class Salary {
 		private String salaryId;
 		private int salarySumTudsadee;
@@ -19,7 +21,7 @@ public class Salary {
 		private User user;
 		private StatusSubject statusSubject;
 		private TableTeaching tableTeaching;
-		
+		private SumBean sumBean;
 		public String getSalaryId() {
 			return salaryId;
 		}
@@ -115,6 +117,12 @@ public class Salary {
 		}
 		public void setStatusSubject(StatusSubject statusSubject) {
 			this.statusSubject = statusSubject;
+		}
+		public SumBean getSumBean() {
+			return sumBean;
+		}
+		public void setSumBean(SumBean sumBean) {
+			this.sumBean = sumBean;
 		}
 		
 		

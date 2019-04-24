@@ -242,7 +242,7 @@ public class SpecialteachingDAO {
 		}
 	} // end method delete
 	//ระยะเ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-			public   DateofTeach cackSpecialteachinfildCDayAddsubject(String userid,String term,String year,String degree, String subjeactId,String d,String m ,String y) {
+			public   DateofTeach cackSpecialteachinfildCDayAddsubject(String userid,String term,String year,String degree,String subjeactId,int d,int m ,int y) {
 //				List<DateofTeach> list = new ArrayList<>();
 				ConnectDB con = new ConnectDB();
 				PreparedStatement prepared = null;
@@ -263,9 +263,9 @@ public class SpecialteachingDAO {
 					prepared.setString(4,degree);
 				
 					prepared.setString(5,subjeactId);
-					prepared.setString(6,d);
-					prepared.setString(7,m);
-					prepared.setString(8,y);
+					prepared.setInt(6,d);
+					prepared.setInt(7,m);
+					prepared.setInt(8,y);
 					ResultSet rs = prepared.executeQuery();
 
 					while (rs.next()) {
@@ -517,12 +517,12 @@ public class SpecialteachingDAO {
 				prepared.setString(3, bean.getSpecialteachingStarttimeday());
 				prepared.setString(4, bean.getSpecialteachingStoptimeday());
 				prepared.setString(5, bean.getSpecial());
-				prepared.setString(5, bean.getDayofyearDft());
-				prepared.setString(5, bean.getMonthofyearDft());
-				prepared.setString(5, bean.getDayofyearDft());
-				prepared.setString(5, bean.getDateofteachId());
-				prepared.setString(5, bean.getSubjectDft());
-				prepared.setString(5, bean.getUserDft());
+				prepared.setString(6, bean.getDayofyearDft());
+				prepared.setString(7, bean.getMonthofyearDft());
+				prepared.setString(8, bean.getDayofyearDft());
+				prepared.setString(9, bean.getDateofteachId());
+				prepared.setString(10, bean.getSubjectDft());
+				prepared.setString(11, bean.getUserDft());
 				prepared.executeUpdate();
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -530,4 +530,41 @@ public class SpecialteachingDAO {
 			}
 
 		}// end method update
+		public void insertDateofTeach(DateofTeach bean) throws Exception {
+			ConnectDB con = new ConnectDB();
+			PreparedStatement prepared = null;
+			StringBuilder sql = new StringBuilder();
+			try {
+				sql.append(
+						"INSERT INTO tb_dateofteach(dateofteach_id,weekofyear_dft,dayofyear_dft,monthofyear_dft,yearofteach_dft,tudsadee_dft,prtibad_dft,summyhour_dft,subject_dft,user_dft,holiday_dft,money_dft,specialteaching_startdateday,specialteaching_stopdateday,"
+						+ "specialteaching_starttimeday,specialteaching_stoptimeday,special,statusbase,status_dateofteach)VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+				prepared = con.openConnect().prepareStatement(sql.toString());
+				prepared.setString(1, bean.getDateofteachId());
+				prepared.setInt(2, bean.getWeekofyearDft());
+				prepared.setString(3, bean.getDayofyearDft());
+				prepared.setString(4, bean.getMonthofyearDft());
+				prepared.setString(5, bean.getYearofteachDft());
+				prepared.setInt(6, bean.getTudsadeeDft());
+				prepared.setInt(7, bean.getPrtibadDft());
+				prepared.setInt(8, bean.getSummyhourDft());
+	  
+				prepared.setString(9, bean.getSubjectDft());
+				prepared.setString(10, bean.getUserDft());
+				prepared.setString(11, bean.getHolidayDft());
+				prepared.setInt(12, bean.getMoneyDft());
+				prepared.setString(13, bean.getSpecialteachingStartdateday());
+				prepared.setString(14, bean.getSpecialteachingStopdateday());
+				prepared.setString(15, bean.getSpecialteachingStarttimeday());
+				prepared.setString(16, bean.getSpecialteachingStoptimeday());
+				prepared.setString(17, bean.getSpecial());
+				prepared.setString(18, bean.getStatusBase());
+				prepared.setInt(19, bean.getStatusDateofteach());
+				
+				prepared.executeUpdate();
+				 /*System.out.println(bean);*/ 
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
 }

@@ -112,7 +112,21 @@ public class PdfController {
 	        //List<Teach> cars =(List<Teach>) teachDAO.findByIdUser("570112230061");
 	        List<Teach> teach = (List<Teach>) repostDAO.repostPaper1(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
 	   
-	        
+	        for (int i = 0; i < teach.size(); i++) {
+	        	int b1=0,b2=0;
+	        	
+				if (teach.get(i).getStatusTeach()==2 && teach.get(i).getStatusTeaching()==100) {
+					teach.get(i).getSumBean().setSumBean4("80%");
+				} else {
+					teach.get(i).getSumBean().setSumBean4(" ");
+				}
+				for (int j = 0; j < teach.size(); j++) {
+					b1+=teach.get(j).getBasecram();
+					b2+=teach.get(j).getBaseHour();
+				}
+				teach.get(i).getSumBean().setSumBean1(b1);
+				teach.get(i).getSumBean().setSumBean2(b2);
+			}
 	        //   System.out.println(cars);
 	    //    List<User> cars = (List<User>) userlistPDF.findAll();
 	        //Data source Set
@@ -222,11 +236,18 @@ public class PdfController {
 	        Map<String, Object> params = new HashMap<>();
 
 	        //List<Teach> cars =(List<Teach>) teachDAO.findByIdUser("570112230061");
-	        List<Salary> cars = (List<Salary>) repostDAO.listdayrepostPaper4(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+	        List<Salary> re = (List<Salary>) repostDAO.listdayrepostPaper4(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
 	     //   System.out.println(cars);
 	    //    List<User> cars = (List<User>) userlistPDF.findAll();
 	        //Data source Set
-	        JRDataSource dataSource = new JRBeanCollectionDataSource(cars);
+	        for (int i = 0; i < re.size(); i++) {
+	        	int sum=0;
+	        	for (int j = 0; j < re.size(); j++) {
+					sum+=re.get(i).getSalarySummoney();
+				}
+				re.get(i).getSumBean().setSumBean1(sum);
+			}
+	        JRDataSource dataSource = new JRBeanCollectionDataSource(re);
 	        params.put("datasource", dataSource);
 
 	        //Make jasperPrint
@@ -269,15 +290,25 @@ public class PdfController {
 	 
 	 @GetMapping(value = "/repostpaper1test")
 		public List<Teach> repostpaper1test() {
-			List<Teach> li = new ArrayList<>();
-			li = repostDAO.repostPaper1("570112230061", "1", "2561", "1");
-			int sunHour=0;
-			int suncarm=0;
-			for (int i = 0; i < li.size(); i++) {
-				sunHour+=li.get(i).getBaseHour();
-				suncarm+=li.get(i).getBasecram();
-			}
-			return li;
+			List<Teach> teach = new ArrayList<>();
+			teach = repostDAO.repostPaper1("570112230061", "1", "2561", "1");
+	
+			 for (int i = 0; i < teach.size(); i++) {
+		        	int b1=0,b2=0;
+		        	
+					if (teach.get(i).getStatusTeach()==2 && teach.get(i).getStatusTeaching()==100) {
+						teach.get(i).getSumBean().setSumBean4("80%");
+					} else {
+						teach.get(i).getSumBean().setSumBean4(" ");
+					}
+					for (int j = 0; j < teach.size(); j++) {
+						b1+=teach.get(j).getBasecram();
+						b2+=teach.get(i).getBaseHour();
+					}
+					teach.get(i).getSumBean().setSumBean1(b1);
+					teach.get(i).getSumBean().setSumBean2(b2);
+				}
+			return teach;
 		}
 	
 	 @GetMapping(value = "/repostpaper3test")

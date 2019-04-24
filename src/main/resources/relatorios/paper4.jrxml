@@ -28,6 +28,10 @@
 	<field name="user.majors.personMajors" class="java.lang.String"/>
 	<field name="user.majors.faculty.facultyName" class="java.lang.String"/>
 	<field name="user.majors.faculty.personFaculty" class="java.lang.String"/>
+	<field name="sumBean.sumBean1" class="java.lang.Integer"/>
+	<field name="sumBean.sumBean2" class="java.lang.Integer"/>
+	<field name="sumBean.sumBean3" class="java.lang.Integer"/>
+	<field name="sumBean.sumBean4" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -444,7 +448,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="TH Sarabun New" size="16"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($V{PAGE_COUNT}+1)+$F{salarySummoney}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{sumBean.sumBean1}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="238" y="20" width="40" height="24" uuid="8b2eb4d5-429f-4893-b498-cd16321083fd"/>

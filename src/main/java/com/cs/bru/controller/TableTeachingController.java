@@ -85,33 +85,36 @@ public class TableTeachingController {
 				   insertTableTeaching.setTebleTeachId(id);
 				   if (insertTableTeaching.getStudenNumber()>=0 && insertTableTeaching.getStudenNumber()<=19 ) {
 					   insertTableTeaching.setStandardTeach(100);	   
-					   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+					  
 					   SevicedateofTeach.keepword(insertTableTeaching,oh);
-					   
+					   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
 					   
 //					   teachDAO.insertTeach(insertTableTeaching.getTeach());
 				} else if (insertTableTeaching.getStudenNumber()>=20 && insertTableTeaching.getStudenNumber()<=35 ) {
 				   insertTableTeaching.setStandardTeach(120);	   
-				   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
 				   SevicedateofTeach.keepword(insertTableTeaching,oh);
+				   tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+				  
 				   
 				   
-//				   teachDAO.insertTeach(insertTableTeaching.getTeach());
+	//			   teachDAO.insertTeach(insertTableTeaching.getTeach());
 			} else if (insertTableTeaching.getStudenNumber()<=69 && insertTableTeaching.getStudenNumber()>=36) {
 				insertTableTeaching.setStandardTeach(180);
-				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+				
 				 SevicedateofTeach.keepword(insertTableTeaching,oh);
-//				 teachDAO.insertTeach(insertTableTeaching.getTeach());
+				 tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+	//			 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}else if (insertTableTeaching.getStudenNumber()>=70 &&insertTableTeaching.getStudenNumber()<=89) {
 				insertTableTeaching.setStandardTeach(240);
-				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+				
 				 SevicedateofTeach.keepword(insertTableTeaching,oh);
-//				 teachDAO.insertTeach(insertTableTeaching.getTeach());
+				 tableTeachingDAO.insertTableTeaching(insertTableTeaching);
+	//			 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}else{
 				insertTableTeaching.setStandardTeach(300);
 				tableTeachingDAO.insertTableTeaching(insertTableTeaching);
 				 SevicedateofTeach.keepword(insertTableTeaching,oh);
-//				 teachDAO.insertTeach(insertTableTeaching.getTeach());
+		//		 teachDAO.insertTeach(insertTableTeaching.getTeach());
 			}
 			
 		} catch (Exception e) {

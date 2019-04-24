@@ -66,10 +66,14 @@ public class DateofTeachSevice {
 			//today = new Date();
 			cal.setTime(today);
 			cal2.setTime(today2);
-			int a,b,c,i,j,k,l,sumTP = 0;
+			int a,b,c,i,j,dt,k,l,sumTP = 0;
 			a = cal2.get(Calendar.WEEK_OF_YEAR);
 			b =cal.get(Calendar.WEEK_OF_YEAR);
 			c = a - b;
+			if (c<0) {
+				dt=52-b;
+				c=dt+a;
+			}
 	//		System.out.println(c+1);
 			int f=1, tud =0, prt=0;
 			 int sumhourtrme = 0;
@@ -124,6 +128,7 @@ public class DateofTeachSevice {
 			  
 			  
 			  dateofTeachDao.insertDateofTeach(ofteach);
+			  System.out.println("dateofTeachDao.insertDateofTeach(ofteach)");
 				dFt.setMoneyDft(insertTableTeaching.getStandardTeach());
 			
 			}

@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.cs.bru.bean.SumBean;
 import com.cs.bru.bean.SumTsdPsd;
 import com.cs.bru.model.DateofTeach;
 import com.cs.bru.model.DegreeStuden;
@@ -54,7 +55,8 @@ public class RepostDAO {
 				TableTeaching table = new TableTeaching();
 				Majors majors =new Majors();
 				Faculty faculty =new Faculty();
-
+ 
+				SumBean sumBean =new SumBean();
 				teach.setTeachId(rs.getString("teach_id"));
 				teach.setSumHourTerm(rs.getInt("sum_hour_term"));
 				teach.setHoursumTudsadee(rs.getInt("hoursum_tudsadee"));
@@ -131,7 +133,9 @@ public class RepostDAO {
 				tableteach.setSubject(subject);
 				teach.setTableTeaching(tableteach);
 				teach.setUsers(user);
-
+				teach.setSumBean(sumBean);
+				
+				
 				list.add(teach);
 			}
 
@@ -444,6 +448,7 @@ public class RepostDAO {
 				User user = new User();
 				Majors majors =new Majors();
 				Faculty faculty =new Faculty();
+				SumBean sumBean =new SumBean();
 				bean.setSalaryId(rs.getString("salary_id"));
 
 				bean.setSumTudsadeePrtibadHour(rs.getInt("sum_tudsadee_prtibad_hour"));
@@ -490,6 +495,7 @@ public class RepostDAO {
 				bean.setTableTeaching(tableTeaching);
 				bean.setUser(user);
 				bean.setStatusSubject(status);
+				bean.setSumBean(sumBean);
 				list.add(bean);
 
 			}

@@ -1,5 +1,7 @@
 package com.cs.bru.model;
 
+import com.cs.bru.bean.SumBean;
+
 public class Teach {
 	private int id;
 	private String teachId;
@@ -25,6 +27,7 @@ public class Teach {
 	private Subject subject;
 	private TableTeaching tableTeaching;
 	private User users;
+	private SumBean  sumBean;
 
 	public int getId() {
 		return id;
@@ -158,6 +161,12 @@ public class Teach {
 	}
 	public void setReostSumbasecram(int reostSumbasecram) {
 		this.reostSumbasecram = reostSumbasecram;
+	}
+	public SumBean getSumBean() {
+		return sumBean;
+	}
+	public void setSumBean(SumBean sumBean) {
+		this.sumBean = sumBean;
 	}
 	
 	

@@ -263,7 +263,7 @@
 
 				<div class="row ">
 					<div class="col-sm-12">
-					
+							
 									<!-- <form id="example-form-jook"> -->
 									<!-- <h3><span class="number"><i class="icon-user-following txt-black"></i></span><span class="head-font capitalize-font">เพิ่มข้อมูลรายวิชา</span></h3> -->
 
@@ -495,9 +495,9 @@
 															</select>
 													</div>
 												</div>
-												<input type="text" id="sp_dateofteachId">
-												<input type="text" id="sp_subjectDft">
-												<input type="text" id="sp_userDft">
+												<input type="hidden" id="sp_dateofteachId">
+												<input type="hidden" id="sp_subjectDft">
+												<input type="hidden" id="sp_userDft">
 
 											<div class="row text-center">
 
@@ -505,7 +505,7 @@
 													<label class="col-md-3 control-label " for="state-success">วันที่สอนเดิม</label>
 													<div class="col-md-6  has-success">
 													
-														<select class="form-control " id="special_Startdate" name="termTeachTerm"required >
+														<select class="form-control " id="special_Startdate" required >
 															</select>
 													</div>
 												</div>
@@ -513,21 +513,25 @@
 														<label class="col-md-3 control-label " for="state-success">เวลาเริ่มสอน</label>
 														<div class="col-md-6  has-success">
 														
-															<input type="text" id="special_Starttime" name="state-success" class="form-control" data-mask="99:99" placeholder="00:00 น." >
+															<input type="text" id="special_Starttime"  class="form-control" data-mask="99:99" placeholder="00:00 น." >
 														</div>
 													</div>
 													<div class="form-group col-sm-6">
 															<label class="col-md-3 control-label " for="state-success">วันที่สอนชดเชย</label>
-															<div class="col-md-6  has-success">
-																<input type="date" id="special_Stopdate" name="state-success" class="form-control" placeholder="">
-																
-															</div>
+														
+															<div class='input-group date col-md-6  has-success' id='mounthstartMonth'>
+																	<input type='text' class="form-control" id="special_Stopdate" data-mask="99/99/9999">
+																	<span class="input-group-addon">
+																		<span class="fa fa-calendar"></span>
+																	</span>
+																</div>
 														</div>
+														
 														<div class="form-group col-sm-6">
 																<label class="col-md-3 control-label " for="state-success">สิ่นสุดเวลาสอน</label>
 																<div class="col-md-6  has-success">
 				
-																	<input type="text" id="special_Stoptime" name="state-success" class="form-control" data-mask="99:99" placeholder="00:00 น." >
+																	<input type="text" id="special_Stoptime"  class="form-control" data-mask="99:99" placeholder="00:00 น." >
 																</div>
 															</div>
 															<div class="form-group col-sm-6">
@@ -537,7 +541,7 @@
 															
 																<div class="col-md-6  has-success">
 				
-																	<button class="btn  btn-warning btn-rounded form-control" type="submit"onclick="insertSpecilTesch()"><i class="fa fa-pencil-square-o"></i><span class="btn-text">เพิ่มวิชาสอนพิเศษ</span></button>
+																	<button class="btn  btn-warning btn-rounded form-control" type="button"onclick="insertSpecilTesch()"><i class="fa fa-pencil-square-o"></i><span class="btn-text">เพิ่มวิชาสอนพิเศษ</span></button>
 																</div>
 															</div>
 												</div>
@@ -629,7 +633,7 @@
 															<th scope="col">ภาคปฏิบัติ</th>
 															<th scope="col" >รวม</th>
 
-															<th scope="col">หมายเหตู</th>
+															<th scope="col">เวลาเดิม</th>
 														</tr>
 
 													</thead>
@@ -1010,6 +1014,7 @@
 		<script src="../assets_/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
 		
 		<script src="../assets_/dist/js/sweetalert-data.js"></script>
+		<script src="../js/keepwordstap1/keepword_main.js"></script>
 		
 	
 	
@@ -1048,8 +1053,15 @@
 					sumsrry = 0;
 
 				for (var i = 0; i < msg.length; i++) {
-				 	tarm = msg[i].basecram;
+					 tarm = msg[i].basecram;
+					 var m;
+					 if (msg[i].tableTeaching.subject.tudsadee==0) {
+						 m="-";
+					 }else{
+						 m=msg[i].tableTeaching.standardTeach;
+					 }
 				// 	//	sumtarm=parseInt(tarm);
+
 				 	tfood = (tfood + tarm);
 				 	tarHo += msg[i].baseHour;
 				 	sumsrry += msg[i].salarySum;
@@ -1059,10 +1071,10 @@
 						'<td>' + msg[i].tableTeaching.section + '</td>' +
 						'<td>' + msg[i].tableTeaching.subject.credit + "(" + msg[i].tableTeaching.subject.creditHour + ")" + '</td>' +
 						'<td>' + msg[i].tableTeaching.studenNumber + '</td>' +
-						'<td>' + msg[i].tableTeaching.standardTeach + '</td>' +
+						'<td>' + m+ '</td>' +
 						'<td>' + msg[i].basecram + '</td>' +
 						'<td>' + msg[i].baseHour + '</td>' +
-						'<td>' + msg[i].salarySum + '</td>' +
+						'<td>' + '</td>' +
 					
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
 						'</tr>';
@@ -1146,12 +1158,18 @@
 						hol = "(วันหยุด)";
 					}
 					sumtsdp = msg1[i].summyhourDft;
+					var add_sp="",day_sp="";
 
+if (msg1[i].special!=null) {
+	add_sp=' ('+msg1[i].special+')';
+	day_sp=msg1[i].specialteachingStartdateday;
+
+}
 					table2 +=
 						'<tr>' +
 						'<td>' + gg + '</td>' +
 						'<td>' + msg1[i].weekofyearDft + '</td>' +
-						'<td>' + msg1[i].dayofyearDft + "/" + msg1[i].month.monthName + "/" + msg1[i].yearofteachDft + hol + '</td>' +
+						'<td>' + msg1[i].dayofyearDft + "/" + msg1[i].month.monthName + "/" + msg1[i].yearofteachDft +add_sp + '</td>' +
 						'<td>' + msg1[i].teach.tableTeaching.subject.subjectId + '</td>' +
 						'<td>' + tsd1 + '</td>' +
 						'<td>' + psb + '</td>' +
@@ -1161,6 +1179,7 @@
 						// '</a>' +
 						// '</td>' +
 						// '<td class="btn btn-warning"><a  data-target="#exampleModal"  data-toggle="modal">'+'เลือกสถานะวิชา'+'</a></td>'+
+						'<td>' + day_sp + '</td>' +
 						'</tr>';
 					sumTsd += tsd1;
 					sumPsb += msg1[i].prtibadDft;
@@ -1516,7 +1535,7 @@ $.ajax({
    //#endregion
 
  var sub =$('#sub_idd').val();
-		alert(sub);
+	
 		var id1 = {
 			useridS1: $("#userRoleid").val(),
 			termS2: $("#termS2").val(),
@@ -1619,11 +1638,11 @@ $.ajax({
 		var specailDateofTeach={
 			
 			dateofteachId:$('#sp_dateofteachId').val(),
-		 subjectDft:$('#sp_subjectDft').val(),
-		 specialteachingStartdateday:$('#special_Startdate').val(),
-		 specialteachingStopdateday:$('#special_Stopdate').val(),
-		 specialteachingStarttimeday:$('#special_Starttime').val(),
-		 specialteachingStoptimeday:$('#special_Stoptime').val(),
+			 subjectDft:$('#sp_subjectDft').val(),
+			 specialteachingStartdateday:$('#special_Startdate').val(),
+			 specialteachingStopdateday:$('#special_Stopdate').val(),
+			 specialteachingStarttimeday:$('#special_Starttime').val(),
+			 specialteachingStoptimeday:$('#special_Stoptime').val(),
 			userDft:$('#sp_userDft').val(),
 			teachSeachBean1:{
 				useridS1: $("#userRoleid").val(),
@@ -1640,13 +1659,13 @@ $.ajax({
 			data: JSON.stringify(specailDateofTeach),
 			dataType: "json",
 			success: function (msg) {
-			
-				if(msg !=null){
-					location.reload(); 
-				
-				}else{
+			alert(msg.dateofteachId);
+				if(msg.dateofteachId !=null){
+				// 	document.getElementById("specialTable").innerHTML = this.responseText;
+				 location.reload();
+				 }
 
-				}
+				
 				
 				
 			},

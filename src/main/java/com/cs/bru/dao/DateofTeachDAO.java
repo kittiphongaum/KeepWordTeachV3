@@ -34,18 +34,12 @@ public class DateofTeachDAO {
 			prepared.setInt(6, bean.getTudsadeeDft());
 			prepared.setInt(7, bean.getPrtibadDft());
 			prepared.setInt(8, bean.getSummyhourDft());
-  
+
 			prepared.setString(9, bean.getSubjectDft());
 			prepared.setString(10, bean.getUserDft());
-			prepared.setString(11, bean.getHolidayDft());
+		prepared.setString(11, bean.getHolidayDft());
 			prepared.setInt(12, bean.getMoneyDft());
-			prepared.setString(13, bean.getSpecialteachingStartdateday());
-			prepared.setString(14, bean.getSpecialteachingStopdateday());
-			prepared.setString(15, bean.getSpecialteachingStarttimeday());
-			prepared.setString(16, bean.getSpecialteachingStoptimeday());
-			prepared.setString(17, bean.getSpecial());
-			
-			
+System.out.println("sql===insertDateofTeach");			
 			prepared.executeUpdate();
 			 /*System.out.println(bean);*/ 
 		} catch (Exception e) {
@@ -179,12 +173,13 @@ public class DateofTeachDAO {
 					try {
 						sql.append("SELECT tb_dateofteach.*,tb_teaching.*,tb_table_teaching.*,tb_subject.*,tb_user.*,tb_month.* FROM tb_dateofteach "
 								+ "INNER JOIN tb_teaching on tb_dateofteach.subject_dft=tb_teaching.subject_fk INNER JOIN tb_user on tb_teaching.user_fk = tb_user.user_id INNER JOIN tb_table_teaching on tb_teaching.tableteach_fk = tb_table_teaching.teble_teach_id INNER JOIN tb_subject on tb_table_teaching.subject_roleid = tb_subject.subject_id INNER JOIN tb_month on tb_dateofteach.monthofyear_dft=tb_month.month_id "
-								+ "WHERE tb_user.user_id =? and tb_table_teaching.teach_term = ? and tb_table_teaching.teach_year= ? and tb_table_teaching.degree_studen=? and tb_dateofteach.statusbase='2' and tb_dateofteach.holiday_dft='work' ORDER BY tb_dateofteach.weekofyear_dft ASC");
+								+ "WHERE tb_table_teaching.user_roleid =? AND tb_dateofteach.user_dft=? and tb_table_teaching.teach_term = ? and tb_table_teaching.teach_year= ? and tb_table_teaching.degree_studen=? and tb_dateofteach.statusbase='2' and tb_dateofteach.holiday_dft='work' ORDER BY tb_dateofteach.weekofyear_dft ASC");
 						prepared = con.openConnect().prepareStatement(sql.toString());
 						prepared.setString(1,userid);
-						prepared.setString(2,term);
-						prepared.setString(3,year);
-						prepared.setString(4,degree);
+						prepared.setString(2,userid);
+						prepared.setString(3,term);
+						prepared.setString(4,year);
+						prepared.setString(5,degree);
 						ResultSet rs = prepared.executeQuery();
 
 						while (rs.next()) {

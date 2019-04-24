@@ -34,6 +34,29 @@
 
 		<!-- Custom CSS -->
 		<link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
+		
+		<!-- Data table CSS -->
+		<link href="../assets_/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+	<!-- Bootstrap Colorpicker CSS -->
+		<link href="./assets_/vendors/bower_components/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css"
+		rel="stylesheet" type="text/css" />
+	<!-- jquery-steps css -->
+	<link rel="stylesheet" href="../assets_/vendors/bower_components/jquery.steps/demo/css/jquery.steps.css">
+
+	<!-- switchery CSS -->
+	<link href="./assets_/vendors/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" type="text/css" />
+	<!-- <link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css"> -->
+	<!-- Data table CSS -->
+	<link href="../assets_/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+	<!-- bootstrap-touchspin CSS -->
+	<link href="../assets_/vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet"
+	 type="text/css" />
+
+	<!-- Custom CSS -->
+	<link href="../assets_/dist/css/style.css" rel="stylesheet" type="text/css">
+		<!--alerts CSS -->
+		<link href="./assets_/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
 
 		<%
    User  userLog = null;
@@ -317,8 +340,14 @@
 																		<div class="col-sm-2">
 																			<label class="control-label mb-10">ระยะเวลาที่เริ่มสอน</label>
 																
-																			<input  class="form-control filled-input rounded-input" data-mask="99/99/9999" id="up_termDateStart" value="" type="text"value="11/22/33" name="termDateStart" required> 
+																			<input  class="form-control filled-input rounded-input" data-mask="99/99/9999" id="up_termDateStart" value="" type="text" name="termDateStart" required> 
 																		
+															<!-- <div class='input-group date  has-success ' id='mounthstartMonth'>
+																	<input type='text' class="form-control" id="up_termDateStart" data-mask="99/99/9999" name="termDateStart" required>
+																	<span class="input-group-addon">
+																		<span class="fa fa-calendar"></span>
+																	</span>
+																</div> -->
 																		</div>
 																		<div class="col-sm-2">
 																				<label class="control-label mb-10">ระยะเวลาที่สิ่นสุดสอน</label>
@@ -604,7 +633,7 @@
 
 	<!-- Switchery JavaScript -->
 	<script src="../assets_/vendors/bower_components/switchery/dist/switchery.min.js"></script>
-	
+	<script src="../js/keepwordstap1/keepword_main.js"></script>
 	</body>
 	<script>
 	$(document).ready(function () {
