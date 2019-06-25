@@ -87,7 +87,7 @@ public class TeachController {
 
 		return listDay;
 	}
-
+//4/6/62++++++++++++++
 	@RequestMapping(value = "/TeachOneSeachByid1", method = RequestMethod.POST)
 	public List<Teach> getTablest(@RequestBody TeachSeachBean1 id1) {
 		List<Teach> list = new ArrayList<>();
@@ -244,7 +244,7 @@ public class TeachController {
 
 			dayday.setSubjectDft(list.get(i).getSubjactFk());
 
-			dateofTeachDAO.updateDay(dayday);
+			//dateofTeachDAO.updateDay(dayday);
 
 			// System.out.println("--------------------------------------"+"::"+summbh+":::"+summho);
 			// list.get(i).setBaseHour(summbh);
@@ -312,7 +312,6 @@ public class TeachController {
 				dateofbean.setStatusDateofteach(2);
 				
 				dateofTeachDAO.updateTsdPtb(dateofbean);
-	//			System.out.println(list.get(i).getPrtibadDft() + "bbbbbbbbbbbbbbbb");
 			}
 
 		}
@@ -320,7 +319,7 @@ public class TeachController {
 		return list;
 	}
 
-	//
+	//4/6/62+++++++++++222
 	@RequestMapping(value = "/teachFoday2", method = RequestMethod.POST)
 	public List<DateofTeach> ASCfileAll2(@RequestBody TeachSeachBean1 id1) {
 		List<DateofTeach> list = new ArrayList<>();
@@ -373,21 +372,22 @@ public class TeachController {
           //    System.out.println(dateofbean.getTudsadeeDft()+"**************");
             //   System.out.println( dateofbean.getStatusDateofteach());
 	               
-	               dateofTeachDAO.updateTsdPtb(dateofbean);
+	             //  dateofTeachDAO.updateTsdPtb(dateofbean);
 	              
 			} 
 
 		
 	           
 			}
-			salarySum(id1);
-			list22 = dateofTeachDAO.fileASCDay(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+			//salarySum(id1);
+			list22 = dateofTeachDAO.fileASCDay(id1.getUseridS1(), id1.getTermS2(),id1.getYearS3(),id1.getDegreeS4());
+			
 			salarySum(id1);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return list;
+		return list22;
 	}
 
 //	@RequestMapping(value = "/listDay", method = RequestMethod.POST)
@@ -518,16 +518,20 @@ public class TeachController {
 		return dd;
 	}
 
-	@GetMapping(value = "teest")
-	public List<DateofTeach> teest() {
-
-		List<DateofTeach> subjectById = new ArrayList<>();
-		subjectById = dateofTeachDAO.fileListByid("570112230061","4124901");
-
-		return subjectById;
-	}
-
 	
+//	@GetMapping(value = "teest")
+//	public List<DateofTeach> teest() {
+//		List<DateofTeach> subjectById = new ArrayList<>();
+//		subjectById = dateofTeachDAO.fileASCDay("00442233","2","2561","1");
+//		return subjectById;
+//	}
+//	@GetMapping(value = "teestlistA")
+//	public List<Teach>li(){
+//		List<Teach>listA =new ArrayList<>();
+//		listA=teachDAO.teschBaedcaemTen("00442233","2","2561","1");
+//		return listA;
+//	}
+//	
 	// public static void main(String args[]) throws InterruptedException{
 	//
 	// List<Teach> list = new ArrayList<>();

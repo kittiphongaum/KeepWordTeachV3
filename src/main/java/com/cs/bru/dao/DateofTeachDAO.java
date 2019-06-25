@@ -129,7 +129,7 @@ System.out.println("sql===insertDateofTeach");
 						prepared = con.openConnect().prepareStatement(sql.toString());
 						prepared.setInt(1, bean.getTudsadeeDft());
 						prepared.setInt(2, bean.getPrtibadDft());
-						prepared.setInt(3, bean.getSummyhourDft());
+						prepared.setInt(3, bean.getSummyhourDft());////
 						prepared.setInt(4, bean.getStatusDateofteach());
 						prepared.setString(5, bean.getSubjectDft());
 						
@@ -149,16 +149,20 @@ System.out.println("sql===insertDateofTeach");
 					
 					StringBuilder sql = new StringBuilder();
 					try {
-						sql.append("UPDATE tb_dateofteach SET  statusbase =?,tudsadee_dft=?,prtibad_dft=? WHERE subject_dft =?");
+						sql.append("UPDATE tb_dateofteach SET tudsadee_dft=?,prtibad_dft=?,summyhour_dft=?,statusbase=? WHERE subject_dft =? AND dateofteach_id=? AND user_dft=?");
 						prepared = con.openConnect().prepareStatement(sql.toString());
-
-						prepared.setString(1, bean.getStatusBase());
-						prepared.setInt(2, bean.getTudsadeeDft());
-						prepared.setInt(3, bean.getPrtibadDft());
-						prepared.setString(4, bean.getSubjectDft());
+						prepared.setInt(1, bean.getTudsadeeDft());
+						prepared.setInt(2, bean.getPrtibadDft());
+						prepared.setInt(3, bean.getSummyhourDft());
+						prepared.setString(4, bean.getStatusBase());
+						prepared.setString(5, bean.getSubjectDft());
+						prepared.setString(6, bean.getDateofteachId());
+						prepared.setString(7, bean.getUserDft());
+						
 						prepared.executeUpdate();
 					} catch (Exception e) {
 						// TODO: handle exception
+						e.printStackTrace();
 					}
 
 				}// end method update

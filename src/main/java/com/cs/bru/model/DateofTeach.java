@@ -86,8 +86,8 @@ public class DateofTeach {
 	public int getSummyhourDft() {
 		return summyhourDft;
 	}
-	public void setSummyhourDft(int summyhourDft) {
-		this.summyhourDft = summyhourDft;
+	public void setSummyhourDft(int ssm) {
+		this.summyhourDft = ssm;
 	}
 	public String getSubjectDft() {
 		return subjectDft;

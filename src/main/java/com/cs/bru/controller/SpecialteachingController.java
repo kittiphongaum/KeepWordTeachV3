@@ -51,14 +51,17 @@ public class SpecialteachingController {
 	public List<Teach> srchsubjectTest() {
 
 		List<Teach> li = new ArrayList<>();
-		li = teachDAO.teschShowSub("570112230061", "1", "2561","1");
+		li=teachDAO.teschASCfileAll("00442233","2","2561","1");
+	
+		
+	
 		return li;
 	}
 	@RequestMapping(value = "/srchsubject", method = RequestMethod.POST)
 	public List<Teach> srchsubject(@RequestBody TeachSeachBean1 id1) {
 
 		List<Teach> li = new ArrayList<>();
-		li = teachDAO.teschShowSub(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
+		li = teachDAO.teschASCfileAll(id1.getUseridS1(), id1.getTermS2(), id1.getYearS3(),id1.getDegreeS4());
 		return li;
 	}
 	@GetMapping(value = "/specialteachingsub")

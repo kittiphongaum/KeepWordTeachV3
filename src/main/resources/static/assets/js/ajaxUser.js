@@ -25,5 +25,6 @@ $(document).ready(function() {
                     $('#alert').append('<center>ไม่มีข้อมูล</center>');
                 }
 		}
+	}
 	});
-})
+});

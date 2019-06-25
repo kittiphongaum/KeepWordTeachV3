@@ -98,7 +98,7 @@ public class DateofTeachSevice {
 			      int  year=next2Week.getYear();
 			      
 			ofteach.setMonthofyearDft(String.valueOf(month));
-			ofteach.setYearofteachDft(String.valueOf(year+543));
+			ofteach.setYearofteachDft(String.valueOf(year));
 			ofteach.setDayofyearDft(String.valueOf(day));
 
 			j=(insertTableTeaching.getSubject().getTudsadee());
