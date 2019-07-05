@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `auto_id_test` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2019 DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.auto_id_test: ~0 rows (approximately)
+-- Dumping data for table keepworkteach3.auto_id_test: ~1 rows (approximately)
 /*!40000 ALTER TABLE `auto_id_test` DISABLE KEYS */;
 INSERT INTO `auto_id_test` (`id`) VALUES
 	(2018);
@@ -577,7 +577,7 @@ CREATE TABLE IF NOT EXISTS `tb_admin` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table keepworkteach3.tb_admin: ~0 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_admin: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tb_admin` DISABLE KEYS */;
 INSERT INTO `tb_admin` (`id`, `AdminID`, `AdminName`) VALUES
 	(1, '11', 'ad');
@@ -618,28 +618,129 @@ CREATE TABLE IF NOT EXISTS `tb_dateofteach` (
   `summyhour_dft` int(11) DEFAULT NULL COMMENT 'รวมชั่วโมง',
   `money_dft` int(11) DEFAULT NULL,
   `holiday_dft` varchar(50) DEFAULT NULL,
+  `specialteaching_startdateday` varchar(50) DEFAULT NULL COMMENT 'เวลาเดิม',
+  `specialteaching_stopdateday` varchar(50) DEFAULT NULL COMMENT 'เริ่มสอนชดเชย',
+  `specialteaching_starttimeday` varchar(50) DEFAULT NULL COMMENT 'เวลาเริ่ม',
+  `specialteaching_stoptimeday` varchar(50) DEFAULT NULL COMMENT 'เวลาสอน',
+  `special` varchar(50) DEFAULT NULL COMMENT 'การสอนชดเชย',
   `statusbase` int(11) DEFAULT NULL COMMENT 'วิชาที่ใช้เบิก',
   `status_dateofteach` int(11) DEFAULT NULL,
   `subject_dft` varchar(50) DEFAULT NULL COMMENT 'วิชา',
   `user_dft` varchar(50) DEFAULT NULL COMMENT 'ผู้ใช้',
   PRIMARY KEY (`dtime_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8 COMMENT='ข้อมูลรายละเอียดใบการเบิกค่าสอนพิเศษ';
+) ENGINE=InnoDB AUTO_INCREMENT=381 DEFAULT CHARSET=utf8 COMMENT='ข้อมูลรายละเอียดใบการเบิกค่าสอนพิเศษ';
 
--- Dumping data for table keepworkteach3.tb_dateofteach: ~12 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_dateofteach: ~108 rows (approximately)
 /*!40000 ALTER TABLE `tb_dateofteach` DISABLE KEYS */;
-INSERT INTO `tb_dateofteach` (`dtime_id`, `dateofteach_id`, `weekofyear_dft`, `dayofyear_dft`, `monthofyear_dft`, `yearofteach_dft`, `tudsadee_dft`, `prtibad_dft`, `summyhour_dft`, `money_dft`, `holiday_dft`, `statusbase`, `status_dateofteach`, `subject_dft`, `user_dft`) VALUES
-	(143, '2561114124903', 1, '1', '3', '2562', 1, 1, 2, 180, 'holiday', 2, 2, '4124903', '570112230061'),
-	(144, '2561114124903', 2, '8', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(145, '2561114124903', 3, '15', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(146, '2561114124903', 4, '22', '3', '2562', 1, 1, 2, 180, 'work', 2, 2, '4124903', '570112230061'),
-	(147, '2561114121301', 1, '1', '3', '2562', 2, 2, 4, 180, 'holiday', 1, NULL, '4121301', '570112230061'),
-	(148, '2561114121301', 2, '8', '3', '2562', 2, 2, 4, 180, 'work', 1, NULL, '4121301', '570112230061'),
-	(149, '2561114121301', 3, '15', '3', '2562', 2, 2, 4, 180, 'work', 1, NULL, '4121301', '570112230061'),
-	(150, '2561114121301', 4, '22', '3', '2562', 2, 2, 4, 180, 'work', 1, NULL, '4121301', '570112230061'),
-	(151, '2561124121301', 1, '1', '3', '2562', 2, 2, 4, 120, 'holiday', 1, NULL, '4121301', '570112230061'),
-	(152, '2561124121301', 2, '8', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4121301', '570112230061'),
-	(153, '2561124121301', 3, '15', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4121301', '570112230061'),
-	(154, '2561124121301', 4, '22', '3', '2562', 2, 2, 4, 120, 'work', 1, NULL, '4121301', '570112230061');
+INSERT INTO `tb_dateofteach` (`dtime_id`, `dateofteach_id`, `weekofyear_dft`, `dayofyear_dft`, `monthofyear_dft`, `yearofteach_dft`, `tudsadee_dft`, `prtibad_dft`, `summyhour_dft`, `money_dft`, `holiday_dft`, `specialteaching_startdateday`, `specialteaching_stopdateday`, `specialteaching_starttimeday`, `specialteaching_stoptimeday`, `special`, `statusbase`, `status_dateofteach`, `subject_dft`, `user_dft`) VALUES
+	(273, '2561220002701', 1, '1', '12', '3104', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(274, '2561220002701', 2, '8', '12', '3104', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(275, '2561220002701', 3, '15', '12', '3104', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(276, '2561220002701', 4, '22', '12', '3104', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(277, '2561220002701', 5, '29', '12', '3104', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(278, '2561220002701', 6, '5', '1', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(279, '2561220002701', 7, '12', '1', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(280, '2561220002701', 8, '19', '1', '3105', 2, 2, 3, 180, 'holiday', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(281, '2561220002701', 9, '26', '1', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(282, '2561220002701', 10, '2', '2', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(283, '2561220002701', 11, '9', '2', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(284, '2561220002701', 12, '16', '2', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(285, '2561220002701', 13, '23', '2', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(286, '2561220002701', 14, '2', '3', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(287, '2561220002701', 15, '9', '3', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(288, '2561220002701', 16, '16', '3', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(289, '2561220002701', 17, '23', '3', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(290, '2561220002701', 18, '30', '3', '3105', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, 2, '0002701', '00447218'),
+	(291, '2561210002701', 1, '1', '12', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(292, '2561210002701', 2, '8', '12', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(293, '2561210002701', 3, '15', '12', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(294, '2561210002701', 4, '22', '12', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(295, '2561210002701', 5, '29', '12', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(296, '2561210002701', 6, '5', '1', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(297, '2561210002701', 7, '12', '1', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(298, '2561210002701', 8, '19', '1', '2561', 2, 2, 3, 180, 'holiday', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(299, '2561210002701', 9, '26', '1', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(300, '2561210002701', 10, '2', '2', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(301, '2561210002701', 11, '9', '2', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(302, '2561210002701', 12, '16', '2', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(303, '2561210002701', 13, '23', '2', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(304, '2561210002701', 14, '2', '3', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(305, '2561210002701', 15, '9', '3', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(306, '2561210002701', 16, '16', '3', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(307, '2561210002701', 17, '23', '3', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(308, '2561210002701', 18, '30', '3', '2561', 2, 2, 3, 180, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '0002701', '00442233'),
+	(309, '2561214123204', 1, '1', '12', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(310, '2561214123204', 2, '8', '12', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(311, '2561214123204', 3, '15', '12', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(312, '2561214123204', 4, '22', '12', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(313, '2561214123204', 5, '29', '12', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(314, '2561214123204', 6, '5', '1', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(315, '2561214123204', 7, '12', '1', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(316, '2561214123204', 8, '19', '1', '2561', 2, 2, 4, 120, 'holiday', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(317, '2561214123204', 9, '26', '1', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(318, '2561214123204', 10, '2', '2', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(319, '2561214123204', 11, '9', '2', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(320, '2561214123204', 12, '16', '2', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(321, '2561214123204', 13, '23', '2', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(322, '2561214123204', 14, '2', '3', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(323, '2561214123204', 15, '9', '3', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(324, '2561214123204', 16, '16', '3', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(325, '2561214123204', 17, '23', '3', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(326, '2561214123204', 18, '30', '3', '2561', 2, 2, 4, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4123204', '00442233'),
+	(327, '2561224123204', 1, '1', '12', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(328, '2561224123204', 2, '8', '12', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(329, '2561224123204', 3, '15', '12', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(330, '2561224123204', 4, '22', '12', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(331, '2561224123204', 5, '29', '12', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(332, '2561224123204', 6, '5', '1', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(333, '2561224123204', 7, '12', '1', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(334, '2561224123204', 8, '19', '1', '2561', 1, 2, 2, 100, 'holiday', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(335, '2561224123204', 9, '26', '1', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(336, '2561224123204', 10, '2', '2', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(337, '2561224123204', 11, '9', '2', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(338, '2561224123204', 12, '16', '2', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(339, '2561224123204', 13, '23', '2', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(340, '2561224123204', 14, '2', '3', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(341, '2561224123204', 15, '9', '3', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(342, '2561224123204', 16, '16', '3', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(343, '2561224123204', 17, '23', '3', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(344, '2561224123204', 18, '30', '3', '2561', 1, 2, 2, 100, 'work', NULL, NULL, NULL, NULL, NULL, 2, NULL, '4123204', '00442233'),
+	(345, '2561214124801', 1, '1', '12', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(346, '2561214124801', 2, '8', '12', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(347, '2561214124801', 3, '15', '12', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(348, '2561214124801', 4, '22', '12', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(349, '2561214124801', 5, '29', '12', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(350, '2561214124801', 6, '5', '1', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(351, '2561214124801', 7, '12', '1', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(352, '2561214124801', 8, '19', '1', '2561', 0, 0, 0, 120, 'holiday', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(353, '2561214124801', 9, '26', '1', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(354, '2561214124801', 10, '2', '2', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(355, '2561214124801', 11, '9', '2', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(356, '2561214124801', 12, '16', '2', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(357, '2561214124801', 13, '23', '2', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(358, '2561214124801', 14, '2', '3', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(359, '2561214124801', 15, '9', '3', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(360, '2561214124801', 16, '16', '3', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(361, '2561214124801', 17, '23', '3', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(362, '2561214124801', 18, '30', '3', '2561', 0, 0, 0, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(363, '2561224124801', 1, '1', '12', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(364, '2561224124801', 2, '8', '12', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(365, '2561224124801', 3, '15', '12', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(366, '2561224124801', 4, '22', '12', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(367, '2561224124801', 5, '29', '12', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(368, '2561224124801', 6, '5', '1', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(369, '2561224124801', 7, '12', '1', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(370, '2561224124801', 8, '19', '1', '2561', 1, 1, 1, 120, 'holiday', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(371, '2561224124801', 9, '26', '1', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(372, '2561224124801', 10, '2', '2', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(373, '2561224124801', 11, '9', '2', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(374, '2561224124801', 12, '16', '2', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(375, '2561224124801', 13, '23', '2', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(376, '2561224124801', 14, '2', '3', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(377, '2561224124801', 15, '9', '3', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(378, '2561224124801', 16, '16', '3', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(379, '2561224124801', 17, '23', '3', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233'),
+	(380, '2561224124801', 18, '30', '3', '2561', 1, 1, 1, 120, 'work', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4124801', '00442233');
 /*!40000 ALTER TABLE `tb_dateofteach` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_degree
@@ -701,7 +802,7 @@ CREATE TABLE IF NOT EXISTS `tb_holiday_th` (
   `location_holi` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ตารางวันหยุด';
 
--- Dumping data for table keepworkteach3.tb_holiday_th: ~30 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_holiday_th: ~33 rows (approximately)
 /*!40000 ALTER TABLE `tb_holiday_th` DISABLE KEYS */;
 INSERT INTO `tb_holiday_th` (`holiday_id`, `holiday_day`, `holiday_month`, `holiday_year`, `holiday_dayofyear`, `holiday_row`, `location_holi`) VALUES
 	('1', '1', '1', '2561', 'วันขึ้นปีใหม่', 'holiday', 'th'),
@@ -733,7 +834,10 @@ INSERT INTO `tb_holiday_th` (`holiday_id`, `holiday_day`, `holiday_month`, `holi
 	('32', '3', '3', '3', '3', 'holiday', '3'),
 	('32', '3', '3', '3', '3', 'holiday', '3'),
 	('123', '4', '4', '4', '4', 'holiday', '4'),
-	('2039', '19', '1', '2019', 'hhh', 'holiday', 'th');
+	('2039', '19', '1', '2019', 'hhh', 'holiday', 'th'),
+	('2035', '5', '12', '2018', 'วันพอแห่งชาติ', 'holiday', 'bru'),
+	('2032', '10', '3', '2019', 'วันรัฐธรรมนูญ', 'holiday', 'bru'),
+	('2032', '10', '3', '2019', 'วันวิสาฆบูชา', 'holiday', 'bru');
 /*!40000 ALTER TABLE `tb_holiday_th` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_login
@@ -869,13 +973,13 @@ CREATE TABLE IF NOT EXISTS `tb_salary` (
   `salary_setatatus_id` int(11) DEFAULT NULL COMMENT 'ตารางทฤษฎีปฏิบัติ',
   `salary_tableteahing` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='ตารางทฤษฎีและปฏิบัติ';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='ตารางทฤษฎีและปฏิบัติ';
 
 -- Dumping data for table keepworkteach3.tb_salary: ~2 rows (approximately)
 /*!40000 ALTER TABLE `tb_salary` DISABLE KEYS */;
 INSERT INTO `tb_salary` (`id`, `salary_id`, `salary_sum_tudsadee`, `salary_sum_prtibad`, `sum_tudsadee_prtibad_hour`, `salary_status`, `salary_baseteach`, `salary_subject_fk`, `salary_userfk`, `salary_dateofteach`, `salary_summoney`, `salery_thaibaht`, `salary_setatatus_id`, `salary_tableteahing`) VALUES
-	(4, '2561114124903', NULL, NULL, 3, 0, NULL, NULL, '570112230061', NULL, 540, 'หนึ่งพันแปดสิบบาทถ้วน', 1, '2561114124903'),
-	(5, '2561114124903', NULL, NULL, 3, 0, NULL, NULL, '570112230061', NULL, 540, 'หนึ่งพันแปดสิบบาทถ้วน', 2, '2561114124903');
+	(1, '', NULL, NULL, 0, 0, NULL, NULL, '00442233', NULL, 0, 'บาทถ้วน', 1, ''),
+	(2, '', NULL, NULL, 0, 0, NULL, NULL, '00442233', NULL, 0, 'บาทถ้วน', 2, '');
 /*!40000 ALTER TABLE `tb_salary` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_setstatus_subject
@@ -890,12 +994,33 @@ CREATE TABLE IF NOT EXISTS `tb_setstatus_subject` (
   `setstatus_subid` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลรายละเอียดวิชาที่ใช้เบิก ทฤษฎีต่อ วิชา';
 
--- Dumping data for table keepworkteach3.tb_setstatus_subject: ~2 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_setstatus_subject: ~4 rows (approximately)
 /*!40000 ALTER TABLE `tb_setstatus_subject` DISABLE KEYS */;
 INSERT INTO `tb_setstatus_subject` (`setstatus_subject_id`, `setstatus_subject_hour`, `setstatus_subject_base`, `setstatus_subject_money`, `status_subject`, `setject_userid`, `teching_setject_id`, `setstatus_subid`) VALUES
-	('2561114124903', 3, 180, 540, 2, '570112230061', '2561114124903', '4124903'),
-	('2561114124903', 3, 180, 540, 1, '570112230061', '2561114124903', '4124903');
+	('2561210002701', 0, 0, 0, 2, '570112230061', '2561210002701', '0002701'),
+	('2561210002701', 0, 0, 0, 1, '570112230061', '2561210002701', '0002701'),
+	('2561224123204', 0, 0, 0, 2, '570112230061', '2561224123204', '4123204'),
+	('2561224123204', 0, 0, 0, 1, '570112230061', '2561224123204', '4123204');
 /*!40000 ALTER TABLE `tb_setstatus_subject` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.tb_specialteaching
+CREATE TABLE IF NOT EXISTS `tb_specialteaching` (
+  `specialteaching_id` varchar(50) DEFAULT NULL,
+  `specialteaching_startdate` varchar(50) DEFAULT NULL,
+  `specialteaching_stopdate` varchar(50) DEFAULT NULL,
+  `specialteaching_starttime` varchar(50) DEFAULT NULL,
+  `specialteaching_stoptime` varchar(50) DEFAULT NULL,
+  `specialteaching_subject` varchar(50) DEFAULT NULL,
+  `specialteaching_dateofteach` varchar(50) DEFAULT NULL,
+  `specialteaching_status` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='สอนชดเชย';
+
+-- Dumping data for table keepworkteach3.tb_specialteaching: ~2 rows (approximately)
+/*!40000 ALTER TABLE `tb_specialteaching` DISABLE KEYS */;
+INSERT INTO `tb_specialteaching` (`specialteaching_id`, `specialteaching_startdate`, `specialteaching_stopdate`, `specialteaching_starttime`, `specialteaching_stoptime`, `specialteaching_subject`, `specialteaching_dateofteach`, `specialteaching_status`) VALUES
+	('1', '1', '1', '1', '1', '1', '1', '1'),
+	(NULL, '8/มีนาคม/2562', '', '', '', '4124903', '2561114124903', NULL);
+/*!40000 ALTER TABLE `tb_specialteaching` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_status_subject
 CREATE TABLE IF NOT EXISTS `tb_status_subject` (
@@ -916,21 +1041,24 @@ CREATE TABLE IF NOT EXISTS `tb_subject` (
   `subject_id` varchar(10) DEFAULT NULL,
   `subject_name` varchar(50) DEFAULT NULL,
   `credit` int(3) DEFAULT NULL,
-  `credit_hour` varchar(5) DEFAULT NULL,
+  `credit_hour` varchar(10) DEFAULT NULL,
   `tudsadee` int(2) DEFAULT NULL COMMENT 'ทฤษฎิ',
   `prtibad` int(2) DEFAULT NULL COMMENT 'ปฏิบัติ',
   `status_subject` int(2) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='วิชาที่สอน';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='วิชาที่สอน';
 
--- Dumping data for table keepworkteach3.tb_subject: ~5 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_subject: ~8 rows (approximately)
 /*!40000 ALTER TABLE `tb_subject` DISABLE KEYS */;
 INSERT INTO `tb_subject` (`Id`, `subject_id`, `subject_name`, `credit`, `credit_hour`, `tudsadee`, `prtibad`, `status_subject`) VALUES
 	(2, '51001', 'คณิต', 3, '2-2-5', 2, 2, 2),
 	(3, '41001', 'คอม', 2, '2-2-5', 2, 2, 2),
 	(10, '4124903', 'อังกฤษ', 3, '3-2-5', 2, 2, 1),
 	(11, '4121301', 'วิททยาศาสตร์', 3, '2-2-5', 2, 2, 2),
-	(12, '4124901', 'คณิต', 3, '2-2-5', 2, 2, 1);
+	(12, '4124901', 'คณิต', 3, '2-2-5', 2, 2, 1),
+	(13, '0002701', 'คอมพิวเตอร์และเทคโนโลยีสารสนเทศเพื่อชีวิต', 3, '2-2-5', 2, 2, 2),
+	(14, '4123204', 'พาณิชย์อิเล็กทรอนิกส์ ', 3, '2-2-5', 2, 2, 1),
+	(15, '4124801', 'การเตรียมฝึกประสบการณ์', 2, '0-0-90', 0, 0, 2);
 /*!40000 ALTER TABLE `tb_subject` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_subjectsum_hour
@@ -946,10 +1074,11 @@ CREATE TABLE IF NOT EXISTS `tb_subjectsum_hour` (
   `subjectsum_pepostset` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลรายละเอียกรวมเงิน ต่อ วิชา';
 
--- Dumping data for table keepworkteach3.tb_subjectsum_hour: ~1 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_subjectsum_hour: ~2 rows (approximately)
 /*!40000 ALTER TABLE `tb_subjectsum_hour` DISABLE KEYS */;
 INSERT INTO `tb_subjectsum_hour` (`subjectsum_hour_id`, `subjectsum_tudsadee`, `subjectsum_prtibad`, `subjectsum_money`, `subjectsum_subject_id`, `subjectsum_status`, `subjectsum_user_id`, `subjectsum_teach_id`, `subjectsum_pepostset`) VALUES
-	('2561114124903', 3, 3, 1080, '4124903', 2, '570112230061', '2561114124903', 2);
+	('2561210002701', 0, 0, 0, '0002701', 2, '00442233', '2561210002701', 2),
+	('2561224123204', 0, 0, 0, '4123204', 2, '00442233', '2561224123204', 1);
 /*!40000 ALTER TABLE `tb_subjectsum_hour` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_table_teaching
@@ -975,14 +1104,30 @@ CREATE TABLE IF NOT EXISTS `tb_table_teaching` (
   `user_roleid` varchar(50) DEFAULT NULL,
   `subject_roleid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COMMENT='ตารางเรียน///ตารางรายละเอียดการสอน';
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8 COMMENT='ตารางเรียน///ตารางรายละเอียดการสอน';
 
--- Dumping data for table keepworkteach3.tb_table_teaching: ~3 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_table_teaching: ~19 rows (approximately)
 /*!40000 ALTER TABLE `tb_table_teaching` DISABLE KEYS */;
 INSERT INTO `tb_table_teaching` (`id`, `teble_teach_id`, `degree_studen`, `teach_term`, `term_year`, `teach_week`, `section`, `studen_number`, `start_month`, `start_month_string`, `stop_month`, `stop_month_string`, `teach_year`, `start_time`, `stop_time`, `sum_hour`, `standard_teach`, `room`, `user_roleid`, `subject_roleid`) VALUES
-	(27, '2561114124903', '1', '1', '2561', '1', 1, 38, '01/03/2019', 'มีนาคม', '22/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '255', '570112230061', '4124903'),
-	(28, '2561114121301', '1', '1', '2561', '4', 1, 40, '01/03/2019', 'มีนาคม', '22/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '253', '570112230061', '4121301'),
-	(29, '2561124121301', '1', '1', '2561', '', 2, 23, '01/03/2019', 'มีนาคม', '22/03/2019', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 120, '253', '570112230061', '4121301');
+	(33, '2561210002701', '1', '2', '2561', '1', 1, 43, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '13:00', '16:20', '3:20', 180, '525', '00447218', '0002701'),
+	(34, '2561214123204', '1', '2', '2561', '2', 1, 21, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:00', '12:20', '4:20', 120, '252', '00447218', '4123204'),
+	(35, '2561224123204', '1', '2', '2561', '3', 2, 18, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:30', '12:30', '4:0', 100, '522', '00447218', '4123204'),
+	(36, '2561224124801', '1', '2', '2561', '5', 2, 18, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:30', '12:20', '3:50', 100, '534', '00447218', '4124801'),
+	(37, '2561214124801', '1', '2', '2561', '5', 1, 21, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:40', '12:30', '3:50', 120, '534', '00447218', '4124801'),
+	(38, '2561230002701', '1', '2', '2561', '1', 3, 48, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '225', '00447218', '0002701'),
+	(39, '2561244124801', '1', '2', '2561', '5', 4, 24, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 120, '255', '00447218', '4124801'),
+	(45, '2561220002701', '1', '2', '2561', '1', 2, 40, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '525', '00447218', '0002701'),
+	(51, '2561210002701', '1', '2', '2561', '1', 1, 46, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 180, '252', '570112230061', '0002701'),
+	(52, '2561214123204', '1', '2', '2561', '1', 1, 21, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:40', '12:30', '3:50', 120, '525', '570112230061', '4123204'),
+	(53, '2561224123204', '1', '2', '2561', '4', 2, 18, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:00', '12:00', '4:0', 100, '522', '570112230061', '4123204'),
+	(54, '2561214124801', '1', '2', '2561', '5', 1, 21, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:00', '12:00', '4:0', 120, '534', '570112230061', '4124801'),
+	(55, '2561224124801', '1', '2', '2561', '5', 2, 22, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '07:00', '12:00', '5:0', 120, '534', '570112230061', '4124801'),
+	(56, '2561210002701', '1', '2', '2561', '1', 1, 40, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '04:00', '04:00', '0:0', 180, '432', '570112230061', '0002701'),
+	(57, '2561210002701', '1', '2', '2561', '1', 1, 40, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '13:00', '17:00', '4:0', 180, '252', '00442233', '0002701'),
+	(58, '2561214123204', '1', '2', '2561', '2', 1, 21, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:00', '12:00', '4:0', 120, '252', '00442233', '4123204'),
+	(59, '2561224123204', '1', '2', '2561', '4', 2, 18, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:00', '12:00', '4:0', 100, '522', '00442233', '4123204'),
+	(60, '2561214124801', '1', '2', '2561', '5', 1, 20, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:00', '12:00', '4:0', 120, '534', '00442233', '4124801'),
+	(61, '2561224124801', '1', '2', '2561', '5', 2, 20, '01/12/2561', 'ธันวาคม', '31/03/2562', 'มีนาคม', '2561', '08:00', '12:00', '4:0', 120, '534', '00442233', '4124801');
 /*!40000 ALTER TABLE `tb_table_teaching` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_teaching
@@ -1004,14 +1149,29 @@ CREATE TABLE IF NOT EXISTS `tb_teaching` (
   `status_teach` int(2) DEFAULT '0' COMMENT 'สถานะสอน',
   `status_teaching` int(1) DEFAULT '0' COMMENT 'สถานะใช่เบิก',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='ตารางเบิกการสอนเกินภาระงาน\r\nตารางเบิกการสอนเกินภาระงาน\r\nตารางขอเบิกการสอนเกินภาระงาน';
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='ตารางเบิกการสอนเกินภาระงาน\r\nตารางเบิกการสอนเกินภาระงาน\r\nตารางขอเบิกการสอนเกินภาระงาน';
 
--- Dumping data for table keepworkteach3.tb_teaching: ~3 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_teaching: ~18 rows (approximately)
 /*!40000 ALTER TABLE `tb_teaching` DISABLE KEYS */;
 INSERT INTO `tb_teaching` (`id`, `teach_id`, `sum_hour_term`, `hoursum_tudsadee`, `hoursum_prtibad`, `money_tudsadee`, `money_prtibad`, `salary_sum`, `teach_basehour`, `teach_basecram`, `dateofteach_fk`, `subject_fk`, `tableteach_fk`, `user_fk`, `status_teach`, `status_teaching`) VALUES
-	(14, '2561114124903', 0, 8, 8, 0, 0, 552, 2, 1, NULL, '4124903', '2561114124903', '570112230061', 2, 2),
-	(15, '2561114121301', 0, 8, 8, 0, 0, 552, 0, 4, NULL, '4121301', '2561114121301', '570112230061', 1, 2),
-	(16, '2561124121301', 0, 8, 8, 0, 0, 372, 0, 4, NULL, '4121301', '2561124121301', '570112230061', 1, 2);
+	(20, '2561210002701', 0, 0, 0, 0, 0, 0, 3, 0, NULL, '0002701', '2561210002701', '00447218', 2, 2),
+	(21, '2561214123204', 0, 0, 0, 0, 0, 0, 3, 0, NULL, '4123204', '2561214123204', '00447218', 2, 2),
+	(22, '2561224123204', 0, 0, 0, 0, 0, 0, 3, 0, NULL, '4123204', '2561224123204', '00447218', 2, 2),
+	(23, '2561224124801', 0, 0, 0, 0, 0, 0, -1, 0, NULL, '4124801', '2561224124801', '00447218', 2, 2),
+	(24, '2561214124801', 0, 0, 0, 0, 0, 0, 2, -3, NULL, '4124801', '2561214124801', '00447218', 2, 2),
+	(25, '2561244124801', 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, '4124801', '2561244124801', '00447218', 0, 1),
+	(31, '2561220002701', 0, 36, 36, 0, 0, 3128, NULL, NULL, NULL, '0002701', '2561220002701', '00447218', 0, 1),
+	(37, '2561210002701', 0, 36, 36, 0, 0, 3128, 3, 0, NULL, '0002701', '2561210002701', '570112230061', 2, 2),
+	(38, '2561214123204', 0, 36, 36, 0, 0, 2108, 0, 4, NULL, '4123204', '2561214123204', '570112230061', 1, 2),
+	(39, '2561224123204', 0, 36, 36, 0, 0, 1768, 2, 1, NULL, '4123204', '2561224123204', '570112230061', 2, 2),
+	(40, '2561214124801', 0, 0, 0, 0, 0, 2040, 0, 2, NULL, '4124801', '2561214124801', '570112230061', 1, 2),
+	(41, '2561224124801', 0, 0, 0, 0, 0, 2040, 0, 2, NULL, '4124801', '2561224124801', '570112230061', 1, 2),
+	(42, '2561210002701', 0, 36, 36, 0, 0, 3128, 0, 4, NULL, '0002701', '2561210002701', '570112230061', 1, 2),
+	(43, '2561210002701', 0, 36, 36, 0, 0, 3128, 3, 0, NULL, '0002701', '2561210002701', '00442233', 2, 2),
+	(44, '2561214123204', 0, 36, 36, 0, 0, 2108, 0, 4, NULL, '4123204', '2561214123204', '00442233', 1, 2),
+	(45, '2561224123204', 0, 36, 36, 0, 0, 1768, 2, 1, NULL, '4123204', '2561224123204', '00442233', 2, 2),
+	(46, '2561214124801', 0, 0, 0, 0, 0, 2040, 0, 2, NULL, '4124801', '2561214124801', '00442233', 1, 2),
+	(47, '2561224124801', 0, 0, 0, 0, 0, 2040, 0, 2, NULL, '4124801', '2561224124801', '00442233', 1, 2);
 /*!40000 ALTER TABLE `tb_teaching` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_teach_report
@@ -1028,12 +1188,12 @@ CREATE TABLE IF NOT EXISTS `tb_teach_report` (
   `teaching_fk` varchar(50) DEFAULT NULL,
   `status_repost` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='ออกรายงาน';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='ออกรายงาน';
 
 -- Dumping data for table keepworkteach3.tb_teach_report: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tb_teach_report` DISABLE KEYS */;
 INSERT INTO `tb_teach_report` (`id`, `teach_report_id`, `resum_pst`, `resum_tsd`, `repost_sum`, `repost_money`, `report_thaibaht`, `user_report_fk`, `dateteach_fk`, `teaching_fk`, `status_repost`) VALUES
-	(2, '18/3/2562/570112230061', 0, 0, 6, 1080, 'หนึ่งพันแปดสิบบาทถ้วน', '570112230061', NULL, '2561114124903', 2);
+	(1, '7/6/2562/00442233', 0, 0, 0, 0, 'บาทถ้วน', '00442233', NULL, '', 2);
 /*!40000 ALTER TABLE `tb_teach_report` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_term
@@ -1045,10 +1205,12 @@ CREATE TABLE IF NOT EXISTS `tb_term` (
   `term_teachyear` varchar(50) DEFAULT NULL,
   `term_teachterm` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`term_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ปีการศึกษา ภาคเรียน';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='ปีการศึกษา ภาคเรียน';
 
--- Dumping data for table keepworkteach3.tb_term: ~0 rows (approximately)
+-- Dumping data for table keepworkteach3.tb_term: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tb_term` DISABLE KEYS */;
+INSERT INTO `tb_term` (`term_id`, `term_start`, `term_stop`, `term_year`, `term_teachyear`, `term_teachterm`) VALUES
+	(1, '01/12/2561', '31/03/2562', '2562', '2', '2561');
 /*!40000 ALTER TABLE `tb_term` ENABLE KEYS */;
 
 -- Dumping structure for table keepworkteach3.tb_user
@@ -1083,9 +1245,26 @@ INSERT INTO `tb_user` (`id`, `user_id`, `user_pass`, `prefix_name`, `user_name`,
 	(13, '1', NULL, NULL, '1', '1', 'อาจารย์พิเศษ', NULL, '1', '1', NULL, 1, 1, 'U'),
 	(14, '2', NULL, NULL, '2', '2', 'อาจารย์ประจำ', NULL, '2', '2', NULL, 2, 2, 'U'),
 	(15, '2', NULL, NULL, '2', '2', 'อาจารย์ประจำ', NULL, '2', '2', NULL, 2, 2, 'U'),
-	(16, '00447218', '1234', 'นาย', 'งบน้อย', 'เบิกพัน', 'อาจารย์ประจำ', 'อาจารย์', '5', '056', NULL, 9, 6, 'U'),
-	(17, '00442233', '1234', 'นางสาว', 'นายน้อย', 'มาก', 'อาจารย์ประจำ', 'อาจารย์', '5', '056', NULL, 9, 6, 'U');
+	(16, '00447218', '1234', 'นาย', 'เบิกร้อย', 'เบิกพัน', 'อาจารย์ประจำ', 'อาจารย์', '5', '056', NULL, 9, 6, 'U'),
+	(17, '00442233', '1234', 'นางสาว', 'น้อย', 'มาก', 'อาจารย์ประจำ', 'อาจารย์', '5', '056', NULL, 9, 6, 'U');
 /*!40000 ALTER TABLE `tb_user` ENABLE KEYS */;
+
+-- Dumping structure for table keepworkteach3.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `username` varchar(20) NOT NULL,
+  `fname` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `contact` varchar(15) NOT NULL,
+  `nic` varchar(15) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table keepworkteach3.users: ~1 rows (approximately)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`username`, `fname`, `email`, `contact`, `nic`, `password`) VALUES
+	('admin', 'admin admin', 'admin@gmail.com', '0777123456', '942534567V', '40bd001563085fc35165329ea1ff5c5ecbdbbeef');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
